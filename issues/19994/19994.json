@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Hi,\n\ni´m using expander in Modern UI and it haves a bug.\n\nThe letter don´t change the color when changing the theme.\n\nhttps://cloudpt.pt/link/74f72817-abff-4110-b445-1a24f8d9518d/ModernUI_3.png\n\nPlease resolve this issue.",
+    "LastUpdatedDate": "2013-07-27T13:11:38.75-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-07-22T04:30:12.243-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Expander Color",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 19994
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

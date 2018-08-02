@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1279670",
+    "ThreadId": "554757",
+    "Html": "I am trying to bind a doubleclick event on the listviewitem.\r<br />\nAfter some time i found a solution:<br />\n<pre><code>&lt;UserControl.Resources&gt;\n    &lt;Style x:Key=&quot;itemstyle&quot; TargetType=&quot;{x:Type ListViewItem}&quot;&gt;\n        &lt;EventSetter Event=&quot;MouseDoubleClick&quot; Handler=&quot;HandleDoubleClick&quot; /&gt;\n    &lt;/Style&gt;\n&lt;/UserControl.Resources&gt;</code></pre>\n\nThe problem is this operation cancel the mui style and apply the standard windows style. Is there something i can do to have the mui style and set this event?<br />\n",
+    "PostedDate": "2014-07-31T10:59:12.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

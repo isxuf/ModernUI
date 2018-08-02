@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1097184",
+    "ThreadId": "458604",
+    "Html": "Hello,\r<br />\n<br />\nThere is a particular control I want to always be visible and part of the ModernWindow. It will be a toolbar docked at the bottom. How can I accomplish this by limiting the page navigation of the menu link groups to a specific part of the window?<br />\n",
+    "PostedDate": "2013-09-20T12:53:05.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1098079",
+    "ThreadId": "458604",
+    "Html": "I've been making any additions I need to make to the ModernWindow in FirstFloor.ModernUI/Themes/ModernWindow.xaml. For example, I modified the re-size grip at the bottom of the page to be a colored status bar more like what Visual Studio 2012 has:<br />\n<pre><code>&lt;!-- resize grip &amp; status message --&gt;\n&lt;Grid Grid.Row=&quot;4&quot; Background=&quot;{DynamicResource Accent}&quot;&gt;\n    &lt;Grid.ColumnDefinitions&gt;\n        &lt;ColumnDefinition Width=&quot;*&quot; /&gt;\n        &lt;ColumnDefinition Width=&quot;Auto&quot; /&gt;\n    &lt;/Grid.ColumnDefinitions&gt;\n    &lt;TextBlock x:Name=&quot;Status&quot; Text=&quot;{TemplateBinding StatusMessage}&quot; Margin=&quot;3&quot; Foreground=&quot;White&quot; /&gt;\n    &lt;Path x:Name=&quot;ResizeGrip&quot; Visibility=&quot;Collapsed&quot; Width=&quot;12&quot; Height=&quot;12&quot; Margin=&quot;1&quot; HorizontalAlignment=&quot;Right&quot; VerticalAlignment=&quot;Bottom&quot;\n          Stroke=&quot;{DynamicResource WindowText}&quot;\n          StrokeThickness=&quot;1&quot;\n          Stretch=&quot;None&quot;\n          Grid.Column=&quot;1&quot;\n          Data=&quot;F1 M1,10 L3,10 M5,10 L7,10 M9,10 L11,10 M2,9 L2,11 M6,9 L6,11 M10,9 L10,11 M5,6 L7,6 M9,6 L11,6 M6,5 L6,7 M10,5 L10,7 M9,2 L11,2 M10,1 L10,3&quot; /&gt;\n&lt;/Grid&gt;\n</code></pre>\n\nI plan on making this like the right click panel that slides up in Windows 8 apps. Functionality can be extended in Windows/Controls/ModernWindow.cs. <br />\n",
+    "PostedDate": "2013-09-23T09:10:33.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1098632",
+    "ThreadId": "458604",
+    "Html": "I'm still not sure how I can use with alongside the mui:ModernWindow.MenuLinkGroups. &quot;The property content cannot be set more than once.&quot;<br />\n",
+    "PostedDate": "2013-09-24T10:07:38.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

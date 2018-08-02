@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1311614",
+    "ThreadId": "569333",
+    "Html": "Hi,\r<br />\n I would like to to change the linkGroup to uppercase or camelcase is there a way i can overide the default\r<br />\nthanks<br />\n",
+    "PostedDate": "2014-10-08T09:53:30.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1313760",
+    "ThreadId": "569333",
+    "Html": "The upper- and lower case behavior is implemented as value converters in the ModernMenu default style (in Themes/ModernMenu.xaml). If you want to override this behavior you will need to create your own custom ModernMenu style.<br />\n",
+    "PostedDate": "2014-10-15T14:18:29.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

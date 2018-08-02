@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\r\n\r\nI have come across a problem time and time again, that by only fooling around with the references seems to fix the problem, however sometimes it does not. It's difficult to fix, because most of the time it happens by shear luck.\r\n\r\nThe issue I am having is that whenever I start a new project and import ModernUI, I always have errors relating to:\r\n\r\n\"The name \"MordernTab\" does not exist in the namespace \"http://firstfloorsoftware.com/ModernUI\"\"\r\n\r\nor any other items in the library. Typically, despite these errors, the assemblies will still build (so I know they are referenced correctly) and in the actual program, these controls render and work fine.\r\n\r\nThe problem is that periodically the designer will not acknowledge this, thus stating my XAML code is invalid.\r\n\r\nI am using Visual Studio 2013 Professional\r\nVisual Basic\r\nNo templates\r\nModernUI version: 1.0.6.0\r\n\r\nAny help would be greatly appreciated. Thanks!\r\n\r\nEDIT:\r\n\r\nWhat seemed to resolve the issue was quite simple, however aggravating to figure out.\r\n\r\nWhat I did to resolve the issue was to navigate to the .dll in Explorer, right click it's properties, and in the General tab, Unblock the file from the download. Seems odd to me that in code and other areas, it referenced fine, but in XAML it caused issues.\r\n\r\nOh well, hope this information can help others with the same problem!\r\n",
+    "LastUpdatedDate": "2014-12-28T00:14:52.657-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-12-27T23:48:19.12-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Referencing issues",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21262
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

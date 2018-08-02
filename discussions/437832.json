@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1020418",
+    "ThreadId": "437832",
+    "Html": "The approach is not very good because if the responsible change keys resources it breaks.\r<br />\n<br />\nBut as we have only exposed the AccentColor let it:<br />\n<pre><code>public static class TelerikAppearanceManager\n    {\n        public static void SetupTheme()\n        {\n            Telerik.Windows.Controls.StyleManager.ApplicationTheme = new Telerik.Windows.Controls.Windows8Theme();\n        }\n\n        public static void SetupThemeColors()\n        {\n            Telerik.Windows.Controls.Windows8Palette.Palette.AccentColor = AppearanceManager.AccentColor;\n\n            var appColor = Application.Current.Resources[&quot;WindowBackgroundColor&quot;] as Nullable&lt;Color&gt;;\n            if (appColor.HasValue)\n                Telerik.Windows.Controls.Windows8Palette.Palette.MainColor = appColor.Value;\n\n            var textColor = Application.Current.Resources[&quot;ItemText&quot;] as SolidColorBrush;\n            if (textColor != null)\n                Telerik.Windows.Controls.Windows8Palette.Palette.MarkerColor = textColor.Color;\n\n            var markerColor = Application.Current.Resources[&quot;InputBorder&quot;] as SolidColorBrush;\n            if (markerColor != null)\n                Telerik.Windows.Controls.Windows8Palette.Palette.StrongColor = markerColor.Color;\n\n            var basicColor = Application.Current.Resources[&quot;InputBorder&quot;] as SolidColorBrush;\n            if (basicColor != null)\n                Telerik.Windows.Controls.Windows8Palette.Palette.BasicColor = basicColor.Color;\n        }\n    }</code></pre>\n\nOn App.xaml.cs inside &quot;OnStartup&quot;:<br />\n<pre><code>TelerikAppearanceManager.SetupTheme();</code></pre>\n\nOn SettingsAppearanceViewModel.cs inside &quot;OnThemeChanged&quot; at and:<br />\n<pre><code>TelerikAppearanceManager.SetupThemeColors();</code></pre>\n\n",
+    "PostedDate": "2013-03-24T16:14:19.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021189",
+    "ThreadId": "437832",
+    "Html": "Many thanks for the tip!<br />\n",
+    "PostedDate": "2013-03-26T05:32:57.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029047",
+    "ThreadId": "437832",
+    "Html": "by the way, and you have no problems with the control ListBox? for example in my telerik RadAutocompliteBox the drop-down list, a transparent background. and this can be remedied only if the resources UserControl add styles<br />\n<pre><code>    &lt;Style TargetType=&quot;telerik:RadListBox&quot;&gt;\n        &lt;Setter Property=&quot;Background&quot; Value=&quot;White&quot;/&gt;\n    &lt;/Style&gt;\n    &lt;Style TargetType=&quot;telerik:RadListBoxItem&quot;&gt;\n        &lt;Setter Property=&quot;Background&quot; Value=&quot;White&quot;/&gt;\n        &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;White&quot;/&gt;\n    &lt;/Style&gt;\n    &lt;Style TargetType=&quot;ScrollBar&quot;&gt;\n        &lt;Setter Property=&quot;Background&quot; Value=&quot;White&quot;/&gt;\n    &lt;/Style&gt;\n\n</code></pre>\n\nthen all fall into place.<br />\n",
+    "PostedDate": "2013-04-11T08:05:11.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

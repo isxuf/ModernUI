@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1316106",
+    "ThreadId": "570535",
+    "Html": "I tried understanding other topics here regarding the removal of the back button but I think I'm missing something. I downloaded the source code and it is in my drive C, while my project is in drive D, I located the ModernWindow.xaml and found these set of mark ups(which I believe, the back button:<br />\n<pre><code>&lt;controls:ModernButton Margin=&quot;8,10,0,0&quot; HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot;                                                               EllipseDiameter=&quot;24&quot; IconWidth=&quot;12&quot; IconHeight=&quot;12&quot; IconData=&quot;F1 M 33,22L 33,26L 19.75,26L 27,33L 20.5,33L 11,24L 20.5,15L 27,15L 19.75,22L 33,22 Z&quot; Command=&quot;NavigationCommands.BrowseBack&quot; CommandTarget=&quot;{Binding ElementName=ContentFrame}&quot; ToolTip=&quot;{x:Static modernui:Resources.Back}&quot; WindowChrome.IsHitTestVisibleInChrome=&quot;True&quot; Visibility=&quot;Collapse&quot;/&gt;</code></pre>\n\nand set the visibility to collapse but I don't know how to apply it to the project in drive D<br />\n",
+    "PostedDate": "2014-10-23T13:20:01.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

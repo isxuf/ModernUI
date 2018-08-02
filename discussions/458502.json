@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1096786",
+    "ThreadId": "458502",
+    "Html": "Hi<br />\nAnybody knows, how to override DataGrid's SelectedRow Background default behaviour?<br />\nDataGrid's SelectedRow Background is allways same than theme background color. <br />\nI'd like to change SelectedRow.Background = Gray when DataGrid is inactive. <br />\n<br />\nit's not possible, I think.<br />\n",
+    "PostedDate": "2013-09-20T00:09:18.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

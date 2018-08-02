@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1336759",
+    "ThreadId": "576126",
+    "Html": "I'm using the webbrowser control to display BingMaps (due startup delays experienced with the WPF BingMaps control). I've a page with only a single full size webbrowser control.\r<br />\n<br />\nThe page transition effect does not work fine.\r<br />\n<br />\nEntering the page there is no animation: the content jump from the start position to the final position.\r<br />\nLeaving the page I can see the new content coming in from the left side, but it goes <strong>below</strong> the webbrowser.\r<br />\n<br />\nIs it possibile to disable the navigation transition for a single page?<br />\n",
+    "PostedDate": "2014-12-23T05:11:34.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

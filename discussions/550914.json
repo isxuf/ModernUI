@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1263550",
+    "ThreadId": "550914",
+    "Html": "Hi,\r<br />\n<br />\nSorry for my English, I'am French.\r<br />\n<br />\nI want to know How I can open my Modern Windows from Login page ?\r<br />\n<br />\nIf I use <br />\n<pre><code>MainWindow myWindow = new MainWindow();\nmyWindow.Show();</code></pre>\n\nThe modern window open but my menu missing :<br />\n<pre><code>&lt;mui:ModernWindow.MenuLinkGroups&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;Welcome&quot; x:Name =&quot;TitleNameGroupe&quot; &gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;CLients&quot; Source=&quot;/Views/CustomerPage.xaml&quot;/&gt;\n                &lt;mui:Link DisplayName=&quot;Devis&quot; Source=&quot;/Views/QuotationPage.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Outils de synchronisation &quot;  Source=&quot;/Views/SettingsPage.xaml&quot;  /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n    &lt;/mui:ModernWindow.MenuLinkGroups&gt;</code></pre>\n\nThank for your help,\r<br />\n<br />\nbr,\r<br />\n<br />\nEmi<br />\n",
+    "PostedDate": "2014-07-08T00:05:34.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

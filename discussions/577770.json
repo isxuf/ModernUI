@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1342198",
+    "ThreadId": "577770",
+    "Html": "Hello All,\r<br />\n<br />\nI would like to insert dynamically changing top and side images in MUI demo based on the XAML page opened. I added Style.xaml to my Resources and added image to Main Menu Grid:\r<br />\n<br />\n&lt;Image Grid.Column=&quot;2&quot; Source=&quot;/Path/To/Image/File.png&quot; /&gt;\r<br />\n<br />\nThis adds a static image to the desired location on top. I need to change this so that the image source changes dynamically by taking the URI from current opened XAML file.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2015-01-15T07:22:12.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

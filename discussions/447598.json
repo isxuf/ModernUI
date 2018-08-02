@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1058855",
+    "ThreadId": "447598",
+    "Html": "Hi!\r<br />\nI need to add new tab to a moderntab page from within the child.\r<br />\nCan someone please help me with how I can achieve this.\r<br />\nThanks<br />\n",
+    "PostedDate": "2013-06-19T13:51:00.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060310",
+    "ThreadId": "447598",
+    "Html": "<pre><code>// this &lt;- your current child\nModernTab parentMT = \n    ((Grid)((ModernFrame)this.Parent).Parent).TemplatedParent as ModernTab; \nLink newLink = new Link()\n{\n    DisplayName = &quot;NewTab&quot;,\n    Source = new Uri(&quot;/YourPage.xaml&quot;, UriKind.Relative)\n};\n            \nparentMT.Links.Add(newLink);</code></pre>\n\n",
+    "PostedDate": "2013-06-24T03:14:28.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

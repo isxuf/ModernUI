@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1012172",
+    "ThreadId": "435846",
+    "Html": "Hi,\r<br />\n<br />\nHow to assign Resource strings to DisplayName and GroupName of LinkGroup and DisplayName of Link? Like we set Content of Button as \r<br />\n<br />\nContent=&quot;{Binding Path=ApplicationStrings.New, Source={StaticResource ResourceWrapper}}&quot; \r<br />\n<br />\nThanks &amp; Regards,\r<br />\nChakravarti.B.<br />\n",
+    "PostedDate": "2013-03-07T19:46:27.227-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1012296",
+    "ThreadId": "435846",
+    "Html": "I would suggest not to define those groups and links in XAML, but define the LinkGroupCollection in a viewmodel and bind it to ModernWindow.MenuLinkGroups.<br />\n",
+    "PostedDate": "2013-03-08T04:14:49.367-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1041975",
+    "ThreadId": "435846",
+    "Html": "Can you give an example on how you would bind to a MenuLinkGroups?<br />\n<br />\nI created the LinkGroupCollection in my viewmodel but i am not sure what i am suppose to bind too.<br />\n<br />\nThanks,<br />\nRico<br />\n",
+    "PostedDate": "2013-05-10T09:47:19.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1042015",
+    "ThreadId": "435846",
+    "Html": "I figured it out. <br />\n<pre><code>&lt;mui:ModernWindow x:Class=&quot;RTI.ShellView&quot;\n        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n        xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n        Title=&quot;Pulse&quot; \n        Icon=&quot;Images/logo_small.ico&quot;\n        ContentLoader=&quot;{StaticResource CaliburnContentLoader}&quot;\n        ContentSource=&quot;/Views/HomeView.xaml&quot;\n        MenuLinkGroups=&quot;{Binding Path=MenuLinks, UpdateSourceTrigger=PropertyChanged}&quot;&gt;</code></pre>\n\n",
+    "PostedDate": "2013-05-10T11:18:12.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

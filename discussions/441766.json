@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1036460",
+    "ThreadId": "441766",
+    "Html": "I have the following code, in which I need to set something in the DataContext of a control that has been loaded and set as frame.Source.\r<br />\n<br />\nAm I doing this wrong, or is there a better way to do this ?<br />\n<blockquote>\nvar frame = NavigationHelper.FindFrame(null, this.View);<br />\nif (frame != null)<br />\n{<br />\nframe.Source = new Uri(&quot;/Pages/Project/Content/ProjectItemView.xaml&quot;, UriKind.Relative);<br />\n// Need to set the context here somehow<br />\n}<br />\n</blockquote>\nAgain thanks in advance\r<br />\n<br />\nMark H<br />\n",
+    "PostedDate": "2013-04-27T03:33:07.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036568",
+    "ThreadId": "441766",
+    "Html": "Why not set the datacontext of the frame directly? The DataContext property is inherited by child controls<br />\n",
+    "PostedDate": "2013-04-27T10:33:14.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

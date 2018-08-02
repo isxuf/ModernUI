@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1020278",
+    "ThreadId": "437800",
+    "Html": "Here is how to increase your color choices with a beautiful pallet:\r<br />\n<br />\nIn SettingsAppearanceViewModel.cs change accentColors to:<br />\n<pre><code>private Color[] accentColors = new Color[]{\n            Color.FromRgb(0x25, 0xA0, 0xDA),\n            Color.FromRgb(0xA4, 0xC4, 0x00),\n            Color.FromRgb(0x60, 0xA9, 0x17),\n            Color.FromRgb(0x00, 0x8A, 0x00),\n            Color.FromRgb(0x00, 0xAB, 0xA9),\n            Color.FromRgb(0x1B, 0xA1, 0xE2),\n            Color.FromRgb(0x00, 0x50, 0xEF),\n            Color.FromRgb(0x6A, 0x00, 0xFF),\n            Color.FromRgb(0xAA, 0x00, 0xFF),\n            Color.FromRgb(0xF4, 0x72, 0xD0),\n            Color.FromRgb(0xD8, 0x00, 0x73),\n            Color.FromRgb(0xA2, 0x00, 0x25),\n            Color.FromRgb(0xE5, 0x14, 0x00),\n            Color.FromRgb(0xFA, 0x68, 0x00),\n            Color.FromRgb(0xF0, 0xA3, 0x0A),\n            Color.FromRgb(0xE3, 0xC8, 0x00),\n            Color.FromRgb(0x82, 0x5A, 0x2C),\n            Color.FromRgb(0x6D, 0x87, 0x64),\n            Color.FromRgb(0x64, 0x76, 0x87),\n            Color.FromRgb(0x76, 0x60, 0x8A),\n            Color.FromRgb(0x87, 0x79, 0x4E),\n        };</code></pre>\n\nIn SettingsAppearance.xaml change ListBox to:<br />\n<pre><code>&lt;ListBox ItemsSource=&quot;{Binding AccentColors}&quot;\n                         SelectedItem=&quot;{Binding SelectedAccentColor, Mode=TwoWay}&quot;\n                         Margin=&quot;0,0,0,16&quot;\n                         ScrollViewer.HorizontalScrollBarVisibility=&quot;Disabled&quot;&gt;\n                    &lt;ListBox.ItemsPanel&gt;\n                        &lt;ItemsPanelTemplate&gt;\n                            &lt;WrapPanel ScrollViewer.VerticalScrollBarVisibility=&quot;Auto&quot; ItemHeight=&quot;40&quot; ItemWidth=&quot;40&quot; /&gt;\n                        &lt;/ItemsPanelTemplate&gt;\n                    &lt;/ListBox.ItemsPanel&gt;\n                    &lt;ListBox.ItemTemplate&gt;\n                        &lt;DataTemplate&gt;\n                            &lt;Rectangle Width=&quot;40&quot; Height=&quot;40&quot; Margin=&quot;3&quot; &gt;\n                                &lt;Rectangle.Fill&gt;\n                                    &lt;SolidColorBrush x:Name=&quot;Brush&quot; Color=&quot;{Binding}&quot; /&gt;\n                                &lt;/Rectangle.Fill&gt;\n                            &lt;/Rectangle&gt;\n                        &lt;/DataTemplate&gt;\n                    &lt;/ListBox.ItemTemplate&gt;\n                &lt;/ListBox&gt;</code></pre>\n\n",
+    "PostedDate": "2013-03-24T06:43:05.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1020300",
+    "ThreadId": "437800",
+    "Html": "Thanks! I believe those colors are already available in the latest ModernUI release (<a href=\"http://mui.codeplex.com/SourceControl/changeset/99360\" rel=\"nofollow\">changeset 99360</a>) <br />\n",
+    "PostedDate": "2013-03-24T08:09:26.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

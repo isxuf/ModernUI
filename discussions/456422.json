@@ -1,0 +1,114 @@
+[
+  {
+    "Id": "1090796",
+    "ThreadId": "456422",
+    "Html": "Hi,\r<br />\n<br />\na few months ago I was discussing a PRISM integration with MUI in one of the other threads of this project. Since my first prototype that I have posted a few months ago, I have developed a (imho) stable integration that I would be happy to contribute. \r<br />\nThere is a few internal classes (mainly the Link and related classes) of MUI that I conceptually duplicated in order to finish this. As I duplicated and extended some of the classes, I think we should discuss if you are willing to change their visibility from internal to public. This would enable my contribution to rely on the MUI standard classes instead of duplicates. I would then at least have a chance to inherit from them....I must confess that I did not think too much about that, but it works (imho) so amazingly great with the prism concepts, that you should at least spend some thoughts on this...\r<br />\n<br />\nI &quot;invented&quot; kind of &quot;ModernEmptyWindow&quot; before it was available at codeplex, as it was crucial for my project. The Mui.Prism integration library is then very small... some mui duplicates, some prism region adapters for menu and tab is essentially everything.\r<br />\n<br />\nThere may be some other ways to perform the tasks that I did with a different approach. i would therefore be very happy if you tell me your preferred way of sharing my code so you can evaluate it and discuss it with me.\r<br />\n<br />\nSo far\r<br />\nFlorian <br />\n",
+    "PostedDate": "2013-09-10T11:43:19.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090819",
+    "ThreadId": "456422",
+    "Html": "Sounds awesome! Definitely open to discuss changes to MUI if that helps extensibility. What internal classes/APIs are you talking about?\r<br />\n<br />\nMy PRISM experience is limited, but happy to look at what you created. Can you email your code in a ZIP? (see <a href=\"http://firstfloorsoftware.com/contact\" rel=\"nofollow\">http://firstfloorsoftware.com/contact</a> for contact details)\r<br />\n<br />\nAs far as publishing your code is concerned; I see two options, 1) add the Mui.Prism project to mui.codeplex.com, or 2) create a new open source contrib project for Mui.Prism. I'm not sure yet which option is best, suggestions are welcome. One thing I do know, is that MUI itself should only depend on the BCL, no other dependencies.<br />\n",
+    "PostedDate": "2013-09-10T12:29:51.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091621",
+    "ThreadId": "456422",
+    "Html": "This sounds like it could be really useful, I'm a big fan of MUI and I would be really interested in seeing how you have approached the PRISM integration in code once you guys decide how you are going to move forward<br />\n",
+    "PostedDate": "2013-09-12T02:13:34.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091756",
+    "ThreadId": "456422",
+    "Html": "I am currently preparing a sample application that will help in our discussion. As soon as I am finished, I'll zip it up and send you an email. <br />\n",
+    "PostedDate": "2013-09-12T07:47:44.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1126753",
+    "ThreadId": "456422",
+    "Html": "I have prior experience with Prism and I stumbled on m:ui for a new application. I already evaluated m:ui by itself and so far I like what I see. I still am not sure at this time if I would go the Prism route again as I <em>should</em> be able to get away with MEF by itself just to load plugins. I would love to see the outcome of your work since it would help ...<br />\n",
+    "PostedDate": "2013-11-19T13:31:28.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1128380",
+    "ThreadId": "456422",
+    "Html": "I was finally able to build a sample app together with mui and my mui:prism integration. I would be really happy if some of you could review it critically and give feedback on it. \r<br />\nThere are a few points I am really unhappy with that I would like to tell you in advance:<br />\n<ul>\n<li>I duplicated some parts of the mui classes and changed those so they fit better with my idea of prism integration.</li>\n<li>The user-driven navigation (by clicking one of the links) and the programmatic navigation don't match to 100%. Search for a TODO that asks for better ideas and you will see what I mean.</li>\n<li>The sample does not contain any sample demonstrating advanced navigation concepts available in Prism, like INavigationAware. It just shows the integration of mui and prism.</li>\n<li>\nThe bootstrapper has some minor flaws.<br />\n</li>\n</ul>\nI hope some of you find it useful and have critical feedback for me. I also sent the sample to kozw, he's very busy at the moment and we will see, if and how this code can find its way to this project in some manner.\r<br />\n<br />\nYou can find the sample <a href=\"https://drive.google.com/file/d/0Bx5f-K4qfA-rOGJsZGVkandHMnlzRmRUWmNZTXRYT2dneDNv/edit?usp=sharing\" rel=\"nofollow\">here</a>.<br />\n",
+    "PostedDate": "2013-11-24T07:09:54.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1142326",
+    "ThreadId": "456422",
+    "Html": "I am in the same situation as codedevote trying to get PRISM and mui married. and to complicate things further sprinkled with a some ReactiveUI.\r<br />\nI have a question that is a little of topic. How would you reference the mui styles in Module1 and Module 2 in your sample application?   <br />\n",
+    "PostedDate": "2013-12-26T05:37:43.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1142505",
+    "ThreadId": "456422",
+    "Html": "I am not sure what kind of style reference you mean, so I may miss the point. I'll try, nevertheless. Most of the mui styles are implicit for the built-in controls, so there's no need to set the styles explicitly. If you want to reference specific styles, e.g. TextBlock style &quot;Title&quot; or sth. similar, I would suggest you merge the resource dictionaries of mui in your app.xaml (as should be done in any mui app and in my sample as well) and reference the styles as dynamic resources, e.g.<br />\n<pre><code>&lt;TextBlock Style=&quot;{DynamicResource Title&quot;/&gt;</code></pre>\n\n",
+    "PostedDate": "2013-12-27T03:26:39.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1190522",
+    "ThreadId": "456422",
+    "Html": "@codedevote\r<br />\n<br />\nIt's possible to make your sample to just register View but don't add to menu?<br />\n",
+    "PostedDate": "2014-01-22T04:46:26.427-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1190639",
+    "ThreadId": "456422",
+    "Html": "@IkeCode\r<br />\n<br />\nI don't know, if I understand your question completely. If not, please be more explicit and provide a sample use case.\r<br />\n<br />\nJust registering views is something that PRISM provides OOTB. See the concepts of regions, view injection, view discovery and navigation in the PRISM docs. \r<br />\nMy efforts with the mui integration was mainly motivated by integrating the menu and menu navigation. I am working on an application, where I use these menu navigation stuff from my sample (it has been refactored a little, but its effectively the same concepts) and standard PRISM mechanisms. <br />\n",
+    "PostedDate": "2014-01-22T05:30:54.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1191183",
+    "ThreadId": "456422",
+    "Html": "@codedevote,\r<br />\n<br />\nI want to know how to implement the navigation for 'mui:ModernTab', on app menu navigation was ok, but if i have the ModernTab inside my View i get Navigation Failed exception, for both &quot;/Content/ViewName.xaml&quot; and &quot;content://linkName&quot;.\r<br />\n<br />\nCan you help me with that?\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2014-01-22T09:13:10.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1191236",
+    "ThreadId": "456422",
+    "Html": "Have a look at the ModernTabRegionAdapter. I started to implement it, but did not finish it, as i didn't need it.\r<br />\nI can give you the idea of what I would do:<br />\n<ul>\n<li>Define your ModernTab as a Prism region via attached property RegionManager.RegionName </li>\n<li>In the bootstrapper, register the ModernTabRegionAdapter, if not done already.</li>\n<li>If you now navigate to a view within the Moderntab region, the region adapter will be called.</li>\n<li>\nIn the region adapters Adapt method, subscribe to the CollectionChanged event of the region collection. When a item is added to the collection, this means you now have to take the view and adapt it to the ModernTab. <br />\n</li>\n</ul>\nI am very busy right now, so I can't extend the sample at the moment. Give it a try, I will help you with ideas and comments as far as I find time for it.<br />\n",
+    "PostedDate": "2014-01-22T09:35:34.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1286568",
+    "ThreadId": "456422",
+    "Html": "The latest code sample that is working can be found <a href=\"https://drive.google.com/file/d/0Bx5f-K4qfA-rOGJsZGVkandHMnlzRmRUWmNZTXRYT2dneDNv/edit?usp=sharing\" rel=\"nofollow\">here</a>. From the last sample to my latest efforts, it's not too much that changed. Maybe some minor tweaks, but in the end, you should be good to go with what I linked. I am planning to contribute my latest version, but unfortunately at the moment I am too busy. If you have questions regarding the code, feel free to post them. I will answer as I find the time.<br />\n",
+    "PostedDate": "2014-08-05T09:57:05.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1356247",
+    "ThreadId": "456422",
+    "Html": "Great job,I like it. even though I just begin to develop with prism .\r<br />\nIs there a new message for the demo? it's pity I can't access the google driver.<br />\n",
+    "PostedDate": "2015-02-26T23:52:40.563-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

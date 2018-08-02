@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1041482",
+    "ThreadId": "443145",
+    "Html": "What charting framework did you use in XAMLSpy? I don't see an obvious DLL that would indicate as such.\r<br />\n<br />\nYour charts work well with your themes, so I'm just wondering if there is a specific one that should be used to be able to leverage in MUI.<br />\n",
+    "PostedDate": "2013-05-09T10:45:56.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1042039",
+    "ThreadId": "443145",
+    "Html": "The XAML Spy charts are not part of mui. The charts are a custom implementation.<br />\n",
+    "PostedDate": "2013-05-10T12:31:16.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043070",
+    "ThreadId": "443145",
+    "Html": "What about the brand new <a href=\"https://modernuicharts.codeplex.com/\" rel=\"nofollow\">Modern UI charts</a>? <br />\n",
+    "PostedDate": "2013-05-13T14:06:37.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043386",
+    "ThreadId": "443145",
+    "Html": "Nice find! Thanks!\r<br />\n<br />\n(Although line chart seems to be missing..)<br />\n",
+    "PostedDate": "2013-05-14T07:23:17.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1255297",
+    "ThreadId": "443145",
+    "Html": "Has anyone been able to get the modernUI charts to work?  All I get is a blank page, but the same code works fine in a non-modernUI project.<br />\n",
+    "PostedDate": "2014-06-11T10:33:34.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1258021",
+    "ThreadId": "443145",
+    "Html": "I use ModenUI Charts within all of my mui projects just fine. I just added this to my resource dictionary in App.xaml<br />\n<pre><code>&lt;Style x:Key=&quot;MinimalChartStyle&quot; TargetType=&quot;chart:ChartBase&quot;&gt;\n                &lt;Setter Property=&quot;MinWidth&quot; Value=&quot;450&quot; /&gt;\n                &lt;Setter Property=&quot;MinHeight&quot; Value=&quot;400&quot; /&gt;\n                &lt;Setter Property=&quot;TextOptions.TextFormattingMode&quot; Value=&quot;Ideal&quot; /&gt;\n&lt;/Style&gt;</code></pre>\n\n",
+    "PostedDate": "2014-06-19T12:40:32.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1246499",
+    "ThreadId": "545668",
+    "Html": "Hello,<br />\nI want to set ContentSource Dynamically, i tried the following code<br />\n<br />\nXAML:<br />\n<pre><code>&lt;mui:ModernWindow x:Class=&quot;ModernUIApp1.MainWindow&quot;\n        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n        xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n        xmlns:MyUserControls=&quot;clr-namespace:ModernUIApp1.Pages&quot;\n        Title=&quot;test&quot; IsTitleVisible=&quot;True&quot; x:Name=&quot;test&quot;&gt;\n&lt;/mui:ModernWindow&gt;</code></pre>\n\nC#: <br />\n<pre><code>try\n            {\n                Uri t = new Uri(&quot;//Pages//Settings.xaml&quot;);\n                test.ContentSource = t;\n            }\n            catch (Exception ex)\n            { }</code></pre>\n\nIm getting Navigation Failed, Cannot use absolute URI.<br />\nPlease help<br />\n",
+    "PostedDate": "2014-05-17T11:17:01.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1246505",
+    "ThreadId": "545668",
+    "Html": "ok. this worked for me<br />\n<pre><code>var wnd = Application.Current.MainWindow as ModernWindow;\n\n           \nwnd.ContentSource = new Uri(&quot;/Pages/Settings.xaml&quot;, UriKind.Relative);</code></pre>\n\n",
+    "PostedDate": "2014-05-17T12:10:16.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

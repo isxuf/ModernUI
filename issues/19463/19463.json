@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:16:13.603-07:00",
+    "CommentCount": 4,
+    "Custom": "",
+    "Description": "Add a Style for the Data Grid Control, this is a very useful control for a line of business apps.",
+    "LastUpdatedDate": "2013-07-05T13:16:13.603-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-03-13T11:05:58.8-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Data Grid control styles",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 8,
+    "Id": 19463
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903288,
+      "FileName": "DataGridColumnHeaderStyle.txt",
+      "DownloadUrl": ".\\903288"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Added in changeset [99507](http://mui.codeplex.com/SourceControl/changeset/99507). Will be included in next release.",
+      "PostedDate": "2013-03-25T17:40:14.963-07:00",
+      "Id": 158449
+    },
+    {
+      "Message": "Thanks for this otherwise nice style. Its just that the glyph for ascending and descending is missing.Do you mind altering the \"DataGridColumnHeaderStyle\" with the following code:\r\n\r\n                                                                                                                                                                                        BorderBrush=\"{TemplateBinding BorderBrush}\"                                BorderThickness=\"{TemplateBinding BorderThickness}\"                                Padding =\"{TemplateBinding Padding}\">                                                                                                                                                                                                    \t\t\t\t\t\t\t\t\tSnapsToDevicePixels=\"{TemplateBinding SnapsToDevicePixels}\"                                                   VerticalAlignment=\"{TemplateBinding VerticalContentAlignment}\"/>                                \r\n                                            Grid.Column=\"1\"                                            HorizontalAlignment=\"Center\" VerticalAlignment=\"Center\"                                                                                       Width=\"8\" Height=\"6\"  Margin=\"5,0,5,0\"                                            Stretch=\"Fill\" Opacity=\"0.5\" Fill=\"{TemplateBinding Foreground}\"                                            RenderTransformOrigin=\"0.5,0.4\"                                            Visibility=\"Hidden\"                                            Data=\"M0,0 L1,0 0.5,1 z\" />                                                                                                                                       HorizontalAlignment=\"Left\"                               Style=\"{StaticResource ColumnHeaderGripperStyle}\"/>                                                       HorizontalAlignment=\"Right\"                               Style=\"{StaticResource ColumnHeaderGripperStyle}\"/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \r\n\r\nIt is working fine at my end!",
+      "PostedDate": "2013-03-28T04:46:38.52-07:00",
+      "Id": 158450
+    },
+    {
+      "Message": "Sorry it got broke. I should have wrapped it within the code tag.I am attaching it as a text document! Let me know what do you think?",
+      "PostedDate": "2013-03-28T04:50:43.77-07:00",
+      "Id": 158451
+    },
+    {
+      "Message": "Love it! Updated the DataGrid style as per your suggestion and checked it in.",
+      "PostedDate": "2013-03-28T08:20:42.6-07:00",
+      "Id": 158452
+    }
+  ]
+}

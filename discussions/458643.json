@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1097348",
+    "ThreadId": "458643",
+    "Html": "Hey,\r<br />\n<br />\nI have a Resource Assembly with all my UserControls of my Application. The assembly is a WPF-Assembly - they have no app.xaml.\r<br />\n<br />\nWhat references and Resources Informations I need in my UserControl.Resources-Tag to use the mentioned &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt; ?\r<br />\n<br />\nBTW: Where can I find the other Places that I can position my controls (like status-line ...)?\r<br />\n<br />\nThanks for the help<br />\n",
+    "PostedDate": "2013-09-21T02:05:54.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

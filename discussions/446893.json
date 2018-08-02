@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1056177",
+    "ThreadId": "446893",
+    "Html": "So, instead of using AppearanceManager to set the accent color, add a dependency property on ModernWindow named AccentColor of type System.Windows.Media.Color. And instead of setting Application.Current.Resources[&quot;AccentColor&quot;], set ModernWindow.Resources[&quot;AccentColor&quot;]. That way, the same application may have windows with different colors.<br />\n",
+    "PostedDate": "2013-06-12T22:06:42.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058361",
+    "ThreadId": "446893",
+    "Html": "Good suggestion. Care to create an issue for it?<br />\n",
+    "PostedDate": "2013-06-18T12:13:23.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058972",
+    "ThreadId": "446893",
+    "Html": "I'm not entirely sure about that. I have tried doing so in one of my own projects. The accent color went all crazy. I'm not really fully understanding resources in WPF. Still I suggest giving it a try.<br />\n",
+    "PostedDate": "2013-06-19T21:22:50.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

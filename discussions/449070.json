@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1064566",
+    "ThreadId": "449070",
+    "Html": "Is there a way I can do this? I want to be able to warn the user that the application is closing at that any unsaved data will be lost.<br />\n",
+    "PostedDate": "2013-07-04T07:13:37.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064698",
+    "ThreadId": "449070",
+    "Html": "Nothing special here, use the Closing event.<br />\n",
+    "PostedDate": "2013-07-04T14:15:18.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1058582",
+    "ThreadId": "447520",
+    "Html": "&lt;mui:BBCodeBlock BBCode=&quot;[url=cmd://mycommand|my%20parameter]execute my command[/url]&quot; /&gt;\r<br />\n<br />\n<br />\nHow can I get the parameter  in a page?<br />\n",
+    "PostedDate": "2013-06-19T03:15:29.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058891",
+    "ThreadId": "447520",
+    "Html": "See <a href=\"https://mui.codeplex.com/discussions/441838\" rel=\"nofollow\">https://mui.codeplex.com/discussions/441838</a>. You will get the parameter in the o of DoSomething(o)<br />\n",
+    "PostedDate": "2013-06-19T15:03:33.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058921",
+    "ThreadId": "447520",
+    "Html": "<strong>felixdd wrote:</strong><br />\n<blockquote>\nSee <a href=\"https://mui.codeplex.com/discussions/441838\" rel=\"nofollow\">https://mui.codeplex.com/discussions/441838</a>. You will get the parameter in the o of DoSomething(o)<br />\n</blockquote>\nBut how can i navigat to next page and get the  parameter in the navigated page  in DoSomething(o)?<br />\n",
+    "PostedDate": "2013-06-19T17:44:28.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059008",
+    "ThreadId": "447520",
+    "Html": "To navigate to another page you don't need a command. Command is for doing an action other than navigation. Just use a URL pointing to a page. <a href=\"https://mui.codeplex.com/wikipage?title=Link%20navigation%20with%20BBCodeBlock\" rel=\"nofollow\">Link navigation with BBCodeBlock</a> says <code>&lt;mui:BBCodeBlock BBCode=&quot;[url=/Pages/MyPage.xaml|_top]go to my page[/url]&quot; /&gt;</code> but that's not right. Instead of | use #, then implement IContent in the destination page. In the event OnFragmentNavigation you will get the part after the # in e.Fragment.<br />\n",
+    "PostedDate": "2013-06-19T23:58:39.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

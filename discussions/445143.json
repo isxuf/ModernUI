@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1049361",
+    "ThreadId": "445143",
+    "Html": "This shouldn't be a prob, but can you add\r<br />\n<br />\n[assembly: CLSCompliant(true)]\r<br />\n<br />\nto your AssemblyInfo.cs<br />\n",
+    "PostedDate": "2013-05-27T18:24:09.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1049527",
+    "ThreadId": "445143",
+    "Html": "Done, just checked in<br />\n",
+    "PostedDate": "2013-05-28T04:10:01.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

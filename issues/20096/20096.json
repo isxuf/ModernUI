@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-08-09T08:47:07.887-07:00",
+    "CommentCount": 6,
+    "Custom": "",
+    "Description": "First post here so forgive me if I am missing something.\nm:ui is Great BTW!!!\n\nI have read this [Discussion](https://mui.codeplex.com/discussions/449700) but there was never really an answer given.. Only that it works as re-designed.  IMHO the re-design is flawed as you can no longer return the value from the ShowDialog method.\n\nIf you do this in 1.0.3 and you were to click the Ok Button you would see true returned - __not__ the case in 1.0.5\n```\nvar dialog = new ModernDialog {\n                 Title = \"Common Dialog\",\n                 Content = new LoremIpsum(),\n             };\n            \n             dialog.Buttons = new Button[] { dialog.CloseButton, dialog.OkButton };\n             bool? r = dialog.ShowDialog();\n            MessageBox.Show(r.Value.ToString());\n```\n\nWe were using 1.0.3 to display a login form - and we want to upgrade but this is a problem.\n\nDoes __anyone__ have a suggestion, if so please show or point to an example",
+    "LastUpdatedDate": "2014-08-09T08:47:07.887-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-08-19T11:24:47.143-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ModernDialog.ShowDialog Not returning true - ever",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 6,
+    "Id": 20096
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have an answer to my own question but would like someone who is more familiar with WPF to answer if I am correct. \r\n\r\nIf you expose the dialogResult in ModernDialog.cs ```        ///          /// Return the Dialog Result when using the ShowDialog method.        ///         public MessageBoxResult GetDialogResult {            get { return dialogResult; }        }```Because the actual DialogResult is never set or passed back as far as I can see.\r\n\r\nYou would then be able to do this``` var  dialog = new ModernDialog                {                    Title = \"Common dialog\",                    Content = new LoremIpsum()                };                        dialog.Buttons = new Button[] { dialog.CloseButton,dialog.OkButton};            dialog.ShowDialog();\r\n\r\n                        MessageBox.Show((dialog.GetDialogResult.ToString()==\"OK\").ToString());```\r\n\r\nDo the Guru's agree?",
+      "PostedDate": "2013-08-20T05:31:11.847-07:00",
+      "Id": 158544
+    },
+    {
+      "Message": "This may be better?```public ModernDialog()        {            this.DefaultStyleKey = typeof(ModernDialog);            this.WindowStartupLocation = WindowStartupLocation.CenterOwner;\r\n\r\n            this.closeCommand = new RelayCommand(o => {                var result = o as MessageBoxResult?;                if (result.HasValue) {                    this.dialogResult = result.Value;                    if (result.Value == MessageBoxResult.OK || result.Value == MessageBoxResult.Yes)                         DialogResult = true;                }                Close();            });\r\n\r\n            this.Buttons = new Button[] { this.CloseButton };\r\n\r\n            // set the default owner to the app main window (if possible)            if (Application.Current != null && Application.Current.MainWindow != this) {                this.Owner = Application.Current.MainWindow;            }        }```",
+      "PostedDate": "2013-08-20T07:50:29.69-07:00",
+      "Id": 158545
+    },
+    {
+      "Message": "A bit shorter:```DialogResult = result.Value == MessageBoxResult.OK || result.Value == MessageBoxResult.Yes;```",
+      "PostedDate": "2013-09-27T10:31:11.483-07:00",
+      "Id": 158546
+    },
+    {
+      "Message": "fix for this is well documented in the discussion forums. not sure why one of the fixes hasn't been merged into the main code base and updated in an official release?! this is an absolute must.",
+      "PostedDate": "2014-02-04T08:06:32.04-08:00",
+      "Id": 158547
+    },
+    {
+      "Message": "@flyte: Exactly, this is an absolute must! I also asked [on the discussion page](https://mui.codeplex.com/discussions/449700#editor) for new official release and I hope we will get it soon.",
+      "PostedDate": "2014-04-11T04:37:43.387-07:00",
+      "Id": 158548
+    },
+    {
+      "Message": "Resolved with changeset 110093: ModernDialog returns proper DialogResult and MessageBoxResult values (finally...)\n* ModernDialog.DialogResult now properly set based on MessageBoxResult\n* new ModernDialog.MessageBoxResult property\nModernDialog.ShowMessage now includes optional Window owner parameter",
+      "PostedDate": "2014-08-09T08:47:07.887-07:00",
+      "Id": 158549
+    }
+  ]
+}

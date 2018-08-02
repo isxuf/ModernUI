@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1483318",
+    "ThreadId": "657850",
+    "Html": "Hi,\r<br />\n<br />\nI am trying to use an event to navigate to a content page as if the user had navigated to it. For instance in the example I would like to navigate to the about.xaml in the settings page. \r<br />\n<br />\nI have been able to get to the about.xaml page, but the page presents itself as a page instead of showing the list menu and the about.xaml inside the content layout.<br />\n<pre><code>            var mf = (MainWindow) Application.Current.MainWindow;\n            mf.ContentSource = new Uri(&quot;/Pages/SettingsPage.xaml&quot;, UriKind.Relative);</code></pre>\n\nWould anyone be able to point me in the right direction.<br />\n",
+    "PostedDate": "2016-09-09T17:55:45.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

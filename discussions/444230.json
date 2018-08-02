@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1045808",
+    "ThreadId": "444230",
+    "Html": "I know, nobody is ever satisfied, right?\r<br />\nThis is really a great resource but of course as a Visual Basic .NET programming, I was wondering if you have any plans for a VB Template. And yes it would be nice to have a ToggleButton. Watch out for the Win8 bug which breaks the Button and ToggleButton style under FrameWork 4 and 4.5 and Win8. Microsoft says it knows of the error.<br />\n",
+    "PostedDate": "2013-05-19T17:42:32.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046023",
+    "ThreadId": "444230",
+    "Html": "Adding VB templates is definitely something I want to add, but adding features to mui have higher priority at this point in time. Consider adding an issue to the issue tracker of this project so it stays on my radar.<br />\n",
+    "PostedDate": "2013-05-20T07:12:16.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

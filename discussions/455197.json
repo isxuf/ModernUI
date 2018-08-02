@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1087424",
+    "ThreadId": "455197",
+    "Html": "I have this strange error where if I have .xaml document with ModernTab and sources for ModernTab links in the same folder. Even in the same folder I have to put the name of folder in ModernTab Link Source for link to work.. If I remove the name of folder I don't get &quot;can't find file&quot; in XAML, but program can't find it via ModernTab link source. So I have to put Folder name so program can properly route it and display source, but in that case I of course get an error in XAML(program works), but routes are wrong...<br />\n<br />\nPlease take a look at this screenshot to see what is the problem:<br />\n<a href=\"http://i.imgur.com/Loh7OXM.png\" rel=\"nofollow\">http://i.imgur.com/Loh7OXM.png</a><br />\n",
+    "PostedDate": "2013-09-02T11:50:06.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087641",
+    "ThreadId": "455197",
+    "Html": "Since you want to navigate from the Views\\MainWindow.xaml to relative source of View\\Web.xaml you are really asking the View\\View\\Web.xaml\r<br />\nEither change to ..\\View\\Web.xaml or just put Web.xaml<br />\n",
+    "PostedDate": "2013-09-03T04:47:46.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087647",
+    "ThreadId": "455197",
+    "Html": "Hey, thanks for response, but as I said, if I put how every logical human being would put like only &quot;Web.xaml&quot; I get an error in application saying &quot;Navigation failed&quot;. Which I don't understand why.... Did you check my image and explanation in image?<br />\n<br />\nIt's like the program still thinks my &quot;MainWindow&quot; is in root and not in Views folder, no matter I added         x:Class=&quot;NowListeningParserTool.Views.MainWindow&quot; in XAML and added <strong>namespace NowListeningParserTool.Views</strong> in namespace for MainWindow.xaml.<br />\n<br />\nIt somehow still thinks he is in root(MainWindow.xaml was in the root at the start of course, moved all .xaml in views), so only &quot;Views/Web.xaml&quot; works in application(wrong path in xaml of course because they are both in the same folder). Hm.<br />\n<br />\n<strong>EDIT</strong>:<br />\n ..\\View\\Web.xaml works(proper path in xaml, and works in app too), Web.xaml doesn't work.<br />\n<br />\nThanks for tip, but would really want to know why only Web.xaml doesn't work if anyone met with this before.<br />\n",
+    "PostedDate": "2013-09-03T04:58:54.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

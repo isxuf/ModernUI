@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "I have a `ModernTab` control, to which I'm dynamically adding a `Link`:\r\n\r\n```\r\nInstallationTab.Links.Add(new Link { DisplayName = \"Review Configuration\", Source = new Uri(\"/Views/InstallationProgress.xaml\", UriKind.Relative) });\r\n```\r\n\r\nI'd like `InstallationProgress.xaml` to load in the top frame instead of the current content frame.\r\n\r\nHow can I do this?\r\n\r\n![enter image description here][1]\r\n\r\n\r\n  [1]: http://i.stack.imgur.com/iOxGX.png",
+    "LastUpdatedDate": "2015-06-02T06:25:32.643-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2015-05-30T05:41:20.61-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to make a link load its content in \"_top\"?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21273
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I answered my own question, in case anyone else finds themselves here:\n\nThis is just one example of \"hijacking\" the click on the ModernTab. Here, you can force the content to load in the top frame, for example:\n\nHandle the `SelectedSourceChanged` event of the ModernTab:\n\n`MyModernTab.SelectedSourceChanged += MyModernTab_SelectedSourceChanged;`\n\n    void MyModernTab_SelectedSourceChanged(object sender, SourceEventArgs e)\n    {\n        if (e.Source.OriginalString.EndsWith(\"Foo.xaml\"))\n        {\n            var url = \"/Pages/Foo.xaml\";\n            var bb = new BBCodeBlock();\n            bb.LinkNavigator.Navigate(new Uri(url, UriKind.Relative), this, NavigationHelper.FrameTop);\n        }\n    }\n",
+      "PostedDate": "2015-06-02T06:25:32.643-07:00",
+      "Id": 185005
+    }
+  ]
+}

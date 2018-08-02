@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1094254",
+    "ThreadId": "457366",
+    "Html": "Hello, sorry for bringing this up again :)<br />\nI'm gonna start with what I want:<br />\n<ol>\n<li>ListView with UserControls, each UserControl(StockItemView) has its own ModernFrame</li>\n<li>ListView.ContextMenu has a MenuItem that navigates the ModernFrame to my 1 step wizard </li>\n<li>\nthat has a BackButton.<br />\n</li>\n</ol>\nSo far I've managed to get the first two points working. However the ModernFrame has no source, so nothing gets pushed to the history stack-&gt; no BackButton :(<br />\nHere is what I've done:<br />\n<pre><code> &lt;ListView.ItemTemplate&gt;\n          &lt;DataTemplate&gt;\n                 &lt;mui:ModernFrame&gt;\n                       &lt;Productions:StockItemView DataContext=&quot;{Binding }&quot; /&gt;\n                 &lt;/mui:ModernFrame&gt;\n            &lt;/DataTemplate&gt;\n &lt;/ListView.ItemTemplate&gt;</code></pre>\n\n<pre><code>menuRequest_Click: (StockItemView.xaml.cs)\nvar frame = NavigationHelper.FindFrame(null, this);\n// frame.Source==null\nNavigationCommands.GoToPage.Execute(&quot;/Views/Batches/Requests/RequestWizardView.xaml&quot;, frame);</code></pre>\n\nThe wizard replaces correctly the the StockItemView, but no back capability. <br />\nNeither the StockItemViewModel or RequestWizardViewModel need to know anything about the navigation itself, so I'm ok with doing this using only xaml(NavigationCommands) or code behind. <br />\nPlease help! :)<br />\n",
+    "PostedDate": "2013-09-18T16:27:10.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

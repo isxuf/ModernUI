@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1294298",
+    "ThreadId": "562348",
+    "Html": "Hi,\r<br />\n<br />\nI would like to ask, how can I navigate back in my ModernUI WPF application by clicking a simple button, not the &quot;back&quot; button that is in upper left corner.\r<br />\n<br />\nI have a <code>ModernWindow</code> with <code>EmptyWindow</code> Style, which does not have the &quot;back&quot; button so I want a kind of replacement for that and I can't find any solution for this :-/\r<br />\n<br />\nAny help will be appreciated. Thanks!<br />\n",
+    "PostedDate": "2014-08-28T07:47:32.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1294388",
+    "ThreadId": "562348",
+    "Html": "You can add the back button to your window content. What the back button should do, when clicked, is entirely up to you.<br />\n",
+    "PostedDate": "2014-08-28T11:39:26.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1294396",
+    "ThreadId": "562348",
+    "Html": "Yes, I know but how do I bind the &quot;back&quot; command to that button? Basically I want the same functionality as the default &quot;back&quot; button has.<br />\n",
+    "PostedDate": "2014-08-28T12:05:00.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1294442",
+    "ThreadId": "562348",
+    "Html": "Check the back button style as defined in the default ModernWindow style (Themes/ModernWindow.xaml in the source). The NavigationCommands.BrowseBack command is used for navigation with the command target set to a ModernFrame instance.<br />\n",
+    "PostedDate": "2014-08-28T12:46:04.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1294506",
+    "ThreadId": "562348",
+    "Html": "I tried what you advised me but there is one problem. My new Back Button somehow does not &quot;share the navigation history&quot; (or something like that I think) with the original Back Button even though it is still the same instance of <code>ModernWindow</code>. I think it is probably because the <code>Content</code> is not the same and that's why it doesn't work.\r<br />\nAm I right or is it something else? And is there a way how to fix this problem?\r<br />\n<br />\nThanks ;-)<br />\n",
+    "PostedDate": "2014-08-28T14:30:40.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298052",
+    "ThreadId": "562348",
+    "Html": "The default BackButton does operate on the main <code>ModernFrame</code> instance. The <code>EmptyWindow</code> style does not contain this <code>ModernFrame</code> instance, and therefor the back button won't work. You'll need to bring in your own <code>ModernFrame</code> instance, or use the default <code>ModernWindow</code> style, instead of <code>EmptyWindow</code>.<br />\n",
+    "PostedDate": "2014-09-02T02:05:26.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298054",
+    "ThreadId": "562348",
+    "Html": "Could you please give me an advice about how to bring in my own <code>ModernFrame</code> instance? Because I am not creating new window, I am just changing the <code>Content</code> of the default one.<br />\n",
+    "PostedDate": "2014-09-02T02:14:52.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1337753",
+    "ThreadId": "562348",
+    "Html": "You could use the NavigationCommands static class. For example:<br />\n<pre><code>public void CancelExecuted(object o)\n{\n      NavigationCommands.BrowseBack.Execute(null, null);\n}</code></pre>\n\n",
+    "PostedDate": "2014-12-29T15:45:17.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

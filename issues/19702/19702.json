@@ -1,0 +1,111 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 11,
+    "Custom": "",
+    "Description": "I was trying to add a home button to modern window without modifying mui library, as you can see in the attached sample, the textblock style is being applied from the \"Resources.dll\" but modern window is not !\n\nThe strange thing is that I can see my updated template in the designer but not at runtime!!\n\nWhat is wrong here ?\n\n\nThanks.",
+    "LastUpdatedDate": "2014-05-22T01:01:59.713-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-13T06:00:21.603-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ModernWindow Implicit Style Not Working",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 19702
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903295,
+      "FileName": "WpfSample.rar",
+      "DownloadUrl": ".\\903295"
+    },
+    {
+      "FileId": 903296,
+      "FileName": "WpfSampleUpdated.rar",
+      "DownloadUrl": ".\\903296"
+    },
+    {
+      "FileId": 903297,
+      "FileName": "MUI Window WpfSample.zip",
+      "DownloadUrl": ".\\903297"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "When I run your sample project without making any changes, it looks okay to me. ",
+      "PostedDate": "2013-05-13T06:41:38.217-07:00",
+      "Id": 158497
+    },
+    {
+      "Message": "Yes it runs ok, but the template is not modified, it should have a home button !",
+      "PostedDate": "2013-05-13T07:10:47.803-07:00",
+      "Id": 158498
+    },
+    {
+      "Message": "Ah, okay. Not sure why your implicit style is not used. As a workaround I would suggest to assign a x:Key to your ModernWindow style and explicitly use it in your ModernWindow instance using Style=\"{StaticResource ...}.",
+      "PostedDate": "2013-05-13T07:59:38.6-07:00",
+      "Id": 158499
+    },
+    {
+      "Message": "But this way I have to modify all of the my modern windows, I have modified mui lib for the time being (which I don't prefer)\r\n\r\n one thing I noticed is that sometimes the designer fails to load and gives me the following error :\r\n\r\n__Cannot find resource named 'SystemButton'. Resource names are case sensitive.__\r\n\r\nit might be related, any help would be appreciated .. thanks",
+      "PostedDate": "2013-05-13T08:44:00.61-07:00",
+      "Id": 158500
+    },
+    {
+      "Message": "I downloaded your attached code and it works for me in VS 2012 Express. I go the error about the SystemButton as well. I Just replaced\r\n\r\n{StaticResource SystemButton}\r\n\r\nwith\r\n\r\n{DynamicResource SystemButton}\r\n\r\nand it shows up OK in the designer but I am also missing the home button in the running application while its visible in the designer, My guess is that this is due to some initialization or timing issue. This looks like the order of sequence is dramatically different when comparing the designer with the run-time(?). Its difficult to find this one especially since the designer shows up OK and you said you do not always get this error...\r\n\r\n\r\n\r\n\r\n\r\n",
+      "PostedDate": "2013-06-07T16:22:13.293-07:00",
+      "Id": 158501
+    },
+    {
+      "Message": "# ##It turns out that this is by design, According to an answer here  [Why doesn't style-setting of the window background work?](http://stackoverflow.com/questions/6902126/why-doesnt-style-setting-of-the-window-background-work/6902147#6902147)# ##> The problem is during runtime, the type of your window will be MainWindow, not Window. Implicit Styles are not applied to derived types of the TargetType. So your Style won't be applied.\r\n\r\n>During design time, you are designing your MainWindow, but I suspect it creates a Window as the basis.\r\n\r\n>You'd need to change the type to match your window's type.\r\n\r\n# ##\r\n\r\nAdding the following to __Application.Resources__ will apply the implicit style :\r\n\r\n```\r\n\r\n```I opted for using a modified mui lib rather than including a style look up for each window or make an explicit style. \r\n\r\n",
+      "PostedDate": "2013-06-09T03:18:23.44-07:00",
+      "Id": 158502
+    },
+    {
+      "Message": "hm, I see. Thanks for the hint but I was not able to resolve this based on your last comment. \r\n\r\nI get something like 'Properties cannot be in the middle of content' if I try to add the above Stylestatement at the end of the ResourceDictionary section in App.xaml.\r\n\r\n...and I get a ModernWindow does not exist if I add the statement before  part in App.xaml.\r\n\r\nWould you please be able to update your attached WpfSample.rar file to reflect what you learned?",
+      "PostedDate": "2013-06-10T13:51:45.83-07:00",
+      "Id": 158503
+    },
+    {
+      "Message": "Did you set the namespaces in your App.xaml ?\r\n\r\n```xmlns:local=\"clr-namespace:WpfSample\" xmlns:controls=\"clr-namespace:FirstFloor.ModernUI.Windows.Controls;assembly=FirstFloor.ModernUI\"\r\n\r\n```\r\n\r\nUpdated sample attached.",
+      "PostedDate": "2013-06-11T03:21:38.207-07:00",
+      "Id": 158504
+    },
+    {
+      "Message": "Yes I set the namespaces of course but I guess I was using wrong ones :-( Your updated sample works great. I only removed the FirstFloor source project as it was not included (but referenced) in your download/solution. I add references to\r\n\r\n*  binaries/FirstFloor.ModernUI.dll* binaries/Microsoft.Windows.Shell.dll\r\n\r\nin the Resources project and the sample app just runs fine in VS 2010/2012 Express.Most likely I am going to base the next design of my editor ([https://edi.codeplex.com/](http://www.example.com)) on this solution - so, thanks for getting me started here.\r\n\r\nI attach the sample with my minor changes should someone else be intersted in it and as kozw to inlcude it as sample on his wiki page and source code samples as I imagine a few people be looking for something like this right now...",
+      "PostedDate": "2013-06-11T09:53:48.763-07:00",
+      "Id": 158505
+    },
+    {
+      "Message": "Nice, i ran into the same issue. Just to make it clear for all who want to apply an own style to ModernWindow (i have a custom theme in one file and the __ in another file)\r\n\r\nIn App.xaml include your ressources like this:\r\n\r\n```                        \r\n\r\n                                                                                ```and magically your style will be applied!",
+      "PostedDate": "2013-09-10T11:26:04.817-07:00",
+      "Id": 158506
+    },
+    {
+      "Message": "fantastic",
+      "PostedDate": "2014-05-22T01:01:59.713-07:00",
+      "Id": 158507
+    }
+  ]
+}

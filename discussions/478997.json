@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1143645",
+    "ThreadId": "478997",
+    "Html": "Hi, I need to make the ModernFrame remove some unnecessary pages (such as  Please Wait) from the navigation history. My first thought was to subclass the ModernfFame but I don't know how should I get started. Some guidance will be appreciated.<br />\n",
+    "PostedDate": "2013-12-29T00:47:00.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

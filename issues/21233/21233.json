@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-08-21T07:05:33.843-07:00",
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "Hi,\n\nI realized the textbox in an editable combobox does not show an accent highlight when it is focused. This\nproblem is actually easy to solve. Just put the following line:\n\n```\n            <Trigger SourceName=\"PART_EditableTextBox\" Property=\"IsFocused\" Value=\"true\">\n              <Setter Property=\"BorderBrush\" Value=\"{DynamicResource Accent}\" />\n            </Trigger>\n```\nunderneath\n```\n            <Trigger Property=\"IsFocused\" Value=\"true\">\n                <Setter Property=\"BorderBrush\" Value=\"{DynamicResource Accent}\" />\n            </Trigger>\n```\n\nin\n1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI\\Assets\\ComboBox.xaml\nand we have a focus border as shown in the attached screenshot. Would you consider to include this fix\nin your code?\n\nThanks Dirkster",
+    "LastUpdatedDate": "2014-08-21T07:05:33.843-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-08-16T08:58:52.083-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Editable Combobox is missing focus border",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 21233
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903315,
+      "FileName": "ComboboxFocusFrame.png",
+      "DownloadUrl": ".\\903315"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I like it, source code updated. Thanks!",
+      "PostedDate": "2014-08-21T07:05:20.623-07:00",
+      "Id": 158584
+    },
+    {
+      "Message": "Resolved with changeset 110225: editable combobox now has focus border",
+      "PostedDate": "2014-08-21T07:05:33.843-07:00",
+      "Id": 158585
+    }
+  ]
+}

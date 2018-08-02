@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1345115",
+    "ThreadId": "578355",
+    "Html": "Is it possible to get a TreeView instead of a List for the ModernTab left nav?\r<br />\n<br />\nPerhaps something like this:<br />\n<pre><code>&lt;mui:ModernTab SelectedSource=&quot;/Foo.xaml&quot; Layout=&quot;Tree&quot;&gt; </code></pre>\n\nSince MUI was extracted from XML Spy, and XML Spy uses a TreeView in its left nav, I would imagine this is possible.\r<br />\n<br />\nThanks,\r<br />\nMark<br />\n",
+    "PostedDate": "2015-01-22T07:12:31.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

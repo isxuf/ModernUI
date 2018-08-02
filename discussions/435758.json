@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1011791",
+    "ThreadId": "435758",
+    "Html": "Hi,\r<br />\n<br />\nWhat about any events for links? In some cases it is useful not to show another page, but run some action, possibly without page change.\r<br />\n<br />\nWell, i cant find any events or something similar to assign action to link item :-( <br />\n",
+    "PostedDate": "2013-03-07T06:50:19.11-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011910",
+    "ThreadId": "435758",
+    "Html": "To what control(s) are you referring to?<br />\n",
+    "PostedDate": "2013-03-07T10:22:57.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021459",
+    "ThreadId": "435758",
+    "Html": "I have the similar problem. I  want  to run an event when a mui:Link in a ModernTab is clicked (not to load a new page). \r<br />\nSometimes it is useful if the links behave as traditional menu items!\r<br />\nThanks<br />\n",
+    "PostedDate": "2013-03-26T15:46:36.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021486",
+    "ThreadId": "435758",
+    "Html": "Makes sense. Feel free to create an issue for this is in the issue tracker. I'm actively monitoring the issue tracker and try to fix the issues in the highest vote order first.<br />\n",
+    "PostedDate": "2013-03-26T16:59:33.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

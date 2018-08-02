@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1051938",
+    "ThreadId": "445774",
+    "Html": "Whatever i do in the binding to format date and time gets overidden by the template.\r<br />\n<br />\neg {binding Date,StringFormat='{}{0:dd/MM/yyyy}'} produces no change and the date is in US format.\r<br />\n<br />\nAny ideas<br />\n",
+    "PostedDate": "2013-06-02T23:32:12.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052356",
+    "ThreadId": "445774",
+    "Html": "I'm unable to reproduce. Can you provide a more complete sample? <br />\n",
+    "PostedDate": "2013-06-03T14:23:14.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

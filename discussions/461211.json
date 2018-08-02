@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1103800",
+    "ThreadId": "461211",
+    "Html": "I'm very new to code and have been asked to create a desktop app for windows 7 to manage data such as employees, materials, labor and such.  I have limited coding experience in java. I want to do it in a good looking manner and modern UI seems like the perfect tool however I do not know how to get started. I went through the tutorial but how do I keep going forware i.e. adding a button? I got one added but can't get it to go to the place where I want. I also wanted to know if it would be possible to connect this to a database such as mysql? Thanks for the help!<br />\n",
+    "PostedDate": "2013-10-04T12:57:30.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1103896",
+    "ThreadId": "461211",
+    "Html": "Look about <strong>SQL Compact Edition</strong> and <strong>Model-View-ViewModel</strong> pattern.<br />\n",
+    "PostedDate": "2013-10-04T21:27:48.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1103901",
+    "ThreadId": "461211",
+    "Html": "I will, thank you<br />\n",
+    "PostedDate": "2013-10-04T22:29:54.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

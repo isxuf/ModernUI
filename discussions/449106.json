@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1064705",
+    "ThreadId": "449106",
+    "Html": "How can I use an image (PNG,JPG,etc or vector XAML) instead of DisplayName in a Link?\r<br />\n<br />\nI used WPF in some projects, but I do not understand this code base well (still too WinForms way of thinking maybe).\r<br />\n<br />\nLink is not a Control, so actually can not have any visual representation, right? I traced it and reached ModernMenu which is a control but again I can not understand how it visualizes itself?\r<br />\n<br />\nAny help and guidance; please?<br />\n",
+    "PostedDate": "2013-07-04T15:14:59.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064981",
+    "ThreadId": "449106",
+    "Html": "Correct, mui follows MVVM rules where Link is part of the ViewModel. Controls use bindings to visualize the viewmodel data in the view. If this sounds new, you probably want to read up on MVVM. Plenty of articles on the webs about this topic.\r<br />\n<br />\nLink supports textual content only (following Modern UI guidelines), if you need images you need to modify the Link source code and control bindings that render the links.<br />\n",
+    "PostedDate": "2013-07-05T12:43:46.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

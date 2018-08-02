@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1026627",
+    "ThreadId": "439369",
+    "Html": "Like I can with a button, is it possible to be able to bind a BBCodeBlock's command to a property (ICommand) in the page's ViewModel?\r<br />\n<br />\nI don't quite get how I can do this with the DefaultLinkNavigator?\r<br />\n<br />\nI simply want to launch a command via a link.\r<br />\n<br />\npossible?<br />\n",
+    "PostedDate": "2013-04-06T11:57:40.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1026801",
+    "ThreadId": "439369",
+    "Html": "Yes, you can define a CommandDictionary as a property on your viewmodel and bind it to the DefaultLinkNavigator.Commands.<br />\n<pre><code>public class MyViewModel\n{\n  public MyViewModel()\n  {\n    this.LinkNavigator = new DefaultLinkNavigator();\n    this.LinkNavigator.Commands.Add(\n      new Uri(&quot;cmd://mycustomcommand&quot;, UriKind.Absolute), this.MyCommand);\n  }\n  public ILinkNavigator LinkNavigator {get;set;}\n  public ICommand MyCommand {get;set;}\n}</code></pre>\n\nYou can then use the following BBCode to use the command;<br />\n<pre><code>&lt;mui:BBCodeBlock\n  LinkNavigator=&quot;{Binding LinkNavigator}&quot;\n  BBCode=&quot;Click [url=cmd://mycustomcommand]here[/url] to execute cmd.&quot; /&gt;</code></pre>\n\nSee also <a href=\"https://mui.codeplex.com/wikipage?title=Link%20navigation%20with%20BBCodeBlock\" rel=\"nofollow\">this tutorial</a> on commanding and BBCodeBlock.<br />\n<br />\nFor another example see the Navigation.xaml page in the demo app (in the source at 1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Pages<br />\n",
+    "PostedDate": "2013-04-07T08:50:52.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1027335",
+    "ThreadId": "439369",
+    "Html": "I get the following error when I try to set the Commands property of the DefaultLinkNavigator:<br />\n<br />\nA 'Binding' cannot be set on the 'Commands' property of type 'DefaultLinkNavigator'. A 'Binding' can only be set on a DependencyProperty of a DependencyObject<br />\n<br />\nAny ideas?<br />\n<br />\nIn the mean time, I have accessed my Page's VM in codebehind and set the myBBCodeBlock.LinkNavigator.Commands to myVM.Commands and this works. <br />\n",
+    "PostedDate": "2013-04-08T09:29:57.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1027500",
+    "ThreadId": "439369",
+    "Html": "My bad, I didn't test the snippet.. <br />\n<br />\nAnyway, updated the original answer, see above. DefaultLinkNavigator is not a dependency object and cannot be used as binding target.<br />\n",
+    "PostedDate": "2013-04-08T14:03:49.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

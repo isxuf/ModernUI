@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1015427",
+    "ThreadId": "436665",
+    "Html": "Hello. I am really loving your work.<br />\n<br />\nI have just one question. Is there a way to to make the ModernWindow go fullscreen, and also hide the controls on the titlebar?<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-03-14T10:19:04.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015478",
+    "ThreadId": "436665",
+    "Html": "As in hiding the menu's and making the content page full screen?<br />\n",
+    "PostedDate": "2013-03-14T11:42:32.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015482",
+    "ThreadId": "436665",
+    "Html": "Yes.<br />\n",
+    "PostedDate": "2013-03-14T11:50:49.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015487",
+    "ThreadId": "436665",
+    "Html": "Yes.<br />\n",
+    "PostedDate": "2013-03-14T11:54:21.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015493",
+    "ThreadId": "436665",
+    "Html": "Double confirmation, cool :)\r<br />\n<br />\nFullscreen content pages are not supported. Feel free to create a workitem for it.<br />\n",
+    "PostedDate": "2013-03-14T11:59:58.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015500",
+    "ThreadId": "436665",
+    "Html": ":) Ok. Thank you very much.<br />\n",
+    "PostedDate": "2013-03-14T12:09:43.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150340",
+    "ThreadId": "436665",
+    "Html": "Hello everyone!\r<br />\n<br />\nrealmckoy01, have you did that fullscreen workitem? I'm with the same idea. if you have the code maybe you can share it?<br />\n",
+    "PostedDate": "2014-01-07T03:37:22.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

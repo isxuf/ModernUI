@@ -1,0 +1,634 @@
+[
+  {
+    "Id": 19381,
+    "Title": "Window title is missing"
+  },
+  {
+    "Id": 19382,
+    "Title": "unload user controls over time"
+  },
+  {
+    "Id": 19413,
+    "Title": "Target .NET 4"
+  },
+  {
+    "Id": 19429,
+    "Title": "Date Picker Control"
+  },
+  {
+    "Id": 19431,
+    "Title": "Control Focus"
+  },
+  {
+    "Id": 19463,
+    "Title": "Data Grid control styles"
+  },
+  {
+    "Id": 19497,
+    "Title": "Need for a tile control and container too"
+  },
+  {
+    "Id": 19503,
+    "Title": "Resetting All Controls when Re-visited via mui:Link"
+  },
+  {
+    "Id": 19511,
+    "Title": "Window content is not rendered if first link has a source"
+  },
+  {
+    "Id": 19515,
+    "Title": "Fix ListView style"
+  },
+  {
+    "Id": 19530,
+    "Title": "Events on Links"
+  },
+  {
+    "Id": 19544,
+    "Title": "Adding to ModernWindow.MenuLinkGroups doesn't update menu"
+  },
+  {
+    "Id": 19548,
+    "Title": "Add ability to set a window title without having to modify the ModernWindow template"
+  },
+  {
+    "Id": 19549,
+    "Title": "Add flyout"
+  },
+  {
+    "Id": 19550,
+    "Title": "Add circular indeterminate progress bar"
+  },
+  {
+    "Id": 19556,
+    "Title": "Add context menu style"
+  },
+  {
+    "Id": 19574,
+    "Title": "Minimize, Maximize/RestoreDown and Close buttons"
+  },
+  {
+    "Id": 19589,
+    "Title": "ComboBox Style does not support IsEditable=true"
+  },
+  {
+    "Id": 19597,
+    "Title": "Add a control in mui:LinkGroup like XAMLSpy"
+  },
+  {
+    "Id": 19614,
+    "Title": "Visible Scroll bars in List Layout"
+  },
+  {
+    "Id": 19624,
+    "Title": "Loaded/Unloaded Events"
+  },
+  {
+    "Id": 19628,
+    "Title": "Problem with scrollbar style (.net 4.5)"
+  },
+  {
+    "Id": 19637,
+    "Title": "mui style for Label control"
+  },
+  {
+    "Id": 19655,
+    "Title": "Problem with ModernDialog.ShowMessage"
+  },
+  {
+    "Id": 19660,
+    "Title": "Code to Add enable/disable to LinkGroups"
+  },
+  {
+    "Id": 19662,
+    "Title": "toggle button"
+  },
+  {
+    "Id": 19663,
+    "Title": "Cannot find resource named 'EmptyWindow'"
+  },
+  {
+    "Id": 19676,
+    "Title": "Clear or remove from navigation history"
+  },
+  {
+    "Id": 19684,
+    "Title": "ModernDialog.ShowMessage never returns null"
+  },
+  {
+    "Id": 19695,
+    "Title": "WPF Shell Integration Library not needed for WPF 4.5"
+  },
+  {
+    "Id": 19702,
+    "Title": "ModernWindow Implicit Style Not Working"
+  },
+  {
+    "Id": 19709,
+    "Title": "Red WPF Validation Outline appears during navigation"
+  },
+  {
+    "Id": 19726,
+    "Title": "Assign x:Key to ListViewItem Style"
+  },
+  {
+    "Id": 19737,
+    "Title": "VB Support"
+  },
+  {
+    "Id": 19741,
+    "Title": "More controls document!"
+  },
+  {
+    "Id": 19746,
+    "Title": "Replace Microsoft.Windows.Shell .NET 2.0 by its sources"
+  },
+  {
+    "Id": 19757,
+    "Title": "Checkbox Threestate"
+  },
+  {
+    "Id": 19761,
+    "Title": "DataGridComboBoxColumn and DataBinding"
+  },
+  {
+    "Id": 19794,
+    "Title": "Status Bar Control"
+  },
+  {
+    "Id": 19806,
+    "Title": "Menu icons"
+  },
+  {
+    "Id": 19810,
+    "Title": "Validations Not Appearing on ModernDialog"
+  },
+  {
+    "Id": 19812,
+    "Title": "Wrong binding of WindowNonClientFrameThickness"
+  },
+  {
+    "Id": 19814,
+    "Title": "DataTrigger Row Background Color Problem"
+  },
+  {
+    "Id": 19838,
+    "Title": "OnNavigateTo second time in a child frame"
+  },
+  {
+    "Id": 19840,
+    "Title": "Slow rendering"
+  },
+  {
+    "Id": 19860,
+    "Title": "Navigation Failed"
+  },
+  {
+    "Id": 19865,
+    "Title": "class ModernFrame.Navigate()"
+  },
+  {
+    "Id": 19867,
+    "Title": "Dificulties in Making Work IContent"
+  },
+  {
+    "Id": 19873,
+    "Title": "Context Menu Styling incorrect"
+  },
+  {
+    "Id": 19888,
+    "Title": "Navigation from TitleLink to active LinkGroup"
+  },
+  {
+    "Id": 19893,
+    "Title": "Add a colored window shadow"
+  },
+  {
+    "Id": 19895,
+    "Title": "Allow ModernTab to write Navigation BackEntries"
+  },
+  {
+    "Id": 19908,
+    "Title": "AppearanceManager missing members"
+  },
+  {
+    "Id": 19918,
+    "Title": "Please Add EllipseDiameter Property to ModernButton"
+  },
+  {
+    "Id": 19928,
+    "Title": "MainWindow Resize Issue"
+  },
+  {
+    "Id": 19931,
+    "Title": "ComboBox doesn't show text"
+  },
+  {
+    "Id": 19934,
+    "Title": "Add Header and Footer"
+  },
+  {
+    "Id": 19971,
+    "Title": "Hangs on Bad Content"
+  },
+  {
+    "Id": 19975,
+    "Title": "Add watermarks in control"
+  },
+  {
+    "Id": 19980,
+    "Title": "High CPU usage, suspecting StoryBoards"
+  },
+  {
+    "Id": 19986,
+    "Title": "Can change ModernTab list width"
+  },
+  {
+    "Id": 19989,
+    "Title": "can not host webbrowser control"
+  },
+  {
+    "Id": 19993,
+    "Title": "Tab stops"
+  },
+  {
+    "Id": 19994,
+    "Title": "Expander Color"
+  },
+  {
+    "Id": 19997,
+    "Title": "ModernWindow.xaml ToolTip: Back missing in 4.5; all missing in 4.0"
+  },
+  {
+    "Id": 20002,
+    "Title": "Make ModernWindow's Logo clickable"
+  },
+  {
+    "Id": 20008,
+    "Title": "GroupBox"
+  },
+  {
+    "Id": 20009,
+    "Title": "Expander"
+  },
+  {
+    "Id": 20010,
+    "Title": "Bindable RadioButton"
+  },
+  {
+    "Id": 20024,
+    "Title": "Add SearchTextBox control like XamlSpy"
+  },
+  {
+    "Id": 20057,
+    "Title": "ModernTab Layout=List, vertical ScrollViewer on left part"
+  },
+  {
+    "Id": 20077,
+    "Title": "ModernUI Started Externally (Possible bug?)"
+  },
+  {
+    "Id": 20078,
+    "Title": "VB Project Template"
+  },
+  {
+    "Id": 20081,
+    "Title": "ModernWindow set MaxWidth has a bug"
+  },
+  {
+    "Id": 20086,
+    "Title": "Width of error display on controls"
+  },
+  {
+    "Id": 20096,
+    "Title": "ModernDialog.ShowDialog Not returning true - ever"
+  },
+  {
+    "Id": 20109,
+    "Title": "Globalization Bug"
+  },
+  {
+    "Id": 20122,
+    "Title": "Suggestion: Make default Height for most controls to ModernUI standard."
+  },
+  {
+    "Id": 20124,
+    "Title": "Suggestion: Darker border for standard buttons"
+  },
+  {
+    "Id": 20145,
+    "Title": "Suggestion: forget it"
+  },
+  {
+    "Id": 20146,
+    "Title": "ModernUI Application crashes on .NET 3.5"
+  },
+  {
+    "Id": 20168,
+    "Title": "Icon file crashes app on Windows XP"
+  },
+  {
+    "Id": 20206,
+    "Title": "Page Transition with Webbrowser Control doesn't work"
+  },
+  {
+    "Id": 20218,
+    "Title": "ListBox ItemTemplate Style issue"
+  },
+  {
+    "Id": 20244,
+    "Title": "Typography Resources"
+  },
+  {
+    "Id": 20258,
+    "Title": "Localization: ModernDialog"
+  },
+  {
+    "Id": 20268,
+    "Title": "e.cancel not working properly"
+  },
+  {
+    "Id": 20278,
+    "Title": "Visibility property for Link and LinkGroup"
+  },
+  {
+    "Id": 20302,
+    "Title": "Hot key is not working"
+  },
+  {
+    "Id": 20311,
+    "Title": "Login & registration forms template"
+  },
+  {
+    "Id": 20317,
+    "Title": "Problem with System Windows Shell and maximize window function"
+  },
+  {
+    "Id": 20318,
+    "Title": "Add LogoStretch property for logo stretch style"
+  },
+  {
+    "Id": 20321,
+    "Title": "BBCode issue"
+  },
+  {
+    "Id": 20322,
+    "Title": "NavigationCommands.GoToPage / ModernMenu and fragment part in the Uri"
+  },
+  {
+    "Id": 20323,
+    "Title": "Application crashed when clicking \"IMAGES\" tab."
+  },
+  {
+    "Id": 20333,
+    "Title": "Navigate with Buttons within Page"
+  },
+  {
+    "Id": 20342,
+    "Title": "Test project for ModernUI project"
+  },
+  {
+    "Id": 20349,
+    "Title": "Create custom template for LinkGroup DisplayName"
+  },
+  {
+    "Id": 20351,
+    "Title": "TreeView template does not change with Light/Dark themes"
+  },
+  {
+    "Id": 20359,
+    "Title": "databinding from main window to child"
+  },
+  {
+    "Id": 20368,
+    "Title": "Resize grip is not functioning"
+  },
+  {
+    "Id": 20424,
+    "Title": "Can`t run .exe file, which generated by Visual Studio 2013"
+  },
+  {
+    "Id": 20473,
+    "Title": "Style not applied to inherited element"
+  },
+  {
+    "Id": 20495,
+    "Title": "Enable Touch Gestures"
+  },
+  {
+    "Id": 20509,
+    "Title": "Add the ability to add styles (font-size) to links"
+  },
+  {
+    "Id": 20519,
+    "Title": "Make Source property in Link bindable"
+  },
+  {
+    "Id": 20542,
+    "Title": "ModernDialog.ShowMessage needs Window owner"
+  },
+  {
+    "Id": 20543,
+    "Title": "ListView header needs to use theme colors"
+  },
+  {
+    "Id": 20544,
+    "Title": "Add title to EmptyWindow style"
+  },
+  {
+    "Id": 20562,
+    "Title": "Validation.ErrorTemplate"
+  },
+  {
+    "Id": 20645,
+    "Title": "Datagrid Error Templates"
+  },
+  {
+    "Id": 20658,
+    "Title": "Hey How to Remove the Close Button On Right Top corner of the MainWindow ?"
+  },
+  {
+    "Id": 20710,
+    "Title": "Crash on Win7"
+  },
+  {
+    "Id": 20814,
+    "Title": "Hang when BBCodeBlock url is not closed"
+  },
+  {
+    "Id": 20817,
+    "Title": "RadioButton custom content not text"
+  },
+  {
+    "Id": 20820,
+    "Title": "how can i add login Page before mainWindows"
+  },
+  {
+    "Id": 20839,
+    "Title": "testing"
+  },
+  {
+    "Id": 20964,
+    "Title": "Navigate to other page with parameters"
+  },
+  {
+    "Id": 20986,
+    "Title": "How to remove item from Navigation"
+  },
+  {
+    "Id": 21005,
+    "Title": "Bad look at High DPI"
+  },
+  {
+    "Id": 21006,
+    "Title": "Inherit from PerMonitorDPIWindow"
+  },
+  {
+    "Id": 21007,
+    "Title": "Time for a new release?"
+  },
+  {
+    "Id": 21020,
+    "Title": "ModernTab Link"
+  },
+  {
+    "Id": 21051,
+    "Title": "InvalidOperationException: Cannot set Owner property to a Window that has not been shown previously"
+  },
+  {
+    "Id": 21064,
+    "Title": "Datagrid not reloading/refreshing when another item is added to collection"
+  },
+  {
+    "Id": 21138,
+    "Title": "Builds and Runs on my machine, but does not run when deployed"
+  },
+  {
+    "Id": 21208,
+    "Title": "Small CPU load in idle process"
+  },
+  {
+    "Id": 21222,
+    "Title": "ShowSystemMenuCommand does not work with Empty Window Style"
+  },
+  {
+    "Id": 21233,
+    "Title": "Editable Combobox is missing focus border"
+  },
+  {
+    "Id": 21242,
+    "Title": "ModernDialog bug"
+  },
+  {
+    "Id": 21247,
+    "Title": "Window Template doesn't work due to BlankWindow style is not found"
+  },
+  {
+    "Id": 21248,
+    "Title": "Problem with maximized main window"
+  },
+  {
+    "Id": 21249,
+    "Title": "ModernFolderSelectionDialog"
+  },
+  {
+    "Id": 21250,
+    "Title": "Deselected Row Color for ListView and TreeView Items"
+  },
+  {
+    "Id": 21251,
+    "Title": "Vertical Window Title in Version 1.0.6?"
+  },
+  {
+    "Id": 21252,
+    "Title": "Display an icon on ModernDialog"
+  },
+  {
+    "Id": 21253,
+    "Title": "Context-Sensitive Help using F1"
+  },
+  {
+    "Id": 21254,
+    "Title": "How to remove hover style for ListView rows?"
+  },
+  {
+    "Id": 21255,
+    "Title": ".NET 4.0 and ModernProgressRing Style"
+  },
+  {
+    "Id": 21256,
+    "Title": "ControlBox issue in 4.5 and 4.5.1"
+  },
+  {
+    "Id": 21257,
+    "Title": "mui:ModernButton.CommandBindings"
+  },
+  {
+    "Id": 21258,
+    "Title": "combobox - Validation.ErrorTemplate"
+  },
+  {
+    "Id": 21259,
+    "Title": "Icontent interface - not working with style 'EmptyWindow'"
+  },
+  {
+    "Id": 21260,
+    "Title": "ComboBox selected value set twice"
+  },
+  {
+    "Id": 21261,
+    "Title": "Can't Apply ErrorTemplate to Custom BindablePasswordBox"
+  },
+  {
+    "Id": 21262,
+    "Title": "Referencing issues"
+  },
+  {
+    "Id": 21263,
+    "Title": "Problem with TextBlock alignment in a page"
+  },
+  {
+    "Id": 21264,
+    "Title": "Object Reference Issues"
+  },
+  {
+    "Id": 21265,
+    "Title": "ModernUI.app Stop Working"
+  },
+  {
+    "Id": 21266,
+    "Title": "Button Disabled when using Command"
+  },
+  {
+    "Id": 21267,
+    "Title": "ModernTab.Links Tree View Menu "
+  },
+  {
+    "Id": 21268,
+    "Title": "Tree View Menu"
+  },
+  {
+    "Id": 21269,
+    "Title": "ModernDialog: change text of button"
+  },
+  {
+    "Id": 21270,
+    "Title": "Adding a flyout control"
+  },
+  {
+    "Id": 21271,
+    "Title": "Create another Modern Window in a new Thread"
+  },
+  {
+    "Id": 21272,
+    "Title": "Hide menu  temporarily"
+  },
+  {
+    "Id": 21273,
+    "Title": "How to make a link load its content in \"_top\"?"
+  },
+  {
+    "Id": 21274,
+    "Title": "DataGrid: the tooltips on Path are not always visibile"
+  }
+]

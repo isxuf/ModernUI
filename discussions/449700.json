@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "1067082",
+    "ThreadId": "449700",
+    "Html": "There was an diff between 1.0.4 and 1.0.5 with the following code.<br />\n<pre><code>var v = new ModernDialog\n            {\n                Title = &quot;Common dialog&quot;,\n                Content = new LoremIpsum()\n            };\n            v.Buttons = new Button[] { v.OkButton, v.CancelButton };\n            var r = v.ShowDialog();\n            ModernDialog.ShowMessage(string.Format(&quot;HasValue:{0}\\tValue:{1}&quot;, r.HasValue, r.Value),\n                &quot;RESULT&quot;, MessageBoxButton.OK);</code></pre>\n\nWhen click &quot;OK&quot; button, the result on version 1.0.4 is &quot;HasValue:true Value:true&quot;,\r<br />\nbut on version 1.0.5 the result value is false.\r<br />\nAnd I found that the DialogResult in ModernDialog.cs has been changed.<br />\n",
+    "PostedDate": "2013-07-11T08:17:37.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1067234",
+    "ThreadId": "449700",
+    "Html": "Works as (re)designed: <a href=\"http://mui.codeplex.com/SourceControl/changeset/101528\" rel=\"nofollow\">http://mui.codeplex.com/SourceControl/changeset/101528</a><br />\n",
+    "PostedDate": "2013-07-11T14:13:34.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1067311",
+    "ThreadId": "449700",
+    "Html": "Yes, ShowMessage()'s result is correct, and sometimes we need to get the ShowDialog()'s result.\r<br />\nBut changeset#101528 only return &quot;MessageBoxResult dialogResult &quot; in ShowMessage() method.<br />\n",
+    "PostedDate": "2013-07-11T17:58:25.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068038",
+    "ThreadId": "449700",
+    "Html": "Sorry, now I get what you want. ShowMessage() is a static method of ModernDialog, so the result can be changed as the author will. But ShowDialog() is a Method of the underlying System.Windows.Window. Its result value is provided be .NET, no chance to change.\r<br />\n<br />\nThe return value of WPF's System.Windows.Window.ShowDialog() is different from that of System.Windows.Forms.Form.ShowDialog(). In the good old times it was a DialogResult enumeration. Nowadays it is a nullable boolean. mu:i's ModernDialog.ShowMessage() was behaving like System.Windows.Window.ShowDialog() now it works like System.Windows.MessageBox.Show(), but System.Windows.Window.ShowDialog() can only be the same as defined in .NET.<br />\n",
+    "PostedDate": "2013-07-14T04:41:39.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1100208",
+    "ThreadId": "449700",
+    "Html": "Now I run into the same problem. ModernUI doesn't provide a value to the DialogResult property of the underlying Window. So ShowDialog() can't give a useful result.\r<br />\n<br />\nThe current constructor of ModernDialog should be changed to<br />\n<pre><code>                        this.closeCommand = new RelayCommand(o =&gt; {\n                                var result = o as MessageBoxResult?;\n                                if (result.HasValue) {\n                                        this.dialogResult = result.Value;\n                                        // add the following line\n                                        this.DialogResult = result.Value == MessageBoxResult.OK || result.Value == MessageBoxResult.Yes;\n                                }\n                                Close();\n                        });\n</code></pre>\n\n",
+    "PostedDate": "2013-09-27T10:28:05.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1114053",
+    "ThreadId": "449700",
+    "Html": "Yea, now seeing this problem. I need to show my own View + ViewModel in a ModernDialog, so I create the ModernDialog and set the BackgroundContent property. But when I show the dialog, the return value of ShowDialog is always false. Are you planning to fix this? I can probably work around it by listening to the individual click events, but would prefer a functioning ShowDialog method.<br />\n",
+    "PostedDate": "2013-10-30T03:00:28.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130418",
+    "ThreadId": "449700",
+    "Html": "Hey so my solution was to add this to the ModernDialog.cs file:<br />\n<h1>pragma warning disable 1591</h1>\n<pre><code>    public MessageBoxResult Result\n    {\n        get { return dialogResult; }\n        set { dialogResult = value; }\n    }</code></pre>\n\n<h1>pragma warning restore 1591</h1>\nThe #pragma's are there because otherwise you get a build error, something like: &quot;Missing XML comment for publicly visible type or member.&quot;\r<br />\n<br />\nThen in the code after &lt;ModernDialog object&gt;.showDialog() finishes, you can call &lt;ModernDialog object&gt;.Result to get the dialogResult.\r<br />\n<br />\nHope this helps somebody!<br />\n",
+    "PostedDate": "2013-11-29T13:38:57.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150044",
+    "ThreadId": "449700",
+    "Html": "does anyone have an idea why this fix hasn't been incorporated to the main branch? This seems like this fixes core functionality and I would much rather have this in an official nuget package rather than building my own mui lib and using that.<br />\n",
+    "PostedDate": "2014-01-06T10:22:55.637-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1201141",
+    "ThreadId": "449700",
+    "Html": "I'm also having issues regarding this. The ModernDialog method &quot;ShowDialog()&quot; returns false regardless of clicking the OK button.<br />\n",
+    "PostedDate": "2014-01-30T15:48:37.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1201986",
+    "ThreadId": "449700",
+    "Html": "I've use &quot;.OkButton.Click +=&quot; to avoid this problem.<br />\n",
+    "PostedDate": "2014-02-03T03:03:26.527-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1233157",
+    "ThreadId": "449700",
+    "Html": "Exactly. It is a bug in the core functionality. It makes the dialog unusable outside of very basic scenarios. I also don't want to build my own version of ModernUI.\r<br />\n<br />\n@kozw: Is it possible to merge the fix to the main branch and publish an official NuGet package that would contain the fix? <br />\n",
+    "PostedDate": "2014-04-11T04:32:48.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

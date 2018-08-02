@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1019432",
+    "ThreadId": "437613",
+    "Html": "Sir,\r<br />\n<br />\nIs There any Tile Control is available similar to Windows 8 Metro Tile<br />\n<ol>\n<li>Tile Layout Control</li>\n<li>Within Tile Layout Control i can have many Tiles and each tiles will be pointing to different xaml</li>\n<li>when i click on a particular Tile i must able to load new xaml or navigate to already loaded xaml (say in mui:link-1 i have button, if i click that button through button_click even i must able to navigate mui:link-2 or if that click is pointing to new xaml file then i must able to load that xaml in to current i.e. mui:link-1 fame)</li>\n<li>Code behand &quot;Code&quot; for the my 3rd Problem</li>\n</ol>\n",
+    "PostedDate": "2013-03-22T03:40:11.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1019521",
+    "ThreadId": "437613",
+    "Html": "There are no plans for adding a tile control (at least not in the short term). See also <a href=\"http://mui.codeplex.com/workitem/19497\" rel=\"nofollow\">http://mui.codeplex.com/workitem/19497</a><br />\n",
+    "PostedDate": "2013-03-22T06:48:35.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

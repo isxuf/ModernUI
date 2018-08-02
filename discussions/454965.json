@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1086519",
+    "ThreadId": "454965",
+    "Html": "Hi guys,\r<br />\n<br />\nIs it possible to check/uncheck a checkbox in a datagrid by clicking only once?\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-08-30T00:40:26.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086660",
+    "ThreadId": "454965",
+    "Html": "I think so, check <a href=\"http://stackoverflow.com/questions/3833536/how-to-perform-single-click-checkbox-selection-in-wpf-datagrid\" rel=\"nofollow\">this post</a> on StackOverflow.<br />\n",
+    "PostedDate": "2013-08-30T07:33:12.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

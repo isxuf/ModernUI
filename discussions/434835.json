@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1008113",
+    "ThreadId": "434835",
+    "Html": "Hi,\r<br />\nThank you very much for the nice UI. I enjoyed it very much.\r<br />\nI would like to know if there is a possibility of having the following options in a Modern UI application:\r<br />\n1- having just one page (i.e. one link) without displaying the back arrow on top of the page.\r<br />\n2- Adding a (traditional) main menu or ribbon for all the pages \r<br />\nThanks<br />\n",
+    "PostedDate": "2013-02-28T03:36:45.453-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1008264",
+    "ThreadId": "434835",
+    "Html": "You'll need to create your own Window Template to make this happen. Copy the default ModernWindows.xaml theme from the Themes folder and remove the MainMenu. Replace the ModernFrame with a ContentControl where its content is template bound to the window content. Now you can add content to the MainWindow.xaml.\r<br />\n<br />\nHope this helps,<br />\n",
+    "PostedDate": "2013-02-28T08:00:29.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1220232",
+    "ThreadId": "434835",
+    "Html": "Hi Coordinator,\r<br />\n<br />\nThanks for the response as based on your input i tried removing <br />\n<pre><code> &lt;controls:ModernFrame x:Name=&quot;ContentFrame&quot; Grid.Row=&quot;3&quot; Grid.RowSpan=&quot;2&quot; Margin=&quot;36,8,16,16&quot; Source=&quot;{Binding ContentSource, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}&quot; ContentLoader=&quot;{TemplateBinding ContentLoader}&quot;/&gt;</code></pre>\n\nAnd Replace With <br />\n<pre><code>  &lt;ContentPresenter  x:Name=&quot;ContentFrame&quot; Grid.Row=&quot;3&quot; Grid.RowSpan=&quot;2&quot; Margin=&quot;36,8,16,16&quot; &gt;&lt;/ContentPresenter&gt;</code></pre>\n\nBut i am confused and unable to Set the Binding for ContentPresenter .\r<br />\n<br />\nThen in my main window i was trying to add Content \r<br />\n``\r\n  &lt;Grid&gt;<br />\n<pre><code>    &lt;TextBlock Text=&quot;Hello&quot;&gt;&lt;/TextBlock&gt;\n&lt;/Grid&gt;</code></pre>\n\n```\r\nBut after running the app i am unable to see my content on window.\r<br />\n<br />\nPlease let me know how do i provide the bindings so that Content Presenter will render my content.<br />\n",
+    "PostedDate": "2014-03-07T03:45:49.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1225833",
+    "ThreadId": "434835",
+    "Html": "Hi, \r<br />\nWho could do this, place, please example in the form of a Visual Studio project.<br />\n",
+    "PostedDate": "2014-03-23T20:59:18.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1228342",
+    "ThreadId": "434835",
+    "Html": "Hi\r<br />\n<br />\nHere, try this: <a href=\"https://mui.codeplex.com/wikipage?title=How%20to%20use%20your%20own%20navigation%20framework&amp;referringTitle=Documentation\" rel=\"nofollow\">https://mui.codeplex.com/wikipage?title=How%20to%20use%20your%20own%20navigation%20framework&referringTitle=Documentation</a> , it works.\r<br />\nFor some objective reason I cannot upload a solution, but it is simple: I have a solution that includes ModernUI and has only one page, MainWindow.xaml exactly like this:<br />\n<pre><code>&lt;mui:ModernWindow x:Class=&quot;MyApp.MainWindow&quot;\n    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n    xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n    WindowState=&quot;Maximized&quot;\n    Style=&quot;{StaticResource EmptyWindow}&quot;&gt;\n&lt;Grid&gt;\n    &lt;Grid.RowDefinitions&gt;\n        &lt;RowDefinition Height=&quot;Auto&quot; /&gt;\n        &lt;RowDefinition Height=&quot;6&quot; /&gt;\n        &lt;RowDefinition Height=&quot;*&quot; /&gt;\n    &lt;/Grid.RowDefinitions&gt;\n    &lt;TextBlock Grid.Row=&quot;0&quot; Text=&quot;Content goes here&quot; /&gt;\n    &lt;GridSplitter Grid.Row=&quot;1&quot;\n          HorizontalAlignment=&quot;Stretch&quot;\n          VerticalAlignment=&quot;Center&quot;\n          Background=&quot;Black&quot; \n          ShowsPreview=&quot;True&quot;\n          Height=&quot;6&quot;\n       /&gt;\n    &lt;TextBlock Grid.Row=&quot;2&quot; Text=&quot;Content goes here&quot; /&gt;\n&lt;/Grid&gt;\n&lt;/mui:ModernWindow&gt;\n</code></pre>\n\nPlease notice the line: Style=&quot;{StaticResource EmptyWindow}&quot;\r<br />\nFeel free to extend your app from here.<br />\n",
+    "PostedDate": "2014-03-30T09:37:36.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

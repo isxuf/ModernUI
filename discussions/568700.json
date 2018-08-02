@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1309335",
+    "ThreadId": "568700",
+    "Html": "Hi,\r<br />\nI switched my app from mui 1.0.5 to 1.0.6. Everything works fine, but the pretty cool vertical window title in the upper left corner of the main window has been gone! Is there a way get it back in mui 1.0.6?\r<br />\n<br />\nBest regards, Martin.<br />\n",
+    "PostedDate": "2014-09-30T11:51:24.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310034",
+    "ThreadId": "568700",
+    "Html": "For improved high dpi screen support, I decided to rearrange stuff. It should not be an issue to bring back (parts of) the old ModernWindow style and expose it as a custom Window style. \r<br />\n<br />\nFeel free to create an issue for it.<br />\n",
+    "PostedDate": "2014-10-02T13:15:40.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-10-03T10:40:45.54-07:00"
+  },
+  {
+    "Id": "1310306",
+    "ThreadId": "568700",
+    "Html": "I'll do- thank you for your quick answer!<br />\n",
+    "PostedDate": "2014-10-03T10:40:41.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

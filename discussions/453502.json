@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1080895",
+    "ThreadId": "453502",
+    "Html": "Hi,\r<br />\n<br />\nFirstly: this is a beautiful library. Awesome to work with. I do have one question though: how do I keep the user selected style (light/dark) and accent colour for when the application starts up next? (on application close all selected preferences are lost).\r<br />\n<br />\nWhat I have thought of is to create a setting in something like app.config. Updating the value in app.config is the easy part. How do I retrieve it so that the resource dictionary source in App.xaml gets its value from the setting?<br />\n<pre><code>Application.Resources&gt;\n        &lt;ResourceDictionary&gt;\n            &lt;ResourceDictionary.MergedDictionaries&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n                &lt;ResourceDictionary Source={__This is the value i want to read from app.config__}/&gt;\n            &lt;/ResourceDictionary.MergedDictionaries&gt;\n        &lt;/ResourceDictionary&gt;\n    &lt;/Application.Resources&gt;\n</code></pre>\n\nAny assistace would be greatly appreciated.\r<br />\n<br />\nThank you in advance<br />\n",
+    "PostedDate": "2013-08-15T04:11:02.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081060",
+    "ThreadId": "453502",
+    "Html": "I don't think that it will work this way. But have a look at the demo app, the place where appearance is changes. You can see which values will be changed. And you can save these values and restore at program start.<br />\n",
+    "PostedDate": "2013-08-15T11:10:50.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081077",
+    "ThreadId": "453502",
+    "Html": "I have this working in my application using the clients registry. In my app file I have<br />\n<pre><code>        protected override void OnStartup(StartupEventArgs e)\n        {\n            #if DEBUG\n            #else\n            try\n            {\n                AppearanceManager.Current.AccentColor = (Color)ColorConverter.ConvertFromString(_registry.ReadKey(Helpers.Registry._Color));\n                AppearanceManager.Current.FontSize = (_registry.ReadKey(Helpers.Registry._FontSize).ToString() == &quot;large&quot;) ? FontSize.Large : FontSize.Small;\n                AppearanceManager.Current.ThemeSource = new System.Uri(_registry.ReadKey(Helpers.Registry._Theme), UriKind.Relative);\n            }\n            catch { }\n            #endif\n        }\n</code></pre>\n\nFor my Registry helper class I have chopped down of course<br />\n<pre><code>using Microsoft.Win32;\nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\n\nnamespace Tracker.Helpers\n{\n    class Registry\n    {\n        #region Constant Variables\n        private const string _Root = &quot;Software&quot;;\n        private const string _Publisher = &quot;Publisher Here&quot;;\n        private const string _Application = &quot;Application Name Here&quot;;\n        #endregion Constant Variables\n\n        #region Static ApplicationKeys for registry\n        /// &lt;summary&gt;\n        /// Key to pull the users color settings\n        /// &lt;/summary&gt;\n        public static readonly ApplicationKeys _Color = new ApplicationKeys { Name = &quot;Color&quot;, Encrypted = false };\n        /// &lt;summary&gt;\n        /// Key to pull the users font size setting\n        /// &lt;/summary&gt;\n        public static readonly ApplicationKeys _FontSize = new ApplicationKeys { Name = &quot;FontSize&quot;, Encrypted = false };\n        /// &lt;summary&gt;\n        /// Key to pull the theme from the users settings\n        /// &lt;/summary&gt;\n        public static readonly ApplicationKeys _Theme = new ApplicationKeys { Name = &quot;Theme&quot;, Encrypted = false };\n        #endregion Static ApplicationKeys for registry\n\n        #region global vars\n        string _objResult;\n        #endregion\n\n        /// &lt;summary&gt;\n        /// Reads and returns a keys value\n        /// &lt;/summary&gt;\n        /// &lt;param name=&quot;KeyName&quot;&gt;Keyname to read&lt;/param&gt;\n        /// &lt;returns&gt;string value&lt;/returns&gt;\n        public string ReadKey(ApplicationKeys keyName)\n        {\n            // Use RegistryKey object to open the 32 bit version of HKLM\n            using (RegistryKey HKCU = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Default))\n            {\n                try // Wrapped in the event a key does not exist\n                {\n                    // Use RegistryKey object to open the node to the application keys\n                    using (RegistryKey subKey = HKCU.OpenSubKey(_Root).OpenSubKey(_Publisher).OpenSubKey(_Application))\n                    {\n                        // result value to raw key value\n                        _objResult = subKey.GetValue(keyName.Name).ToString();\n                    }\n                }\n                catch { }\n            }\n\n            return _objResult;\n        }\n\n        /// &lt;summary&gt;\n        /// Writes our values for the application but excludes DB\n        /// &lt;/summary&gt;\n        /// &lt;param name=&quot;keyName&quot;&gt;&lt;/param&gt;\n        /// &lt;param name=&quot;value&quot;&gt;&lt;/param&gt;\n        public void WriteKey(ApplicationKeys keyName, string value)\n        {\n            using (RegistryKey HKCU = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Default))\n            {\n                try\n                {\n                    using (RegistryKey subKey = HKCU.OpenSubKey(_Root).OpenSubKey(_Publisher).OpenSubKey(_Application, true))\n                    {\n                            subKey.SetValue(keyName.Name, value);\n                    }\n                }\n                catch { }\n            }\n        }\n\n        /// &lt;summary&gt;\n        /// Class to hold the key values to reference back to the registry.\n        /// &lt;/summary&gt;\n        public class ApplicationKeys\n        {\n            /// &lt;summary&gt;\n            /// Name of the registry key\n            /// &lt;/summary&gt;\n            public string Name { get; set; }\n        }\n    }\n}\n</code></pre>\n\nThis is the change I have made in my SettingsApperanceViewModel<br />\n<pre><code>        public Link SelectedTheme\n        {\n            get { return this.selectedTheme; }\n            set\n            {\n                if (this.selectedTheme != value)\n                {\n                    this.selectedTheme = value;\n                    _registry.WriteKey(Helpers.Registry._Theme, value.Source.ToString());\n                    OnPropertyChanged(&quot;SelectedTheme&quot;);\n\n                    // and update the actual theme\n                    AppearanceManager.Current.ThemeSource = value.Source;\n                }\n            }\n        }\n\n        public string SelectedFontSize\n        {\n            get { return this.selectedFontSize; }\n            set\n            {\n                if (this.selectedFontSize != value)\n                {\n                    this.selectedFontSize = value;\n                    _registry.WriteKey(Helpers.Registry._FontSize, value);\n                    OnPropertyChanged(&quot;SelectedFontSize&quot;);\n\n                    AppearanceManager.Current.FontSize = value == FontLarge ? FontSize.Large : FontSize.Small;\n                }\n            }\n        }\n\n        public Color SelectedAccentColor\n        {\n            get { return this.selectedAccentColor; }\n            set\n            {\n                if (this.selectedAccentColor != value)\n                {\n                    this.selectedAccentColor = value;\n                    _registry.WriteKey(Helpers.Registry._Color, value.ToString());\n                    OnPropertyChanged(&quot;SelectedAccentColor&quot;);\n\n                    AppearanceManager.Current.AccentColor = value;\n                }\n            }\n        }</code></pre>\n\n",
+    "PostedDate": "2013-08-15T11:56:53.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081329",
+    "ThreadId": "453502",
+    "Html": "@chromefor: Please don't spam other discussions with request for help. Thanks.\r<br />\n@kozw: Are you able to delete these requests (including my answer here)? They are very useless for the discussions they were put.<br />\n",
+    "PostedDate": "2013-08-16T05:08:20.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081872",
+    "ThreadId": "453502",
+    "Html": "@felixdd: done, thanks for the headsup<br />\n",
+    "PostedDate": "2013-08-18T12:29:59.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082184",
+    "ThreadId": "453502",
+    "Html": "@felixdd: Thank you. it does make sense. looking at the way in which AppearanceManager.Current... is used, it would then be possible to write values to app.config when they change by means of the OnChange event. ApprearanceManager can then be used when the app is started to restore the last selected settings.\r<br />\n<br />\nThank you Lebowsker. I cannot unfortunately assume that the user will have admin rights to the pc running the app and therefore might not be able to make any changes to the registry :-)<br />\n",
+    "PostedDate": "2013-08-19T07:22:10.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087419",
+    "ThreadId": "453502",
+    "Html": "<strong>n0c0ntr0L</strong> you can save values to your settings, and load them in app.xaml at startup back.<br />\n",
+    "PostedDate": "2013-09-02T11:15:27.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087539",
+    "ThreadId": "453502",
+    "Html": "Hi <strong>nukec</strong>\r<br />\n<br />\nThank you very much. That will do the trick!<br />\n",
+    "PostedDate": "2013-09-03T00:09:27.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

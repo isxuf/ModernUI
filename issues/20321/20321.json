@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Hi,\nFound an issue with BBCodeBlock\nbbcode will fail if the \"[\" or \"]\" char is inside a bbcode patern\n\nFail example:\n[color=#0040FF]ORIGINAL TITLE: Yurumates 3D Plus [Test][/color]\n\nWorking:\n[color=#0040FF]ORIGINAL TITLE: Yurumates 3D Plus Test[/color]",
+    "LastUpdatedDate": "2013-10-18T08:05:24.493-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-10-17T00:11:13.85-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "BBCode issue",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 20321
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Nice would be a way to escape [ and ] characters.For instance use [[ or ]] or \\[ and \\].",
+      "PostedDate": "2013-10-18T08:05:24.493-07:00",
+      "Id": 158559
+    }
+  ]
+}

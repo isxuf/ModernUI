@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1017410",
+    "ThreadId": "437132",
+    "Html": "Hi,\r<br />\nIn would like to  hide/show or enable/disable a LinkGroup by clicking on a button.\r<br />\nwhat about hiding/disabling links?\r<br />\nThanks<br />\n",
+    "PostedDate": "2013-03-18T17:50:57.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017418",
+    "ThreadId": "437132",
+    "Html": "You can hide and show groups and links by adding and removing them from the ObservableCollection. See also the ModernMenu demo in the sample application (controls &gt; modern controls &gt; modernmenu). The sample application is available in the download ZIP package.\r<br />\n<br />\nDisabled groups and links are currently not supported.<br />\n",
+    "PostedDate": "2013-03-18T18:42:32.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017439",
+    "ThreadId": "437132",
+    "Html": "That's Great! Thanks.<br />\n",
+    "PostedDate": "2013-03-18T20:04:36.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

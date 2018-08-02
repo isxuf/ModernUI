@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "not a mui issue",
+    "ClosedDate": "2013-07-05T14:23:48.937-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "I am using NeuroTechnology Trail sdk for finger print scan. \nI am trying to use Window Host in WPF and I am getting navigation, exceptoin detail is as below:-\n\n\nSystem.Windows.Markup.XamlParseException: 'The invocation of the constructor on type 'myproject.Pages.Scan' that matches the specified binding constraints threw an exception.' Line number '7' and line position '14'. ---> System.TypeInitializationException: The type initializer for 'myproject.Pages.Scan' threw an exception. ---> System.TypeInitializationException: The type initializer for 'Neurotec.Devices.NDeviceManager' threw an exception. ---> System.BadImageFormatException: An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)\n   at Neurotec.Devices.NDeviceManager.NDeviceManagerTypeOf(HNObject& hValue)\n   at Neurotec.NTypeReg..ctor(GetObjectPlain typeOf, Type type)\n   at Neurotec.NObjectReg..ctor(GetObjectPlain typeOf, Type type, FromHandlePlain fromHandle)\n   at Neurotec.NTypeMap.Add(GetObjectPlain typeOf, Type type, FromHandlePlain fromHandle, Type[] relatedTypes)\n   at Neurotec.Devices.NDeviceManager..cctor()\n   --- End of inner exception stack trace ---\n   at Neurotec.Devices.NDeviceManager..ctor(NDeviceType deviceTypes, Boolean autoPlug, Boolean autoUpdate)\n   at myproject.Pages.Scan..cctor() in f:\\Users\\user1\\Documents\\Visual Studio 2012\\Projects\\myproject\\Pages\\Scan.xaml.cs:line 38\n   --- End of inner exception stack trace ---\n   at myproject.Pages.Scan..ctor()\n   --- End of inner exception stack trace ---\n   at System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)\n   at System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)\n   at System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)\n   at System.Windows.Application.LoadBamlStreamWithSyncInfo(Stream stream, ParserContext pc)\n   at System.Windows.Application.LoadComponent(Uri resourceLocator, Boolean bSkipJournaledProperties)\n   at System.Windows.Application.LoadComponent(Uri resourceLocator)\n   at FirstFloor.ModernUI.Windows.DefaultContentLoader.LoadContent(Uri uri)\n   at FirstFloor.ModernUI.Windows.DefaultContentLoader.<>c__DisplayClass1.<LoadContentAsync>b__0()\n   at System.Threading.Tasks.Task`1.InnerInvoke()\n   at System.Threading.Tasks.Task.Execute()",
+    "LastUpdatedDate": "2013-07-05T14:23:48.937-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-16T23:48:29.723-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Navigation Failed",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19860
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903301,
+      "FileName": "error_new.PNG",
+      "DownloadUrl": ".\\903301"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Please, post the xaml with the error. Without that, is difficult to help. Either way, it doesn't seem to be a mui issue.",
+      "PostedDate": "2013-06-17T01:53:41.68-07:00",
+      "Id": 158518
+    }
+  ]
+}

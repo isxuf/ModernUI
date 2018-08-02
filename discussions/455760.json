@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1089201",
+    "ThreadId": "455760",
+    "Html": "I would like to give the users the ability to turn <strong>OFF</strong> the sliding animation for new pages/content.  I was looking through the source code, and could not find an animation for it (probably missed it).  What is the cleanest way to implement such a feature?<br />\n",
+    "PostedDate": "2013-09-06T06:15:43.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1089520",
+    "ThreadId": "455760",
+    "Html": "Please see <a href=\"http://mui.codeplex.com/discussions/437534\" rel=\"nofollow\">http://mui.codeplex.com/discussions/437534</a><br />\n",
+    "PostedDate": "2013-09-07T01:38:44.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

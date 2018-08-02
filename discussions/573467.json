@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1327107",
+    "ThreadId": "573467",
+    "Html": "Hello,\r<br />\n<br />\nDoes anyone know how to make ComboBox works inside a TreeView?\r<br />\nWhen I place it inside a HierarchicalDataTemplate, the ComboBox is non-functionable; you cannot click on the drop down etc...\r<br />\n<br />\nThe problem exists both for IsEditable = true/false<br />\n",
+    "PostedDate": "2014-11-28T11:35:36.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

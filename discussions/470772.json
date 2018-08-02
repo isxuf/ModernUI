@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1127661",
+    "ThreadId": "470772",
+    "Html": "Hey guys,\r<br />\n<br />\nI have something I am trying to achieve and I was wondering if somebody was able to figure out how to do this / if this is possible\r<br />\n<br />\nI have a user control with a synchronize button, and when it is clicked on I have a busy indicator that spins until the synchronization is done.\r<br />\n<br />\nMy question is how would I go about disabling all clicks on the mui:Links and title links until my sync is done? I want the user to not be able to go to any other page until all the data has been synchronized :)\r<br />\n<br />\nI hope this isn't too big of a requirement\r<br />\n<br />\nHas anyone been able to implement something like this?\r<br />\n<br />\nIs this even possible in mui?<br />\n",
+    "PostedDate": "2013-11-21T11:12:21.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1127811",
+    "ThreadId": "470772",
+    "Html": "Gkrilov, disable the links is not yet possible. I believe that is an improvement issue with this. Anyway, I did implement a BusyManager taken from here <a href=\"http://stackoverflow.com/questions/7346663/how-to-show-a-waitcursor-when-the-wpf-application-is-busy-databinding\" rel=\"nofollow\">How to show a waitcursor</a> but, in your case, instead of just setting the mouse cursor you can put the whole window in disabled mode.<br />\n",
+    "PostedDate": "2013-11-22T00:48:30.593-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1127890",
+    "ThreadId": "470772",
+    "Html": "Thank you saamorim for answering :)\r<br />\n<br />\nWhat I ended up doing was just setting e.Cancel = true inside the OnNavigatingFrom method while a condition was met to prevent the users from navigation away while concent was loading.<br />\n",
+    "PostedDate": "2013-11-22T05:43:51.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

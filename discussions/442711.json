@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1039987",
+    "ThreadId": "442711",
+    "Html": "I have tried to use the ContentLoader described in the thread: <a href=\"https://mui.codeplex.com/discussions/436518\" rel=\"nofollow\">436518</a>, but i always get a null fro the VM.  \r<br />\n<pre><code>public class CaliburnContentLoader : DefaultContentLoader\n{\n    protected override object LoadContent(Uri uri)\n    {\n        var content = base.LoadContent(uri);\n        if (content == null)\n            return content;\n\n        var vm = Caliburn.Micro.ViewModelLocator.LocateForView(content);\n        if (vm == null)\n            return content;\n\n        if (content is DependencyObject)\n        {\n            Caliburn.Micro.ViewModelBinder.Bind(vm, content as DependencyObject, null);\n        }\n        return content;\n    }\n}</code></pre>\n\nI have a link which i link to the view /Views/TerminalView.xaml.  This then enters in the CaliburnContentLoader and looks for the VM.  But vm is always null.  Content is the right object type of my View.  I am not sure what i am doing wrong to find the vm.  I am using the Caliburn.Micro SimpleContainer.  The link xaml i am using is: <br />\n<pre><code>&lt;mui:Link DisplayName=&quot;Terminal&quot; Source=&quot;/Views/TerminalView.xaml&quot; /&gt;</code></pre>\n\nIf I navigate using Caliburn.Micro's way of ActivateItem, everything works fine and all the views are loaded.  But i cannot then use the ModernWindow. <br />\n",
+    "PostedDate": "2013-05-06T10:49:27.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040552",
+    "ThreadId": "442711",
+    "Html": "Hey,\r<br />\nWould you Kind sharing a very basic APP showing how Tod combine caliburn micro and modern ui? I just don't geht a grip combining them.<br />\n",
+    "PostedDate": "2013-05-07T12:33:50.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040582",
+    "ThreadId": "442711",
+    "Html": "The way i explain above will cause binding not to work because the viewmodel is never found for the view.<br />\n<br />\nSo i just use it as a theme right now.  But i would love to use the ModernWindow if i can figure out why the viewmodel is not found.<br />\n<br />\nThe way i use it as a theme is to only modify the app.xaml file:<br />\n<pre><code>&lt;Application.Resources&gt;\n&lt;ResourceDictionary&gt;\n&lt;!-- WPF 4.0 workaround --&gt;\n&lt;Style TargetType=&quot;{x:Type Rectangle}&quot; /&gt;\n&lt;!-- end of workaround --&gt;\n&lt;ResourceDictionary.MergedDictionaries&gt;\n  &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n  &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot;/&gt;\n&lt;/ResourceDictionary.MergedDictionaries&gt;\n&lt;/ResourceDictionary&gt;\n&lt;/Application.Resources&gt;</code></pre>\n\nOr just follow the example in the documentation: <a href=\"https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&amp;referringTitle=Documentation\" rel=\"nofollow\">My first Modern UI app (manually)</a><br />\nThis does not work for Caliburn.Micro though.<br />\nTo add the CaliburnContentLoader , just add these lines to the above example.<br />\n<br />\n<br />\nApp.xaml<br />\n<pre><code>&lt;Application.Resources&gt;\n&lt;ResourceDictionary&gt;\n&lt;!-- WPF 4.0 workaround --&gt;\n&lt;Style TargetType=&quot;{x:Type Rectangle}&quot; /&gt;\n&lt;!-- end of workaround --&gt;\n&lt;ResourceDictionary.MergedDictionaries&gt;\n  &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n  &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot;/&gt;\n    &lt;ResourceDictionary&gt;\n        &lt;local:CaliburnContentLoader x:Key=&quot;CaliburnContentLoader&quot; /&gt;\n    &lt;/ResourceDictionary&gt;\n&lt;/ResourceDictionary.MergedDictionaries&gt;\n&lt;/ResourceDictionary&gt;\n&lt;/Application.Resources&gt;\n</code></pre>\n\nWindow.xaml<br />\n<pre><code>&lt;mui:ModernWindow\n    ...\n    ContentLoader=&quot;{StaticResource CaliburnContentLoader}&quot;&gt;\n</code></pre>\n\n",
+    "PostedDate": "2013-05-07T13:42:04.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

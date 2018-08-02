@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1055462",
+    "ThreadId": "446702",
+    "Html": "how can i use two ModernTab  to show Data in 2 Modus , Display Modus and EditModus?\r<br />\n<br />\nFor example:\r<br />\nModernTab1.( here the first tab show me the Person Data) and his Content  has  the seconde ModernTab with Tabitem( Display and  Edit);\r<br />\n<br />\ni want to switch into Display and Edit  without  changing person data!\r<br />\n<br />\nany idea??\r<br />\nGhis<br />\n",
+    "PostedDate": "2013-06-11T09:34:47.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055509",
+    "ThreadId": "446702",
+    "Html": "Assuming you are talking about nested tabs, you can set your viewmodel to the DataContext of ModernTab1. When ModernTab2 is displayed as a tab in ModernTab1 it automatically derives the DataContext from its parent. In your view model you can reference the current person data.<br />\n",
+    "PostedDate": "2013-06-11T10:57:34.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

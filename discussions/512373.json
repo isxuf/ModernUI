@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1182133",
+    "ThreadId": "512373",
+    "Html": "is there any navigation event I can listen for on my pages to know when the page is being activated (displayed for the second time) so that I can refresh my DataContext (in case the data was changed)?<br />\n",
+    "PostedDate": "2014-01-19T15:25:47.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1198541",
+    "ThreadId": "512373",
+    "Html": "If you inherit your user controls from FirstFloor.ModernUI.Windows.IContent, they can make use of the OnNavigatedTo event to be informed when the page/user control is loaded into view.<br />\n",
+    "PostedDate": "2014-01-26T18:46:03.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

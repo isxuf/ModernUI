@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1278053",
+    "ThreadId": "554289",
+    "Html": "here is the default code\r<br />\n&lt;mui:LinkGroup x:Name=&quot;Pamakwas&quot; DisplayName=&quot;Welcome&quot; /&gt;\r<br />\n<br />\nbut every time I run it, the &quot;W&quot; is converted to lower case.<br />\n",
+    "PostedDate": "2014-07-26T12:04:21.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1296982",
+    "ThreadId": "554289",
+    "Html": "I am also interested to know this.\r<br />\n<br />\nFeedback, anyone?<br />\n",
+    "PostedDate": "2014-08-31T02:16:10.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298046",
+    "ThreadId": "554289",
+    "Html": "The default ModernMenu style uses a ToLowerConverter value converter to explicitly convert group display names to lowercase. Link display names are converted to uppercase using the ToUpperConverter.\r<br />\n<br />\nIf you want to change this behavior, you need to define and use a custom ModernMenu style having the converters removed. Steps:<br />\n<ol>\n<li>Copy the source of the default ModernMenu style (rename it for instance to MyModernMenu.xaml)</li>\n<li>Modify the xaml of MyModernMenu.xaml</li>\n<li>Add the MyModernMenu.xaml link to App.xaml. No need to assign a key to the new style, it automatically becomes the implicit style for your app.</li>\n</ol>\n",
+    "PostedDate": "2014-09-02T01:58:43.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

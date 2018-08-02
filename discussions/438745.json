@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1024052",
+    "ThreadId": "438745",
+    "Html": "Is it possible to bind ICommand to mui: Link?<br />\n",
+    "PostedDate": "2013-04-01T23:16:47.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024066",
+    "ThreadId": "438745",
+    "Html": "No, that's not (yet) supported. Where do you want to use this? <br />\n",
+    "PostedDate": "2013-04-01T23:46:39.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024073",
+    "ThreadId": "438745",
+    "Html": "I would like to add commands Sign In, Sign Out to the MainWindow TitleLinks.<br />\n",
+    "PostedDate": "2013-04-02T00:06:58.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024088",
+    "ThreadId": "438745",
+    "Html": "Sounds reasonable. I'll look into it. Thanks for the suggestion.<br />\n",
+    "PostedDate": "2013-04-02T00:37:21.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1113766",
+    "ThreadId": "438745",
+    "Html": "Is this supported already?<br />\n",
+    "PostedDate": "2013-10-29T10:57:11.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1132956",
+    "ThreadId": "438745",
+    "Html": "I'd also like to know if this feature is available yet.<br />\n",
+    "PostedDate": "2013-12-08T13:11:51.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

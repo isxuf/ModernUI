@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1090579",
+    "ThreadId": "456345",
+    "Html": "Hi I'm New here and love this project but I'm really struggling trying to understand the Navigation side of this.\r<br />\n<br />\nMy Problem is this:\r<br />\n<br />\nI have a DataGrid and when I doubleclick a row a new Link is added called &quot;Ticket &quot; + Cell[0] this works fine.\r<br />\nWhen I select this new Link it is bound to a User Control which uses the ModernTab page again this Displays Correctly.\r<br />\n<br />\nhowever I wish to populate these fields with information from a SQL DB based on the Ticket Number (Cell[0]) the problem I have here is when I have multiple new links I can find no way to identify the newely created Link so I cant bind this new ModernTab to a Datasource.\r<br />\n<br />\nMy Question is.\r<br />\n<br />\nAll I really want to do is be able to get a list of all available Links that have been created so I can do something like this:\r<br />\n<br />\nMenuName = Cells[0]<br />\n<pre><code>        foreach (Window link in ModernFrame.Source)\n        {\n            this.MenuLinks[link].DisplayName.Equals(MenuName))\n        {\n            this.MenuLinks.RemoveAt(link);\n        }            }\n</code></pre>\n\nso in short I just want to know what the page source/s link name is?\r<br />\n<br />\nPlease help its driving me mad!!<br />\n",
+    "PostedDate": "2013-09-10T04:26:56.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090639",
+    "ThreadId": "456345",
+    "Html": "ModernTab holds all the links as a LinkCollection you can access this collection with the following notation.<br />\n<pre><code>ModernTab.Links</code></pre>\n\n",
+    "PostedDate": "2013-09-10T06:40:07.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090649",
+    "ThreadId": "456345",
+    "Html": "Thank you Melvinchi,\r<br />\n<br />\nUnfortunately I'm finding it difficult to understand how to use this Collection can you please provide an example?\r<br />\n<br />\nI would just like to check through the entire collections Display Names so I can discover if a Link with the same name exists if so I need to do 'Something' with this.\r<br />\n<br />\nExample:\r<br />\n<a href=\"https://dl.dropboxusercontent.com/u/23960569/Capture.PNG\" rel=\"nofollow\">https://dl.dropboxusercontent.com/u/23960569/Capture.PNG</a>\r<br />\n<br />\nthe above image displays the following:\r<br />\n<br />\n1 = The Created Dynamic Link\r<br />\n2 = a Copy of the Ticket Number (just testing at the moment)\r<br />\n__3 = the Button!!\r<br />\n__\r<br />\nwhen I press the Button (3) I want to loop through all items in the list below [OPEN TAB(S)]\r<br />\n<br />\nSorry to be a pain any help appreciated\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-09-10T07:07:05.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090855",
+    "ThreadId": "456345",
+    "Html": "You may want to store your links in a viewmodel and bind the ModernTab.Links to them. In your viewmodel you can iterate the links.\r<br />\n<br />\nYour viewmodel:<br />\n<pre><code>public class ViewModel\n  : NotifyPropertyChanged\n{\n  private LinkCollection links = new LinkCollection();\n  private Uri selectedSource;\n\n  public LinkCollection Links\n  {\n    get { return this.links; }\n  }\n\n  public Uri SelectedSource\n  {\n    get { return this.selectedSource; }\n    set {\n      if (this.selectedSource != value) {\n        this.selectedSource = value;\n        OnPropertyChanged(&quot;SelectedSource&quot;);\n      }\n    }\n  }\n\n  public void AddLink(int ticketNumber)\n  {\n    // add new link\n    var source = new Uri(&quot;/TicketPage?&quot; + ticketNumber&quot;, UriKind.Relative)\n\n    this.links.Add(new Link {\n      DisplayName = &quot;Ticket &quot; + tickNumber, \n      Source = source;\n    });\n\n    // and select the link\n    this.SelectedSource = source;\n  }\n\n  public void HandleButtonClick()\n  {\n    foreach(var link in this.links) {\n      // do something with each dynamic link\n    }\n  }\n}</code></pre>\n\nYour view xaml (assuming the ViewModel is assigned to the DataContext of the ModernTab (or any of its ancestors)<br />\n<pre><code>&lt;mui:ModernTab Layout=&quot;List&quot; Links=&quot;{Binding Links}&quot; SelectedSource=&quot;{Binding SelectedSource, Mode=TwoWay}&quot; /&gt;</code></pre>\n\nAnd finally, not sure whether your 'my ticket', 'create ticket', 'search ticket' options should be in the list, they sound like commands to me and it may be better to move them to some sort ModernButton toolbar?<br />\n",
+    "PostedDate": "2013-09-10T13:27:07.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091114",
+    "ThreadId": "456345",
+    "Html": "Kozw your a star! thank you so much it took me a while to understand how to utilize this but I think I have it again thank you so much for all your help :-)<br />\n",
+    "PostedDate": "2013-09-11T05:15:36.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091151",
+    "ThreadId": "456345",
+    "Html": "@Brett1981 Glad you got it squared away. I only check this about once a day here and there if I run into problems :D\r<br />\n<br />\nKozw is a star!<br />\n",
+    "PostedDate": "2013-09-11T06:26:54.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091164",
+    "ThreadId": "456345",
+    "Html": "<blockquote>\n<pre><code>&lt;mui:ModernTab Layout=&quot;List&quot; Links=&quot;{Binding Links}&quot; SelectedSource=&quot;{Binding SelectedSource, Mode=TwoWay}&quot; /&gt;</code></pre>\n\n</blockquote>\nMelvinchi - I know what you mean but im on here about 20 times a day (still learning you see :-))\r<br />\n<br />\nKozw - Im a little confused to be honest I get 98% of what you have suggested but I just have a small problem and not sure what to do here:\r<br />\non my List Page I have the following Code:<br />\n<pre><code>&lt;UserControl x:Name=&quot;TicketList&quot; x:Class=&quot;SIDE.Views.TicketLists&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;\n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;\n             xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n             mc:Ignorable=&quot;d&quot;\n             d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;\n    &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot; Margin=&quot;16,16,16,16&quot;&gt;\n        &lt;!-- TODO: set @SelectedSource --&gt;\n        &lt;mui:ModernTab Layout=&quot;List&quot; SelectedSource=&quot;\\Views\\Home.xaml&quot;&gt;\n            &lt;mui:ModernTab.Links&gt;\n                &lt;!-- TODO: set @Source --&gt;\n                &lt;mui:Link DisplayName=&quot;My Tickets&quot; Source=&quot;\\Views\\Home.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Create Ticket&quot; Source=&quot;\\Views\\PageTicket.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Team Tickets&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Performance&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot; &quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Search Ticket&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot; &quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Exit&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;________________________________&quot; /&gt;\n\n                &lt;mui:Link DisplayName=&quot;Open Tab(s)&quot; /&gt;\n\n            &lt;/mui:ModernTab.Links&gt;\n\n        &lt;/mui:ModernTab&gt;\n        &lt;!-- &lt;mui:ModernTab Layout=&quot;List&quot; Links=&quot;{Binding Links}&quot; SelectedSource=&quot;{Binding SelectedSource, Mode=TwoWay}&quot; /&gt;--&gt;\n    &lt;/Grid&gt;\n&lt;/UserControl&gt;</code></pre>\n\nGoing by what your suggesting I can't add the Links=&quot;{Binding Links} because im already using mui:Link for static links as above.\r<br />\n<br />\nIf I understand correctly I should change my &lt;mui:ModerTab&gt;&lt;/mui:ModernTab&gt; to what you suggested and then on opening this User Control populate the tabs from the ViewModel?\r<br />\n<br />\nAm I confused or just stupid? or both if you prefer.. Thanks again in advance<br />\n",
+    "PostedDate": "2013-09-11T06:49:36.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091172",
+    "ThreadId": "456345",
+    "Html": "Just to add to this:\r<br />\n<br />\nPrior to using your Example of the viewmodel this is how I added the dynamic link<br />\n<pre><code>        private void MainTicketsGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)\n        {\n\n            DataRecord activeRecord = (MainTicketsGrid.ActiveRecord as DataRecord);\n            string names = &quot;&quot;;\n                if ((activeRecord != null) &amp;&amp; (!activeRecord.IsAddRecord))\n                {\n                   \n                    ModernTab parentMT = new ModernTab();\n                    // this &lt;- your current child\n\n                        parentMT =\n                        ((Grid)((SIDE.ModernUI.Windows.Controls.ModernFrame)this.Parent).Parent).TemplatedParent as ModernTab;\n                    \n                    {\n                        parentMT.Links.Add(new Link\n                        {\n                            DisplayName = string.Format(CultureInfo.InvariantCulture, &quot;Ticket {0}&quot;, activeRecord.Cells[0].ConvertedValue.ToString()),\n                            Source = new Uri(string.Format(CultureInfo.InvariantCulture, &quot;/Views/PageTicket.xaml?{0}&quot;, activeRecord.Cells[0].ConvertedValue.ToString()), UriKind.Relative),\n\n                        });\n                    };\n                    int LinkCount = 0;\n\n                    LinkCount = parentMT.Links.Count - 1;\n\n                    \n\n                    names = parentMT.Links[LinkCount].DisplayName.ToString();\n                    var result = names.Substring(names.LastIndexOf(' ') + 1);\n                    GlobalAtt.strticketNumber = result.ToString();\n\n                }\n\n        }</code></pre>\n\n",
+    "PostedDate": "2013-09-11T06:58:41.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

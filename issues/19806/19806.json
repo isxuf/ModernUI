@@ -1,0 +1,61 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Probably not going to happen. Following ModernUI guidelines, icons are not part of menu links.",
+    "ClosedDate": "2013-07-05T14:24:44.483-07:00",
+    "CommentCount": 3,
+    "Custom": "",
+    "Description": "Hi.\n\nIMHO a nice UX improvement could be to add icons to the main menu links.\nIn the attached demo screenshot the icon is the red square.\n\nThe icon should be a property of Link class and must be optional.\nThanks.\n\nDiego",
+    "LastUpdatedDate": "2013-12-28T04:09:28.027-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-04T01:08:41.467-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Menu icons",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19806
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903299,
+      "FileName": "MUI.png",
+      "DownloadUrl": ".\\903299"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Ok, I understand.\r\n\r\nThank you for the reply.\r\n\r\nDiego.",
+      "PostedDate": "2013-07-08T01:33:47.16-07:00",
+      "Id": 158512
+    },
+    {
+      "Message": "Can u please provide any demo for Icon with menu\r\n\r\nThanks",
+      "PostedDate": "2013-12-27T22:27:14.86-08:00",
+      "Id": 158513
+    },
+    {
+      "Message": "Unfortunately we have not implemented this feature. But I believe that it isn't difficult to do. Just subclassing some objects.\r\n\r\nDiego.",
+      "PostedDate": "2013-12-28T04:09:28.027-08:00",
+      "Id": 158514
+    }
+  ]
+}

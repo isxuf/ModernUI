@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1244866",
+    "ThreadId": "545217",
+    "Html": "is there any way to improve the performance of the datagrid when it receives over 2000 records?<br />\n",
+    "PostedDate": "2014-05-13T08:27:04.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1246957",
+    "ThreadId": "545217",
+    "Html": "Hello. \r<br />\nReally slowly. Performance no. Why? Someone explain? Help me to understand.<br />\n",
+    "PostedDate": "2014-05-19T08:04:20.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

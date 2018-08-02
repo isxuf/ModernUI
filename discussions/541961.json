@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1233152",
+    "ThreadId": "541961",
+    "Html": "Hi,\r<br />\nfirst of all, I'm new to programming, so please be patient. I have a problem, that i can not find solution. I have two .xaml pages ex. Car.xaml and Plane.xaml, with the default source for Car:<br />\n<pre><code>&lt;mui:Link DisplayName=&quot;Car&quot; Source=&quot;Page/Car.xaml&quot; /&gt;</code></pre>\n\nI would like to change the source page for Plane.xaml, after user hits a button. How to manage it ? Any lead would be great.\r<br />\nI'll be very thankful to somebody who can help me.\r<br />\nBest Regards,\r<br />\nCezary.<br />\n",
+    "PostedDate": "2014-04-11T04:11:07.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

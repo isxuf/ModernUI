@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1083396",
+    "ThreadId": "454151",
+    "Html": "Another question guys.\r<br />\n<br />\nI am attempting to set the XAML property &quot;WindowBackground&quot; defined on the theme reference page defined here: <a href=\"https://mui.codeplex.com/wikipage?title=Theme%20resource%20reference&amp;referringTitle=Documentation\" rel=\"nofollow\">Theme resource reference</a>. This is how I am doing it:<br />\n<pre><code>&lt;ImageBrush x:Key=&quot;WindowBackground&quot; ImageSource=&quot;Images/imgConfigWindow.png&quot;/&gt;</code></pre>\n\nHowever it does not work. It <em>does</em> work with properties such as ButtonBackground, InputBackground, etc. Pretty much any property that gets set as a Brush Type.\r<br />\n<br />\nIt just seems like the WindowBackground property isn't working with my image.\r<br />\n<br />\nI'm probably misunderstand a concept here, but shouldn't this let me set the window a background of an image?<br />\n",
+    "PostedDate": "2013-08-21T19:25:05.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083583",
+    "ThreadId": "454151",
+    "Html": "This should work. Are you sure the ImageSource is available at specified location? Also check the build action of the image in your project, is it content or a resource?<br />\n",
+    "PostedDate": "2013-08-22T05:03:40.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083593",
+    "ThreadId": "454151",
+    "Html": "It is set as a Resource. As I have said, it does already work for the other properties, just not this one.<br />\n",
+    "PostedDate": "2013-08-22T05:27:42.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083614",
+    "ThreadId": "454151",
+    "Html": "My bad, it's the <code>WindowBackground</code> resource that doesn't work for ModernWindow. Not sure if this is a bug or not, ModernWindow uses a coloranimation to switch background colors when changing the theme at runtime.\r<br />\n<br />\nAs a workaround use the <code>WindowBackgroundContent</code> resource like so;<br />\n<pre><code>&lt;Image x:Key=&quot;WindowBackgroundContent&quot; x:Shared=&quot;false&quot; Source=&quot;Images/imgConfigWindow.png&quot; Stretch=&quot;UniformToFill&quot;/&gt;</code></pre>\n\nMake sure <code>x:Shared=&quot;false&quot;</code>, so the rectangle can be re-used among ModernWindow and ModernDialog instances.<br />\n",
+    "PostedDate": "2013-08-22T06:28:42.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083688",
+    "ThreadId": "454151",
+    "Html": "Thanks again, this work-around works.<br />\n",
+    "PostedDate": "2013-08-22T08:20:05.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

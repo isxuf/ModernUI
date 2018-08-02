@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1122190",
+    "ThreadId": "468206",
+    "Html": "I'm still new with this MUI and try to use in Powerbuilder.net, but  when I running the code, it found an exception, can anyone here help me with this issue???\r<br />\n<br />\nhere my code:\r<br />\n&lt;mui:ModernWindow <br />\n<pre><code>x:Class=&quot;w_mui&quot; \nxmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; \nxmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; \nxmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot; \nHeight=&quot;500&quot; Width=&quot;547&quot; Title=&quot;Window Mui&quot;&gt;\n</code></pre>\n\n&lt;/mui:ModernWindow&gt;\r<br />\n<br />\n and here an exception message(since I don't know how to insert image):\r<br />\n<br />\nAn exception of type 'System.Reflection.TargetInvocationException' occurred in Sybase.PowerBuilder.Common.dll but was not handled in user code\r<br />\n<br />\nAdditional information: Exception has been thrown by the target of an invocation.<br />\n",
+    "PostedDate": "2013-11-11T18:31:20.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

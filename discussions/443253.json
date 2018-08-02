@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1041906",
+    "ThreadId": "443253",
+    "Html": "There are some changes I made to the style (ModernWindowEx.xaml)<br />\n<br />\nRestored<br />\n<img src=\"https://jqishq.bay.livefilestore.com/y2phDp-aKp-fGh14vHz78ovW_XESlnQzJGHjlUIcuAXmCQ0aklcbJHJtHoVzt2qHODl7Ev4OREkkzHoML0Ibx5T6chU0AfaXVN50A-7LtV65-Y/ModernUiEmptyWindowTest1.PNG?psid=1\" alt=\"Image\" /><br />\n<br />\nMaximized<br />\n<img src=\"https://or7vja.bay.livefilestore.com/y2pSVnNYWXyIp_y2XLgNbh4m22rC0ye5vjwhTNWtoXxWU3gVtMT_yHAophtXQh5xmnKQFIVR1Q37xoeTJ547s5fp88s0fWRyEmVEfIjD8FnnWU/ModernUiEmptyWindowTest2.PNG?psid=1\" alt=\"Image\" /><br />\n<br />\nXAML code download <a href=\"https://skydrive.live.com/#cid=8C9A6C6DA611416A&amp;id=8C9A6C6DA611416A%21105\" rel=\"nofollow\">on my SkyDrive</a><br />\n",
+    "PostedDate": "2013-05-10T07:49:57.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1047798",
+    "ThreadId": "443253",
+    "Html": "Hi \r<br />\nIm a trying to do the same thing, can you pls tell me how you implemented the use of ModernWindowEx.xaml  following the get started manually example<br />\n",
+    "PostedDate": "2013-05-23T08:40:18.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1047819",
+    "ThreadId": "443253",
+    "Html": "I think it'd look better if the title text had a HorizontalAlignment of Left instead of Center.<br />\n",
+    "PostedDate": "2013-05-23T09:13:06.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

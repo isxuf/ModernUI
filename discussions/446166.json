@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "1053404",
+    "ThreadId": "446166",
+    "Html": "My scenario..\r<br />\nI can add a New Tab on ModernTab Programmatically(mvvm) but now i want to close this Tab \r<br />\nHow can i do ?\r<br />\n<br />\nI add in template moderntab after a Textblock one buttom with Content =&quot;x&quot;,\r<br />\nand Command={binding RemoveCommand} this can Not return to viewmodel when i click x  ? Why?\r<br />\nAny Suggestion??\r<br />\nGhis from Germany..<br />\n",
+    "PostedDate": "2013-06-05T23:21:10.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054115",
+    "ThreadId": "446166",
+    "Html": "Remove a tab by removing its associated link from the ModernTab.Links link collection (which should be bound to your viewmodel).<br />\n",
+    "PostedDate": "2013-06-07T10:25:49.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054637",
+    "ThreadId": "446166",
+    "Html": "Of cause,\r<br />\nBut i want to close the Tab without select it!!..\r<br />\nHow can i do that ?<br />\n",
+    "PostedDate": "2013-06-09T14:54:30.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054781",
+    "ThreadId": "446166",
+    "Html": "I see no reason that requires your to select the tab before deleting it<br />\n",
+    "PostedDate": "2013-06-10T03:37:28.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054958",
+    "ThreadId": "446166",
+    "Html": "Hi,\r<br />\nSorry  but i still have trouble with that removeTab.\r<br />\nthis my Approch:\r<br />\nfrom ressoures: x:key=&quot;ModernTabStyle&quot;<br />\n<pre><code>                        &lt;ListBox.ItemTemplate&gt;\n                            &lt;DataTemplate&gt;\n                                &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;                                       \n\n                                    &lt;TextBlock Text=&quot;{Binding DisplayName, Converter={StaticResource ToUpperConverter}}&quot; /&gt;\n                                    &lt;Button  Command=&quot;{Binding RemoveCommand}&quot; Margin=&quot;10,0,0,0&quot; Content=&quot;X&quot;/&gt;\n                                &lt;/StackPanel&gt;\n                            &lt;/DataTemplate&gt;\n                        &lt;/ListBox.ItemTemplate&gt;\n\n\n</code></pre>\n\nfrom ViewModel:\r<br />\n //ModernTab<br />\n<pre><code>    private LinkCollection _kundenAnzeige= new LinkCollection();\n    public LinkCollection KundenAnzeigen\n    {\n        get { return this._kundenAnzeige; }\n        set\n        {\n            this._kundenAnzeige = value;\n            OnPropertyChanged(&quot;KundenAnzeigen&quot;);\n        }\n\n    }\n    private Uri _selectedKunde;\n    public Uri SelectedKunde\n    {\n        get { return this._selectedKunde; }\n        set\n        {\n\n            this._selectedKunde = value;\n            if (this._selectedKunde==linkPlus.Source)\n            {\n\n                Link link = new Link();\n                link.DisplayName = &quot;Link &quot; + KundenAnzeigen.Count;\n                link.Source = new Uri(&quot;/Views/PersonView.xaml&quot;, UriKind.Relative);\n                _kundenAnzeige.Insert(_kundenAnzeige.Count - 1, link);\n                this._selectedKunde = link.Source;\n            }\n            OnPropertyChanged(&quot;SelectedKunde&quot;);\n        }\n\n    }\n</code></pre>\n\npublic ICommand RemoveCommand { get; set; }<br />\n<pre><code>    private void initCommands()\n    {\n        RemoveCommand = new RelayCommand(executeRemove, canExecuteRemove);\n    }\n    private bool canExecuteRemove(object sender)\n    {\n        return true;\n    }\n    private void executeRemove(object paramater)\n    {\n        string charac = paramater.ToString();\n        //var neuListe = DbAccess.GetKunden(charac);\n\n    }</code></pre>\n\n}\r<br />\n<br />\nview:\r<br />\n  &lt;mui:ModernTab Style=&quot;{DynamicResource ModernTabStyle}&quot; Links=&quot;{Binding KundenAnzeigen}&quot;  \r<br />\n<pre><code>                      SelectedSource=&quot;{Binding SelectedKunde, Mode=TwoWay}&quot;/&gt;\n</code></pre>\n\ni can  t bind the with ViewModel wenn i click on X..\r<br />\nThanks...<br />\n",
+    "PostedDate": "2013-06-10T09:47:20.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055761",
+    "ThreadId": "446166",
+    "Html": "kowz wrote:\r<br />\n<strong>Remove a tab by removing its associated link from the ModernTab.Links link collection (which should be bound to your viewmodel).</strong>\r<br />\n<br />\nyes !!  sir .. i got a  link collection as KundenAnzeigen,  and  i bound this with property Links..   this is not working   ...!!!  why?<br />\n",
+    "PostedDate": "2013-06-12T03:31:03.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055766",
+    "ThreadId": "446166",
+    "Html": "this line<br />\n<pre><code>_kundenAnzeige.Insert(_kundenAnzeige.Count - 1, link);</code></pre>\n\nwont trigger the OnPropertyChanged(&quot;KundenAnzeigen&quot;); because it bypasses the setter method. Therefore the SelectedSource Binding is not notifyed about the change.<br />\n<br />\nReplace the line mentioned above by this one:<br />\n<pre><code>this.KundenAnzeige.Insert(this.KundenAnzeige.Count - 1, link);</code></pre>\n\nGreetings from Germany,<br />\nXenolith<br />\n",
+    "PostedDate": "2013-06-12T03:42:44.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055915",
+    "ThreadId": "446166",
+    "Html": "Hello Xenolith!! \r<br />\nFirst wort  i appreciate Ur  Help...\r<br />\nfor adding   a tab, this is working fine... But i want to remove this after added!!!  i mean with a Command Like  relayCommand in VM..\r<br />\nany Idee??\r<br />\n<br />\nmy approch : I replace the template like this\r<br />\n<br />\n&lt;ListBox.ItemTemplate&gt;<br />\n<pre><code>                            &lt;DataTemplate&gt;\n                                &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;                                        \n                                  &lt;TextBlock Text=&quot;{Binding DisplayName, Converter={StaticResource ToUpperConverter}}&quot; /&gt;\n                                    &lt;Button Content=&quot;x&quot;  Command =&quot;{Binding Path=RemoveCommand}&quot;Style=&quot;{DynamicResource ResourceKey=SystemButtonLink}&quot; /&gt;\n                                &lt;/StackPanel&gt;\n                            &lt;/DataTemplate&gt;\n                        &lt;/ListBox.ItemTemplate&gt;\n</code></pre>\n\nmy Goad is: i wan to jump to execudeRemove_methode  wenn i click on  Button &quot; x&quot;...<br />\nHelp ..\r<br />\nBest regard from Mainz City (Germany)<br />\n",
+    "PostedDate": "2013-06-12T08:55:09.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1056248",
+    "ThreadId": "446166",
+    "Html": "i use this code to remove a group from the main menu, not sure if it works also for the tab control.<br />\n<pre><code>        private LinkGroupCollection menuLinkGroups;\n        public LinkGroupCollection MenuLinkGroups\n        {\n            get { return this.menuLinkGroups; }\n            set\n            {\n                this.menuLinkGroups = value;\n                this.OnPropertyChanged(&quot;MenuLinkGroups&quot;);\n            }\n        }\n\n        private void RemoveGroupFromMenu()\n        {\n                if (this.MenuLinkGroups.Count &gt; 5 &amp;&amp; this.MenuLinkGroups[5].DisplayName.Equals(&quot;YourMenuGroupNameHere&quot;))\n                {\n                    this.MenuLinkGroups.RemoveAt(5);\n                }\n        }</code></pre>\n\n",
+    "PostedDate": "2013-06-13T01:43:07.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

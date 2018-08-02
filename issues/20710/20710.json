@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 6,
+    "Custom": "",
+    "Description": "Has anyone running any app developed using this great library on Win 7? I am seeing ModernUI.App has stopped working error..\n\nWorks on Windows 8 :)\n\nAny help would be greatly appreciated.",
+    "LastUpdatedDate": "2014-11-04T08:13:11.427-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-02-06T09:32:02.01-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Crash on Win7",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20710
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "MUI works great on both Win7 and 8. Could the .NET45 framework be missing on your machine?",
+      "PostedDate": "2014-02-06T10:53:31.557-08:00",
+      "Id": 158570
+    },
+    {
+      "Message": "ModernUI.App runs on my Win7 64bits very well.",
+      "PostedDate": "2014-02-10T00:59:04.007-08:00",
+      "Id": 158571
+    },
+    {
+      "Message": "Thank you. It was not Win 7 - but the machine.config file. This article helped me to clear the error.\r\n\r\nhttp://oszakiewski.net/eric/dbproviderfactories-section-can-only-appear-once-per-config-file\r\n\r\nThanks again.",
+      "PostedDate": "2014-02-10T04:17:45.123-08:00",
+      "Id": 158572
+    },
+    {
+      "Message": "I have the same problem, but it isn't the machine.config file. Any other suggestion?",
+      "PostedDate": "2014-05-13T09:34:21.46-07:00",
+      "Id": 158573
+    },
+    {
+      "Message": "When run on my pc there is no problem, but after publishing and trying to run it on another pc it just crashes.",
+      "PostedDate": "2014-05-13T09:35:12.82-07:00",
+      "Id": 158574
+    },
+    {
+      "Message": "I have the same problem as Ozomati, any ideas?",
+      "PostedDate": "2014-11-04T08:13:11.427-08:00",
+      "Id": 163956
+    }
+  ]
+}

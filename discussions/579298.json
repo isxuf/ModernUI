@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1348400",
+    "ThreadId": "579298",
+    "Html": "Hi All,\r<br />\n<br />\nI’m start using m:ui in my project and I would like to understand from you if it is possible to use Command and CommandParameter attributes in mui:Link control.\r<br />\n<br />\nThe goal of it is to whenever the user just press the link control, then it sets Command and CommandParameter attributes as we have for instance in ModernButton control. See below my XAML instruction with Command and CommandParameter attributes for your reference.\r<br />\n<br />\n&lt;mui:Link DisplayName=&quot;Languages&quot; Source=&quot;/Views/LanguagesList.xaml&quot; Command=&quot;{Binding NavigateCommand}&quot; CommandParameter=&quot;AppSettings&quot; / &gt;\r<br />\n<br />\nIf you can confirm what’s the best method to archive this goal, that will be great!\r<br />\n<br />\nMany Thanks\r<br />\nSandro Peixoto<br />\n",
+    "PostedDate": "2015-02-02T13:12:37.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

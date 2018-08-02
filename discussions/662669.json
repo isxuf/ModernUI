@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1495733",
+    "ThreadId": "662669",
+    "Html": "I have code in WPF framework:<br />\n<pre><code>public class MyObject\n{\n    public string Value {set; get;}\n}\n...\n\npublic List&lt;MyObject&gt; obj {set;get;}\n...\n\n private void button_Click(object sender, RoutedEventArgs e)\n        {           \n            Thread thr = new Thread(\n                () =&gt;\n                {                    \n                    MyUserControl my = new MyUserControl();\n                    my.DataContext = obj;\n\n                    Grid grid = new Grid();\n                    grid.Children.Add(my);\n                    grid.Measure(new Size(300, 300));\n                    grid.Arrange(new Rect(0, 0, 300, 300));\n\n                    grid.UpdateLayout();  // Exception!!!\n\n                    Save(grid); // Save control to png function.\n                }\n            );\n            thr.SetApartmentState(ApartmentState.STA);\n            thr.Start();\n        }</code></pre>\n\nMyUserControl:<br />\n<pre><code> &lt;Grid&gt;\n        &lt;ItemsControl ItemsSource=&quot;{Binding ElementName=_this, Path=DataContext}&quot;&gt;\n            &lt;ItemsControl.ItemTemplate&gt;\n                &lt;DataTemplate&gt;\n                    &lt;TextBox Text=&quot;{Binding Path=Value}&quot;/&gt;\n                &lt;/DataTemplate&gt;\n            &lt;/ItemsControl.ItemTemplate&gt;\n        &lt;/ItemsControl&gt;        \n    &lt;/Grid&gt;</code></pre>\n\nThis code in WPF works fine, but when I copy it to m:ui i has exception (I translate exception text):<br />\n<pre><code>System.Windows.Markup.XamlParseException: Exception in object instantiation System.Windows.Controls.TextBox \nInnerException\nInvalidOperationException: The calling thread cannot access this object because a different thread owns it.</code></pre>\n\nHow I repair my code to works with m:ui? I need use multitherding to create many users controls.<br />\n",
+    "PostedDate": "2017-04-24T00:16:28.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

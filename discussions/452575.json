@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1077302",
+    "ThreadId": "452575",
+    "Html": "This may be just a simple WPF question but I'm really not having much luck with google.\r<br />\n<br />\nWhere or how could I create a notification icon that my content pages could access? I'm trying to put it in MainWindow.cs but the scope there is limited it seems. Would someone please point me in a correct direction. I want to send it balloon tips on a content pages.<br />\n",
+    "PostedDate": "2013-08-06T08:48:41.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081082",
+    "ThreadId": "452575",
+    "Html": "What do you mean by balloon tips? Are you referring to the system tray? This is not native to WPF and you would have to go back to mixing with WinForms. \r<br />\n<br />\n<a href=\"http://www.codeproject.com/Articles/36468/WPF-NotifyIcon\" rel=\"nofollow\">http://www.codeproject.com/Articles/36468/WPF-NotifyIcon</a><br />\n",
+    "PostedDate": "2013-08-15T12:09:46.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

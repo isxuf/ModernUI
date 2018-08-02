@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1045560",
+    "ThreadId": "444165",
+    "Html": "Hi, I have recently run into a strange problem. If i write a piece of code like this, the UI is unresponsive and freezes for 20 seconds:<br />\n<pre><code>        public void OnNavigatedTo(FirstFloor.ModernUI.Windows.Navigation.NavigationEventArgs e)\n        {\n            var s= Stopwatch.StartNew();\n            Console.WriteLine(&quot;start&quot;);\n            Task.Factory.StartNew(() =&gt;\n            {\n                Thread.Sleep(20000);\n                Console.WriteLine(&quot;end task:&quot;+ s.Elapsed.TotalSeconds);\n            }, TaskCreationOptions.LongRunning);\n            Console.WriteLine(&quot;end:&quot; + s.Elapsed.TotalSeconds);\n         }</code></pre>\n\nHowever, If i write it like this, the UI is responsive immediately:<br />\n<pre><code>        public void OnNavigatedTo(FirstFloor.ModernUI.Windows.Navigation.NavigationEventArgs e)\n        {\n            var s= Stopwatch.StartNew();\n            Console.WriteLine(&quot;start&quot;);\n            new Thread(new ThreadStart(()=&gt;{\n                Thread.Sleep(20000);\n                Console.WriteLine(&quot;end task:&quot; + s.Elapsed.TotalSeconds);\n            })).Start();\n            Console.WriteLine(&quot;end:&quot; + s.Elapsed.TotalSeconds);\n        }</code></pre>\n\nIn both cases, the console output is the same. &quot;start&quot; and &quot;end&quot; are printed instantaneously and then &quot;end task&quot; is printed 20 seconds later. I can not explain this behavior. I have just started using this library and do not know what is going on.<br />\n",
+    "PostedDate": "2013-05-18T17:50:36.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046025",
+    "ThreadId": "444165",
+    "Html": "Task.Factory.StartNew does not necessarily imply the task will run in a background thread. You'll need to supply the TaskScheduler.Default as scheduler explicitly like so:<br />\n<pre><code>Task.Factory.StartNew(() =&gt; { .. }, CancellationToken.None, TaskCreationOptions.LongRunning, TaskScheduler.Default);</code></pre>\n\n",
+    "PostedDate": "2013-05-20T07:20:41.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046109",
+    "ThreadId": "444165",
+    "Html": "I was under the impression that the &quot;Default&quot; task scheduler was the default on new tasks. After more research I see that it can be either Current or Default depending on the situation if not specified. Sorry for the question.<br />\n",
+    "PostedDate": "2013-05-20T10:38:32.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

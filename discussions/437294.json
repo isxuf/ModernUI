@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1018112",
+    "ThreadId": "437294",
+    "Html": "Hi! while doing a test application noticed that ModernUI not free the memory. Roughly speaking, if switching back and forth between the elements of a surprising number of occupied memory is increasing. and judging by the control logic created and only loaded-unloaded. But, by making use of memory is always surprising number growing? I try to make something like this:<br />\n<pre><code>&lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n     &lt;! - TODO: set @ SelectedSource -&gt;\n     &lt;mui:ModernFrame KeepContentAlive=&quot;False&quot;&gt;\n     &lt;mui:ModernTab Layout=&quot;List&quot; SelectedSource=&quot;/View/Test1.xaml&quot;&gt;\n         &lt;mui:ModernTab.Links&gt;\n             &lt;mui:Link DisplayName=&quot;some 1&quot; Source=&quot;/View/Test1.xaml&quot; /&gt;\n             &lt;mui:Link DisplayName=&quot;some 2&quot; Source=&quot;/View/Test2.xaml&quot; /&gt;\n             &lt;mui:Link DisplayName=&quot;some 3&quot; Source=&quot;/View/Test3.xaml&quot; /&gt;\n         &lt;/ mui: ModernTab.Links&gt;\n     &lt;/ mui: ModernTab&gt;\n     &lt;/ mui: ModernFrame&gt;\n&lt;/ Grid&gt;\n</code></pre>\n\nbut nothing has changed.<br />\n<br />\ncan tell me what to do to not waste memory for nothing?<br />\n",
+    "PostedDate": "2013-03-20T01:58:19.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1018181",
+    "ThreadId": "437294",
+    "Html": "also has a strange behavior when unload (switch to other menu items) control is loaded again, and then double unloaded.<br />\n",
+    "PostedDate": "2013-03-20T04:53:44.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1018184",
+    "ThreadId": "437294",
+    "Html": "Although it is probably due to the fact that I have used in the load and Unload Events. When I removed this code, as if the memory was freed<br />\n",
+    "PostedDate": "2013-03-20T04:58:58.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1018365",
+    "ThreadId": "437294",
+    "Html": "Is your initial issue still valid? or also resolved when removing the event handlers?<br />\n",
+    "PostedDate": "2013-03-20T09:53:48.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1018499",
+    "ThreadId": "437294",
+    "Html": "Well, most likely issue resolved. helped ModernFrame.<br />\none question, whether I use the Modern Frame?<br />\n",
+    "PostedDate": "2013-03-20T13:05:05.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

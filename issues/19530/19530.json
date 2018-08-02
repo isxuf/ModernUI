@@ -1,0 +1,90 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 10,
+    "Custom": "",
+    "Description": "Run an event when a mui:Link in a ModernTab is clicked (not load a new page). \nIn some cases it is useful not to show another page, but run some action, possibly without page change.\nIt is useful if the links sometimes behave as traditional menu items.",
+    "LastUpdatedDate": "2015-01-21T07:52:59.08-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-03-26T17:06:27.42-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Events on Links",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 21,
+    "Id": 19530
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "What about loading a page AND firing some event?",
+      "PostedDate": "2013-04-19T08:48:29.22-07:00",
+      "Id": 158463
+    },
+    {
+      "Message": "Resolved in changeset 101030\n\n** Closed by kozw 6/11/2013 10:39 AM",
+      "PostedDate": "2013-06-11T13:05:58.837-07:00",
+      "Id": 158464
+    },
+    {
+      "Message": "i may have missed something but i think this issue is NOT resolved in mui 1.04!\r\n\r\nCouldn't find a link click event.\r\n\r\nPlease correct me if i get it wrong.",
+      "PostedDate": "2013-06-20T01:21:17.877-07:00",
+      "Id": 158465
+    },
+    {
+      "Message": "\n\n** Closed by kozw 7/5/2013 1:15 PM",
+      "PostedDate": "2013-07-05T13:15:16.15-07:00",
+      "Id": 158466
+    },
+    {
+      "Message": "Click event not working in Link",
+      "PostedDate": "2013-12-29T23:46:05.263-08:00",
+      "Id": 158467
+    },
+    {
+      "Message": "Why is this issue closed? There is no event in the [Link class](https://mui.codeplex.com/SourceControl/latest#1.0/FirstFloor.ModernUI/FirstFloor.ModernUI/Presentation/Link.cs). Please fix this, it's the most voted issue!\n\n\nBTW, it would be nice to add a Command property as well, for MVVM scenarios. However it would require to make Link inherit from DependencyObject to allow binding... changing that would probably have a rather large impact on the overall design of the library.",
+      "PostedDate": "2014-10-14T07:25:59.937-07:00",
+      "Id": 162248
+    },
+    {
+      "Message": "@tom103, didn't try this,  but did you look at the changeset 101030 (seems Commit 2ab5c188f160) specified by @kozw? \n\nhttp://mui.codeplex.com/SourceControl/changeset/2ab5c188f160859d5e2bd48971e5050acc034486\n\n\n",
+      "PostedDate": "2014-10-15T00:50:50.83-07:00",
+      "Id": 162302
+    },
+    {
+      "Message": "@saamorim, thanks, but I'm not sure how that helps... I want to react to the click on a link in the window title bar. I definitely don't want to navigate to another page -- which is what happens when the selected source changes, right ?",
+      "PostedDate": "2014-10-15T02:10:06.177-07:00",
+      "Id": 162306
+    },
+    {
+      "Message": "@tom103 - see [here](https://mui.codeplex.com/discussions/442724)",
+      "PostedDate": "2014-11-06T03:00:25.44-08:00",
+      "Id": 164065
+    },
+    {
+      "Message": "I think kozw was correct in closing this issue as it has been demonstrated how to tie a command to a titlelink - what more do you need?",
+      "PostedDate": "2015-01-21T07:52:59.08-08:00",
+      "Id": 170590
+    }
+  ]
+}

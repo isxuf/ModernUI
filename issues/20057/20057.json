@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "ModernTab with Layout=List, does provide the __ScrollViewer.HorizontalScrollBarVisibility__ and __ScrollViewer.VerticalScrollBarVisibility__. The __VerticalScrollBarVisibility__ property will be used for the entire (left and right) part of the control, where the __HorizontalScrollBarVisibility__ is only used on the left part.\n\nIt would be great if one could handle all of the Scrollbars (_missing_) not only the one __highligted__:\n> entire part (left and right): __vertical__ and _horizontal_\n> left part: _vertical_ and __horizontal__\n> right part: _vertical_ and _horizontal_",
+    "LastUpdatedDate": "2013-08-09T07:45:09.647-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-08-09T07:45:09.647-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ModernTab Layout=List, vertical ScrollViewer on left part",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20057
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 5,
+    "Custom": "",
+    "Description": "When I try to run ModernUIDemo.exe on a machine (Win Server 2008 R2) with .NET 3.5 only the app crashes without prompting to download the required framework. What can I do?",
+    "LastUpdatedDate": "2013-09-03T02:22:33.12-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-08-27T23:42:53.927-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ModernUI Application crashes on .NET 3.5",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20146
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The framework is designed to work with .net 4.0 and above, i think.But ModernUIDemo.exe sure is. Just install .net 4.0 and the exe will run.",
+      "PostedDate": "2013-08-31T22:44:36.603-07:00",
+      "Id": 158550
+    },
+    {
+      "Message": "I use some .NET 4.5 features like async/await but my app crashes with the \"close or debug\" prompt only. The app ignores the -section in the configuration. Any idea why? ",
+      "PostedDate": "2013-09-01T01:16:49.37-07:00",
+      "Id": 158551
+    },
+    {
+      "Message": "BladeFire is correct; MUI requires .NET 4 or higher",
+      "PostedDate": "2013-09-01T05:12:31.677-07:00",
+      "Id": 158552
+    },
+    {
+      "Message": "What can I do to see the default messagebox like here:[http://stackoverflow.com/questions/9132848/why-does-my-app-require-the-full-net-4-framework](http://stackoverflow.com/questions/9132848/why-does-my-app-require-the-full-net-4-framework)\r\n\r\nI know, MUI requires 4.0 but users don't know.",
+      "PostedDate": "2013-09-01T09:52:01.97-07:00",
+      "Id": 158553
+    },
+    {
+      "Message": "Open you project and go to Project>[Project Name] Properties option in the menu, and change the Target Framework property to whatever you want.\r\n\r\nThis will solve all you  problems.Hope this helps.",
+      "PostedDate": "2013-09-03T02:22:33.12-07:00",
+      "Id": 158554
+    }
+  ]
+}

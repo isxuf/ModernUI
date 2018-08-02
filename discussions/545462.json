@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1245806",
+    "ThreadId": "545462",
+    "Html": "Hello,<br />\n<br />\nI would like to use the Left and Right keys in my application to control a radial button, but when I do it navigates to the pages in the LinkGroup.<br />\n<br />\nI handle the keys on the MainWindow when the Control page is selected, and fire an event which the Controls page subscribes and routes the key to the control. But this prevents me from entering text in a text box on that page.<br />\n<pre><code>private void ModernWindow_PreviewKeyDown(object sender, KeyEventArgs e)\n{\n            if (ModernMenu.SelectedPage == @&quot;/Pages/Controls.xaml&quot;)\n            {\n\n                e.Handled = true;\n\n                if (OnMainKeyPress != null)\n                    OnMainKeyPress(this, e);\n            }\n}</code></pre>\n\nIf possible, I would like to prevent the left and right keys from selecting the links in the menu. Does anyone know how to do this?<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2014-05-15T10:07:25.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

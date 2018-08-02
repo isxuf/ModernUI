@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 3,
+    "Custom": "",
+    "Description": "It would be nice if ModernTab control could write navigation history when switching tabs, so that when you click back on the interface, It would go back one tab, not whole main page change.",
+    "LastUpdatedDate": "2016-09-09T16:52:19.64-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-23T08:46:43.197-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Allow ModernTab to write Navigation BackEntries",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 19895
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "That would require manipulation across classes and the back button is used for navigating for the main page instead of a child control.",
+      "PostedDate": "2013-06-25T17:10:18.593-07:00",
+      "Id": 158530
+    },
+    {
+      "Message": "I have a question, May be It's not so related.\nIs there any way to clear backentries on MainWindow after navigated to some other pages?\n\nThanks a lot for helps in advance.",
+      "PostedDate": "2015-05-11T03:58:43.083-07:00",
+      "Id": 184208
+    },
+    {
+      "Message": "@PavasornN\n\nDid you ever find away to clear back entries. I would like to navigate to a login page and then remove the navigation from history once login has completed since logging in is only needed once per session.",
+      "PostedDate": "2016-09-09T16:52:19.64-07:00",
+      "Id": 204018
+    }
+  ]
+}

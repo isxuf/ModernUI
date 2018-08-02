@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1060114",
+    "ThreadId": "447970",
+    "Html": "Here's a useful animated Expander control template which you can integrate into your own application with ease.\r<br />\n<br />\n<img src=\"http://s2.postimg.org/k0niymhgp/mui_Expander.jpg\" alt=\"Image\" />\r<br />\n<br />\nLink to solution demonstrating use.\r<br />\n<a href=\"https://github.com/AydinAdn/ModernUIExpander/archive/master.zip\" rel=\"nofollow\">ExpanderSolution</a>\r<br />\n<br />\nModified files in the ModernUI Source code include:\r<br />\n<br />\nNew file:    FirstFloor.ModernUI  &gt;  Assets  &gt;  <a href=\"https://github.com/AydinAdn/ModernUIExpander/blob/master/FirstFloor.ModernUI/Assets/Expander.xaml\" rel=\"nofollow\">Expander.xaml</a> \r<br />\nEdited file: FirstFloor.ModernUI  &gt;  Assets  &gt;  <a href=\"https://github.com/AydinAdn/ModernUIExpander/blob/master/FirstFloor.ModernUI/Assets/ListBox.xaml\" rel=\"nofollow\">ListBox.xaml</a>\r<br />\nEdited file: FirstFloor.ModernUI  &gt;  Assets  &gt;  <a href=\"https://github.com/AydinAdn/ModernUIExpander/blob/master/FirstFloor.ModernUI/Assets/ModernUI.xaml\" rel=\"nofollow\">ModernUI.xaml</a>\r<br />\nEdited file: FirstFloor.ModernUI  &gt;  Assets  &gt;  <a href=\"https://github.com/AydinAdn/ModernUIExpander/blob/master/FirstFloor.ModernUI/Assets/ModernUI.Dark.xaml\" rel=\"nofollow\">ModernUI.Dark.xaml</a>\r<br />\nEdited file: FirstFloor.ModernUI  &gt;  Assets  &gt;  <a href=\"https://github.com/AydinAdn/ModernUIExpander/blob/master/FirstFloor.ModernUI/Assets/ModernUI.Light.xaml\" rel=\"nofollow\">ModernUI.Light.xaml</a>\r<br />\n<br />\nExample of use:\r<br />\n<a href=\"https://github.com/AydinAdn/ModernUIExpander/blob/master/ModernUIApp3/NewPage.xaml\" rel=\"nofollow\">NewPage.xaml</a>\r<br />\n<a href=\"https://github.com/AydinAdn/ModernUIExpander/blob/master/ModernUIApp3/NewPage.xaml.cs\" rel=\"nofollow\">NewPage.xaml.cs</a><br />\n",
+    "PostedDate": "2013-06-23T09:51:02.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060186",
+    "ThreadId": "447970",
+    "Html": "Your expander has a bug: Try to click through the elements, some of them wont constract/expand the first time you click them.<br />\n",
+    "PostedDate": "2013-06-23T14:39:12.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060231",
+    "ThreadId": "447970",
+    "Html": "Fixed, just replace your Expander.xaml file with the updated one...\r<br />\n<br />\n<a href=\"https://github.com/AydinAdn/ModernUIExpander/blob/master/FirstFloor.ModernUI/Assets/Expander.xaml\" rel=\"nofollow\">Exander.xaml</a><br />\n",
+    "PostedDate": "2013-06-23T21:57:18.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

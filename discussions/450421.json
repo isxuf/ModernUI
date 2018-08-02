@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1069823",
+    "ThreadId": "450421",
+    "Html": "When I develop my app on my own PC, the grids look fine. But when I publish the app and have someone else install the app it doesn't appear that the Grid style gets loaded properly. Any ideas? See the attached image. The top Grid is on my PC, the bottom grid is on the user's PC. I also noticed that none of the scroll bars are styled like mine, and when a scrollviewer extends large enough to hold the content the scroll bar doesn't disappear.<br />\n<br />\nAlso I checked and they have the latest .NET framework installed, as well as .NET 3.5SP1<br />\n<br />\n<img src=\"http://s10.postimg.org/hzb2ie4dl/capture22.png\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-07-17T20:21:46.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073189",
+    "ThreadId": "450421",
+    "Html": "Does the deployed app work okay on your machine? (that is is not while debugging)<br />\n",
+    "PostedDate": "2013-07-25T14:24:50.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088827",
+    "ThreadId": "450421",
+    "Html": "Yes, my machine it works fine. I am thinking some DLL isn't getting pushed but I checked all the dlls that exist in my install directory, and they all exist in the other users directory.<br />\n",
+    "PostedDate": "2013-09-05T09:25:01.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088829",
+    "ThreadId": "450421",
+    "Html": "Did you create a MUI project using .NET 4? In that case you need to apply a workaround described in <a href=\"https://mui.codeplex.com/wikipage?title=Working%20with%20WPF%204.0\" rel=\"nofollow\">this post</a>.<br />\n",
+    "PostedDate": "2013-09-05T09:28:59.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088875",
+    "ThreadId": "450421",
+    "Html": "I will give that a shot and let you know. Thanks!<br />\n",
+    "PostedDate": "2013-09-05T10:50:49.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

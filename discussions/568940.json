@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1310161",
+    "ThreadId": "568940",
+    "Html": "Hello,\r<br />\n<br />\nIn my Project, there is some validation code that is performed on the OnNavigatingFrom event handler.\r<br />\n<br />\nIf validation fails we cancel the navigation setting e.Cancel = true. This works great for most cases.\r<br />\n<br />\nHowever, I have some validation code that is inside a try...catch block. If there is any exception, I want to also cancel the navigation.\r<br />\n<br />\nHowever, this is not working. Even after setting e.Cancel = true on the catch block, the navigation takes place and it is not cancelled. It seems this happens only when a exception handling is involved.\r<br />\n<br />\nIs there anything I should know about that?\r<br />\n<br />\nThank you,\r<br />\n<br />\nIgor.<br />\n",
+    "PostedDate": "2014-10-03T01:49:20.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310331",
+    "ThreadId": "568940",
+    "Html": "Setting e.Cancel in a try.. catch block should work equally well. Care to share some source code?<br />\n",
+    "PostedDate": "2014-10-03T12:23:35.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310803",
+    "ThreadId": "568940",
+    "Html": "Thank you for the reply,\r<br />\n<br />\nI double checked my code and the try.. catch block is not the problem.\r<br />\n<br />\nThe problem is that I have some async await calls in the OnNavigatingFrom method and even so the UI framework seems to process the message. Even if we cancel the event (after the async task is completed) the navigation was already done.\r<br />\n<br />\nHowever, I understand that blocking the UI until the async task is completed does not make a responsive UI. So I guess I will have to make this processing at another moment.\r<br />\n<br />\nThank you anyway for the support\r<br />\n<br />\nIgor.<br />\n",
+    "PostedDate": "2014-10-06T08:05:58.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310903",
+    "ThreadId": "568940",
+    "Html": "That's a correct observation. If you want to cancel the navigation, it needs to be done in a synchronous way. Awaiting a task will allow the ModernFrame navigation to continue, setting the Cancel afterwards won't have any effect. Blocking the UI is generally not a great idea.<br />\n",
+    "PostedDate": "2014-10-06T13:07:58.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

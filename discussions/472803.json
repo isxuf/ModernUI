@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1134096",
+    "ThreadId": "472803",
+    "Html": "We have an Excel ribbon add-in which is using the .NET 4.0 version of FirstFloor.ModernUI.  When 64 bit Excel 2010/2013 closes and a FirstFloor.ModernUI window has been shown, a crash dialog appears.  Hitting the following code is sufficient to trigger the crash:<br />\n<pre><code>    public void buttonTest_Click(IRibbonControl control)\n    {\n        ModernWindow foo = new ModernWindow();\n        foo.ShowDialog();\n\n        // Crash happens later, when Excel is closing\n    }\n</code></pre>\n\nThe crash itself is of the form:<br />\n<pre><code>Unhandled exception at 0x000007FEFD81940D (KernelBase.dll) in EXCEL.EXE: 0xC000041D: An unhandled exception was encountered during a user callback.\n</code></pre>\n\nwith a call stack of:<br />\n<pre><code>KernelBase.dll!000007fefd81940d()   Unknown\nclr.dll!000007fef3b1565b()  Unknown\nclr.dll!000007fef3caa666()  Unknown\nclr.dll!000007fef3b37ea7()  Unknown\nclr.dll!000007fef396842d()  Unknown\nuser32.dll!0000000077469bd1()   Unknown\nuser32.dll!00000000774672cb()   Unknown\nuser32.dll!0000000077466829()   Unknown\nntdll.dll!00000000776c11f5()    Unknown\nuser32.dll!000000007746193a()   Unknown\nMSO.DLL!000007fee35ee20a()  Unknown\nEXCEL.EXE!000000013fcbf683()    Unknown\n   [...]\n</code></pre>\n\nI have not yet checked to see if the same crash happens with the .NET 4.5 version, but will follow up once I do.\r<br />\n<br />\nThis smells like a callback was registered somewhere but never unregistered.  Has anyone seen this before or figured out a workaround?\r<br />\n<br />\nThanks, Eric<br />\n",
+    "PostedDate": "2013-12-10T17:20:55.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1134490",
+    "ThreadId": "472803",
+    "Html": "I've confirmed that crash appears to <em>only</em> happens the .NET 4.0 version of the MUI library.  The .NET 4.5 version doesn't seem to cause this, at least in my quick test.<br />\n<br />\nI'll try to debug the source code a bit more locally.  If I can't find the actual bug, the workaround may be to require .NET 4.5 for 64 bit installs, and not support 64 bit Windows XP (yes, there apparently is such a thing).<br />\n<br />\n-Eric<br />\n",
+    "PostedDate": "2013-12-11T11:56:06.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

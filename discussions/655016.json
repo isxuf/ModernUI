@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1474519",
+    "ThreadId": "655016",
+    "Html": "This is posted too in <a href=\"https://github.com/firstfloorsoftware/mui/issues/113\" rel=\"nofollow\">Github</a><br />\n<br />\nIn my project I use EF and MEF all is working fine. But if I try to navigate with a button to a page in an other group the page is displayed in the current group.<br />\n<br />\nI have tested with a new project template &quot;Modern UI WPF Navigation Application&quot;. <br />\n<ul>\n<li>In &quot;MainWindow.xaml&quot; add a link to a page (e.g. TabPage1.xaml)</li>\n<li>Add content (Content1.xaml) to the TabPage1 </li>\n<li>In Content add a button with </li>\n</ul>\n<pre><code>Command=&quot;mui:LinkCommands.NavigateLink&quot; \nCommandParameter=&quot;/Pages/Settings/About.xaml&quot;</code></pre>\n\nif you click on the button the navigation displayed the &quot;About&quot; page in the default group instead in &quot;settings&quot; group.<br />\n",
+    "PostedDate": "2016-05-27T08:25:27.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

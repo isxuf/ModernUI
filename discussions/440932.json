@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "1033103",
+    "ThreadId": "440932",
+    "Html": "Hey,\r<br />\ni would like to execute a method defined in my ViewModel when i click on a mui:Link.\r<br />\n<br />\nI tried to use the IContent which provides the OnNavigatedTo method. <br />\n<pre><code>        public void OnNavigatedTo(NavigationEventArgs e)\n        {\n            MainViewModel vm = this.DataContext as MainViewModel;\n\n            vm.DoSomething.Execute(new object());\n        }</code></pre>\n\nIt is working but i don't like this approach and looking for better ways to do so.\r<br />\n<br />\nWould be cool to execute an RelayCommand on mui:link click.\r<br />\n<br />\nIs there a better solution with less or cleaner Code Behind?\r<br />\n<br />\nbtw: great job, i LOVE m:ui!<br />\n",
+    "PostedDate": "2013-04-19T08:45:48.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033344",
+    "ThreadId": "440932",
+    "Html": "Where do you use a Link that needs to execute a ICommand? IMHO links in the main menu should always perform a page load. The title links however should be able to  perform a ICommand execute. I'm working on a solution.<br />\n",
+    "PostedDate": "2013-04-20T05:04:59.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033819",
+    "ThreadId": "440932",
+    "Html": "i have a page where the content of the page depends on another page. The generation takes some time so i would like to do it only when it is necessary. Necessary in this context means only when the user actually wants to see the generated content. That is why it would be great to be able to perform an action on page load.\r<br />\n<br />\nTo be more specific: on page one i have a textbox containing xml code which should be transformed via XSLT when the user opens the second page which will display the result of the transformation.\r<br />\n<br />\nI'm think about something like this:<br />\n<pre><code>        &lt;mui:LinkGroup DisplayName=&quot;PROCESSING&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;XML&quot; Source=&quot;/Pages/Xml.xaml&quot; Command=&quot;{Binding GenerateCommand, Mode=OneWay}&quot;/&gt;\n                &lt;mui:Link DisplayName=&quot;Transformed XML&quot; Source=&quot;/Pages/Result.xaml&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;</code></pre>\n\nThanks for your effort!<br />\n",
+    "PostedDate": "2013-04-22T01:41:22.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034818",
+    "ThreadId": "440932",
+    "Html": "Not sure adding an explicit command to links is the solution. How about moving your xml and xslt translation logic to a viewmodel that is used in both your xml.xaml and result.xaml? When the result page is created, you should initate your transform logic in your view model.<br />\n",
+    "PostedDate": "2013-04-23T15:04:21.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034981",
+    "ThreadId": "440932",
+    "Html": "both pages already share the same view model instance. As far as i know the page is created only once (doesn't work to trigger the transformation in constructor or in the UserControl_Initialized event). Hence, the user cannot switch back, change something in the xml and trigger the transformation again.\r<br />\n<br />\nThe current OnNavigatedTo() approach doesn't trigger the content is loading indication progress bar.\r<br />\n<br />\nHowever i would love to see the ability to hook in when a link is clicked. The proposed command thing is just one way todo it, but an simple link click event would also satisfy my needs. This is also one of the highest rated feature requests suggested by the community <a href=\"https://mui.codeplex.com/workitem/19530\" rel=\"nofollow\">(see issuetracker)</a><br />\n",
+    "PostedDate": "2013-04-24T00:53:25.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035279",
+    "ThreadId": "440932",
+    "Html": "Adding link click events to the various controls is definitely going to happen soon. If that solves your issue as well, then consider that the solution.<br />\n",
+    "PostedDate": "2013-04-24T12:31:44.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035485",
+    "ThreadId": "440932",
+    "Html": "okay, thank you<br />\n",
+    "PostedDate": "2013-04-25T00:34:20.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1219419",
+    "ThreadId": "440932",
+    "Html": "I'm using MUI framework. It's awesome.\r<br />\nFor some reason, I'm looking forward to link click events too.\r<br />\nIs it available now?<br />\n",
+    "PostedDate": "2014-03-05T04:51:51.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1233762",
+    "ThreadId": "440932",
+    "Html": "Any solution is available now?<br />\n",
+    "PostedDate": "2014-04-13T23:00:38.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

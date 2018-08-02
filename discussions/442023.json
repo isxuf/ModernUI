@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1037418",
+    "ThreadId": "442023",
+    "Html": "How do I create a status bar in the mainwindow where all it have is only links to different pages.\r<br />\nI want the status bar in mainwindow and post error/log messages from child windows created using Links. Any help?<br />\n",
+    "PostedDate": "2013-04-29T17:10:15.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1037834",
+    "ThreadId": "442023",
+    "Html": "For a status bar in the main window you'll need to create a custom window template. I would suggest to use MVVM, create a status view model, bind it to your status control and use messaging to send messages from any view model to the status view model.<br />\n",
+    "PostedDate": "2013-04-30T14:38:38.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

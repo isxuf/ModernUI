@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1084142",
+    "ThreadId": "454349",
+    "Html": "Any idea on the next official release?<br />\n",
+    "PostedDate": "2013-08-23T05:51:40.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084907",
+    "ThreadId": "454349",
+    "Html": "Good question. To be honest; don't know. Depends on my free time (very limited at the moment). The next big thing is updates to the navigation stack and the introduction of a navigation service.<br />\n",
+    "PostedDate": "2013-08-26T06:12:01.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1085713",
+    "ThreadId": "454349",
+    "Html": "Thanks, I've used this on a couple of apps now and I mus say it's a pretty good framework, highly recommended using Caliburn MVVM framework though.<br />\n",
+    "PostedDate": "2013-08-28T03:40:26.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086855",
+    "ThreadId": "454349",
+    "Html": "Sounds good!<br />\n",
+    "PostedDate": "2013-08-30T23:11:05.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086870",
+    "ThreadId": "454349",
+    "Html": "Yes it is, I can't wait with the implementation of navigation service. Thanks kozw!<br />\n",
+    "PostedDate": "2013-08-31T01:37:57.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

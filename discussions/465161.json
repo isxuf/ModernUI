@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1116741",
+    "ThreadId": "465161",
+    "Html": "Hi,\r<br />\n<br />\nIs possible (or will be implemented in a future release) a way to specify a Page instance instead of the XAML Uri as Source parameter?\r<br />\n<br />\nIn this way it is possible to create a page passing parameters to the constructor and it is also possible to use IoC frameworks in a meaningful way.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-11-01T16:32:20.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1143619",
+    "ThreadId": "465161",
+    "Html": "I‘m trying to find a solution of this problem。\r<br />\nhave you worked it out？\r<br />\nif so，would you please help me ？thank you very much。<br />\n",
+    "PostedDate": "2013-12-28T19:18:02.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

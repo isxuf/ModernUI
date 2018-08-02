@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1057339",
+    "ThreadId": "447177",
+    "Html": "Hi everyone!\r<br />\nI need help.\r<br />\nI want to add the Login Screen in my program.\r<br />\nI decided to show the login screen to the loaded event of the main window.\r<br />\nIn WPF project without Mui everything works as it should, first appears the main window and then login screen.\r<br />\nBut as soon as I change the class with from Window to ModernWindow, behavior changes, and first appears LoginScreen, and after its closing the main window appears.\r<br />\nWhy?\r<br />\nThanks<br />\n",
+    "PostedDate": "2013-06-15T23:29:29.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058358",
+    "ThreadId": "447177",
+    "Html": "Have you seen <a href=\"https://mui.codeplex.com/discussions/443503\" rel=\"nofollow\">this discussion</a> on how to show/hide content based on a custom login state?<br />\n",
+    "PostedDate": "2013-06-18T12:07:12.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058472",
+    "ThreadId": "447177",
+    "Html": "Thank you.\r<br />\nI see<br />\n",
+    "PostedDate": "2013-06-18T20:33:48.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

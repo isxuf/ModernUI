@@ -1,0 +1,146 @@
+[
+  {
+    "Id": "1051422",
+    "ThreadId": "445631",
+    "Html": "I'd like to use MVVM and ViewService pattern with Modern UI for WPF.\r<br />\nBut I don't know how to implement NavigationService of Modern UI.\r<br />\nDoes Modern UI provide NavigationService ?<br />\n",
+    "PostedDate": "2013-05-31T17:19:54.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051608",
+    "ThreadId": "445631",
+    "Html": "it does not provide a NavigationService.<br />\n",
+    "PostedDate": "2013-06-01T13:58:14.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051636",
+    "ThreadId": "445631",
+    "Html": "Seeing there's a lot of questions around a navigation service. <br />\n<br />\nWill share what I'm doing, but note this a rudimentary implementation of a navigation service using mvvmlight, it really depends on what you want from a navigation service<br />\n<h2>My interface</h2>\nnamespace XXX..Interface<br />\n{<br />\n<pre><code>using System;\n\npublic interface INavigationService\n{\n    void Navigate&lt;T&gt;(object parameter = null);\n\n    void GoBack();\n}</code></pre>\n\n}<br />\n<h2>My Navigation Service</h2>\nnamespace XXX.Service<br />\n{<br />\n<pre><code>using XXX.Interface;\nusing XXX.ViewModel;\nusing FirstFloor.ModernUI.Windows.Controls;\nusing FirstFloor.ModernUI.Windows.Navigation;\nusing System;\nusing System.Collections.Generic;\nusing System.Windows;\nusing System.Windows.Input;\nusing System.Windows.Media;\n\npublic class NavigationService : INavigationService\n{\n\n    /// &lt;summary&gt;\n    /// The view model routing.\n    /// &lt;/summary&gt;\n    private static readonly Dictionary&lt;Type, string&gt; viewModelRouting \n        = new Dictionary&lt;Type, string&gt;\n            {\n                { typeof(AccountViewModel), &quot;/View/Administration/AccountView.xaml&quot; },\n            };\n\n\n    ModernFrame mainFrame;\n\n    public NavigationService()\n    {\n        EnsureMainFrame();\n    }\n\n    private void EnsureMainFrame()\n    {\n        if (mainFrame == null)\n        {\n            var f = Application.Current.MainWindow;\n            mainFrame = GetDescendantFromName(f, &quot;ContentFrame&quot;) as ModernFrame;\n        }\n    }\n\n    /// &lt;summary&gt;\n    /// Gets the name of the descendant from.\n    /// &lt;/summary&gt;\n    /// &lt;param name=&quot;parent&quot;&gt;The parent.&lt;/param&gt;\n    /// &lt;param name=&quot;name&quot;&gt;The name.&lt;/param&gt;\n    /// &lt;returns&gt;Gets a descendant FrameworkElement based on its name.A descendant FrameworkElement with the specified name or null if not found.&lt;/returns&gt;\n    private static FrameworkElement GetDescendantFromName(DependencyObject parent, string name)\n    {\n        int count = VisualTreeHelper.GetChildrenCount(parent);\n\n        if (count &lt; 1)\n            return null;\n\n        FrameworkElement fe;\n\n        for (int i = 0; i &lt; count; i++)\n        {\n            fe = VisualTreeHelper.GetChild(parent, i) as FrameworkElement;\n            if (fe != null)\n            {\n                if (fe.Name == name)\n                    return fe;\n\n                fe = GetDescendantFromName(fe, name);\n                if (fe != null)\n                    return fe;\n            }\n        }\n\n        return null;\n    }\n\n    /// &lt;summary&gt;\n    /// Navigates the specified parameter.\n    /// &lt;/summary&gt;\n    /// &lt;typeparam name=&quot;T&quot;&gt;ViewModel type&lt;/typeparam&gt;\n    /// &lt;param name=&quot;parameter&quot;&gt;The parameter.&lt;/param&gt;\n    public void Navigate&lt;T&gt;(object parameter = null)\n    {\n        EnsureMainFrame();\n\n        var navParameter = string.Empty;\n        if (parameter != null)\n        {\n            navParameter = &quot;?param=&quot; + JsonConvert.SerializeObject(parameter);\n        }\n\n        if (viewModelRouting.ContainsKey(typeof(T)))\n        {\n            Uri newUrl = new Uri(viewModelRouting[typeof(T)] + navParameter, UriKind.Relative);\n            Uri oldUrl = mainFrame.Source;\n            mainFrame.Navigate(oldUrl, newUrl, NavigationType.New);\n        }\n    }\n\n    /// &lt;summary&gt;\n    /// Invokes the go back.\n    /// &lt;/summary&gt;\n    public void GoBack()\n    {\n        NavigationCommands.BrowseBack.Execute(null, null);   \n    }\n}</code></pre>\n\n}<br />\n<br />\nSince I'm using mvvmlight, below is how I would get an instance of the navigation Service, after I registered it, and navigate to the view. Note I have a one to one mapping of my view to my viewmodel.<br />\n<pre><code>        var x = SimpleIoc.Default.GetInstance&lt;INavigationService&gt;();\n        x.Navigate&lt;AccountViewModel&gt;(customParamsInstance);\n\n</code></pre>\n\nThis is how I would go back.<br />\n<pre><code>            var x = SimpleIoc.Default.GetInstance&lt;INavigationService&gt;();\n            x.GoBack();\n\n</code></pre>\n\nBut I still feel there should be some design considerations on exposing relevant navigation methods as public, that would make the ModernFrame navigation simpler.<br />\n<br />\nRegards<br />\nPrakashZa<br />\n",
+    "PostedDate": "2013-06-01T17:32:45.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060131",
+    "ThreadId": "445631",
+    "Html": "Hey!<br />\n<br />\nI have been struggling all day to get a handle to the NavigationService in my UserControls ViewModel. Your approach seems interesting but unfortunately I cant get the NavigationService class code to compile. The problem is this in the Navigate&lt;T&gt; method<br />\n<pre><code> mainFrame.Navigate(oldUrl, newUrl, NavigationType.New);</code></pre>\n\nThe MUI's ModernFrame.Navigate() method is private and cannot be accessed.<br />\n<br />\nI have been trying this in MUI 1.0.3 and 1.0.4 with no luck. Any suggestions?<br />\n",
+    "PostedDate": "2013-06-23T10:30:36.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060280",
+    "ThreadId": "445631",
+    "Html": "Yeah,<br />\n<br />\nSupposedly you are using the MUI source code and not a nuGet pull, all you have to do is that change the Navigate method in ModernFrame class from private to public in the MUI source code, and that should solve it. <br />\n<br />\nI did summit a issue to convert the method from private to public, as it shouldn't have any impact, maybe it will be public in the next release.<br />\n<br />\nRegards<br />\nPrakashZa<br />\n",
+    "PostedDate": "2013-06-24T01:35:09.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060580",
+    "ThreadId": "445631",
+    "Html": "Hello again!\r<br />\n<br />\nI took the MUI 1.0.4 source and made the ModernFrame.Navigate() public and then I was in business again :-) Thanks alot!\r<br />\n<br />\nAnd now I am kind of stuck with how to retrieve the parameter in the navigated to viewmodel. I can get it sort of working with creating a constructor on the viewmodel taking the parameter in and using the Navigate like this:<br />\n<pre><code>var navigator = SimpleIoc.Default.GetInstance&lt;INavigationService&gt;();\nnavigator.Navigate&lt;CustomerSearchResultViewModel&gt;(new CustomerSearchResultViewModel(Customers));</code></pre>\n\nHowever this results in both of the viewmodels two constructors (have to have a parameterless one too) being called - I dont like that. I am aware that this is on the side of this discussion but I thought I would give it a try ;-)\r<br />\n<br />\nI am sure you have figured this one out?\r<br />\n<br />\nThanks again!<br />\n",
+    "PostedDate": "2013-06-24T14:12:00.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060790",
+    "ThreadId": "445631",
+    "Html": "If I look at your code, it not good practice to pass viewmodels to constructors. Always use some dependency injection for decoupling like NInject, SimpleIoc (Mvvmlight), AutoFac, Unity, there's tons out, and all of them implement constructor injection with no effort especially as your project gets bigger this will make life easier.<br />\n<br />\nOK here a suggestion on how you would fix your viewmodel design a bit. Note the code below is written on the cuff in this response.<br />\n<br />\nCreate a the params class, so you would create your paramobject like below<br />\n<br />\npublic class CustomerParam<br />\n{<br />\n<pre><code> public string Id;\n public string Mode;\n public string Name;</code></pre>\n\n}<br />\n<br />\n// So your navigation will be something like below in the viewmodel<br />\n<br />\nvar navigator = SimpleIoc.Default.GetInstance&lt;INavigationService&gt;();<br />\nnavigator.Navigate&lt;CustomerSearchResultViewModel&gt;(new CustomerParam { Id = &quot;xxx&quot; } );<br />\n<br />\nIn your CustomerSearchResultView.<br />\n<br />\npublic class CustomerSearchResultView : FirstFloor.ModernUI.Windows.IContent<br />\n{<br />\n<pre><code>    // so as this view implements IContent, you will get the navigation events fired for navigated to/from and on\n    // you need to decide which events(s) suits your purpose and manage it\n    public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n    {\n    }\n    public void OnNavigatedFrom(NavigationEventArgs e)\n    {           \n    }\n   // for example, OnNavigatedTo should be called when you navigated to the CustomerSearchResultView\n    public void OnNavigatedTo(NavigationEventArgs e)\n    {\n              // for example here I would\n              // step 1) check e if is typeof (CustomerParam) or contains a CustomerParam\n              // step 2) if it does then I would \n                           // step 2.1) Load a busy \n                           // step 2.2) var custResultVM = SimpleIoc.Default.GetInstance&lt;CustomerSearchResultViewModel&gt;(); // nothing wrong with this\n                           // step 2.3) custResultVM.DoWork( CustomerParam ); // me guess you will goto a db or something here, and your view bindings will show your results\n                           // step 2.4) unload busy\n              // step 3) if nothing was found, or params not understood then gracefully exit, with some logging\n\n    }\n    public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n    {\n    }</code></pre>\n\n}<br />\n<br />\nHope this guides you.<br />\n<br />\nRegards<br />\nPrakashZa<br />\n",
+    "PostedDate": "2013-06-25T03:04:07.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060876",
+    "ThreadId": "445631",
+    "Html": "Ok - I see that iI should have elaborated a bit more on my draft code sample. This is how I use the navigationservice now<br />\n<pre><code>navigator.Navigate&lt;CustomerSearchResultViewModel&gt;(Customers);</code></pre>\n\n<strong>&quot;Customers&quot; is a list of customers already searched and  found like this: List&lt;Customer&gt;().</strong> The CustomerSearchResultViewModel (and corresponding view) purpose is to display this list, and in that view I will implement some kind of customer master/detail logic.\r<br />\n<br />\nProblem now is that the FirstFloor.ModernUI.Windows.Navigation.NavigationEventAgs seems very rudimentary. Whereas the System.Windows.Navigation.NavigationEventAgs has the &quot;ExtraData&quot; property where the parameters are held, this is lacking from the FirstFloor implementation.\r<br />\n<br />\nSo now status is that I use the navigator like shown above and am strugglig to find away to get those data out of the FirstFloor.ModernUI.Windows.Navigation.NavigationEventArgs passed to my code behind file. And I just now discovered that the typeof(e) show that I am dealing with a CustomerSearchResultViewModel type - and not the List&lt;Customer&gt;  I would have expected ...\r<br />\n<br />\nBut thanks alot for taking the time to answer my questions!<br />\n",
+    "PostedDate": "2013-06-25T06:15:48.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1061063",
+    "ThreadId": "445631",
+    "Html": "Sure no problem dude,\r<br />\n<br />\nWhat I also wanted to share for params and not sure if it can assist your case, is to use the mvvmlight event to command. Your xaml for search button in your main search view will look like something like below.\r<br />\n<br />\n<a href=\"http://geekswithblogs.net/lbugnion/archive/2009/11/05/mvvm-light-toolkit-v3-alpha-2-eventtocommand-behavior.aspx\" rel=\"nofollow\">http://geekswithblogs.net/lbugnion/archive/2009/11/05/mvvm-light-toolkit-v3-alpha-2-eventtocommand-behavior.aspx</a>\r<br />\n<br />\nxmlns:i=&quot;clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity&quot;\r<br />\nxmlns:cmd=&quot;clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras&quot;\r<br />\n<br />\n&lt;Button&gt;\r<br />\n&lt;i:Interaction.Triggers&gt;<br />\n<pre><code>&lt;i:EventTrigger EventName=&quot;OnClicked&quot;&gt;\n    &lt;cmd:EventToCommand Command=&quot;{Binding Mode=OneWay, Path=SearchCommand}&quot; \n                                         CommandParameter=&quot;{Binding Text, ElementName=MyTextBox, Mode=OneWay}&quot;\n                        PassEventArgsToCommand=&quot;True&quot; /&gt;\n&lt;/i:EventTrigger&gt;</code></pre>\n\n&lt;/i:Interaction.Triggers&gt; \r<br />\n&lt;/Button&gt;\r<br />\n<br />\nHere the relay command SearchCommand is invoked on the button OnClicked event plus the text of the textbox is passed as a parameter to the SearchCommand. Pretty neat right !!! This works for listbox, image, pretty much any control, just get your bindings right.\r<br />\n<br />\nWhile code flow is still in the viewmodel all the time, do your processing for the SearchCommand, then get an instance to the navigation service, and navigate somewhere. And since your navigation service is decoupled already with the pattern above you ok.\r<br />\n<br />\nLets me know if this helps.\r<br />\n<br />\nRegards\r<br />\nPrakashZa<br />\n",
+    "PostedDate": "2013-06-25T12:15:35.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1061096",
+    "ThreadId": "445631",
+    "Html": "Thanks for prompt reply mate!\r<br />\n<br />\nI got around this so far by rewriting the Navigator service to build up the newUrl like this  - from:<br />\n<pre><code>navParameter = &quot;?param=&quot; + JsonConvert.SerializeObject(parameter);</code></pre>\n\nto:<br />\n<pre><code>navParameter = &quot;#&quot; + JsonConvert.SerializeObject(parameter);</code></pre>\n\nbecause when doing this the FirstFloor OnFragmentNavigation event got triggered in the code behind - and in this event the passed parameter could be obtained. My codebehind basically looks like this now:<br />\n<pre><code>        private CustomerSearchResultViewModel _searchResult;\n        public CustomerSearchResult()\n        {\n            InitializeComponent();\n            _searchResult = SimpleIoc.Default.GetInstance&lt;CustomerSearchResultViewModel&gt;();\n        }\n\n        public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n        {\n            var customers = e.Fragment;\n            _searchResult.Customers = customers;\n         }</code></pre>\n\nI now have a Json string that is quite easily deserialised back to a List&lt;Customers&gt; in my viewmodel.\r<br />\n<br />\nBUT - I am still using the codebehind and your apporoach looks very interesting. I will try that tomorrow. The less code in the codebehind, the better.<br />\n",
+    "PostedDate": "2013-06-25T13:42:44.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1061685",
+    "ThreadId": "445631",
+    "Html": "OK cool, so you running nicely. Yeah I know about the &quot;#&quot;, I did not go that route because I set a principle in my head to only rely on the MUI framework for its beautiful  beautiful templates, and didn't want any other dependencies from MUI, anyway that's just my choice.\r<br />\n<br />\nAnd yeah there's always a debate about how much code should reside in the view or viewmodel, to me good abstraction and implementation always prevails, don't like looking at code where I see confusing from the developer in his coding. In my MUI app I only use the IContent implementation on the view only for dialog management to register and un-register listeners, for which I rely heavily on the mvvmlight MessengerInstance, ;-) I call it my app service bus. Cheers mate.\r<br />\n<br />\nRegards\r<br />\nPrakashZa<br />\n",
+    "PostedDate": "2013-06-26T14:51:03.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088169",
+    "ThreadId": "445631",
+    "Html": "Hi, \r<br />\n<br />\nI have implemented the navigation service above in my application and whilst I am able to navigate to different pages successfully when I do so I am not seeing the change in navigation reflected in the menu, e.g. bold link.\r<br />\n<br />\nI am not sure if this is due to the way that I have implemented the service or if its out of its scope.\r<br />\n<br />\nRegards \r<br />\n<br />\nDonald<br />\n",
+    "PostedDate": "2013-09-04T04:02:01.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1126709",
+    "ThreadId": "445631",
+    "Html": "dparsons,\r<br />\n<br />\nNot sure if this is the right approach but I made a small change to the code for Navigate&lt;T&gt; which seems to reflect the navigational changes in the menu. I might end up with other issues with this change so would like Prakashza to review this and comment.<br />\n<pre><code>//In Navigate&lt;T&gt; replace\n//mainFrame.Navigate(oldUrl, newUrl, NavigationType.New);\n//by\nNavigationCommands.GoToPage.Execute(newUrl, null);</code></pre>\n\nRegards,\r<br />\nSanjeev<br />\n",
+    "PostedDate": "2013-11-19T11:58:36.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1126964",
+    "ThreadId": "445631",
+    "Html": "Yeah I reverted back to that as well, \r<br />\n<br />\nStick to the MUI framework for MUI operations as much as possible to minimise impact on future changes/fixes from the framework. You should really see Navigation&lt;T&gt; more as a wrapper to the existing built in navigation. When I get a chance I will publish an update to a Navigation&lt;T&gt;.\r<br />\n<br />\nRegards\r<br />\nPrakashZa<br />\n",
+    "PostedDate": "2013-11-20T01:18:59.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1174876",
+    "ThreadId": "445631",
+    "Html": "Hi,\r<br />\nany chance that you can publish your updated navigationservice?\r<br />\nthanks,\r<br />\nDavid<br />\n",
+    "PostedDate": "2014-01-17T13:08:07.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1174892",
+    "ThreadId": "445631",
+    "Html": "<strong>sanpan123 wrote:</strong><br />\n<blockquote>\ndparsons,<br />\n<br />\nNot sure if this is the right approach but I made a small change to the code for Navigate&lt;T&gt; which seems to reflect the navigational changes in the menu. I might end up with other issues with this change so would like Prakashza to review this and comment.<br />\n<pre><code>//In Navigate&lt;T&gt; replace\n//mainFrame.Navigate(oldUrl, newUrl, NavigationType.New);\n//by\nNavigationCommands.GoToPage.Execute(newUrl, null);</code></pre>\n\nRegards,<br />\nSanjeev<br />\n</blockquote>\nI had better success passing the mainFrame value into the GoToPage method using:\r<br />\n<br />\nNavigationCommands.GoToPage.Execute(newUrl,mainFrame);<br />\n",
+    "PostedDate": "2014-01-17T13:13:48.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1175125",
+    "ThreadId": "445631",
+    "Html": "<strong>dgjohnson wrote:</strong><br />\n<blockquote>\n<strong>sanpan123 wrote:</strong><br />\n<blockquote>\ndparsons,<br />\n<br />\nNot sure if this is the right approach but I made a small change to the code for Navigate&lt;T&gt; which seems to reflect the navigational changes in the menu. I might end up with other issues with this change so would like Prakashza to review this and comment.<br />\n<pre><code>//In Navigate&lt;T&gt; replace\n//mainFrame.Navigate(oldUrl, newUrl, NavigationType.New);\n//by\nNavigationCommands.GoToPage.Execute(newUrl, null);</code></pre>\n\nRegards,<br />\nSanjeev<br />\n</blockquote>\nI had better success passing the mainFrame value into the GoToPage method using:<br />\n<br />\nNavigationCommands.GoToPage.Execute(newUrl,mainFrame);<br />\n</blockquote>\nIn this case mainFrame would be the context in which you will perform the navigation, \r<br />\n<br />\nRegards\r<br />\nPrakashZa<br />\n",
+    "PostedDate": "2014-01-17T14:45:33.893-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1175363",
+    "ThreadId": "445631",
+    "Html": "Hi,<br />\nI seem to still be having some issues with navigation menu syncing.<br />\n<br />\nIf I provide ANY parameter the mainWindow links do not sync...<br />\nif I pass a null parameter then the links all sync...<br />\n<br />\nI think it is because the uri does not match(with the parameter data) the url of my modern tab link sources:<br />\n<pre><code>                &lt;mui:Link DisplayName=&quot;performances&quot; Source=&quot;/Pages/Performances.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;friends&quot; Source=&quot;/Pages/Friends.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;store&quot; Source=&quot;/Pages/Store.xaml&quot; /&gt;</code></pre>\n\nbut im not sure how to resolve that issue.<br />\nany idea?<br />\n<br />\nbelow is the method my relay command is calling<br />\n<pre><code>        public void NavigateToEdit()\n        {\n            navigationService.Navigate&lt;FriendsViewModel&gt;(new NavigationParameter() { Id = friend.Id.ToString() });\n        }</code></pre>\n\nEDIT:<br />\nit was a case of ModernMenu not finding a match due to the fragment on the URI.<br />\n<br />\nto resolve the issue I modified ModerMenu.cs as follows:<br />\n<br />\nadd new method to ModermMenu.cs<br />\n<pre><code>        private Uri CleanUri(Uri source)\n        {\n            if (source == null)\n                return null;\n\n            var url = source.OriginalString.Split('#');\n            return new Uri(url[0],UriKind.Relative);\n        }</code></pre>\n\nthe clean the Uri before it is used to find the match in ModernMenu.UpdateSelection()<br />\n<pre><code>        private void UpdateSelection()\n        {\n            LinkGroup selectedGroup = null;\n            Link selectedLink = null;\n\n            Uri cleanSelectedSource = CleanUri(this.SelectedSource);\n\n            if (this.LinkGroups != null) {\n                // find the current select group and link based on the selected source\n                var linkInfo = (from g in this.LinkGroups\n                                from l in g.Links\n                                where l.Source == __cleanSelectedSource\n                                select new {\n                                    Group = g,\n                                    Link = l\n                                }).FirstOrDefault();\n\n                if (linkInfo != null) {\n                    selectedGroup = linkInfo.Group;\n                    selectedLink = linkInfo.Link;\n                }\n                else {\n                    // could not find link and group based on selected source, fall back to selected link group\n                    selectedGroup = this.SelectedLinkGroup;\n\n                    // if selected group doesn't exist in available groups, select first group\n                    if (!this.LinkGroups.Any(g =&gt; g == selectedGroup)) {\n                        selectedGroup = this.LinkGroups.FirstOrDefault();\n                    }\n                }\n            }\n--------------method truncated for brievety-------------</code></pre>\n\n",
+    "PostedDate": "2014-01-17T16:15:51.837-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

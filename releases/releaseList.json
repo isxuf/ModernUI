@@ -1,0 +1,104 @@
+[
+  {
+    "Id": "0",
+    "Name": "Modern UI 1.0.5",
+    "DevelopmentStatus": "Beta",
+    "Description": "The ModernUI assembly including a demo app demonstrating the various features of Modern UI for WPF.\n\n*BREAKING CHANGE*\nThis version is backwards incompatible. ModernDialog.ShowMessage returns MessageBoxResult instead of bool?\n\n!! Related downloads\n\n*NuGet*\nModernUI for WPF is also available as NuGet package in the NuGet gallery, id: *ModernUI.WPF*\n*[url:Download|http://nuget.org/packages/ModernUI.WPF/]*\n\n*Modern UI for WPF Templates*\nA Visual Studio 2012 extension containing a collection of project and item templates for Modern UI for WPF. The extension includes the ModernUI.WPF NuGet package.\n*[url:Download|http://visualstudiogallery.msdn.microsoft.com/7a4362a7-fe5d-4f9d-bc7b-0c0dc272fe31]*",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-07-07T12:25:00.343-07:00",
+    "Files": [
+      {
+        "Id": "e1d659f9-0105-4810-b4b8-b95d9e22208d",
+        "FileName": "ModernUI.1.0.5.zip",
+        "Url": "./0/e1d659f9-0105-4810-b4b8-b95d9e22208d",
+        "Type": "Application",
+        "UploadDate": "2013-07-07T12:18:37.863-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "Modern UI 1.0.4",
+    "DevelopmentStatus": "Beta",
+    "Description": "The ModernUI assembly including a demo app demonstrating the various features of Modern UI for WPF.\n\n!! Related downloads\n\n*NuGet*\nModernUI for WPF is also available as NuGet package in the NuGet gallery, id: *ModernUI.WPF*\n*[url:Download|http://nuget.org/packages/ModernUI.WPF/]*\n\n*Modern UI for WPF Templates*\nA Visual Studio 2012 extension containing a collection of project and item templates for Modern UI for WPF. The extension includes the ModernUI.WPF NuGet package.\n*[url:Download|http://visualstudiogallery.msdn.microsoft.com/7a4362a7-fe5d-4f9d-bc7b-0c0dc272fe31]*",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-06-11T14:33:30.46-07:00",
+    "Files": [
+      {
+        "Id": "a0d5fa8d-c92a-4595-be74-eb0ae359751f",
+        "FileName": "ModernUI.1.0.4.zip",
+        "Url": "./1/a0d5fa8d-c92a-4595-be74-eb0ae359751f",
+        "Type": "Application",
+        "UploadDate": "2013-06-11T14:29:55.243-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "2",
+    "Name": "Modern UI 1.0.3",
+    "DevelopmentStatus": "Beta",
+    "Description": "The ModernUI assembly including a sample app demonstrating the various features of Modern UI for WPF.\n\n!! BREAKING CHANGES\nIn order to support custom themes, a number of APIs are backwards incompatible. The following changes have been applied:\n* AppearanceManager.Current replaces static AppearanceManager\n* enum Theme removed\n* AppearanceManager.SwitchTheme no longer exists\n\n!! Related downloads\n\n*NuGet*\nModernUI for WPF is also available as NuGet package in the NuGet gallery, id: *ModernUI.WPF*\n*[url:Download|http://nuget.org/packages/ModernUI.WPF/]*\n\n*Modern UI for WPF Templates*\nA Visual Studio 2012 extension containing a collection of project and item templates for Modern UI for WPF. The extension includes the ModernUI.WPF NuGet package.\n*[url:Download|http://visualstudiogallery.msdn.microsoft.com/7a4362a7-fe5d-4f9d-bc7b-0c0dc272fe31]*",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-08T15:58:12.773-07:00",
+    "Files": [
+      {
+        "Id": "37f9f05c-ab39-40b0-878d-f1ad768e3aa5",
+        "FileName": "ModernUI.1.0.3.zip",
+        "Url": "./2/37f9f05c-ab39-40b0-878d-f1ad768e3aa5",
+        "Type": "Application",
+        "UploadDate": "2013-04-08T15:57:46.63-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "3",
+    "Name": "Modern UI 1.0.2",
+    "DevelopmentStatus": "Beta",
+    "Description": "The ModernUI assembly including a sample app demonstrating the various features of Modern UI for WPF.\n\n!! Related downloads\n\n*NuGet*\nModernUI for WPF is also available as NuGet package in the NuGet gallery, id: *ModernUI.WPF*\n*[url:Download|http://nuget.org/packages/ModernUI.WPF/]*\n\n*Modern UI for WPF Templates*\nA Visual Studio 2012 extension containing a collection of project and item templates for Modern UI for WPF. The extension includes the ModernUI.WPF NuGet package.\n*[url:Download|http://visualstudiogallery.msdn.microsoft.com/7a4362a7-fe5d-4f9d-bc7b-0c0dc272fe31]*",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-03-21T15:17:59.423-07:00",
+    "Files": [
+      {
+        "Id": "3ad771f1-02a4-4c48-bb3b-9baf09fb9687",
+        "FileName": "ModernUI.1.0.2.zip",
+        "Url": "./3/3ad771f1-02a4-4c48-bb3b-9baf09fb9687",
+        "Type": "Application",
+        "UploadDate": "2013-03-21T15:17:59.233-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "4",
+    "Name": "Modern UI 1.0.1",
+    "DevelopmentStatus": "Beta",
+    "Description": "The ModernUI assembly including a sample app demonstrating the various features of Modern UI for WPF.\n\n!! Related downloads\n\n*NuGet*\nModernUI for WPF is also available as NuGet package in the NuGet gallery, id: *ModernUI.WPF*\n*[url:Download|http://nuget.org/packages/ModernUI.WPF/]*\n\n*Modern UI for WPF Templates*\nA Visual Studio 2012 extension containing a collection of project and item templates for Modern UI for WPF. The extension includes the ModernUI.WPF NuGet package.\n*[url:Download|http://visualstudiogallery.msdn.microsoft.com/7a4362a7-fe5d-4f9d-bc7b-0c0dc272fe31]*",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-03-02T16:08:59.5-08:00",
+    "Files": [
+      {
+        "Id": "dffc2b98-09f6-42ac-b61d-8e3411ff0fea",
+        "FileName": "ModernUI.1.0.1.zip",
+        "Url": "./4/dffc2b98-09f6-42ac-b61d-8e3411ff0fea",
+        "Type": "Application",
+        "UploadDate": "2013-02-27T14:03:17.557-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "5",
+    "Name": "Modern UI 1.0",
+    "DevelopmentStatus": "Beta",
+    "Description": "The ModernUI assembly including a sample app demonstrating the various features of Modern UI for WPF.\n\n!! Related downloads\n\n*NuGet*\nModernUI for WPF is also available as NuGet package in the NuGet gallery, id: *ModernUI.WPF*\n*[url:Download|http://nuget.org/packages/ModernUI.WPF/]*\n\n*Modern UI for WPF Templates*\nA Visual Studio 2012 extension containing a collection of project and item templates for Modern UI for WPF. The extension includes the ModernUI.WPF NuGet package.\n*[url:Download|http://visualstudiogallery.msdn.microsoft.com/7a4362a7-fe5d-4f9d-bc7b-0c0dc272fe31]*",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-02-21T05:51:47.457-08:00",
+    "Files": [
+      {
+        "Id": "4ff59a73-a60d-4259-9b78-004752cfa6cd",
+        "FileName": "ModernUI.1.0.zip",
+        "Url": "./5/4ff59a73-a60d-4259-9b78-004752cfa6cd",
+        "Type": "Application",
+        "UploadDate": "2013-02-10T09:45:30.71-08:00"
+      }
+    ]
+  }
+]

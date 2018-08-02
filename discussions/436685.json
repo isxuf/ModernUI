@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1015512",
+    "ThreadId": "436685",
+    "Html": "I am trying to create an application that uses the MenuLinkGroups as &quot;Workspaces&quot;, and will be dynamic based on a view model.  each workspace will have 3 standard links, all of which will be content driven based on which workspace they were in when clicking that link.\r<br />\n<br />\nI'm having an issue currently getting this to work, as I believe the navigation is getting confused.  For example.  I'm at workspace 1 / link 1 when application launches.  If i click on link 2 and then click on workspace 2 or 3, it takes me back to workspace 1/ link 1.\r<br />\n<br />\nHopefully you can shed some insight on my issue.  Please let me know if I can provide any more information.<br />\n",
+    "PostedDate": "2013-03-14T12:46:29.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015609",
+    "ThreadId": "436685",
+    "Html": "You need to specify unique link sources. If two or more links have the same Source value, the menu automatically selects the first one it finds.\r<br />\n<br />\nYou can create links that refer to the same page by adding an anchor to the uri. The following menu links reference the same Page1.xaml, but have a unqiue Source:<br />\n<pre><code>&lt;mui:ModernWindow.MenuLinkGroups&gt;\n  &lt;mui:LinkGroup DisplayName=&quot;Group 1&quot;&gt;\n    &lt;mui:LinkGroup.Links&gt;\n      &lt;mui:Link DisplayName=&quot;Link 1&quot; Source=&quot;/Pages/Page1.xaml#1&quot; /&gt;\n      &lt;mui:Link DisplayName=&quot;Link 2&quot; Source=&quot;/Pages/Page1.xaml#2&quot; /&gt;\n      &lt;mui:Link DisplayName=&quot;Link 3&quot; Source=&quot;/Pages/Page1.xaml#3&quot;/&gt;\n    &lt;/mui:LinkGroup.Links&gt;    \n  &lt;/mui:LinkGroup&gt;\n&lt;/mui:ModernWindow.MenuLinkGroups&gt;</code></pre>\n\n",
+    "PostedDate": "2013-03-14T15:53:58.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015680",
+    "ThreadId": "436685",
+    "Html": "PERFECT.  That is exactly what I was looking for.  I will test this out tomorrow.  Thank you very much for your help.<br />\n",
+    "PostedDate": "2013-03-14T20:46:54.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1016447",
+    "ThreadId": "436685",
+    "Html": "There's one issue with this approach though; a new instance of Page1.xaml will be created for each link. That's probably not what you want. I'm currently busy improving the navigation stack to overcome this limitation.<br />\n",
+    "PostedDate": "2013-03-16T15:53:10.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024034",
+    "ThreadId": "436685",
+    "Html": "Might be a beginner question, but can you post an example of what the receiving Page.1xaml should look like to differentiate between sections? I created a new basic page for &quot;Page1.xaml&quot; but I'm trying to figure out how to set the entry points on the receiving page to handle these anchors. Thanks.<br />\n",
+    "PostedDate": "2013-04-01T21:41:23.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024059",
+    "ThreadId": "436685",
+    "Html": "You'll need to implement the IContent interface in the Page1.xaml.cs. Then handle the OnFragmentNavigation method to handle the fragment. See also <a href=\"http://mui.codeplex.com/discussions/438690\" rel=\"nofollow\">this post</a><br />\n",
+    "PostedDate": "2013-04-01T23:37:32.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

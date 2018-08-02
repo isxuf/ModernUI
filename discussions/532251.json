@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1209227",
+    "ThreadId": "532251",
+    "Html": "I've read the <a href=\"https://mui.codeplex.com/wikipage?title=A%20guide%20to%20using%20MEF\" rel=\"nofollow\">MUI MEF Guide</a>, but I'm wondering how I would construct a ContentLoader that would try to obtain the Content from the MEF Exported content (MEF plugin assembly), if and if not available, fallback to content from where the default content loader gets it from (current assembly).\r<br />\n<br />\nAnyone have any ideas how to do this?<br />\n",
+    "PostedDate": "2014-02-16T22:27:48.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1210068",
+    "ThreadId": "532251",
+    "Html": "..actually, this was very easy to accomplish. I'll post it here just in case it helps anyone:\r<br />\n<br />\nI modified the MEFContentLoader to call its base implementation of LoadContent if a matching exported URI couldn't be found:<br />\n<pre><code>    [Export]\n    public class MEFContentLoader : DefaultContentLoader\n    {\n        [ImportMany]\n        private Lazy&lt;IContent, IContentMetadata&gt;[] Contents { get; set; }\n\n        protected override object LoadContent(Uri uri)\n        {\n            // lookup the content based on the content uri in the content metadata\n            var content = (from c in this.Contents\n                           where c.Metadata.ContentUri == uri.OriginalString\n                           select c.Value).FirstOrDefault();\n\n            if (content == null)\n            {\n                return base.LoadContent(uri);\n            }\n\n            else\n            {\n                return content;\n            }\n        }\n    }\n</code></pre>\n\n",
+    "PostedDate": "2014-02-18T13:00:13.867-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

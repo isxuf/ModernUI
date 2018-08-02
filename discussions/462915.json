@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1109816",
+    "ThreadId": "462915",
+    "Html": "Good day. I have a problem in passing data in every page/usercontrol \r<br />\nI use 2 textbox as a sample. My problem is when the usercontrol2 loads in will not always get the correct value of the text in usercontrol1.\r<br />\n<br />\nUsercontrol2 always display the text of the textbox in usercontrol1 when it is initialize. \r<br />\nWhy load event execute twice?<br />\n",
+    "PostedDate": "2013-10-20T22:38:53.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109889",
+    "ThreadId": "462915",
+    "Html": "I already solve my problem :) \r<br />\nI just need to UpdateTarget() my binding property :)<br />\n",
+    "PostedDate": "2013-10-21T02:18:24.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

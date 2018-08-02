@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "1040051",
+    "ThreadId": "442724",
+    "Html": "Hi,<br />\n<br />\nIs it possible to open a new modern UI window by clicking on the title links? (And not to load a user control into the current window). A good example would be a settings window with multiple levels of settings.<br />\n<br />\nThanks<br />\n<br />\nGordon<br />\n",
+    "PostedDate": "2013-05-06T12:58:30.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040403",
+    "ThreadId": "442724",
+    "Html": "That requires title links to handle command links (such as is implemented with the ILinkNavigator). That's currently not the case, but I'm working on it. \r<br />\n<br />\nRelated to <a href=\"438745\" rel=\"nofollow\">this thread</a><br />\n",
+    "PostedDate": "2013-05-07T07:41:34.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1067226",
+    "ThreadId": "442724",
+    "Html": "Hi,\r<br />\n<br />\nIs this possible to do this? It would be good to be able to do this as if it were an ICommand, So that it could be triggered from buttons, double clicks on items in a list view etc.\r<br />\n<br />\nCheers\r<br />\n<br />\nMark<br />\n",
+    "PostedDate": "2013-07-11T13:49:56.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088805",
+    "ThreadId": "442724",
+    "Html": "I think that this behavior will be very useful for many people, there are some situations when it's better to open a new window instead to navigating, for example to show help or settings.\r<br />\n<br />\nIs the command handling already implemented? If not, could you give us some hints to implement it? Thank you<br />\n",
+    "PostedDate": "2013-09-05T08:30:03.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088816",
+    "ThreadId": "442724",
+    "Html": "Not implemented yet. I'm thinking about using the ModernWindow.LinkNavigator to perform navigation (and command handling) for title links. The issue is that the LinkNavigator needs to be aware of the main ModernFrame instance in the ModernWindow to perform page navigation. This behavior can be extended to ModernMenu and ModernTab links as well.<br />\n<br />\nAbove and support for a NavigationService is on the top of my mui todo list.<br />\n",
+    "PostedDate": "2013-09-05T08:59:03.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1089076",
+    "ThreadId": "442724",
+    "Html": "Thank you very much kozw<br />\n",
+    "PostedDate": "2013-09-05T21:29:22.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1132215",
+    "ThreadId": "442724",
+    "Html": "Hi Kozw\r<br />\n<br />\nDo you know when the release supporting this will be available?\r<br />\n<br />\nAppreciate the awesome framework!<br />\n",
+    "PostedDate": "2013-12-05T09:25:17.777-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1304429",
+    "ThreadId": "442724",
+    "Html": "I know this is late, but maybe it'll save someone some time.\r<br />\n<br />\nLet's say I've gone through the excellent &quot;My first Modern UI app&quot; tutorial <a href=\"https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&amp;referringTitle=Documentation\" rel=\"nofollow\">here</a> and I want to add a title link of &quot;Say Hello&quot; that opens SayHelloView.xaml in a new window.\r<br />\n<br />\nMainWindow.xaml:<br />\n<pre><code>&lt;mui:ModernWindow x:Class=&quot;MuiTitleLinkCommandExample.MainWindow&quot;\n        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n        xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n        Title=&quot;MainWindow&quot; Height=&quot;350&quot; Width=&quot;525&quot;\n        ContentSource=&quot;/Page1.xaml&quot;&gt;\n    &lt;mui:ModernWindow.TitleLinks&gt;\n        &lt;mui:Link DisplayName=&quot;Say Hello&quot; Source=&quot;cmd://sayHello&quot; /&gt;\n    &lt;/mui:ModernWindow.TitleLinks&gt;\n    &lt;mui:ModernWindow.MenuLinkGroups&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;group 1&quot; &gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;link 1&quot; Source=&quot;/Page1.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;link 2&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;link 3&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n    &lt;/mui:ModernWindow.MenuLinkGroups&gt;\n&lt;/mui:ModernWindow&gt;</code></pre>\n\nMainWindow.xaml.cs:<br />\n<pre><code>    public partial class MainWindow : ModernWindow \n    {\n        public MainWindow()\n        {\n            InitializeComponent();\n            SayHelloCommand = new RelayCommand(o =&gt; SayHello(o));\n            LinkNavigator.Commands.Add(new Uri(&quot;cmd://sayHello&quot;, UriKind.Absolute), SayHelloCommand);\n        }\n\n        public RelayCommand SayHelloCommand { get; private set; }\n\n        private void SayHello(object o)\n        {\n            var wnd = new ModernWindow\n            {\n                Style = (Style)App.Current.Resources[&quot;EmptyWindow&quot;],\n                Content = new SayHelloView(),\n                SizeToContent = SizeToContent.WidthAndHeight\n            };\n\n            wnd.Show();\n        }\n    }</code></pre>\n\nSayHelloView.xaml:<br />\n<pre><code>&lt;UserControl x:Class=&quot;MuiTitleLinkCommandExample.SayHelloView&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;\n    &lt;Grid&gt;\n        &lt;TextBlock FontSize=&quot;50&quot; Text=&quot;Hello!&quot;/&gt;\n    &lt;/Grid&gt;\n&lt;/UserControl&gt;</code></pre>\n\n",
+    "PostedDate": "2014-09-13T13:20:48.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1319604",
+    "ThreadId": "442724",
+    "Html": "Thanks very much sdenison! That's a great solution there. Also thanks very much kozw for all your hard work.<br />\n<br />\nI've managed to create a title link that opens a context menu with several items that each open a new window when clicked on. Here's an example of that code using sdenison's implementation of it.<br />\n<pre><code>    public partial class MainWindow : ModernWindow \n    {\n        public MainWindow()\n        {\n            InitializeComponent();\n            SayHelloCommand = new RelayCommand(o =&gt; SayHello(o));\n            LinkNavigator.Commands.Add(new Uri(&quot;cmd://sayHello&quot;, UriKind.Absolute), SayHelloCommand);\n            OpenToolboxCommand = new RelayCommand(o =&gt; OpenToolbox(o));\n        }\n\n        public RelayCommand SayHelloCommand { get; private set; }\n        public ICommand OpenToolboxCommand { get; set; }\n\n        private void SayHello(object o)\n        {\n            var contextMenu = new ContextMenu();\n            contextMenu.Items.Add(new MenuItem { Header = &quot;Say Hello&quot;, Command = OpenToolboxCommand, CommandParameter = new SayHelloView() });\n            contextMenu.Items.Add(new MenuItem { Header = &quot;Lorem Ipsum&quot;, Command = OpenToolboxCommand, CommandParameter = new LoremIpsum() });\n            contextMenu.IsOpen = true;\n        }\n\n        private void OpenToolbox(object o)\n        {\n            var wnd = new ModernWindow\n            {\n                Style = (Style)App.Current.Resources[&quot;BlankWindow&quot;],\n                Content = o,\n                SizeToContent = SizeToContent.WidthAndHeight\n            };\n            wnd.Show();\n        }\n    }</code></pre>\n\n",
+    "PostedDate": "2014-11-06T02:50:36.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

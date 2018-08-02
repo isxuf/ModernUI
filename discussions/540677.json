@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1228527",
+    "ThreadId": "540677",
+    "Html": "Hello.\r<br />\n<br />\nI am trying to set the HorizontalContentAlignment property of a ListBox to &quot;Stretch&quot;, however the property appears to be overwritten.\r<br />\n<br />\nThe code I am using is the following:<br />\n<pre><code>&lt;UserControl x:Class=&quot;ModernUITestApp2.Pages.Home&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;\n    &lt;UserControl.Resources&gt;\n    &lt;Style TargetType=&quot;ListBox&quot; BasedOn=&quot;{StaticResource {x:Type ListBox}}&quot; x:Key=&quot;Test1&quot;&gt;\n        &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Stretch&quot;/&gt;\n    &lt;/Style&gt;\n    &lt;/UserControl.Resources&gt;\n    &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n        &lt;ListBox Margin=&quot;0,0,0,32&quot; Style=&quot;{StaticResource ResourceKey=Test1}&quot;&gt;\n            &lt;ListBoxItem&gt;\n                &lt;Grid&gt;\n                    &lt;Grid.ColumnDefinitions&gt;\n                        &lt;ColumnDefinition Width=&quot;*&quot;/&gt;\n                        &lt;ColumnDefinition Width=&quot;*&quot;/&gt;\n                    &lt;/Grid.ColumnDefinitions&gt;\n                    &lt;TextBlock Text=&quot;Text 1&quot;/&gt;\n                    &lt;TextBlock Grid.Column=&quot;1&quot; Text=&quot;Text 2&quot;/&gt;\n                &lt;/Grid&gt;\n            &lt;/ListBoxItem&gt;\n            &lt;ListBoxItem Content=&quot;Item 2&quot; /&gt;\n            &lt;ListBoxItem Content=&quot;Item 3&quot; /&gt;\n            &lt;ListBoxItem Content=&quot;Item 4&quot; /&gt;\n            &lt;ListBoxItem Content=&quot;Item 5&quot; /&gt;\n        &lt;/ListBox&gt;\n    &lt;/Grid&gt;\n&lt;/UserControl&gt;</code></pre>\n\nCould somebody please point me in the right direction.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2014-03-31T03:12:50.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1228531",
+    "ThreadId": "540677",
+    "Html": "I was setting the properties of the wrong element. The element I want to modify is ListBoxItem, not ListBox<br />\n",
+    "PostedDate": "2014-03-31T03:29:05.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

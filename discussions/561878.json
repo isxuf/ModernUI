@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1292474",
+    "ThreadId": "561878",
+    "Html": "I am trying to add images in the links of my moderntab\r<br />\n<br />\nModernTab.xaml<br />\n<pre><code> &lt;ListBox.ItemTemplate&gt;\n                                &lt;DataTemplate&gt;\n                                    &lt;StackPanel Orientation=&quot;Horizontal&quot; Height=&quot;*&quot;&gt;\n                                        &lt;Image Source=&quot;{Binding ImageSource}&quot; Width=&quot;32&quot; Height=&quot;32&quot; /&gt;\n                                        &lt;TextBlock Text=&quot;{Binding DisplayName, Converter={StaticResource ToUpperConverter}}&quot; /&gt;\n                                    &lt;/StackPanel&gt;\n                                &lt;/DataTemplate&gt;\n                            &lt;/ListBox.ItemTemplate&gt;</code></pre>\n\nLink.cs<br />\n<pre><code>private ImageSource imagesource;\n\n...\n\npublic ImageSource ImageSource\n        {\n            get { return this.imagesource; }\n            set\n            {\n                if (this.imagesource != value)\n                {\n                    this.imagesource = value;\n                    OnPropertyChanged(&quot;ImageSource&quot;);\n                }\n            }\n        }</code></pre>\n\nExample.xaml<br />\n<pre><code>&lt;mui:ModernTab Layout=&quot;List&quot; SelectedSource=&quot;Views/Movimento/ucCaixa.xaml&quot;  FontSize=&quot;15&quot;&gt;\n            &lt;mui:ModernTab.Links&gt;\n                &lt;mui:Link DisplayName=&quot;Caixa&quot; Source=&quot;Views/Movimento/ucCaixa.xaml&quot; ImageSource=&quot;pack://application:,,,/Images/search32px.png&quot;  /&gt;\n                &lt;mui:Link DisplayName=&quot;Contas a pagar&quot; Source=&quot;Views/Movimento/ucContaPagar.xaml&quot; ImageSource=&quot;pack://application:,,,/Images/search32px.png&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Conta de cliente&quot; Source=&quot;Views/Movimento/ContaCliente2/ucContaCliente.xaml&quot; ImageSource=&quot;pack://application:,,,/Images/search32px.png&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Vendas&quot; Source=&quot;Views/Movimento/Vendas/ucVendasLancamento.xaml&quot; ImageSource=&quot;pack://application:,,,/Images/search32px.png&quot; /&gt;\n            &lt;/mui:ModernTab.Links&gt;\n        &lt;/mui:ModernTab&gt;</code></pre>\n\nBut the image does not appear.\r<br />\n<br />\n<img src=\"http://i.imgur.com/JUixaeu.png\" alt=\"Image\" />\r<br />\n<br />\nThank outset \r<br />\nI await answers<br />\n",
+    "PostedDate": "2014-08-22T08:58:29.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292480",
+    "ThreadId": "561878",
+    "Html": "Looks good to me. Couple of things to check;<br />\n<ul>\n<li>Did you modify the ListBox template in the trigger that sets the Layout to list (&lt;Trigger Property=&quot;Layout&quot; Value=&quot;List&quot;&gt;)</li>\n<li>Do you reference your updated ModernTab style in your app.xaml?</li>\n</ul>\n",
+    "PostedDate": "2014-08-22T09:08:38.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-08-22T09:35:02.667-07:00"
+  },
+  {
+    "Id": "1292488",
+    "ThreadId": "561878",
+    "Html": "in app.xaml is as follows, I am referring only ModernUI, but the ImageSource property is already appearing to be informed, just is not showing the image<br />\n<pre><code>&lt;ResourceDictionary&gt;\n            &lt;!-- WPF 4.0 workaround --&gt;\n            &lt;Style TargetType=&quot;{x:Type Rectangle}&quot; /&gt;\n            &lt;!-- end of workaround --&gt;\n            &lt;ResourceDictionary.MergedDictionaries&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot;/&gt;\n            &lt;/ResourceDictionary.MergedDictionaries&gt;\n        &lt;/ResourceDictionary&gt;</code></pre>\n\n",
+    "PostedDate": "2014-08-22T09:24:14.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292495",
+    "ThreadId": "561878",
+    "Html": "worked, sorry, but ModerTab was wrong in changing code<br />\n",
+    "PostedDate": "2014-08-22T09:34:52.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

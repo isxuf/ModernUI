@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:26:09.683-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Noticed a problem in the style of listview to change your view to another format that does not use the grid.\n\nFollow the fix style:\n\n```\n<Style TargetType=\"{x:Type ListViewItem}\">\n        <Setter Property=\"FocusVisualStyle\" Value=\"{x:Null}\" />\n        <Setter Property=\"Background\" Value=\"Transparent\" />\n        <Setter Property=\"BorderBrush\"\n                Value=\"Transparent\"/>\n        <Setter Property=\"BorderThickness\"\n                Value=\"1\"/>\n        <Setter Property=\"Margin\"\n                Value=\"0\"/>\n        <Setter Property=\"Foreground\" Value=\"{DynamicResource ItemText}\"/>\n        <Setter Property=\"Padding\"\n                Value=\"5,2,5,2\"/>\n        <Setter Property=\"HorizontalContentAlignment\"\n                Value=\"Stretch\"/>\n        <Setter Property=\"VerticalContentAlignment\"\n                Value=\"Center\"/>\n        <Setter Property=\"Template\">\n            <Setter.Value>\n                <ControlTemplate TargetType=\"{x:Type ListViewItem}\">\n                    <Grid Background=\"{TemplateBinding Background}\">\n                        <Border Name=\"Selection\" Visibility=\"Collapsed\" />\n                        <!-- This is used when GridView is put inside the ListView -->\n                        <GridViewRowPresenter Grid.RowSpan=\"2\"\n                                              Margin=\"5,1,5,2\"\n                                              HorizontalAlignment=\"{TemplateBinding HorizontalContentAlignment}\"\n                                              VerticalAlignment=\"{TemplateBinding VerticalContentAlignment}\"\n                                              SnapsToDevicePixels=\"{TemplateBinding SnapsToDevicePixels}\"/>\n\n                        <!-- This is used for ListView that does not use GridView -->\n                        <ContentPresenter x:Name=\"contentPresenter\"\n                                      Content=\"{TemplateBinding ContentControl.Content}\"\n                                      Visibility=\"Collapsed\"\n                                      ContentTemplate=\"{TemplateBinding ContentControl.ContentTemplate}\"\n                                      ContentStringFormat=\"{TemplateBinding ContentControl.ContentStringFormat}\"\n                                      HorizontalAlignment=\"{TemplateBinding Control.HorizontalContentAlignment}\"\n                                      VerticalAlignment=\"{TemplateBinding Control.VerticalContentAlignment}\"\n                                      SnapsToDevicePixels=\"{TemplateBinding UIElement.SnapsToDevicePixels}\"/>\n                    </Grid>\n                    <ControlTemplate.Triggers>\n                        <Trigger Property=\"GridView.ColumnCollection\" Value=\"{x:Null}\">\n                            <Setter TargetName=\"contentPresenter\" Property=\"Visibility\" Value=\"Visible\"/>\n                        </Trigger>\n                        <Trigger Property=\"IsMouseOver\" Value=\"true\">\n                            <Setter TargetName=\"Selection\" Property=\"Visibility\" Value=\"Visible\"/>\n                            <Setter TargetName=\"Selection\" Property=\"Background\" Value=\"{DynamicResource ItemBackgroundHover}\"/>\n                            <Setter Property=\"Foreground\" Value=\"{DynamicResource ItemTextHover}\" />\n                        </Trigger>\n                        <Trigger Property=\"IsSelected\" Value=\"true\">\n                            <Setter TargetName=\"Selection\" Property=\"Visibility\" Value=\"Visible\"/>\n                            <Setter TargetName=\"Selection\" Property=\"Background\" Value=\"{DynamicResource ItemBackgroundSelected}\"/>\n                            <Setter Property=\"Foreground\" Value=\"{DynamicResource ItemTextSelected}\" />\n                        </Trigger>\n                        <Trigger Property=\"IsEnabled\" Value=\"false\">\n                            <Setter Property=\"Foreground\" Value=\"{DynamicResource ItemTextDisabled}\"/>\n                        </Trigger>\n                    </ControlTemplate.Triggers>\n                </ControlTemplate>\n            </Setter.Value>\n        </Setter>\n    </Style>\n```",
+    "LastUpdatedDate": "2013-07-05T13:26:09.683-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-03-24T06:34:24.823-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Fix ListView style",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19515
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "ListView style updated and checked in ([changeset 99479](http://mui.codeplex.com/SourceControl/changeset/99479)), thank you!",
+      "PostedDate": "2013-03-24T08:18:02.647-07:00",
+      "Id": 158462
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1028345",
+    "ThreadId": "439762",
+    "Html": "Hi everyone!\r<br />\nI have small a problem!\r<br />\nI start new project and added a few images in project. \r<br />\nAlso I added text in home.xaml: &lt;Image Source=&quot;test.png&quot; Height=&quot;100&quot; Width=&quot;100&quot;/&gt;\r<br />\n<br />\nBut this code doesn't work and I don't why, although in WPF project without MUI this code work correct!\r<br />\n<br />\nThanks a lot!<br />\n",
+    "PostedDate": "2013-04-10T03:52:34.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028351",
+    "ThreadId": "439762",
+    "Html": "Odd. Are you sure the build action for the image resources is set correctly? Otherwise, care to share some source code?<br />\n",
+    "PostedDate": "2013-04-10T04:01:22.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028364",
+    "ThreadId": "439762",
+    "Html": "Omg!\r<br />\n<br />\nSorry. You are right!\r<br />\n<br />\nI just forgot about properties for images. There it was established the Content.\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-04-10T04:21:53.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

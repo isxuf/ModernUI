@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1171969",
+    "ThreadId": "502737",
+    "Html": "Hi,\r<br />\nIs it possible to animate the content of the ModernTab when different Links are clicked?\r<br />\nperhaps fade-out/fade-in when user clicks on another link in the ModernTab control? <br />\n",
+    "PostedDate": "2014-01-16T18:06:40.263-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1172609",
+    "ThreadId": "502737",
+    "Html": "<strong>dgjohnson wrote:</strong><br />\n<blockquote>\nHi,<br />\nIs it possible to animate the content of the ModernTab when different Links are clicked?<br />\nperhaps fade-out/fade-in when user clicks on another link in the ModernTab control?<br />\n</blockquote>\nHi, by default a &quot;fade/slide by left&quot; - Animation is activated.<br />\nIf you want an other animation, you can set the Transition-Property in XAML:<br />\n<pre><code>    &lt;mui:ModernWindow.Resources&gt;\n        &lt;Style TargetType=&quot;mui:TransitioningContentControl&quot;&gt;\n            &lt;Setter Property=&quot;Transition&quot; Value=&quot;Normal&quot; /&gt;\n        &lt;/Style&gt;\n    &lt;/mui:ModernWindow.Resources&gt;</code></pre>\n\n<strong>DefaultTransition</strong> - Fade in/out<br />\n<strong>Normal</strong> - no Animation<br />\n<strong>UpTransition</strong> - up Animation<br />\n<strong>DownTransition</strong> - down Animation<br />\n<strong>ModernUITransition</strong>  - Slide/Fade by Left<br />\n",
+    "PostedDate": "2014-01-16T22:16:06.343-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1083558",
+    "ThreadId": "454189",
+    "Html": "Apologies if this is a really dumb question, I am fairly new to developing wpf applications but .....\r<br />\n<br />\nI have been developing an application using modern ui and when I run the built exe on a windows 7 machine the controls (textbox, datepicker, button, etc) look different to when running the app on my windows 8 development machine.\r<br />\n<br />\nIs this to be expected or am I missing something with the build process?\r<br />\n<br />\nThanks\r<br />\n<br />\nDonald.<br />\n",
+    "PostedDate": "2013-08-22T03:46:31.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083581",
+    "ThreadId": "454189",
+    "Html": "MUI should work and look the same on win 7 and 8. Care to share some screenshots?<br />\n",
+    "PostedDate": "2013-08-22T04:58:55.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083616",
+    "ThreadId": "454189",
+    "Html": "Thanks for replying, here is a screenshot from Window 7:\r<br />\n<br />\n<img src=\"http://s10.postimg.org/mrq66bcy1/window7.jpg\" alt=\"Image\" />\r<br />\n<br />\nand this is windows 8:\r<br />\n<br />\n<img src=\"http://s9.postimg.org/6xoewai1r/window8.jpg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-08-22T06:30:03.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083629",
+    "ThreadId": "454189",
+    "Html": "I think that I have identified the issue, I just thought that I would see what the MUI sample app looked like on my windows 7 machine and to start with it would not run as I did not have .net 4.5 installed.  After installing .net 4.5 I was able to run the MUI sample app and it looked the same as on windows 8.<br />\n\r<br />\nI then tried my app again on the windows 7 machine (which is using .net 4) and now it also looked the same as it did on windows 8.\r<br />\n<br />\nDoes that make sense?\r<br />\n<br />\nDonald<br />\n",
+    "PostedDate": "2013-08-22T06:52:35.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083641",
+    "ThreadId": "454189",
+    "Html": "That totally makes sense. When creating a .NET4 client, you'll need to add a workaround as described in <a href=\"https://mui.codeplex.com/wikipage?title=Working%20with%20WPF%204.0\" rel=\"nofollow\">Working with WPF 4.0</a>. The workaround is required for a bug in the .NET 4 runtime where resources are not resolved.\r<br />\n<br />\nWhen .NET 4.5 is installed, it replaces the .NET4 runtime and fixes a couple of bugs, including the resolve resource issue. When targetting .NET4 just make sure you have the workaround in place and you're good to go.<br />\n",
+    "PostedDate": "2013-08-22T07:13:45.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083659",
+    "ThreadId": "454189",
+    "Html": "That fixed the issue, thanks for your help.\r<br />\n<br />\nDonald<br />\n",
+    "PostedDate": "2013-08-22T07:43:01.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

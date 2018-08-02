@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1093543",
+    "ThreadId": "457186",
+    "Html": "Hi,\r<br />\n<br />\nI'm writing a mathematical application and need to use subscript or superscript for some labels and textblocks. For example, I'm trying to write &quot;At&quot; with the &quot;t&quot; subscript.\r<br />\n<br />\nI've tried using this code :<br />\n<pre><code>&lt;TextBlock &gt;\n        A&lt;Run Typography.Variants=&quot;Subscript&quot;&gt;t&lt;/Run&gt;\n&lt;/TextBlock&gt;</code></pre>\n\nBut it doesn't work. It seems that the default font used for m:ui doesn't support subscript variant.\r<br />\n<br />\nIs there an alternative font that I could use that would support sub/superscript (OpenFont) that would give the &quot;modern&quot; feeling, or is there an alternative technique? \r<br />\n<br />\nI've tested playing with the font size, but this feels really like a hack.\r<br />\n<br />\nIf there is another font I can use, how do I set another font for m:ui?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-09-17T06:50:07.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1093943",
+    "ThreadId": "457186",
+    "Html": "After a few more research I have found that the Segoe UI font available on Windows 7 doesn't have superscript or subscript support. The code would work perfectly on Windows 8, but not on Windows 7 (Windows 8 has an updated version of Segoe UI). Unfortunately I haven't found a way to update Windows 7 Segoe font to have the same behavior as Win 8.\r<br />\n<br />\nFor reference, I have found a workaround, which is kind of a hack and might give performance issues, but at least it works with any fonts.\r<br />\n<br />\nI define 2 styles that I use on my &quot;Run&quot; inside Textblock elements.<br />\n<pre><code>    &lt;Style x:Key=&quot;Superscripted&quot; TargetType=&quot;Run&quot;&gt;\n        &lt;Setter Property=&quot;BaselineAlignment&quot; Value=&quot;Top&quot; /&gt;\n        &lt;Setter Property=&quot;FontSize&quot; Value=&quot;9&quot; /&gt;\n    &lt;/Style&gt;\n    &lt;Style x:Key=&quot;Subscripted&quot; TargetType=&quot;Run&quot;&gt;\n        &lt;Setter Property=&quot;BaselineAlignment&quot; Value=&quot;Subscript&quot; /&gt;\n        &lt;Setter Property=&quot;FontSize&quot; Value=&quot;9&quot; /&gt;\n    &lt;/Style&gt;</code></pre>\n\nAs you can see, I have used &quot;Top&quot; for the BaselineAlignment instead of &quot;Superscript&quot; because superscript makes it go higher than the other letters and it doesn't look good.\r<br />\n<br />\nThe usage:<br />\n<pre><code>&lt;TextBlock&gt;\n         cm&lt;Run Style=&quot;{StaticResource Superscripted}&quot;&gt;2&lt;/Run&gt;\n&lt;/TextBlock&gt;</code></pre>\n\nI'm open to any better suggestion on how to achieve that without going through this stupid hack.<br />\n",
+    "PostedDate": "2013-09-18T03:31:05.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

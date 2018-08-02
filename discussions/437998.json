@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1021106",
+    "ThreadId": "437998",
+    "Html": "I want a status bar to show some information, is there a way to add status bar in MUI?\r<br />\n<br />\nRegards,\r<br />\nZhangZQ<br />\n",
+    "PostedDate": "2013-03-26T01:59:06.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021138",
+    "ThreadId": "437998",
+    "Html": "it would be great if its natively support in modern ui. but if its not, its not that hard to implement either(at least, i thought).<br />\n",
+    "PostedDate": "2013-03-26T03:14:16.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021473",
+    "ThreadId": "437998",
+    "Html": "MUI defines a region for simple status messages per page. Add a row to the Grid content root in your page and use the StatusMargin resource to position your status messages like so;<br />\n<pre><code>&lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n  &lt;Grid.RowDefinitions&gt;\n    &lt;RowDefinition /&gt;\n    &lt;RowDefinition Height=&quot;Auto&quot; /&gt;\n  &lt;/Grid.RowDefinitions&gt;\n\n  &lt;!-- your page content goes here --&gt;        \n\n  &lt;TextBlock Grid.Row=&quot;1&quot; Text=&quot;my status message&quot; Margin=&quot;{StaticResource StatusMargin}&quot; /&gt;\n&lt;/Grid&gt;\n</code></pre>\n\nThe wireframe page in the sample application demonstrates a status message as well. If you want to define a status message outside a page you'll need to modify the ModernWindow template.<br />\n",
+    "PostedDate": "2013-03-26T16:36:23.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021488",
+    "ThreadId": "437998",
+    "Html": "Kozw,\r<br />\n<br />\nThanks. I don't want to define the status bar in each page, I want a status bar outside the page, I will try to modify this part in ModernWindows.xaml.<br />\n<pre><code>                                        &lt;Grid Grid.Row=&quot;4&quot;&gt;\n                                            &lt;Path x:Name=&quot;ResizeGrip&quot; Visibility=&quot;Collapsed&quot; Width=&quot;12&quot; Height=&quot;12&quot; Margin=&quot;1&quot; HorizontalAlignment=&quot;Right&quot; \n                                                  Stroke=&quot;{DynamicResource WindowText}&quot;\n                                                  StrokeThickness=&quot;1&quot;\n                                                  Stretch=&quot;None&quot;\n                                                  Data=&quot;F1 M1,10 L3,10 M5,10 L7,10 M9,10 L11,10 M2,9 L2,11 M6,9 L6,11 M10,9 L10,11 M5,6 L7,6 M9,6 L11,6 M6,5 L6,7 M10,5 L10,7 M9,2 L11,2 M10,1 L10,3&quot; /&gt;\n                                        &lt;/Grid&gt;\n</code></pre>\n\n",
+    "PostedDate": "2013-03-26T17:04:28.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1210300",
+    "ThreadId": "437998",
+    "Html": "Hello,\r<br />\n<br />\nI am also working on such status bar, so can any one please tell me how i initialize value of status bar in child windows.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-02-18T22:49:14.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1210385",
+    "ThreadId": "437998",
+    "Html": "Sorry, I did not use this library in my project now.\r<br />\n<br />\nRegards,\r<br />\nZhangZQ<br />\n",
+    "PostedDate": "2014-02-19T01:39:59.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1299366",
+    "ThreadId": "437998",
+    "Html": "Does anyone have a simple example on how to implement this in ModernWindow, let's say a dynamic label at the bottom of the window? I know how to put a label there, but I am not sure about the binding part, do I need to extend ModernWindow.cs as well? Thanks.<br />\n",
+    "PostedDate": "2014-09-05T00:08:36.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

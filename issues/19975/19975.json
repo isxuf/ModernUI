@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Add watermarks in Textbox, PasswordBox and Combobox.",
+    "LastUpdatedDate": "2014-10-10T00:32:29.577-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-07-16T21:26:43.36-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add watermarks in control",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 7,
+    "Id": 19975
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903303,
+      "FileName": "17-07-2013 11-22-50.png",
+      "DownloadUrl": ".\\903303"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Add \"Clear button\"",
+      "PostedDate": "2013-07-16T21:34:24.203-07:00",
+      "Id": 158535
+    }
+  ]
+}

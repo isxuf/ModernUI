@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1024832",
+    "ThreadId": "438945",
+    "Html": "Hello. Not sure if this is really a MUI problem, or more of a visual Studio one, but here goes anyway because it's driving me mad.\r<br />\n<br />\nI put this line of code in the app.xaml so that it would start on the dark theme:<br />\n<pre><code>&lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Dark.xaml&quot;/&gt;</code></pre>\n\nHowever, when I load my project, the window flashes white before settling on the dark theme. It's only a quick flash, but it's very noticeable and looks a bit ugly and unprofessional, especially against the dark theme (not noticeable on light theme).\r<br />\n<br />\nI can't seem to make it go away, and I swear this wasn't happening yesterday. It even happens when I start a fresh MUI project.\r<br />\n<br />\nI just wondered if anyone knew why it did that and if it's possible to get rid of it, because it's really put me off using the dark theme.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-04-03T06:26:44.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025084",
+    "ThreadId": "438945",
+    "Html": "I have not experienced such behavior. What OS are you running on? Anyone else seen this issue?<br />\n",
+    "PostedDate": "2013-04-03T13:49:21.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025088",
+    "ThreadId": "438945",
+    "Html": "No white flash seen here when launching my app in the dark theme, although my app.xaml is slightly different as I wire up my viewmodel locator (using mvvm light)<br />\nwin7.<br />\n<pre><code> &lt;Application.Resources&gt;\n        &lt;ResourceDictionary&gt;\n            &lt;ResourceDictionary.MergedDictionaries&gt;\n                &lt;ResourceDictionary x:Name=&quot;ThemeDictionary&quot;&gt;\n                    &lt;ResourceDictionary.MergedDictionaries&gt;\n                        &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n                        &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Dark.xaml&quot; /&gt;\n                    &lt;/ResourceDictionary.MergedDictionaries&gt;\n                    &lt;vm:ViewModelLocator x:Key=&quot;Locator&quot; d:IsDataSource=&quot;True&quot; /&gt;\n                    &lt;/ResourceDictionary&gt;\n            &lt;/ResourceDictionary.MergedDictionaries&gt;\n        &lt;/ResourceDictionary&gt;\n&lt;/Application.Resources&gt;</code></pre>\n\n",
+    "PostedDate": "2013-04-03T13:56:42.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025363",
+    "ThreadId": "438945",
+    "Html": "Thanks for the replies. I'm running Windows 7. It seems to be a problem I have with Blend and Visual Studio. Not really sure why it happens but it's very annoying and impossible to get rid of.\r<br />\n<br />\nWhat I've done for now is to set the window's default state as minimised, and then put a maximise call in the window_loaded event. It doesn't solve the problem, but at least it hides it from view.\r<br />\n<br />\nThanks anyway, guys.<br />\n",
+    "PostedDate": "2013-04-04T06:06:45.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

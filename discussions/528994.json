@@ -1,0 +1,194 @@
+[
+  {
+    "Id": "1202943",
+    "ThreadId": "528994",
+    "Html": "Hi all,<br />\n<br />\nin a project, I needed to display the percentage of increase in the progressbar. <br />\nLike this :<br />\n<img src=\"http:/gilles.macabies.perso.sfr.fr/progress_text.jpg\" alt=\"Image\" /><br />\n<br />\nInspired by this post: [<a href=\"http://stackoverflow.com/questions/5167867/progress-bar-with-dynamic-text-text-color-update]\" rel=\"nofollow\">http://stackoverflow.com/questions/5167867/progress-bar-with-dynamic-text-text-color-update]</a><br />\n<br />\nIf it can help someone, below the code.<br />\n<br />\n<strong>1) Add RectConverter.cs file in Windows-&gt;Converters</strong><br />\n<br />\n// Content RectConverter.cs<br />\nnamespace FirstFloor.ModernUI.Windows.Converters<br />\n{<br />\n<pre><code>/// &lt;summary&gt;\n/// Convert rectangle coordinate\n/// &lt;/summary&gt;\npublic class RectConverter : IMultiValueConverter\n{\n    /// &lt;summary&gt;\n    /// Get coordinate of rectangle\n    /// &lt;/summary&gt;\n    /// &lt;param name=&quot;values&quot;&gt;&lt;/param&gt;\n    /// &lt;param name=&quot;targetType&quot;&gt;&lt;/param&gt;\n    /// &lt;param name=&quot;parameter&quot;&gt;&lt;/param&gt;\n    /// &lt;param name=&quot;culture&quot;&gt;&lt;/param&gt;\n    /// &lt;returns&gt;&lt;/returns&gt;\n    public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)\n    {\n        double width = (double)values[0];\n        double height = (double)values[1];\n        return new Rect(0, 0, width, height);\n    }\n    /// &lt;summary&gt;\n    /// Convert back\n    /// &lt;/summary&gt;\n    /// &lt;param name=&quot;value&quot;&gt;&lt;/param&gt;\n    /// &lt;param name=&quot;targetTypes&quot;&gt;&lt;/param&gt;\n    /// &lt;param name=&quot;parameter&quot;&gt;&lt;/param&gt;\n    /// &lt;param name=&quot;culture&quot;&gt;&lt;/param&gt;\n    /// &lt;returns&gt;&lt;/returns&gt;\n    public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)\n    {\n        throw new NotImplementedException();\n    }\n}\n</code></pre>\n\n<strong>2) In Assets-&gt;Converters.xaml add this.</strong><br />\n<br />\n &lt;converters:RectConverter x:Key=&quot;RectConverter&quot; /&gt;<br />\n<br />\n<br />\n<strong>3) Add this in Assets -&gt;ProgressBar.xaml</strong><br />\n<br />\n<br />\n&lt;ResourceDictionary ..... &gt;<br />\n&lt;ResourceDictionary.MergedDictionaries&gt;<br />\n<pre><code>&lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/Converters.xaml&quot; /&gt;</code></pre>\n\n&lt;/ResourceDictionary.MergedDictionaries&gt;<br />\n<br />\n &lt;Style TargetType=&quot;ProgressBar&quot;&gt;<br />\n ....<br />\n&lt;Grid x:Name=&quot;DeterminateRoot&quot;&gt;<br />\n<pre><code>&lt;Border x:Name=&quot;PART_Indicator&quot;\n        Background=&quot;{TemplateBinding Foreground}&quot;\n        HorizontalAlignment=&quot;Left&quot; &gt;\n&lt;/Border&gt;\n&lt;!-- ADD THIS --&gt;\n&lt;TextBlock Text=&quot;{TemplateBinding Tag}&quot; \n           FontSize=&quot;{TemplateBinding FontSize}&quot;\n           FontWeight=&quot;{TemplateBinding FontWeight}&quot;\n           Grid.ZIndex=&quot;2&quot; Foreground=&quot;{DynamicResource Accent}&quot;\n           TextAlignment=&quot;Center&quot;\n           HorizontalAlignment=&quot;Stretch&quot;\n           VerticalAlignment=&quot;Center&quot; /&gt;\n&lt;TextBlock Text=&quot;{TemplateBinding Tag}&quot; \n           FontSize=&quot;{TemplateBinding FontSize}&quot;\n           FontWeight=&quot;{TemplateBinding FontWeight}&quot;\n           Grid.ZIndex=&quot;3&quot;\n           TextAlignment=&quot;Center&quot;\n           HorizontalAlignment=&quot;Stretch&quot;\n           VerticalAlignment=&quot;Center&quot;&gt;\n     &lt;TextBlock.Style&gt;\n      &lt;Style TargetType=&quot;{x:Type TextBlock}&quot;&gt;\n       &lt;Setter Property=&quot;Foreground&quot; Value=&quot;{DynamicResource ItemTextSelected}&quot; /&gt;\n     &lt;/Style&gt;\n    &lt;/TextBlock.Style&gt;\n    &lt;TextBlock.Clip&gt;\n     &lt;RectangleGeometry &gt;\n      &lt;RectangleGeometry.Rect&gt;\n       &lt;MultiBinding Converter=&quot;{StaticResource RectConverter}&quot;&gt;\n           &lt;Binding Path=&quot;ActualWidth&quot;    Source=&quot;{x:Reference PART_Indicator}&quot;/&gt;\n           &lt;Binding  Path=&quot;ActualHeight&quot;  Source=&quot;{x:Reference PART_Indicator}&quot;/&gt;\n       &lt;/MultiBinding&gt;\n      &lt;/RectangleGeometry.Rect&gt;\n     &lt;/RectangleGeometry&gt;\n    &lt;/TextBlock.Clip&gt;\n&lt;/TextBlock&gt;\n</code></pre>\n\n&lt;!-- END --&gt;\n&lt;/Grid&gt;<br />\n<br />\nUsage :<br />\n<br />\n &lt;ProgressBar Maximum=&quot;100&quot; Value=&quot;50&quot; Width=&quot;300&quot; Height=&quot;50&quot; Tag=&quot;50%&quot; FontSize=&quot;20&quot;/&gt;<br />\n<br />\n<br />\n<br />\nbest regards<br />\n",
+    "PostedDate": "2014-02-05T05:39:44.303-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1206431",
+    "ThreadId": "528994",
+    "Html": "This is way more complicated than it needs to be. Why not just slap a textbox on top of your progress bar that shows the progress value? I do it all of the time.<br />\n<pre><code>&lt;Grid Visibility=&quot;{Binding IsDownloading, Converter={StaticResource boolToVis}}&quot;&gt;\n            \n            &lt;Grid.ColumnDefinitions&gt;\n                &lt;ColumnDefinition Width=&quot;*&quot; /&gt;\n                &lt;ColumnDefinition Width=&quot;Auto&quot; /&gt;\n            &lt;/Grid.ColumnDefinitions&gt;\n            \n            &lt;ProgressBar Value=&quot;{Binding DownloadProgress}&quot;\n                         Grid.ColumnSpan=&quot;2&quot;/&gt;\n\n            &lt;TextBlock Margin=&quot;10,0,0,0&quot;\n                       Grid.ColumnSpan=&quot;2&quot;\n                       Text=&quot;{Binding DownloadStatus}&quot;      \n                       Style=&quot;{StaticResource Small}&quot;\n                       VerticalAlignment=&quot;Center&quot; /&gt;\n        &lt;/Grid&gt;</code></pre>\n\nOf course, bind to properties that make sense for your scenario.<br />\n",
+    "PostedDate": "2014-02-10T09:39:02.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1206548",
+    "ThreadId": "528994",
+    "Html": "Hi flyte,\r<br />\n<br />\nto update the text color :)\r<br />\n<br />\nRegard<br />\n",
+    "PostedDate": "2014-02-10T14:05:55.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240617",
+    "ThreadId": "528994",
+    "Html": "Thank you very much for your trick.\r<br />\n<br />\nI just go a problem in Visual studio rendering xaml. \r<br />\n<br />\nEach time I got a &quot;System.Windows.ResourceReferenceExpression&quot; for the property &quot;Foreground&quot; of the Textblock that have the clip.\r<br />\n<br />\nHave you got the same Problem ?\r<br />\n<br />\nThanks you<br />\n",
+    "PostedDate": "2014-05-02T05:41:12.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240806",
+    "ThreadId": "528994",
+    "Html": "No it's work fine for me.<br />\nFollow exactly the code above and it should work.<br />\nYou must add this code in FirstFloor.ModernUI project.<br />\nbest regard<br />\n",
+    "PostedDate": "2014-05-02T12:08:01.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240862",
+    "ThreadId": "528994",
+    "Html": "Ok thanks you for your reply...\r<br />\n<br />\nI still have the problem but maybe it's Visual 2013 .\r<br />\n<br />\nI just past the XamlParseException in case of someone got the sameproblem (&quot;In French&quot;)\r<br />\n<br />\nXamlParseException : 'System.Windows.ResourceReferenceExpression' n'est pas une valeur valide pour la propriété 'Foreground'.\r<br />\n<br />\n  à System.Windows.FrameworkTemplate.LoadTemplateXaml(XamlReader templateReader, XamlObjectWriter currentWriter)\r<br />\n   à System.Windows.FrameworkTemplate.LoadTemplateXaml(XamlObjectWriter objectWriter)\r<br />\n   à System.Windows.FrameworkTemplate.LoadOptimizedTemplateContent(DependencyObject container, IComponentConnector componentConnector, IStyleConnector styleConnector, List<code>1 affectedChildren, UncommonField</code>1 templatedNonFeChildrenField)\r<br />\n   à System.Windows.FrameworkTemplate.LoadContent(DependencyObject container, List<code>1 affectedChildren)\r<br />   à System.Windows.StyleHelper.ApplyTemplateContent(UncommonField</code>1 dataField, DependencyObject container, FrameworkElementFactory templateRoot, Int32 lastChildIndex, HybridDictionary childIndexFromChildID, FrameworkTemplate frameworkTemplate)\r<br />\n   à System.Windows.FrameworkTemplate.ApplyTemplateContent(UncommonField`1 templateDataField, FrameworkElement container)\r<br />\n   à System.Windows.FrameworkElement.ApplyTemplate()\r<br />\n   à System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r<br />\n   à System.Windows.UIElement.Measure(Size availableSize)\r<br />\n   à System.Windows.Controls.StackPanel.StackMeasureHelper(IStackMeasure measureElement, IStackMeasureScrollData scrollData, Size constraint)\r<br />\n   à System.Windows.Controls.StackPanel.MeasureOverride(Size constraint)\r<br />\n   à System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r<br />\n   à System.Windows.UIElement.Measure(Size availableSize)\r<br />\n   à System.Windows.Controls.StackPanel.StackMeasureHelper(IStackMeasure measureElement, IStackMeasureScrollData scrollData, Size constraint)\r<br />\n   à System.Windows.Controls.StackPanel.MeasureOverride(Size constraint)\r<br />\n   à System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r<br />\n   à System.Windows.UIElement.Measure(Size availableSize)\r<br />\n   à MS.Internal.Helper.MeasureElementWithSingleChild(UIElement element, Size constraint)\r<br />\n   à System.Windows.Controls.ContentPresenter.MeasureOverride(Size constraint)\r<br />\n   à System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r<br />\n   à System.Windows.UIElement.Measure(Size availableSize)\r<br />\n   à System.Windows.Controls.Border.MeasureOverride(Size constraint)\r<br />\n   à System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r<br />\n   à System.Windows.UIElement.Measure(Size availableSize)\r<br />\n   à System.Windows.Controls.StackPanel.StackMeasureHelper(IStackMeasure measureElement, IStackMeasureScrollData scrollData, Size constraint)\r<br />\n   à System.Windows.Controls.StackPanel.MeasureOverride(Size constraint)\r<br />\n   à System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r<br />\n   à System.Windows.UIElement.Measure(Size availableSize)\r<br />\n   à System.Windows.Controls.Control.MeasureOverride(Size constraint)\r<br />\n   à System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r<br />\n   à System.Windows.UIElement.Measure(Size availableSize)\r<br />\n   à System.Windows.Controls.Grid.MeasureOverride(Size constraint)\r<br />\n   à System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r<br />\n   à System.Windows.UIElement.Measure(Size availableSize)\r<br />\n   à MS.Internal.Helper.MeasureElementWithSingleChild(UIElement element, Size constraint)\r<br />\n   à System.Windows.Controls.ContentPresenter.MeasureOverride(Size constraint)\r<br />\n   à System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r<br />\n   à System.Windows.UIElement.Measure(Size availableSize)\r<br />\n   à System.Windows.Controls.Border.MeasureOverride(Size constraint)\r<br />\n   à System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r<br />\n   à System.Windows.UIElement.Measure(Size availableSize)\r<br />\n   à System.Windows.Controls.Control.MeasureOverride(Size constraint)\r<br />\n   à System.Windows.FrameworkElement.MeasureCore(Size availableSize)\r<br />\n   à System.Windows.UIElement.Measure(Size availableSize)\r<br />\n<br />\nThx<br />\n",
+    "PostedDate": "2014-05-02T14:27:11.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240961",
+    "ThreadId": "528994",
+    "Html": "Hi Mudy\r<br />\n<br />\nPaste the piece of code ProgressBar.xaml to see the problem or a link to a zip of project changed (FirstFloor.ModernUI).\r<br />\n<br />\nMacgile<br />\n",
+    "PostedDate": "2014-05-03T02:19:22.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240963",
+    "ThreadId": "528994",
+    "Html": "Here the code I have implemented : <a href=\"http://muby53.free.fr/ProgressBar.xaml\" rel=\"nofollow\">ProgressBar.xaml</a>\r<br />\n<br />\nJust to clarify my problem : It works fine when I run the application, but not in the preview of xaml \r<br />\n<br />\nThanks you \r<br />\nMuby<br />\n",
+    "PostedDate": "2014-05-03T02:25:45.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240964",
+    "ThreadId": "528994",
+    "Html": "Hi Mudy<br />\n<br />\nin line 151, uncomment &lt;/TextBlock.Clip&gt; --&gt;<br />\n<br />\nregard<br />\n",
+    "PostedDate": "2014-05-03T02:43:16.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240974",
+    "ThreadId": "528994",
+    "Html": "Sorry,\r<br />\n<br />\nIndeed this &quot;--&gt;&quot; must be remove to compil.\r<br />\n<br />\nI update the file and then look what's look like the Xaml render when I user ProgressBar\r<br />\n<br />\n<img src=\"http://muby53.free.fr/errorVisual.png\" alt=\"XamlRender\" />\r<br />\n<br />\n<img src=\"http://muby53.free.fr/errorVisual2.png\" alt=\"ErrorWindow\" /><br />\n",
+    "PostedDate": "2014-05-03T04:27:42.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240975",
+    "ThreadId": "528994",
+    "Html": "Ok,\r<br />\n<br />\n1) Poster le code de mise en oeuvre du progressbar!\r<br />\n2) quelle version du framwork.\r<br />\n3) version de VS.<br />\n",
+    "PostedDate": "2014-05-03T04:37:42.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240976",
+    "ThreadId": "528994",
+    "Html": "1)\r<br />\nCode : <br />\n<pre><code> &lt;ProgressBar Margin=&quot;20,0,0,0&quot; Value=&quot;50&quot; Width=&quot;300&quot; Height=&quot;20&quot; Tag=&quot;50%&quot;/&gt;</code></pre>\n\n2) .net 4.5\r<br />\n<br />\n3) Visual 2013 SP1<br />\n",
+    "PostedDate": "2014-05-03T04:51:40.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240978",
+    "ThreadId": "528994",
+    "Html": "Changer dans progressbar.xaml\r<br />\n<br />\nForeground=&quot;{DynamicResource Accent}&quot; -&gt; Foreground=&quot;{StaticResource Accent}&quot;\r<br />\nForeground=&quot;{DynamicResource ItemTextSelected}&quot; -&gt; Foreground=&quot;{StaticResource ItemTextSelected}&quot;\r<br />\n<br />\net c'est bon<br />\n",
+    "PostedDate": "2014-05-03T05:17:01.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240979",
+    "ThreadId": "528994",
+    "Html": "Merci beaucoup pour ta réactivité ...\r<br />\n<br />\nUne idée de pourquoi dans ma configuration il faut changer le Dynamic en Static ?\r<br />\n<br />\nEncore merci pour ton aide :)<br />\n",
+    "PostedDate": "2014-05-03T05:28:24.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240981",
+    "ThreadId": "528994",
+    "Html": "Ta config a rien a voir, c'est moi qui n'est pas testé :)<br />\n",
+    "PostedDate": "2014-05-03T05:31:42.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240982",
+    "ThreadId": "528994",
+    "Html": "Ok \r<br />\n<br />\nEn tout cas sympa de m'avoir aidé ;) ton code marche super bien et super utile :)\r<br />\n<br />\nEncore merci ;) <br />\n",
+    "PostedDate": "2014-05-03T05:32:59.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240983",
+    "ThreadId": "528994",
+    "Html": "Oups j'ai parlé un peu vite ...\r<br />\n<br />\nEn faite c'est un peu bizarre avec DynamicResource ça marche en exécution mais pas en visualisation dans Visual Studio.\r<br />\n<br />\nAvec StaticResource ça marche en visualisation dans Visual Studio mais j'ai une exception à l’exécution ... :(<br />\n<pre><code>System.Windows.Markup.XamlParseException: Provide value on 'System.Windows.Markup.StaticResourceHolder' threw an exception. ---&gt; System.Exception: Cannot find resource named 'Accent'. Resource names are case sensitive.\n   at System.Windows.StaticResourceExtension.ProvideValueInternal(IServiceProvider serviceProvider, Boolean allowDeferredReference)\n   at System.Windows.StaticResourceExtension.ProvideValue(IServiceProvider serviceProvider)\n   at MS.Internal.Xaml.Runtime.ClrObjectRuntime.CallProvideValue(MarkupExtension me, IServiceProvider serviceProvider)</code></pre>\n\n:(<br />\n",
+    "PostedDate": "2014-05-03T05:45:38.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240984",
+    "ThreadId": "528994",
+    "Html": "C'est la propriété Foreground=&quot;{StaticResource ItemTextSelected}&quot; qui deconne, je suis en train de regarder et fait un retour quand ok.<br />\n<br />\navec une valeur en dur &quot;White&quot; pas de soucis, a prioris il ne trouve pas la ressource dynamiquement.<br />\n",
+    "PostedDate": "2014-05-03T05:47:56.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240985",
+    "ThreadId": "528994",
+    "Html": "Et si j'enlève :<br />\n<pre><code>&lt;TextBlock.Clip&gt;\n                                            &lt;RectangleGeometry &gt;\n                                                &lt;RectangleGeometry.Rect&gt;\n                                                    &lt;MultiBinding Converter=&quot;{StaticResource RectConverter}&quot;&gt;\n                                                        &lt;Binding Path=&quot;ActualWidth&quot;    Source=&quot;{x:Reference PART_Indicator}&quot;/&gt;\n                                                        &lt;Binding Path=&quot;ActualHeight&quot;   Source=&quot;{x:Reference PART_Indicator}&quot;/&gt;\n                                                    &lt;/MultiBinding&gt;\n                                                &lt;/RectangleGeometry.Rect&gt;\n                                            &lt;/RectangleGeometry&gt;\n                                        &lt;/TextBlock.Clip&gt;</code></pre>\n\nLa j'arrive à avoir le rendu avec DynamicResource ... \r<br />\n<br />\nIl semble que visual n'arrive pas à faire le rendu si y'a un TextBlock.Clip ?<br />\n",
+    "PostedDate": "2014-05-03T05:48:14.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240986",
+    "ThreadId": "528994",
+    "Html": "le clip sert a cacher le texte en noir au fur et a mesure de la progression, faut pas l'enlever !<br />\n",
+    "PostedDate": "2014-05-03T05:50:41.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240987",
+    "ThreadId": "528994",
+    "Html": "Oui c'est tout l'intérêt de ton code, mais il semble que ce soit ça qui empêche Visual Studio de faire le rendu Xaml avant l'éxécution.\r<br />\n<br />\nBizarre :( <br />\n",
+    "PostedDate": "2014-05-03T05:52:13.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240996",
+    "ThreadId": "528994",
+    "Html": "ok it's work :)<br />\n<pre><code>&lt;TextBlock.Style&gt;\n &lt;Style TargetType=&quot;{x:Type TextBlock}&quot;&gt;\n  &lt;Setter Property=&quot;Foreground&quot; Value=&quot;{DynamicResource ItemTextSelected}&quot; /&gt;\n &lt;/Style&gt;\n&lt;/TextBlock.Style&gt;\n</code></pre>\n\nI updated my first <strong>ProgressBar.xaml</strong> code above<br />\n",
+    "PostedDate": "2014-05-03T06:37:22.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1241000",
+    "ThreadId": "528994",
+    "Html": "Indeed !!!! Nice !!\r<br />\n<br />\nEncore merci et la dernière je pense :) Beau travail :\r<br />\n<br />\nHere the final code for everyone who need it : <br />\n<pre><code>&lt;TextBlock Text=&quot;{TemplateBinding Tag}&quot; \n        FontSize=&quot;{TemplateBinding FontSize}&quot;\n        FontWeight=&quot;{TemplateBinding FontWeight}&quot;\n        Grid.ZIndex=&quot;2&quot; Foreground=&quot;{DynamicResource Accent}&quot;\n        TextAlignment=&quot;Center&quot;\n        HorizontalAlignment=&quot;Stretch&quot;\n        VerticalAlignment=&quot;Center&quot; /&gt;\n    &lt;TextBlock \n            Text=&quot;{TemplateBinding Tag}&quot; \n            FontSize=&quot;{TemplateBinding FontSize}&quot;\n            FontWeight=&quot;{TemplateBinding FontWeight}&quot;\n            Grid.ZIndex=&quot;3&quot; \n            TextAlignment=&quot;Center&quot;\n            HorizontalAlignment=&quot;Stretch&quot;\n            VerticalAlignment=&quot;Center&quot;&gt;\n        &lt;TextBlock.Style&gt;\n            &lt;Style TargetType=&quot;{x:Type TextBlock}&quot;&gt;\n                &lt;Setter Property=&quot;Foreground&quot; Value=&quot;{DynamicResource ItemTextSelected}&quot; /&gt;\n            &lt;/Style&gt;\n        &lt;/TextBlock.Style&gt;\n       &lt;TextBlock.Clip&gt;\n            &lt;RectangleGeometry &gt;\n                &lt;RectangleGeometry.Rect&gt;\n                    &lt;MultiBinding Converter=&quot;{StaticResource RectConverter}&quot;&gt;\n                        &lt;Binding Path=&quot;ActualWidth&quot;    Source=&quot;{x:Reference PART_Indicator}&quot;/&gt;\n                        &lt;Binding Path=&quot;ActualHeight&quot;   Source=&quot;{x:Reference PART_Indicator}&quot;/&gt;\n                    &lt;/MultiBinding&gt;\n                &lt;/RectangleGeometry.Rect&gt;\n            &lt;/RectangleGeometry&gt;\n        &lt;/TextBlock.Clip&gt;\n    &lt;/TextBlock&gt;</code></pre>\n\n",
+    "PostedDate": "2014-05-03T06:43:32.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1241003",
+    "ThreadId": "528994",
+    "Html": "Pas de soucis :)\r<br />\n<br />\nEt voilà :)<br />\n",
+    "PostedDate": "2014-05-03T06:50:33.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

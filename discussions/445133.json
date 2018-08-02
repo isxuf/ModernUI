@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1049314",
+    "ThreadId": "445133",
+    "Html": "First off, thank you for this amazing UI framework. I really love it.\r<br />\n<br />\nHowever two things that bug me: is there a way to easily remove the logo and replace it with a bold title?\r<br />\n<br />\nKeep up the great work!\r<br />\n<br />\nThanks in advance\r<br />\n-Simon<br />\n",
+    "PostedDate": "2013-05-27T15:29:50.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1049528",
+    "ThreadId": "445133",
+    "Html": "Just checked in an update where the logo is hidden when no ModernWindow.LogoData is specified. The title feature is still pending.<br />\n",
+    "PostedDate": "2013-05-28T04:10:31.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1049958",
+    "ThreadId": "445133",
+    "Html": "kozw,\r<br />\nthank you very much; this works for me :)\r<br />\n<br />\nBest regards\r<br />\n-Simon<br />\n",
+    "PostedDate": "2013-05-29T01:30:55.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

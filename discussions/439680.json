@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1027969",
+    "ThreadId": "439680",
+    "Html": "Recent update remove AccentColorLight? Why? I thought windows 8 uses 2 tone for tile.<br />\n",
+    "PostedDate": "2013-04-09T09:50:22.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028002",
+    "ThreadId": "439680",
+    "Html": "AccentColorLight no longer exists to simplify custom theme development. Do you need it?<br />\n",
+    "PostedDate": "2013-04-09T11:07:29.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028347",
+    "ThreadId": "439680",
+    "Html": "i design my app based on microsoft recommendation on this page <a href=\"http://msdn.microsoft.com/en-us/library/windows/apps/hh700403\" rel=\"nofollow\">http://msdn.microsoft.com/en-us/library/windows/apps/hh700403</a>. as you can see from the tile image, its 2 tone. it would be nice if it implemented officially in modern ui. thanks.<br />\n",
+    "PostedDate": "2013-04-10T03:55:18.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028350",
+    "ThreadId": "439680",
+    "Html": "mui itself doesn't require AccentColorLight. But that shouldn't stop you from adding your own resources. Or do you have a compelling reason AccentColorLight must be provide by mui?<br />\n",
+    "PostedDate": "2013-04-10T04:00:40.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028366",
+    "ThreadId": "439680",
+    "Html": "i can manage to add accentcolorligth manually. i just thought that since microsoft example uses 2 tone color, i believe it would be helpful for others that want to achieve microsoft like effect with minimal effort. that said, it wasnt 'must', just 'nice to have'.\r<br />\n<br />\nthanks.<br />\n",
+    "PostedDate": "2013-04-10T04:25:16.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

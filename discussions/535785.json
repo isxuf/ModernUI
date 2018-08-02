@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1215648",
+    "ThreadId": "535785",
+    "Html": "I'm trying to add a label to display error message at the top of the windows just here\r<br />\n<br />\n<img src=\"http://img15.hostingpics.net/pics/625117muisample.png\" alt=\"Image\" />\r<br />\n<br />\nCan't find how to do it with the editor..\r<br />\n<br />\nI tried to add this but it doesn't seems to be the good way...\r<br />\n&lt;Label Content=&quot;My Error message&quot;  Name=&quot;Label_Message&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;267,0,0,0&quot; Width=&quot;300&quot; VerticalAlignment=&quot;Top&quot; /&gt;\r<br />\n<br />\nThanks for your help<br />\n",
+    "PostedDate": "2014-02-27T06:44:26.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

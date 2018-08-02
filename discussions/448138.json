@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1060778",
+    "ThreadId": "448138",
+    "Html": "why when we use comboBox we should press two tab to go to the next control? <br />\nhow do we can change it to one tab?<br />\n",
+    "PostedDate": "2013-06-25T02:27:23.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1122878",
+    "ThreadId": "448138",
+    "Html": "I've notice this issue too, and looking on the combobox style source I've detected the cause of this, in the template there is a ToggleButton that has no definition for the property IsTabStop setting it to false.<br />\n",
+    "PostedDate": "2013-11-13T05:01:43.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1312146",
+    "ThreadId": "569480",
+    "Html": "<img src=\"https://ivu3qw.bn1304.livefilestore.com/y2pCDQxag1DBQsiDszw6ajUil7U9IfNF1MfDSrGIO5PD2GkefZzpQHzucpNqGAO7vkMD44kJI4YrOcwGbDJVf2EbHynWmpCoUyfMofieFlpDP4/mui.PNG?psid=1\" alt=\"Image\" />\r<br />\n<br />\nHello. Is there a way to add buttons to top of the main frame?\r<br />\nI would like to make click events. eagerly, I can't help clicking the logo..\r<br />\nthanks.<br />\n",
+    "PostedDate": "2014-10-10T05:50:05.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1313762",
+    "ThreadId": "569480",
+    "Html": "You probably need to define a custom ModernWindow style for that. If these buttons are associated with a specific page, you could use negative margins to position your buttons at the top of the window.<br />\n",
+    "PostedDate": "2014-10-15T14:20:25.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

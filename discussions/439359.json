@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1026574",
+    "ThreadId": "439359",
+    "Html": "When i open my project utilizing modern ui in blend, i get an error telling me that Resource DefaultFontFamily is not found in ToolTip.xaml.<br />\n",
+    "PostedDate": "2013-04-06T08:11:19.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1026575",
+    "ThreadId": "439359",
+    "Html": "Good catch, that's a bug. The <code>DefaultFontFamily</code> resource is referenced as StaticResource, that should be DynamicResource.<br />\n",
+    "PostedDate": "2013-04-06T08:17:58.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1027490",
+    "ThreadId": "439359",
+    "Html": "Another one also in blend...\r<br />\n<br />\n&quot;The document ModernUI.Light.Xaml contains at least one resource (AccentColor) that could not be resolved.&quot;\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-04-08T13:55:04.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1027494",
+    "ThreadId": "439359",
+    "Html": "That is correct, AccentColor is defined in ModernUI.xaml.<br />\n",
+    "PostedDate": "2013-04-08T13:59:02.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1027958",
+    "ThreadId": "439359",
+    "Html": "Scrap that<br />\n",
+    "PostedDate": "2013-04-09T09:36:49.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028003",
+    "ThreadId": "439359",
+    "Html": "Done :)<br />\n",
+    "PostedDate": "2013-04-09T11:07:46.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

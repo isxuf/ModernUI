@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1119665",
+    "ThreadId": "466789",
+    "Html": "Hi!\r<br />\n<br />\nFirst of all I really like the look of the &lt;m:ui/&gt;!!\r<br />\n<br />\nNot sure if this is the right place to post this question but I'll give it a try.\r<br />\nI would like to create my own DataGrid (adding some context menu on right mouse click etc).\r<br />\nWhen I create a class similar to the one below\r<br />\n<br />\n...\r<br />\npublic class MyDataGrid : DataGrid\r<br />\n{\r<br />\n   //Do some nice extra features to the original data grid but not yet implemented\r<br />\n}\r<br />\nand uses it in a wpf page, the styling from the original m:ui data grid isn't applied. I receive a grey background of the grid as well as some vertical gridlines.\r<br />\n<br />\nHow do I use the style from the original data grid in a simple manner?\r<br />\n<br />\nI have tried to do something similar to (just for testing)\r<br />\n  &lt;Style TargetType=&quot;{x:Type uc:MyDataGrid}&quot; BasedOn=&quot;{StaticResource {x:Type DataGrid}}&quot;&gt;<br />\n<pre><code>        &lt;Setter Property=&quot;Background&quot; Value=&quot;Black&quot;/&gt;\n    &lt;/Style&gt;</code></pre>\n\nBut the style isn't applied for the MyDataGrid.\r<br />\n<br />\nAny idea of what I'm doing wrong?\r<br />\n<br />\nThanks'\r<br />\n/Andreas<br />\n",
+    "PostedDate": "2013-11-07T03:43:09.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1216277",
+    "ThreadId": "466789",
+    "Html": "Hi\r<br />\n<br />\nI do not know if issue was solved, I see it's quite old.\r<br />\nHave a look here <a href=\"http://stackoverflow.com/questions/6780605/how-to-make-a-wpf-style-inheritable-to-derived-classes\" rel=\"nofollow\">http://stackoverflow.com/questions/6780605/how-to-make-a-wpf-style-inheritable-to-derived-classes</a>.\r<br />\nI took the last solution (for some reason the first 2 did not work), this meaning:\r<br />\n<br />\npublic class MyDataGrid : DataGrid \r<br />\n{ <br />\n<pre><code>    public MyDataGrid() : base()\n    {\n        this.SetResourceReference(StyleProperty, typeof(DataGrid));\n    }</code></pre>\n\n//Do some nice extra features to the original data grid but not yet implemented \r<br />\n} <br />\n",
+    "PostedDate": "2014-02-28T11:47:06.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

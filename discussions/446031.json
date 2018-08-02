@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1052941",
+    "ThreadId": "446031",
+    "Html": "Hi Guy,\r<br />\n<br />\nI have a Trouble with ContentLoader.\r<br />\n<br />\nI want to make Tab like a Browser(new, close, tabs group), <br />\nto get a new Tab was easy, but  close and display a content is not working  i need help!!\r<br />\n<br />\nThis Scenario works with Class Person :  i want do display Name as Header and Firstname,  age, Title  in Content with Datagrid:\r<br />\n<br />\n<br />\nNB: MVVM<br />\n",
+    "PostedDate": "2013-06-05T00:11:36.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1053025",
+    "ThreadId": "446031",
+    "Html": "Your question is kinda broad; what exactly do you mean with content is not working?<br />\n",
+    "PostedDate": "2013-06-05T03:07:40.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1053039",
+    "ThreadId": "446031",
+    "Html": "I want to replace your  TemplateBinding Parameter   with my owm TemplateBinding Paramter like this\r<br />\n<br />\n  &lt;ListBox x:Name=&quot;LinkList&quot; ItemsSource=&quot;{TemplateBinding ______ItemsSource______}&quot; HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot; Margin=&quot;{DynamicResource HeaderMargin}&quot;/&gt;<br />\n<pre><code>  &lt;Button   Visibility=&quot;{Binding Visibility}&quot; Margin=&quot;6,0,0,0&quot; Content=&quot;X&quot;  \n                                 Command=&quot;{Binding KundeEingabeDataContext.RemoveCommand,   Mode=OneWay}&quot; CommandParameter=&quot;{Binding}&quot; /&gt;\n</code></pre>\n\ni got error here:\r<br />\n  &lt;controls:ModernFrame Source=&quot;{Binding SelectedSource, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}&quot; /&gt;\r<br />\n<br />\nmy question is:  how can i  replace  SelectedSource  when i use normal TabControl in  View!!!\r<br />\n<br />\nNB: can i see  you all the Code?<br />\n",
+    "PostedDate": "2013-06-05T03:37:00.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054117",
+    "ThreadId": "446031",
+    "Html": "Still not sure what issue you are facing. Care to share a repro project?<br />\n",
+    "PostedDate": "2013-06-07T10:27:47.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

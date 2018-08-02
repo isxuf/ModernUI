@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1260263",
+    "ThreadId": "549808",
+    "Html": "Can we view Crystal Report within MUI application?<br />\n",
+    "PostedDate": "2014-06-26T20:16:58.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1262654",
+    "ThreadId": "549808",
+    "Html": "Sure can, it can be hosted inside of a windows forms host. You will have to make reference to Crystal Reports (obviously) and WindowsFormsIntegration in your project.<br />\n<br />\nIn the XAML heading use<br />\n<pre><code>xmlns:cr=&quot;clr-namespace:CrystalDecisions.Windows.Forms;assembly=CrystalDecisions.Windows.Forms&quot;\n</code></pre>\n\nand in your XAML body use<br />\n<pre><code> &lt;WindowsFormsHost&gt;\n         &lt;cr:CrystalReportViewer x:Name=&quot;crCrystalReportViewer&quot; /&gt;\n &lt;/WindowsFormsHost&gt;</code></pre>\n\n",
+    "PostedDate": "2014-07-03T21:52:13.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

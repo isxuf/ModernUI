@@ -1,0 +1,138 @@
+[
+  {
+    "Id": "1060043",
+    "ThreadId": "447929",
+    "Html": "Is modern ui support for vb.net ?<br />\n",
+    "PostedDate": "2013-06-23T06:34:41.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060073",
+    "ThreadId": "447929",
+    "Html": "Sure, you can use VB.NET to build mui apps. You can't use the VisualStudio templates (they only exist for C#), but you can <a href=\"https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&amp;referringTitle=Documentation\" rel=\"nofollow\">manually create an app</a>.\r<br />\n<br />\nAdding VB.NET support is in the <a href=\"https://mui.codeplex.com/workitem/19737\" rel=\"nofollow\">issue tracker</a>.<br />\n",
+    "PostedDate": "2013-06-23T08:22:51.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130322",
+    "ThreadId": "447929",
+    "Html": "can someone explane me how to translate this from C# to VB.NET ?\r<br />\n<br />\nusing FirstFloor.ModernUI.Windows.Controls;\r<br />\npublic partial class MainWindow : ModernWindow {  ..  }\r<br />\n<br />\ncuz I'm new to these .NET platforms :/\r<br />\n<br />\nThank you in advance<br />\n",
+    "PostedDate": "2013-11-29T08:17:47.073-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130656",
+    "ThreadId": "447929",
+    "Html": "@GigaC\r<br />\n<br />\nYou need to create a WPF Application in VB.Net. Then follow the instruction at &quot;<a href=\"http://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&amp;referringTitle=Documentation\" rel=\"nofollow\">My first Modern UI app</a>&quot;. The instruction is mostly about xaml so you can do it the same way in your VB.Net project. The only C# thing is:<br />\n<pre><code>using FirstFloor.ModernUI.Windows.Controls;\npublic partial class MainWindow : ModernWindow {  ..  }</code></pre>\n\nThe equivalent in VB.net is<br />\n<pre><code>Imports FirstFloor.ModernUI.Windows.Controls\n\nPublic Partial Class MainWindow\nInherits ModernWindow\n...\n</code></pre>\n\nGoogle &quot;C# VB converter&quot; you'll find a couple of converters if you need.<br />\n",
+    "PostedDate": "2013-12-01T07:04:48.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130721",
+    "ThreadId": "447929",
+    "Html": "I hate when I have to annoy someone, but dude, believe me, I am doing everything as the instructions.\r<br />\n<br />\nWhen I am gonna add this  <strong>&lt;mui:ModernWindow</strong>  I got this error \r<br />\n<br />\n<strong>Error\t1\tThe name &quot;ModernWindow&quot; does not exist in the namespace &quot;<a href=\"http://firstfloorsoftware.com/ModernUI\" rel=\"nofollow\">http://firstfloorsoftware.com/ModernUI</a>&quot;.\tC:\\Users\\GigaC\\AppData\\Local\\Temporary Projects\\WpfApplication2\\MainWindow.xaml\t1\t1\tWpfApplication2</strong>\r<br />\n<br />\nI want to use this please some help me, someone must have use this thing at VB.NET <br />\n",
+    "PostedDate": "2013-12-01T17:03:42.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130973",
+    "ThreadId": "447929",
+    "Html": "@GigaC\r<br />\n<br />\nCheck if you did the following:<br />\n<ul>\n<li>download FirstFloor.ModernUI.dll (versin 1.0.5) and add a refrence to it in your VB project</li>\n<li>add a line for mui in xaml. something like this (note the 4th line):</li>\n</ul>\n<pre><code>&lt;mui:ModernWindow x:Class=&quot;MainWindow&quot;\n                  xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n                  xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n                  xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;</code></pre>\n\n",
+    "PostedDate": "2013-12-02T09:52:54.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1131087",
+    "ThreadId": "447929",
+    "Html": "Here is my result and code\r<br />\n<br />\n<a href=\"http://tinypic.com/r/28l8hl5/5\" rel=\"nofollow\">http://tinypic.com/r/28l8hl5/5</a><br />\n",
+    "PostedDate": "2013-12-02T17:01:58.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1131396",
+    "ThreadId": "447929",
+    "Html": "I guess you didn't add reference to FirstFloor.ModernUI.dll\r<br />\n<br />\nTo add a reference, go to menu Project -&gt; [Your project name] Properties... -&gt; References -&gt; Add.. -&gt; Browse...<br />\n",
+    "PostedDate": "2013-12-03T13:02:06.457-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1131397",
+    "ThreadId": "447929",
+    "Html": "Dude, I added just like the manual says. :(\r<br />\n<br />\nI added and this one too <strong>Microsoft.Windows.Shell.dll</strong><br />\n",
+    "PostedDate": "2013-12-03T13:03:43.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1131406",
+    "ThreadId": "447929",
+    "Html": "if you upload your project somewhere I may take a look.<br />\n",
+    "PostedDate": "2013-12-03T13:24:36.76-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1132560",
+    "ThreadId": "447929",
+    "Html": "<a href=\"http://www.mediafire.com/download/5bkng4g2kna35u3/modernUIwpf.zip\" rel=\"nofollow\">Download</a>\r<br />\n<br />\nHere is link from my project. Check it out.\r<br />\nIn the project I included the <strong>FirstFloor.ModernUI.dll</strong> and <strong>Microsoft.Windows.Shell.dll</strong> but I didn't include them in the zip file. I guess thats not a problem. Thank you in advance.<br />\n",
+    "PostedDate": "2013-12-06T09:52:47.893-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1132683",
+    "ThreadId": "447929",
+    "Html": "I changed your Application.xaml to the code below and it worked. You forgot to add Modern UI resources in there.<br />\n<pre><code>&lt;Application x:Class=&quot;Application&quot;\n    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n    StartupUri=&quot;MainWindow.xaml&quot;&gt;\n    &lt;Application.Resources&gt;\n        &lt;ResourceDictionary&gt;\n            &lt;ResourceDictionary.MergedDictionaries&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot;/&gt;\n            &lt;/ResourceDictionary.MergedDictionaries&gt;\n        &lt;/ResourceDictionary&gt;\n    &lt;/Application.Resources&gt;\n&lt;/Application&gt;</code></pre>\n\n",
+    "PostedDate": "2013-12-06T17:15:49.313-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1132809",
+    "ThreadId": "447929",
+    "Html": "I hate microsoft, I can't do it, still not working ? :S :S<br />\n",
+    "PostedDate": "2013-12-07T11:00:56.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1155156",
+    "ThreadId": "447929",
+    "Html": "We're the same GigaC..\r<br />\nI followed all of the above instructions, but still didn't work.. :(\r<br />\n<br />\nHope there is another way to do this..<br />\n",
+    "PostedDate": "2014-01-11T13:58:17.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1156339",
+    "ThreadId": "447929",
+    "Html": "I made an example in VB based on the steps <a href=\"https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&amp;referringTitle=Documentation\" rel=\"nofollow\">here</a> and it works for me. \r<br />\n<br />\nHere is <a href=\"https://github.com/topvis/MUIAppVB\" rel=\"nofollow\">link</a> to the example project. Hope it helps.<br />\n",
+    "PostedDate": "2014-01-11T21:42:20.49-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1216095",
+    "ThreadId": "447929",
+    "Html": "hello topvis :D .. ahm i download your program in the given link.. hehe\r<br />\nahm sorry for my english..\r<br />\n<br />\nmy question is\r<br />\nwhy the program runs but theres an error??<br />\n",
+    "PostedDate": "2014-02-28T05:10:06.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1216174",
+    "ThreadId": "447929",
+    "Html": "I dont understand the code but its running hehe :D\r<br />\n<br />\nahm i have question?? why the code is running but theres an error?? hehe, but its running\r<br />\n<br />\n<br />\nsorry for my english :D<br />\n",
+    "PostedDate": "2014-02-28T07:51:19.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

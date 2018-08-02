@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1045499",
+    "ThreadId": "444143",
+    "Html": "I wonder whether ModernUI supports DatePicker control. Any idea?<br />\n",
+    "PostedDate": "2013-05-18T08:34:02.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046027",
+    "ThreadId": "444143",
+    "Html": "No, not yet. An issue requesting its support exists -&gt; <a href=\"https://mui.codeplex.com/workitem/19429\" rel=\"nofollow\">https://mui.codeplex.com/workitem/19429</a><br />\n",
+    "PostedDate": "2013-05-20T07:22:05.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

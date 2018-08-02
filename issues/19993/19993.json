@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Tabstops feel odd on the introduction window for two reasons:\n1) Many controls that don't seem like they should be tab stops are.\n2) Many controls that are tab stops, don't have focus rectangles or indicators.\n\nBelow are some changes that made the tabbing experience feel more natural (to me).\n\nModernWindow.xaml\n<!-- window background content -->\n<ContentControl IsTabStop=\"False\" \n\n<!-- window system buttons-->\n<Button IsTabStop=\"False\" x:Name=\"Minimize\"\n<Button x:Name=\"Restore\" IsTabStop=\"False\"\n<Button x:Name=\"Maximize\" IsTabStop=\"False\"\n<Button IsTabStop=\"False\" x:Name=\"Close\"\n\n<!-- title links -->\n<ItemsControl IsTabStop=\"False\"\n...\n<Button Content=\"{Binding DisplayName}\" IsTabStop=\"False\"\n\n<controls:ModernMenu Grid.Row=\"1\" IsTabStop=\"False\"\n\n<controls:ModernButton IsTabStop=\"False\" \n\n<controls:ModernFrame IsTabStop=\"False\" \n\nWindows\\Controls\\TransitioningContentControl.cs\npublic TransitioningContentControl()\n{\n  IsTabStop = false;\t\n\nI didn't do anything with the menus because I was a bit ambivalent about whether the menu shouldn't be tab-able (if not feels like a hot key such as F10 or Alt should work) or if the menu should just have a focus rectangle added.\n\nAlso once focused the menu requires two right arrow keys to select the next item.\n\nHaven't looked at the other controls yet.",
+    "LastUpdatedDate": "2013-07-21T12:26:10.147-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-07-21T12:21:05.8-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Tab stops",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19993
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

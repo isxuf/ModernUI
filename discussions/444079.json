@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1045223",
+    "ThreadId": "444079",
+    "Html": "Hey,<br />\n<br />\ni need to find out which link is currently active. <br />\n<br />\nYou may think that it is hard to find a use case for this so i created an <a href=\"http://sdrv.ms/15TKYS6\" rel=\"nofollow\">demoapplication</a> to illustrate my point.<br />\n <br />\nAfter a user logs in the application connects to a web-service and asks for queues which are accessible by the user. Then the application creates a Link for each queue and initializes a UserControl which takes the name of the queue as a parameter. All links point to the same xaml file called Queues.xaml. Queues.xaml is bound to a QueuesViewModel which holds a Dictionary&lt;queuename, UserControl&gt; and a property ActiveUserControl. Queues.xaml contains only a ContentPresenter which is bound to the ActiveUserControl property in the ViewModel. <br />\n<br />\nNow, i need to update the ActiveUserControl property every time a link is clicked. <br />\n<br />\nThanks in advance<br />\n",
+    "PostedDate": "2013-05-17T10:41:38.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

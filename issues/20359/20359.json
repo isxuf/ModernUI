@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Hie... I appologise before hand if this is a stupid question. Its just that I understand that passing values in WPF causes problems if you try the same methods used in winforms. True enough i had a couple of exceptions thrown when I tried it so i was wondering. is there a way to pass a textbox value from the main form to another textbox in a page in this?\n\nI am very new to this. an example is all I need to go by and i'll be fine. Please help.",
+    "LastUpdatedDate": "2013-10-26T15:21:15.197-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-10-26T15:21:15.197-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "databinding from main window to child",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20359
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

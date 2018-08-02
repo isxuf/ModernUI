@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "MUI is great!  I'm using it for a new project, and I'm impressed with the comprehensiveness of the framework so far.  I have noticed one issue.  \n\nSteps to reproduce:\n1. Build a MUI app with controls that you may navigate to through the main menu\n2. Build a control using a databound textbox field with ValidatesOnDataErrors=true.  \n3. Run the program\n4. Enter invalid data into the field in order to get the red box around the control\n5. Navigate via the main menu\n6. During the navigation you can see the red validation box overlapping the new content\n\nAlthough this issue doesn't break anything functionally, it does look pretty bad visually.  With the other stunning visuals going on it sticks out like a sore thumb.\n\nPerhaps the previous screen could fade out just before navigation?  Is there an easy way to do that?",
+    "LastUpdatedDate": "2013-06-01T18:00:04.133-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-14T13:11:39.77-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Red WPF Validation Outline appears during navigation",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 19709
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

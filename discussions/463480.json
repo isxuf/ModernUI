@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1111826",
+    "ThreadId": "463480",
+    "Html": "Hi! I'm really impressed by this great library. I do, however, have a small concern.\r<br />\n<br />\nThe resize grip in the corner of the window is usually used to offer a larger area that the user can click on, in order to resize the window, other than the border window itself.\r<br />\n<br />\nIn m:ui, however, it seems to have a purely aesthetical function, as dragging it does nothing, and I still have to aim for the borders.\r<br />\n<br />\nIs this intentional?<br />\n",
+    "PostedDate": "2013-10-24T12:53:49.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1113831",
+    "ThreadId": "463480",
+    "Html": "True, the resize grip's function currently is to provide feedback that the window is resizable. This is not intentional, feel free to create an issue for it.<br />\n",
+    "PostedDate": "2013-10-29T13:59:51.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1113867",
+    "ThreadId": "463480",
+    "Html": "Thank you. I did as you suggested.<br />\n",
+    "PostedDate": "2013-10-29T16:10:47.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

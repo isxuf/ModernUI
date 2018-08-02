@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Application crashed when clicking \"IMAGES\" tab.\n\nAdvanced ==> CONTENT LOADER ==> IMAGES \n\n\nWindows 7 64bit Japanese \nVer1.0.5 demo application.",
+    "LastUpdatedDate": "2013-10-17T20:32:27.467-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-10-17T18:55:55.357-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Application crashed when clicking \"IMAGES\" tab.",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20323
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903311,
+      "FileName": "Issue_ModernUI.PNG",
+      "DownloadUrl": ".\\903311"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Register an Apikey ... all is in exception message ...https://mui.codeplex.com/SourceControl/latest#1.0/FirstFloor.ModernUI/FirstFloor.ModernUI.App/FlickrImageLoader.cs",
+      "PostedDate": "2013-10-17T20:32:27.467-07:00",
+      "Id": 158562
+    }
+  ]
+}

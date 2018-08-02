@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1463688",
+    "ThreadId": "651493",
+    "Html": "Hello. Simple question. Can I programmatically navigate to other pages?\r<br />\nThansk!<br />\n",
+    "PostedDate": "2016-02-18T23:29:12.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1464381",
+    "ThreadId": "651493",
+    "Html": "Hi, I don't know correctly answser...<br />\n<br />\nHowever, You  refer to fallowing code.<br />\n<ul>\n<li>xaml</li>\n</ul>\n<pre><code>     &lt;mui:ModernWindow.TitleLinks&gt;\n        &lt;mui:Link DisplayName=&quot;{StaticResource About}&quot;\n                  Source=&quot;Presentation/About.xaml&quot; /&gt;\n        &lt;mui:Link DisplayName=&quot;{StaticResource Help}&quot;\n                  Source=&quot;Presentation/Help.xaml&quot;/&gt;\n    &lt;/mui:ModernWindow.TitleLinks&gt;\n\n    &lt;mui:ModernWindow.MenuLinkGroups&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;{StaticResource Home}&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link Source=&quot;Presentation/Home.xaml&quot;/&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;{StaticResource Board}&quot; &gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link Source=&quot;Presentation/Board.xaml&quot;/&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;{StaticResource Setting}&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link Source=&quot;Presentation/Settings/Settings.xaml&quot;/&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n    &lt;/mui:ModernWindow.MenuLinkGroups&gt;</code></pre>\n\n<ul>\n<li>nevigation code</li>\n</ul>\n<pre><code>        public async void ShowDrawPen() {\n            if (Board.Instance == null) {\n                try {\n                                          System.Threading.Tasks.Task.Run(() =&gt;\n                                  {\n                                    this.Dispatcher.Invoke(() =&gt;\n                                {\n                                                     this.ContentSource = new Uri(&quot;Presentation/Board.xaml&quot;, UriKind.Relative); //navigate link\n                                    });\n                                          });\n                    \n                    //await this.ContentLoader.LoadContentAsync(new Uri(&quot;Presentation/Board.xaml&quot;, UriKind.Relative), System.Threading.CancellationToken.None); //link class load, no navigate link. (not use)\n                }\n                catch (Exception error) {\n                    ModernDialog.ShowMessage(error.Message, FirstFloor.ModernUI.Resources.NavigationFailed, MessageBoxButton.OK);\n                }\n            }\n\n            /**/\n\n            if (Board.Instance != null) {\n                Board.Instance.ShowDrawPen();\n            }\n        }</code></pre>\n\nI hope help you. on this code.<br />\n<br />\ngood luck.<br />\n",
+    "PostedDate": "2016-02-24T04:09:45.597-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Too vague. Re-open and provide more details if needed.",
+    "ClosedDate": "2013-07-05T14:27:34.15-07:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Pls add more controls document at the last version!",
+    "LastUpdatedDate": "2013-07-05T14:27:34.15-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-21T01:01:21.383-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "More controls document!",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 19741
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

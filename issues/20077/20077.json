@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 5,
+    "Custom": "",
+    "Description": "Hello,\n\nI have been frustrated for hours, and cannot find a solution.\n\nI am trying to start up a mui:ModernWindow Class defined in a WPF project, \"from a Windows Form Project,\" by referencing the WPF project from the Windows Forms project.\n\nThe reason this being is because I have an ApplicationContext in the Windows Forms project that requires the default project to be Windows Forms, and not WPF.\n\nI can start and run the WPF project successfully when it is set as the startup item. Everything works 100%.\n\n However, whenever I try to reference to the WPF project from the Windows Forms project, by doing the following:\n\n```\nDim x As New ModernUIExperiment.main\nx.show()\n```\n\nWhere the WPF mui:ModernWindow is the \"main\" class.\n\nDoing this brings up the window, as expected. However, when clicking the link that shows the user control, an infinite line of \"loading dots\" appear.\n\nThe guide I have followed is below:\n[My first Modern UI app](http://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app)\n\nThings I have tried to resolve the problem that did __not__ work:\n- Set the Source Property for the link externally during runtime:\n```\nDim x As New ModernUIExperiment.main\nx.ContentSource = New Uri(\"/ModernUIExperiment;component/stuff.xaml\", UriKind.Relative)\nx.link.Source = New Uri(\"/ModernUIExperiment;component/stuff.xaml\", UriKind.Relative)\nx.Show()\n```\n- Copy exactly as best as the IDE would let me, Reference-to-Reference of the WPF project to the Windows Forms Project\n\nHowever, I did note that I __was__ able to get this method to work, from a __separate__ WPF project, to WPF project containing the ModernUI using the following:\n```\nDim x As New ModernUIExperiment.main\nx.ContentSource = New Uri(\"/ModernUIExperiment;component/stuff.xaml\", UriKind.Relative)\nx.link.Source = New Uri(\"/ModernUIExperiment;component/stuff.xaml\", UriKind.Relative)\nx.Show()\n```\n\nThe same exact code, but it works, 100% as expected.\n\nSo I have come to the conclusion that it's something to do with the startup project being WPF created. In my opinion, this whole situation seems like a bug to me.\n\nIf there's is anything I am overseeing, or if you have any questions or comments, feel free to ask. Any help is greatly appreciated :).\n\nP. S. I am using Visual Studio 2012 Express, with Visual Basic\n\nEDIT:\nI did notice however, if I tried to set the \"x.ContentSource\" from a Windows Forms project, I get the error: \"Object reference not set to an instance of an object.\" in PresentationFramework.dll. This may be a clue to why this is happening. \n\nThanks,\n- Jake M.",
+    "LastUpdatedDate": "2015-01-28T08:25:30.49-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-08-13T23:29:03.68-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ModernUI Started Externally (Possible bug?)",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20077
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "After some more experimenting, I have come to the conclusion that the root cause occurs when setting the ModernWindow property \"ContentSource\", either through XAML or programatically. While it does technically get set, through some testing:\r\n\r\n```Dim x As New ModernUIExperiment.mainx.ContentSource = New Uri(\"/ModernUIExperiment;component/stuff.xaml\", UriKind.Relative)x.link.Source = New Uri(\"/ModernUIExperiment;component/stuff.xaml\", UriKind.Relative)\r\n\r\nMsgBox(x.ContentSource.OriginalString)\r\n\r\nx.Show()\r\n\r\n```\r\n\r\nIt does not get a null reference exception in my project's executable (as it would if I did not use the New keyword, so it __does__ get set). However, even after confirming it gets set, and \"then\" showing the window, the null reference exception still occurs in PresentationFramework.dll.\r\n\r\nI can still set the link.Source property only, and everything except the \"infinite loading dots\" and ContentSource works fine (to my knowledge).\r\n\r\nAgain, this does not happen in WPF projects, but only Windows Forms projects. I feel like a reference is missing, but I even tried adding __all possible__ references under the \"Assemblies\" section, and that didn't even work. I get no errors, no warnings, no messages, nothing.",
+      "PostedDate": "2013-08-13T23:29:32.197-07:00",
+      "Id": 158543
+    },
+    {
+      "Message": "Hey Jake,\n\nDid you ever get to the bottom of this? I've got the same issue, been pulling my hair out and googling like a mad thing to no avail.\n\nTa,\n\nMartin",
+      "PostedDate": "2015-01-23T07:28:39.313-08:00",
+      "Id": 170715
+    },
+    {
+      "Message": "Ah yes, I apologize for the late reply. I don't remember who told me, could have sworn it was on this forum. However, I converted it to full WPF after realizing all of the setbacks.\n\nFirst of all, all WPF applications require Windows.Application to be set. Since Windows Forms projects do not do this automatically, you must do it yourself. The reason why we need to do this, is because ModernUI uses WPF resources, particuarlly the following:\n\n```\n<ResourceDictionary.MergedDictionaries>\n    <ResourceDictionary Source=\"/FirstFloor.ModernUI;component/Assets/ModernUI.xaml\"/>\n</ResourceDictionary.MergedDictionaries>\n```\n\n\nSo this is what we're going to do. Create a new .xaml file in your Forms Project of type ResourceDictionary (name does not matter; I used the name: Resources.xaml). It should look something like this:\n\n```\n<ResourceDictionary xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n\n    <ResourceDictionary.MergedDictionaries>\n        <ResourceDictionary Source=\"/FirstFloor.ModernUI;component/Assets/ModernUI.xaml\"/>\n    </ResourceDictionary.MergedDictionaries>\n    \n</ResourceDictionary>\n```\n\nNext, add these line of codes in your Form Project's constructor:\n\n```\n'Declare a new instance of Windows.Application (this only gives your project a new instance of this; using it directly is not necessary)\nDim Application as New Windows.Application\n```\n\nNow, add these lines of code to whatever event is supposed to open a ModernUI window:\n\n```\n'Declare an instance of the ModernUI window from the WPF project\nDim muiWindow as New WPFProject.muiWindow\n\n'Next, declare a resource dictionary, and set its source\nDim rd As New Windows.ResourceDictionary\nrd.Source = New Uri(\"/FormsProject;component/Resources.xaml\", UriKind.Relative)\n\n'Finally, show the muiWindow\nmuiWindow.Show()\n```\n\n\nThat's it! You should be set. If you have any further questions, let me know.\n\nBest regards,\n- Jake M.\n\nSources:\n[Set up application resources from code](http://stackoverflow.com/questions/9739032/set-up-application-resources-from-code)\n[Managing Application Resources when WPF is Hosted](http://drwpf.com/blog/2007/10/05/managing-application-resources-when-wpf-is-hosted/)",
+      "PostedDate": "2015-01-28T08:13:56.193-08:00",
+      "Id": 171005
+    },
+    {
+      "Message": "Edit:\n\nMy apologies. The correct code is the following for the particular section:\n\n```\n'Declare a new instance of Windows.Application (this only gives your project a new instance of this; using it directly is not necessary)\nDim Application as New Windows.Application\n\n'Next, declare a resource dictionary, and set its source\nDim rd As New Windows.ResourceDictionary\nrd.Source = New Uri(\"/FormsProject;component/Resources.xaml\", UriKind.Relative)\n\n'Finally, add the resource to your application:\nWindows.Application.Current.Resources.MergedDictionaries.Add(rd)\n```\n\nOnly declaring and showing the ModernUI window is necessary in the event that creates it. The ResourceDictionary section should be added into your constructor as well.",
+      "PostedDate": "2015-01-28T08:21:30.923-08:00",
+      "Id": 171006
+    },
+    {
+      "Message": "Edit:\n\nI have found the original discussion here if you'd like to know more:\n\n[ModernUI Started Externally (Possible bug?)](https://mui.codeplex.com/discussions/453227)",
+      "PostedDate": "2015-01-28T08:25:30.49-08:00",
+      "Id": 171007
+    }
+  ]
+}

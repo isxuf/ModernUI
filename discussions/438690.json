@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1023856",
+    "ThreadId": "438690",
+    "Html": "Hello there,\r<br />\n<br />\nThank you for this beautiful framework. I am new to C# and WPF and yet I was able to create a beautiful UI.\r<br />\n<br />\nMy problem is how to pass data within your tabs. I have a ListBox on the left of my page and a ModernTab to the right of it. Now I want to pass data out of the selected Item from the listbox to the different tabs. Since those are only links with no further fields I am kind of stuck.\r<br />\n<br />\nI am very aware that this is probably due to my limited experience with c# but it would be very kind if someone could help me anyway.\r<br />\n<br />\nKIind regards,\r<br />\nUrm3l<br />\n",
+    "PostedDate": "2013-04-01T10:45:08.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023867",
+    "ThreadId": "438690",
+    "Html": "Good to hear mui is working well for you. Passing data using links is limited but possible by adding a fragment to your Link.Source. You can access the Fragment by implementing the IContent interface and handle the OnFragmentNavigation method.<br />\n<br />\nAssume your link source is /Pages/MyPage.xaml#foo, where foo is the fragment. Then in your MyPage.xaml.cs you need to implement IContent like so:<br />\n<pre><code>public partial class MyPage : UserControl, IContent\n{\n  public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n  {\n    if (e.Fragment == &quot;foo&quot;) {\n      // do something\n    }\n  }\n\n  public void OnNavigatedFrom(NavigationEventArgs e)\n  {\n  }\n\n  public void OnNavigatedTo(NavigationEventArgs e)\n  {\n  }\n\n  public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n  {\n  }\n}</code></pre>\n\nCurrently only string data in the form of uri fragments can be passed around. You can use it as identifier for your actions.<br />\n",
+    "PostedDate": "2013-04-01T11:15:18.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024090",
+    "ThreadId": "438690",
+    "Html": "If kozw suggestions are not enough, search the web for the mediator pattern or event broker / event aggregator. <br />\n",
+    "PostedDate": "2013-04-02T00:40:03.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024132",
+    "ThreadId": "438690",
+    "Html": "Thank you.  I will look into it. I guess that solves my problem.<br />\n",
+    "PostedDate": "2013-04-02T02:14:25.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

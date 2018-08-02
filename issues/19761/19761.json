@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "not a mui issue",
+    "ClosedDate": "2013-07-06T06:33:16.587-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Hi. I've got a strange situation with databinding on a datagridcomboboxcolumn, don't know much about this so help me out if this is not a bug.\nContext.: \nI've got user control that has a observablecollection of strings and got another observablecollection with some other entities which themself has a reference to some objects of the first collection.\nI've setup a grid to show the list of Movimentos and a combobox column to populate the available Mandatos, but the binding always gives the errors. Pasting the code:\n\nThe codebehind:\n```\n    public partial class Movimentos : UserControl\n    {\n        public ObservableCollection<Movimento> ListaMovimentos { get; private set; }\n        public ObservableCollection<string> ListaMandatos2 { get; private set; }\n\n```\nThe xaml:\n```\n<UserControl DataContext=\"{Binding RelativeSource={RelativeSource Self}}\"\n\t(...)\n\t<DataGrid ItemsSource=\"{Binding ListaMovimentos}\" AutoGenerateColumns=\"False\">\n\t\t<DataGrid.Columns>\n\t\t\t<mui:DataGridComboBoxColumn Header=\"Nº Mandato\" ItemsSource=\"{Binding Path=DataContext.ListaMandatos2, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:Movimentos}, PresentationTraceSources.TraceLevel=High}\" />\n\t\t\t(...)\n```\nthis gives me the follow databind trace information:\nError: 4 : Cannot find source for binding with reference 'RelativeSource FindAncestor, AncestorType='(...).Movimentos', AncestorLevel='1''. BindingExpression:Path=DataContext.ListaMandatos2; DataItem=null; target element is 'DataGridComboBoxColumn' (HashCode=36540742); target property is 'ItemsSource' (type 'IEnumerable')\n\nbut if i change it to a DataGridTemplateColumn everything works has expected:\n```\n<DataGrid ItemsSource=\"{Binding ListaMovimentos}\" AutoGenerateColumns=\"False\">\n\t<DataGrid.Columns>\n\t\t<DataGridTemplateColumn Header=\"Nº Mandato\">\n\t\t\t<DataGridTemplateColumn.CellTemplate>\n\t\t\t\t <DataTemplate>\n\t\t\t\t\t  <ComboBox ItemsSource=\"{Binding Path=DataContext.ListaMandatos2, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:Movimentos},\n\t\t\t\t PresentationTraceSources.TraceLevel=High}\" MinWidth=\"100\"/>\n\t\t\t\t </DataTemplate>\n\t\t\t</DataGridTemplateColumn.CellTemplate>\n\t\t</DataGridTemplateColumn>\n```\n\nYou might notice that the Binding in the ItemSource is the same in both cases.\n\nThank you.",
+    "LastUpdatedDate": "2013-07-06T06:33:16.587-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-24T07:47:09.123-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGridComboBoxColumn and DataBinding",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 19761
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'll answer myself since I figured it out! Here goes two links and a copy+paste explanation. This isn't a mui problem, but if any one finds the same barrier, it will have another resource to look for:\r\n\r\nhttp://joemorrison.org/blog/2009/02/17/excedrin-headache-35401281-using-combo-boxes-with-the-wpf-datagrid/http://blogs.msdn.com/b/jaimer/archive/2008/11/22/forwarding-the-datagrid-s-datacontext-to-its-columns.aspx\r\n\r\nBasically, \"The Columns collection is just a property in the Datagrid; this collection is not in the logical (or visual) tree, therefore the DataContext is not being inherited, which leads to there being nothing to bind to\"So i decided to implement the DataGridComboBoxColumnWithBindingHack and deriving from the mui datagridcomboboxcolumn and it worked like a charm! Don't know if this hack can be integrated in the mui, if so excellent! if not, I'll live happy anyway!\r\n\r\nThanks\r\n\r\n",
+      "PostedDate": "2013-05-27T07:23:39.617-07:00",
+      "Id": 158510
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "Here's a possible groupbox style:",
+    "LastUpdatedDate": "2014-10-17T04:00:31.257-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-07-27T14:50:02.83-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "GroupBox",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 20008
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903306,
+      "FileName": "GroupBox.xaml",
+      "DownloadUrl": ".\\903306"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Thanks for this man!",
+      "PostedDate": "2013-12-02T19:17:13.503-08:00",
+      "Id": 158540
+    },
+    {
+      "Message": "Yeah, this is awesome!",
+      "PostedDate": "2014-03-21T13:11:43.683-07:00",
+      "Id": 158541
+    }
+  ]
+}

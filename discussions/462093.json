@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1107155",
+    "ThreadId": "462093",
+    "Html": "Greetings, so far this is the best framework for metro style apps. \r<br />\n<br />\nI would like to ask how to pass data from usercontrol to usercontrol?\r<br />\n<br />\nusercontrol1 has a text box\r<br />\nusercontrol2 has a text block/label \r<br />\n<br />\nHow can i get the value of the text from the textbox from usercontrol1 by loading usercontrol2 through browsing it using modern menulink?\r<br />\n<br />\nI am a student using it for my project. Thank you so much.<br />\n",
+    "PostedDate": "2013-10-14T06:29:00.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107267",
+    "ThreadId": "462093",
+    "Html": "For that i use a <strong>static</strong> property for usercontrol1 then on usercontrol2 i get the value by doing :<br />\n<pre><code>label.Content = UserControl1.MyProperty</code></pre>\n\nbut i'm not sure that it is the best solution :) <br />\n",
+    "PostedDate": "2013-10-14T10:35:24.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107363",
+    "ThreadId": "462093",
+    "Html": "Use MVVM where the ViewModel maintains the data that is rendered by the View (in your case 2 user controls). If you're new to MVVM, just google introduction to MVVM.<br />\n",
+    "PostedDate": "2013-10-14T14:16:41.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1110509",
+    "ThreadId": "462093",
+    "Html": "<strong>cYounes wrote:</strong><br />\n<blockquote>\nFor that i use a <strong>static</strong> property for usercontrol1 then on usercontrol2 i get the value by doing :<br />\n<pre><code>label.Content = UserControl1.MyProperty</code></pre>\n\nbut i'm not sure that it is the best solution :)<br />\n</blockquote>\ncould you please help me ? can i have some code?<br />\n",
+    "PostedDate": "2013-10-22T05:32:09.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

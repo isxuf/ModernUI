@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1069057",
+    "ThreadId": "450211",
+    "Html": "Hi, Good day to all! I'm new to WPF, I was wondering how to make the checkbox on the datagrid looks flat, similar on the snapshot below. I was able to show the CheckBox but it appears 3D.<br />\n<br />\n<img src=\"https://dl.dropboxusercontent.com/u/43344816/Grid_checkbox.JPG\" alt=\"Image\" /><br />\n<br />\n<br />\nAnd also, how to do this one, making a textbox required field.<br />\n<br />\n<img src=\"https://dl.dropboxusercontent.com/u/43344816/Required.JPG\" alt=\"Image\" /><br />\n<br />\nHope someone can help me, thanks a lot!<br />\n",
+    "PostedDate": "2013-07-16T08:49:55.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1071073",
+    "ThreadId": "450211",
+    "Html": "Finally found what I've been looking for. :)\r<br />\nThanks for the demo!<br />\n",
+    "PostedDate": "2013-07-21T20:33:53.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

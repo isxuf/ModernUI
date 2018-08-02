@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Hi kozw,\n\nI think I found a new issue with the 'System Windows Shell' code that you are using to maximize a window when the taskbar is on Autohide using 2 screens as reported here:\n\nhttp://social.msdn.microsoft.com/Forums/vstudio/en-US/c441624f-8502-4b9c-a970-18b044f6ede5/microsoft-windows-system-shell-has-a-problem-with-maximizing-windows-and-autohidding-taskbar?forum=wpf\n\nThis is just a small request to confirm whether you would agree with my analysis of the problem or not. I would continue to enter a report at the references connect site if yes... thanks for this great work :-)",
+    "LastUpdatedDate": "2014-07-21T07:06:52.607-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-10-15T08:21:42.623-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problem with System Windows Shell and maximize window function",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 20317
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

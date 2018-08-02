@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Hi\n\nIi'm not sure how to go about getting a new feature but here i go.\n\nI need toenable/disable the link group to achieve a wizard like feel, only 1 step forward or backwards on the groups.\n\nI've made a change to the source to achieve it.\n\nIt's as follows, it would be nice to have in the codebase.\n\n\nAdd to LinkGroup (could be done on Dipslayable and add feature for Link as well).\n\n private bool _isEnabled;\n        /// <summary>\n        /// Enables or disables the group\n        /// </summary>\n        public bool IsEnabled\n        {\n            get { return this._isEnabled; }\n            set\n            {\n                if (this._isEnabled != value)\n                {\n                    this._isEnabled = value;\n                    OnPropertyChanged(\"IsEnabled\");\n                }\n            }\n        }\n\n\nneed to add <Setter Property=\"IsEnabled\" Value=\"{Binding IsEnabled}\"\n\nhere in ModernMenu.xaml\n\n <ListBox ItemsSource=\"{TemplateBinding VisibleLinkGroups}\"\n                                 SelectedItem=\"{Binding SelectedLinkGroup, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}\">\n                            <ListBox.ItemContainerStyle>\n                                <Style TargetType=\"ListBoxItem\">\n                                    <Setter Property=\"FocusVisualStyle\" Value=\"{x:Null}\" />\n                                    <Setter Property=\"FontFamily\" Value=\"Segoe UI Light\" />\n                                    <Setter Property=\"Foreground\" Value=\"{DynamicResource MenuText}\" />\n                                    <Setter Property=\"FontSize\" Value=\"23\"/>\n                                    <Setter Property=\"HorizontalContentAlignment\" Value=\"Center\" />\n                                    <Setter Property=\"VerticalContentAlignment\" Value=\"Center\" />\n                                    <Setter Property=\"TextOptions.TextFormattingMode\" Value=\"Ideal\" />\n                                    <Setter Property=\"IsEnabled\" Value=\"{Binding IsEnabled}\"\n\n\nCheers,\n\nJon",
+    "LastUpdatedDate": "2014-12-17T12:48:01.683-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-02T11:30:02.357-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Code to Add enable/disable to LinkGroups",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 12,
+    "Id": 19660
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

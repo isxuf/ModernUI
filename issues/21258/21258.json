@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "there is no output for the combobox error messages, when you use the MVVModel.\r\n\r\nthe problem for the normal combobox is simple to solve, but i found no solution for the editable combobox till now. the datatrigger works not in this case.",
+    "LastUpdatedDate": "2014-11-28T05:19:04.36-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-11-28T03:27:02.95-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "combobox - Validation.ErrorTemplate",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21258
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

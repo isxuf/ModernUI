@@ -1,0 +1,162 @@
+[
+  {
+    "Id": "1034447",
+    "ThreadId": "441270",
+    "Html": "I facing problems to resolve StaticResources like <br />\n<pre><code>Style=&quot;{StaticResource Heading2}&quot;</code></pre>\n\nor<br />\n<pre><code>Style=&quot;{StaticResource ContentRoot}&quot;</code></pre>\n\nIt says: &quot;Resource 'ContentRoot' is not found.\r<br />\n<br />\n<img src=\"http://imageshack.us/a/img545/3190/problemstyle.jpg\" alt=\"Image\" />\r<br />\n<br />\nMy App.axml looks like this:<br />\n<pre><code>    &lt;Application.Resources&gt;\n        &lt;ResourceDictionary&gt;\n            &lt;Style TargetType=&quot;{x:Type Rectangle}&quot;/&gt;\n            &lt;ResourceDictionary.MergedDictionaries&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot;/&gt;\n                &lt;ResourceDictionary&gt;\n                    &lt;vm:ViewModelLocator x:Key=&quot;Locator&quot; d:IsDataSource=&quot;True&quot; /&gt;\n                &lt;/ResourceDictionary&gt;\n            &lt;/ResourceDictionary.MergedDictionaries&gt;\n        &lt;/ResourceDictionary&gt;\n    &lt;/Application.Resources&gt;</code></pre>\n\nI'm also missing some of the styles (e.g. for Label)\r<br />\n<br />\nAny ideas?<br />\n",
+    "PostedDate": "2013-04-23T03:38:09.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034807",
+    "ThreadId": "441270",
+    "Html": "Does it compile and run properly? This might be a designer-only issue.\r<br />\n<br />\nThere's no mui style (yet) for the Label control.<br />\n",
+    "PostedDate": "2013-04-23T14:46:01.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035050",
+    "ThreadId": "441270",
+    "Html": "Looks like an designer-only issue. Any ideas how to fix it?\r<br />\n<br />\nThank you<br />\n",
+    "PostedDate": "2013-04-24T03:27:20.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035276",
+    "ThreadId": "441270",
+    "Html": "Not sure yet. What version of VS or you using?<br />\n",
+    "PostedDate": "2013-04-24T12:29:46.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035486",
+    "ThreadId": "441270",
+    "Html": "Microsoft Visual Studio Premium 2012\r<br />\nVersion 11.0.60315.01 Update 2\r<br />\nMicrosoft .NET Framework\r<br />\nVersion 4.5.50709<br />\n",
+    "PostedDate": "2013-04-25T00:36:08.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035489",
+    "ThreadId": "441270",
+    "Html": "The problem exists even when i create a new visual studio solution + project. I used the &quot;Modern UI WPF Application&quot; project template. <br />\n",
+    "PostedDate": "2013-04-25T00:52:18.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036571",
+    "ThreadId": "441270",
+    "Html": "The problem is in WPF 4.0. The <a href=\"https://mui.codeplex.com/wikipage?title=Working%20with%20WPF%204.0\" rel=\"nofollow\">workaround</a> for resolving resources at runtime apparently does not work at design-time. The issue does not occur when targetting WPF 4.5. Not sure if anything can be done about it.<br />\n",
+    "PostedDate": "2013-04-27T10:39:26.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036577",
+    "ThreadId": "441270",
+    "Html": "I take that back, it seems to work fine for WPF 4.0 projects. I'm using Visual Studio 2012 Ultimate, no 3rd party tools (such as resharper)<br />\n",
+    "PostedDate": "2013-04-27T10:53:31.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1037021",
+    "ThreadId": "441270",
+    "Html": "The issue seems to be related to the &quot;Modern UI WPF Application&quot; project template. The problem occurs when i use this template. The problem does not occur in your demo application  (FirstFloor.ModernUI.App).<br />\n",
+    "PostedDate": "2013-04-29T03:07:38.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1037833",
+    "ThreadId": "441270",
+    "Html": "Are the resource dictionaries in your app.xaml properly resolved? Any curly underlines when you open app.xaml in the editor?<br />\n",
+    "PostedDate": "2013-04-30T14:36:45.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038427",
+    "ThreadId": "441270",
+    "Html": "no, the app.xaml looks good:\r<br />\n<img src=\"http://img221.imageshack.us/img221/8967/appxaml.png\" alt=\"App.xaml\" /><br />\n",
+    "PostedDate": "2013-05-02T01:03:48.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038519",
+    "ThreadId": "441270",
+    "Html": "And this is a WPF 4.5 project?<br />\n",
+    "PostedDate": "2013-05-02T05:47:12.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038548",
+    "ThreadId": "441270",
+    "Html": "Yes it is! I just thought that the Rectangle Hack would solve the problem.<br />\n",
+    "PostedDate": "2013-05-02T06:26:56.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038550",
+    "ThreadId": "441270",
+    "Html": "Then something else is going on, the rectangle hack is not required for 4.5. You seem to be using resharper or something similar, what if you disable this tool in VS?<br />\n",
+    "PostedDate": "2013-05-02T06:30:09.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038553",
+    "ThreadId": "441270",
+    "Html": "i created an fresh <a href=\"http://sdrv.ms/ZZSabG\" rel=\"nofollow\">emtpy m:ui project</a>, could you check if you get curly underlines on your machine?\r<br />\n<br />\nI will check if it works without resharper etc.<br />\n",
+    "PostedDate": "2013-05-02T06:35:56.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038556",
+    "ThreadId": "441270",
+    "Html": "Yep, works fine.\r<br />\n<br />\n<img src=\"http://xamlspy.com/Media/Default/Page/muitest.png\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-05-02T06:43:40.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038566",
+    "ThreadId": "441270",
+    "Html": "therefore, the issue must be related to my machine or to the installation of M:UI on my machine.<br />\n",
+    "PostedDate": "2013-05-02T07:03:56.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1108312",
+    "ThreadId": "441270",
+    "Html": "Weird. I am having the same issue on my machine (VS2012 + Resharper). It works fine when I run it but it's failing to build in TeamCity. Ill keep investigating...<br />\n<br />\nI am running a program created via the MUI template in VS.<br />\n",
+    "PostedDate": "2013-10-16T07:18:20.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1108630",
+    "ThreadId": "441270",
+    "Html": "<strong>killnine wrote:</strong><br />\n<blockquote>\nWeird. I am having the same issue on my machine (VS2012 + Resharper). It works fine when I run it but it's failing to build in TeamCity. Ill keep investigating...<br />\n<br />\nI am running a program created via the MUI template in VS.<br />\n</blockquote>\nTry to remove it from resharper error/warning.\r<br />\nResharper can force a simple warning to an error if a wrong setting is set.<br />\n",
+    "PostedDate": "2013-10-17T00:32:41.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1326928",
+    "ThreadId": "441270",
+    "Html": "Someone fixed this issue?<br />\n",
+    "PostedDate": "2014-11-28T01:30:33.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

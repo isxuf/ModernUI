@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1082841",
+    "ThreadId": "453994",
+    "Html": "Hey Everyone,\r<br />\n<br />\nI'm having a problem to do with a slow loading tile service layer from an ARCGIS map control that I have implemented in a Modern Basic Page.\r<br />\n<br />\nWhen I click the titlelinks to load my page it takes a few seconds before the control renders.\r<br />\n<br />\nI can't run my usual wait animation through a backgroundworker as it's on the UI thread and so I'm wondering if anyone had a suggestion on how I could implement a busy indicator or preload the page ahead of time (not sure if possible).\r<br />\n<br />\nThanks!\r<br />\nEthan<br />\n",
+    "PostedDate": "2013-08-20T12:41:57.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083176",
+    "ThreadId": "453994",
+    "Html": "If the control requires time on the ui thread, all other ui operations (including animations) will pause until your control is done loading. There's not a lot you can do about that, other than using a backgroundworker as you suggested.<br />\n",
+    "PostedDate": "2013-08-21T09:02:54.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083363",
+    "ThreadId": "453994",
+    "Html": "Thanks kozw, and great job with the project.\r<br />\n<br />\nI'm going to play with creating multiple ui threads. Hopefully I can create a busy indicator on a secondary ui thread while this control loads. <br />\n",
+    "PostedDate": "2013-08-21T16:17:20.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

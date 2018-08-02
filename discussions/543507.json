@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1238583",
+    "ThreadId": "543507",
+    "Html": "After I press &quot;x&quot; in my main window, the session isn't terminated, and programm process is still in action.<br />\n<br />\nI think, that the problem is in threading. So, I need to dispose my threads. I do that in &quot;OnNavigatingFrom&quot;, but this event not rises when pressed &quot;x&quot;.<br />\n<br />\nWhat can I do? I cant be sure, what content would be loaded in window, when user would press &quot;x&quot;.<br />\n<br />\nM.b. I can somehow &quot;hardkill&quot; the programm?<br />\n<br />\nUPD: Mb, I can override Dispose method of the content?<br />\n",
+    "PostedDate": "2014-04-27T14:26:34.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240502",
+    "ThreadId": "543507",
+    "Html": "Mb, I should put this to issues? I checked this problem again, and the problem is with new thread, which is created in NavigatinTo and not disposing, when i close main window.\r<br />\n<br />\nSo, either I should find event, which is rized on content when application is closed, either close code should be somehow stronger<br />\n",
+    "PostedDate": "2014-05-01T22:24:08.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240505",
+    "ThreadId": "543507",
+    "Html": "Well....\r<br />\n<br />\nI finaly aded this code in mainwindow Closing handler:<br />\n<pre><code>Process.GetCurrentProcess().Kill();</code></pre>\n\nbut it looks not so pretty...<br />\n",
+    "PostedDate": "2014-05-01T22:49:29.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

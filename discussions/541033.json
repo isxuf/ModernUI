@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1229845",
+    "ThreadId": "541033",
+    "Html": "Hi i am using Modern UI and Its loading &quot;.xaml&quot; file by ContentSource and link parameter. So I am stuck with the .xaml Class Object. How could we get the Class Object reference by Content Source or say URI.<br />\n<br />\nMy Main class file code is as below<br />\n<pre><code> public partial class MainWindow : ModernWindow\n {\n     public MainWindow()\n     {\n         InitializeComponent();\n         this.ContentSource = new Uri(&quot;Pages/Home.xaml&quot;, UriKind.Relative);\n     }\n}</code></pre>\n\nI just want Home.xaml object as Home Class Object. I tried to create a new Home Object as<br />\n<pre><code>Home homPage = new Home();\n</code></pre>\n\nBut its creating a new Home class Object not that one, which is used in Cotent Source.<br />\n<br />\nSo please help me to get this object.<br />\n<br />\nEven I also tried <br />\n<pre><code>homePage = (Home)this.Content;\n</code></pre>\n\nbut getting error of &quot;Exception has been thrown by the target of an invocation.&quot;. So please help to get the Class Object i.e. Home class Object.<br />\n",
+    "PostedDate": "2014-04-03T05:12:29.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

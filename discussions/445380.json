@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1050342",
+    "ThreadId": "445380",
+    "Html": "Since Codeplex now supports it, have you considered using Git for source control?  In my experience it makes it considerably simpler to manage a fork of the project, and generally to feed back patches and changes to and from the main project.<br />\n<br />\nI'm not positive how well Codeplex supports things similar to Github's pull request workflow, but the last I tried working with patches in TFS in Codeplex the workflow was to upload a zip file and explain what to do with it.<br />\n<br />\n[edit: I found this: <a href=\"https://codeplex.codeplex.com/wikipage?title=Forks]\" rel=\"nofollow\">https://codeplex.codeplex.com/wikipage?title=Forks]</a><br />\n<br />\nWhether or not it's appropriate may also just depend on what you want to do with the project, but I thought I'd ask.  In the limited time I've been looking into this it looks like you've done a great job!<br />\n<br />\nThanks,<br />\n",
+    "PostedDate": "2013-05-29T15:20:38.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1262282",
+    "ThreadId": "550452",
+    "Html": "I need to do a simple page navigation from within a view model. Usually I do this through a navigationservice but this doesn't seem to work within m:ui. \r<br />\n<br />\nThe scenario is as follows - I have a mainwindow (based on ModernWindow) with 2 mui:Link pages in it - Page1.xaml and Page2.xaml. When the user selects a certain item in a listview on page2, I'm calling a command in a viewmodel and I want to end that command with a navigation to page 1.\r<br />\n<br />\nIs it possible?<br />\n",
+    "PostedDate": "2014-07-03T01:46:56.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

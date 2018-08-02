@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1316651",
+    "ThreadId": "570649",
+    "Html": "Hello, \r<br />\n<br />\nIs it possible to animate the change to AccentColor in appearance manager?\r<br />\nI am changing it like so, and if it's light, I change the theme to dark. All works well, but the Theme is animated by 0.6 time transition, yet the accent color is changed immediately.<br />\n<pre><code>                AppearanceManager.Current.AccentColor = accentColor;\n                var isLightAccent = accentColor.R + accentColor.G + accentColor.B &gt; ((255 + 255 + 255)/2);\n                AppearanceManager.Current.ThemeSource = isLightAccent ? AppearanceManager.DarkThemeSource : AppearanceManager.LightThemeSource;</code></pre>\n\nIs it possible to animate the accent color change, and if not, how hard would it be to implement as a storyboard?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2014-10-26T20:08:13.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

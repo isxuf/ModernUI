@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1123535",
+    "ThreadId": "468701",
+    "Html": "I'm really stuck on the following which should be really simple.<br />\n<br />\nI need to navigate to some content on another link but make it appear as though the user has clicked through the path to get to the content.<br />\n<br />\nBelow is the main page with links to 2 list layouts.<br />\n<br />\nMAIN:<br />\n<pre><code>        &lt;mui:LinkGroup DisplayName=&quot;main&quot; &gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;controls&quot; Source=&quot;/Pages/MainControls.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;plan&quot; Source=&quot;/Pages/MainPagePlan.xaml&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;</code></pre>\n\n/Pages/MainPagePlan.xaml:<br />\n<pre><code>        &lt;mui:ModernTab Layout=&quot;List&quot; SelectedSource=&quot;/Content/MainContentPlan.xaml&quot;&gt;\n            &lt;mui:ModernTab.Links&gt;\n                &lt;!-- TODO: set @Source --&gt;\n                &lt;mui:Link DisplayName=&quot;Plan1&quot; Source=&quot;/Content/MainContentPlan.xaml&quot;/&gt;\n                &lt;mui:Link DisplayName=&quot;Plan2&quot; Source=&quot;/Content/MainContentPlan2.xaml&quot;/&gt;\n            &lt;/mui:ModernTab.Links&gt;</code></pre>\n\nIf I use the following whilst on the page /Pages/MainControls.xaml, then the control appears but with the current list layout for main instead of /Pages/MainPagePlan.xaml .<br />\n<pre><code>&lt;Button x:Name=&quot;bPlan&quot; Content=&quot;PLAN&quot;  Command=&quot;NavigationCommands.GoToPage&quot; CommandParameter=&quot;/Content/MainContentPlan.xaml&quot;   /&gt;</code></pre>\n\nIf I use this instead, then I still get the main list layout but with both the plan list layout and it's control embedded together whilst still showing the main list.<br />\n<pre><code>&lt;Button x:Name=&quot;bPlan&quot; Content=&quot;PLAN&quot;  Command=&quot;NavigationCommands.GoToPage&quot; CommandParameter=&quot;/Pages/MainPagePlan.xaml&quot;   /&gt;</code></pre>\n\nHow do I properly navigate to this control as though the user has clicked /Pages/MainPagePlan.xaml and then /Content/MainContentPlan.xaml in the list view?<br />\n",
+    "PostedDate": "2013-11-14T08:15:56.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1123566",
+    "ThreadId": "468701",
+    "Html": "Ive made some progress... This works in code behind<br />\n<pre><code>m_mainform = (MainWindow)Application.Current.MainWindow;\nm_mainform.ContentSource = new Uri(&quot;/Pages/MainPagePlan.xaml&quot;, UriKind.Relative);</code></pre>\n\nIs there an XAML equivalent to fit in this button control?<br />\n<pre><code>&lt;Button x:Name=&quot;bPlan&quot; Content=&quot;PLAN&quot;   /&gt;</code></pre>\n\n",
+    "PostedDate": "2013-11-14T09:31:39.413-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

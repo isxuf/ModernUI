@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1013054",
+    "ThreadId": "436088",
+    "Html": "Is it possible to add more themes? If yes then how?<br />\n",
+    "PostedDate": "2013-03-10T19:13:09.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013251",
+    "ThreadId": "436088",
+    "Html": "The Modern UI appearance is defined by a theme and an accent color. You can specify any accent color either using the AppearanceManager.AccentColor property or by setting the AccentColor in the ModernUI.xaml resource dictionary (in Assets folder). Accent colors are used as background of white text, so make sure the chosen color works with white brushes.<br />\n<br />\nThe current supported themes are dark and light, there are no other themes. All theme-specific brushes and colors are defined in the ModernUI.Dark.xaml and ModernUI.Light.xaml resource dictionaries. Shared theme resources are defined in ModernUI.xaml. You are free to edit them. Adding a new theme next to the dark and light one requires modification of the AppearanceManager as it currently only supports dark and light.<br />\n<br />\nHope this helps,<br />\n",
+    "PostedDate": "2013-03-11T06:59:23.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013748",
+    "ThreadId": "436088",
+    "Html": "Thanks for your help, this is what I got finally\r<br />\n<img src=\"http://gyazo.com/f87b27c752cbd57b6b6a144b5e0dac74.png?1363078664\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-03-12T01:58:21.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

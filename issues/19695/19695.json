@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:17:20.963-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "The Microsoft.Windows.Shell namespace in the WPF Shell Integration Library is no longer needed as it is implemented in System.Windows and System.Windows.Shell in .NET 4.5. I have fixed the changes without the use of the Integration Library. The modified files are attatched below.\n\nClasses used and implemented into .NET 4.5:\nSystemParameters - Implemented in System.Windows\nSystemParameters2 - Merged with SystemParameters\nWindowChrome - Implemented in System.Windows.Shell\n\nEDIT: Ignore the xaml file, I have uploaded a wrong file",
+    "LastUpdatedDate": "2013-07-05T13:17:20.963-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-10T04:42:14.69-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "WPF Shell Integration Library not needed for WPF 4.5",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 19695
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903293,
+      "FileName": "ModernWindowEx.xaml",
+      "DownloadUrl": ".\\903293"
+    },
+    {
+      "FileId": 903294,
+      "FileName": "Modified.zip",
+      "DownloadUrl": ".\\903294"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Very nice! Wasn't aware of System.WindowsShell in .NET 4.5. Resolved in Changeset 101034",
+      "PostedDate": "2013-06-11T13:57:11.73-07:00",
+      "Id": 158496
+    }
+  ]
+}

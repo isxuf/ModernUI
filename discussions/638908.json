@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1427965",
+    "ThreadId": "638908",
+    "Html": "It says I don't have the right version of .Net installed.  I have 4.52.<br />\n",
+    "PostedDate": "2015-05-28T13:13:58.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1444414",
+    "ThreadId": "638908",
+    "Html": "As of the time you made posted this question am not sure if the full Stable Windows 10 was out, so now that it's out you can try it out as I have mine running well for Windows 10 Pro with Visual Studio 2015.<br />\n",
+    "PostedDate": "2015-09-14T21:49:48.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1446982",
+    "ThreadId": "638908",
+    "Html": "i think this issue is because i have two versions of visual studio installed , 2013 and 2015 both ultimate and m using windows 10 pro genuine which is fully stable.<br />\n",
+    "PostedDate": "2015-10-04T03:01:00.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1449284",
+    "ThreadId": "638908",
+    "Html": "<strong>falabiabisoye wrote:</strong><br />\n<blockquote>\nAs of the time you made posted this question am not sure if the full Stable Windows 10 was out, so now that it's out you can try it out as I have mine running well for Windows 10 Pro with Visual Studio 2015.<br />\n</blockquote>\nSo you're able to work with this ModernUI in VS 2015? That's good to know, thanks!<br />\n",
+    "PostedDate": "2015-10-21T09:38:42.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

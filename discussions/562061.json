@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1293170",
+    "ThreadId": "562061",
+    "Html": "Hi,<br />\n<br />\nI am trying to handle Navigation Events, with the code in VB.Net - I have tried the following:<br />\n<br />\nIn MainWindow:<br />\n<pre><code>Public Interface Icontent\n    Sub OnFragmentNavigation(e As FragmentNavigationEventArgs)\n    Sub OnNavigatedFrom(e As NavigationEventArgs)\n    Sub OnNavigatedTo(e As NavigationEventArgs)\n    Sub OnNavigatingFrom(e As NavigatingCancelEventArgs)\nEnd Interface</code></pre>\n\nIn Page:<br />\n<pre><code>    Inherits UserControl\n    Implements Icontent\n\n    Public Sub OnNavigatedTo(e As NavigationEventArgs) Implements Icontent.OnNavigatedTo\n        MsgBox(&quot;Handled&quot;)\n    End Sub</code></pre>\n\nBut the events don't seem to fire. I have tried including the Interface into the FirstFloor.ModernUI.Windows Namespace as follows:<br />\n<pre><code>Namespace FirstFloor.ModernUI.Windows\n    Public Interface Icontent\n        Sub OnFragmentNavigation(e As FragmentNavigationEventArgs)\n        Sub OnNavigatedFrom(e As NavigationEventArgs)\n        Sub OnNavigatedTo(e As NavigationEventArgs)\n        Sub OnNavigatingFrom(e As NavigatingCancelEventArgs)\n    End Interface\nEnd Namespace</code></pre>\n\nBut again, this doesn't work?<br />\n<br />\nThe standard WPF events - I.E. Initialized - work fine.<br />\n<br />\nThanks in advance!<br />\n",
+    "PostedDate": "2014-08-25T09:37:09.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1293188",
+    "ThreadId": "562061",
+    "Html": "Apologies: I was trying to implement my own interface, when I should have been implementing IContent from the existing Namespace\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-08-25T10:18:11.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

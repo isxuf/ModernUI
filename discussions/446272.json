@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1053792",
+    "ThreadId": "446272",
+    "Html": "Hi I want to write an app using the MUI stuff, my app is a kiosk app so all windows are full screen and can not be closed, minimized, maximized etc.\r<br />\n<br />\nIs there a way to set the ModernWindow to not show the min max buttons.\r<br />\n<br />\nI have modified the stack panel that contains the buttons and set the visibility of them to collapsed. This works fine except that if you have the window launched in maximized state, double clicking on the title area of the window will make it normal again.<br />\n",
+    "PostedDate": "2013-06-06T15:52:12.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054109",
+    "ThreadId": "446272",
+    "Html": "Hiding the ModernWindow window buttons is indeed step one. To become a true kiosk app, I would suggest looking at stackoverflow (<a href=\"http://stackoverflow.com/questions/1808505/wpf-in-kiosk-mode-taskbar-troubles\" rel=\"nofollow\">http://stackoverflow.com/questions/1808505/wpf-in-kiosk-mode-taskbar-troubles</a>). This is a general WPF question.<br />\n",
+    "PostedDate": "2013-06-07T10:19:06.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054121",
+    "ThreadId": "446272",
+    "Html": "I don't have to worry about the task bar, as my app is the shell.\r<br />\n<br />\nI can hide the min, max, close buttons but that doesn't work entirely as the double click on title area will cause the window to &quot;restore&quot;. <br />\n",
+    "PostedDate": "2013-06-07T10:34:56.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054128",
+    "ThreadId": "446272",
+    "Html": "Double clicking the title area can be disabled by setting the WindowChrome.CaptionHeight to 0 like so;<br />\n<pre><code>&lt;mui:ModernWindow xmlns:shell=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell&quot;\n  &lt;shell:WindowChrome.WindowChrome&gt;\n    &lt;shell:WindowChrome\n      CornerRadius=&quot;0&quot;\n      GlassFrameThickness=&quot;1&quot;\n      UseAeroCaptionButtons=&quot;False&quot;\n      CaptionHeight=&quot;0&quot; /&gt;\n  &lt;/shell:WindowChrome.WindowChrome&gt;\n&lt;/mui:ModernWindow&gt;\n</code></pre>\n\nOr you could create a custom ModernWindow style <br />\n",
+    "PostedDate": "2013-06-07T10:43:05.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054131",
+    "ThreadId": "446272",
+    "Html": "Will give it a try but won't that loose the &quot;Settings&quot; part ?<br />\n",
+    "PostedDate": "2013-06-07T10:49:40.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054133",
+    "ThreadId": "446272",
+    "Html": "The settings menu still works.<br />\n",
+    "PostedDate": "2013-06-07T10:51:54.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055178",
+    "ThreadId": "446272",
+    "Html": "Can you give me a example on how to hide the minimize and maximize buttons?<br />\n",
+    "PostedDate": "2013-06-10T19:54:17.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055500",
+    "ThreadId": "446272",
+    "Html": "The min/max buttons are defined in the default ModernWindow style. You'll need to create a custom ModernWindow style with the buttons hidden/removed.<br />\n",
+    "PostedDate": "2013-06-11T10:43:43.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

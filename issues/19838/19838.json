@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Hi. Having the similar problem reported in the [Reinitialize On Navigation Discussion](https://mui.codeplex.com/discussions/443903). The IContent makes the navigation methods be called on the \"front\" frame but it doesn't fire on the dependent. For me, it makes sense that if the parent has the OnNavigatedTo being called then the child should also have it invoked.\n\n__Scenario:__\nGot my menu with two links Index (/view/index.xaml) and Global Settings (/view/gsettings.xaml)\nOn the Index page got a list layout which itself has a SelectedSource=\"/view/edit.xaml\" in the markup, and both of theses pages, index and edit, implement icontent.\n\nWhen I click on the index.xaml the OnNavigatedTo is called and so is the in edit.xaml. Afterwards, I go to the global settings (gsettings.xaml) and them go back again to index.xaml. Now, __only the IContent methods from index.xaml are called and none of the edit.xaml methods run__. \n\nHowever, the OnNavigatingFrom is called both in the index.xaml and in the edit.xaml\n\n__Workaround:__\nThe only way I could make this work is to dynamically load the SelectedSource in the code behind of the index.xaml to have a fragmented navigation to the edit.xaml, like this:\n```\nthis.Dispatcher.Invoke(\n    (Action) delegate() { \n        tabList.SelectedSource = new Uri(\"/view/edit.xaml#\"+Guid.NewGuid().ToString(\"N\"), UriKind.Relative);\n});\n\n```",
+    "LastUpdatedDate": "2013-06-11T03:43:35.83-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-11T03:43:35.83-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "OnNavigateTo second time in a child frame",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19838
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

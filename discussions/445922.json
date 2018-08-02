@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "1052524",
+    "ThreadId": "445922",
+    "Html": "I have MainWindow with the following code<br />\n<pre><code>&lt;mui:LinkGroup DisplayName=&quot;Survei Tanaman Pangan&quot;&gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;Home&quot; Source=&quot;/Pages/PageHome.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Blok1&quot; Source=&quot;/Pages/PageBlok1.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Blok2 dan Blok3&quot; Source=&quot;/Pages/PageBlok2.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Blok4&quot; Source=&quot;/Pages/PageBlok4.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Blok4 Hal 2&quot; Source=&quot;/Pages/PageBlok4Hal2.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Blok5&quot; Source=&quot;/Pages/PageBlok5.xaml&quot; /&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;\n</code></pre>\n\nand I have button in PageHome like this <br />\n<pre><code> &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;\n    &lt;mui:ModernButton x:Name=&quot;ButtonSave&quot; Content=&quot;Save Data&quot; /&gt;\n &lt;/StackPanel&gt;\n</code></pre>\n\nHow I can access this button from MainWindow.xaml.cs file?? Maybe some kind of this ?<br />\n<pre><code>public MainWindow()\n    {\n        InitializeComponent();\n        Button ButtonSave =(Button) FindName(&quot;ButtonSave&quot;);\n        ButtonSave.Click += Button_Save_Click;\n</code></pre>\n\n",
+    "PostedDate": "2013-06-04T02:13:54.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1053022",
+    "ThreadId": "445922",
+    "Html": "You shouldn't access the button from the main window, it's technically feasible, but not recommended. Use the PageHome.xaml.cs code behind to wire up your event handlers.<br />\n",
+    "PostedDate": "2013-06-05T03:05:25.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1057330",
+    "ThreadId": "445922",
+    "Html": "<strong>kozw wrote:</strong><br />\n<blockquote>\nYou shouldn't access the button from the main window, it's technically feasible, but not recommended. Use the PageHome.xaml.cs code behind to wire up your event handlers.<br />\n</blockquote>\nI want to navigate through main window because I use many control to easily navigate.. Could you give me an example how I can do that?<br />\n",
+    "PostedDate": "2013-06-15T21:42:17.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058359",
+    "ThreadId": "445922",
+    "Html": "Not sure what you mean with 'I use many control to easily navigate'. Can you elaborate?<br />\n",
+    "PostedDate": "2013-06-18T12:08:29.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058928",
+    "ThreadId": "445922",
+    "Html": "I want to make navigate from one page to another modern page which I want to automatically focus in one of control in selected page. And I want to navigate to another page to from dialog when I click to moderndialog. How I can achieve this?<br />\n",
+    "PostedDate": "2013-06-19T18:29:23.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059015",
+    "ThreadId": "445922",
+    "Html": "SaveButton:\r<br />\nI'd suggest to use MVVMLight. When clicking the Button send a message. Register a handler for this message in the MainWindow's ViewModel (or code behind).\r<br />\n<br />\nNavigating and setting focus:\r<br />\nURL navigation with fragment. Implement IContent in the destination page, get the Fragment out of OnFragmentNavigation's e.Fragment. If you already know the focus destination at design time, then you don't need the fragment, just act in OnNavigatedTo.\r<br />\n<br />\n&quot;click to moderndialog&quot;:\r<br />\nI don't understand the meaning.<br />\n",
+    "PostedDate": "2013-06-20T00:24:08.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059451",
+    "ThreadId": "445922",
+    "Html": "Sory for not clear question I did. I mean I want to navigate to another page from event in button in moderndialog.. How I can do that?<br />\n",
+    "PostedDate": "2013-06-20T19:39:14.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059977",
+    "ThreadId": "445922",
+    "Html": "<pre><code>NavigationCommand.GoToPage.Execute(&quot;/yourpage.xaml&quot;, null);</code></pre>\n\nThat's the command which navigates to another page, if you want to navigate to another page located inside a separate modern window, you'll need to use a ViewModel which exposes a SelectedLink property to do it.<br />\n",
+    "PostedDate": "2013-06-22T21:48:46.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060857",
+    "ThreadId": "445922",
+    "Html": "Thanks.. for the response I have clear this issue by storing object as static so I can call it in every place<br />\n",
+    "PostedDate": "2013-06-25T05:30:38.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

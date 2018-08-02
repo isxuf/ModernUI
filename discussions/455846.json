@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1089446",
+    "ThreadId": "455846",
+    "Html": "Hello ,\r<br />\nI am currently using your project and i have a problem to pass data to Moderntab control.\r<br />\n<br />\nCurrently i have a collection of 'news' with data\r<br />\n<br />\nNews.cs<br />\n<pre><code>public News(int newsid, string newsauthor, string newsimage, string newstext, string newstitle, Dictionary&lt;string, string&gt; newsComments, string date)\n        {\n            NewsId = newsid;\n            NewsAuthor = newsauthor;\n            NewsImage = newsimage;\n            NewsText = newstext;\n            NewsTitle = newstitle;\n            NewsComments = newsComments;\n            NewsDate = date;\n        }\n\n        public string NewsTitle { get; set; }\n\n        public Dictionary&lt;string, string&gt; NewsComments { get; set; }\n\n        public string NewsText { get; set; }\n\n        public string NewsImage { get; set; }\n\n        public string NewsAuthor { get; set; }\n\n        public int NewsId { get; set; }\n\n        public string NewsDate { get; set; }</code></pre>\n\nthen when i load my main windows, i add all news by code like that<br />\n<pre><code>public void LoadAllNews()\n        {\n            foreach (var news in newsList)\n            {\n                ModernTab.Links.Add(new Link\n                {\n                    DisplayName = news.NewsTitle,\n                    Source = new Uri(&quot;/Content/NewsContenair.xaml&quot;, UriKind.Relative)\n                });\n            }\n        }</code></pre>\n\nMy probleme is how i can pass my news data to the NewsContenair and load it ?\r<br />\nThanks by advance<br />\n",
+    "PostedDate": "2013-09-06T21:13:29.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1089489",
+    "ThreadId": "455846",
+    "Html": "Found one solution<br />\nsetting my NewsContenair as IContent , setting Source as new uri with NewsContenair.xaml+newsid, and display data with fragment as id.<br />\nthat was simple in fact<br />\n",
+    "PostedDate": "2013-09-06T22:04:17.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1098895",
+    "ThreadId": "455846",
+    "Html": "Please provide the code<br />\n",
+    "PostedDate": "2013-09-25T00:23:39.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1099556",
+    "ThreadId": "455846",
+    "Html": "akhilmittal20, using the SheppeR sample , you can do:<br />\n<pre><code>\nSource = new Uri(String.Format(&quot;/Content/NewsContenair.xaml#{0}&quot;, news.Id), UriKind.Relative)\n</code></pre>\n\nand on the SheppeR .xaml<br />\n<pre><code>\npublic class NewsContenair: UserControl, IContent\n{\n  public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n  {\n     var newsId = int.Parse(e.Fragment); //Can't recall if the # is in here, debug and see\n     someViewModel.NewsId = newsId;\n  }\n  public void OnNavigatedFrom(NavigationEventArgs e)\n  {\n  }\n  public void OnNavigatedTo(NavigationEventArgs e)\n  {\n  }\n  public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n  {\n  }\n}</code></pre>\n\n",
+    "PostedDate": "2013-09-26T02:19:01.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

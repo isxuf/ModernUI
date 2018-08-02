@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1338832",
+    "ThreadId": "576787",
+    "Html": "I'm using my custom framework navigation (followed this tutorial:\r<br />\n<a href=\"https://mui.codeplex.com/wikipage?title=How%20to%20use%20your%20own%20navigation%20framework&amp;referringTitle=Documentation\" rel=\"nofollow\">https://mui.codeplex.com/wikipage?title=How%20to%20use%20your%20own%20navigation%20framework&referringTitle=Documentation</a> )\r<br />\n<br />\nHow can integrate the built-in TransitioningContentControl in my navigation framework?\r<br />\nThanks\r<br />\nOfir<br />\n",
+    "PostedDate": "2015-01-04T03:12:46.32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1340414",
+    "ThreadId": "576787",
+    "Html": "The TransitioningContentControl originates from the <a href=\"http://wpf.codeplex.com/\" rel=\"nofollow\">WPF Toolkit</a>. That control is licensed under MS-PL (just like MUI), so you should be good.<br />\n",
+    "PostedDate": "2015-01-09T09:31:31.677-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

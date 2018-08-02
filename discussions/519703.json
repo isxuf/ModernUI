@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1190106",
+    "ThreadId": "519703",
+    "Html": "Hello,\r<br />\n<br />\nI've been searching Google and these discussions for the last 2 hours but I can't find the solution to my problem.. it's probably something easy, but I'm new to WPF and it's not that easy for a noob!\r<br />\n<br />\nAnyway:\r<br />\n<br />\nI got 2 pages. On page1 I do this when I click on an image:<br />\n<pre><code> private void img_a_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)\n        {\n            DefaultLinkNavigator _navigator = new DefaultLinkNavigator();\n            _navigator.Navigate(new Uri(&quot;/Pages/Test.xaml#a&quot;, UriKind.Relative), this, null);\n        }</code></pre>\n\nI found that you can put a query in your uri reading these forums, so I add '#a' in my uri.\r<br />\n<br />\nWhen I click on this it opens the Test.xaml page, in my Test.xaml code I set this:<br />\n<pre><code>public void OnFragmentNavigation(FirstFloor.ModernUI.Windows.Navigation.FragmentNavigationEventArgs e)\n        {\n            if (e.Fragment == &quot;a&quot;)\n            {\n                txt1.Text = &quot;a&quot;;\n            }\n        }\n</code></pre>\n\nAfter reading other discussions I thought this would work, but the text in the textbox doesn't change. \r<br />\n<br />\nI'm stuck cause of this. Once this is solved I can finally finish this project.\r<br />\n<br />\nHope someone can help this noob..\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2014-01-22T01:39:12.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

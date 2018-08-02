@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1297805",
+    "ThreadId": "564841",
+    "Html": "Hi, I've made a patch in Appearance manager for supporting 5 font sizes in stead of two. How does the project owner wish this kind of patches to be committed? I'm a codeplex newbie.<br />\n",
+    "PostedDate": "2014-09-01T09:24:04.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298038",
+    "ThreadId": "564841",
+    "Html": "MUI has just been moved from TFS to GIT. Just send a pull request.<br />\n",
+    "PostedDate": "2014-09-02T01:50:20.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

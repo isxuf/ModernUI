@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1323838",
+    "ThreadId": "572521",
+    "Html": "Hi,\r<br />\n<br />\nHow can I remove the top toolbar from a WPF window?\r<br />\n<br />\n<img src=\"http://i.imgur.com/3wmVggT.jpg\" alt=\"Image\" />\r<br />\n<br />\nMany thanks<br />\n",
+    "PostedDate": "2014-11-19T08:38:42-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1324467",
+    "ThreadId": "572521",
+    "Html": "Anyone able to help? :(<br />\n",
+    "PostedDate": "2014-11-20T13:30:06.193-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327008",
+    "ThreadId": "572521",
+    "Html": "can you short explain why?<br />\n",
+    "PostedDate": "2014-11-28T05:27:50.6-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327064",
+    "ThreadId": "572521",
+    "Html": "Not sure that will help anyone :) I just want to create a window without them!<br />\n",
+    "PostedDate": "2014-11-28T08:11:14.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327848",
+    "ThreadId": "572521",
+    "Html": "You'll need to create you own custom ModernWindow style and apply it to your window instance. Just take the BlankWindow style from the <a href=\"https://mui.codeplex.com/SourceControl/latest#1.0/FirstFloor.ModernUI/FirstFloor.ModernUI/Assets/ModernWindowEx.xaml\" rel=\"nofollow\">source</a> and remove any visual you need.<br />\n",
+    "PostedDate": "2014-12-01T14:15:49.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

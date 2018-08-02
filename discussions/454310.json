@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1083953",
+    "ThreadId": "454310",
+    "Html": "Is it possible to delete &quot;Back&quot; button from the menu bar?\r<br />\nPlease help.<br />\n",
+    "PostedDate": "2013-08-22T22:44:54.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084112",
+    "ThreadId": "454310",
+    "Html": "<ol>\n<li>Download the Source Code </li>\n<li>Open the Solution </li>\n<li>\nin FirstFloor.ModernUI --&gt; Themes --&gt;ModernWindow.xaml    Find the back button control and set its visible to hide re compile and use the new compiled dll to you application .<br />\n</li>\n</ol>\n:p i was just facing the problem same like and resolved right now !! here is too short help to use the so called &lt;m:ui/&gt; i was new to wpf and unfortunately i pick it up to build my application and now my bosssss uffff , you know its secret :P <br />\n",
+    "PostedDate": "2013-08-23T05:01:52.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1200347",
+    "ThreadId": "454310",
+    "Html": "You can apply your own window style.<br />\n<ul>\n<li>Download the Source Code</li>\n<li>copy file FirstFloor.ModernUI --&gt; Themes --&gt;ModernWindow.xaml to your own project to the Themes folder</li>\n<li>Customize the modern window</li>\n<li>Connect this resource to your window</li>\n</ul>\n<pre><code>    &lt;Window.Resources&gt;\n        &lt;ResourceDictionary&gt;\n            &lt;ResourceDictionary.MergedDictionaries&gt;\n                &lt;ResourceDictionary Source=&quot;Themes/ModernWindow.xaml&quot; /&gt;\n            &lt;/ResourceDictionary.MergedDictionaries&gt;\n        &lt;/ResourceDictionary&gt;\n    &lt;/Window.Resources&gt;</code></pre>\n\n<ul>\n<li>Create a resource key  \r</li>\n</ul>\n<pre><code>&lt;Style TargetType=&quot;controls:ModernWindow&quot; x:Key=&quot;CustomWindow&quot;&gt;</code></pre>\n\n<ul>\n<li>and apply the custom style to your window</li>\n</ul>\n<pre><code>    &lt;Window.Style&gt;\n        &lt;StaticResource ResourceKey=&quot;CustomWindow&quot;&gt;&lt;/StaticResource&gt;\n    &lt;/Window.Style&gt;</code></pre>\n\n",
+    "PostedDate": "2014-01-29T01:52:04.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1248964",
+    "ThreadId": "454310",
+    "Html": "can someone give a demo and source code with this delete back button?<br />\n",
+    "PostedDate": "2014-05-23T08:57:29.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1250901",
+    "ThreadId": "454310",
+    "Html": "\r\n<p dir=\"ltr\">I will send you in a while.</p>\r\n<div></div>\r\n",
+    "PostedDate": "2014-05-29T09:09:48.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1259077",
+    "ThreadId": "454310",
+    "Html": "Why do you want to delete Back navigation button? It's very pretty work. I also added Forward navigation button in my customization source. <br />\n",
+    "PostedDate": "2014-06-23T18:46:21.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1440601",
+    "ThreadId": "454310",
+    "Html": "sorry to bump this . \r<br />\nbut I'd like to remove the back button myself . and I'm getting quite a lot of errors in the process. \r<br />\nafter copying the  Themes --&gt;ModernWindow.xaml to your own project to the Themes folder\r<br />\nI'm unable to proceed and getting quite alot of errors such as : \r<br />\n<br />\n &quot;ModernWindow&quot; does not exist in the namespace &quot;clr-namespace:FirstFloor.ModernUI.Windows.Controls&quot;\r<br />\n<br />\nany help is much appreciated.  <br />\n",
+    "PostedDate": "2015-08-14T09:21:17.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

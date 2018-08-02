@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1018825",
+    "ThreadId": "437495",
+    "Html": "Hi kozw,\r<br />\n<br />\nI've noticed a consistent CPU usage of between 2 - 7 percent whilst using a Modern UI application (at idle). This usage disappears when the application is hidden. This effect can be seen with your demo application.\r<br />\n<br />\nIs this expected behaviour? It's not causing an issue at present, but previous WPF applications I've written have not exhibited this CPU usage whilst idle.\r<br />\n<br />\nHappy to provide further details if required.\r<br />\n<br />\nAll things considered, this is an excellent piece of work - many thanks.\r<br />\n<br />\nRegards,\r<br />\nMatt<br />\n",
+    "PostedDate": "2013-03-21T06:16:34.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1019125",
+    "ThreadId": "437495",
+    "Html": "I also noticed some CPU usage in idle state. Animations are the main suspect here, I'll look into it. Thanks for reporting<br />\n",
+    "PostedDate": "2013-03-21T12:46:26.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1158950",
+    "ThreadId": "437495",
+    "Html": "Add this to your application OnStartup:<br />\n<pre><code>        System.Windows.Media.Animation.Timeline.DesiredFrameRateProperty.OverrideMetadata(\n            typeof(System.Windows.Media.Animation.Timeline),\n            new FrameworkPropertyMetadata { DefaultValue = 10 }\n            );</code></pre>\n\n",
+    "PostedDate": "2014-01-12T15:01:19.59-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1174636",
+    "ThreadId": "437495",
+    "Html": "<blockquote>\nAdd this to your application OnStartup:<br />\n</blockquote>\n<pre><code>        System.Windows.Media.Animation.Timeline.DesiredFrameRateProperty.OverrideMetadata(\n            typeof(System.Windows.Media.Animation.Timeline),\n            new FrameworkPropertyMetadata { DefaultValue = 10 }\n            );</code></pre>\n\nThanks! I have been wondering the same thing, on my dev environment application processor usage dropped from 0,9 -&gt; 0 in idle state.<br />\n",
+    "PostedDate": "2014-01-17T11:41:43.127-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1175115",
+    "ThreadId": "437495",
+    "Html": "Hi,\r<br />\n<br />\nHere are some more guides <a href=\"http://www.codeproject.com/Articles/167979/Deal-with-Performance-in-WPF-applications\" rel=\"nofollow\">http://www.codeproject.com/Articles/167979/Deal-with-Performance-in-WPF-applications</a>.\r<br />\n<br />\nAd there are perf tool that come with windows 8 sdk that you can run.\r<br />\n<br />\nRegards\r<br />\nPrakashZa<br />\n",
+    "PostedDate": "2014-01-17T14:42:29.33-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

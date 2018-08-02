@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1071949",
+    "ThreadId": "450974",
+    "Html": "Dear all,\r<br />\n<br />\nI am rather new to c#/WPF and Modern UI of course.\r<br />\n<br />\nI'm having problems with implementing the IContent stuff, by searching these forums, I am this far: (I'm trying to catch the foo parameter)<br />\n<pre><code>using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Threading.Tasks;\nusing System.Windows;\nusing System.Windows.Controls;\nusing System.Windows.Data;\nusing System.Windows.Documents;\nusing System.Windows.Input;\nusing System.Windows.Media;\nusing System.Windows.Media.Imaging;\nusing System.Windows.Navigation;\nusing System.Windows.Shapes;\nusing FirstFloor.ModernUI.Windows;\n\nnamespace LoLSelector.Pages\n{\n    /// &lt;summary&gt;\n    /// Interaction logic for champGuides.xaml\n    /// &lt;/summary&gt;\n    public partial class champGuides : UserControl, IContent\n    {\n        public champGuides()\n        {\n            InitializeComponent();\n        }\n\n        public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n        {\n            if (e.Fragment == &quot;foo&quot;)\n            {\n                MessageBox.Show(&quot;TEST&quot;);\n            }\n        }\n    }\n}</code></pre>\n\nThe &quot; public partial class champGuides : UserControl, IContent&quot; creates an error (in german), roughly translated it says:\r<br />\n'LoLSelector.Pages.champGuides' does not implement the interface member 'FirstFloor.ModernUI.Windows.IContent.OnNavigatingFrom(FirstFloor.ModernUI.Windows.Navigation.NavigatingCancelEventArgs)'.\r<br />\n<br />\nWhat am I missing? Please be generous, I'm totally new to that stuff! But I love the UI!<br />\n",
+    "PostedDate": "2013-07-23T13:43:40.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1072084",
+    "ThreadId": "450974",
+    "Html": "PrimuS852, you must implement all the member functions of IContent Interface in order to remove the error, you can do this by right clicking  IContent keyword in the class definition statement and click implement IContent or you can do it by manually writing following code in the class<br />\n<pre><code>public void OnFragmentNavigation(FirstFloor.ModernUI.Windows.Navigation.FragmentNavigationEventArgs e)\n{\n    //throw new NotImplementedException();\n}\n\npublic void OnNavigatedFrom(FirstFloor.ModernUI.Windows.Navigation.NavigationEventArgs e)\n{\n    //throw new NotImplementedException();\n}\n\npublic void OnNavigatedTo(FirstFloor.ModernUI.Windows.Navigation.NavigationEventArgs e)\n{\n       //throw new NotImplementedException();\n}\n\npublic void OnNavigatingFrom(FirstFloor.ModernUI.Windows.Navigation.NavigatingCancelEventArgs e)\n{\n    //throw new NotImplementedException();\n}</code></pre>\n\n",
+    "PostedDate": "2013-07-23T21:36:49.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1072892",
+    "ThreadId": "450974",
+    "Html": "Great, thank you so much! Easy explanation!<br />\n",
+    "PostedDate": "2013-07-25T10:44:28.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

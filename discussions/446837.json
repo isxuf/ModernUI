@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1055966",
+    "ThreadId": "446837",
+    "Html": "Goal. I want to locate my tabpanel on left size keep it on using Tabs Layout\r<br />\nI mean turn the Header to 90 degre..\r<br />\nAny Idee?  <br />\n",
+    "PostedDate": "2013-06-12T10:13:11.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058362",
+    "ThreadId": "446837",
+    "Html": "That's possible, and requires you to create a custom ControlTemplate for the ModernTab.<br />\n",
+    "PostedDate": "2013-06-18T12:14:43.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058478",
+    "ThreadId": "446837",
+    "Html": "Okay.. Can you write a example? Please<br />\n",
+    "PostedDate": "2013-06-18T21:44:18.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1364085",
+    "ThreadId": "446837",
+    "Html": "I have the same problem, too! :)<br />\n<br />\nHas anyone solved the problem?<br />\n",
+    "PostedDate": "2015-03-16T04:12:32.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

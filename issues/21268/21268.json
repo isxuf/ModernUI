@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I want to create a treeview menu like below attached image example. is there any possible Using MOdern UI.",
+    "LastUpdatedDate": "2015-02-13T23:53:53.673-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2015-02-13T23:53:53.453-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Tree View Menu",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21268
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1429399,
+      "FileName": "treeview_multiple_templates.png",
+      "DownloadUrl": ".\\1429399"
+    }
+  ],
+  "Comments": []
+}

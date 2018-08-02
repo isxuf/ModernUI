@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1309224",
+    "ThreadId": "568672",
+    "Html": "<a href=\"http://stackoverflow.com/questions/26107989/how-to-get-value-of-a-property-of-the-wpf-listboxitem\" rel=\"nofollow\">http://stackoverflow.com/questions/26107989/how-to-get-value-of-a-property-of-the-wpf-listboxitem</a> please someone help? <br />\n",
+    "PostedDate": "2014-09-30T05:14:46.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310036",
+    "ThreadId": "568672",
+    "Html": "You are trying to bind to a property of a visual, while you should be binding to a property of a viewmodel.<br />\n",
+    "PostedDate": "2014-10-02T13:16:54.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

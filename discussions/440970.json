@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1033235",
+    "ThreadId": "440970",
+    "Html": "Hi there,\r<br />\n<br />\njust dropping by to say that I used your modern UI to create an application based on it in about 3 days - well done - great job - thanks a lot.\r<br />\n<br />\n<a href=\"https://yalvlib.codeplex.com/\" rel=\"nofollow\">https://yalvlib.codeplex.com/</a>\r<br />\n<br />\nNow looking back at the ModernYalv application, I am not certain about some minor issues and maybe someone can help me with that. I am having trouble with the following problems:<br />\n<ul>\n<li>\nHow can I use the just the Windows Chrome without the page navigation stuff?\r<br />\n  I would like to use the window chrome and theming without the rest for a text editor - is there an easy way to do that?<br />\n</li>\n<li>\nHow can I change programatically from one page to the other?\r<br />\n  Example from ModernYalv:\r<br />\n  Go to Start Page and click on a recent file entry to open a file.<br />\n</li>\n</ul>\nProblem: The user has to manually click on a View to see the loaded content<br />\n<ul>\n<li>\nHow do I include my own (dark) theming styles into the modern ui theme?\r<br />\n  eg.: Hyperlink styles for dark and light themes?<br />\n</li>\n<li>\nHow do I persist modern ui color settings to restore them when the application re-starts?<br />\n</li>\n<li>\nWhat Resource is the appearance color?\r<br />\n  {DynamicResource AccentColor} (?)<br />\n</li>\n</ul>\nMany thanks a lot for this great work :)<br />\n",
+    "PostedDate": "2013-04-19T15:27:38.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033340",
+    "ThreadId": "440970",
+    "Html": "Use ModernWindow without page navigation: I just checked in a custom ModernWindow style that renders ModernWindow content without back button and other navigation features. Assign style <strong>EmptyWindow</strong> to your ModernWindow instance and set the Content property to render your own content directly.<br />\n<br />\nPage navigation in code: see <a href=\"https://mui.codeplex.com/discussions/436328\" rel=\"nofollow\">this thread</a><br />\n<br />\nCustom theme: see the documentation on custom theming<br />\n<br />\nPersistenting config settings: that's up to you, mui is not about saving config files.<br />\n<br />\nWhat do you mean with appearance color?<br />\n",
+    "PostedDate": "2013-04-20T04:58:13.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034679",
+    "ThreadId": "440970",
+    "Html": "Thanks for your feedback\r<br />\n<br />\nI realized there is a SettingsAppearanceViewModel.cs and I simply have to save the selecteditems from that ViewModel - that should be simple enough.\r<br />\n<br />\nBy Appearance Color I mean the color that you can setup on the settings page (yellow'ish screenshot:\r<br />\n<a href=\"https://yalvlib.codeplex.com/wikipage?title=Modern%20UI%20client%20with%20Dark%20%26%20Light%20themes\" rel=\"nofollow\">https://yalvlib.codeplex.com/wikipage?title=Modern%20UI%20client%20with%20Dark%20%26%20Light%20themes</a>\r<br />\n<br />\nI'd like to know the name of the DynamicResource (if any) so that I can use it for the elements I'd like to style with it.\r<br />\n<br />\nThanks a lot for the good work<br />\n",
+    "PostedDate": "2013-04-23T09:47:10.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034805",
+    "ThreadId": "440970",
+    "Html": "Resource <code>AccentColor</code> identifies the accent color, resource <code>Accent</code> identifies the Accent brush.<br />\n",
+    "PostedDate": "2013-04-23T14:44:19.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

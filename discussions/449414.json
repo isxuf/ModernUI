@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1066012",
+    "ThreadId": "449414",
+    "Html": "How can I make my child pages fit the parent window, rather than being of a fixed size? Especially if I have resized my MainWindow?<br />\n",
+    "PostedDate": "2013-07-09T02:54:16.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107335",
+    "ThreadId": "449414",
+    "Html": "How is this not answered? I am having the same problems. My child pages are not filling up the parent window, and it's super annoying.<br />\n",
+    "PostedDate": "2013-10-14T13:20:11.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107347",
+    "ThreadId": "449414",
+    "Html": "A panel such as a Grid in a child page does size automatically, unless you set an explicit width/height. Could you otherwise post a XAML snippet?<br />\n",
+    "PostedDate": "2013-10-14T13:43:37.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1303621",
+    "ThreadId": "449414",
+    "Html": "Same problem.\r<br />\n<br />\nMgrEditCtl is a user control containing a three column grid, that I would like to expand to the windows columns, but it gets to a fixed size and doesnt stretch when the window is maximized.\r<br />\n<br />\nI suppose I could write it as a fixed size, and manually expand it, but as Kill Nine says, its &quot;Super Annoying.&quot;<br />\n<pre><code>&lt;mui:ModernWindow.MenuLinkGroups&gt;\n    &lt;mui:LinkGroup DisplayName=&quot;Manager Performance Calculator&quot; &gt;\n        &lt;mui:LinkGroup.Links &gt;\n            &lt;mui:Link DisplayName=&quot;Managers&quot; Source=&quot;/Pages/MgrEditCtl.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Funds&quot; Source=&quot;/Pages/FundEditCtl.xaml&quot; /&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;\n    &lt;mui:LinkGroup DisplayName=&quot;settings&quot; GroupKey=&quot;settings&quot;&gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;software&quot; Source=&quot;/Pages/SettingsPage.xaml&quot; /&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;\n&lt;/mui:ModernWindow.MenuLinkGroups&gt;\n\n&lt;mui:ModernWindow.TitleLinks&gt;\n    &lt;mui:Link DisplayName=&quot;settings&quot; Source=&quot;/Pages/SettingsPage.xaml&quot; /&gt;\n    &lt;mui:Link DisplayName=&quot;help&quot; Source=&quot;http://mui.codeplex.com&quot; /&gt;\n\n</code></pre>\n\nUserEditCtl<br />\n<pre><code>&lt;Grid  Margin=&quot;0,0,0,0&quot; Name=&quot;grdWindow&quot; Background=&quot;Blue&quot;&gt;\n    &lt;Grid.ColumnDefinitions&gt;\n        &lt;ColumnDefinition Width=&quot;50*&quot;/&gt;\n        &lt;ColumnDefinition Width=&quot;6&quot;/&gt;\n        &lt;ColumnDefinition Width=&quot;50*&quot;/&gt;\n    &lt;/Grid.ColumnDefinitions&gt;\n    &lt;DataGrid Margin=&quot;10,10,10,0&quot; Name=&quot;dgManagerList&quot;/&gt;\n        &lt;GridSplitter Grid.Column=&quot;1&quot; Name=&quot;grdSplitter&quot;/&gt;\n        &lt;GroupBox Header=&quot;Manager Detail&quot; Margin=&quot;0&quot;                   Name=&quot;gbManagerDetail&quot; Grid.Column=&quot;2&quot;/&gt;\n&lt;/Grid&gt;</code></pre>\n\n",
+    "PostedDate": "2014-09-11T06:35:17.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1338663",
+    "ThreadId": "449414",
+    "Html": "Con respecto a este problema, vemos que el codigo XAML, las propiedades  d:DesignHeight y  d:DesignWidth  se encargan de redimensionar automáticamente el frame.\r<br />\n<br />\nNota:<br />\n<pre><code>  Verifica que en tu codigo XAML tienes estas propiedades d:DesignHeight y  d:DesignWidth, en lugar de Height y  Width.\n</code></pre>\n\nEspero les ayude.<br />\n",
+    "PostedDate": "2015-01-02T17:15:33.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

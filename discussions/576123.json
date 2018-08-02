@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1336755",
+    "ThreadId": "576123",
+    "Html": "Using the BingMaps WPF control inside a modern-ui navigation application cause a delay of about 12 seconds. The delay occurs when the page hosting the control is created. It can be at application startup if the page is the main page, or when the user navigate to the page for the first time.\r<br />\n<br />\nNo delay is experienced while using the control inside a standard WPF application or inside a moder ui application without navigation.\r<br />\n<br />\nAlso the delay is only experienced during a cold start, ie:<br />\n<ol>\n<li>start the application, </li>\n<li>show the BingMap: delay here</li>\n<li>close the application</li>\n<li>immediatly restart the application</li>\n<li>show again the BingMap: no delay</li>\n</ol>\n",
+    "PostedDate": "2014-12-23T04:58:01.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

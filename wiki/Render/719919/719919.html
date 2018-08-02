@@ -1,0 +1,85 @@
+<div class="wikidoc"><h1>A guide to using MEF</h1>
+Modern UI (MUI) works great with <a href="http://msdn.microsoft.com/en-us/library/dd460648.aspx">MEF</a>. This guide explains the necessary steps for integrating MEF into a MUI app. The idea of using MEF in MUI is to make all displayable content exportable and replace the default content loader with a loader that is able to access that content based on a content uri. <br /><br />Download the sample MEF-in-MUI source code: <b><a href=".\eeabc0b9-ba8f-4705-828b-20d71c41bc96">MefMuiApp.zip</a></b><br />
+<h2>Create an export attribute</h2>The ModernFrame control is used to host content in MUI apps. Content is identified by a URI. We need to mark content as exportable in MEF and at the same time provide the URI that identifies it. This can be achieved by using metadata.<br /><br />The following <b>ContentAttribute</b> class derives from <b>ExportAttribute</b> and adds a ContentUrl metadata value. The contractType specifies the <b>IContent</b> interface which must be implemented by all exportable content.<br /><br /><div style="color:Black;background-color:White;"><pre>
+[MetadataAttribute]
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = <span style="color:Blue;">false</span>)]
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> ContentAttribute : ExportAttribute
+{
+  <span style="color:Blue;">public</span> ContentAttribute(<span style="color:Blue;">string</span> contentUri) : <span style="color:Blue;">base</span>(<span style="color:Blue;">typeof</span>(IContent))
+  {
+    <span style="color:Blue;">this</span>.ContentUri = contentUri;
+  }
+  
+  <span style="color:Blue;">public</span> <span style="color:Blue;">string</span> ContentUri { <span style="color:Blue;">get</span>; <span style="color:Blue;">private</span> <span style="color:Blue;">set</span>; }
+}
+</pre></div>In order to use strong-typed metadata in MEF, we also define a <b>IContentMetadata</b> interface that will be used later when content is consumed.<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IContentMetadata
+{
+  <span style="color:Blue;">string</span> ContentUri { <span style="color:Blue;">get</span>; }
+}
+</pre></div>
+<h2>Export content</h2>Our next step is to mark the content pages as exportable by using the <b>ContentAttribute</b> and implement the <b>IContent</b> interface for each page. The following snippet marks MyPage as exportable and specifies the content uri <i>/MyPage</i>.<br /><br /><div style="color:Black;background-color:White;"><pre>
+[Content(<span style="color:#A31515;">&quot;/MyPage&quot;</span>)]
+<span style="color:Blue;">public</span> <span style="color:Blue;">partial</span> <span style="color:Blue;">class</span> MyPage: UserControl, IContent
+{
+  <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> OnFragmentNavigation(FragmentNavigationEventArgs e)
+  {
+  }
+
+  <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> OnNavigatedFrom(NavigationEventArgs e)
+  {
+  }
+
+  <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> OnNavigatedTo(NavigationEventArgs e)
+  {
+  }
+
+  <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> OnNavigatingFrom(NavigatingCancelEventArgs e)
+  {
+  }
+}
+</pre></div><h2>Implement the content loader</h2>With content exported, we now need a custom <b>IContentLoader</b> implementation that is able to consume the exported content and return the content based on a content uri. For that we create a new MefContentLoader deriving from <b>DefaultContentLoader</b>. The content loader imports all IContent exports and includes IContentMetadata so we can access the ContentUri.<br /><br />When content is requested using the LoadContent method, the requested uri is compared to the metadata. When matched, the content is returned. Content instantiation is deferred by using Lazy.<br /><br /><div style="color:Black;background-color:White;"><pre>
+[Export]
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MefContentLoader : DefaultContentLoader
+{
+  [ImportMany]
+  <span style="color:Blue;">private</span> Lazy&lt;IContent, IContentMetadata&gt;[] Contents { <span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>; }
+
+  <span style="color:Blue;">protected</span> <span style="color:Blue;">override</span> <span style="color:Blue;">object</span> LoadContent(Uri uri)
+  {
+    <span style="color:Green;">// lookup the content based on the content uri in the content metadata</span>
+    <span style="color:Blue;">var</span> content = (<span style="color:Blue;">from</span> c <span style="color:Blue;">in</span> <span style="color:Blue;">this</span>.Contents
+      <span style="color:Blue;">where</span> c.Metadata.ContentUri == uri.OriginalString
+      <span style="color:Blue;">select</span> c.Value).FirstOrDefault();
+
+    <span style="color:Blue;">if</span> (content == <span style="color:Blue;">null</span>) {
+      <span style="color:Blue;">throw</span> <span style="color:Blue;">new</span> ArgumentException(<span style="color:#A31515;">&quot;Invalid uri: &quot;</span> + uri);
+    }
+
+    <span style="color:Blue;">return</span> content;
+  }
+}
+</pre></div>Please note that the MefContentLoader itself is also exported.<br />
+<h2>Putting it all together</h2>With all the required elements in place, we now need make sure all Modern controls use the new MefContentLoader instead of the default content loader. Add the following default styles to App.xaml where the DynamicResource reference will be explained later.<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">Style</span> <span style="color:Red;">TargetType</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">mui:ModernFrame</span><span style="color:Black;">&quot;</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">Setter</span> <span style="color:Red;">Property</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">ContentLoader</span><span style="color:Black;">&quot;</span> <span style="color:Red;">Value</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">{DynamicResource MefContentLoader}</span><span style="color:Black;">&quot;</span> <span style="color:Blue;">/&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">Style</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">Style</span> <span style="color:Red;">TargetType</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">mui:ModernTab</span><span style="color:Black;">&quot;</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">Setter</span> <span style="color:Red;">Property</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">ContentLoader</span><span style="color:Black;">&quot;</span> <span style="color:Red;">Value</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">{DynamicResource MefContentLoader}</span><span style="color:Black;">&quot;</span> <span style="color:Blue;">/&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">Style</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">Style</span> <span style="color:Red;">TargetType</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">local:MainWindow</span><span style="color:Black;">&quot;</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">Setter</span> <span style="color:Red;">Property</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">ContentLoader</span><span style="color:Black;">&quot;</span> <span style="color:Red;">Value</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">{DynamicResource MefContentLoader}</span><span style="color:Black;">&quot;</span> <span style="color:Blue;">/&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">Style</span><span style="color:Blue;">&gt;</span>
+</pre></div>MEF composition happens on start of the application. Add the following snippet to the Application OnStartup method (in App.xaml.cs).<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">protected</span> <span style="color:Blue;">override</span> <span style="color:Blue;">void</span> OnStartup(StartupEventArgs e)
+{
+  <span style="color:Blue;">base</span>.OnStartup(e);
+
+  <span style="color:Green;">// bootstrap MEF composition</span>
+  <span style="color:Blue;">var</span> catalog = <span style="color:Blue;">new</span> AssemblyCatalog(Assembly.GetExecutingAssembly());
+  <span style="color:Blue;">var</span> container = <span style="color:Blue;">new</span> CompositionContainer(catalog);
+
+  <span style="color:Blue;">var</span> contentLoader = container.GetExport&lt;MefContentLoader&gt;().Value;
+  <span style="color:Blue;">this</span>.Resources.Add(<span style="color:#A31515;">&quot;MefContentLoader&quot;</span>, contentLoader);
+}
+</pre></div>MEF composition consists of creating an assembly catalog and feeding it to a CompositionContainer. The MefContentLoader instance is retrieved from the container and added to the global application resource dictionary. Once the loader is added, the DynamicResource reference used in the default styles can be resolved.<br /><br />And that&#39;s it. Whenever a ModernFrame needs to load content it uses the MefContentLoader which is defined in the default style. The MefContentLoader looks up the content based on the ContentUri that is specified in the export metadata.<br /><br /></div><div class="ClearBoth"></div>

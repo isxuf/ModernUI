@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "I think it is good idea to make Source property in Link bindable. Now I've go message that Binding can only be set ona DependencyProperty of a DependencyObject.\n\nI mean create this construction possible:\n```\nSource=\"{Binding Main, Source={StaticResource Locator}}\"\n```",
+    "LastUpdatedDate": "2014-10-17T03:58:36.083-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-12-13T00:28:56.087-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Make Source property in Link bindable",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 20519
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "We have changed Link : Displayable (Dependencyobject) to make all properties bindable. Do you know if they accept pullrequests?",
+      "PostedDate": "2014-09-25T14:31:57.083-07:00",
+      "Id": 160678
+    }
+  ]
+}

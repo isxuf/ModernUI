@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1021659",
+    "ThreadId": "438137",
+    "Html": "Hi all. \r<br />\n<br />\nI'm more or less new to WPF which means the whole binding issue is new stuff to me.\r<br />\n<br />\nAnyways, I am trying to bind a List&lt;T&gt; to a DataGrid\r<br />\n<br />\nusing the:  nameOfDataGrid.ItemsSource = nameOfList;\r<br />\n<br />\nNow here is my problem.. Filling the list with objects, and adding the list to the DataGrids ItemsSource is not a problem, however when I do this, the data will not be shown unless i'm in my XAML is adding to my column a <strong>Binding=&quot;{Binding}&quot;</strong> This binding will show my list.ToString(), but will just fit it into the first column. What I need is to fill all my columns with my objects properties.\r<br />\n<br />\nI've been reading up on this subject, and I often see people using; <strong>Binding=&quot;{Binding path=Variable}&quot;</strong>\r<br />\n<br />\nNow here is my problem.. My properties of my objects is located in a seperate file/class, and somehow it is not able to find it / reach it. (I think)<br />\n<h2>I will add a short code snippet of what i'm doing.</h2>\nCode Behind:\r<br />\n<br />\npublic class myObject\r<br />\n{<br />\n<pre><code>private string string1; {get; set} &lt;-- is included for each datafrield\nprivate string string2; {get; set}\n</code></pre>\n\npublic myObject(string string1, string string2)\r<br />\n{<br />\n<pre><code>this.string1 = string1;\nthis.string2 = string2;</code></pre>\n\n}\r<br />\n<br />\npublic override string ToString()\r<br />\n{\r<br />\n return string1; &lt;--- i did this to just see if i could find the objects properties through codeBehind\r<br />\n}\r<br />\n}\r<br />\n<br />\npublic partial class SomeControl: UserControl\r<br />\n  {<br />\n<pre><code>List&lt;myObject&gt; ListObject= new List&lt;myObject&gt;();\n\npublic UCSkaderegistrering(System.Xml.XmlNode XmlNode)\n{\n  InitializeComponent();\n  myDataGrid.ItemsSource = ListDamage;\n}\n\nprivate void insertIntoDataGrid()\n{\n\n  myObject mO= new myObject(TextBlockString1.Text, TextBlockString2.Text);\n\n  ListObject.Add(mO);\n  myDataGrid.Items.Refresh();\n}\n\nprivate void ButtonCreateNew_Click(object sender, RoutedEventArgs e)\n{\n  insertIntoDataGrid();</code></pre>\n\n<h2>    }</h2>\nXAML:\r<br />\n<br />\n&lt;DataGrid  Name=&quot;myDataGrid&quot; AutoGenerateColumns=&quot;False&quot; CanUserResizeColumns=&quot;False&quot; CanUserReorderColumns=&quot;False&quot; IsReadOnly=&quot;True&quot; VerticalScrollBarVisibility=&quot;Auto&quot; Height=&quot;100&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;0,5,0,5&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;1080&quot; &gt;<br />\n<pre><code>                &lt;DataGrid.Columns&gt;\n                    &lt;DataGridTextColumn Header=&quot;String1&quot; Binding=&quot;{Binding}&quot; Width=&quot;80&quot; /&gt;\n                    &lt;DataGridTextColumn Header=&quot;String2&quot; Binding=&quot;{Binding}&quot; Width=&quot;100&quot;/&gt;\n                &lt;/DataGrid.Columns&gt;\n            &lt;/DataGrid&gt;</code></pre>\n\n<hr />\nI know the Binding=&quot;{Binding}&quot; is wrong but it's the only thing right now that gives me a result.. The result comes from the Lists ToString() method...\r<br />\n<br />\nNow.. what i want to know is, how can i point out my properties string1 and string2 in the path and get a result, because Binding=&quot;{Binding path=string1&quot;} is not working for me.\r<br />\n<br />\nAll help is appreciated. Writing ItemsSource={Binding ListObject} in XAML under myDataGrid is not working either since I set it in my Code behind files.\r<br />\n<br />\nThanks in advance<br />\n",
+    "PostedDate": "2013-03-27T03:08:11.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021701",
+    "ThreadId": "438137",
+    "Html": "i dont think this is related to modern ui. i would ask at stackoverflow if i were you.<br />\n",
+    "PostedDate": "2013-03-27T04:30:53.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021708",
+    "ThreadId": "438137",
+    "Html": "Yes I thought I asked at the wrong place. Thank you for your reply though.<br />\n",
+    "PostedDate": "2013-03-27T04:46:32.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

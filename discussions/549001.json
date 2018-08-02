@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1257386",
+    "ThreadId": "549001",
+    "Html": "Hi!\r<br />\n<br />\nI am using ModernUI design for my application and  I want to change the colors of font and some other stuff  when I change the theme from Light to Dark. \r<br />\nHow can I do it? Are there any properties or events that I could use?\r<br />\n<br />\nThanks :-) <br />\n",
+    "PostedDate": "2014-06-18T03:16:20.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1259073",
+    "ThreadId": "549001",
+    "Html": "To do what you want, please see SettingsAppearanceViewModel.cs of ModernUI Demo project (FirstFloor.ModernUI.App).<br />\n",
+    "PostedDate": "2014-06-23T18:27:33.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1300466",
+    "ThreadId": "549001",
+    "Html": "Can anyone Please Guide us step by step ,<br />\n Please!!<br />\n",
+    "PostedDate": "2014-09-06T04:35:21.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1307847",
+    "ThreadId": "549001",
+    "Html": "<pre><code>AppearanceManager.Current.AccentColor = (Color)ColorConverter.ConvertFromString(&quot;#FFFF1493&quot;); \nAppearanceManager.Current.ThemeSource = (iWantDark) ? AppearanceManager.DarkThemeSource : AppearanceManager.LightThemeSource;\n</code></pre>\n\nSetting either of those should get the job done.  In the example I'm using a lovely shade of hot pink for the accent color while the theme triggers based on a bool value of iWantDark.<br />\n",
+    "PostedDate": "2014-09-24T11:39:50.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1114903",
+    "ThreadId": "464825",
+    "Html": "Hi, Hope this is easy to answer...\r<br />\n<br />\nI want to make my ListBoxItems' Background=&quot;White&quot;. No matter what I try, they are transparent.\r<br />\nI feel like the m:ui default to &quot;Transparent&quot; is not capable of being changed by local resource style setters.\r<br />\n<br />\nDo I need to go to the ResourceDictionary and do something?\r<br />\nSorry for the noob question. Thanks!\r<br />\nMark\r<br />\n<br />\nHere's the code that doesn't work.. the listboxitems come out transparent instead of occluding the red:\r<br />\n<br />\n&lt;StackPanel Background=&quot;Red&quot;&gt;<br />\n<pre><code>&lt;ListBox Background=&quot;Transparent&quot; BorderBrush=&quot;Transparent&quot;&gt;\n    &lt;ListBox.Resources&gt;\n        &lt;Style TargetType=&quot;{x:Type ListBoxItem}&quot;&gt;\n            &lt;Setter Property=&quot;Background&quot; Value=&quot;White&quot; /&gt;\n            &lt;Setter Property=&quot;Margin&quot; Value=&quot;1&quot; /&gt;\n        &lt;/Style&gt;\n    &lt;/ListBox.Resources&gt;\n    &lt;ListBoxItem Content=&quot;First Item&quot;/&gt;\n    &lt;ListBoxItem Content=&quot;Secton Item&quot;/&gt;\n&lt;/ListBox&gt;</code></pre>\n\n&lt;/StackPanel&gt;<br />\n",
+    "PostedDate": "2013-10-30T21:03:53.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

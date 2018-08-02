@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1053704",
+    "ThreadId": "446248",
+    "Html": "Hi When opening the ModernWindow.xaml in VS2012 and viewing in the split code/design view I get a bunch of &quot;does not exist in the namespace&quot;... errors for\r<br />\n<br />\nWindowChrome, SystemParameters2, SystemCommands .\r<br />\n<br />\nIs there something I am missing?<br />\n",
+    "PostedDate": "2013-06-06T11:08:05.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054112",
+    "ThreadId": "446248",
+    "Html": "I'm getting a 'ModernWindow.xaml cannot be edited in the Design view.' message. Where do you see these errors?<br />\n",
+    "PostedDate": "2013-06-07T10:21:50-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054119",
+    "ThreadId": "446248",
+    "Html": "Visual Studio 2012 \r<br />\n<br />\nIn the split view design window &quot;Invalid Markup&quot;.  I think this may have to do with .net 4.5.\r<br />\n<br />\nError Info:\r<br />\n<br />\nError\t2\tThe name &quot;WindowChrome&quot; does not exist in the namespace &quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell\" rel=\"nofollow\">http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell</a>&quot;. \r<br />\nError\t1\tThe name &quot;SystemParameters2&quot; does not exist in the namespace &quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell\" rel=\"nofollow\">http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell</a>&quot;. \\FirstFloor.ModernUI\\FirstFloor.ModernUI\\Themes\\ModernWindow.xaml\t27\r<br />\nError\t3\tThe name &quot;SystemCommands&quot; does not exist in the namespace &quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell\" rel=\"nofollow\">http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell</a>&quot;.<br />\n",
+    "PostedDate": "2013-06-07T10:32:29.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1077169",
+    "ThreadId": "446248",
+    "Html": "Im getting this too. I don't therefore think changes I make are getting included in the build.<br />\n",
+    "PostedDate": "2013-08-06T02:55:42.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1350741",
+    "ThreadId": "446248",
+    "Html": "I have the same errors with WPF 4 \r<br />\nError\t1\tThe name &quot;SystemParameters2&quot; does not exist in the namespace &quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell\" rel=\"nofollow\">http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell</a>&quot;.\r<br />\nError\t2\tThe name &quot;WindowChrome&quot; does not exist in the namespace &quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell\" rel=\"nofollow\">http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell</a>&quot;.\r<br />\nError\t4\tThe name &quot;SystemCommands&quot; does not exist in the namespace &quot;<a href=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell\" rel=\"nofollow\">http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell</a>&quot;.\t\r<br />\nError\t11\tThe attachable property 'IsHitTestVisibleInChrome' was not found in type 'WindowChrome'.\t\r<br />\n<br />\n<br />\nbut the application builds and run successfully  with those errors<br />\n",
+    "PostedDate": "2015-02-10T13:56:51.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

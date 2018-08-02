@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1064145",
+    "ThreadId": "448967",
+    "Html": "How to close the MainWindow using a button in Usercontrol. The method Close() is not available.\r<br />\nSorry for my bad English.<br />\n",
+    "PostedDate": "2013-07-03T08:13:21.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064150",
+    "ThreadId": "448967",
+    "Html": "Found a solution.\r<br />\nApplication.Current.Shutdown();<br />\n",
+    "PostedDate": "2013-07-03T08:19:22.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064201",
+    "ThreadId": "448967",
+    "Html": "Application.Current has also a reference to MainWindow.\r<br />\n<br />\nA more generalized version of telling someone something is to use the Messenger of MVVM light (galasoft).<br />\n",
+    "PostedDate": "2013-07-03T10:13:33.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

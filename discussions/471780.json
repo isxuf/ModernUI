@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1131248",
+    "ThreadId": "471780",
+    "Html": "The sources defined in step 5  on this page: \r<br />\n<a href=\"https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&amp;FocusElement=Comment#\" rel=\"nofollow\">https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&FocusElement=Comment#</a>\r<br />\nit give an error at design time in VS 2013. \r<br />\nError Value cannot be null.Parameter name: item\t\r<br />\nIf I change it to: \r<br />\n&lt;ResourceDictionary Source=&quot;pack://application:,,,/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot;/&gt;\r<br />\nI get the same error. \r<br />\nAs far as I know this does not happen in VS 2012\r<br />\nIf someone here has overcome this issue please post a reply, thanks ! <br />\n",
+    "PostedDate": "2013-12-03T06:48:22.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1132374",
+    "ThreadId": "471780",
+    "Html": "Hi,\r<br />\n<br />\nI'm using VS 2013 ultimate, app.xaml Resource Dictionary looks like below, and it works.\r<br />\n<br />\n&lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\r<br />\n<br />\nRegards\r<br />\nPrakashZa<br />\n",
+    "PostedDate": "2013-12-05T20:34:14.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

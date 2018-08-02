@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1064631",
+    "ThreadId": "449088",
+    "Html": "Hi!\r<br />\n<br />\nThe comboxbox I have within a user control isn't showing any text.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-07-04T09:33:03.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064633",
+    "ThreadId": "449088",
+    "Html": "Turns out this is caused by &quot;IsEditable&quot; being set on the combobox.<br />\n",
+    "PostedDate": "2013-07-04T09:44:40.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064688",
+    "ThreadId": "449088",
+    "Html": "See <a href=\"https://mui.codeplex.com/discussions/441255\" rel=\"nofollow\">https://mui.codeplex.com/discussions/441255</a>  for solution.<br />\n",
+    "PostedDate": "2013-07-04T13:29:39.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

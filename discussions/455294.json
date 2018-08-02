@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1087770",
+    "ThreadId": "455294",
+    "Html": "Is it possible to have images next to the list items in a ModernTab view? If so could you point me in the right direction?<br />\n",
+    "PostedDate": "2013-09-03T10:03:03.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088727",
+    "ThreadId": "455294",
+    "Html": "I have tried to change ModernTab to inharite from ListBox instead of contorl so I would have access to ItemTemplate but I feel this is the wrong way to approch this because ModernTab is still using Links and LinkCollections. so even if I create an item template it's still just a link. I'm kind of banging my head at the wall so any advice would be wonderful.<br />\n",
+    "PostedDate": "2013-09-05T05:45:14.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088817",
+    "ThreadId": "455294",
+    "Html": "You'll need to create a custom template for the ModernTab for displaying images. Next to that you'll need to add Image source info to the Link class, so you can bind to it. No need to update ModernTab itself.<br />\n",
+    "PostedDate": "2013-09-05T09:00:10.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1089001",
+    "ThreadId": "455294",
+    "Html": "Kozw, THANK YOU!\r<br />\n<br />\n<img src=\"http://imageshack.com/scaled/large/716/5xqz.png\" alt=\"Image\" />\r<br />\n<br />\nFor anyone else that would like to do this code below.<br />\n<h1>Link Class</h1>\n<pre><code>private ImageSource imageSource;\n\n...\n\n        /// &lt;summary&gt;\n        /// Gets or sets the source image.\n        /// &lt;/summary&gt;\n        /// &lt;value&gt;The source.&lt;/value&gt;\n        public ImageSource ImageSource\n        {\n            get { return this.imageSource; }\n            set\n            {\n                if (this.imageSource != value)\n                {\n                    this.imageSource = value;\n                    OnPropertyChanged(&quot;ImageSource&quot;);\n                }\n            }\n        }</code></pre>\n\n<h1>ModernTab.xaml</h1>\n<pre><code>                                    &lt;!-- link list --&gt;\n                                    &lt;ListBox x:Name=&quot;LinkList&quot; ItemsSource=&quot;{TemplateBinding Links}&quot;\n                                             ScrollViewer.HorizontalScrollBarVisibility=&quot;{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}&quot; &gt;\n                                        &lt;ListBox.ItemTemplate&gt;\n                                            &lt;DataTemplate&gt;\n                                                &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;\n                                                    &lt;Image Source=&quot;{Binding ImageSource}&quot; Width=&quot;16&quot; Height=&quot;16&quot; /&gt;\n                                                    &lt;TextBlock Text=&quot;{Binding DisplayName, Converter={StaticResource ToUpperConverter}}&quot; Margin=&quot;10,2,2,2&quot; FontSize=&quot;{DynamicResource SmallFontSize}&quot; TextTrimming=&quot;CharacterEllipsis&quot; /&gt;\n                                                &lt;/StackPanel&gt;\n                                            &lt;/DataTemplate&gt;\n                                        &lt;/ListBox.ItemTemplate&gt;\n                                    &lt;/ListBox&gt;</code></pre>\n\n<h1>Example.xaml</h1>\n<pre><code>        &lt;mui:ModernTab Name=&quot;lvTest&quot; Layout=&quot;List&quot;&gt;\n            &lt;mui:ModernTab.Links&gt;\n                &lt;!-- TODO: set @Source --&gt;\n                &lt;mui:Link  DisplayName=&quot;Green Link&quot; ImageSource=&quot;pack://application:,,,/Images/green.png&quot; /&gt;\n                &lt;mui:Link  DisplayName=&quot;Orange Link&quot; ImageSource=&quot;pack://application:,,,/Images/orange.png&quot; /&gt;\n                &lt;mui:Link  DisplayName=&quot;Red Link&quot; ImageSource=&quot;pack://application:,,,/Images/red.png&quot; /&gt;\n            &lt;/mui:ModernTab.Links&gt;\n        &lt;/mui:ModernTab&gt;</code></pre>\n\nThank you again for a wonderful project!!! Just so easy just didn't know where to start :D<br />\n",
+    "PostedDate": "2013-09-05T14:36:27.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1124154",
+    "ThreadId": "455294",
+    "Html": "Hi Kozw,\r<br />\n<br />\nWhere you implement it, directly in ModernTab.xaml in Modern UI source ?\r<br />\n<br />\nThank's<br />\n",
+    "PostedDate": "2013-11-15T11:00:08.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

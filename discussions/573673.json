@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1327655",
+    "ThreadId": "573673",
+    "Html": "This library is great, but something has been bothering me since I started using it.  CPU.  A while back I noticed this problem and thought wow, WPF doesn't do a very good job keeping idle.  I found out how to adjust the animation timeline and posted about it here:\r<br />\n<a href=\"https://mui.codeplex.com/discussions/437495\" rel=\"nofollow\">https://mui.codeplex.com/discussions/437495</a>\r<br />\n<br />\nThe problem is this makes the app choppy which is annoying.  I just looked into this again because it has been driving me crazy and guess what?  The problem is the indeterminate progress bar that is shown while content is loading.   Ahhhh!!!   IsIndeterminate is set to True, so it never ends. (try it out, set it to false and see the cpu go away).  The fix?  I looked at it for a minute and realized IsIndeterminate=&quot;{TemplateBinding IsLoadingContent}&quot; would work and it does (it stops the animation).  Fixed!!!  Nope.  What's strange is once you set IsIndeterminate=True, you can't stop the cpu it consumes by setting it to False.  WPF defect?   I'm going to look into this further tomorrow, but if anyone has information on this I'd appreciate it.<br />\n",
+    "PostedDate": "2014-12-01T04:22:49.907-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327807",
+    "ThreadId": "573673",
+    "Html": "I also found this: <a href=\"https://mui.codeplex.com/workitem/21208\" rel=\"nofollow\">https://mui.codeplex.com/workitem/21208</a>  (fixed by 110094)\r<br />\n<br />\nLooks like I'm behind.  Is anyone else still seeing the issue?<br />\n",
+    "PostedDate": "2014-12-01T12:37:46.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327823",
+    "ThreadId": "573673",
+    "Html": "The only way I could get the cpu to go away was to remove the progress bar.  So here's what I did.  I gave the grid in the frame containing the progress bar a name &quot;LayoutRoot&quot; and I also gave the ProgressBar a name &quot;LoadingContentProgress&quot;.  I then made sure all calls to set the content loading property used the IsLoadingContent property instead of calling SetValue directly.  Then I added a setter to the IsLoadingContent property.  Now when content is loading, the progress bar is added, when it's not, the progress bar is removed.   A little ugly, but the CPU problem is gone.  Here's the code:<br />\n<pre><code>    private Grid m_LayoutGrid;\n    private ProgressBar m_LoadingContentProgressBar;\n    /// &lt;summary&gt;\n    /// Gets a value indicating whether this instance is currently loading content.\n    /// &lt;/summary&gt;\n    public bool IsLoadingContent\n    {\n        get { return (bool)GetValue(IsLoadingContentProperty); }\n        set\n        {\n            if (null == m_LayoutGrid)\n            {\n                m_LayoutGrid = (Grid)GetTemplateChild(&quot;LayoutRoot&quot;);\n            }\n            if (null != m_LayoutGrid)\n            {\n                if (null == m_LoadingContentProgressBar)\n                {\n                    m_LoadingContentProgressBar = (ProgressBar)GetTemplateChild(&quot;LoadingContentProgress&quot;);\n                    if (null != m_LoadingContentProgressBar)\n                    {\n                        m_LayoutGrid.Children.Remove(m_LoadingContentProgressBar);\n                    }\n                }\n                if (null != m_LoadingContentProgressBar)\n                {\n                    m_LoadingContentProgressBar.IsIndeterminate = value;\n                    if (true == value)\n                    {\n                        m_LayoutGrid.Children.Add(m_LoadingContentProgressBar);\n                    }\n                    else\n                    {\n                        m_LayoutGrid.Children.Remove(m_LoadingContentProgressBar);\n                    }\n                }\n            }\n            SetValue(IsLoadingContentPropertyKey, value);\n        }\n    }\n</code></pre>\n\n",
+    "PostedDate": "2014-12-01T13:14:30.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327842",
+    "ThreadId": "573673",
+    "Html": "The fix for workitem 21208 included the following change in the default ModernFrame style: IsIndeterminate=&quot;{TemplateBinding IsLoadingContent}&quot;\r<br />\n<br />\nThe fix has been included in MUI 1.0.6 (the latest release). Is it possible you are not using the latest version, or not using the default style?<br />\n",
+    "PostedDate": "2014-12-01T14:06:59.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327857",
+    "ThreadId": "573673",
+    "Html": "I have this fix (change set 110094), the problem is the cpu problem still happens when IsIndeterminate is set to true and then back to false.  To reproduce, never set IsIndeterminate to true and look at the CPU (hardcode to false).  Then set it to true, then false (put the fix back in).  The CPU is higher.  In my project I have 3 of these progress bars using IsIndeterminate.  On my machine with 12 logical processors, with change set 110094, after they all go from true to false, the cpu hovers around 1-2%.  With the code above (remove the progress bar completely, then add when loading) the cpu moves between 0 to 0.25.<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-12-01T14:46:49.68-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327939",
+    "ThreadId": "573673",
+    "Html": "Definitely worth investigating, thanks for your time and proposed solution. I'll see if and how this will end up the source<br />\n",
+    "PostedDate": "2014-12-02T00:25:05.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327940",
+    "ThreadId": "573673",
+    "Html": "No problem, thanks for your great work.<br />\n",
+    "PostedDate": "2014-12-02T00:29:08.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

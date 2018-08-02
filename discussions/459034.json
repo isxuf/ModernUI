@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1098877",
+    "ThreadId": "459034",
+    "Html": "I want to navigate to another user control from my login user control button click.\r<br />\nThe button click first authenticates user then loads another user control.How can I do this with mui,tried Navigation Commands getting the runtime error that &quot;Object ref is not set to instance of object.&quot;\r<br />\nPlease suggest<br />\n",
+    "PostedDate": "2013-09-24T23:30:47.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1099557",
+    "ThreadId": "459034",
+    "Html": "Please provide the sample code.<br />\n",
+    "PostedDate": "2013-09-26T02:19:42.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

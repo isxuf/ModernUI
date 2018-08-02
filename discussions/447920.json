@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1060005",
+    "ThreadId": "447920",
+    "Html": "Hello,\r<br />\nI would like for ModernTab control to write navigation history when switching tabs, so that when I click back on the interface, It would go back one tab, not whole main page change. Is there some easy way to accomplish this? If not, what would be in your opinion best way to code it?<br />\n",
+    "PostedDate": "2013-06-23T03:11:30.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060075",
+    "ThreadId": "447920",
+    "Html": "That's not available yet, but a good suggestion. Care to create an issue for it? You could create your own by listening for SelectedSource changes.<br />\n",
+    "PostedDate": "2013-06-23T08:24:04.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060083",
+    "ThreadId": "447920",
+    "Html": "Sure <a href=\"https://mui.codeplex.com/workitem/19895\" rel=\"nofollow\">https://mui.codeplex.com/workitem/19895</a><br />\n",
+    "PostedDate": "2013-06-23T08:46:59.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

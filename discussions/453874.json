@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1082378",
+    "ThreadId": "453874",
+    "Html": "Hello,\r<br />\n<br />\nI may have mistakenly posted this under 'Issues'.\r<br />\n<br />\nIf I hook up the validations for controls such as TextBox etc., the error display works as intended - the control border turns red and error message is displayed in a red box to the right of the control. However, if the width of the window is not wide enough, the error message is cut off. Is there any way to extend the width of error message beyond the width of window? \r<br />\n<br />\nThanks,\r<br />\ncp<br />\n",
+    "PostedDate": "2013-08-19T15:02:40.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1065038",
+    "ThreadId": "449189",
+    "Html": "I am trying to extract just the needed parts for ModernWindow and not using the rest parts (in .NET 4.0 + Visual Studio 2012) to have a beautiful border-less window.\r<br />\n<br />\nI have used the last version of needed package Microsoft.Windows.Shell (by means of Install-Package Microsoft.Windows.Shell).\r<br />\n<br />\nBut it looks like just as an ordinary window, with normal borders, without the beautiful title part.\r<br />\n<br />\nSomebody tried this before?\r<br />\n<br />\nThanks;<br />\n",
+    "PostedDate": "2013-07-05T14:58:17.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1065115",
+    "ThreadId": "449189",
+    "Html": "Check <a href=\"http://stackoverflow.com/questions/13592326/making-wpf-applications-look-metro-styled-even-in-windows-7-window-chrome-t\" rel=\"nofollow\">this thread</a> on StackOverflow<br />\n",
+    "PostedDate": "2013-07-06T05:38:08.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1065120",
+    "ThreadId": "449189",
+    "Html": "Thanks; MashApps.Metro has a nice UI; but I like MUI better. It's just I have encountered some restrictions (and some bugs) that I have not time to work around them.\r<br />\n<br />\nMUI is great! Thanks you!<br />\n",
+    "PostedDate": "2013-07-06T06:23:23.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1065124",
+    "ThreadId": "449189",
+    "Html": "Please share any restrictions and bugs you find.<br />\n",
+    "PostedDate": "2013-07-06T06:30:11.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1065126",
+    "ThreadId": "449189",
+    "Html": "Things that pops up in my mind (restrictions):\r<br />\n<br />\n1 - modern tab in tab mode: in an ordinary tab control when you re-size the window and make it smaller, tabs (tab titles) would be wrapped and all are still visible. In modern tab (since they are aligned horizontally explicitly), they become invisible in the shrink area.\r<br />\n<br />\n2 - modern tab in list mode: title width is fixed (170 if I remember correctly). I have changed it to 140 for my purpose, but one title was long. I liked it to be wrapped. I also tried things like width=&quot;1*&quot;...width=&quot;5*&quot; for title part and content part, but content part extends itself out of the window even if window is already maximized.\r<br />\n<br />\n3 - (not restriction, nor bug but my lack of wpf knowledge == MLOWK) too much white space around tab content in list mode. I liked to be able to control it (and I did not find where to set it).\r<br />\n<br />\n4 - in a modern window with multiple nested link groups: sometimes when I click another main group, it still shows the children of the previous group. It happens randomly.\r<br />\n<br />\n5 - (maybe MLOWK and I've found another thread on this forum about it) having header (above links) and footer. It allows interesting scenarios and keep consistency in apps that have a web version too.\r<br />\n<br />\n(Currently I've decided to go with my &quot;WinForm&quot;y app - according to deadlines and MLOWK - and not using MUI. But I'll post anything informative if found any.)<br />\n",
+    "PostedDate": "2013-07-06T06:48:37.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1065131",
+    "ThreadId": "449189",
+    "Html": "<strong>ksh2codeplex wrote:</strong><br />\n<blockquote>\nThings that pops up in my mind (restrictions):<br />\n<br />\n1 - modern tab in tab mode: in an ordinary tab control when you re-size the window and make it smaller, tabs (tab titles) would be wrapped and all are still visible. In modern tab (since they are aligned horizontally explicitly), they become invisible in the shrink area.<br />\n</blockquote>\nAgree, that's a limitation of the ModernTab (and ModernMenu as well). Consider creating an issue for it in the issuetracker.<br />\n<blockquote>\n2 - modern tab in list mode: title width is fixed (170 if I remember correctly). I have changed it to 140 for my purpose, but one title was long. I liked it to be wrapped. I also tried things like width=&quot;1*&quot;...width=&quot;5*&quot; for title part and content part, but content part extends itself out of the window even if window is already maximized.<br />\n</blockquote>\nI've changed the ModernTab style so that the horizontal scrollbar is disabled by default (enable by setting the ScrollViewer.HorizontalScrollBarVisibility attached property on your ModernTab instance). For text wrapping you'll need to update the template and set the TextBlock.TextWrapping to Wrap in the template for the list layout.<br />\n<blockquote>\n3 - (not restriction, nor bug but my lack of wpf knowledge == MLOWK) too much white space around tab content in list mode. I liked to be able to control it (and I did not find where to set it).<br />\n</blockquote>\nThe tab in list layout is positioned exactly where other page content is positioned. Feel free to change the page margins if you feel it's not appropiate in your scenario.<br />\n<blockquote>\n4 - in a modern window with multiple nested link groups: sometimes when I click another main group, it still shows the children of the previous group. It happens randomly.<br />\n</blockquote>\nCan you provide more details on how to reproduce?<br />\n<blockquote>\n5 - (maybe MLOWK and I've found another thread on this forum about it) having header (above links) and footer. It allows interesting scenarios and keep consistency in apps that have a web version too.<br />\n</blockquote>\nConsider creating an issue for that in the issue tracker, so it's on the radar.<br />\n",
+    "PostedDate": "2013-07-06T08:29:31.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1065171",
+    "ThreadId": "449189",
+    "Html": "BTW I should explain why I prefer MUI to MashApps.Metro. The main reason is MUI employs a Page based approach to representing the content; instead of having a huge, bulky, single page beautiful app which it's fancy parts just move around the in-memory-loaded content.\r<br />\n<br />\nThis has a huge effect on performance and - believe it or not - there are more low end, old PCs out there than we are aware with Windows XP on them!\r<br />\n<br />\nMashApps.Metro has very nice controls which I hope come to MUI in time, but I think MUI approach is cleaner and lighter.\r<br />\n<br />\n(And BTW I am not a WPF guru - yet! But this things are inferred from actual working with MUI.)<br />\n",
+    "PostedDate": "2013-07-06T15:25:52.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "not an issue",
+    "ClosedDate": "2013-07-05T14:29:38.003-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Firs of all, congrats for the great job on mui!\n\nI have a scenario in which the rendering is very slow. I want to show a \"working\" message with a indefinite progress bar until the rendering is complete.\n\nTo reproduce the situation, you can do the following:\n\n1) Add a indefinite progress bar to the ModernWindow.xaml template (always visible).\n2) Navigate to a view with a listview or similar bound to a collection on a view model.\n3) Inside the getter of a property that is bounded to the xaml, put a Thread.Sleep.\n\nYou will notice that the progress bar freezes, It seems that the control loading is being performed asynchronously (even when loading via the DefaultContentLoader's LoadContentAsync ).",
+    "LastUpdatedDate": "2013-07-05T14:29:38.003-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-11T06:18:27.327-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Slow rendering",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19840
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "If you need to perform a long-running job, you need to put it on a background thread. Thread.Sleep on the UI thread will cause the UI to freeze. DefaultContentLoader loads its content on the UI thread since control instantiation does require the UI thread.",
+      "PostedDate": "2013-07-05T14:29:31.243-07:00",
+      "Id": 158517
+    }
+  ]
+}

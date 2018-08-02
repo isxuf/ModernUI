@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1075871",
+    "ThreadId": "452183",
+    "Html": "Once I've edited the standard Modern Window template, how do I then use this as my Modern Window? Do I need to rebuild the entire project and use that or can I alter the MainWindow?<br />\n",
+    "PostedDate": "2013-08-02T00:57:31.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1077125",
+    "ThreadId": "452183",
+    "Html": "Anyone got any idea on this? Still pretty stumped after the weekend and need to get this done ASAP. Ta.<br />\n",
+    "PostedDate": "2013-08-06T01:16:03.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081877",
+    "ThreadId": "452183",
+    "Html": "When you create a custom ModernWindow style with a custom template, you'll need to assign an x:Key to the style. You then use the custom style by setting Style={StaticResource [yourcustomstyle}&quot; in your main window.\r<br />\n<br />\nIf you choose to change the default ModernWindow.xaml style (in Themes\\ModernWindow.xaml), you'll need to recompile the entire mui project.\r<br />\n<br />\nMy advice is to go with a custom keyed ModernWindow style, so you do not need to modify the mui source itself.<br />\n",
+    "PostedDate": "2013-08-18T12:38:38.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

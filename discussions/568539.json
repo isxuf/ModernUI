@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1308746",
+    "ThreadId": "568539",
+    "Html": "Hi,<br />\n<br />\nI am writing an app which uses Modern UI as the interface. I am using some custom controls, though, and I'd like them to be the same color as Modern UI. Specifically, I'm using Modern UI (Metro) Charts.<br />\n<br />\nIs there a way I can find the default color of the background (Dark Theme)? Or is there a way I can apply it directly to a control? Is there a Style?<br />\n<br />\nThanks in advance! This is an excellent project!<br />\n",
+    "PostedDate": "2014-09-28T11:57:10.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310042",
+    "ThreadId": "568539",
+    "Html": "Check out the <a href=\"https://mui.codeplex.com/wikipage?title=Theme%20resource%20reference\" rel=\"nofollow\">Theme resource reference</a>\r<br />\n<br />\nThe brushes for the light and dark themes are defined in ModernUI.Light.xaml and ModernUI.Dark.xaml.<br />\n",
+    "PostedDate": "2014-10-02T13:23:50.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

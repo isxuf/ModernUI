@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1094197",
+    "ThreadId": "457351",
+    "Html": "Hi kozw,<br />\n<br />\nI finally tried to use the EmptyWindow approach to convert my existing project:<br />\n<a href=\"https://edi.codeplex.com/\" rel=\"nofollow\">https://edi.codeplex.com/</a><br />\n<br />\ninto the direction of mui (see attached sample and screenshot). I redefined the<br />\nempty Window style such that it will look similar to VS2012 and it works great.<br />\n<br />\nThe EmtyWindow style is re-defined in: Edi/ModernWindowEx.xaml<br />\n<br />\nThere are just some minor issues I have looked into for quite a while now but<br />\ncannot seem to get solved:<br />\n<br />\n1&gt; The menu is not (fully) clickable in ExpressionDark since it is positioned in the Window drag area - so I can actually click on a main menu entry and drag the window while the menu itself does not respond at all (see screenshot)<br />\n<br />\n2&gt; The Minimize, Maximize, and Close buttons on the top right side are there but do not work at all - what am I missing here?<br />\n<br />\n3&gt; Is there a command or property to pop-up the system menu? I would like to use it when the user clicks on the icon.<br />\n<br />\nHere is a link to the source code and screenshot I was referring to:<br />\n<a href=\"https://edi.codeplex.com/wikipage?title=Edi%20goes%20mui\" rel=\"nofollow\">https://edi.codeplex.com/wikipage?title=Edi%20goes%20mui</a><br />\n<br />\nCan someone give me a hint on solving the listed problems?<br />\n<br />\nmui a great framework that cannot be missed thanks a lot :-)<br />\n<br />\nI found the answers to my problems in the meantime:<br />\n<br />\n1&gt; I use the attached property: shell:WindowChrome.IsHitTestVisibleInChrome=&quot;True&quot; to tell the menu bar and the icon image that it is not part of the WindowChrome that can be dragged.<br />\n<br />\n2&gt; Was just a coding mistake on my side. I use the original code from the WpfSample application and it works for me.<br />\n<br />\n3&gt; Is something to research independently from mui since I can specify a click event or command and connect it with an action like show a pop-up menu (system or custom)<br />\n<br />\nThanks again for the great work.<br />\n",
+    "PostedDate": "2013-09-18T13:17:15.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1135056",
+    "ThreadId": "457351",
+    "Html": "I had the same issue with your #1 question.  So much digging through google and these discussion boards and I finally come across your post.  So much time wasted for such an easy solution to making controls fully responsive while in the chrome area.\r<br />\n<br />\nThank you for enlightening me. :)<br />\n",
+    "PostedDate": "2013-12-12T07:26:37.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1135114",
+    "ThreadId": "457351",
+    "Html": "Hi Kadolphc,\r<br />\n<br />\nYou are welcome.\r<br />\nI actually managed to solve almost all of the problems stated above and released a version with MUI styles.\r<br />\nDigging around I've learned that some details are due to re-using the API from the components that MUI is based on.\r<br />\n<br />\nThats probably why it is not documented here.\r<br />\n<br />\nThe MUI project is otherwise a great resource both in terms of implementation and documentation :-)\r<br />\nThats part of the reason why I finally switched towards using it.<br />\n",
+    "PostedDate": "2013-12-12T08:30:53.353-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\r\nI have this two columns, the first is created for test, the second is the definitive column.\r\n\r\nThe first:\r\n```\r\n<DataGridTextColumn Binding=\"{Binding Note, Mode=OneWay}\" Header=\"Note\" CanUserSort=\"True\">\r\n\t<DataGridTextColumn.CellStyle>\r\n\t\t<Style TargetType=\"DataGridCell\">\r\n\t\t\t<Setter Property=\"ToolTip\" Value=\"{Binding Note}\" />\r\n\t\t</Style>\r\n\t</DataGridTextColumn.CellStyle>\r\n</DataGridTextColumn>\r\n```\r\n\r\nThe second:\r\n\r\n```\r\n<DataGridTemplateColumn SortMemberPath=\"Note\">\r\n\t<DataGridTemplateColumn.HeaderTemplate>\r\n\t\t<DataTemplate>\r\n\t\t\t<Path\r\n\t\t\t\tData=\"{StaticResource IconNote}\"\r\n\t\t\t\tStyle=\"{StaticResource smplMngmntIconHeader}\"\r\n\t\t\t>\r\n\t\t\t\t<Path.ToolTip>\r\n\t\t\t\t\t<TextBlock>\r\n\t\t\t\t\t\t<Run Text=\"{StaticResource tooltTipHeaderNote}\"/>\r\n\t\t\t\t\t</TextBlock>\r\n\t\t\t\t</Path.ToolTip>\r\n\t\t\t</Path>\r\n\t\t</DataTemplate>\r\n\t</DataGridTemplateColumn.HeaderTemplate>\r\n\t<DataGridTemplateColumn.CellTemplate>\r\n\t\t<DataTemplate>\r\n\t\t\t<Path\r\n\t\t\t\tData=\"{StaticResource IconNote}\"\r\n\t\t\t\tVisibility=\"{Binding Note, Converter={StaticResource smplMngmntIconDataGridVisibility}}\"\r\n\t\t\t\tStyle=\"{StaticResource smplMngmntIconDataGrid}\"\r\n\t\t\t>\r\n\t\t\t\t<Path.ToolTip>\r\n\t\t\t\t\t<TextBlock Text=\"{Binding Note, Converter={StaticResource SampleBlendingFormatString}}\"/>\r\n\t\t\t\t</Path.ToolTip>\r\n\t\t\t</Path>\r\n\t\t</DataTemplate>\r\n\t</DataGridTemplateColumn.CellTemplate>\r\n</DataGridTemplateColumn>\r\n```\r\n\r\nThe tooltip on first column is shown always, without problem.\r\nIn the second column i created a convert for show or hide the icon, but the tooltip for some icon is shown for others no.\r\n\r\nWhy?\r\n\r\nThanks.",
+    "LastUpdatedDate": "2015-07-07T01:09:20.027-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2015-07-07T01:08:42.883-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataGrid: the tooltips on Path are not always visibile",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21274
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1471286,
+      "FileName": "wpf_path_tooltip.jpg",
+      "DownloadUrl": ".\\1471286"
+    }
+  ],
+  "Comments": []
+}

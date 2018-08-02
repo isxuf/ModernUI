@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1032138",
+    "ThreadId": "440687",
+    "Html": "Can someone give me a few examples of various applications of the &quot;ModernDialogs&quot;? (<strong>Use a progress bar in the dialog, different possibilities for the use of buttons, including a discard to dialog with e.Cancel=true, embed your own content, multi-page dialogs with navigation using forward and back buttons ke XamlSpy</strong>)\r<br />\n<br />\nA contemporary interaction with the user of the application when using buttons that use only a close button is hardly feasible. In the program XamlSpy All dialogues are used to interact with the user whose replica unfortunately difficult succeed. \r<br />\nThank you for a quick help.\r<br />\n<br />\nSiebenstein\r<br />\n<br />\nm:ui ist a very great<br />\n",
+    "PostedDate": "2013-04-17T18:11:53.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081507",
+    "ThreadId": "440687",
+    "Html": "I just started using MUI, so the late response. I just subclassed ModernDialog, and it seems to be working out fine. I can put custom content, buttons etc.<br />\n",
+    "PostedDate": "2013-08-16T15:03:25.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

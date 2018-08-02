@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1029991",
+    "ThreadId": "440170",
+    "Html": "Hi, I'd like to understand a little logic for loading and unloading controls.\r<br />\n<br />\nThat's the test I found out what's going on lazy loading of the control, that is when I first turn to control, he creates, then called his method Loaded. When I choose a different menu is interesting, the method Loaded, then Unloaded, then again and again Loaded Unloaded.\r<br />\n<br />\nAdvice on what happens before the load of the control of his discharge, and as such it is better to use Unloaded to upload data and free up resources that are not yet needed?<br />\n",
+    "PostedDate": "2013-04-13T07:21:20.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1030065",
+    "ThreadId": "440170",
+    "Html": "Content in a ModernFrame is shown using the TransitioningContentControl. This content control internally uses two content presenters; one for the current content and one for the previous content. This is done to support fluent transitions from one content to another. The moment content is removed it is moved to the second content presenter, which causes a Loaded event on previous content.\r<br />\n<br />\nGeneral advice; don't rely on Load and Unload events. Implement the IContent interface for your content and use the OnNavigatedFrom or OnNavigatingFrom methods to handle content closure.<br />\n",
+    "PostedDate": "2013-04-13T13:24:42.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

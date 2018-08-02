@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1288568",
+    "ThreadId": "560761",
+    "Html": "Hi,\r<br />\n<br />\nHow can I create an empty window style? I have tried to download the FirstFloor.ModernUI.WPF4 from Download section, compiled and imported the DLL file into my project already, but it still didn't work. \r<br />\n<br />\nCan anyone guide me step-by-step on how to achieve this?\r<br />\n<br />\nThanks!\r<br />\nSeang<br />\n",
+    "PostedDate": "2014-08-09T20:44:10.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1288613",
+    "ThreadId": "560761",
+    "Html": "Create a ModernUI app as outlined in the <a href=\"https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app\" rel=\"nofollow\">documentation</a>. Make sure you follow the steps specific for WPF4.<br />\n<br />\nThen set the style of the MainWindow.xaml like so:<br />\n<div style=\"color:Black;background-color:White;\"><pre>\r\n<span style=\"color:Blue;\">&lt;</span><span style=\"color:#A31515;\">mui</span><span style=\"color:Blue;\">:</span><span style=\"color:#A31515;\">ModernWindow</span> <span style=\"color:Red;\">...</span> <span style=\"color:Red;\">Style</span><span style=\"color:Blue;\">=</span><span style=\"color:Black;\">&quot;</span><span style=\"color:Blue;\">{StaticResource EmptyWindow}</span><span style=\"color:Black;\">&quot;</span> <span style=\"color:Blue;\">/&gt;</span>\r\n</pre></div><strong>Important</strong>: I just checked in ModernWindow style updates for WPF4. These updates are not released yet, you need to compile the source yourself for now. I'm hoping to create a new release soon.<br />\n",
+    "PostedDate": "2014-08-10T03:39:08.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1311503",
+    "ThreadId": "569303",
+    "Html": "Hi,<br />\nI have an application that contain 2 frame (frame1, frame2)<br />\nFrame 2 is displayed when click on &quot;Send&quot; button in the frame 1.<br />\nIn frame 2 I have a progress bar that describe the progress of sending message.<br />\nI would like to go back to frame 1 when the progress bar is 100%<br />\nPlease find attached my sample code.<br />\n<a href=\"https://onedrive.live.com/?cid=9c05a4aa58786e4c&amp;id=9C05A4AA58786E4C%21149&amp;ithint=folder,zip&amp;authkey=!AKAmCxw1EN44CRc\" rel=\"nofollow\">Link to the Sample</a>  <br />\n",
+    "PostedDate": "2014-10-08T04:17:25.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1313759",
+    "ThreadId": "569303",
+    "Html": "Your sample contains 2 pages (page1 and page2), not two frames. With a single frame navigation is fairly easy in code. In the code behind of the Page2.xaml you could use the following to navigate the parent frame to Page1;<br />\n<pre><code>using FirstFloor.ModernUI.Windows.Navigation;\n\nvar frame = NavigationHelper.FindFrame(null, this);\nframe.Source = NavigationHelper.ToUri(&quot;/Content/Page1.xaml&quot;);</code></pre>\n\n",
+    "PostedDate": "2014-10-15T14:16:30.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1314117",
+    "ThreadId": "569303",
+    "Html": "Thank you kozw.\r<br />\nThis solution works fine.\r<br />\nthank you very much.<br />\n",
+    "PostedDate": "2014-10-16T14:10:34.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "If you have open a TitleLink (e.g. Settings) that is not part of a named LinkGroup (no GroupName is set) then you see the settings page and the navigation of the other groups with the last visited one still marked as active. But the Link of the page went to inactive. Now you can only click an inactive LinkGroup. The already activated (former shown) LinkGroup can only be reached using the back button.\n\nActivating a TitleLink should set all LinkGroups to inactive, of course except if it is also a Link in a named group that will replace the other groups.",
+    "LastUpdatedDate": "2013-06-21T14:19:02.453-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-21T14:19:02.453-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Navigation from TitleLink to active LinkGroup",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19888
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

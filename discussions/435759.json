@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1011793",
+    "ThreadId": "435759",
+    "Html": "Is there any way to access titlebar or other elements of main window in code ( add some custom controls or change existing )?<br />\n",
+    "PostedDate": "2013-03-07T06:51:55.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011912",
+    "ThreadId": "435759",
+    "Html": "You can access the ModernWindow instance that is hosting your user control as follows (where this is your usercontrol instance);<br />\n<pre><code>var wnd = Window.GetWindow(this) as ModernWindow;\nif (wnd != null) {\n  ..\n}</code></pre>\n\nIf you need to change the appearance of the ModernWindow you probably want to create a ModernWindow ControlTemplate and assign it to your ModernWindow instances.<br />\n",
+    "PostedDate": "2013-03-07T10:25:49.263-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

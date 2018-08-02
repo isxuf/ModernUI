@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1091634",
+    "ThreadId": "456653",
+    "Html": "I read several topics about this, but I have not found a way to create something like Skype: \r<br />\n<br />\nAt any time I would like to replace the entire content of the MainWindow with only two fields for \r<br />\nthe username and password without back button and menu, after login all should be restored at previous state.\r<br />\n<br />\nI thought of something like this:<br />\n<pre><code>//&quot;this&quot; is the MainWindow\nthis.Style = App.Current.Resources[&quot;EmptyWindow&quot;] as Style;\nthis.Content = new LoginUserControl();</code></pre>\n\nand for the restore:<br />\n<pre><code>this.ContentSource = new Uri(&quot;/Page1.xaml&quot;, UriKind.Relative);\nthis.Style = null;</code></pre>\n\nThere is a better solution?<br />\n",
+    "PostedDate": "2013-09-12T02:40:09.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1092668",
+    "ThreadId": "456653",
+    "Html": "Try backing up the content and style in a variable and assign them whenever you need them back.<br />\n",
+    "PostedDate": "2013-09-14T06:12:31.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

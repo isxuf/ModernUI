@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1101319",
+    "ThreadId": "459819",
+    "Html": "Hi,\r<br />\nhow can I hide the Window control Options Minimize, Maximize/Normal, Close?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-10-01T06:41:12.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1102587",
+    "ThreadId": "459819",
+    "Html": "see the thread: <a href=\"https://mui.codeplex.com/discussions/446272\" rel=\"nofollow\">ModernWindow as full screen window for kiosk app (without min max close)</a><br />\n",
+    "PostedDate": "2013-10-02T00:31:41.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1102666",
+    "ThreadId": "459819",
+    "Html": "Thank you for your reply. I did indeed just create a custom Style for my Windows.  \r<br />\n",
+    "PostedDate": "2013-10-02T03:21:17.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1469615",
+    "ThreadId": "459819",
+    "Html": "Hi Campl3r<br />\n<br />\nI'm trying to hide those buttons as well. Can you point me in the right direction or maybe post some code for stylying the Main Window and hide those buttons?<br />\n<br />\nBest regards<br />\n",
+    "PostedDate": "2016-04-10T09:50:44.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

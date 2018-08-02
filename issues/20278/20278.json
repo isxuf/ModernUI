@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "I would really appreciate it if a Visibility property is implemented for the Link and LinkGroup. This would allow conditionally hiding/showing links in the UI.",
+    "LastUpdatedDate": "2014-12-17T12:53:49.74-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-10-08T02:27:09.527-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Visibility property for Link and LinkGroup",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 8,
+    "Id": 20278
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "That would be great!",
+      "PostedDate": "2014-01-22T05:00:58.037-08:00",
+      "Id": 158557
+    }
+  ]
+}

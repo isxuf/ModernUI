@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "The binding to ErrorContent will throw a lot of exceptions when there is no errors.\nTry replacing this:\n```\n Text=\"{Binding ElementName=adorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}\"\n```\nWith this\n```\nText=\"{Binding ElementName=adorner, Path=AdornedElement.(Validation.Errors).CurrentItem.ErrorContent}\"\n```",
+    "LastUpdatedDate": "2013-12-26T06:58:46.223-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-12-26T06:58:46.223-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Validation.ErrorTemplate",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20562
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

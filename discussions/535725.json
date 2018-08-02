@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1215431",
+    "ThreadId": "535725",
+    "Html": "Hello, \r<br />\n<br />\nSo Far I am pretty happy with this Lib. I am wondering about updating the Accent color while the app is still open \r<br />\n<br />\nBasically I have an app that throws a 1 or 0 into a database identifying that the last function raised an exception. Now I would like to have the accent color change to yellow for instance so identify an error state. I can get it to change on application start up, but i am unable to get it to change whilst the application is still open. <br />\n",
+    "PostedDate": "2014-02-26T20:10:46.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1225283",
+    "ThreadId": "535725",
+    "Html": "Hope this helps<br />\n<pre><code>AppearanceManager.Current.AccentColor = System.Windows.Media.Colors.Yellow;</code></pre>\n\n",
+    "PostedDate": "2014-03-21T09:42:14.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

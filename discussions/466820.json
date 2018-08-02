@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1119792",
+    "ThreadId": "466820",
+    "Html": "I'm using Moder UI for my application and it's a great platform. \r<br />\n<br />\nI have a main view (PageMain) and the main view has a ModernTab which has 2 tabs (PageTab1, PageTab2). <strong>How can PageTab1 and PageTab2 get the ViewModel used by PageMain?</strong>\r<br />\n<br />\nMy implementation now is to define an instance of my ViewModel as a member of My.Application so it can be referred from anywhere by &quot;My.Application.MyViewModel. But I'm not sure if this is a good way to implement it.\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-11-07T07:37:16.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120420",
+    "ThreadId": "466820",
+    "Html": "Can't you set the DataContext for the ModernTab control to the PageMain's viewmodel?  IIRC, all the children of the ModernTab control will inherit the parent's DataContext.<br />\n",
+    "PostedDate": "2013-11-08T04:45:17.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120540",
+    "ThreadId": "466820",
+    "Html": "<strong>ccbVT wrote:</strong><br />\n<blockquote>\nCan't you set the DataContext for the ModernTab control to the PageMain's viewmodel?  IIRC, all the children of the ModernTab control will inherit the parent's DataContext.<br />\n</blockquote>\nThank you ccbVT. You are right, all children of the ModernTab control do inherit the parents DataContext. So I actually don't need set Context for PageTab1 and PageTab2.<br />\n",
+    "PostedDate": "2013-11-08T09:03:02.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

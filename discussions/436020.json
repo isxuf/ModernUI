@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1012818",
+    "ThreadId": "436020",
+    "Html": "What gives? And how do i fix that?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-03-09T13:01:58.893-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1012822",
+    "ThreadId": "436020",
+    "Html": "Could you be a bit more specific? What are you trying to achieve and where does this error occur?<br />\n",
+    "PostedDate": "2013-03-09T13:25:14.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1012884",
+    "ThreadId": "436020",
+    "Html": "Pardon me for asking such question. I thought this issue is well aware by the developer since all i did was just download the source code and open in visual studio 2012.\r<br />\n<br />\nheres what i do to get this.<br />\n<ol>\n<li>download the source.</li>\n<li>open in visual studio.</li>\n<li>kill the tfs integration.</li>\n<li>rebuild the solution. no problem here.</li>\n<li>open \\mui-98904\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Pages\\ContentLoader.xaml in visual studio.</li>\n<li>you can see clearly, in the gui of visual studio, Navigation failed. Cannot use absolute URI.</li>\n<li>\nyou can see this message on other xaml file apparently.<br />\n</li>\n</ol>\ni did try to use urimapper, but i cant find anywhere to use that.\r<br />\n<br />\nthanks. again, sorry.<br />\n",
+    "PostedDate": "2013-03-09T21:24:40.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013012",
+    "ThreadId": "436020",
+    "Html": "Ah okay, the DefaultContentLoader won't work at design-time. It works fine at run-time. I've checked in an update that performs a design-time mode check. The error should not occur anymore.<br />\n",
+    "PostedDate": "2013-03-10T14:27:09.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013318",
+    "ThreadId": "436020",
+    "Html": "Thanks. Works perfect now.<br />\n",
+    "PostedDate": "2013-03-11T08:49:57.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

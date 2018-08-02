@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am using ModernDialog to show success/failure messages, and I'd like to add an icon to the dialog to more clearly indicate each case:\r\n\r\nif (res)\r\n                ModernDialog.ShowMessage(\r\n                    \"User \" + _globalSettingsViewModel.WindowsAdminUser + \" connected successfully via WMI.\",\r\n                    \"WMI Connection Succeeded\", MessageBoxButton.OK);\r\n            else\r\n                ModernDialog.ShowMessage(\r\n                    \"WMI connection failed for \" + _globalSettingsViewModel.WindowsAdminUser,\r\n                    \"WMI Connection Failed\", MessageBoxButton.OK);\r\n\r\nHow can I do this?",
+    "LastUpdatedDate": "2014-11-16T03:30:36.913-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-10-14T14:50:26.483-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Display an icon on ModernDialog",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 21252
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

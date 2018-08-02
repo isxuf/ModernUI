@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1109611",
+    "ThreadId": "462841",
+    "Html": "I have a class containing const string variables that hold message text.<br />\nI am trying to assign this const string variable to BBCode property of BBCodeBlock control.<br />\n<pre><code>My string variable MSG_GREETING value is &quot;Welcome [b]{0}[/b].&amp;#13;&amp;#10;&amp;#13;&amp;#10;{1}&quot;</code></pre>\n\nI set the BBCode value like this:<br />\nbcbGreetingMsg.BBCode = String.Format(MSG_GREETING, _username, _greetingmessage);<br />\n<br />\n_username, _greetingmessage are string variable containing text retrieved from db.<br />\n<br />\nThe problem is the characters responsible for rendering a new line/ line break are displayed verbose and no new line/line break gets added.<br />\nHowever the [b] tag is correctly formatted and the username part is correctly rendered in bold.<br />\n<br />\nNow, if I set the message text at design time like this:<br />\n<pre><code>&lt;mui:BBCodeBlock x:Name=&quot;bcbGreetingMsg&quot;  BBCode=&quot;Welcome [b]{0}[/b].&amp;#13;&amp;#10;&amp;#13;&amp;#10;{1}&quot; Margin=&quot;0,0,0,32&quot; /&gt;</code></pre>\n\nand at run time I do <br />\nString.Format(bcbGreetingMsg.BBCode, _username, _greetingmessage);<br />\nthe new line/ line break is rendered correctly. Strange!<br />\n<br />\nCan someone here please help me out.<br />\n<br />\nNote: I am not using MVVM in this project but classic WinForms style event driven programming. Poor me I know. :(<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-10-20T00:12:00.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1116955",
+    "ThreadId": "462841",
+    "Html": "Guys! I am still struggling with this. Any help will be greatly appreciated.<br />\n",
+    "PostedDate": "2013-11-03T08:02:51.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1116956",
+    "ThreadId": "462841",
+    "Html": "Guys! I am still struggling with this. Any help will be greatly appreciated.<br />\n",
+    "PostedDate": "2013-11-03T08:02:55.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1116957",
+    "ThreadId": "462841",
+    "Html": "Guys! I am still struggling with this. Any help will be greatly appreciated.<br />\n",
+    "PostedDate": "2013-11-03T08:03:20.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1337154",
+    "ThreadId": "462841",
+    "Html": "The problem is not in line breaks. Are you sure that _username and _greetingmessage doesn't contains following symbols '[' ']' ?<br />\n",
+    "PostedDate": "2014-12-25T08:30:31.04-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Yep, finally got some time to release 1.0.6",
+    "ClosedDate": "2014-08-10T12:18:54.237-07:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "I see 1.0.5 is from July 2013. The most recent changeset is 107668 on Mar 29, 2014.\n\nIs it time for a new release? 1.0.6 perhaps? I'd love to be able to get latest using NuGet, for example: \n\n```\n<package id=\"ModernUI.WPF\" version=\"1.0.6\" targetFramework=\"net452\" />\n```\n\nUnless there is a way to get the latest changeset using NuGet?",
+    "LastUpdatedDate": "2014-08-10T12:18:54.237-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-05-20T10:43:38.043-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Time for a new release?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 21007
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

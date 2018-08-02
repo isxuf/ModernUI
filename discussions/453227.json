@@ -1,0 +1,138 @@
+[
+  {
+    "Id": "1079883",
+    "ThreadId": "453227",
+    "Html": "Hello,<br />\n<br />\nI have been frustrated for hours, and cannot find a solution.<br />\n<br />\nI am trying to start up a mui:ModernWindow Class defined in a WPF project, &quot;from a Windows Form Project,&quot; by referencing the WPF project from the Windows Forms project.<br />\n<br />\nThe reason this being is because I have an ApplicationContext in the Windows Forms project that requires the default project to be Windows Forms, and not WPF.<br />\n<br />\nI can start and run the WPF project successfully when it is set as the startup item. Everything works 100%.<br />\n<br />\n However, whenever I try to reference to the WPF project from the Windows Forms project, by doing the following:<br />\n<pre><code>Dim x As New ModernUIExperiment.main\nx.show()</code></pre>\n\nWhere the WPF mui:ModernWindow is the &quot;main&quot; class.<br />\n<br />\nDoing this brings up the window, as expected. However, when clicking the link that shows the user control, an infinite line of &quot;loading dots&quot; appear.<br />\n<br />\nThe guide I have followed is below:<br />\n<a href=\"http://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app\" rel=\"nofollow\">My first Modern UI app</a><br />\n<br />\nThings I have tried to resolve the problem that did <strong>not</strong> work:<br />\n<ul>\n<li>Set the Source Property for the link externally during runtime:</li>\n</ul>\n<pre><code>Dim x As New ModernUIExperiment.main\nx.ContentSource = New Uri(&quot;/ModernUIExperiment;component/stuff.xaml&quot;, UriKind.Relative)\nx.link.Source = New Uri(&quot;/ModernUIExperiment;component/stuff.xaml&quot;, UriKind.Relative)\nx.Show()</code></pre>\n\n<ul>\n<li>\nCopy exactly as best as the IDE would let me, Reference-to-Reference of the WPF project to the Windows Forms Project<br />\n</li>\n</ul>\nHowever, I did note that I <strong>was</strong> able to get this method to work, from a <strong>separate</strong> WPF project, to WPF project containing the ModernUI using the following:<br />\n<pre><code>Dim x As New ModernUIExperiment.main\nx.ContentSource = New Uri(&quot;/ModernUIExperiment;component/stuff.xaml&quot;, UriKind.Relative)\nx.link.Source = New Uri(&quot;/ModernUIExperiment;component/stuff.xaml&quot;, UriKind.Relative)\nx.Show()</code></pre>\n\nThe same exact code, but it works, 100% as expected.<br />\n<br />\nSo I have come to the conclusion that it's something to do with the startup project being WPF created. In my opinion, this whole situation seems like a bug to me.<br />\n<br />\nIf there's is anything I am overseeing, or if you have any questions or comments, feel free to ask. Any help is greatly appreciated :).<br />\n<br />\nP. S. I am using Visual Studio 2012 Express, with Visual Basic<br />\n<br />\nEDIT:<br />\nI did notice however, if I tried to set the &quot;x.ContentSource&quot; from a Windows Forms project, I get the error: &quot;Object reference not set to an instance of an object.&quot; in PresentationFramework.dll. This may be a clue to why this is happening. <br />\n<br />\nThanks,<br />\n<ul>\n<li>Jake M.</li>\n</ul>\n",
+    "PostedDate": "2013-08-12T17:51:38.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1080364",
+    "ThreadId": "453227",
+    "Html": "After some more experimenting, I have come to the conclusion that the root cause occurs when setting the ModernWindow property &quot;ContentSource&quot;, either through XAML or programatically. While it does technically get set, through some testing:<br />\n<pre><code>Dim x As New ModernUIExperiment.main\nx.ContentSource = New Uri(&quot;/ModernUIExperiment;component/stuff.xaml&quot;, UriKind.Relative)\nx.link.Source = New Uri(&quot;/ModernUIExperiment;component/stuff.xaml&quot;, UriKind.Relative)\n\nMsgBox(x.ContentSource.OriginalString)\n\nx.Show()\n</code></pre>\n\nIt does not get a null reference exception in my project's executable (as it would if I did not use the New keyword, so it <strong>does</strong> get set). However, even after confirming it gets set, and &quot;then&quot; showing the window, the null reference exception still occurs in PresentationFramework.dll.<br />\n<br />\nI can still set the link.Source property only, and everything except the &quot;infinite loading dots&quot; and ContentSource works fine (to my knowledge).<br />\n<br />\nAgain, this does not happen in WPF projects, but only Windows Forms projects. I feel like a reference is missing, but I even tried adding <strong>all possible</strong> references under the &quot;Assemblies&quot; section, and that didn't even work. I get no errors, no warnings, no messages, nothing.<br />\n",
+    "PostedDate": "2013-08-13T23:13:47.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081875",
+    "ThreadId": "453227",
+    "Html": "Make sure a valid WPF Application object is created as well, and the Application.Resources dictionary is filled with the mui resource files. See also App.xaml of the demo app (available in the source code).<br />\n",
+    "PostedDate": "2013-08-18T12:33:23.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081974",
+    "ThreadId": "453227",
+    "Html": "The main project does has a generated WPF User Control already, and is actually being used in an ElementHost. Could you provide some examples on how to fill that dictionary with resource files? I'm still fairly new to WPF. I did give that project an appropiately modified Application.xaml (which is what I assumed you meant), and that did not resolve the issue. Instead, I get an error:\r<br />\n<br />\n'Application' is ambiguous, imported from the namespaces or types ;system.Windows.Forms, GUI'.\r<br />\n<br />\nThe project I am attempting to store the ModernUI window in is a Windows Forms Application.<br />\n",
+    "PostedDate": "2013-08-18T21:46:05.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082080",
+    "ThreadId": "453227",
+    "Html": "I've created a sample forms project that properly initializes and displays a mui window. Download <a href=\"http://xamlspy.com/Downloads/Test/formsapp.zip\" rel=\"nofollow\">here</a><br />\n",
+    "PostedDate": "2013-08-19T03:58:35.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082214",
+    "ThreadId": "453227",
+    "Html": "Thank you for the help. This does create the window as expected, but this is not the part I am stuck at. I have gotten this far. The part of loading a WPF User Control into that MUI window is what the problem is. What's odd though (and this has happened on several occasions) as soon as an add an WPF User Control through the IDE, creating UserControl1, the following errors occur:<br />\n<br />\nError\t1\tThe name &quot;ModernWindow&quot; does not exist in the namespace &quot;<a href=\"http://firstfloorsoftware.com/ModernUI\" rel=\"nofollow\">http://firstfloorsoftware.com/ModernUI</a>&quot;.\tC:\\Users\\Jake\\Desktop\\formsapp\\FormsApp\\MuiWindow.xaml\t1\t1\tFormsApp<br />\nError\t3\tThe name &quot;LinkGroup&quot; does not exist in the namespace &quot;<a href=\"http://firstfloorsoftware.com/ModernUI\" rel=\"nofollow\">http://firstfloorsoftware.com/ModernUI</a>&quot;.\tC:\\Users\\Jake\\Desktop\\formsapp\\FormsApp\\MuiWindow.xaml\t10\t9\tFormsApp<br />\nError\t5\tThe name &quot;Link&quot; does not exist in the namespace &quot;<a href=\"http://firstfloorsoftware.com/ModernUI\" rel=\"nofollow\">http://firstfloorsoftware.com/ModernUI</a>&quot;.\tC:\\Users\\Jake\\Desktop\\formsapp\\FormsApp\\MuiWindow.xaml\t12\t17\tFormsApp<br />\n<br />\nEven though it &quot;just&quot; worked. This has happened on multiple computers of mine, and multiple installations, so I know it's not my copy of Visual Studio.<br />\n<br />\nWhat I typically do to resolve this issue is to re-add and remove the reference to FirstFloor.ModernUI until it works, but even if I do get it to work, the window still won't load the WPF user control.<br />\n<br />\nEDIT:<br />\n<br />\nI was able to add the WPF User Control, and set the Source property, despite the xaml errors. It ran and displayed the user control just as expected. I would like to boil down what specific aspect caused this success though, so I can apply it to my application :).<br />\n<br />\nAlso, where is the ResourceDictionary located? In my project, I typically embed it into the MUI window itself. In your example, I couldn't find the file it was stored in.<br />\n",
+    "PostedDate": "2013-08-19T08:16:46.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082352",
+    "ThreadId": "453227",
+    "Html": "Hmm, interesting issue. Adding and removing mui references until it works doesn't sound like a solid workaround. Why don't you keep your WPF app and Forms app completely separate and use Process.Start from within your forms app to lauch the WPF app?<br />\n",
+    "PostedDate": "2013-08-19T13:40:01.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082434",
+    "ThreadId": "453227",
+    "Html": "I have tried that, and it <em>does</em> work. However, as a preference I wanted to keep the GUI in the executable, to avoid setting a bunch of handlers (around 100) using the AddHandler keyword, and avoid the GUI being in a separate DLL.<br />\n",
+    "PostedDate": "2013-08-19T18:17:48.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082457",
+    "ThreadId": "453227",
+    "Html": "I have found the solution :D.<br />\n<br />\nBy analyzing some of your code, it turns out all that I need to get this to work in Windows Forms is to add the follow code before showing the window:<br />\n<pre><code>If Windows.Application.Current Is Nothing Then\n    Dim app As New Windows.Application\nEnd If</code></pre>\n\nThanks for all your help :).<br />\n",
+    "PostedDate": "2013-08-19T19:25:39.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083408",
+    "ThreadId": "453227",
+    "Html": "Wasn't sure if I should have started a separate thread for this or not, because it pertains to the example earlier, and other instances of Modern UI.\r<br />\n<br />\nIn my project (and yours for testing) I added some controls to a user control, such as a textbox, button, etc. What I noticed though however, is that in the textboxes, or anything with text, I can't type in them. Only the backspace key works. Any ideas on this?<br />\n",
+    "PostedDate": "2013-08-21T20:42:03.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083582",
+    "ThreadId": "453227",
+    "Html": "I think displaying a WPF window in a forms app is not a recommended practice at all. Unless you have very good reasons to do so, I would suggest separating the two and launch WPF apps using Process.Start.<br />\n",
+    "PostedDate": "2013-08-22T05:01:10.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083594",
+    "ThreadId": "453227",
+    "Html": "Alright, I'll try that and see how it goes and get back to you.<br />\n",
+    "PostedDate": "2013-08-22T05:29:55.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083627",
+    "ThreadId": "453227",
+    "Html": "I tried this in a WPF Class Library project (what I would consider more stable than a Windows Forms Class Library project), and it still did not work. I was calling from a Windows Forms project. However, when done in a pure WPF application, the textboxes work. So I've come to the conclusion that my Windows Forms project is missing something other than:<br />\n<pre><code>If Windows.Application.Current Is Nothing Then\n    Dim app As New Windows.Application\nEnd If</code></pre>\n\nIt doesn't have an Application.xaml, dunno if that has anything to do with it or not. I would assume it would have something to do with event handlers. The reason why I want to stick with Windows Forms, is because the core of my program was written in it originally, and didn't want to port several thousand lines of code. However if this is what it takes, I'll leave it as a last resort.<br />\n",
+    "PostedDate": "2013-08-22T06:50:44.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084165",
+    "ThreadId": "453227",
+    "Html": "I also tried adding an Application.xaml to my project, and set the Modern UI resourcesthere as shown in the guide. This works on a regular WPF project, just like the guide shows. However in my Windows Forms one, it doesn't. Is it possible the fact that the textboxes not working and the universal resources not loading could be related?<br />\n",
+    "PostedDate": "2013-08-23T06:39:27.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084905",
+    "ThreadId": "453227",
+    "Html": "Just adding an App.xaml to a WinForm project, doesn't do anything. In a WPF project, code is generated that ensures the App class is created in the main entry point. A file named App.g.i.cs is created in obj\\debug and contains the correct initialization. You'll need to mimic this in a forms project.<br />\n<br />\nBut again, I strongly advice against this, since it's not an official supported scenario. The focus issue you encounter with textboxes might be an indication of some problem with WM messages being handled incorrectly.<br />\n<br />\nCode re-use should be fairly easy, you can reference your WinForm exe in your WPF project.<br />\n",
+    "PostedDate": "2013-08-26T06:08:43.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1085166",
+    "ThreadId": "453227",
+    "Html": "I've decided to go through the route of a full WPF conversion with a brand new GUI. This seems time consuming, but I believe that overall will be more efficient and easier in the long run. Thanks for the advice.<br />\n",
+    "PostedDate": "2013-08-26T18:10:31.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1221929",
+    "ThreadId": "453227",
+    "Html": "I have a Windows Forms app and show Wpf windows with no problems. \r<br />\nIn case anyone else wants to use ModernUI from Windows Forms, here is what to do:-<br />\n<pre><code>// do all this before you show your wpf window\nif ( System.Windows.Application.Current == null ) \n{ \n   var wpfApp = new System.Windows.Application();\n   wpfApp.ShutdownMode = System.Windows.ShutdownMode.OnExplicitShutdown; // this allows the wpf window to be closed and then shown again.\n\n   Action&lt;string&gt; addMergedDictionary = path =&gt;\n      System.Windows.Application.Current.Resources.MergedDictionaries.Add( \n         new System.Windows.ResourceDictionary { \n            Source = new Uri( path, UriKind.RelativeOrAbsolute ) } );\n\n   addMergedDictionary( &quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; );\n   addMergedDictionary( &quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot; );\n   addMergedDictionary( &quot;/FirstFloor.ModernUI;component/Assets/ModernWindowEx.xaml&quot; );\n}\n</code></pre>\n\nYou can also do this if you want your wpf window to be modeless:-<br />\n<pre><code>               var myWpfWindow = new myWpfWindow();\n               System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop( myWpfWindow );\n               myWpfWindow.Show();\n</code></pre>\n\n",
+    "PostedDate": "2014-03-12T08:39:53.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

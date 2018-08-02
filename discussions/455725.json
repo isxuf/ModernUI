@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1089086",
+    "ThreadId": "455725",
+    "Html": "It seems that the satellite assembly won't work with tooltip of system buttons on ModernWindow.<br />\n<br />\nFirstFloor.ModernUI.Resources.zh-Hans.txt<br />\n<pre><code>Cancel=取消\nClose=关闭\nMaximize=最大化\nMinimize=最小化\nNavigationFailed=导航失败\nNavigationFailedFrameNotFound=不能导航到 {0}，找不到任何 ModernFrame 目标 '{1}'\nNavigationFailedSourceNotSpecified=不能导航到 {0}，未指定源\nNo=否\nOk=确定\nRestore=还原\nUIThreadRequired=操作需要UI线程\nUnexpectedToken=意外的令牌\nUnknownTokenType=未知令牌类型\nYes=是</code></pre>\n\n",
+    "PostedDate": "2013-09-05T22:24:57.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

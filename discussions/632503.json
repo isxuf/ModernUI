@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1417245",
+    "ThreadId": "632503",
+    "Html": "I already have a main window(Modern window), I want to create another window in a new STA thread.But I get the error \r<br />\n&quot;cannot access freezable Shell.WindowChrome across threads bec it cannot be frozenause&quot; \r<br />\n<br />\nFor traditional window It is OK. \r<br />\n<br />\nMy Code as follow: <br />\n<pre><code>private void ModernWindow_Loaded(object sender, RoutedEventArgs e)\n        {\n            var demoThread = new Thread(new ThreadStart(\n                delegate()\n                {\n                    ModernWindow w = new ModernWindow();\n                    w.Closed += (sender1, e1) =&gt; w.Dispatcher.InvokeShutdown();\n                    w.Show();\n                    System.Windows.Threading.Dispatcher.Run();\n                }\n                ));\n            demoThread.SetApartmentState(ApartmentState.STA);\n            demoThread.IsBackground = true;\n            demoThread.Start();\n        }</code></pre>\n\nThank you very much<br />\n",
+    "PostedDate": "2015-04-23T20:02:18.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1417256",
+    "ThreadId": "632503",
+    "Html": "I find a solution my-self.\r<br />\n<br />\ncode:<br />\n<pre><code>private void ModernWindow_Loaded(object sender, RoutedEventArgs e)\n        {\n            var demoThread = new Thread(run);\n            demoThread.Start();\n        }\n\n        private void run(object obj)\n        {\n            App.Current.Dispatcher.Invoke(new Action(\n                    () =&gt;\n                    {\n                        var dlg = new ModernWindow();\n                        dlg.ShowDialog();\n                    }\n                ));\n        }</code></pre>\n\n",
+    "PostedDate": "2015-04-23T21:52:50.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

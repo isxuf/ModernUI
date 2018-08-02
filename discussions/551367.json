@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1265105",
+    "ThreadId": "551367",
+    "Html": "Hello together,\r<br />\n<br />\nI will display a picture in an image control. By designtime the control display the image. When the programm is runnning the image control doesn´t display the picture. I can´t explain it.\r<br />\n<br />\nHere a simple example:<br />\n<pre><code>&lt;UserControl x:Class=&quot;ModernUIApp1.Pages.Home&quot;\n           \n..... &gt;\n    &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n        &lt;ScrollViewer&gt;\n            &lt;Image  VerticalAlignment=&quot;Stretch&quot; HorizontalAlignment=&quot;Stretch&quot; Source=&quot;/NoCam.png&quot;/&gt;\n        &lt;/ScrollViewer&gt;\n    &lt;/Grid&gt;\n&lt;/UserControl&gt;</code></pre>\n\nThe path is correct. The image is stored in the root of my solution.\r<br />\n<br />\nBy designtime:\r<br />\n<img src=\"http://abload.de/img/designtime2hx0i.png\" alt=\"Image\" />\r<br />\n<br />\nBy runtime:\r<br />\n<img src=\"http://abload.de/img/runtime6byfk.png\" alt=\"Image\" />\r<br />\n<br />\nAny idea?\r<br />\n<br />\nWith greetings<br />\n",
+    "PostedDate": "2014-07-12T05:15:00.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1265107",
+    "ThreadId": "551367",
+    "Html": "I think in your main window(ModernWindow) you have to set the contentSource\r<br />\nexample:<br />\n<pre><code>ContentSource=&quot;/Pages/Home.xaml&quot;</code></pre>\n\n",
+    "PostedDate": "2014-07-12T05:49:00.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1265110",
+    "ThreadId": "551367",
+    "Html": "It is from the begin...<br />\n<br />\nNo positive result :-(<br />\n",
+    "PostedDate": "2014-07-12T06:07:18.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1265916",
+    "ThreadId": "551367",
+    "Html": "Make sure you're image is copied to the output directory. (see Build Action on the image file's properties within VisualStudio)<br />\n",
+    "PostedDate": "2014-07-15T08:20:28.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

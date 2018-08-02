@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1043816",
+    "ThreadId": "443716",
+    "Html": "<h1>Problem</h1>\nI have two ModernWindows with the following Pages implemented inside them with mui:Links in mui:LinkGroups:<br />\n<ol>\n<li>\nLogin.xaml\n<ul>\n<li>Login.xaml</li>\n<li>CreateLogin.xam</li>\n</ul>\n</li>\n<li>\nMain.xaml<br />\n<ul>\n<li>EditLogin.xaml</li>\n<li>\n...<br />\n</li>\n</ul>\n</li>\n</ol>\nWhen someone enters valid login information in the Login.xaml <strong>page</strong>, the event &quot;SuccessfulLogin&quot; is raised in it.<br />\n<br />\nHow can I subscribe to that in the Login.xaml <strong>window</strong>, so it can open Main.xaml and close itself?<br />\n<h1>My Try</h1>\nI tried to assign the &quot;Login.xaml&quot; page to the mui:Link-Source in code behind (so I would have a page-object to work with), but I can only assign a URI to a mui:Links source property:<br />\n<pre><code>Login login = new Login();\nlogin.SuccessfulLogin += SuccessfulLoginEventHandler;\nLLogin.Source = login; // Compiler Error</code></pre>\n\n",
+    "PostedDate": "2013-05-15T04:42:07.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1049637",
+    "ThreadId": "443716",
+    "Html": "Any ideas?<br />\n<br />\nI think I just miss the forest for the trees.<br />\n",
+    "PostedDate": "2013-05-28T07:33:33.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050338",
+    "ThreadId": "443716",
+    "Html": "You should solve this using a view model. See also <a href=\"https://mui.codeplex.com/discussions/443503\" rel=\"nofollow\">this discussion</a>.<br />\n",
+    "PostedDate": "2013-05-29T15:09:22.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

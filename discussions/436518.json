@@ -1,0 +1,178 @@
+[
+  {
+    "Id": "1014785",
+    "ThreadId": "436518",
+    "Html": "Hi,\r<br />\n<br />\nFirst of all, thanks for sharing this awesome piece of code.\r<br />\n<br />\nThere is a way to use a MVVM Framework? I would like to use Caliburn.\r<br />\n<br />\nAs I'm not proficient with MVVM and WPF, I can't discover by myself.\r<br />\n<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-03-13T12:22:46.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014892",
+    "ThreadId": "436518",
+    "Html": "Yes, you should be able to use any MVVM framework you like. Time permitting, I'll create an MVVM sample soon.<br />\n",
+    "PostedDate": "2013-03-13T15:26:13.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015162",
+    "ThreadId": "436518",
+    "Html": "I made a Caliburn.Micro content loader which I specify on the window, the content loader binds a viewmodel to the view to allow Caliburns conventions and binding to work.  The only issue I've noticed with this is that the content load doesn't use the ContentLoader, instead it bypasses it somehow.<br />\n<br />\nHere's the code if it helps.<br />\n<pre><code>public class CaliburnContentLoader : DefaultContentLoader\n{\n    protected override object LoadContent(Uri uri)\n    {\n        var content = base.LoadContent(uri);\n        if (content == null)\n            return content;\n\n        var vm = Caliburn.Micro.ViewModelLocator.LocateForView(content);\n        if (vm == null)\n            return content;\n\n        if (content is DependencyObject)\n        {\n            Caliburn.Micro.ViewModelBinder.Bind(vm, content as DependencyObject, null);\n        }\n        return content;\n    }\n}</code></pre>\n\nYou can then use the ModernWindow.ContentLoader property to specify that loader.<br />\n",
+    "PostedDate": "2013-03-14T04:35:00.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015259",
+    "ThreadId": "436518",
+    "Html": "Very nice!\r<br />\n<br />\nWhat do you mean with the content load doesn't use the ContentLoader?<br />\n",
+    "PostedDate": "2013-03-14T06:54:21.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015287",
+    "ThreadId": "436518",
+    "Html": "Yeah.. that doesn't make much sense..\r<br />\nWhat I meant is that when you specify ModernWindow.ContentSource and run the application the window loads the specified page but LoadContent() gets skipped.\r<br />\n<br />\nMy workaround is to specify ContentSource=&quot;Empty.xaml&quot; and when the Empty page loads it finds the frame and navigates onto my apps first page which does make a call to LoadContent().\r<br />\n<br />\nBen<br />\n",
+    "PostedDate": "2013-03-14T07:27:30.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015296",
+    "ThreadId": "436518",
+    "Html": "That is most likely because the ContentSource property change handler is executed before the ContentLoader has been set. The DefaultContentLoader is then used to load the initial page.<br />\n",
+    "PostedDate": "2013-03-14T07:39:59.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015435",
+    "ThreadId": "436518",
+    "Html": "<strong>kozw wrote:</strong><br />\n<blockquote>\nThat is most likely because the ContentSource property change handler is executed before the ContentLoader has been set. The DefaultContentLoader is then used to load the initial page.<br />\n</blockquote>\nYeah spot on, for some reason I was binding the ContentLoader property to an IContentLoader on my view model, switched that to a static resource method and problem is fixed.  Thanks!<br />\n",
+    "PostedDate": "2013-03-14T10:27:10.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015476",
+    "ThreadId": "436518",
+    "Html": "First of all, thanks you both for every thing. I'll try this approach on this afternoon, and I give a feedback.\r<br />\n<br />\nMaybe I have other questions about it.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-03-14T11:42:07.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015634",
+    "ThreadId": "436518",
+    "Html": "@TheDuke2k How are setting the ContentLoader property? Using a XAML ResourceDictionary?\r<br />\n@kozw I'm not sure but we could change the DefaultContentLoader class to have an static property with the default IContentLoader instance, what about that?\r<br />\n<br />\nI did it work with Caliburn.<br />\n",
+    "PostedDate": "2013-03-14T17:34:06.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015635",
+    "ThreadId": "436518",
+    "Html": "Yeah, StaticResource works well.\r<br />\n<br />\nApp.xaml<br />\n<pre><code>&lt;Application.Resources&gt;\n    &lt;ResourceDictionary&gt;\n        &lt;local:CaliburnContentLoader x:Key=&quot;CaliburnContentLoader&quot; /&gt;\n    &lt;/ResourceDictionary&gt;\n&lt;/Application.Resources&gt;</code></pre>\n\nWindow.xaml<br />\n<pre><code>&lt;mui:ModernWindow\n    ...\n    ContentLoader=&quot;{StaticResource CaliburnContentLoader}&quot;&gt;</code></pre>\n\n",
+    "PostedDate": "2013-03-14T17:39:04.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1016355",
+    "ThreadId": "436518",
+    "Html": "Thank you @TheDuck2k: Mission Accomplished.<br />\n<br />\nI have a new question now, maybe someone can help with an experience. <br />\n<br />\nIn my project I have a ViewModel (ExportDataViewModel) that receives an instance of service (IExportData) to do some job, each implementation does the same job for different entities. Example: ExportDataViewModel receives a CompanyExportData, EmployeeExportData.<br />\n<br />\nIn my current Windows Form projects using Caliburn.Micro, I'm using &quot;Action&quot; triggering feature to create instances of ExportDataViewModel based on the button clicked. <br />\nEach &quot;Action&quot; creates a new ExportDataViewModel with the appropriated service and calls IConductor.ActivateItem to show the View based on the ViewModel instance. <br />\n<pre><code>    public void ExportCompany()\n    {\n        var viewModel = new ExportDataViewModel(() =&gt; new CompanySynchronizer());\n        this.ActivateItem(this.viewModel);\n    }\n    public void ExportEmployee()\n    {\n        var viewModel = new ExportDataViewModel(() =&gt; new EmployeeSynchronizer());\n        this.ActivateItem(this.viewModel);\n    }\n    </code></pre>\n\nI'm now trying to migrate that to Modern UI.<br />\nI think I can't do that on Moder UI, because I must have a Source property with a URI to a View, and in this case I need to have a URI to the same View.<br />\nDo you think there a way to do that using Modern UI? <br />\n<br />\nUPDATE: I'm figuring out that I can use a URI with a &quot;#HashTag&quot; and then on the ContentLoader.LoadContent method put some logic to load the appropriated ViewModel instance, is this approach correct?<br />\n<br />\nThanks you Guys.<br />\n",
+    "PostedDate": "2013-03-16T10:26:12.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1016455",
+    "ThreadId": "436518",
+    "Html": "You can use uri fragments (value after #) to have different links refer to the same page. Keep in mind that at this point in time this also implies that a new page instance is created for each uri. I'm currently working on improving the navigation stack and adding support for fragment navigation.<br />\n",
+    "PostedDate": "2013-03-16T15:59:51.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1016466",
+    "ThreadId": "436518",
+    "Html": "Thanks for the answer.\r<br />\nIf I use URI Fragments, I will need to put some logic on my CustomContentLoader to instantiate different ViewModels by fragment, is this approach I should use?<br />\n",
+    "PostedDate": "2013-03-16T17:30:06.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1016713",
+    "ThreadId": "436518",
+    "Html": "With the updated navigation stack (available soon), you do not need to put the logic in an IContentLoader implementation; the content itself can receive navigation events.<br />\n",
+    "PostedDate": "2013-03-17T13:06:49.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017389",
+    "ThreadId": "436518",
+    "Html": "Very nice... May I help you with something to build new navigation stack?<br />\n",
+    "PostedDate": "2013-03-18T16:57:13.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017398",
+    "ThreadId": "436518",
+    "Html": "The new navigation stack has been checked in moments ago. Just get the latest and compile. A new release is pending.<br />\n",
+    "PostedDate": "2013-03-18T17:17:58.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017688",
+    "ThreadId": "436518",
+    "Html": "Very nice, I did a test local and every goes fine using the ModernFrame control.\r<br />\nThere is any way to put the same events of ModernFrame on the ModernTab? Or I missed something.<br />\n",
+    "PostedDate": "2013-03-19T07:05:38.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017917",
+    "ThreadId": "436518",
+    "Html": "Why would you need the navigation events on the ModernTab?<br />\n",
+    "PostedDate": "2013-03-19T14:13:25.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017939",
+    "ThreadId": "436518",
+    "Html": "Maybe I missed something. \r<br />\n<br />\nI'm using the ModernTab on my view and I have 4 links on my list to the same view using a Fragment, to make each one &quot;different&quot;. \r<br />\nWhat I want is intercept the FramegmentNavigation event to instanciate an appropriated ViewModel to the Fragment and after that change the DataContext. \r<br />\n<br />\nI just did the same of above using a ModernFrame and 3 buttons with Command=NavigationCommands.GoToPage and a Fragment on the URI.\r<br />\n<br />\nMaybe I should doing this another way.<br />\n",
+    "PostedDate": "2013-03-19T15:26:32.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017942",
+    "ThreadId": "436518",
+    "Html": "You should implement the new IContent interface for your views that are loaded in a ModernFrame. The IContent interface is optional. Once frame content implements the IContent interface, the appropiate navigation methods are invoked by the ModernFrame, this includes a FragmentNavigation method.<br />\n<br />\nThis IContent interface is part of the updated navigation framework and is available in the latest source code (not released yet). I'm aware that documentation is lacking, will update docs asap. In the meantime take a look at the new ModernFrame sample page in the sample app in the latest source.<br />\n",
+    "PostedDate": "2013-03-19T15:30:31.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017951",
+    "ThreadId": "436518",
+    "Html": "This is my first try using buttons and ModernFrame, and it works beautiful.<br />\n<pre><code>&lt;mui:ModernFrame x:Name=&quot;Frame&quot; Source=&quot;/Views/ExportDataView.xaml&quot; \n                            Width=&quot;480&quot; Height=&quot;200&quot; Padding=&quot;4&quot;\n                            ContentLoader=&quot;{StaticResource CaliburnContentLoader}&quot;\n                            cal:Message.Attach=&quot;[Event FragmentNavigation] = [Action Frame_FragmentNavigation($source, $eventArgs)]&quot;&gt;\n&lt;/mui:ModernFrame&gt;           \n&lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,16&quot;&gt;\n    &lt;Button Content=&quot;companies&quot; Command=&quot;NavigationCommands.GoToPage&quot; CommandParameter=&quot;/Views/ExportDataView.xaml#companies&quot; CommandTarget=&quot;{Binding ElementName=Frame}&quot; Margin=&quot;8,0,0,0&quot;/&gt;\n    &lt;Button Content=&quot;customers&quot; Command=&quot;NavigationCommands.GoToPage&quot; CommandParameter=&quot;/Views/ExportDataView.xaml#customers&quot; CommandTarget=&quot;{Binding ElementName=Frame}&quot; Margin=&quot;8,0,0,0&quot;/&gt;\n&lt;/StackPanel&gt;</code></pre>\n\nBut what I want is <br />\n<pre><code>&lt;mui:ModernTab Layout=&quot;List&quot; ContentLoader=&quot;{StaticResource CaliburnContentLoader}&quot;&gt;\n    &lt;mui:ModernTab.Links&gt;\n            &lt;mui:Link DisplayName=&quot;companies&quot; Source=&quot;/Views/ExportDataView.xaml#companies&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;customers&quot; Source=&quot;/Views/ExportDataView.xaml#customers&quot; /&gt;\n    &lt;/mui:ModernTab.Links&gt;\n&lt;/mui:ModernTab&gt;</code></pre>\n\nYou're saying that I should implement IContent on the ExportDataView?<br />\nAnd I should put my logic on the ExportDataView to instantiate the CustomerExportDataViewModel for &quot;#customer&quot; and CompanyExportDataViewModel for &quot;#company&quot;? <br />\n<br />\nAm I correct to understand your answer?<br />\n<br />\nP.S: All my attempts are being done using Caliburn.Micro, but I'm new to WPF and MVVM world.<br />\n",
+    "PostedDate": "2013-03-19T15:45:42.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017954",
+    "ThreadId": "436518",
+    "Html": "That is correct. ExportDataView should implement IContent and handle the OnFragmentNavigation method to instantiate the various viewmodels based on the fragment value.<br />\n",
+    "PostedDate": "2013-03-19T15:53:10.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

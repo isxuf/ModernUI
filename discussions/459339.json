@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1099615",
+    "ThreadId": "459339",
+    "Html": "In the following example, how do I set the SelectedSource to always default to say &quot;option2&quot; each time the page first opens?<br />\n<pre><code>    &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n        &lt;!-- TODO: set @SelectedSource --&gt;\n        &lt;mui:ModernTab Layout=&quot;List&quot; SelectedSource=&quot;??&quot;&gt;\n            &lt;mui:ModernTab.Links&gt;\n                &lt;mui:Link DisplayName=&quot;option1&quot; Source=&quot;/Content/xyz1.xaml&quot;/&gt;\n                &lt;mui:Link DisplayName=&quot;option2&quot; Source=&quot;/Content/xyz2.xaml&quot;/&gt;  \n                &lt;mui:Link DisplayName=&quot;option3&quot; Source=&quot;/Content/xyz3.xaml&quot;/&gt;               \n            &lt;/mui:ModernTab.Links&gt;\n        &lt;/mui:ModernTab&gt;\n    &lt;/Grid&gt;</code></pre>\n\n",
+    "PostedDate": "2013-09-26T05:13:47.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1100644",
+    "ThreadId": "459339",
+    "Html": "SelectedSource=&quot;/Content/xyz2.xaml&quot;<br />\n",
+    "PostedDate": "2013-09-29T11:04:15.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

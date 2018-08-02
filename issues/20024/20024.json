@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "It would be very helpful to add a __SearchTextBox__ to this framework, similar to your __XamlSpy__. This is going to be a great addition to what is already a very great contribution. Especially if people don;t want to mess around other controls from 3rd party vendors, and like to stay with the awesome theme-ing mechanism included with this product.\n\nKudos and more power to this contribution. And of course, a big thank you to the author and all those who contributed in bringing such a wonderful work of art.",
+    "LastUpdatedDate": "2014-10-10T10:43:54.42-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-08-01T19:55:30.093-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add SearchTextBox control like XamlSpy",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 11,
+    "Id": 20024
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "It would be very helpful to add a __SearchTextBox__ to this framework, similar to your __XamlSpy__. This is going to be a great addition to what is already a very great contribution. Especially if people don;t want to mess around other controls from 3rd party vendors, and like to stay with the awesome theme-ing mechanism included with this product.\r\n\r\nKudos and more power to this contribution. And of course, a big thank you to the author and all those who contributed in bringing such a wonderful work of art.",
+      "PostedDate": "2013-12-22T11:40:35.333-08:00",
+      "Id": 158542
+    }
+  ]
+}

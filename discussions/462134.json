@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1107315",
+    "ThreadId": "462134",
+    "Html": "Hello,\r<br />\n<br />\nI'm using a ModernTab within a ModernWindow.  The content area has a Viewbox with a fixed size and Stretch=&quot;Uniform&quot;.  The content is ~1/2 the size of the Viewbox, and it does not scale as expected.  The content looks like it's being stretched within MS Paint, defeating the purpose of the Viewbox.\r<br />\n<br />\nI've tested the exact same xaml within an empty Window dialog (note: not ModernWindow) and it works exactly as expected.<br />\n\r<br />\nI've resorted to creating a custom Viewbox that disables style inheritance:<br />\n<pre><code>this.InheritanceBehavior = System.Windows.InheritanceBehavior.SkipAllNow;</code></pre>\n\nSo there has to be a property in the MUI source that I cannot find, that is causing this behavior in the Viewbox.\r<br />\n<br />\nAs I mentioned, I have a solution I can move forward with; however, I would very much like to know what the root cause is.\r<br />\n<br />\nI had to post this in a hurry, so if you'd like additional code/screenshots, I can edit this later.\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-10-14T12:18:17.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107361",
+    "ThreadId": "462134",
+    "Html": "Does the Viewbox content happen to be a TextBlock? If so, see this post on StackOverflow for an explanation what happens -&gt; <a href=\"http://stackoverflow.com/questions/4408726/textblock-inside-a-viewbox-strange-rendering\" rel=\"nofollow\">http://stackoverflow.com/questions/4408726/textblock-inside-a-viewbox-strange-rendering</a>\r<br />\n<br />\nSetting the TextOptions.TextFormattingMode attached property to Ideal will address the issue.<br />\n",
+    "PostedDate": "2013-10-14T14:14:39.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2013-10-14T15:16:24.287-07:00"
+  },
+  {
+    "Id": "1107392",
+    "ThreadId": "462134",
+    "Html": "And here I thought I searched everything under the sun to diagnose this.  Yes this was the issue, and it was happening to Labels as well; though, it doesn't explain why everything rendered w/o issue on a Window that's isolated from the M:UI styles.\r<br />\n<br />\nAnyway, thank you for your prompt response.<br />\n",
+    "PostedDate": "2013-10-14T15:02:41.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

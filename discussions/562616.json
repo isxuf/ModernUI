@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1294811",
+    "ThreadId": "562616",
+    "Html": "How to remove underline from bbcode link\r<br />\n<img src=\"https://lh4.googleusercontent.com/-c1P-pfBCwOM/VABOTbUGszI/AAAAAAAACm0/5jOygcXIeAI/s800/Capture.PNG\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2014-08-29T03:00:58.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298049",
+    "ThreadId": "562616",
+    "Html": "Add the following resource to your App.xaml, it will remove the underline from all hyperlink instances in your app.<br />\n<pre><code>&lt;Style TargetType=&quot;{x:Type Hyperlink}&quot; BasedOn=&quot;{StaticResource {x:Type Hyperlink}}&gt;\n  &lt;Setter Property=&quot;TextDecorations&quot; Value=&quot;None&quot;/&gt;\n&lt;/Style&gt;</code></pre>\n\n",
+    "PostedDate": "2014-09-02T02:01:13.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

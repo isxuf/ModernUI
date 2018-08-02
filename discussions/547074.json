@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1251265",
+    "ThreadId": "547074",
+    "Html": "I have an existing XBAP in WPF. I would like to incorporate the look and feel of Modern UI. It seems that I would have to change the Page object in XAML to an mui object. Will this affect my ability to access the app online?<br />\n",
+    "PostedDate": "2014-05-30T07:05:06.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253422",
+    "ThreadId": "547074",
+    "Html": "You won't be able to use the ModernWindow in a XBAP app. This means that you will need to move all presentation logic (rendering of menu's, use of frames) from ModernWindow to a usercontrol. Apart from that XBAP will work just fine with MUI.\r<br />\n<br />\nIf you are not interested in the navigation aspects of MUI, you can easily just incorporate the styles of MUI into your app.<br />\n",
+    "PostedDate": "2014-06-05T11:51:29.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

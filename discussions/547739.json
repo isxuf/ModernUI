@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1253602",
+    "ThreadId": "547739",
+    "Html": "Hi, when I close my modernDialog, I need to retrieve the value of a textbox in the main page<br />\n<pre><code>private void Button_Click(object sender, RoutedEventArgs e)\n        {\n            ExcelImport frame = new ExcelImport();\n\n            ModernDialog md = new ModernDialog();\n            md.Title = &quot;.xls file import&quot;;\n            md.Content = frame;\n            md.ShowDialog();\n        }     \n\nString link = ???? ;    // Here I get the value of the textbox in ExcelImport.xaml</code></pre>\n\nsomeone knows how to help me?<br />\n",
+    "PostedDate": "2014-06-06T00:40:39.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1257051",
+    "ThreadId": "547739",
+    "Html": "Up ? <br />\n",
+    "PostedDate": "2014-06-17T06:30:21.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

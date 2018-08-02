@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1041284",
+    "ThreadId": "443085",
+    "Html": "Hi,\r<br />\n<br />\ni have started using your program. Working Fine.\r<br />\n<br />\nI´m using BBCodeBlock to change to a different page. The page change but the &quot;title links&quot; stay the same.\r<br />\n<br />\nExample\r<br />\n<br />\n<strong>Clicking Directly</strong> (Correct)\r<br />\n<br />\n<img src=\"https://cloudpt.pt/link/6b72aef8-2c88-46fa-af58-85bdd949fba7/ModernUI_1.png\" alt=\"Image\" />\r<br />\n<a href=\"https://cloudpt.pt/link/6b72aef8-2c88-46fa-af58-85bdd949fba7/ModernUI_1.png\" rel=\"nofollow\">https://cloudpt.pt/link/6b72aef8-2c88-46fa-af58-85bdd949fba7/ModernUI_1.png</a>\r<br />\n<br />\n<strong>Using CodeBlock</strong> (Wrong)\r<br />\n<br />\n<img src=\"https://cloudpt.pt/link/1ba90aaa-22e1-4088-b109-0823938ca0bf/ModernUI_2.png\" alt=\"Image\" />\r<br />\n<a href=\"https://cloudpt.pt/link/1ba90aaa-22e1-4088-b109-0823938ca0bf/ModernUI_2.png\" rel=\"nofollow\">https://cloudpt.pt/link/1ba90aaa-22e1-4088-b109-0823938ca0bf/ModernUI_2.png</a>\r<br />\n<br />\n<strong>The code</strong>\r<br />\n<br />\n&lt;mui:BBCodeBlock BBCode=&quot;The appearance of Modern UI styled windows can be changed on the fly. Make sure you visit the [url=/calculo_ssvrcp/SS.xaml]settings[/url] to adapt the appearance to your preference.&quot; Margin=&quot;0,0,0,32&quot;/&gt;\r<br />\n<br />\nIn your sample works ...\r<br />\n<br />\nI don´t understand.\r<br />\n<br />\nThanks.\r<br />\n<br />\nBaltazar<br />\n",
+    "PostedDate": "2013-05-09T03:18:03.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043074",
+    "ThreadId": "443085",
+    "Html": "Are you sure the uris in both scenarios are equal?<br />\n",
+    "PostedDate": "2013-05-13T14:09:40.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043290",
+    "ThreadId": "443085",
+    "Html": "I think so.\r<br />\n<br />\nI will try later. Thanks.<br />\n",
+    "PostedDate": "2013-05-14T03:28:48.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

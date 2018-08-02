@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1317599",
+    "ThreadId": "570892",
+    "Html": "Please correct me if I am wrong, but I think that m:ui is only listening to events raised by NotifyPropertyChanged. If I implement INotifyPropertyChanged, an eventhandler does not appear to be created and consequently the user interface does not respond to changes in properties.\r<br />\n<br />\nI think that I need to implement an interface to NotifyPropertyChanged as my viewmodel class needs to be derived from DependencyObject. The reason for this is that WPF only binds to a <strong>single</strong> instance of an ObservableCollection unless you specifically tell WPF to bind to unique instances of the collections and the only way of doing this (as far as I can tell) is to use a DependencyProperty on the collection.\r<br />\n<br />\nAs C# only permits inheritance from one base class, the only way of deriving multiple inheritance is through interfaces.\r<br />\n<br />\nComments (and solutions) appreciated :)<br />\n",
+    "PostedDate": "2014-10-30T02:10:34.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

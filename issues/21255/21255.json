@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "I found out that something causes ModernProgressRing Style property to fail ___ONLY___ on .NET 4.0, while __working fine on .NET 4.5__.\r\n\r\nSpecifically, when I try to change the Style property of a ModernProgressRing control to say Style=\"{StaticResource CircleProgressRingStyle}\" or any other style (I have tried ALL styles), it raises a XAMLParseException, with the designer complaining that \"The resource \"CircleProgressRingStyle\" could not be resolved\" __on design-time__.",
+    "LastUpdatedDate": "2015-03-08T09:25:20.94-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-11-21T11:28:35.58-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": ".NET 4.0 and ModernProgressRing Style",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21255
+  },
+  "FileAttachments": [
+    {
+      "FileId": 942678,
+      "FileName": "error.png",
+      "DownloadUrl": ".\\942678"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I get the same thing, works in 4.5... but not in 4.0. :(",
+      "PostedDate": "2014-11-21T12:30:14.713-08:00",
+      "Id": 166349
+    },
+    {
+      "Message": "\nTry DynamicResource",
+      "PostedDate": "2015-03-08T09:25:20.94-07:00",
+      "Id": 177214
+    }
+  ]
+}

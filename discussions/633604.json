@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1418658",
+    "ThreadId": "633604",
+    "Html": "hi,\r<br />\n<br />\ni create a new extended moderntab with the possibility to close the tab items. it works well for me via view model and content loader, but when the view model wanna close the tab item(bound button event) then it is not able to recognize the state of the contained element(in this case a form, which is not saved for example).\r<br />\n<br />\nof course i can read the uri of the element inside of tab item but there is no possibility to find out the state. ((\r<br />\n<br />\nis that really a problem or am i to stupid to see the right way???? <br />\n",
+    "PostedDate": "2015-04-27T00:05:00.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

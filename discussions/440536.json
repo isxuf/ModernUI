@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1031472",
+    "ThreadId": "440536",
+    "Html": "nice toolkit .. really like it :-)\r<br />\n<br />\nI think I'm probably missing something obvious. I followed the example (manually create everything - VS.NET2010) and it runs ok.\r<br />\n<br />\nWhen I am in the VS designer, buttons appear properly with the modern UI styling, and I can change from light to dark - no issues. But, when I run the project (either in or outside VS), buttons, scrollbars, etc don't have Modern UI styling (they look like regular windows buttons). What am I missing?\r<br />\n<br />\nAlso noticed that all my StaticResource keys have underlines (not found).<br />\n",
+    "PostedDate": "2013-04-16T18:39:32.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1031514",
+    "ThreadId": "440536",
+    "Html": "Ok .. after a bit of digging I found the answer. It's a bug in WPF 4.0. But there's a workaround.\r<br />\n<br />\nIn App.xaml, change this:<br />\n<pre><code>    &lt;Application.Resources&gt;\n        &lt;ResourceDictionary&gt;\n            &lt;ResourceDictionary.MergedDictionaries&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot;/&gt;\n            &lt;/ResourceDictionary.MergedDictionaries&gt;\n        &lt;/ResourceDictionary&gt;\n    &lt;/Application.Resources&gt;\n</code></pre>\n\nto this:<br />\n<pre><code>    &lt;Application.Resources&gt;\n        &lt;ResourceDictionary&gt;\n            &lt;Style TargetType=&quot;{x:Type Rectangle}&quot; /&gt;\n              &lt;ResourceDictionary.MergedDictionaries&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot;/&gt;\n            &lt;/ResourceDictionary.MergedDictionaries&gt;\n        &lt;/ResourceDictionary&gt;\n    &lt;/Application.Resources&gt;</code></pre>\n\nNote the extra 'Style' that doesn't do anything..\r<br />\nWPF4 has some issues traversing merged dictionaries. If you add the 'dummy' style in there, it seems to fix the issue. Go figure!<br />\n",
+    "PostedDate": "2013-04-16T22:19:43.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1031713",
+    "ThreadId": "440536",
+    "Html": "Great job, much appreciated! I've updated the tutorials to include the empty Rectangle style.<br />\n",
+    "PostedDate": "2013-04-17T04:56:51.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

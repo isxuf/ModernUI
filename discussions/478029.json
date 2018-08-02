@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1142327",
+    "ThreadId": "478029",
+    "Html": "My wpf app has no content only a shell page and my content are in a module. How do I reference the mui styles in the module?<br />\n<pre><code> &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;</code></pre>\n\nWhen there is more than one error the only option you have to read the error message is to set focus on the field. So why not add a tooltip to the TextBox template.<br />\n<pre><code>&lt;Style x:Key=&quot;{x:Type TextBoxBase}&quot; TargetType=&quot;{x:Type TextBoxBase}&quot; BasedOn=&quot;{x:Null}&quot;&gt;\n      &lt;Style.Triggers&gt;\n            &lt;Trigger Property=&quot;Validation.HasError&quot; Value=&quot;true&quot;&gt;\n                &lt;Setter Property=&quot;ToolTip&quot; Value=&quot;{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors).CurrentItem.ErrorContent}&quot;/&gt;\n            &lt;/Trigger&gt;\n        &lt;/Style.Triggers&gt;\n        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;{DynamicResource InputText}&quot; /&gt;</code></pre>\n\n",
+    "PostedDate": "2013-12-26T05:42:02.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

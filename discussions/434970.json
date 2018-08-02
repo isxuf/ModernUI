@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1008599",
+    "ThreadId": "434970",
+    "Html": "Hi,\r<br />\n<br />\nIn the given example, you are launching ModernDialog by setting Content to LoremIpsum usercontrol. Here usercontrol displays static text.\r<br />\n<br />\n new ModernDialog {<br />\n<pre><code>            Title = &quot;Common dialog&quot;,\n            Content = new LoremIpsum()\n        }.ShowDialog();\n</code></pre>\n\nI wanted to do data operations and have OK and Cancel button. In this case, how LoremIpsum usercontrol which button is clicked? OK or Cancel?\r<br />\n<br />\nPlease provide some example on this front.\r<br />\n<br />\nThanks &amp; Regards,\r<br />\nCharkravarti.B.<br />\n",
+    "PostedDate": "2013-02-28T20:44:26.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010172",
+    "ThreadId": "434970",
+    "Html": "You can access the hosting dialog by executing the following code in the usercontrol code:<br />\n<pre><code>var dlg = Window.GetWindow(this) as ModernDialog;\nif (dlg != null) {\n  ..\n}</code></pre>\n\n",
+    "PostedDate": "2013-03-04T13:08:38.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011108",
+    "ThreadId": "434970",
+    "Html": "Thank you.\r<br />\n<br />\nBut here my problem is that I am using MVVM pattern. So I need to close ModernDialog from ViewModel. Do you have any suggestions for this?\r<br />\n<br />\nRegards,\r<br />\nChakravarti.B.<br />\n",
+    "PostedDate": "2013-03-06T03:35:46.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011273",
+    "ThreadId": "434970",
+    "Html": "Closing a ModernDialog instance is not different from closing any WPF dialog in MVVM. Setting the DialogResult from a view model is challenging, since DialogResult is not a dependency property. Suggestions to solve this can be found at <a href=\"http://stackoverflow.com/questions/501886/wpf-mvvm-newbie-how-should-the-viewmodel-close-the-form\" rel=\"nofollow\">this stackoverflow question</a>.\r<br />\n<br />\nAlso, you can create a custom dialog by deriving from ModernDialog (exactly the same as how you derive from ModernWindow).<br />\n",
+    "PostedDate": "2013-03-06T08:24:21.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011527",
+    "ThreadId": "434970",
+    "Html": "Thank you.\r<br />\n<br />\nBut here my problem is that I am using MVVM pattern. So I need to close ModernDialog from ViewModel. Do you have any suggestions for this?\r<br />\n<br />\nRegards,\r<br />\nChakravarti.B.<br />\n",
+    "PostedDate": "2013-03-06T19:35:42.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011528",
+    "ThreadId": "434970",
+    "Html": "Thank you.\r<br />\n<br />\nBut here my problem is that I am using MVVM pattern. So I need to close ModernDialog from ViewModel. Do you have any suggestions for this?\r<br />\n<br />\nRegards,\r<br />\nChakravarti.B.<br />\n",
+    "PostedDate": "2013-03-06T19:36:16.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011546",
+    "ThreadId": "434970",
+    "Html": "Can you please tell me the reason behind exposing CloseTrueCommand, CloseFalseCommand as public get properties? <br />\n",
+    "PostedDate": "2013-03-06T20:43:07.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011619",
+    "ThreadId": "434970",
+    "Html": "Can you please tell me the reason behind exposing CloseTrueCommand, CloseFalseCommand as public get properties? <br />\n",
+    "PostedDate": "2013-03-07T01:25:41.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

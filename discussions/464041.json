@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1113553",
+    "ThreadId": "464041",
+    "Html": "<blockquote>\nI want to use xmlns:dte=&quot;<a href=\"http://schemas.firstfloorsoftware.com/documenttoolkit/extensions\" rel=\"nofollow\">http://schemas.firstfloorsoftware.com/documenttoolkit/extensions</a>&quot; in my silverlight application,<br />\nI have added firstfloor.documents.dll, firstfloor.documents.controls.dll &amp; firstfloor.documents.pdf.dll but still i am not able to access &quot;extensions&quot; can you please let me know which dll i need to add<br />\n</blockquote>\n",
+    "PostedDate": "2013-10-29T03:17:15.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1113829",
+    "ThreadId": "464041",
+    "Html": "Silverlight is not supported, WPF 4 and 4.5 are.<br />\n",
+    "PostedDate": "2013-10-29T13:56:27.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

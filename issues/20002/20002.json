@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Hi, \nwould be very useful to make the logo in ModernWindow clickable by Handling an icommand interface. \n\nI think on a shopping cart logo (enabled/disable it if cart is not empty) or it may be useful for login/logout purposes or even more to show user's profile data (I can put user's avatar into logodata).",
+    "LastUpdatedDate": "2015-02-03T01:42:52.55-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-07-25T14:55:30.07-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Make ModernWindow's Logo clickable",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 12,
+    "Id": 20002
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Has there been any progress on this? it would be a great addition :)",
+      "PostedDate": "2013-11-07T13:18:44.943-08:00",
+      "Id": 158539
+    }
+  ]
+}

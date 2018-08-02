@@ -1,0 +1,114 @@
+[
+  {
+    "Id": "1053267",
+    "ThreadId": "446125",
+    "Html": "<strong>Follow simple steps to allow you to create static(without changing) content in the main window without losing the great ability to use the &quot;BBCode&quot; for navigation:</strong><br />\n <br />\nThis may resolve such issues:<br />\n<ul>\n<li><a href=\"https://mui.codeplex.com/discussions/438029\" rel=\"nofollow\">Content of the modern window</a></li>\n<li><a href=\"https://mui.codeplex.com/workitem/19794\" rel=\"nofollow\">Status Bar Control</a></li>\n<li>\n<a href=\"https://mui.codeplex.com/workitem/19549\" rel=\"nofollow\">Add flyout</a><br />\n</li>\n</ul>\nHave on hand:<br />\n<ul>\n<li>\n<a href=\"https://mui.codeplex.com/SourceControl/latest\" rel=\"nofollow\">Source code</a> (Created in version 1.0.3)<br />\n</li>\n</ul>\nIn ...\\Windows\\Controls\\ModernFrame.cs add two DependencyProperties below:<br />\n<pre><code>public static readonly DependencyProperty FrameTopContentProperty\n                = DependencyProperty.Register(&quot;FrameTopContent&quot;,\n                typeof(object), typeof(ModernFrame),\n                new PropertyMetadata(null));\n\npublic object FrameTopContent\n{\n    get { return (object)GetValue(FrameTopContentProperty); }\n    set { SetValue(FrameTopContentProperty, value); }\n}\n\npublic static readonly DependencyProperty FrameBottonContentProperty\n                = DependencyProperty.Register(&quot;FrameBottonContent&quot;,\n                typeof(object), typeof(ModernFrame),\n                new PropertyMetadata(null));\n\npublic object FrameBottonContent\n{\n    get { return (object)GetValue(FrameBottonContentProperty); }\n    set { SetValue(FrameBottonContentProperty, value); }\n}</code></pre>\n\nIn ...\\Themes\\ModernFrame.xaml change ModernFrame style ControlTemplate simply adding grid lines on grid inside border, set Grid.Row for TransitioningContentControl, ProgressBar and add the hosts like:<br />\n<pre><code>&lt;Grid HorizontalAlignment=&quot;{TemplateBinding HorizontalContentAlignment}&quot;\n      VerticalAlignment=&quot;{TemplateBinding VerticalContentAlignment}&quot;\n      Margin=&quot;{TemplateBinding Padding}&quot;&gt;\n    &lt;Grid.RowDefinitions&gt;\n        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;\n        &lt;RowDefinition Height=&quot;*&quot;/&gt;\n        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;\n    &lt;/Grid.RowDefinitions&gt;\n\n    &lt;controls:TransitioningContentControl \n          Grid.Row=&quot;1&quot; \n          Content=&quot;{TemplateBinding Content}&quot;\n          ContentTemplate=&quot;{TemplateBinding ContentTemplate}&quot;\n          ContentTemplateSelector=&quot;{TemplateBinding ContentTemplateSelector}&quot;\n          Margin=&quot;{TemplateBinding Padding}&quot; /&gt;\n    &lt;!-- added to suport custom content --&gt;\n    &lt;ContentControl Content=&quot;{TemplateBinding FrameTopContent}&quot;/&gt;\n    &lt;ContentControl Grid.Row=&quot;2&quot; Content=&quot;{TemplateBinding FrameBottonContent}&quot;/&gt;\n\n    &lt;!-- display progress bar while content is being loaded --&gt;\n    &lt;ProgressBar IsIndeterminate=&quot;True&quot; Grid.Row=&quot;1&quot;\n                 HorizontalAlignment=&quot;Stretch&quot;\n                 VerticalAlignment=&quot;Top&quot;\n                 Height=&quot;4&quot;\n                 Margin=&quot;0,-4,0,0&quot;\n                 Visibility=&quot;{TemplateBinding IsLoadingContent, \n                 Converter={StaticResource BooleanToVisibilityConverter}}&quot; /&gt;\n&lt;/Grid&gt;</code></pre>\n\nThis has to be done here so do not miss the navigation capability of the &quot;BBCode&quot; if used in a content.<br />\n<br />\nIn ...\\Windows\\Controls\\ModernWindow.cs nearly the same:<br />\n<pre><code>public static readonly DependencyProperty FrameTopContentProperty\n                = DependencyProperty.Register(&quot;FrameTopContent&quot;,\n                typeof(object), typeof(ModernWindow),\n                new PropertyMetadata(null));\n\npublic object FrameTopContent\n{\n    get { return (object)GetValue(FrameTopContentProperty); }\n    set { SetValue(FrameTopContentProperty, value); }\n}\n\npublic static readonly DependencyProperty FrameBottonContentProperty\n                = DependencyProperty.Register(&quot;FrameBottonContent&quot;,\n                typeof(object), typeof(ModernWindow),\n                new PropertyMetadata(null));\n\npublic object FrameBottonContent\n{\n    get { return (object)GetValue(FrameBottonContentProperty); }\n    set { SetValue(FrameBottonContentProperty, value); }\n}</code></pre>\n\nAnd finally in a small ModernWindow Template change ModernFrame adding like:<br />\n<br />\nFrameTopContent=&quot;{TemplateBinding FrameTopContent}&quot;<br />\nFrameBottonContent=&quot;{TemplateBinding FrameBottonContent}&quot;<br />\n<pre><code>&lt;!-- content frame --&gt;\n&lt;controls:ModernFrame \n      x:Name=&quot;ContentFrame&quot; \n      Grid.Row=&quot;3&quot; \n      Grid.RowSpan=&quot;2&quot; \n      Margin=&quot;36,8,16,16&quot; \n      Source=&quot;{Binding ContentSource, \n          RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}&quot; \n      ContentLoader=&quot;{TemplateBinding ContentLoader}&quot;\n      FrameTopContent=&quot;{TemplateBinding FrameTopContent}&quot;\n      FrameBottonContent=&quot;{TemplateBinding FrameBottonContent}&quot;/&gt;</code></pre>\n\nDone.<br />\n<br />\nUse:<br />\n<pre><code>&lt;mui:ModernWindow.FrameTopContent&gt;\n    &lt;controls:AppBar/&gt;\n&lt;/mui:ModernWindow.FrameTopContent&gt;\n&lt;mui:ModernWindow.FrameBottonContent&gt;\n    &lt;controls:AppBar/&gt;\n&lt;/mui:ModernWindow.FrameBottonContent&gt;</code></pre>\n\nWould be nice if in the next release!<br />\n",
+    "PostedDate": "2013-06-05T13:07:47.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054378",
+    "ThreadId": "446125",
+    "Html": "Thanks for revealing this to me! I have been struggling for two days to get a way to put a log out/exit button on the bottom of my app and your approach solved it for me.\r<br />\n<br />\nComing from a web/asp.net camp I have been looking for a kind of master page functionality in wpf navigation apps for a long time. I feel that this excellent framework should have some way of defining application level functionality more easily than what is possible at the moment. But anyways, I now have a way to put content in my main window. here is what I ended up with:<br />\n<pre><code>&lt;!--&lt;mui:ModernWindow.MenuLinkGroups&gt; and bla, bla bla goes here --!&gt;\n&lt;mui:ModernWindow.FrameBottomContent&gt;\n        &lt;WrapPanel Height=&quot;25&quot; VerticalAlignment=&quot;Bottom&quot; HorizontalAlignment=&quot;Right&quot;&gt;\n            &lt;mui:ModernButton Content=&quot;logout&quot;&gt;&lt;/mui:ModernButton&gt;\n            &lt;mui:ModernButton Content=&quot;exit&quot;&gt;&lt;/mui:ModernButton&gt;\n        &lt;/WrapPanel&gt;\n&lt;/mui:ModernWindow.FrameBottomContent&gt;</code></pre>\n\nThanks again for the great work!<br />\n",
+    "PostedDate": "2013-06-08T09:58:18.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055038",
+    "ThreadId": "446125",
+    "Html": "Hi !<br />\nI'm really interested in using that code<br />\nBut, unfortunately, when copy/pasting code into mui-100711 , I'm getting errors as :<br />\n<br />\nError\t1\tThe member &quot;FrameTopContent&quot; is not recognized or is not accessible.\tC:\\Users\\fprovencherleduc\\Desktop\\ModernUI.1.0.3\\mui-100711\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI\\Themes\\ModernWindow.xaml\t145\t43\tFirstFloor.ModernUI<br />\n<br />\n<br />\nDuno<br />\nMight you provide 1.0.3 with your updated code?<br />\nThanks<br />\n",
+    "PostedDate": "2013-06-10T12:38:50.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055048",
+    "ThreadId": "446125",
+    "Html": "This error is very common in DependencyProperty registered with typeof &quot;third parameter&quot; wrong, check it:\r<br />\n<br />\nIn ModernFrame.cs all DependencyProperty &quot;third parameter&quot; is typeof(<strong>ModernFrame</strong>);\r<br />\n<br />\nIn ModernWindow.cs all DependencyProperty &quot;third parameter&quot; is typeof(<strong>ModernWindow</strong>);<br />\n",
+    "PostedDate": "2013-06-10T13:09:38.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055322",
+    "ThreadId": "446125",
+    "Html": "I found my issue !\r<br />\n<br />\nNote that I'm not really fluid in C Sharp, so the 'why' of the following is unknow for me :)\r<br />\n<br />\nSo,\r<br />\nI had to add commented lines before DependencyProperty declaration ..\r<br />\n?!\r<br />\n<br />\ni.e.<br />\n<pre><code>    /// &lt;summary&gt;\n    /// Identifies the FrameTopContentProperty dependency property.\n    /// &lt;/summary&gt;\n    public static readonly DependencyProperty FrameTopContentProperty\n            = DependencyProperty.Register(&quot;FrameTopContent&quot;,\n            typeof(object), typeof(ModernWindow),\n            new PropertyMetadata(null));\n</code></pre>\n\nOr else, I was in fact stuck with this kind of error :\r<br />\n** Error\t1\tWarning as Error: Missing XML comment for publicly visible type or member 'FirstFloor.ModernUI.Windows.Controls.ModernWindow.FrameTopContentProperty' **\r<br />\n<br />\nSo far, I'm now able to use your code! Happy !\r<br />\nThanks again.<br />\n",
+    "PostedDate": "2013-06-11T04:41:39.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055405",
+    "ThreadId": "446125",
+    "Html": "<strong>JorgH wrote:</strong><br />\n<blockquote>\nThanks for revealing this to me! I have been struggling for two days to get a way to put a log out/exit button on the bottom of my app and your approach solved it for me.<br />\n<br />\nComing from a web/asp.net camp I have been looking for a kind of master page functionality in wpf navigation apps for a long time. I feel that this excellent framework should have some way of defining application level functionality more easily than what is possible at the moment. But anyways, I now have a way to put content in my main window. here is what I ended up with:<br />\n<pre><code>&lt;!--&lt;mui:ModernWindow.MenuLinkGroups&gt; and bla, bla bla goes here --!&gt;\n&lt;mui:ModernWindow.FrameBottomContent&gt;\n        &lt;WrapPanel Height=&quot;25&quot; VerticalAlignment=&quot;Bottom&quot; HorizontalAlignment=&quot;Right&quot;&gt;\n            &lt;mui:ModernButton Content=&quot;logout&quot;&gt;&lt;/mui:ModernButton&gt;\n            &lt;mui:ModernButton Content=&quot;exit&quot;&gt;&lt;/mui:ModernButton&gt;\n        &lt;/WrapPanel&gt;\n&lt;/mui:ModernWindow.FrameBottomContent&gt;</code></pre>\n\nThanks again for the great work!<br />\n</blockquote>\nHow you came up with 2 buttons?\r<br />\nWhen I add a second control, I'm getting this error :  The property ''FrameBottomContent'' can only be set once!<br />\n",
+    "PostedDate": "2013-06-11T07:23:58.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060342",
+    "ThreadId": "446125",
+    "Html": "Fehler\t1\tDas Tag &quot;ModernWindow.FrameTopContent&quot; ist im XML-Namespace &quot;<a href=\"http://firstfloorsoftware.com/ModernUI\" rel=\"nofollow\">http://firstfloorsoftware.com/ModernUI</a>&quot; nicht vorhanden. Zeile 29 Position 6.\tD:\\DevTFS\\SUPPORT\\SUPPORT\\MainWindow.xaml\t29\t6\tSUPPORT\r<br />\n<br />\n i still got this error??  why !!!<br />\n",
+    "PostedDate": "2013-06-24T05:19:37.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1077834",
+    "ThreadId": "446125",
+    "Html": "Do we have a working sample that would demonstrate how this would solve the Flyout issue?<br />\n",
+    "PostedDate": "2013-08-07T09:50:39.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1137203",
+    "ThreadId": "446125",
+    "Html": "Ditto flyte<br />\n",
+    "PostedDate": "2013-12-17T09:45:00.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1138002",
+    "ThreadId": "446125",
+    "Html": "Thanks for the post, just added this and it works great.<br />\n",
+    "PostedDate": "2013-12-18T17:43:54.063-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1190185",
+    "ThreadId": "446125",
+    "Html": "Hi,\r<br />\n<br />\nI did get it this to work, see link for attached source <a href=\"https://skydrive.live.com/redir?resid=81CD6515C51E0420%21110\" rel=\"nofollow\">https://skydrive.live.com/redir?resid=81CD6515C51E0420%21110</a>\r<br />\n<br />\n<br />\nRegards\r<br />\nPrakashZa<br />\n",
+    "PostedDate": "2014-01-22T02:14:21.997-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1196805",
+    "ThreadId": "446125",
+    "Html": "Does anybody here have a working sample of a flyout?<br />\n",
+    "PostedDate": "2014-01-24T22:23:11.027-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1200269",
+    "ThreadId": "446125",
+    "Html": "Hi C0dEn0oB<br />\n<br />\nIn the sample I gave an link to above, has the xaml place holders for a status bar. You can further use <a href=\"http://stevenhollidge.blogspot.com/2012/06/silverlight-metro-app-bar.html\" rel=\"nofollow\">http://stevenhollidge.blogspot.com/2012/06/silverlight-metro-app-bar.html</a> for example and place  the flyout in the <br />\n<br />\n&lt;mui:ModernWindow.FrameBottomContent&gt;<br />\n   &lt;FlyoutControl .... /&gt;<br />\n&lt;\\mui:ModernWindow.FrameBottomContent&gt;<br />\n<br />\nMaybe someone can assist to metro-rize tho flyout for you.<br />\n<br />\n<br />\nRegards<br />\nPrakashZa<br />\n",
+    "PostedDate": "2014-01-28T21:38:13.593-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1301704",
+    "ThreadId": "446125",
+    "Html": "FYI, these changes are not compatible with version 1.0.6, unfortunately.<br />\n<br />\nWhen clicking on menu items, StackOverflowExceptions are thrown in:<br />\n<br />\nVisualTreeHelperEx.GetParent()<br />\nNavigationHelper.FindFrame()<br />\n",
+    "PostedDate": "2014-09-06T14:18:02.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

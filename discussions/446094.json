@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1053161",
+    "ThreadId": "446094",
+    "Html": "The selected link property is available inside modernmenu. <br />\nMy main window code looks something like this.<br />\n<br />\n&lt;mui:ModernWindow + some initialization<br />\n&lt;mui:ModernWindow.MenuLinkGroups&gt;<br />\n<pre><code>    &lt;mui:LinkGroup DisplayName=&quot;Welcome&quot;&gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;Introduction&quot; Source=&quot;/Pages/Introduction.xaml&quot; /&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;\n    &lt;mui:LinkGroup DisplayName=&quot;Layout&quot;&gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;Wireframe&quot; Source=&quot;/Pages/LayoutWireframe.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Basic&quot; Source=&quot;/Pages/LayoutBasic.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Split&quot; Source=&quot;/Pages/LayoutSplit.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;List&quot; Source=&quot;/Pages/LayoutList.xaml&quot;  /&gt;\n            &lt;mui:Link DisplayName=&quot;Tab&quot; Source=&quot;/Pages/LayoutTab.xaml&quot; /&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;</code></pre>\n\n&lt;/mui:ModernWindow.MenuLinkGroups&gt;<br />\n&lt;/mui:ModernWindow&gt;<br />\n<br />\nNow, I want to set the selected linkgroup and link programatically from viewmodel to the main window. How do I achieve this? <br />\n",
+    "PostedDate": "2013-06-05T09:03:05.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1053905",
+    "ThreadId": "446094",
+    "Html": "i failed todo this, have a look at this thread to see what i already tried (last entry):\r<br />\n<br />\n<a href=\"https://mui.codeplex.com/discussions/443503\" rel=\"nofollow\">https://mui.codeplex.com/discussions/443503</a><br />\n",
+    "PostedDate": "2013-06-07T01:20:00.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054108",
+    "ThreadId": "446094",
+    "Html": "You need to set the ModernWindow.ContentSource property to any of the existing link sources. The modern menu will automatically update its selected link and parent link group. There's no need to select a link group. \r<br />\n<br />\nPlease note that this works fine as long as the link sources are unique among all link groups.<br />\n",
+    "PostedDate": "2013-06-07T10:14:46.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1242542",
+    "ThreadId": "446094",
+    "Html": "thanks<br />\n",
+    "PostedDate": "2014-05-07T05:37:45.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

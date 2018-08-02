@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "not a bug",
+    "ClosedDate": "2014-08-23T12:33:19.21-07:00",
+    "CommentCount": 5,
+    "Custom": "",
+    "Description": "Window created from template is failed to be shown, because of this string:\n                  Style=\"{StaticResource BlankWindow}\"\nBut such resourse could not be found.\nIf remove this string, window is shown whole black. \nPlease help to show normal (white-style) window.",
+    "LastUpdatedDate": "2014-10-15T10:28:34.537-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-08-21T05:34:42.213-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Window Template doesn't work due to BlankWindow style is not found",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21247
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resource BlankWindow has been introduced in MUI 1.0.6. Either you have not included the ModernUI  dictionaries in your app.xaml, or you are using MUI 1.0.5. In case you need to stick with 1.0.5, use resource key EmptyWindow instead of BlankWindow.",
+      "PostedDate": "2014-08-21T07:01:59.883-07:00",
+      "Id": 158586
+    },
+    {
+      "Message": "Yes, I am not including dictionaries, because I have no app.xaml. I tried to open ModernWindow from a library.",
+      "PostedDate": "2014-08-21T13:14:32.427-07:00",
+      "Id": 158587
+    },
+    {
+      "Message": "In that case the application hosting your library must reference the mui resource dictionaries in its app.xaml",
+      "PostedDate": "2014-08-22T03:16:05.343-07:00",
+      "Id": 158588
+    },
+    {
+      "Message": "@kozw, understood, thank you",
+      "PostedDate": "2014-08-23T10:08:29.093-07:00",
+      "Id": 158589
+    },
+    {
+      "Message": "I'm getting this too..\n\nI used the \"Modern UI WPF Aplication\" template after installing the template.\n\nIn the app.xaml, I've got:\n<Application x:Class=\"ModernUIApp1.App\"\n             xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n             xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n             StartupUri=\"MainWindow.xaml\">\n    <Application.Resources>\n        <ResourceDictionary>\n            <ResourceDictionary.MergedDictionaries>\n                <ResourceDictionary Source=\"/FirstFloor.ModernUI;component/Assets/ModernUI.xaml\" />\n                <ResourceDictionary Source=\"/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml\"/>\n            </ResourceDictionary.MergedDictionaries>\n        </ResourceDictionary>\n    </Application.Resources>\n</Application>\n\nI also tried reversing the order of the resourceDictionary's.\n\nWhat am I missing?\n\nThanks\n\n\n\n",
+      "PostedDate": "2014-10-15T10:28:34.537-07:00",
+      "Id": 162333
+    }
+  ]
+}

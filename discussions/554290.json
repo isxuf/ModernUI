@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1278055",
+    "ThreadId": "554290",
+    "Html": "I got a markup here:<br />\n<pre><code>&lt;UserControl x:Class=&quot;NeoClinic.MAS.ConfigurationsList&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n             xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n             mc:Ignorable=&quot;d&quot; \n             x:Name=&quot;ConfigControl&quot;&gt;\n    &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n        &lt;!-- TODO: set @SelectedSource --&gt;\n        &lt;mui:ModernTab x:Name=&quot;ModTab&quot; Layout=&quot;List&quot;  PreviewMouseLeftButtonUp=&quot;ModTab_PreviewMouseLeftButtonUp&quot;&gt; \n            &lt;mui:ModernTab.Links &gt;\n                &lt;!-- TODO: set @Source --&gt;\n                &lt;mui:Link x:Name=&quot;BreedLink&quot; DisplayName=&quot;Breeds&quot; Source=&quot;/Pages/BreedListV2.xaml&quot; /&gt;\n                &lt;mui:Link x:Name=&quot;SpecieLink&quot; DisplayName=&quot;Species&quot; Source=&quot;/Pages/SpeciesList.xaml&quot; /&gt;\n            &lt;/mui:ModernTab.Links&gt;\n            \n        &lt;/mui:ModernTab&gt;\n    &lt;/Grid&gt;\n&lt;/UserControl&gt;\n\n</code></pre>\n\nthen the event:<br />\n<pre><code>private void ModTab_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)\n        {\n            \n        }</code></pre>\n\nso how do I determine which link I clicked so that I could load different user controls in a single link?<br />\n",
+    "PostedDate": "2014-07-26T12:18:01.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1278442",
+    "ThreadId": "554290",
+    "Html": "Bind the SelectedSource to a property in your viewmodel.<br />\n",
+    "PostedDate": "2014-07-28T09:46:08.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1291945",
+    "ThreadId": "554290",
+    "Html": "how?<br />\n",
+    "PostedDate": "2014-08-21T00:49:46.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

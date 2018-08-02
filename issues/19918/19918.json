@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "added in changeset 101521",
+    "ClosedDate": "2013-07-05T14:19:08.507-07:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "First off, thanks for this awesome project!\n\nIt is sometimes useful to increase the size of the ModernButton Icon. Could the changes below be incorporated into the project?\n\nChange ModernButton.xaml code line 24 (of version 1.0.4)\n\nfrom:\n\n```\n<Grid Width=\"18\" Height=\"18\">\n\n```\n\nto:\n\n```\n <Grid \n     Width=\"{TemplateBinding EllipseDiameter}\" \n     Height=\"{TemplateBinding EllipseDiameter}\">\n\n```\n\nAdd to ModernButton.cs\n\n```\n    public static readonly DependencyProperty EllipseDiameterProperty =\n        DependencyProperty.Register(\n            \"EllipseDiameter\", \n            typeof(double), \n            typeof(ModernButton), \n            new PropertyMetadata(18D));\n\n    public double EllipseDiameter\n    {\n        get { return (double)GetValue(EllipseDiameterProperty); }\n        set { SetValue(EllipseDiameterProperty, value); }\n    }\n\n```",
+    "LastUpdatedDate": "2013-07-05T14:19:08.507-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-07-01T09:42:34.913-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Please Add EllipseDiameter Property to ModernButton",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 19918
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

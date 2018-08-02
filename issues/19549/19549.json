@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "add a flyout control.",
+    "LastUpdatedDate": "2014-12-17T12:47:04.37-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-04-01T08:14:45.44-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add flyout",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 19,
+    "Id": 19549
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "See https://mui.codeplex.com/discussions/446125",
+      "PostedDate": "2013-06-05T13:09:54.193-07:00",
+      "Id": 158480
+    }
+  ]
+}

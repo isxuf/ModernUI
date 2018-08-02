@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1083831",
+    "ThreadId": "454264",
+    "Html": "Hello,\r<br />\n<br />\nI've been looking through the <a href=\"https://mui.codeplex.com/wikipage?title=Theme%20resource%20reference&amp;referringTitle=Documentation\" rel=\"nofollow\">Theme resource reference</a> page for a property to set the window title's color. The closest I came to was SubMenuText, which changes the color of the mui:Link. I need something to change mui:LinkGroup. I figured MenuText would work, but it did not. I exhausted all other &quot;likely&quot; properties too. Does anyone know the correct property for this?\r<br />\n<br />\nThanks in advance,<br />\n<ul>\n<li>Jake M. </li>\n</ul>\n",
+    "PostedDate": "2013-08-22T13:22:26.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084392",
+    "ThreadId": "454264",
+    "Html": "My bad... after some experimenting, it was MenuText. Not sure why it didn't work then, but it does now. Please disregard.<br />\n",
+    "PostedDate": "2013-08-23T19:41:23.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

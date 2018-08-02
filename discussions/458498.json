@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1096764",
+    "ThreadId": "458498",
+    "Html": "Hello everyone\r<br />\n<br />\nI wonder if it is possible to set a timer an iterate over the links in each MenuLinkGroups. I was trying to do that but in the mainwindow doesn't work, I can't navigate to other windows from the main window, for instance:<br />\n<pre><code>        DispatcherTimer timer = new DispatcherTimer();\n        timer.Interval = new TimeSpan(0, 0, 5);\n        timer.Tick += ((sender, e) =&gt;\n        {\n            DefaultLinkNavigator _navigator = new DefaultLinkNavigator();\n            _navigator.Navigate(new Uri(&quot;/Pages/Settings.xaml&quot;, UriKind.Relative), this, null);\n        });\n        timer.Start();\n</code></pre>\n\nBut if I put the same code in another window not in the main page it works.\r<br />\n<br />\nThe fact is that, the constructor just fires once. And I had to put  timer.Stop();, because I'm getting an error: &quot;Unable to navigate to /Pages/Settings.xaml, could not find a ModernFrame target ''&quot; and that happens because the timer was still active. So the idea was in the constructor set up againt the timer. but it just fires once.\r<br />\n<br />\nDoes anybody could please help me?\r<br />\nThanks in advance<br />\n",
+    "PostedDate": "2013-09-19T23:14:40.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

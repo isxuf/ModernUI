@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1170811",
+    "ThreadId": "501667",
+    "Html": "Simple question, I think: What's the convention for whether markup should be in pages or content? <br />\n",
+    "PostedDate": "2014-01-16T10:42:48.463-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1249338",
+    "ThreadId": "501667",
+    "Html": "I know this is an oldish thread but I would also like a clarification on this. Is there a convention?<br />\n",
+    "PostedDate": "2014-05-25T07:14:51.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1249679",
+    "ThreadId": "501667",
+    "Html": "Its pretty simple.\r<br />\n<br />\nPages are just that.. pages that you would expect to be navigated by the menu link groups. \r<br />\n<br />\nContent would be used when you need specific content on a page. For example, if a page had a modern tab, showing 3 &quot;tabs&quot;, then the xaml for those 3 tabs would be Content.\r<br />\n<br />\nI hope that makes sense??<br />\n",
+    "PostedDate": "2014-05-26T08:03:20.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1274758",
+    "ThreadId": "501667",
+    "Html": "I agree with you.<br />\n",
+    "PostedDate": "2014-07-21T07:02:30.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

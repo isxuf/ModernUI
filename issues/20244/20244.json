@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "I see there are Text resources available in the latest code set. I updated to v1.0.3 and I don't see any static resources for the text. Instead, I had to create a StandardStyles.xaml and add it to App.xaml as a resource. Then I could do something like \n\n```\nstyle=\"{StaticResource Heading2}\"\n```",
+    "LastUpdatedDate": "2013-09-27T13:50:03.14-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-09-27T11:54:59.563-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Typography Resources",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20244
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1196943",
+    "ThreadId": "525774",
+    "Html": "Hey guys,\r<br />\n<br />\nI currently working on a simple crypto-chat application and came across a problem that's driving me nuts.\r<br />\n<br />\nI've got 2 threads: At first the main application thread with window handles, and at second a thread for receiving incoming text messages. The second thread calls a callback to the Home.xaml.cs-Page in order to update a RichTextBox. This Callback crashes when accessing the RichtTextBox and says something like &quot;This thread cannot access this object cause it's owned by another thread&quot;.\r<br />\nAfter some research I found some information about resolving this problem by using Invoke.<br />\n<pre><code>public MainWindow()\n        {\n            this.InitializeComponent();\n            Thread t = new Thread(new ThreadStart(update));\n            t.Start();\n        }\n        private void update()\n        {\n            //threadsafe call of &quot;Application.Current.Shutdown&quot;\n            this.BeginInvoke(new Action(Application.Current.Shutdown));\n        }</code></pre>\n\nUnfortunately I cannot find a method &quot;Invoke&quot;, &quot;BeginInvoke&quot; or any similar for the m:ui control objects.\r<br />\nSo can anyone tell me how to update the RichTextBox or any other value of the control objects in a threadsafe way?\r<br />\n<br />\nIf you think I missed any important information, just ask for it. Hope you can help me with this problem.\r<br />\n<br />\nThx in advance, ep1stle<br />\n",
+    "PostedDate": "2014-01-25T01:36:14.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1196977",
+    "ThreadId": "525774",
+    "Html": "Hi,\r<br />\n<br />\nInvoke is what you should call, when you are using Windows Forms. Since you are using WPF, the <a href=\"http://msdn.microsoft.com/en-us/library/system.windows.threading.dispatcher(v=vs.110).aspx\" rel=\"nofollow\">Dispatcher</a> is what you should use. \r<br />\nI don't know your application design, but you should also consider using <a href=\"http://msdn.microsoft.com/en-us/library/hh191443.aspx\" rel=\"nofollow\">async/await</a> (if you are implementing .NET 4.5 or greater).\r<br />\n<br />\nHope this helps.<br />\n",
+    "PostedDate": "2014-01-25T01:56:41.693-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-01-25T02:48:07.597-08:00"
+  },
+  {
+    "Id": "1197057",
+    "ThreadId": "525774",
+    "Html": "Hey codedevote,\r<br />\n<br />\nthx for your reply....now everthing is working!\r<br />\n<br />\n<br />\nFor all the people who might have the same problem, here is how I use the dispatcher right now. <br />\n<pre><code>delegate void AddTextToChatBox(String text);\n\npublic void addMessageToChatBox(String text)\n{\n   //adding text to chatbox\n   ChatBox.Documents.Add(...);\n}\npublic void MessageReceivedCallback(Object sender, MessageReceivedEventArgs e)\n{\n   //Thread-unsafe call\n   addMessageToChatBox(e.Message);\n\n   //Thread-safe call using Dispatcher\n   AddMessageCallback d = new AddMessageCallback(addMessageToChatBox);\n   Dispatcher.BeginInvoke(d,new object[]{e.Text});\n}</code></pre>\n\n",
+    "PostedDate": "2014-01-25T02:47:57.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

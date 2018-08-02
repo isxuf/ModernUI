@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1008601",
+    "ThreadId": "434971",
+    "Html": "The static links work fine, but how does one add the links in code ?<br />\nI am trying to modify the main page sample links to add the links dynamically in code with no success.<br />\n<br />\nWould you recommend using DataBinding approach instead of adding elements in code?<br />\n<br />\nDo you have some simple samples showing various scenarios?<br />\n<br />\nI have tried the following code, but the &quot;Basic Page&quot; link is not displayed:<br />\n<pre><code>private void ModernWindow_Loaded_1(object sender, RoutedEventArgs e)\n        {\n            FirstFloor.ModernUI.Presentation.Link link = new FirstFloor.ModernUI.Presentation.Link() { DisplayName = &quot;Basic Page&quot;, Source = new Uri(&quot;Pages/BasicPage.xaml&quot;, UriKind.Relative) };\n            MenuLinksGroupItem.Links.Add(link);\n        }</code></pre>\n\nThank you<br />\n",
+    "PostedDate": "2013-02-28T20:54:46.69-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1009265",
+    "ThreadId": "434971",
+    "Html": "Good point, the ModernMenu didn't support dynamic adding and removing groups and links. I just checked in a ModernMenu update that does support dynamic changes (both in code and using DataBinding). A new demo page in the sample app (Controls &gt; Modern Controls &gt; ModernMenu) demonstrates the updated ModernMenu.<br />\n<br />\nYou can get the latest ModernMenu by getting the latest source code.<br />\n",
+    "PostedDate": "2013-03-02T09:28:54.453-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010852",
+    "ThreadId": "434971",
+    "Html": "I downloaded the <a href=\"http://mui.codeplex.com/releases/view/102630\" rel=\"nofollow\">Modern UI 1.0.1 from Downloads</a> , and looked at the <a href=\"http://mui.codeplex.com/releases/view/102630\" rel=\"nofollow\">Source</a>  but can't find the path or the sample you mentioned : <br />\n<blockquote>\nsample app (Controls &gt; Modern Controls &gt; ModernMenu<br />\n</blockquote>\nWhere can I find it?<br />\n",
+    "PostedDate": "2013-03-05T13:28:51.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010868",
+    "ThreadId": "434971",
+    "Html": "ModernMenu update not a release yet. It's available in the source code. You need to get the latest and compile it yourself.<br />\n",
+    "PostedDate": "2013-03-05T13:52:34.763-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

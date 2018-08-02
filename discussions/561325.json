@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1290526",
+    "ThreadId": "561325",
+    "Html": "Hello,\r<br />\n<br />\nI am getting this error after following the documentation to manually setup my project to use this library.\r<br />\n<br />\nI have a WPF 4.5 project and it does run, but I keep seeing this errors and VS designer cannot show my UI.\r<br />\n<br />\nThe same error is happening to the &lt;mui:Link /&gt;  elements.\r<br />\n<br />\nHow can I fix that?\r<br />\n<br />\nThank you,\r<br />\n<br />\nIgor.<br />\n",
+    "PostedDate": "2014-08-15T10:16:34.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292073",
+    "ThreadId": "561325",
+    "Html": "Looks like the FirstFloor.ModernUI.dll reference is missing in your project. Is that the case?<br />\n",
+    "PostedDate": "2014-08-21T07:00:35.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292097",
+    "ThreadId": "561325",
+    "Html": "Hello,\r<br />\n<br />\nIn fact it is not. The library is already added.\r<br />\n<br />\nI managed to solve the problem by installing the NuGet package instead.\r<br />\n<br />\nThank you anyway,\r<br />\n<br />\nIgor.<br />\n",
+    "PostedDate": "2014-08-21T07:48:34.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1304942",
+    "ThreadId": "561325",
+    "Html": "To fix the issue go the following:\r<br />\n<br />\nRight click on the zip you downloaded.\r<br />\nChoose properties.\r<br />\nIn the general tab click on unblock. Then apply and ok\r<br />\nNow unzip the package.<br />\n",
+    "PostedDate": "2014-09-15T13:09:24.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

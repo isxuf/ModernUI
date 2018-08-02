@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1021341",
+    "ThreadId": "438057",
+    "Html": "Hi,\r<br />\n<br />\nThanks for the project - excellent piece of work. I wondered if you help me sort out an issue I have with navigation. I need to build a TreeView and have the items act in the same way that the mui:Links do - i.e. load content windows. How you would suggest I best do this ?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-03-26T10:43:21.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021483",
+    "ThreadId": "438057",
+    "Html": "I would use MVVM and implement a ViewModel where the selected item of the treeview is bound (most likely two way) to a selected item in the view model. The Source of the ModernFrame instance rendering your content is bound to the source of the selected item. <br />\n<br />\nWhen navigating the treeview, the selected item in the view model gets updated and the modern frame source will subsequently be updated.<br />\n<br />\nHope this makes sense.<br />\n",
+    "PostedDate": "2013-03-26T16:53:45.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021515",
+    "ThreadId": "438057",
+    "Html": "Hi,\r<br />\nCould you please give an example?\r<br />\nThanks<br />\n",
+    "PostedDate": "2013-03-26T18:43:18.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021718",
+    "ThreadId": "438057",
+    "Html": "Create a new hierarchical link type that contains child links:<br />\n<pre><code>public class HierarchicalLink : Link\n{\n  public LinkCollection ChildLinks { get; set; }\n}</code></pre>\n\nDefine a view model that exposes a collection of hierarchical links and the selected link.<br />\n<pre><code>public class MyViewModel : NotifyPropertyChanged\n{\n  private LinkCollection rootlinks;\n  private Link selectedLink;\n\n  public LinkCollection RootLinks\n  {\n    get { return this.rootlinks; }\n  }\n\n  public Link SelectedLink\n  {\n    get { return this.selectedLink; }\n    set\n    {\n      if (this.selectedLink != value) {\n        this.selectedLink = value;\n        OnPropertyChanged(&quot;SelectedLink&quot;);\n      }\n    }\n  }\n}</code></pre>\n\nNow assuming you want a split page with a TreeView on the left and a ModernFrame:<br />\n<pre><code>&lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n  &lt;Grid.ColumnDefinitions&gt;\n    &lt;ColumnDefinition Width=&quot;*&quot;/&gt;\n    &lt;ColumnDefinition Width=&quot;6&quot;/&gt;\n    &lt;ColumnDefinition Width=&quot;*&quot;/&gt;\n  &lt;/Grid.ColumnDefinitions&gt;\n\n  &lt;TreeView x:Name=&quot;tree&quot; ItemsSource=&quot;{Binding RootLinks}&quot; Margin=&quot;{StaticResource SplitLeft}&quot;&gt; \n    &lt;TreeView.ItemTemplate&gt;\n      &lt;HierarchicalDataTemplate ItemsSource=&quot;{Binding ChildLinks}&quot;&gt;\n        &lt;TextBlock Text=&quot;{Binding DisplayName}&quot; /&gt;\n      &lt;/HierarchicalDataTemplate&gt;\n    &lt;/TreeView.ItemTemplate&gt;\n  &lt;/TreeView&gt;\n  &lt;GridSplitter Grid.Column=&quot;1&quot; /&gt;\n  &lt;mui:ModernFrame Source=&quot;{Binding SelectedLink.Source}&quot; Grid.Column=&quot;2 &quot; Margin=&quot;{StaticResource SplitRight}&quot;/&gt;\n&lt;/Grid&gt;</code></pre>\n\nSet the DataContext of your page to a new instance of MyViewModel and fill the RootLinks with your data. Finally since the TreeView.SelectedItem is read-only you should implement a SelectionChanged event handler and in the event handler set the SelectedLink on the view model.\r<br />\n<br />\nThe ModernFrame.Source binding now automatically loads when you select a tree item.<br />\n",
+    "PostedDate": "2013-03-27T05:13:47.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023584",
+    "ThreadId": "438057",
+    "Html": "Thank you for the example. It solved my problem!<br />\n",
+    "PostedDate": "2013-03-31T19:20:58.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024233",
+    "ThreadId": "438057",
+    "Html": "Thanks for the tips KOZW, they came in very handy and I've now got a working solution.\r<br />\n<br />\nCheers.<br />\n",
+    "PostedDate": "2013-04-02T06:13:41.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

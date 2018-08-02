@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1108693",
+    "ThreadId": "462568",
+    "Html": "Using codebehind I can pass the parent window to the child using the code below<br />\n<pre><code>//Parent Window\nnew LoginWindow(this).ShowDialog();\n\n//Child Window\nprivate void UserControl_Loaded(object sender, RoutedEventArgs e)\n{\n    m_parentWindow = Window.GetWindow(this);\n }</code></pre>\n\nHowever, I'm not sure how this should work using just mui XAML? For instance if I have<br />\n<pre><code>    &lt;mui:ModernWindow.MenuLinkGroups&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;main&quot; &gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;Data&quot; Source=&quot;/Pages/MainStart.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;settings&quot; Source=&quot;/Pages/MainSettings.xaml&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n    &lt;/mui:ModernWindow.MenuLinkGroups&gt;\n    &lt;/mui:ModernWindow&gt;</code></pre>\n\nThen in /Pages/MainStart.xaml.cs I can get the main window by using <br />\n<pre><code>        private MainWindow m_mainform;\n\n        public MainStart()\n        {\n            InitializeComponent();\n            m_mainform = (MainWindow)Application.Current.MainWindow;\n        }</code></pre>\n\nbut this seems a bit wrong. What is the correct method in mui to access parent windows. Can this be done through XAML only? <br />\n",
+    "PostedDate": "2013-10-17T03:31:03.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

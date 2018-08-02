@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1047331",
+    "ThreadId": "444644",
+    "Html": "I have a list box whose ItemTemplate contains only a BBCodeBlock like so:<br />\n<pre><code>&lt;UserControl.Resources&gt;      \n        &lt;DataTemplate x:Key=&quot;StatusTextTemplate&quot;&gt;\n            &lt;mui:BBCodeBlock BBCode=&quot;{Binding}&quot; /&gt;\n        &lt;/DataTemplate&gt;\n    &lt;/UserControl.Resources&gt;\n\n&lt;ListBox Grid.Row=&quot;3&quot;                \n                 ItemsSource=&quot;{Binding IssueStatusText}&quot;\n                 ItemTemplate=&quot;{StaticResource StatusTextTemplate}&quot;&gt;</code></pre>\n\nBut I can't seem to get any of the tags (specifically, color) to work. All the text comes out black.\r<br />\n<br />\nI'm looking for the text to be the normal ItemText color, but if the listbox item has a [color=] bbcode tag, I want the text to appear in that color.\r<br />\n<br />\nany ideas?<br />\n",
+    "PostedDate": "2013-05-22T12:18:15.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048279",
+    "ThreadId": "444644",
+    "Html": "This should be working fine. How does your IssueStatusText look like, is your BBCode correct?<br />\n",
+    "PostedDate": "2013-05-24T08:12:34.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

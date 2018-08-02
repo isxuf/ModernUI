@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "As the word indicates ModernUI, I have seen most of the Controls like Button, TextBox, ComboBox, ListBoxItem, ContextMenuItem doesn't not have height what we see in Windows Store Applications, somewhere around 30px\n\nI would suggest the mui implement this for all controls stated above and there are few other controls like DataGridRowHeader, DataGridRow, ListViewRow etc.\n\nI have implemented the same in my applications. If you like I will create a fork for you to merge the changes.\n\nI have seen the sample demo app and XAML Spy in which the controls look small.",
+    "LastUpdatedDate": "2013-08-22T00:51:22.78-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-08-22T00:48:18.613-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Suggestion: Make default Height for most controls to ModernUI standard.",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20122
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

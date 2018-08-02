@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "1038352",
+    "ThreadId": "442287",
+    "Html": "I wanted to use &quot;EmptyWindow&quot; style, so i download the latest code (100090) and built the code.<br />\n<br />\nBut now my resources are not being found when i add the new DLLs to the project.<br />\nIn App.xaml:<br />\n<pre><code>&lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n&lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Dark.xaml&quot;/&gt;\n&lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernWindowEx.xaml&quot;/&gt; </code></pre>\n\nDo you know what I did wrong building the source?  It works fine if i use the zip file of the latest stable build 1.0.3.<br />\n<br />\nI also noticed in WPF4 project that ModernWindowEx.xaml was not a file in the assets folder.<br />\n<br />\n<br />\nUsing .NET4.0 with VS2010<br />\n",
+    "PostedDate": "2013-05-01T17:53:15.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038506",
+    "ThreadId": "442287",
+    "Html": "The ModernWindowEx.xaml dictionary, containing the EmptyWindow style is not available in the latest release yet, you'll need to get the latest source code and compile it yourself. The WPF4 project contains file links to the resource dictionaries, the actual files are in the Assets folders of the mui project for WPF4.5.\r<br />\n<br />\nThe file link ModernWindowEx.xaml was missing from the WPF4 project, I just added it.<br />\n",
+    "PostedDate": "2013-05-02T05:10:07.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038645",
+    "ThreadId": "442287",
+    "Html": "I am still getting the issue with the new code (100280).  I open the project in VS2010, i have only .NET4.0.  I compile as release.  Use the new references in my project and the i get the error &quot;An error occurred while finding the resource dictionary &quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; and ModernUI.Dark.xaml.  If i change the project references back to the stable build, the files resource dictionaries work fine.<br />\n\r<br />\nSo it has to be how i am building the new DLLs but i can not figure out what i am doing wrong.\r<br />\n<br />\nI just change the build to release and select the project FirstFloor.ModernUI.WPF4, right click and select Rebuild.  I then use the DLLs created in the bin/Release folder in my project.  If i use the new DLLs i created, the files are not found.  If i go back and use the DLLs from the zip file of the last stable release, everything works fine.\r<br />\n<br />\nAny other idea what i can try?  I think i am about to buy VS2012.  I have found to many projects that are using it now.<br />\n",
+    "PostedDate": "2013-05-02T09:10:47.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038811",
+    "ThreadId": "442287",
+    "Html": "Can you share your dll so I can take a look?<br />\n",
+    "PostedDate": "2013-05-02T16:30:01.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038814",
+    "ThreadId": "442287",
+    "Html": "Here is the DLL built with DEBUG from the source code as of 100090.\r<br />\n<br />\n<a href=\"https://dl.dropboxusercontent.com/u/38629350/FirstFloor.ModernUI.dll\" rel=\"nofollow\">https://dl.dropboxusercontent.com/u/38629350/FirstFloor.ModernUI.dll</a><br />\n",
+    "PostedDate": "2013-05-02T16:43:27.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038865",
+    "ThreadId": "442287",
+    "Html": "I have the same issue in VS2010\r<br />\nThe .dll had been got from NuGet<br />\n",
+    "PostedDate": "2013-05-02T20:29:39.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039022",
+    "ThreadId": "442287",
+    "Html": "I can see it doesn't work, not sure why. I've recompiled the WPF4 version (in VS2012) including the EmptyWindow style.\r<br />\n<br />\n<a href=\"https://www.dropbox.com/s/6maalt3e24qj5x6/FirstFloor.ModernUI.dll\" rel=\"nofollow\">https://www.dropbox.com/s/6maalt3e24qj5x6/FirstFloor.ModernUI.dll</a><br />\n",
+    "PostedDate": "2013-05-03T06:36:52.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039089",
+    "ThreadId": "442287",
+    "Html": "This new DLL does works.  Thanks.  <br />\n",
+    "PostedDate": "2013-05-03T09:03:33.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048141",
+    "ThreadId": "442287",
+    "Html": "Hi ricorx7, kozw!\r<br />\nWhat I made wrong? I downloaded source code, built it, added reference to FirstFloor.ModernUI.dll from WPF 4.0 and WPF 4.5 and tried to add EmptyWindow style<br />\n<pre><code>        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n        xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n        Title=&quot;Application&quot;\n        Style=&quot;EmptyWindow&quot;\n        ContentSource=&quot;/Pages/Home.xaml&quot;&gt;\n&lt;/mui:ModernWindow&gt;</code></pre>\n\nThe result is &quot;System.Windows.Markup.XamlParseException occurred Message=&quot;System.Windows.FrameworkElement.Style&quot; property setting throwed an exception&quot;.\r<br />\nUsing <a href=\"https://www.dropbox.com/s/6maalt3e24qj5x6/FirstFloor.ModernUI.dll\" rel=\"nofollow\">https://www.dropbox.com/s/6maalt3e24qj5x6/FirstFloor.ModernUI.dll</a> I got the same results. I used VS 2012, .NET 4.5<br />\n",
+    "PostedDate": "2013-05-24T02:32:46.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048273",
+    "ThreadId": "442287",
+    "Html": "Incorrect syntax, use <code>Style=&quot;{StaticResource EmptyWindow}&quot;</code><br />\n",
+    "PostedDate": "2013-05-24T08:07:21.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048376",
+    "ThreadId": "442287",
+    "Html": "Thank you, kozw! It works.<br />\n",
+    "PostedDate": "2013-05-24T11:44:56.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1063392",
+    "ThreadId": "442287",
+    "Html": "it works for me but i get at design time\r<br />\n<br />\n Error\t1\t'ModernWindow' TargetType does not match type of element 'WindowInstance'.\t<br />\n",
+    "PostedDate": "2013-07-01T16:47:43.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

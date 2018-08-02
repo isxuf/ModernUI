@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1231014",
+    "ThreadId": "541394",
+    "Html": "Hey,\r<br />\nIf the SelectedLinkGroup from the ModernWindow is changed, i want that allways the first Link is selected. In other words: If i select the second mui:Link, then select another mui:LinkGroup, then go back to my previous mui:LinkGroup, the second mui:Link is still selected. I want that in this case the first link (i.e. the left one) is selected again. \r<br />\n<br />\nI think there is no built-in functionality, so I wanted to hook into the SelectedLinkGroup element of the ModernMenu, but i cannot get a hold on the ModernMenu of the ModernWindow.\r<br />\n<br />\nSo, what i need is either the ModernMenu of my MainWindow, or i need a IsSelected Property on the mui:LinkGroup.\r<br />\nAny suggestions? Thanks in advance.<br />\n",
+    "PostedDate": "2014-04-06T13:02:02.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

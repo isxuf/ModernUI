@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1151780",
+    "ThreadId": "484285",
+    "Html": "i want to set background image, not in rectangle like \r<br />\n_&lt;!--&lt;mui:ModernWindow.BackgroundContent&gt;<br />\n<pre><code>        &lt;Image Source=&quot;/Big-Burger.jpg&quot; /&gt;\n    &lt;/mui:ModernWindow.BackgroundContent&gt;--&gt;_</code></pre>\n\ni want the background wallpaper to fill all the regions of wpf window. i mean like this\r<br />\n<img src=\"http://i44.tinypic.com/53ec9.jpg\" alt=\"Image\" /> , this is screenshot of AppFlow application. i think it's quite similar with modern ui\r<br />\nplease help to do this, make background image<br />\n",
+    "PostedDate": "2014-01-10T07:02:54.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151782",
+    "ThreadId": "484285",
+    "Html": "by now, all i have is \r<br />\n<img src=\"http://i39.tinypic.com/254x8qs.jpg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2014-01-10T07:05:47.867-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1161896",
+    "ThreadId": "484285",
+    "Html": "do this:<br />\n<pre><code> &lt;Rectangle x:Key=&quot;WindowBackgroundContent&quot; x:Shared=&quot;false&quot; &gt;\n        &lt;Rectangle.Fill&gt;\n            &lt;ImageBrush ImageSource=&quot;/whatever/x.png&quot; Opacity=&quot;.3&quot; Stretch=&quot;UniformToFill&quot; /&gt;\n        &lt;/Rectangle.Fill&gt;\n    &lt;/Rectangle&gt;</code></pre>\n\n",
+    "PostedDate": "2014-01-13T10:20:34.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1014660",
+    "ThreadId": "436485",
+    "Html": "Hi Kozw ,<br />\nNice UI !<br />\nIn TabControl , I Can't have the links on the left if i try HorizontalAlignment=&quot;Left&quot; it bug and then links become on the right .<br />\n<br />\nthis is what I want to do:<br />\n<img src=\"http://img820.imageshack.us/img820/7061/nouvelleimagebitmaptr.png\" alt=\"Image\" /><br />\n<br />\nOr if i can simply do a menu with tabs and under tabs <br />\n",
+    "PostedDate": "2013-03-13T08:43:58.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014897",
+    "ThreadId": "436485",
+    "Html": "The TabControl link items are right aligned and that can only be changed by providing a custom ControlTemplate<br />\n",
+    "PostedDate": "2013-03-13T15:35:47.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015200",
+    "ThreadId": "436485",
+    "Html": "okey thanks !<br />\n",
+    "PostedDate": "2013-03-14T05:52:03.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

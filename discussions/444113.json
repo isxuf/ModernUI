@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1045382",
+    "ThreadId": "444113",
+    "Html": "Referring to DataGrid.Xaml, DataGridRowHeader's Width is set to a certain value &quot;16&quot;:<br />\n<pre><code>&lt;Style x:Key=&quot;{x:Type DataGridRowHeader}&quot; TargetType=&quot;{x:Type DataGridRowHeader}&quot;&gt;\n    &lt;Setter Property=&quot;Background&quot; Value=&quot;{DynamicResource DataGridHeaderBackground}&quot; /&gt;\n    &lt;Setter Property=&quot;Foreground&quot; Value=&quot;{DynamicResource DataGridHeaderForeground}&quot; /&gt;\n    &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;{DynamicResource DataGridGridLines}&quot; /&gt;\n    &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;0,0,0,1&quot; /&gt;\n    &lt;Setter Property=&quot;Width&quot; Value=&quot;16&quot;/&gt;\n</code></pre>\n\nI think Value &quot;Auto&quot; may be more common for different usages.<br />\n",
+    "PostedDate": "2013-05-17T19:54:49.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046028",
+    "ThreadId": "444113",
+    "Html": "agree, MinWidth=16 would be more appropiate<br />\n",
+    "PostedDate": "2013-05-20T07:23:10.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

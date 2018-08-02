@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1309174",
+    "ThreadId": "568651",
+    "Html": "Hello Everyone.\r<br />\nBTW I'm Mark.. New to visual studio, and after I look on the modern UI of wpf. Im so eager to create an app like this. I use to be a php programmer and web developer until now.  I enjoy playing with c# and wpf. But i got an question to ask. I know this is like a spoon feeding question but please help me. I really dont have idea on this. \r<br />\n<br />\nHow can I Create an Login or loading windows before the mainwindow loads? And also .. how to use the modern UI dialog ?\r<br />\n<br />\nAny answer will appreciate. Thank you and God Bless.\r<br />\nsorry for my bad english :D<br />\n",
+    "PostedDate": "2014-09-30T01:48:45.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310039",
+    "ThreadId": "568651",
+    "Html": "This stackoverflow post provides a reasonable solution: <a href=\"http://stackoverflow.com/questions/1539958/wpf-showing-dialog-before-main-window\" rel=\"nofollow\">http://stackoverflow.com/questions/1539958/wpf-showing-dialog-before-main-window</a><br />\n",
+    "PostedDate": "2014-10-02T13:19:00.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

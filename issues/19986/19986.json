@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-08-09T07:50:29.46-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "The ModernTab in the List layout has a fixed width for the list.\nIt would be great if the designer could change this via Styles or other way.",
+    "LastUpdatedDate": "2014-08-09T07:50:29.46-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-07-19T07:38:14.503-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Can change ModernTab list width",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 19986
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved with changeset 110091: new ModernTab.ListWidth property for list layouts",
+      "PostedDate": "2014-08-09T07:50:29.46-07:00",
+      "Id": 158537
+    }
+  ]
+}

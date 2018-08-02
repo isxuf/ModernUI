@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Hi, i have some big problem ... i do an app and its working on my PC but when i want to run it on another PC i have this error \"ModernUI.app Stop Working\"\r\n\r\nProblem signature:\r\n   Problem Event Name: CLR20r3\r\n   Problem Signature 01: Synchronizer.exe\r\n   Problem Signature 02: 1.0.0.0\r\n   Problem Signature 03: 54c011cf\r\n   Problem Signature 04: Synchronizer\r\n   Problem Signature 05: 1.0.0.0\r\n   Problem Signature 06: 54c011cf\r\n   Problem Signature 07: 13e\r\n   Problem Signature 08: f\r\n   Problem Signature 09: System.Windows.Markup.XamlParse\r\n   Operating System Version: 6.3.9600.2.0.0.256.48\r\n   Locale ID: 1045\r\n   Additional Information 1: 5861\r\n   Additional Information 2: 5861822e1919d7c014bbb064c64908b2\r\n   Additional Information 3: 84a0\r\n   Additional Information 4: 84a09ea102a12ee665c500221db8c9d6\r\n\r\nRead our online privacy statement:\r\n   http://go.microsoft.com/fwlink/?linkid=280262\r\n\r\nIf privacy statement online are not available, please read our privacy statement offline:\r\n   C: \\ Windows \\ system32 \\ en-US \\ erofflps.txt\r\n",
+    "LastUpdatedDate": "2015-04-13T08:52:50.137-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2015-01-24T08:14:56.713-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ModernUI.app Stop Working",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21265
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hello,\nDo you solve your problem ?\nI have the same problem.\n\nThanks",
+      "PostedDate": "2015-04-13T08:52:50.137-07:00",
+      "Id": 182098
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1060755",
+    "ThreadId": "448131",
+    "Html": "Hallo, \r<br />\n<br />\nwhen I render the UserControl in the MainWindow, how can I get the content to resize with the MainWondow? Is there any way?<br />\n",
+    "PostedDate": "2013-06-25T01:23:32.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060947",
+    "ThreadId": "448131",
+    "Html": "Do nothing, especially do not set Width or Height.<br />\n",
+    "PostedDate": "2013-06-25T08:20:09.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

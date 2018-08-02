@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1259281",
+    "ThreadId": "549546",
+    "Html": "Hi all --\r<br />\n<br />\nHas anyone written a theme for TabControl using the Modern UI variables (or modified Modern UI for WPF directly) that I can liberate for a project?  I tried writing one, but I'm a newb to authoring themes and I never saw my changes, so I assume I broke it somehow.\r<br />\n<br />\nThanks in advance for any replies.<br />\n",
+    "PostedDate": "2014-06-24T08:33:10.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1261773",
+    "ThreadId": "549546",
+    "Html": "ModernUI don't include theme for TabControl and TabItem. You can make your own. Using Expression Blend, you can make style more easy.<br />\n",
+    "PostedDate": "2014-07-01T16:30:51.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

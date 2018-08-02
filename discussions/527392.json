@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1199010",
+    "ThreadId": "527392",
+    "Html": "Hey guys,\r<br />\n<br />\nHave an app written using m:ui on a tablet and just have to say the limitation to changing the back button and menu link font is hurting the app.. the back button is so tiny its hard to click and the same goes to the menu links\r<br />\n<br />\nHas anyone been able to somehow override these things?<br />\n",
+    "PostedDate": "2014-01-27T08:55:56.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1200490",
+    "ThreadId": "527392",
+    "Html": "Download the source code and add it as an extra project to your solution.\r<br />\n<br />\nThen in the FirstFloor.ModernUI project, in the &quot;Themes&quot; directory, edit the ModernWindow.xaml by increasing the EllipseDiameter and Icon width and height for the Back button.<br />\n",
+    "PostedDate": "2014-01-29T07:17:20.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-02-12T12:06:00.163-08:00"
+  },
+  {
+    "Id": "1206373",
+    "ThreadId": "527392",
+    "Html": "Thank mabeale, that helped me find all the font sizes and such :)<br />\n",
+    "PostedDate": "2014-02-10T07:28:29.053-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

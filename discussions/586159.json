@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1362838",
+    "ThreadId": "586159",
+    "Html": "Hi,<br />\n<br />\nI am developing an WPF application using ModernUI Style version 1.0.5.<br />\nFew of my windows are used like a loading windows where I need the background to be solid color:<br />\n<br />\n<img src=\"http://s13.postimg.org/k15k2z7cn/Screen.png\" alt=\"Image\" /><br />\n<br />\nI set the background of these windows in <code>UserControl</code> page which is the <code>Content</code> of ModernWindow I am creating later:<br />\n<div style=\"color:Black;background-color:White;\"><pre>\r\n<span style=\"color:Blue;\">var</span> _loadingWindow = <span style=\"color:Blue;\">new</span> ModernWindow\n{\n        Style = (Style) Application.Current.Resources[<span style=\"color:#A31515;\">&quot;EmptyWindow&quot;</span>],\n        Content = <span style=\"color:Blue;\">new</span> LoadingPage(),\n        SizeToContent = SizeToContent.WidthAndHeight,\n        ResizeMode = ResizeMode.CanMinimize\n};\r\n</pre></div>After I updated ModernUI to most recent version 1.0.6, my loading windows changed to this mix of solid background and ModernUI theme background:<br />\n<br />\n<img src=\"http://s15.postimg.org/ck2qdq47f/screen2.png\" alt=\"Image\" /><br />\n<br />\nIs there a way how to change background of this windows to be completely solid colored?<br />\n<br />\nP.S. I have read your manual on GitHub: <a href=\"https://github.com/firstfloorsoftware/mui/wiki/Create-a-custom-theme\" rel=\"nofollow\">Create a custom theme</a><br />\nbut with this I change appereance of all ModernWindows in my application and I don't want that.<br />\n<br />\nThanks for help in advance.<br />\n",
+    "PostedDate": "2015-03-12T08:09:28.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

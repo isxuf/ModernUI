@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "1016596",
+    "ThreadId": "436939",
+    "Html": "when ever i try to set the icon property i get this error\r<br />\n<br />\nSystem.Windows.Markup.XamlParseException occurred\r<br />\n  HResult=-2146233087\r<br />\n  Message='Provide value on 'System.Windows.Baml2006.TypeConverterMarkupExtension' threw an exception.' Line number '13' and line position '19'.\r<br />\n  Source=PresentationFramework\r<br />\n  LineNumber=13\r<br />\n  LinePosition=19\r<br />\n  StackTrace:<br />\n<pre><code>   at System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)\n   at System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)\n   at System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)\n   at System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)\n   at Active_Dictionary.MainWindow.InitializeComponent() in c:\\Users\\Dr. Ahmed\\Documents\\Visual Studio 2012\\Projects\\ActiveDict\\Active Dictionary\\MainWindow.xaml:line 1\n   at Active_Dictionary.MainWindow..ctor() in c:\\Users\\Dr. Ahmed\\Documents\\Visual Studio 2012\\Projects\\ActiveDict\\Active Dictionary\\MainWindow.xaml.cs:line 26</code></pre>\n\nInnerException: System.IO.FileNotFoundException<br />\n<pre><code>   HResult=-2147024894\n   Message=Could not find file 'C:\\Users\\Dr. Ahmed\\Documents\\Visual Studio 2012\\Projects\\ActiveDict\\Active Dictionary\\bin\\Debug\\dictionary.ico'.\n   Source=mscorlib\n   FileName=C:\\Users\\Dr. Ahmed\\Documents\\Visual Studio 2012\\Projects\\ActiveDict\\Active Dictionary\\bin\\Debug\\dictionary.ico\n   StackTrace:\n        at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)\n        at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)\n        at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)\n        at System.IO.File.Open(String path, FileMode mode, FileAccess access, FileShare share)\n        at MS.Internal.AppModel.ContentFilePart.CriticalOpenFile(String filename)\n        at MS.Internal.AppModel.ContentFilePart.GetStreamCore(FileMode mode, FileAccess access)\n        at System.IO.Packaging.PackagePart.GetStream(FileMode mode, FileAccess access)\n        at System.IO.Packaging.PackWebResponse.CachedResponse.GetResponseStream()\n        at System.IO.Packaging.PackWebResponse.GetResponseStream()\n        at System.IO.Packaging.PackWebResponse.get_ContentType()\n        at System.Windows.Media.Imaging.BitmapDecoder.SetupDecoderFromUriOrStream(Uri uri, Stream stream, BitmapCacheOption cacheOption, Guid&amp; clsId, Boolean&amp; isOriginalWritable, Stream&amp; uriStream, UnmanagedMemoryStream&amp; unmanagedMemoryStream, SafeFileHandle&amp; safeFilehandle)\n        at System.Windows.Media.Imaging.BitmapDecoder.CreateFromUriOrStream(Uri baseUri, Uri uri, Stream stream, BitmapCreateOptions createOptions, BitmapCacheOption cacheOption, RequestCachePolicy uriCachePolicy, Boolean insertInDecoderCache)\n        at System.Windows.Media.Imaging.BitmapFrame.CreateFromUriOrStream(Uri baseUri, Uri uri, Stream stream, BitmapCreateOptions createOptions, BitmapCacheOption cacheOption, RequestCachePolicy uriCachePolicy)\n        at System.Windows.Media.ImageSourceConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)\n        at System.Windows.Baml2006.TypeConverterMarkupExtension.ProvideValue(IServiceProvider serviceProvider)\n        at MS.Internal.Xaml.Runtime.ClrObjectRuntime.CallProvideValue(MarkupExtension me, IServiceProvider serviceProvider)\n   InnerException: </code></pre>\n\nhow can i set it to appear in the task bar withour any errors like this ?<br />\n",
+    "PostedDate": "2013-03-17T06:54:36.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1016709",
+    "ThreadId": "436939",
+    "Html": "The LogoData property value needs to be a valid Geometry value. See also <a href=\"http://mui.codeplex.com/wikipage?title=Define%20a%20logo\" rel=\"nofollow\">this page</a> on defining a custom logo <br />\n",
+    "PostedDate": "2013-03-17T13:03:18.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1026327",
+    "ThreadId": "436939",
+    "Html": "I think newlogicmaster means that he is trying to set an icon to a button, not the main window.<br />\n<br />\nI have had this same problem but it only happens when debugging my application. <br />\n<br />\nAfter I set my icon to a button, first I must have the icon in the project, that's obvious, but then I also have to have a copy of the icon(s) in the Debug folder and, in the corresponding folder to the application setup e.g. ../Debug/Images - if you read the error message you will see it says - 'could not find file'. <br />\n<br />\nThis problem does not happen after the application is published.<br />\n<br />\nA small bug perhaps??<br />\n",
+    "PostedDate": "2013-04-05T14:07:43.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1026514",
+    "ThreadId": "436939",
+    "Html": "Can you show some code (or share a sample project) demonstrating the issue?<br />\n",
+    "PostedDate": "2013-04-06T04:32:02.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029026",
+    "ThreadId": "436939",
+    "Html": "I think I have the same problem : Normally, we go into the properties then define an icon, and in MainWindow.xaml, we add the property Icon=&quot;icon.ico&quot; : <br />\n<pre><code>&lt;mui:ModernWindow x:Class=&quot;TestMUI.MainWindow&quot;\n        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n        xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n        Title=&quot;MainWindow&quot;\n        ContentSource=&quot;/Pages/Home.xaml&quot;\n        Icon=&quot;icon.ico&quot;&gt;</code></pre>\n\nIs there any other way to get an .ico for the taskbar?<br />\n",
+    "PostedDate": "2013-04-11T07:39:06.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029095",
+    "ThreadId": "436939",
+    "Html": "You still can set a custom .ico as Window icon, mui doesn't change that. Are you sure icon.ico is available in your project?<br />\n",
+    "PostedDate": "2013-04-11T09:49:44.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029178",
+    "ThreadId": "436939",
+    "Html": "Yep, I see it in the properties. But that alone doesn't work. When I add the Icon property in a normal WPF project, it works. But it doesn't in a MUI project. How can you add an icon without this property?<br />\n",
+    "PostedDate": "2013-04-11T12:34:20.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029240",
+    "ThreadId": "436939",
+    "Html": "What do you mean with 'I see it in the properties? Adding an .ico resource and setting the ModernWindow.Icon property in xaml as you have done works fine.<br />\n",
+    "PostedDate": "2013-04-11T15:18:58.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029855",
+    "ThreadId": "436939",
+    "Html": "Let's sum up : We (I assume that is also the newLogicMaster problem) want to get an Icon for our main window. Not a logo (that's easy - and beautiful), but an icon that will be seen on the Explorer for our .exe, and in the taskbar when the app is pinned or launched. Like the &quot;<strong>e</strong>&quot; from Internet Explorer, or the violet icon from Visual Studio.\r<br />\n<br />\nWhat's that ModernWindow.Icon property ? I can't use it anywhere ?<br />\n",
+    "PostedDate": "2013-04-12T15:58:02.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029882",
+    "ThreadId": "436939",
+    "Html": "Hi HadrienB,\r<br />\n<br />\nThe icon you need to set is not related with the ModerWindow or other control, if you the Icon property on any control your icon will work just when the application is running.\r<br />\n<br />\nThe icon used on Shortcuts, Pinned Apps e etc is set on the &quot;Project Properties&quot; and will be a resource of the assembly. \r<br />\n<a href=\"http://msdn.microsoft.com/en-us/library/vstudio/339stzf7.aspx\" rel=\"nofollow\">How to: Specify an Application Icon</a>\r<br />\n<br />\nIf I miss something or misunderstood your question, please let me try again.<br />\n",
+    "PostedDate": "2013-04-12T18:35:06.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1030069",
+    "ThreadId": "436939",
+    "Html": "glbmarquez is correct, the Icon property is a WPF property derived from the Window class. Nothing mui specific.<br />\n",
+    "PostedDate": "2013-04-13T13:27:11.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052256",
+    "ThreadId": "436939",
+    "Html": "Yeap, this is a non-mui mistake!! \r<br />\n<br />\nIt commonly happens when you forget to make a copy of your icon to Output Directory,\r<br />\n1.- Just <strong>select</strong> your <strong>Icon</strong> in your <strong>Solution Explorer</strong>\r<br />\n2.-In the <strong>Properties</strong> window, select <strong>Copy to Output Directory</strong> to <strong>Copy Always</strong>\r<br />\n<br />\nIt happens in all WPF applications, good luck!<br />\n",
+    "PostedDate": "2013-06-03T10:24:44.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1103465",
+    "ThreadId": "436939",
+    "Html": "<strong>joelbugarini wrote:</strong><br />\n<blockquote>\nYeap, this is a non-mui mistake!! <br />\n<br />\nIt commonly happens when you forget to make a copy of your icon to Output Directory,<br />\n1.- Just <strong>select</strong> your <strong>Icon</strong> in your <strong>Solution Explorer</strong><br />\n2.-In the <strong>Properties</strong> window, select <strong>Copy to Output Directory</strong> to <strong>Copy Always</strong><br />\n<br />\nIt happens in all WPF applications, good luck!<br />\n</blockquote>\nYes , thanks for your helpful !!!!<br />\n",
+    "PostedDate": "2013-10-03T20:30:15.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

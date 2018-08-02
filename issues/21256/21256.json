@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\r\n\r\nI found a possible issue when Target Framework is 4.5 or 4.5.1. The ControlBox - Minimize/Maximize/Close buttons are very difficult, almost impossible, to be clicked. Tooltip text, for these buttons, is not showed. It's like the buttons are continuously refreshed.\r\n\r\nWhen the Target Framework is changed to 4.0 the issue disappear.\r\n\r\nThe OS is Windows 8.1 Pro.\r\n\r\nHas anyone noticed this problem?\r\n\r\nThanks",
+    "LastUpdatedDate": "2014-11-26T10:47:11.763-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-11-26T10:47:11.763-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ControlBox issue in 4.5 and 4.5.1",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21256
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

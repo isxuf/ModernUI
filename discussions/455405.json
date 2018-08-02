@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1087996",
+    "ThreadId": "455405",
+    "Html": "migkie:\r<br />\nCan I pass value to target page whenever navigate to it ?\r<br />\nEx: navagate page to page2.xaml , I want to pass value such as &quot;StringValue&quot; to page2.xaml \r<br />\nI have same problem like migkie. <br />\n",
+    "PostedDate": "2013-09-03T18:37:05.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088241",
+    "ThreadId": "455405",
+    "Html": "Fragment navigation\r<br />\n <strong>The OnFragmentNavigation is called when navigation to a content fragment begins. Fragment navigation happens when you navigate to a link uri containing a fragment (use the # character).</strong>\r<br />\n<br />\nOnce IContent is implemented by your content pages, the navigation methods are automatically invoked when a page is loaded in a ModernFrame instance. The following code demonstrates a content sample that prevents navigation when the user doesn't allow it:<br />\n<pre><code>public class MyContent : UserControl, IContent\n{\n  public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n  {\n  }\n  public void OnNavigatedFrom(NavigationEventArgs e)\n  {\n  }\n  public void OnNavigatedTo(NavigationEventArgs e)\n  {\n  }\n  public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n  {\n    // ask user if navigating away is ok\n    if (false == ModernDialog.ShowMessage(&quot;Navigate away?, &quot;navigate&quot;,   \n      System.Windows.MessageBoxButton.YesNo)) {\n                e.Cancel = true;\n    }\n  }\n}\n</code></pre>\n\n",
+    "PostedDate": "2013-09-04T07:04:16.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

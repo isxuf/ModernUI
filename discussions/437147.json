@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1017446",
+    "ThreadId": "437147",
+    "Html": "Hi,\r<br />\n<br />\nHow to persist appearance changes (e.g. in registry) when modern window is closed and reopened? \r<br />\n<br />\nThanks &amp; Regards,\r<br />\nChakravarti.B.<br />\n",
+    "PostedDate": "2013-03-18T20:47:46.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017676",
+    "ThreadId": "437147",
+    "Html": "That is entirely up to you. Modern UI for WPF doesn't impose a way to save app configuration. You can use the default .NET configuration framework or build your own.<br />\n",
+    "PostedDate": "2013-03-19T06:46:45.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:15:37-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "A custom, more fitting style for context menus would be great, as most of the MUI controls are 'square-ish', the default context menu would not look so pleasant. A context menu style similar to Visual Studio 2012 and changes colors according to the accent color and theme can be added.",
+    "LastUpdatedDate": "2013-07-05T13:15:37-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-04-03T09:17:31.903-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add context menu style",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 11,
+    "Id": 19556
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "fixed in Changeset 101029\n\n** Closed by kozw 6/11/2013 10:08 AM",
+      "PostedDate": "2013-06-11T13:05:32.683-07:00",
+      "Id": 158481
+    }
+  ]
+}

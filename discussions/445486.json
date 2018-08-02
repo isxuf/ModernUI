@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1050758",
+    "ThreadId": "445486",
+    "Html": "Hello everybody.\r<br />\n<br />\nMostly for self-training purpose I’m playing with the method: <strong>var frame = NavigationHelper.FindFrame(null, this);</strong>\r<br />\nI'm invoking it from:\r<br />\n<br />\nMainWindow constructor.\r<br />\nPage (user control) constructor.\r<br />\nPage IContent methods implementation.\r<br />\n<br />\nBut only in the method public void <strong>OnNavigatingFrom(NavigatingCancelEventArgs e)  { }</strong> it return the ModernFrame object. Otherwise it returns always null.\r<br />\n<br />\nWhy?\r<br />\nWhere I wrong?\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-05-30T10:36:24.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052362",
+    "ThreadId": "445486",
+    "Html": "FindFrame with name 'null' only works when the provided context (in your case 'this') is hosted in a ModernFrame. The MainWindow itself is the root of the UI and is not hosted in a ModernFrame, therefor null is returned. The page ctor is also not a valid location, because the page itself is not (yet) hosted in a ModernFrame, it is currently being created and not part of the visual tree. OnNavigatingFrom works because your content page is hosted in a ModernFrame.<br />\n",
+    "PostedDate": "2013-06-03T14:45:58.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052503",
+    "ThreadId": "445486",
+    "Html": "Thanks.<br />\n",
+    "PostedDate": "2013-06-04T00:55:13.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

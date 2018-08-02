@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1059933",
+    "ThreadId": "447895",
+    "Html": "Am I the only one who this bothers? Am I missing something or is this configurable?<br />\n",
+    "PostedDate": "2013-06-22T11:34:11.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059992",
+    "ThreadId": "447895",
+    "Html": "What do you mean by &quot;Window Icon&quot;? The one that shows in the taskbar, or the usual small icon on the top right corner of a window frame?<br />\n",
+    "PostedDate": "2013-06-23T01:44:35.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060046",
+    "ThreadId": "447895",
+    "Html": "<strong>portalmods124 wrote:</strong><br />\n<blockquote>\nWhat do you mean by &quot;Window Icon&quot;? The one that shows in the taskbar, or the usual small icon on the top right corner of a window frame?<br />\n</blockquote>\nI also wonder how to change this little icon with a smile. There is an example of how to change this icon?<br />\n",
+    "PostedDate": "2013-06-23T06:54:40.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060059",
+    "ThreadId": "447895",
+    "Html": "Documentation -&gt; Define logo<br />\n",
+    "PostedDate": "2013-06-23T07:42:39.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060064",
+    "ThreadId": "447895",
+    "Html": "I'm talking about it's location in the upper right.  Is there a way to change the location to the more traditional upper left? <br />\n",
+    "PostedDate": "2013-06-23T08:04:28.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060071",
+    "ThreadId": "447895",
+    "Html": "That's possible by creating your own ModernWindow template.<br />\n",
+    "PostedDate": "2013-06-23T08:18:13.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060216",
+    "ThreadId": "447895",
+    "Html": "Thank you friends<br />\n",
+    "PostedDate": "2013-06-23T18:37:34.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

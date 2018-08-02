@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1087089",
+    "ThreadId": "455111",
+    "Html": "hello kozw,\r<br />\nMy OS is Windows 7, run on .net 4.5.\r<br />\nModernWindow set MaxWidth=&quot;600&quot;\r<br />\nWhen I drag the window to the top of my screen, then the window change to Maximized, the bug show: you can see on the window's right side, It has a white space;\r<br />\nI want to know what's going on, think you.<br />\n",
+    "PostedDate": "2013-09-01T07:09:57.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088082",
+    "ThreadId": "455111",
+    "Html": "I finally know:\r<br />\n&lt;Setter TargetName=&quot;LayoutRoot&quot; Property=&quot;Margin&quot; Value=&quot;7&quot; /&gt;\r<br />\nreally interesting!<br />\n",
+    "PostedDate": "2013-09-04T00:20:41.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

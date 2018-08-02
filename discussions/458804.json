@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1098045",
+    "ThreadId": "458804",
+    "Html": "I'm looking for a little clarification with this framework regarding fragment navigation.\r<br />\n<br />\nIn most examples regarding fragment navigation, fragments are added to the Uri to a control by appending '#SomeValue' to the Uri.\r<br />\nFor example\r<br />\n&lt;mui:Link DisplayName=&quot;SomeLink Source=&quot;Views/ItemDetail.xaml#1234&quot;/&gt;\r<br />\n<br />\nAnd then instructions to read this value from the Fragment string on the FragmentNavigationEventArgs in the OnFragmentNavigation of IContent.\r<br />\n<br />\nBut then I see something like what is described in this link\r<br />\n<a href=\"https://mui.codeplex.com/discussions/441040\" rel=\"nofollow\">https://mui.codeplex.com/discussions/441040</a>\r<br />\n<br />\nThis answer suggests using a query string with a &quot;?Id=1234&quot; and to read the querystring value in OnNavigatedTo method of IContent.  However I do not see any ModernUI feature for parsing the querystring values.  The NavigationEventArgs provided to that method to not contain a collection of query string values or anything helpful like that.  Am I left to my own devices as to parsing that Query string?\r<br />\n<br />\nWhy not just formalize on using Querystring type formatting. a known format to most developers, for supplying values on the Uri and providing these values to the OnFragmentNavigation method instead.<br />\n",
+    "PostedDate": "2013-09-23T07:47:08.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

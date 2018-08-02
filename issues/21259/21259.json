@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "maybe it's a feature, but when you create a new window withe style 'EmptyWindow' and with a usercontrol which use the icontent interface, then do not raise the events (for example OnNavigatedTo)\r\n\r\nNOT working:\r\n```\r\n                var lv_muiWindow = new ConfigDb\r\n                {\r\n                    Style = (Style)App.Current.Resources[\"EmptyWindow\"],\r\n                    Content = new CarPlus.Config.ConfigDbSingle()\r\n                    {\r\n                        Margin = new Thickness(25)\r\n                    },\r\n                    ResizeMode = ResizeMode.NoResize,\r\n                    WindowStartupLocation = WindowStartupLocation.CenterScreen,\r\n                    Width = 550,\r\n                    Height = 550\r\n                };\r\n\r\n                lv_muiWindow.ShowDialog();\r\n```\r\n\r\nworking\r\n```\r\n                var lv_muiWindow = new ConfigDb\r\n                {\r\n                    Content = new CarPlus.Config.ConfigDbSingle()\r\n                    {\r\n                        Margin = new Thickness(25)\r\n                    },\r\n                    ResizeMode = ResizeMode.NoResize,\r\n                    WindowStartupLocation = WindowStartupLocation.CenterScreen,\r\n                    Width = 550,\r\n                    Height = 550\r\n                };\r\n\r\n                lv_muiWindow.ShowDialog();\r\n```",
+    "LastUpdatedDate": "2014-11-28T09:56:46.213-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-11-28T09:56:46.213-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Icontent interface - not working with style 'EmptyWindow'",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21259
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

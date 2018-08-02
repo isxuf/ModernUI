@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1030957",
+    "ThreadId": "440412",
+    "Html": "I saw the screen shots page <a href=\"https://mui.codeplex.com/wikipage?title=screenshots&amp;referringTitle=Home\" rel=\"nofollow\">https://mui.codeplex.com/wikipage?title=screenshots&referringTitle=Home</a>. How can I change the backgrond of ModernWIndow?<br />\n",
+    "PostedDate": "2013-04-16T00:19:28.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1031098",
+    "ThreadId": "440412",
+    "Html": "You'll need to define a custom <code>WindowBackgroundContent</code> resource.\r<br />\n<br />\nSee also <a href=\"http://mui.codeplex.com/wikipage?title=Creating%20a%20custom%20theme\" rel=\"nofollow\">this tutorial</a>  on creating a custom theme and here is is <a href=\"https://mui.codeplex.com/wikipage?title=Theme%20resource%20reference\" rel=\"nofollow\">full theme resource reference</a>.\r<br />\n<br />\nFinally, you can take a look at the mui demo app source code, it's where the screenshots come from.<br />\n",
+    "PostedDate": "2013-04-16T05:44:44.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

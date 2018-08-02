@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1097153",
+    "ThreadId": "458591",
+    "Html": "Hello, <br />\n<br />\nhow is possible to show a WPF UserControl that are defined in an another Assembly.<br />\n<br />\nYou discripe that the Source-Property of a link define the page/view localtion. Some of my controls but in different Assemblies.<br />\n<br />\nCould someone give a example how I must define the Link properly?<br />\n<br />\nThank you<br />\n<br />\nSolution: <br />\n<pre><code>.Source = New Uri(&quot;/&quot; &amp; AssemblyName &amp; &quot;;component/&quot; &amp; UserControlName &amp; &quot;.xaml&quot;, UriKind.Relative)</code></pre>\n\n",
+    "PostedDate": "2013-09-20T11:52:53.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1209379",
+    "ThreadId": "532311",
+    "Html": "Hello,\r<br />\n<br />\nI want to enable in moder ui the drag and drop. I have tried in my view to add the following:<br />\n<pre><code>    &lt;ListBox ItemsSource=&quot;{Binding Files}&quot; HorizontalAlignment=&quot;Stretch&quot; ScrollViewer.HorizontalScrollBarVisibility=&quot;Disabled&quot; AllowDrop=&quot;True&quot; Drop=&quot;ListBox_Drop&quot;&gt;\n</code></pre>\n\nIt does not work. Am I missing something?\r<br />\nHow do you achieve drag and drop in m:ui?<br />\n",
+    "PostedDate": "2014-02-17T04:38:01.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1215937",
+    "ThreadId": "532311",
+    "Html": "You may have already solved your problem, but this is what I have done.\r<br />\n<br />\nAdd the following attributes<br />\n<pre><code>AllowDrop=&quot;True&quot; Drop=&quot;DropBox_Drop&quot; DragOver=&quot;DropBox_DragOver&quot; DragLeave=&quot;DropBox_DragLeave&quot;</code></pre>\n\nto the ListBox and use the following code <br />\n<pre><code>public ObservableCollection&lt;string&gt; Files\n{\n            get\n            {\n                return _files;\n            }\n }\nprivate ObservableCollection&lt;string&gt; _files = new ObservableCollection&lt;string&gt;();\n\nprivate void DropBox_Drop(object sender, DragEventArgs e)\n {\n            if (e.Data.GetDataPresent(DataFormats.FileDrop))\n            {\n                //  _files.Clear();\n                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);\n                foreach (string filePath in files)\n                {\n                    _files.Add(filePath);\n                }\n\n            }\n            var listbox = sender as ListBox;\n            listbox.Background = Brushes.LightSlateGray;         \n}\nprivate void DropBox_DragOver(object sender, DragEventArgs e)\n{\n            if (e.Data.GetDataPresent(DataFormats.FileDrop))\n            {\n                e.Effects = DragDropEffects.Copy;\n                var listbox = sender as ListBox;\n                listbox.Background = Brushes.RoyalBlue;            \n            }\n            else\n            {\n                e.Effects = DragDropEffects.None;\n            }\n}\nprivate void DropBox_DragLeave(object sender, DragEventArgs e)\n{\n            var listbox = sender as ListBox;\n            listbox.Background = Brushes.RoyalBlue;          \n}\n\nprivate void btnRemoveItem_Click(object sender, RoutedEventArgs e)\n{\n            while (DropBox.SelectedItems.Count &gt; 0)\n            {\n                Files.RemoveAt(DropBox.SelectedIndex);\n            }\n}</code></pre>\n\nAlso, add a button which uses btnRemoveItem_Click to remove an item from the ListBox .<br />\n",
+    "PostedDate": "2014-02-27T20:18:52.283-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1215965",
+    "ThreadId": "532311",
+    "Html": "Thanks for the response.\r<br />\nIn fact my code was alright, it was a thing that I run my Visual Studio in Administrator mode and only the same privileged programs can drag and drop from each other.\r<br />\nSo my solution was to open another application in administrator mode and it worked. <br />\n",
+    "PostedDate": "2014-02-27T23:37:55.127-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

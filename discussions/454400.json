@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1084351",
+    "ThreadId": "454400",
+    "Html": "Hi,\r<br />\n<br />\nI try to localize an application. I'm using WPF Localize Extension ( <a href=\"https://wpflocalizeextension.codeplex.com\" rel=\"nofollow\">https://wpflocalizeextension.codeplex.com</a> ). My problem is that localization doesn't seems to works with m:ui elements like LinkGroup, Link, ...\r<br />\n<br />\nI know that my WPF Localize Extension is correct because with standard elements it works\r<br />\n<br />\n<br />\nRegards\r<br />\n<br />\nJulien<br />\n",
+    "PostedDate": "2013-08-23T15:00:09.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084858",
+    "ThreadId": "454400",
+    "Html": "i have tried setting the values inside the code and rebuilding the assembly but it didnt make any difference - any further ideas on this?<br />\n",
+    "PostedDate": "2013-08-26T03:46:19.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084895",
+    "ThreadId": "454400",
+    "Html": "I'm not familiar with this extension. Maybe it's because LinkGroup and Link are not dependency objects?<br />\n",
+    "PostedDate": "2013-08-26T05:52:23.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091418",
+    "ThreadId": "454400",
+    "Html": "I found a solution in a WPF Localization Extension. This can be solved by setting the text in code behind.\r<br />\n<br />\nin XAML :<br />\n<pre><code>&lt;mui:Link x:Name=&quot;MyLinkToTranslate&quot; ... /&gt;</code></pre>\n\nin code behind<br />\n<pre><code>public MyView()\n{\n    InitializeComponent();\n    //...\n    new LocExtension(&quot;my:resource:string:key&quot;).SetBinding(MyLinkToTranslate, PropertyHelper&lt;Link&gt;.GetProperty(x =&gt; x.DisplayName));\n    //...\n}</code></pre>\n\nclass PropertyHelper :<br />\n<pre><code>public static class PropertyHelper&lt;T&gt;\n{\n    public static PropertyInfo GetProperty&lt;TValue&gt;(Expression&lt;Func&lt;T, TValue&gt;&gt; selector)\n    {\n        Expression body = selector;\n        if (body is LambdaExpression)\n        {\n            body = ((LambdaExpression)body).Body;\n        }\n        switch (body.NodeType)\n        {\n            case ExpressionType.MemberAccess:\n                return (PropertyInfo)((MemberExpression)body).Member;\n            default:\n                throw new InvalidOperationException();\n        }\n    }\n}</code></pre>\n\nJulien<br />\n",
+    "PostedDate": "2013-09-11T13:12:59.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1347626",
+    "ThreadId": "454400",
+    "Html": "can you please explain that  &quot;my:resource:string:key&quot; did you get this working ?\r<br />\nThnaks<br />\n",
+    "PostedDate": "2015-01-30T11:05:57.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

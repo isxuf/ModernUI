@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1039077",
+    "ThreadId": "442472",
+    "Html": "how can I get the effect Just like in xamlspy's &quot;Evaluation&quot; notification/banner that appears right below the menu link groups? \r<br />\n<br />\nI get errors when I try to place content in the ModernWindow...<br />\n",
+    "PostedDate": "2013-05-03T08:45:44.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039215",
+    "ThreadId": "442472",
+    "Html": "Also, what is the proper way to set a Page's status bar?\r<br />\n<br />\nI don't see anything in the sample app.<br />\n",
+    "PostedDate": "2013-05-03T16:00:17.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039923",
+    "ThreadId": "442472",
+    "Html": "Currently that requires a custom ModernWindow template. I'm thinking about adding it to the default template and creating a ModernWindow.NotificationMessage property.\r<br />\n<br />\nFor a page status bar set the margins of your status control to the StatusMargin resource. A sample of status bar usage is found in the mui demo app (advanced &gt; content loader &gt; images).<br />\n",
+    "PostedDate": "2013-05-06T08:21:09.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040419",
+    "ThreadId": "442472",
+    "Html": "That would be excellent if it were added.\r<br />\n<br />\nIn the mean time, I suppose I can stick a usercontrol at the same place on each of my pages that will indicate the &quot;notification&quot; application wide. This isn't too bad if they all share the same instance of its ViewModel (registered as such in Unity or whatever DI).<br />\n",
+    "PostedDate": "2013-05-07T08:01:42.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040598",
+    "ThreadId": "442472",
+    "Html": "Somewhat related to this - in xaml spy, how did you force your link (license settings) to be white in the &quot;Evaluation&quot; notification? I am assuming that you are using a BBCodeBlock for the text being displayed, which is set to white, but the link is usually displayed in the AccentColor. Well your rectangle's fill color is AccentColor but your link remained white... any hints on this?<br />\n",
+    "PostedDate": "2013-05-07T14:13:55.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040921",
+    "ThreadId": "442472",
+    "Html": "<strong>flyte wrote:</strong><br />\n<blockquote>\nSomewhat related to this - in xaml spy, how did you force your link (license settings) to be white in the &quot;Evaluation&quot; notification? I am assuming that you are using a BBCodeBlock for the text being displayed, which is set to white, but the link is usually displayed in the AccentColor. Well your rectangle's fill color is AccentColor but your link remained white... any hints on this?<br />\n</blockquote>\nnever mind.. just figured it out - BBCode is awesome!<br />\n",
+    "PostedDate": "2013-05-08T08:46:28.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

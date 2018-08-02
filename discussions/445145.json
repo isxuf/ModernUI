@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1049369",
+    "ThreadId": "445145",
+    "Html": "How do I add some background image that fades in. Look at the bottom right hand corner of the link.\r<br />\n<br />\n<a href=\"http://imageshack.us/photo/my-images/855/imageaxdg.png/\" rel=\"nofollow\">http://imageshack.us/photo/my-images/855/imageaxdg.png/</a><br />\n",
+    "PostedDate": "2013-05-27T19:00:11.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1049519",
+    "ThreadId": "445145",
+    "Html": "Set the <code>ModernWindow.BackgroundContent</code> property to an Image and additionally set the <code>OpacityMask</code> of this image to a brush with transparent values to achieve the fade effect.<br />\n",
+    "PostedDate": "2013-05-28T03:54:24.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

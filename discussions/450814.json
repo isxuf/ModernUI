@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1071317",
+    "ThreadId": "450814",
+    "Html": "I have a page and want to navigate to another page using\r<br />\nNavigationCommands.GoToPage.Execute\r<br />\nI need to pass data to the target page, how do I go about it? What's the best practice for navigating to another page passing data?<br />\n",
+    "PostedDate": "2013-07-22T07:35:32.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073177",
+    "ThreadId": "450814",
+    "Html": "See <a href=\"https://mui.codeplex.com/discussions/447520\" rel=\"nofollow\">this discussion</a><br />\n",
+    "PostedDate": "2013-07-25T14:10:21.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073346",
+    "ThreadId": "450814",
+    "Html": "Thanks,\r<br />\nI re-engineered my project to use caliburn.micro MVVM makes so much sense.\r<br />\nBTW: Excellent UI framework keep up the good work!<br />\n",
+    "PostedDate": "2013-07-26T00:46:56.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "by design",
+    "ClosedDate": "2013-03-25T15:28:14.45-07:00",
+    "CommentCount": 3,
+    "Custom": "",
+    "Description": "Ok, this is a really awkward issue I have.\n\nWhen I set the Source of the first link in the MainWindow.xaml LinkGroup the content is not rendered. If the first link does not have a page as a source it is rendered fine.\n\nIt does not matter which page I set as source. Even if I use an existing page (which works fine on other links) the content is not rendered.\n\nHere is the Code of my MainWindow.xaml window:\n```\n<mui:ModernWindow xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n                  xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n                  xmlns:mui=\"http://firstfloorsoftware.com/ModernUI\"\n                  xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\"\n                  xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"\n                  mc:Ignorable=\"d\"\n                  x:Class=\"MuiTest.MainWindow\"\n                  Title=\"MainWindow\"\n                  SizeToContent=\"WidthAndHeight\"\n                  d:DesignWidth=\"300\"\n                  d:DesignHeight=\"300\"\n                  LogoData=\"F1 M 19,19C 39.9868,19 57,36.0132 57,57L 49.0833,57C 49.0833,40.3854 35.969,26.9167 19.7917,26.9167L 19,26.9274L 19,19 Z M 19,31.6667C 32.9912,31.6667 44.3333,43.0088 44.3333,57L 36.4167,57C 36.4167,47.3811 28.619,39.5834 19,39.5834L 19,31.6667 Z M 24.5417,45.9167C 27.6022,45.9167 30.0833,48.3978 30.0833,51.4583C 30.0833,54.5189 27.6022,57 24.5417,57C 21.4811,57 19,54.5189 19,51.4583C 19,48.3978 21.4811,45.9167 24.5417,45.9167 Z\">\n    \n    <mui:ModernWindow.MenuLinkGroups>\n        <mui:LinkGroup DisplayName=\"Welcome\">\n            <mui:LinkGroup.Links>\n                <mui:Link DisplayName=\"Introduction\" />\n            </mui:LinkGroup.Links>\n        </mui:LinkGroup>\n        <mui:LinkGroup DisplayName=\"Settings\">\n            <mui:LinkGroup.Links>\n                <mui:Link DisplayName=\"General Informations\"\n                          Source=\".\\Settings\\GeneralInformation.xaml\" />\n                <mui:Link DisplayName=\"Mod Options\"\n                          Source=\".\\Settings\\ModOptions.xaml\" />\n                <mui:Link DisplayName=\"Launcher Options\"\n                          Source=\".\\Settings\\LauncherOptions.xaml\" />\n            </mui:LinkGroup.Links>\n        </mui:LinkGroup>\n    </mui:ModernWindow.MenuLinkGroups>\n</mui:ModernWindow>\n```",
+    "LastUpdatedDate": "2013-05-16T05:30:54.9-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-03-23T05:56:29.437-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Window content is not rendered if first link has a source",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19511
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'm not sure I understand the issue. The thing that is missing in your XAML is a value for  ModernWindow.ContentSource which defines the initial page to be loaded. Is that the problem?",
+      "PostedDate": "2013-03-23T09:29:17.623-07:00",
+      "Id": 158459
+    },
+    {
+      "Message": "Sorry for the late reply.\r\n\r\nI'll explain this a little bit further:When I have the following link group code:```                                                                                                                      Source=\".\\Settings\\GeneralInformation.xaml\" />                                          Source=\".\\Settings\\ModOptions.xaml\" />                                          Source=\".\\Settings\\LauncherOptions.xaml\" />                        ```Then the window looks like this: http://flic.kr/p/e5pfs2\r\n\r\nHowever if the link group code looks like this:```                                                                    Source=\".\\Introduction.xaml\"/>                                                                                  Source=\".\\Settings\\GeneralInformation.xaml\" />                                          Source=\".\\Settings\\ModOptions.xaml\" />                                          Source=\".\\Settings\\LauncherOptions.xaml\" />                        ```The window looks like this: http://flic.kr/p/e5pfrB\r\n\r\nI checked the Introduction.xaml for invalid markup and even used (the working .\\Settings\\LauncherOptions.xaml as a test, but I still got the weird empty page. Nothing else has changed, only the Source of the very first link. And this seems to be the problem for me. I can add as many links as I want and they render perfectly fine. However if the first link has a Source nothing is rendered at all from the menu links group.\r\n\r\nI hope this is enough explanation.",
+      "PostedDate": "2013-03-25T10:05:46.16-07:00",
+      "Id": 158460
+    },
+    {
+      "Message": "The menu is empty, because you haven't specified the ModernWindow.ContentSource property. The menu automatically syncs the groups containing the current selected link. When you leave out the source of the first link, it's value is null which matches the ContentSource null value. This is a match and thus groups are rendered. If you enter a source link value but omit the ModernWindow.ContentSource, there is no match and the menu will be empty.\r\n\r\nWhat you need to do is to set both the source of the first link and the ModernWindow.ContentSource property. \r\n\r\nThis behavior is by design, the issue has been closed.",
+      "PostedDate": "2013-03-25T15:27:42.44-07:00",
+      "Id": 158461
+    }
+  ]
+}

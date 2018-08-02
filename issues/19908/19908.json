@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "not an issue, API has changed",
+    "ClosedDate": "2013-07-05T14:21:52.957-07:00",
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "I updated my MUI from 1.01 to 1.04 through NuGet, and now I'm getting a bunch of errors telling me:\n\n```\n'FirstFloor.ModernUI.Presentation.AppearanceManager' does not contain a definition for 'Theme'\n```\nor 'ThemeChanged'\n\nand\n\n```\nAn object reference is required for the non-static field, method or property 'FirstFloor.ModernUI.Presentation.AppearanceManager.FontSize.get'\n\nAn object reference is required for the non-static field, method or property 'FirstFloor.ModernUI.Presentation.AppearanceManager.AccentColor.get'\n```\nand other errors relating to the above.\n\nI've tried removing the packaged and reinstalling with no luck. I will attempt to install the package from Codeplex next and report my findings.",
+    "LastUpdatedDate": "2013-07-05T14:21:52.957-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-26T12:53:05.693-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AppearanceManager missing members",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19908
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Not an error, it has changed. At first, the current instance of the AppearanceManager is referenced in the static property Current of the very calls. Then have a look at the demo program, Content/SettingsAppearanceViewModel.cs.",
+      "PostedDate": "2013-06-27T00:48:18.12-07:00",
+      "Id": 158531
+    },
+    {
+      "Message": "class not calls, sorry. (there is no edit function for issues)",
+      "PostedDate": "2013-06-27T05:14:36.93-07:00",
+      "Id": 158532
+    }
+  ]
+}

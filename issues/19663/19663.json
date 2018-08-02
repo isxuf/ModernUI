@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "not an issue (resource will be included in next release. for now compile the latest source yourself)",
+    "ClosedDate": "2013-05-06T08:23:34.697-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Version 1.0.3.0\n.NET 4.0\nThe [use your own navigation framework snippet](https://mui.codeplex.com/wikipage?title=How%20to%20use%20your%20own%20navigation%20framework) is not working. During run time throws an exception 'Cannot find resource named 'EmptyWindow'. Resource names are case sensitive\"\n\nThe usage code:\n```\n<mui:ModernWindow x:Class=\"myProject.Forms.myForm\"\n                  xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n                  xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n                  xmlns:mui=\"http://firstfloorsoftware.com/ModernUI\"\n                  xmlns:shell=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell\"\n                  Width=\"300\"\n                  Style=\"{StaticResource EmptyWindow}\"\n                  Height=\"300\"\n                  ResizeMode=\"NoResize\"\n                  ShowInTaskbar=\"False\">\n```",
+    "LastUpdatedDate": "2013-05-16T05:30:53.54-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-02T18:03:26.577-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Cannot find resource named 'EmptyWindow'",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 19663
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The ModernWindowEx.xaml dictionary, containing the EmptyWindow style is not available in the latest release yet, you'll need to get the latest source code and compile it yourself. ",
+      "PostedDate": "2013-05-03T06:19:34.897-07:00",
+      "Id": 158495
+    }
+  ]
+}

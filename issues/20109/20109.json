@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "ModernWindowEx.xaml(53):\nModernWindow.xaml(90):\n```\n<Button x:Name=\"Restore\" Command=\"{Binding Source={x:Static shell:SystemCommands.RestoreWindowCommand}}\" ToolTip=\"restore\" Style=\"{StaticResource SystemButton}\" Visibility=\"Collapsed\" >\n```\n\nButton.ToolTip Should be like this:\n```\nToolTip=\"{x:Static modernui:Resources.Restore}\"\n```",
+    "LastUpdatedDate": "2013-08-20T18:25:05.31-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-08-20T18:25:05.31-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Globalization Bug",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20109
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

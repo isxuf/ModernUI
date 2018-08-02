@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1033506",
+    "ThreadId": "441040",
+    "Html": "hi,<br />\nI have a small problem using this great framework.<br />\n<br />\nTo simplify the situation, I defined the LinkGroup in the following manner:<br />\n<pre><code>&lt;mui:LinkGroup DisplayName=&quot;Group 1&quot; x:Name=&quot;lgGroup1&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;List&quot; Source=&quot;/UI/Pages/List.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Page1&quot; Source=&quot;/UI/Content/Page#1.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Page2&quot; Source=&quot;/UI/Content/Page#2.xaml&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;</code></pre>\n\nThrough the fragment #1, #2 I pass the code of the element to open.<br />\n<br />\nI would like to instantiate every time a new instance of my <strong>PAGE</strong> object , instead every time I open a link I notice that the <strong>PAGE</strong> class remains that of the previous link.<br />\n<br />\nI hope my bad English is clear enough.<br />\nThanks in advance<br />\n",
+    "PostedDate": "2013-04-21T01:12:37.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034817",
+    "ThreadId": "441040",
+    "Html": "Fragment navigation keeps the current content alive, there is currently no way to enforce a reload of the page. Can you provide some more details about your scenario that requires page reloading?<br />\n",
+    "PostedDate": "2013-04-23T15:00:03.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034924",
+    "ThreadId": "441040",
+    "Html": "I have a datagrid that contains a list of documents.<br />\nOn each row of the datagrid there is a button for editing the document. (green, blue)<br />\nThere is also a button for creating a new document (red).<br />\n<br />\nThe creation of a new document and edit rows, create a dynamic link in the menu.<br />\nWhen I switch from one link to another, the document instance is always the same.<br />\nI would like to maintain separate instances to allow opening multiple documents.<br />\n<br />\n<img src=\"http://img855.imageshack.us/img855/3479/imagedm.png\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-04-23T22:22:55.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035285",
+    "ThreadId": "441040",
+    "Html": "Okay, so you need multiple instances of the same page but with different content. The solution is actually fairly simple, do not use fragment navigation. Use query strings instead, (use ? instead of # in your link uris). This will ensure that pages are instantiated for each unique query string. Make sure your page implements IContent and then in your OnNavigatedTo method implementation you can query the used query string to load the appropiate document.<br />\n",
+    "PostedDate": "2013-04-24T12:54:55.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035467",
+    "ThreadId": "441040",
+    "Html": "Thanks, works great.\r<br />\nIt's truly an excellent framework.<br />\n",
+    "PostedDate": "2013-04-24T23:42:44.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

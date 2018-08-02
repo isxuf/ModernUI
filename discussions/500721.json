@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1169417",
+    "ThreadId": "500721",
+    "Html": "Hi Kozw.\r<br />\n<br />\nJust a simple question: is this beautiful project still in progress or you have stopped to work on it?\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2014-01-15T08:51:39.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1184541",
+    "ThreadId": "500721",
+    "Html": "It's been way to long since I've done some substantial work on mui, the main reason being that I've been busy with other projects.\r<br />\n<br />\nOne bit of good news; MUI was initially derived from <a href=\"http://xamlspy.com/download/v1\" rel=\"nofollow\">XAML Spy v1</a>, and became a separate project. XAML Spy v1 did not depend on MUI. <a href=\"http://xamlspy.com/download\" rel=\"nofollow\">XAML Spy v2</a> does, it uses the MUI 1.0.5 release. So I'm dogfooding MUI, which will bring improvements back to this project.\r<br />\n<br />\nSo no, work on MUI has not stopped.<br />\n",
+    "PostedDate": "2014-01-20T07:11:31.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

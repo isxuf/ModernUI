@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\r\n\r\nFirst of all, I would like to thank you for your work, very impressive!\r\n\r\nI'm a beginner, so I think my problem is simple, but I can't find a solution.\r\n\r\nAt the beginning, I was thinking my solution was wrong, so I coded it in a simple WPF application.\r\n\r\nHere is what I want: see FooWPF\r\n\r\nThis is the code for the MainWindow:\r\n```\r\n<Window x:Class=\"TestTextBlockCenter.MainWindow\"\r\n        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\r\n        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\r\n        Title=\"MainWindow\" Height=\"800\" Width=\"500\"  >\r\n    \r\n    <Frame Content=\"Frame\" Margin=\"0,0,0,0\" Source=\"Page1.xaml\" />\r\n\r\n</Window>\r\n```\r\n\r\nAnd the code for the page:\r\n```\r\n<Page x:Class=\"TestTextBlockCenter.Page1\"\r\n      xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\r\n      xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\r\n      xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" \r\n      xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\" \r\n      mc:Ignorable=\"d\" \r\n      d:DesignHeight=\"300\" d:DesignWidth=\"300\"\r\n\tTitle=\"Page1\">\r\n\r\n    <Grid>\r\n        <Grid.RowDefinitions>\r\n            <RowDefinition Height=\"1*\"/>\r\n            <RowDefinition Height=\"3*\"/>\r\n            <RowDefinition Height=\"1*\"/>\r\n        </Grid.RowDefinitions>\r\n\r\n        <Rectangle Margin=\"0\" Stroke=\"Black\" Fill=\"#FF252526\" Grid.Row=\"0\" />\r\n        <Rectangle Fill=\"#FF2D2D30\" Margin=\"0\" Grid.Row=\"1\" Stroke=\"Black\"/>\r\n        <Rectangle Margin=\"0\" Stroke=\"Black\" Fill=\"#FF252526\" Grid.Row=\"2\" />\r\n\r\n        <DockPanel Grid.Row=\"0\" Margin=\"0,0,0,0\" HorizontalAlignment=\"Center\" VerticalAlignment=\"Center\">\r\n            <TextBlock  Text=\"FOO\" FontSize=\"40\" Foreground=\"#FFF3F2F2\"  />\r\n        </DockPanel>\r\n    </Grid>\r\n</Page>\r\n\r\n```\r\n\r\nBut, when I try to do the same thing in a MUI Application, I get an other result: See FooMUI\r\n\r\nThis is my code in the MainWindow:\r\n```\r\n<mui:ModernWindow x:Class=\"IHM_MUI.MainWindow\"\r\n                  xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\r\n                  xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\r\n                  xmlns:mui=\"http://firstfloorsoftware.com/ModernUI\"\r\n                  Title=\"\"                   \r\n                  WindowStartupLocation=\"CenterScreen\" ResizeMode=\"CanMinimize\" WindowStyle=\"None\" ContentSource=\"/Pages/PageStart.xaml\" Height=\"800\" Width=\"500\">\r\n\r\n</mui:ModernWindow>\r\n```\r\n\r\nThe code in the page:\r\n```\r\n<UserControl x:Class=\"IHM_MUI.Pages.PageInit\"\r\n             xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\r\n             xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\r\n             xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" \r\n             xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\" \r\n             xmlns:mui=\"http://firstfloorsoftware.com/ModernUI\"\r\n             mc:Ignorable=\"d\" \r\n             d:DesignHeight=\"300\" d:DesignWidth=\"300\"\r\n             \r\n             >\r\n    <Grid >\r\n        <Grid.RowDefinitions>\r\n            <RowDefinition Height=\"1*\"/>\r\n            <RowDefinition Height=\"3*\"/>\r\n            <RowDefinition Height=\"1*\"/>\r\n        </Grid.RowDefinitions>\r\n\r\n        <DockPanel Grid.Row=\"0\" HorizontalAlignment=\"Center\" VerticalAlignment=\"Center\">\r\n            <TextBlock  Text=\"TOTO\" FontSize=\"40\" />\r\n        </DockPanel>\r\n\r\n    </Grid>\r\n</UserControl>\r\n```\r\n\r\nAnd the code in the theme:\r\n```\r\n<ResourceDictionary xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\r\n                    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\r\n                    xmlns:mui=\"http://firstfloorsoftware.com/ModernUI\">\r\n\r\n    <Grid x:Key=\"WindowBackgroundContent\" >\r\n        <Grid.RowDefinitions>\r\n            <RowDefinition Height=\"1*\"/>\r\n            <RowDefinition Height=\"3*\"/>\r\n            <RowDefinition Height=\"1*\"/>\r\n        </Grid.RowDefinitions>\r\n        \r\n        <Rectangle Margin=\"0\" Stroke=\"Black\" Fill=\"#FF252526\" Grid.Row=\"0\" />            \r\n        <Rectangle Fill=\"#FF2D2D30\" Margin=\"0\" Grid.Row=\"1\" Stroke=\"Black\"/>\r\n        <Rectangle Margin=\"0\" Stroke=\"Black\" Fill=\"#FF252526\" Grid.Row=\"2\" />\r\n    </Grid>   \r\n</ResourceDictionary>\r\n```\r\n\r\nSo, what am I doing wrong ? \r\n\r\nAny help would be glady appreciate, thanks !",
+    "LastUpdatedDate": "2015-01-06T02:22:23.563-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2015-01-06T02:14:42.753-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problem with TextBlock alignment in a page",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21263
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1382557,
+      "FileName": "FooWPF.png",
+      "DownloadUrl": ".\\1382557"
+    },
+    {
+      "FileId": 1382558,
+      "FileName": "FooMUI.png",
+      "DownloadUrl": ".\\1382558"
+    }
+  ],
+  "Comments": []
+}

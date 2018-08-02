@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1110436",
+    "ThreadId": "463093",
+    "Html": "Problem:\r<br />\nI need tabs on the left, not on the right. \r<br />\n<br />\nAttempted Solution:\r<br />\nI tried adding a HorizonalAlginment property to the Modern Tab xaml like so:\r<br />\n&lt;mui:ModernTab Layout=&quot;Tab&quot; <strong>HorizontalAlignment=&quot;Left&quot;</strong>&gt;\r<br />\n<br />\nNew Problem:\r<br />\nIt works on the first rendering. BUT if I tab to content which is wider than default, the page (visual tree?) redraws itself with the tabs aligned right! A domino rally of other visual problems ensues.\r<br />\n<br />\nAny help is much appreciated!\r<br />\nMark<br />\n",
+    "PostedDate": "2013-10-22T02:29:06.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1320362",
+    "ThreadId": "463093",
+    "Html": "There is a way not good enough \r<br />\nFind \\FirstFloor.ModernUI\\Themes\\ModernTab.xaml<br />\n<pre><code>&lt;ListBox x:Name=&quot;LinkList&quot; ItemsSource=&quot;{TemplateBinding Links}&quot; HorizontalAlignment=&quot;Right&quot; VerticalAlignment=&quot;Top&quot; Margin=&quot;{DynamicResource HeaderMargin}&quot;</code></pre>\n\nchange it to HorizontalAlignment=&quot;Left&quot;.\r<br />\n<br />\nyou can also make it a DependencyProperty to bind.<br />\n",
+    "PostedDate": "2014-11-09T02:54:23.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

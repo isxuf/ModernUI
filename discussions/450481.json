@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1070045",
+    "ThreadId": "450481",
+    "Html": "I just downloaded the latest source code for mui, and I tried to target .NET4.0 by changing the Target Framework and adding NET4 to the Conditional compilation symbols. It doesn't seem to build for me and I am wondering if I am missing a step or if the latest build requires .NET4.5 Thanks<br />\n<br />\nI get the following errors<br />\n<pre><code>The tag 'WindowChrome' does not exist in XML namespace 'http://schemas.microsoft.com/winfx/2006/xaml/presentation'. Line 80 Position 18.    \\FirstFloor.ModernUI\\FirstFloor.ModernUI\\Themes\\ModernDialog.xaml</code></pre>\n\n<pre><code>The property 'WindowChrome.IsHitTestVisibleInChrome' does not exist in XML namespace 'http://schemas.microsoft.com/winfx/2006/xaml/presentation'. Line 80 Position 147. y\\FirstFloor.ModernUI\\FirstFloor.ModernUI\\Themes\\ModernWindow.xaml</code></pre>\n\nAnd then when I commented out all references to WindowChrome, I got a few more errors along the lines of<br />\n<pre><code>\\FirstFloor.ModernUI\\FirstFloor.ModernUI\\Themes\\ModernDialog.xaml(28,77): error MC3011: Cannot find the static member 'WindowNonClientFrameThickness' on the type 'SystemParameters'.</code></pre>\n\nAnd then commenting out all the references to WindowNonClientFrameThickness, I got these errors:<br />\n<pre><code>FirstFloor.ModernUI\\FirstFloor.ModernUI\\Assets\\ModernWindowEx.xaml(44,177): error MC3050: Cannot find the type 'SystemCommands'. Note that type names are case sensitive.</code></pre>\n\n<pre><code>SystemCommands is not supported in a Windows Presentation Foundation (WPF) project. FirstFloor.ModernUI\\FirstFloor.ModernUI\\Assets\\ModernWindowEx.xaml</code></pre>\n\nI added a reference to Microsoft.Windows.Shell.dll thinking that might fix the issue, but that didn't help and now I am off to find out where the references to SystemCommands comes from<br />\n<br />\n<br />\n<br />\nOkay --- so after adding the referense to Microsoft.Windows.Shell.dll and adding this reference to Themes\\ModernWindow.xaml and Assets\\ModernWIndowEx.xaml<br />\n<pre><code>xmlns:syscmd=&quot;clr-namespace:Microsoft.Windows.Shell;assembly=Microsoft.Windows.Shell&quot;</code></pre>\n\nand then prefixing all SystemCommand calls with &quot;syscmd:&quot; it successfully built. I am going to look back now and figure out if the previous stuff I commented out can just be prefixed with the same<br />\n",
+    "PostedDate": "2013-07-18T07:16:23.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1070056",
+    "ThreadId": "450481",
+    "Html": "I was able to fix the SystemParamaters issue by modifying the Bindings for it.<br />\n<br />\nI changed all the Bindings using SystemParameters to be like the following.<br />\n<br />\nChanged From:<br />\n<pre><code>Margin=&quot;{Binding Source={x:Static SystemParameters.WindowNonClientFrameThickness}&quot;&gt;</code></pre>\n\nTo: (Take note of the <strong>SystemParameters2</strong>)<br />\n<pre><code>Margin=&quot;{Binding Source={x:Static syscmd:SystemParameters2.Current}, Path='WindowNonClientFrameThickness'}&quot;&gt;</code></pre>\n\nNow 1.0.5 is building for me under .NET4 with these changes, there was probably an easier way =) But this got the job done.<br />\n",
+    "PostedDate": "2013-07-18T07:45:43.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1070059",
+    "ThreadId": "450481",
+    "Html": "You do not need to change the .NET4.5 project, there's already a project targetting .NET4 available in the FirstFloor.ModernUI.WPF4 folder.<br />\n",
+    "PostedDate": "2013-07-18T07:52:19.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1070097",
+    "ThreadId": "450481",
+    "Html": "Crazy! Ha. Thanks<br />\n",
+    "PostedDate": "2013-07-18T09:17:59.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

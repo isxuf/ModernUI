@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1086144",
+    "ThreadId": "454851",
+    "Html": "I can't seem to figure out how to set well...anything besides plain text as the window background. Some beginner friendly explanation and sample or some pointers to other resources would help!<br />\n<br />\nWhat can be assigned to BackgroundContent and how? For instance, given a user control defined in bg.xaml, can it be assigned to BackgroundContent or MainWindow and how? Does it work with a resource?<br />\n<br />\nPS: I figured out how to set a user control as background content from code but is there a way to set it inside the xaml directly?<br />\n<br />\nHere's how I did it from code:<br />\n<pre><code>    public partial class MainWindow : ModernWindow\n    {\n        public MainWindow()\n        {\n            InitializeComponent();\n           TestBGContent bg = new TestBGContent();\n            this.BackgroundContent = bg;\n        }\n    }\n</code></pre>\n\n",
+    "PostedDate": "2013-08-29T06:00:37.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086668",
+    "ThreadId": "454851",
+    "Html": "ModernWindow.BackgroundContent is an object that is rendered in a ContentPresenter. It can be anything, but most often is just a visual such as an Image. You can declare background content in your MainWindow.xaml like so:<br />\n<pre><code>&lt;mui:ModernWindow .... &gt;\n  &lt;mui:ModernWindow.BackgroundContent&gt;\n    &lt;Image Source=&quot;..&quot; /&gt;\n  &lt;/mui:ModernWindow.BackgroundContent&gt;\n&lt;/mui:ModernWindow&gt;</code></pre>\n\n",
+    "PostedDate": "2013-08-30T07:39:49.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

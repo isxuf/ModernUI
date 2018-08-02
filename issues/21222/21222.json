@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "So, we developed an attached behavior to implement the standard behavior when a user double clicks or\nright clicks on an image in the left-top Window Chrome.\n\n1) Double Click should close the application\n2) Right mouse click should show the Windows System Menu\n\nThe Double Click works without any problem but the __ShowSystemMenuCommand__ never works in this scenario. What am I doing wrong?\n\nI am using the attached sample to demonstrate the issue with the left side Blob Rectangle instead of using an actual image - I think this is fine since the behavior is based on FrameworkElement anyway. Below is the XAML in the Resource.xaml file (and you can check out the behavior in the attached zip file):\n\n```\n<Rectangle Fill=\"{DynamicResource Accent}\"\n  Grid.RowSpan=\"5\"\n  RenderTransform=\"1,0,0,1,0,32\"\n  Width=\"14\"\n  Height=\"53\"\n  HorizontalAlignment=\"Left\" VerticalAlignment=\"Top\"\n  behav:DoubleClickImageToCommand.DoubleClickItemCommand=\"{Binding Source={x:Static shell:SystemCommands.CloseWindowCommand}}\"\n  behav:DoubleClickImageToCommand.RightClickItemCommand=\"{Binding Source={x:Static shell:SystemCommands.ShowSystemMenuCommand}}\" />\n\n```\n\nI am pretty sure the behavior is working since I can step into the debugger and see that the\nShowSystemMenuCommand executed. But why is the System Menu not showing up?\n\nYou can verify the same problem here with an actual image in the Edi/Themes/EmptyWindow.xaml file:\nhttps://edi.codeplex.com/SourceControl/changeset/b24da3f88e8787ba2e12fa684a29fad8aca9098b",
+    "LastUpdatedDate": "2014-08-15T21:15:58.477-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-08-12T10:37:03.39-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ShowSystemMenuCommand does not work with Empty Window Style",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 21222
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903314,
+      "FileName": "MUI Window WpfSample.zip",
+      "DownloadUrl": ".\\903314"
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1235854",
+    "ThreadId": "542752",
+    "Html": "I want to make moderndialog with no button close appear. How to achieve this ? And I want if I press enter in the form it not close automatically? If it Possible?<br />\n",
+    "PostedDate": "2014-04-20T04:49:47.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1238631",
+    "ThreadId": "542752",
+    "Html": "Hi there,\r<br />\n<br />\nYes. That's possible. The ModernDialog has a Buttons property of type IEnumerable&lt;Button&gt; type. To remove buttons on the dialog, assign an empty array to it. You can also create your own set of buttons and assign them as an array to Buttons property.\r<br />\n<br />\nBy default, there're two buttons set to Buttons property, one for OK, the other for Cancel. The IsDefault property of the OK button is set to true, which means if you press ENTER, this button will be invoked. If you don't want this behavior, just obtain a reference of this button, and set its IsDefault to false. By the way, the Cancel button has its IsCancel property set to true, which means if you press ESC, this button will be invoked.\r<br />\n<br />\nHope that helps.\r<br />\nAllen<br />\n",
+    "PostedDate": "2014-04-27T23:32:22.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1238671",
+    "ThreadId": "542752",
+    "Html": "Thanks.. it help me alot..<br />\n",
+    "PostedDate": "2014-04-28T01:06:09.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

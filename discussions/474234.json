@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1136572",
+    "ThreadId": "474234",
+    "Html": "Hey Guys,\r<br />\n<br />\nI could use your help one more time. Im trying to navigate from one page to another using a command bound to a button. I have found a way to do it in xaml BUT I need to pass a parameter to the new page/viewmodel. \r<br />\nCode behing is no solution for me, as we are working strictly with MVVM.\r<br />\nAny suggestions are welcome. <br />\n",
+    "PostedDate": "2013-12-15T23:21:43.6-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1136704",
+    "ThreadId": "474234",
+    "Html": "You need to find the ModernFrame and set it's Source property to initiate the navigation.  Finding the frame can be done with the VisualTreeHelper.  If you're already passing a parameter through the Command, you'll need to find some other way to get a reference to the UserControl or ModernWindow; perhaps the constructor of the view model?<br />\n<pre><code>public class VisualHelper\n{\n    /// &lt;summary&gt;\n    /// Finds a Child of a given item in the visual tree. \n    /// &lt;/summary&gt;\n    /// &lt;param name=&quot;parent&quot;&gt;A direct parent of the queried item.&lt;/param&gt;\n    /// &lt;typeparam name=&quot;T&quot;&gt;The type of the queried item.&lt;/typeparam&gt;\n    /// &lt;param name=&quot;childName&quot;&gt;x:Name or Name of child. &lt;/param&gt;\n    /// &lt;returns&gt;The first parent item that matches the submitted type parameter. \n    /// If no matching item can be found, \n    /// a null parent is being returned.&lt;/returns&gt;\n    public static T FindChild&lt;T&gt;(DependencyObject parent, string childName)\n        where T : DependencyObject\n    {\n        // Confirm parent and childName are valid. \n        if (parent == null) return null;\n\n        T foundChild = null;\n\n        int childrenCount = VisualTreeHelper.GetChildrenCount(parent);\n        for (int i = 0; i &lt; childrenCount; i++)\n        {\n            var child = VisualTreeHelper.GetChild(parent, i);\n            // If the child is not of the request child type child\n            T childType = child as T;\n            if (childType == null)\n            {\n                // recursively drill down the tree\n                foundChild = FindChild&lt;T&gt;(child, childName);\n\n                // If the child is found, break so we do not overwrite the found child. \n                if (foundChild != null) break;\n            }\n            else if (!string.IsNullOrEmpty(childName))\n            {\n                var frameworkElement = child as FrameworkElement;\n                // If the child's name is set for search\n                if (frameworkElement != null &amp;&amp; frameworkElement.Name == childName)\n                {\n                    // if the child's name is of the request name\n                    foundChild = (T)child;\n                    break;\n                }\n            }\n            else\n            {\n                // child element found.\n                foundChild = (T)child;\n                break;\n            }\n        }\n\n        return foundChild;\n    }\n}</code></pre>\n\n",
+    "PostedDate": "2013-12-16T06:52:05.263-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

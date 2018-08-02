@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Hello, I have WPF application which uses Modern UI for WPF 1.0.6. \nI created ModernDialog user control and putted some elements to dialog. \nXAML code:\n\n```\n<mui:ModernDialog x:Class=\"SkynetCompanyContractWPF.Content.NumberDateDataGridDialog\"\n                  xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n                  xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n                  xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"\n                  xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\"\n                  xmlns:mui=\"http://firstfloorsoftware.com/ModernUI\"\n                  xmlns:System=\"clr-namespace:System;assembly=mscorlib\"\n                  mc:Ignorable=\"d\"\n                  Title=\"Reikalinga papildoma informacija\"\n                  Width=\"1000\"\n                  Height=\"1000\">\n    <Grid Width=\"1000\">\n        <Grid.RowDefinitions>\n            <RowDefinition Height=\"40\" />\n            <RowDefinition Height=\"40\" />\n            <RowDefinition Height=\"40\" />\n            <RowDefinition Height=\"auto\" />\n        </Grid.RowDefinitions>\n        <Grid.ColumnDefinitions>\n            <ColumnDefinition Width=\"140\" />\n            <ColumnDefinition />\n        </Grid.ColumnDefinitions>\n\n        <Label Grid.Column=\"0\"\n               Grid.Row=\"0\"\n               Content=\"Sutarties data:\"\n               VerticalAlignment=\"Center\" />\n\n        <Label Grid.Column=\"0\"\n               Grid.Row=\"1\"\n               Content=\"Sutarties numeris:\"\n               VerticalAlignment=\"Center\" />\n\n        <Label Grid.Column=\"0\"\n               Grid.Row=\"2\"\n               Content=\"Ar taikyti nuolaida?\"\n               VerticalAlignment=\"Center\" />\n\n        <DatePicker Grid.Column=\"1\"\n                    Grid.Row=\"0\"\n                    Margin=\"0,5,0,5\"\n                    x:Name=\"datePicker\"\n                    HorizontalAlignment=\"Left\"\n                    Width=\"200\"\n                    SelectedDate=\"{x:Static System:DateTime.Now}\" />\n\n        <TextBox Grid.Column=\"1\"\n                 Grid.Row=\"1\"\n                 Name=\"contractNumber_TextBox\"\n                 HorizontalAlignment=\"Left\"\n                 Width=\"200\"\n                 Style=\"{StaticResource CustomerTextBox}\"\n                 IsReadOnly=\"False\"/>\n        \n        <CheckBox\n            Grid.Column=\"1\"\n            Grid.Row=\"2\"\n            x:Name=\"discount_CheckBox\"\n            IsChecked=\"{Binding WithDiscount, Mode=TwoWay}\"/>\n        \n        <DataGrid Name=\"orderedServices\"\n                  AutoGenerateColumns=\"False\"\n                  Grid.Row=\"3\"\n                  Grid.Column=\"0\"\n                  ItemsSource=\"{Binding OrderServiceViews}\"\n                  CanUserAddRows=\"False\"\n                  HorizontalAlignment=\"Stretch\"\n                  Grid.ColumnSpan=\"2\">\n            <DataGrid.RowStyle>\n                <Style TargetType=\"DataGridRow\">\n                    <Setter Property=\"ToolTip\">\n                        <Setter.Value>\n                            <TextBlock Text=\"{Binding Comment}\" />\n                        </Setter.Value>\n                    </Setter>\n                </Style>\n            </DataGrid.RowStyle>\n            <DataGrid.Columns>\n                <mui:DataGridCheckBoxColumn Header=\"Įtraukta\"\n                                            Binding=\"{Binding IsForPrint}\" />\n                <mui:DataGridTextColumn Header=\"Paslaugos pavadinimas\"\n                                        Binding=\"{Binding ServiceName}\" />\n                <mui:DataGridTextColumn Header=\"Summa be PVM\"\n                                        Binding=\"{Binding Summ, StringFormat=C, ConverterCulture=lt-LT}\" />\n                <mui:DataGridTextColumn Header=\"Vienetai\"\n                                        Binding=\"{Binding ServiceUnits}\" />\n                <mui:DataGridTextColumn Header=\"Kiekis\"\n                                        Binding=\"{Binding Quantity}\" />\n                <mui:DataGridTextColumn Header=\"Kaina\"\n                                        Binding=\"{Binding ServicePrice, StringFormat=C, ConverterCulture=lt-LT}\" />\n            </DataGrid.Columns>\n        </DataGrid>\n    </Grid>\n</mui:ModernDialog>\n```\n\nAnd result: \n![Image](http://i60.tinypic.com/1fdaj9.png)\n\nAs you can see, near window on the right and bottom side appeared black border. Why? \nAnd even if I set dialog window Width=\"1000\" Height=\"1000\" actual size is smaller, we can't see all datagrid orderedServices columns.\n\nIs it bug or my mistake?",
+    "LastUpdatedDate": "2014-08-20T07:46:15.847-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-08-20T07:46:15.847-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ModernDialog bug",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21242
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

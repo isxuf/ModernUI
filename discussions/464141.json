@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1113883",
+    "ThreadId": "464141",
+    "Html": "Here's the code for testing.<br />\n<pre><code>public partial class MainWindow\n{\n    public MainWindow()\n    {\n        InitializeComponent();\n\n        //foreach (var item in new ApplicationController().GetMenu()) {\n        //    MenuLinkGroups.li\n        //}\n\n        MenuLinkGroups = BuildMenu();\n    }\n\n\n    public LinkGroupCollection BuildMenu() {\n        var linkGroups = new LinkGroupCollection();\n\n        #region * General Group *\n        var general = new LinkGroup() {\n            DisplayName = &quot;General&quot;,\n            GroupName = &quot;General&quot;\n        };\n        //new Uri(&quot;/Content/&quot; + content + &quot;.xaml&quot;, UriKind.RelativeOrAbsolute);\n        general.Links.Add(new Link() {\n            DisplayName = &quot;home&quot;,\n            Source = new Uri(@&quot;/Pages/Home.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n        general.Links.Add(new Link() {\n            DisplayName = &quot;Dashboard&quot;,\n            Source = new Uri(@&quot;/Pages/Home.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n        #endregion\n\n        #region * Setup Group *\n        var setup = new LinkGroup() {\n            DisplayName = &quot;Setup&quot;,\n            GroupName = &quot;Setup&quot;\n        };\n        setup.Links.Add(new Link() {\n            DisplayName = &quot;Users&quot;,\n            Source = new Uri(@&quot;/Pages/UserSetupPage.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n        setup.Links.Add(new Link() {\n            DisplayName = &quot;Access Groups&quot;,\n            Source = new Uri(@&quot;/Pages/AccessGroupSetupPage.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n        setup.Links.Add(new Link() {\n            DisplayName = &quot;Products&quot;,\n            Source = new Uri(@&quot;/Pages/ProductSetupPage.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n        setup.Links.Add(new Link() {\n            DisplayName = &quot;Product Cateogories&quot;,\n            Source = new Uri(@&quot;/Pages/ProductCategorySetupPage.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n        setup.Links.Add(new Link() {\n            DisplayName = &quot;Vendors&quot;,\n            Source = new Uri(@&quot;/Pages/VendorSetupPage.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n        setup.Links.Add(new Link() {\n            DisplayName = &quot;Agents&quot;,\n            Source = new Uri(@&quot;/Pages/AgentSetupPage.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n        setup.Links.Add(new Link() {\n            DisplayName = &quot;Payment Types&quot;,\n            Source = new Uri(@&quot;/Pages/PaymentTypeSetupPage.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n        setup.Links.Add(new Link() {\n            DisplayName = &quot;System Logs&quot;,\n            Source = new Uri(@&quot;/Pages/SystemLogSetupPage.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n        setup.Links.Add(new Link() {\n            DisplayName = &quot;System Parameters&quot;,\n            Source = new Uri(@&quot;/Pages/SystemParemterSetupPage.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n        setup.Links.Add(new Link() {\n            DisplayName = &quot;Discounts&quot;,\n            Source = new Uri(@&quot;/Pages/DiscountSetupPage.xaml&quot;, UriKind.RelativeOrAbsolute),\n        });\n\n\n\n        #endregion\n\n        var transaction = new LinkGroup() {\n            DisplayName = &quot;General&quot;,\n            GroupName = &quot;General&quot;\n        };\n\n        linkGroups.Add(general);\n        //linkGroups.Add(transaction);\n        linkGroups.Add(setup);\n\n\n        return linkGroups;\n    }\n}</code></pre>\n\n",
+    "PostedDate": "2013-10-29T17:24:43.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1113886",
+    "ThreadId": "464141",
+    "Html": "Remove the GroupName assignments from your LinkGroup instances. GroupName uniquely identifies a group of link groups to be displayed at a single time. I'm aware that the term 'GroupName' is a bit misleading, this might change in a future release.<br />\n",
+    "PostedDate": "2013-10-29T17:31:23.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1113890",
+    "ThreadId": "464141",
+    "Html": "Great, it works..! Thanks Kozw. MUI is really cool, I'm excited with the next realease<br />\n",
+    "PostedDate": "2013-10-29T17:39:19.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

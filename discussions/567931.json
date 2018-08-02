@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "1306567",
+    "ThreadId": "567931",
+    "Html": "I wrote a fancy library that gives glows to WPF windows, so you can set WindowChrome.ResizeBorderThickness of the ModernWindow to 0 since the glows support resizing of the Window. <a href=\"http://windowglows.codeplex.com\" rel=\"nofollow\">Link to project</a><br />\n",
+    "PostedDate": "2014-09-20T03:14:29.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306599",
+    "ThreadId": "567931",
+    "Html": "Looks awesome! One remark and one question; <br />\n<ol>\n<li>Resize cursors are shown even when a window is not resizable.</li>\n<li>I like this so much, how do you feel about merging the GlowManager into the mui source code?</li>\n</ol>\n",
+    "PostedDate": "2014-09-20T03:59:36.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306630",
+    "ThreadId": "567931",
+    "Html": "First of all, this is kind of a collab with <a href=\"http://mingslogar.comule.com/posts/2014/02/28_2.php\" rel=\"nofollow\"> Ming Slogar </a>. What I was aiming for was to help him get his code applicable to all of WPF. He's got a good infrastructure going, and I'm good at giving things dependencies so they become dynamic.\r<br />\nSo to reply:<br />\n<ol>\n<li>I'm going to work on that. Tomorrow, probably.</li>\n<li>Am I going to fork it, or become a developer and contribute directly through source control?</li>\n</ol>\n",
+    "PostedDate": "2014-09-20T05:16:04.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306635",
+    "ThreadId": "567931",
+    "Html": "Either fork it, or let me merge it in the mui source. I have some ideas;<br />\n<ul>\n<li>Move GlowManager and GlowWindow to FirstFloor.ModernUI.Windows (GlowManager becomes part of mui namespace)</li>\n<li>Merge Win32 code with existing FirstFloor.ModernUI.Win32</li>\n<li>\nUpdate default ModernWindow and ModernDialog styles with Glow enabled and ActiveGlowBrush set to mui's Accent brush<br />\n</li>\n</ul>\nLooks like a relative small effort. With your permission I can have this up-and-running in no time.<br />\n",
+    "PostedDate": "2014-09-20T05:46:07.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306638",
+    "ThreadId": "567931",
+    "Html": "After forking and committing, I'll send a pull request, right? I'm not used to source control that much.<br />\n",
+    "PostedDate": "2014-09-20T06:45:18.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306645",
+    "ThreadId": "567931",
+    "Html": "Correct, see the <a href=\"https://codeplex.codeplex.com/wikipage?title=Forks#Creating\" rel=\"nofollow\">codeplex documentation</a> for details<br />\n",
+    "PostedDate": "2014-09-20T07:41:39.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306765",
+    "ThreadId": "567931",
+    "Html": "Alright, I've sent a pull request.<br />\n",
+    "PostedDate": "2014-09-21T00:05:54.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1329022",
+    "ThreadId": "567931",
+    "Html": "I see the glow has a black shade would it have the shade of the selected color?<br />\n",
+    "PostedDate": "2014-12-05T01:25:20.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1329044",
+    "ThreadId": "567931",
+    "Html": "It should. From my experiments, the glow colors are in sync with the attached window. Where are you seeing the black from?<br />\n",
+    "PostedDate": "2014-12-05T02:26:08.803-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

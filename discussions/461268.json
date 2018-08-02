@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1104003",
+    "ThreadId": "461268",
+    "Html": "Hi. It's a great work. Thanks for it.\r<br />\n<br />\nI would like to know if I can re create my ex WPF business app using this tool.\r<br />\n<br />\nAfter looking in to your sample app, I recognized that the pages I want to load into the stage (or main window or ...) must be linked via <strong>&lt;mui:Link</strong>.\r<br />\n<br />\nBut in a business app it is not good to include more pages (may be 100s) like this. Can I create a toolbar (something like the ribbon in my previous app) add include buttons for loading pages?<br />\n",
+    "PostedDate": "2013-10-05T09:40:59.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1106367",
+    "ThreadId": "461268",
+    "Html": "You cannot create a toolbar, as it goes against metro design principles.\r<br />\n<br />\nHowever, you can try to create a home page tab with buttons linking to different pages.<br />\n",
+    "PostedDate": "2013-10-11T04:16:52.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107367",
+    "ThreadId": "461268",
+    "Html": "MUI doesn't enforce you to use the page link model. You may choose any navigation model you like. You can even start with a completely empty window if you want. See <a href=\"https://mui.codeplex.com/wikipage?title=How%20to%20use%20your%20own%20navigation%20framework\" rel=\"nofollow\">this document page</a> for more info.<br />\n",
+    "PostedDate": "2013-10-14T14:23:30.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

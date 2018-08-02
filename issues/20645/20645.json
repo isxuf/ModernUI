@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Please create error templates as part of the datagrid style\n\nError Template for\n\nDatagrid\nDataGridRow\nDataGridCell\n\n <DataGrid.Resources>\n                        <Style x:Key=\"TextBoxErrorStyle\" TargetType=\"{x:Type TextBox}\">\n                            <Setter Property=\"Padding\" Value=\"-2\"/>\n                            <Setter Property=\"Validation.ErrorTemplate\">\n                                <Setter.Value>\n                                    <ControlTemplate>\n                                        <DockPanel>\n                                            <Popup IsOpen=\"True\" Placement=\"Left\" PlacementTarget=\"{Binding ElementName=ErrorControl}\">\n\n                                                <Border BorderThickness=\"1\" Background=\"LightYellow\" BorderBrush=\"Black\" CornerRadius=\"3\" DockPanel.Dock=\"Left\">\n                                                    <TextBlock\n                  Text=\"{Binding ElementName=ErrorControl,Path=AdornedElement.(Validation.Errors)[0].ErrorContent}\"\n                  Height=\"Auto\" Width=\"Auto\">\n                                                    </TextBlock>\n                                                </Border>\n\n                                            </Popup>\n                                            <AdornedElementPlaceholder Name=\"ErrorControl\"/>\n                                        </DockPanel>\n                                    </ControlTemplate>\n                                </Setter.Value>\n                            </Setter>\n                            <Style.Triggers>\n                                <Trigger Property=\"Validation.HasError\" Value=\"true\">\n                                    <Setter Property=\"Foreground\" Value=\"Red\"/>\n                                    <Setter Property=\"Background\" Value=\"MistyRose\"/>\n                                    <Setter Property=\"BorderBrush\" Value=\"Red\"/>\n                                    <Setter Property=\"BorderThickness\" Value=\"1.0\"/>\n                                    <Setter Property=\"VerticalContentAlignment\" Value=\"Center\"/>\n                                    <Setter Property=\"ToolTip\" \n            Value=\"{Binding RelativeSource={RelativeSource Self},\n            Path=(Validation.Errors)[0].ErrorContent}\"/>\n                                </Trigger>\n                            </Style.Triggers>\n                        </Style>\n                    </DataGrid.Resources>\n\nAbove is a datagrid datagridcell validation that I cannot get to work.\n\nPrakashZa",
+    "LastUpdatedDate": "2014-01-19T13:34:50.583-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-01-19T13:34:50.583-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Datagrid Error Templates",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20645
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

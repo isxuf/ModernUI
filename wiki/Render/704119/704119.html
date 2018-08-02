@@ -1,0 +1,11 @@
+<div class="wikidoc"><h1>BBCode tag reference</h1>
+The following basic set of BBCode tags are supported by the <b>BBCodeBlock</b> control. If you require more advanced text formatting features, you need to fallback to using XAML.<br /><br /><table><tr><th> Tag </th><th> Description </th></tr>
+<tr><td> <b>[b]</b> </td><td> Bold </td></tr>
+<tr><td> <b>[i]</b> </td><td> Italic </td></tr>
+<tr><td> <b>[u]</b> </td><td> Underline </td></tr>
+<tr><td> <b>[color={value}]</b> </td><td> Set foreground color where {value} is a valid XAML color string </td></tr>
+<tr><td> <b>[size={value}]</b> </td><td> Sets the font size measured in pixels </td></tr>
+<tr><td> <b>[url={link}]</b> </td><td> Renders a navigable hyperlink for the enclosed text. See also <a href="https://mui.codeplex.com/wikipage?title=Link%20navigation%20with%20BBCodeBlock&referringTitle=BBCode%20tag%20reference">Link navigation with BBCodeBlock</a> </td></tr></table>
+<h2>Notes</h2><ul><li>Every opening tag must be followed by a closing tag.</li>
+<li>BBCode tags can be nested. This snippet renders the text bold and italic: <span class="codeInline">[b][i]some text[/i][/b]</span></li>
+<li>Whenever a BBCode parse error occurs, the BBCodeBlock renders the actual BBCode.</li></ul></div><div class="ClearBoth"></div>

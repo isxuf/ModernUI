@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1490922",
+    "ThreadId": "660611",
+    "Html": "We're working on a new WPF app, using the ModernUI framework for styling. Apparently one of the styles it enforces is hiding the header of a TabItem in a TabControl. For most of what we're doing that's exactly what we want, but there are times where I want to show that header to the user. Since I don't know how ModernUI is hiding/collapsing the TabItem, I don't know how to show it.\r<br />\n<br />\nHow do I show the header of a tabitem, of a tabcontrol under these circumstances?<br />\n",
+    "PostedDate": "2017-01-10T10:56:31.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

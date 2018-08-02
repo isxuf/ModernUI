@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1082851",
+    "ThreadId": "453997",
+    "Html": "Hello,<br />\n<br />\nI know this may be sort of a newb question, so bare with me.<br />\n<br />\nI am trying to set the accent color of a MUI window. I have seen examples how to do this in code, such as:<br />\n<pre><code>If Windows.Application.Current Is Nothing Then\n    Dim app As New Windows.Application\n    app.Resources(&quot;AccentColor&quot;) = System.Windows.Media.Colors.Green\nEnd If\n\nnewGUI = New NewGUI.ConfigWindow\nnewGUI.Show()</code></pre>\n\nUnfortunately, I cannot get this to work, and nothing happens.<br />\n<br />\nI was also wondering if there was a way to set the AccentColor property directly in XAML, or through a custom MUI Window property, instead of from code directly. I may want several windows different colors.<br />\n<br />\nIf not possible, could someone provide me a way to do this in code properly?<br />\n<br />\nThanks,<br />\n<ul>\n<li>\nJake M.<br />\n</li>\n</ul>\nEdit:<br />\n<br />\nThis is a project calling and creating a window from a separate project, if this is an issue.<br />\n",
+    "PostedDate": "2013-08-20T13:09:15.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083174",
+    "ThreadId": "453997",
+    "Html": "You can override the accent color in your app.xaml like so;<br />\n<pre><code>&lt;Color x:Key=&quot;AccentColor&quot;&gt;#e51400&lt;/Color&gt;</code></pre>\n\nPlease note that mui resources (including accent color) are app-wide, not per-window.<br />\n",
+    "PostedDate": "2013-08-21T09:01:18.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083262",
+    "ThreadId": "453997",
+    "Html": "Works great thanks :).<br />\n",
+    "PostedDate": "2013-08-21T12:36:34.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

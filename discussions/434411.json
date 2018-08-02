@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1006309",
+    "ThreadId": "434411",
+    "Html": "<a href=\"http://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&amp;referringTitle=Documentation\" rel=\"nofollow\">http://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&referringTitle=Documentation</a>\r<br />\n<br />\nI have followed the steps on the link above up until step 5. When i compile the project i get the error below. what am i missing?\r<br />\n<br />\nPartial declarations of 'ModernUI.MainWindow' must not specify different base classes<br />\n",
+    "PostedDate": "2013-02-25T06:52:21.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1006444",
+    "ThreadId": "434411",
+    "Html": "Make sure you modify both MainWindow.xaml and MainWindow.xaml.cs (step 4). They both need to derive from ModernWindow.<br />\n",
+    "PostedDate": "2013-02-25T09:48:40.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1006515",
+    "ThreadId": "434411",
+    "Html": "Got it. Thank you :)<br />\n",
+    "PostedDate": "2013-02-25T12:50:34.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

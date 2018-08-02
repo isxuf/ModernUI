@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 6,
+    "Custom": "",
+    "Description": "Hi,\nI recently started building a metro (looking) application suite using WPF and my first choice was Mahapps Metro.\nI recently was pointed to this project by a friend and I liked this very much!.\nMay I offer my sincere congratulations for sharing this beautiful library?\nHaving said this, I have already implemented the navigation and module implementations using Prism.\nLike any standard Metro (looking) application the home screen is Tile based. Is there any plan to include Tile and a tile container in near future?\nAlso two vital controls remain, namely datagrid and datetimepicker. I have voted for both of them in existing requests.\nAt last do you think there might be any issues blending this great library with Prism?\n\nMany thanks,",
+    "LastUpdatedDate": "2014-10-23T00:01:13.6-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-03-21T08:49:49.52-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Need for a tile control and container too",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 15,
+    "Id": 19497
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903289,
+      "FileName": "CrabScreenshot.png",
+      "DownloadUrl": ".\\903289"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "That's a 3-in-1 request :)\r\n\r\n1. There are no plans for adding a tile control (at least not in the short term)1. Providing ModernUI styling for standard WPF controls, such as DataGrid and DateTimePicker,  has a high priority1. ModernUI is MVVM-agnostic, I do not want to enforce a certain MVVM implementation. You are free to pick any MVVM implementation you like (or no MVVM at all, which is also fine with me). I'm however open to providing documentation and samples on how to use ModernUI with the various well-known MVVM implementations such as Prism. If you have something to share, please let me know.",
+      "PostedDate": "2013-03-21T12:55:22.06-07:00",
+      "Id": 158453
+    },
+    {
+      "Message": "About the tile control; what exactly are you looking for?",
+      "PostedDate": "2013-03-21T13:01:50.963-07:00",
+      "Id": 158454
+    },
+    {
+      "Message": "By tile I mean something like the Panaroma Control that Mahapps provides. However I agree that is not something that needs to be taken at high priority. I have attached the screenshot of the project I am working on. Till now it has only two modules with one tile each. More are in line.And regarding the 3-in-1 request: :)1) Till when Can we be expecting the _modern_ DataGrid and DateTimePicker. :)2) I might take out some time in the weekend to create a small demo using MUI and PRISM/MEF. If done, I would like to add that to the existing solution. I have no idea as to how to do that. Will I need to send it to you so that you can add or can I add myself and get it published with your approval? I am not much of a designer and hence is not good with styles, but can be helpful in creating some demos using MVVM contributing to this nice project. Let me know if there is any scope :)",
+      "PostedDate": "2013-03-21T23:46:39.587-07:00",
+      "Id": 158455
+    },
+    {
+      "Message": "As far as a Prism/MEF demo is concerned; send me anything you like to share. I'll either create a new sample app and include it in the source or create a documentation page based on it.\r\n\r\nModern styles for DataGrid, DataTimePicker; this will happen in the coming days/weeks. ",
+      "PostedDate": "2013-03-22T03:00:41.147-07:00",
+      "Id": 158456
+    },
+    {
+      "Message": "I am just trying to use MUI with MEF, but for the moment, I am stucked.\r\n\r\nAs I understand, to work with MEF, MEF should instantiated the view. So I have the following in my markup:\r\n\r\n```\r\n\r\n```Is it somehow possible to provide an instance of __DocumentListView.xaml__ to mui:Link? So that MUI will not create an instance of /Views/DocumentListView.xaml on its own?",
+      "PostedDate": "2013-04-06T09:48:59.01-07:00",
+      "Id": 158457
+    },
+    {
+      "Message": "MUI and MEF: read this [new article](https://mui.codeplex.com/wikipage?title=A%20guide%20to%20using%20MEF)",
+      "PostedDate": "2013-04-09T11:06:01.537-07:00",
+      "Id": 158458
+    }
+  ]
+}

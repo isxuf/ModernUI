@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1287584",
+    "ThreadId": "560428",
+    "Html": "I'm trying to do a project using the Modern UI, and while I LOVE the look and the features there is one thing that is really holding me back: I can't bind my menu items / links to a collection, and then capture/bind the selected item in that collection (like a normal list box or tab control). <br />\n<br />\nI have dynamically generated menu items.  It was easy enough to bind the ModernTab.Links to a LinkCollection on my view model, however the selected link escapes me.  Since everything is dynamically generated data objects, the &quot;Source&quot; page for every link is the same, just the display name is different.  The selectedsource property only looks at the source uri, which is the same for every link.  It seems as though this has been built for a static page-navigation type application as opposed to a data driven one.  It would have been nice if ModernTab inherited from the TabControl, instead of just Control so you get your Items, ItemsSource, SeletedItem, SelectedIndex, etc.<br />\n<br />\nEvery way I try to skin the ModernUI cat it only cares about the source uri, which again is the same user control for every link in the moderntab; just different data to fill it in.<br />\n<br />\nIs there a solution for a more dynamic data-driven application using Modern UI?<br />\n",
+    "PostedDate": "2014-08-07T07:03:50.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1287593",
+    "ThreadId": "560428",
+    "Html": "So my last idea was to capture the left mouse button up event on the modern tab.  If the MouseButtonEventArgs.OriginalSource is a textblock or a Border (same button, but outside the range of the text), I can capture the text of the link then pass it on to the view model and lookup the correct data object.  This is super hack-ish, but works for now.  Would be nice to have a cleaner solution, even to just bind the selected link to an object on the view model (not just the source uri)<br />\n",
+    "PostedDate": "2014-08-07T07:33:49.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1288446",
+    "ThreadId": "560428",
+    "Html": "You should make sure the Source is unique for each Link. The whole selection mechanism depends on it. Possibly use # or ? to distinguish between links<br />\n",
+    "PostedDate": "2014-08-09T10:09:27.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1288822",
+    "ThreadId": "560428",
+    "Html": "But that's the point I'm making: in a data driven application, I have a list of items for my modern tab items, and the selected item's details I want to show in the page area.  So, the page is the same user control for every item just filled in with different data from the selected item.  It would be redundant to make 10 pages with the exact same code, just named different. Plus, the list of items is dynamic and the number of items in the tab will change over time.<br />\nOr perhaps I'm thinking of it the wrong way?  Can I pass parameters using your link methodology?  So say the source link is &quot;/pages/pagename.xaml?id=1&quot;, could I pick up url parameters on the page and then load the data object passed?<br />\n",
+    "PostedDate": "2014-08-11T05:17:37.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1288860",
+    "ThreadId": "560428",
+    "Html": "Exactly, you can use the anchor tag (#) to create unique sources. Additionally when you implement the FirstFloor.ModernUI.Windows.IContent interface, you can read the uri fragment part in your content. When fragment navigation is performed, the control is not reloaded.<br />\n<br />\nConsider the following list:<br />\n<pre><code>&lt;mui:ModernTab Layout=&quot;List&quot; SelectedSource=&quot;/Pages/MyPage.xaml#1&quot;&gt;\n  &lt;mui:ModernTab.Links&gt;\n    &lt;mui:Link DisplayName=&quot;Item 1&quot; Source=&quot;/Pages/MyPage.xaml#1&quot; /&gt;\n    &lt;mui:Link DisplayName=&quot;Item 2&quot; Source=&quot;/Pages/MyPage.xaml#2&quot; /&gt;\n    &lt;mui:Link DisplayName=&quot;Item 3&quot; Source=&quot;/Pages/MyPage.xaml#2&quot; /&gt;\n  &lt;/mui:ModernTab.Links&gt;\n&lt;/mui:ModernTab&gt;</code></pre>\n\nAnd MyPage.xaml.cs<br />\n<pre><code>using FirstFloor.ModernUI.Windows;\n\npublic partial class MyPage: UserControl, IContent\n{\n  public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n  {\n    // TODO: handle fragment\n    var fragment = e.Fragment;\n  }\n\n  public void OnNavigatedFrom(NavigationEventArgs e)\n  {\n  }\n\n  public void OnNavigatedTo(NavigationEventArgs e)\n  {\n  }\n\n  public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n  {\n  }\n}</code></pre>\n\nNow every time a link is selected in the ModernTab, MyPage.OnFragmentNavigation is invoked with the fragment info of the selected link source.<br />\n<br />\nMore details in <a href=\"https://mui.codeplex.com/wikipage?title=Handle%20navigation%20events%20in%20your%20content\" rel=\"nofollow\">Handle navigation events in your content</a>. Also the ModernUIDemoApp (in the source, and included in the download) contains a ModernFrame sample demonstrating this behavior.<br />\n",
+    "PostedDate": "2014-08-11T06:40:54.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

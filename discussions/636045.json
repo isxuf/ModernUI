@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1421697",
+    "ThreadId": "636045",
+    "Html": "My main window is a modern tab with a group of links. Each link navigate to different page.<br />\n<pre><code>&lt;mui:ModernTab Layout=&quot;List&quot; Margin=&quot;0,0.5,-222,-2&quot; HorizontalAlignment=&quot;Left&quot; Width=&quot;742&quot;&gt;\n    &lt;mui:ModernTab.Links&gt;\n        &lt;!-- TODO: set @Source --&gt;\n        &lt;mui:Link DisplayName=&quot;Page 0&quot; Source=&quot;Page0.xaml&quot;/&gt;\n        &lt;mui:Link DisplayName=&quot;Page 1&quot; Source=&quot;Page1.xaml&quot;/&gt;\n        &lt;mui:Link DisplayName=&quot;Page 2&quot; Source=&quot;Page2.xaml&quot; /&gt;\n        &lt;mui:Link DisplayName=&quot;Page 3&quot; Source=&quot;Page3.xaml&quot;/&gt;\n    &lt;/mui:ModernTab.Links&gt;\n&lt;/mui:ModernTab&gt;</code></pre>\n\nPage 0 shows a listBox with several items.<br />\n<pre><code>&lt;ListBox HorizontalAlignment=&quot;Left&quot; Height=&quot;100&quot; Margin=&quot;100.5,44,0,0&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;258&quot; BorderThickness=&quot;2&quot; BorderBrush=&quot;#FF0C2E17&quot;&gt;\n    &lt;ListBoxItem Content=&quot;CA&quot; Height=&quot;21&quot; Width=&quot;236&quot;/&gt;\n    &lt;ListBoxItem Content=&quot;Order&quot; Height=&quot;21&quot; Width=&quot;236&quot;/&gt;\n    &lt;ListBoxItem Content=&quot;Year&quot; Height=&quot;21&quot; Width=&quot;236&quot;/&gt;\n    &lt;ListBoxItem Content=&quot;Most ordered products&quot; Height=&quot;21&quot; Width=&quot;236&quot;/&gt;\n&lt;/ListBox&gt;</code></pre>\n\nThe thing is when I put my listBox at the very top, or the very bottom of the page, it gets enabled, but if I move it anywhere else, it gets disabled. I've been searching for a solution for a while and I can't find a thing. Any help would be great.<br />\n",
+    "PostedDate": "2015-04-30T02:13:33.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

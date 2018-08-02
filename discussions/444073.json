@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1045160",
+    "ThreadId": "444073",
+    "Html": "How can I use (declare)\r<br />\n<br />\npublic class MyContent : UserControl, IContent\r<br />\n<br />\nin VB.NET ??<br />\n",
+    "PostedDate": "2013-05-17T08:48:18.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1045171",
+    "ThreadId": "444073",
+    "Html": "It is solved...<br />\n",
+    "PostedDate": "2013-05-17T09:05:33.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

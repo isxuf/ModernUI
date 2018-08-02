@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1044491",
+    "ThreadId": "443903",
+    "Html": "Hello, I'm trying to find the best manner to keep my UI up to date with the DB.\r<br />\n<br />\nOnce the UserControl is loaded it stays into memory, is there a way to force the initialization every time the navigation to a usercontrol gets called.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-05-16T05:29:30.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1044512",
+    "ThreadId": "443903",
+    "Html": "Seems I was a bit fast with my question, currently I found this solution:<br />\n<pre><code>public partial class MyView: UserControl, IContent\n{\n        public MyView()\n        {\n            InitializeComponent();\n        }\n\n        public void OnFragmentNavigation(FirstFloor.ModernUI.Windows.Navigation.FragmentNavigationEventArgs e)\n        {\n            throw new NotImplementedException();\n        }\n\n        public void OnNavigatedFrom(FirstFloor.ModernUI.Windows.Navigation.NavigationEventArgs e)\n        {\n            // do nothing, dataconext already set to null\n            // throw new NotImplementedException();\n        }\n\n        public void OnNavigatedTo(FirstFloor.ModernUI.Windows.Navigation.NavigationEventArgs e)\n        {\n            DataContext = new MyViewModel();\n        }\n\n        public void OnNavigatingFrom(FirstFloor.ModernUI.Windows.Navigation.NavigatingCancelEventArgs e)\n        {\n            DataContext = null;\n        }\n}</code></pre>\n\nwhether its a good one or a good approach is a different question :)<br />\n",
+    "PostedDate": "2013-05-16T05:49:54.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055297",
+    "ThreadId": "443903",
+    "Html": "Created the issue <a href=\"https://mui.codeplex.com/workitem/19838\" rel=\"nofollow\">19838</a> with this.<br />\n",
+    "PostedDate": "2013-06-11T03:47:06.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055501",
+    "ThreadId": "443903",
+    "Html": "You can decorate your page with the ModernFrame.KeepAlive=false attached property so that your content is created each time it's requested. See also <a href=\"https://mui.codeplex.com/discussions/444242\" rel=\"nofollow\">this discussion</a> <br />\n",
+    "PostedDate": "2013-06-11T10:48:00.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055562",
+    "ThreadId": "443903",
+    "Html": "What can I say!! Just beautiful! Got to see the source code to see more hidden beauties like this!! Having fun doing this!  <br />\n",
+    "PostedDate": "2013-06-11T13:32:36.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055709",
+    "ThreadId": "443903",
+    "Html": "ModernFrame.KeepAlive=false makes it very short &amp; nice, already implemented IContent but it does the job too :)\r<br />\nthanks <br />\n",
+    "PostedDate": "2013-06-12T01:11:30.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1345656",
+    "ThreadId": "578535",
+    "Html": "Hi and thank you for viewing this post!\r<br />\n<br />\nAs I am currently a complete noob to WPF and trying to learn the language, I'd realy like to see some sort of guide on how to change the ModernWindow and ModernTab.xaml files. I hope you guys can help me with that.\r<br />\n<br />\nI've seen multiple threads in the discussions tab of this site. They suggest me to:<br />\n<ol>\n<li>Change the files and recompile the mui project. (How do I do that?)</li>\n<li>\nAdd references to the altered files. (Can't get it to work)<br />\n</li>\n</ol>\nCan someone provide me with a step by step guide (which includes printscreens) on either one of those two methods?\r<br />\n<br />\nBTW, I'm realy enjoying playing around with the mui project so far! (:<br />\n",
+    "PostedDate": "2015-01-25T10:04:55.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

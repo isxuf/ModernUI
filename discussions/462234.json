@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1107710",
+    "ThreadId": "462234",
+    "Html": "on moderndialg, validation works well ,but it has  a problem which is not correct show the red \r<br />\n<br />\nborder around the control and doesn't show the red message on the right of the control\r<br />\n<br />\ni test this o moderndialog, not good\r<br />\n<br />\ni also test this on page ,works well\r<br />\n<br />\ni'll appreciate the help<br />\n",
+    "PostedDate": "2013-10-15T07:45:52.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107759",
+    "ThreadId": "462234",
+    "Html": "you may have to add a template for that? i had the same problem with passwordBox and i solved it by using a Helper and adding a control template to the xaml file<br />\nsee <a href=\"https://mui.codeplex.com/discussions/462022\" rel=\"nofollow\">this discussion</a> <br />\n",
+    "PostedDate": "2013-10-15T09:09:34.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1225898",
+    "ThreadId": "462234",
+    "Html": "The template is there, you don't need to create one on your own (unless you want something better suited for you). You might need to put your modern dialog content inside an adorner decorator:<br />\n<pre><code>&lt;AdornerDecorator&gt;\n.. your UserControl xaml\n&lt;/AdornerDecorator&gt;</code></pre>\n\nThat should do the trick.<br />\n",
+    "PostedDate": "2014-03-24T02:21:03.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

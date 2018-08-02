@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1021610",
+    "ThreadId": "438126",
+    "Html": "Does Modern Ui have a title bar? <br />\n",
+    "PostedDate": "2013-03-27T01:15:35.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021721",
+    "ThreadId": "438126",
+    "Html": "Nope. If you want to add a title bar you need to customize the ModernWindow template.<br />\n",
+    "PostedDate": "2013-03-27T05:15:23.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1022272",
+    "ThreadId": "438126",
+    "Html": "If that's the case, how it will impact the mui? Anyway, thank you for this wonderful project. ^,^<br />\n",
+    "PostedDate": "2013-03-28T01:59:55.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1022453",
+    "ThreadId": "438126",
+    "Html": "The problem is not so much technical, but more a design challenge; I don't know where to put the title and in what font.<br />\n",
+    "PostedDate": "2013-03-28T08:09:13.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1022558",
+    "ThreadId": "438126",
+    "Html": "for me, calibri is a good one. The location I want is at the top-left corner of the Window, I used to look on that location for the title of an app. But it's ok, I'm glad using your project.<br />\n",
+    "PostedDate": "2013-03-28T10:44:42.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

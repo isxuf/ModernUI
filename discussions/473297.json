@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1134890",
+    "ThreadId": "473297",
+    "Html": "Hi there.\r<br />\n<br />\nI'd like to know if it is possible to trigger a mui:lLink by clicking a command button.\r<br />\n<br />\nSince the link's cant really be moved to the user's location of will, I want to hide them and use a link to trigger them to bring up the page i need.\r<br />\n<br />\nMuch gratitude.<br />\n",
+    "PostedDate": "2013-12-11T23:27:32.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1135019",
+    "ThreadId": "473297",
+    "Html": "Ignore this too... I just discovered the joys of command buttons, Modern Frames and target frames.<br />\n",
+    "PostedDate": "2013-12-12T05:47:34.76-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

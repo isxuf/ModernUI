@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1089554",
+    "ThreadId": "455909",
+    "Html": "I've been developing an application targeting 4.5 but recently I was told that only NET 4 is available. Today I switched to that version of MUI but I had strange issues with margins, not in my machine (at least only some minor) but in other computer, with 4.0 only (mine has 4.5 too). Do you are aware of this behavior? \r<br />\n<br />\nWhat I've done was to set negative margins for some content because too much space was &quot;wasted&quot;, so that way I could adjust better to the screen limits. It seems that isn't supported in NET4 because I have things badly overlapped.\r<br />\n<br />\nDo you know if something can be done? Thank you.<br />\n",
+    "PostedDate": "2013-09-07T06:47:51.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1089813",
+    "ThreadId": "455909",
+    "Html": "Hello, \r<br />\ndid you try this <a href=\"https://mui.codeplex.com/wikipage?title=Working%20with%20WPF%204.0&amp;referringTitle=Documentation\" rel=\"nofollow\">WorkAround</a>? it is needed for .Net 4.0<br />\n",
+    "PostedDate": "2013-09-07T21:34:02.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1089855",
+    "ThreadId": "455909",
+    "Html": "Yes :(\r<br />\nRight now I'm adjusting all margins and stuff, but as in my computer (with 4.5) it renders correctly I need to copy the files to other machine every time I want to check if I'm solving the flaws, what a pain. I'm having issues with buttons too, two buttons that are perfectly aligned (as simple as two buttons in a stackpanel) are shifted +/- 1 or 2 pixels. <br />\n",
+    "PostedDate": "2013-09-08T05:26:28.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

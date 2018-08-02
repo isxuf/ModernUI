@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1089323",
+    "ThreadId": "455787",
+    "Html": "Hi,\r<br />\n<br />\nWhat needs to be done so I can target the right hand side of the ModernTab List using the Click method of a Button or [url=...] code of a BBCodeBlock?\r<br />\n<br />\nI have a ModernTab List that I would like to add a button to in the StatusMargin grid, and I would like the button's target to be the same ModernFrame as the LinkList.\r<br />\n<br />\nEverything I've tried so far has instead targetted either the frame containing the ModernTab or the ModernWindow.<br />\n<pre><code>&lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n        &lt;mui:ModernTab Layout=&quot;List&quot; x:Name=&quot;labelLinks&quot;&gt;&lt;/mui:ModernTab&gt;\n        &lt;!-- new label button --&gt;\n        &lt;Grid Margin=&quot;{StaticResource StatusMargin}&quot; HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Bottom&quot;&gt;\n            &lt;Rectangle /&gt;\n            &lt;mui:BBCodeBlock Margin=&quot;16,0,0,0&quot; BBCode=&quot;[url=/Pages/NewLabel.xaml]new label[/url]&quot; /&gt;\n        &lt;/Grid&gt;\n    &lt;/Grid&gt;</code></pre>\n\nThanks for any help you're able to provide.<br />\n",
+    "PostedDate": "2013-09-06T11:58:39.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1120784",
+    "ThreadId": "467278",
+    "Html": "I have the following code triggered by a button click : <br />\n<pre><code>MainWindow mainWindow = ((MainWindow)Application.Current.MainWindow);\nmainWindow.MenuLinkGroups.Clear();\nmainWindow.TitleLinks.Clear();\n\nvar linkTestGroup1 = new LinkGroup { DisplayName = &quot;Home&quot;, GroupName = &quot;Home&quot; };\nvar link1 = new Link { DisplayName = &quot;login&quot;, Source = new Uri(&quot;/Pages/Login.xaml&quot;, UriKind.Relative) };\n\nlinkTestGroup1.Links.Add(link1);\nmainWindow.MenuLinkGroups.Add(linkTestGroup1);</code></pre>\n\nWhats it does is it clears all groups and links in my main window and it adds a new Home group as well as a login link.The problem is that I want the login link to be selected ,because what happens now is that I get blank content and I have to click the login link to display its content.\r<br />\n<br />\nTo summarize I want to be able to navigate to a selected page or link ( for example group 2 link 3) or at least solve the problem above.<br />\n",
+    "PostedDate": "2013-11-09T06:05:39.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1123046",
+    "ThreadId": "467278",
+    "Html": "You have to add the content source to your mainWindow. <br />\n<pre><code>mainWindow.ContentSource = new Uri(&quot;/Pages/Login.xaml&quot;, UriKind.Relative);</code></pre>\n\nWith this code your Page should be set to the login page. <br />\n",
+    "PostedDate": "2013-11-13T09:48:24.103-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

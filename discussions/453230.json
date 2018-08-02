@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1079892",
+    "ThreadId": "453230",
+    "Html": "i'm a new guy to use m:ui,i think DataGrid must have a property to control that. \r<br />\n<br />\nPlease tell me ...<br />\n",
+    "PostedDate": "2013-08-12T18:24:55.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1080631",
+    "ThreadId": "453230",
+    "Html": "This has nothing to do with mui.<br />\n<br />\nHowever, if you want to prevent the users from being able to resize or even reorder the columns, simply set the following propeties on the DataGrid<br />\n<pre><code>CanUserResizeColumns=&quot;False&quot;\nCanUserReorderColumns=&quot;False</code></pre>\n\n",
+    "PostedDate": "2013-08-14T10:05:57.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

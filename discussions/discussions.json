@@ -1,0 +1,3027 @@
+[
+  {
+    "Id": "434411",
+    "Title": "Partial declarations of 'ModernUI.MainWindow' must not specify different base classes",
+    "LatestDate": "2013-02-25T12:50:34.16-08:00"
+  },
+  {
+    "Id": "434812",
+    "Title": "Reg. Passing Data to Link's Source",
+    "LatestDate": "2013-02-28T19:31:07.05-08:00"
+  },
+  {
+    "Id": "434835",
+    "Title": "Only One Page (link) and Main menu in the Modern UI",
+    "LatestDate": "2014-03-30T09:37:36.22-07:00"
+  },
+  {
+    "Id": "434850",
+    "Title": "Damn good Library! Just a few more controls and it's perfect!",
+    "LatestDate": "2013-03-11T14:06:28.043-07:00"
+  },
+  {
+    "Id": "434905",
+    "Title": "Navigate by Button",
+    "LatestDate": "2014-08-21T01:19:11.43-07:00"
+  },
+  {
+    "Id": "434970",
+    "Title": "Hosting UserControl on ModernDialog",
+    "LatestDate": "2013-03-07T01:25:41.613-08:00"
+  },
+  {
+    "Id": "434971",
+    "Title": "Adding links in code dynamically",
+    "LatestDate": "2013-03-05T13:52:34.763-08:00"
+  },
+  {
+    "Id": "435212",
+    "Title": "Message Window",
+    "LatestDate": "2013-03-07T11:03:43.273-08:00"
+  },
+  {
+    "Id": "435331",
+    "Title": "Navigation Events and Validation",
+    "LatestDate": "2013-05-02T16:52:19.997-07:00"
+  },
+  {
+    "Id": "435593",
+    "Title": "Silverlight support in the future",
+    "LatestDate": "2014-01-12T05:30:43.947-08:00"
+  },
+  {
+    "Id": "435758",
+    "Title": "Events ... more events",
+    "LatestDate": "2013-03-26T16:59:33.57-07:00"
+  },
+  {
+    "Id": "435759",
+    "Title": "Acessing window's elements",
+    "LatestDate": "2013-03-07T10:25:49.263-08:00"
+  },
+  {
+    "Id": "435846",
+    "Title": "Assigning Resource strings to DisplayName and GroupName of LinkGroup and DisplayName of Link?",
+    "LatestDate": "2013-05-10T11:18:12.173-07:00"
+  },
+  {
+    "Id": "436020",
+    "Title": "Navigation failed. Cannot use absolute uri.",
+    "LatestDate": "2013-03-11T08:49:57.35-07:00"
+  },
+  {
+    "Id": "436088",
+    "Title": "Themes",
+    "LatestDate": "2013-03-12T01:58:21.77-07:00"
+  },
+  {
+    "Id": "436107",
+    "Title": "Split View like ToolWindow",
+    "LatestDate": "2013-03-11T15:58:25.023-07:00"
+  },
+  {
+    "Id": "436150",
+    "Title": "Please give an example of the use of ModernFrame",
+    "LatestDate": "2013-03-11T14:09:26.153-07:00"
+  },
+  {
+    "Id": "436153",
+    "Title": "Can this work with .NET 4?",
+    "LatestDate": "2013-05-16T12:40:59.067-07:00"
+  },
+  {
+    "Id": "436169",
+    "Title": "list of bbcode tag supported",
+    "LatestDate": "2013-03-11T17:32:51.28-07:00"
+  },
+  {
+    "Id": "436328",
+    "Title": "How to DoSomething() and then navigate to Page.xaml by clicking button?",
+    "LatestDate": "2013-04-20T05:22:13.387-07:00"
+  },
+  {
+    "Id": "436485",
+    "Title": "Problem with TabControl",
+    "LatestDate": "2013-03-14T05:52:03.59-07:00"
+  },
+  {
+    "Id": "436518",
+    "Title": "Use with a MVVM Framework",
+    "LatestDate": "2013-03-19T15:53:10.883-07:00"
+  },
+  {
+    "Id": "436665",
+    "Title": "Fullscreen",
+    "LatestDate": "2014-01-07T03:37:22.65-08:00"
+  },
+  {
+    "Id": "436685",
+    "Title": "Links to the same URI",
+    "LatestDate": "2013-04-01T23:37:32.903-07:00"
+  },
+  {
+    "Id": "436892",
+    "Title": "Are URI Anchors exposed?",
+    "LatestDate": "2013-03-16T22:23:16.39-07:00"
+  },
+  {
+    "Id": "436939",
+    "Title": "how can i set the Icon property of the window inheriting from ModerWindow without errors ?",
+    "LatestDate": "2013-10-03T20:30:15.313-07:00"
+  },
+  {
+    "Id": "436943",
+    "Title": "convert a normal monochromatic image to",
+    "LatestDate": "2013-05-08T00:00:25.967-07:00"
+  },
+  {
+    "Id": "437132",
+    "Title": "Hide/Disable a LinkGroup (or Link)",
+    "LatestDate": "2013-03-18T20:04:36.36-07:00"
+  },
+  {
+    "Id": "437133",
+    "Title": "Cant compile new updated source",
+    "LatestDate": "2013-03-18T18:54:20.643-07:00"
+  },
+  {
+    "Id": "437147",
+    "Title": "How to persist appearance changes when modern window is closed and reopened",
+    "LatestDate": "2013-03-19T06:46:45.303-07:00"
+  },
+  {
+    "Id": "437233",
+    "Title": "SelectedIndex for ModernTab Links",
+    "LatestDate": "2013-03-19T17:31:49.567-07:00"
+  },
+  {
+    "Id": "437294",
+    "Title": "The problem with using the memory.",
+    "LatestDate": "2013-03-20T13:05:05.6-07:00"
+  },
+  {
+    "Id": "437495",
+    "Title": "CPU usage",
+    "LatestDate": "2014-01-17T14:42:29.33-08:00"
+  },
+  {
+    "Id": "437534",
+    "Title": "How to handle view and slow loading contents",
+    "LatestDate": "2014-03-04T09:01:08.96-08:00"
+  },
+  {
+    "Id": "437607",
+    "Title": "Resetting All Controls when Re-visited via mui:Link",
+    "LatestDate": "2013-03-22T03:24:48.237-07:00"
+  },
+  {
+    "Id": "437613",
+    "Title": "TILE UI Control Click and Navigate",
+    "LatestDate": "2013-03-22T06:48:35.867-07:00"
+  },
+  {
+    "Id": "437641",
+    "Title": "PRISM integration",
+    "LatestDate": "2013-04-04T00:52:03.83-07:00"
+  },
+  {
+    "Id": "437726",
+    "Title": "How to Jump to mui:link by clicking Button",
+    "LatestDate": "2014-03-05T05:17:05.783-08:00"
+  },
+  {
+    "Id": "437800",
+    "Title": "Like Windows Phone 8 Colors",
+    "LatestDate": "2013-03-24T08:09:26.377-07:00"
+  },
+  {
+    "Id": "437831",
+    "Title": "Save and restore application presentation state",
+    "LatestDate": "2013-03-24T15:36:39.333-07:00"
+  },
+  {
+    "Id": "437832",
+    "Title": "How to setup Telerik controls theme and colors",
+    "LatestDate": "2013-04-11T08:05:11.147-07:00"
+  },
+  {
+    "Id": "437998",
+    "Title": "Is it possible to add status bar at the bottom of the windows?",
+    "LatestDate": "2014-09-05T00:08:36.127-07:00"
+  },
+  {
+    "Id": "438029",
+    "Title": "Content of the modern window",
+    "LatestDate": "2015-03-08T06:10:08.573-07:00"
+  },
+  {
+    "Id": "438057",
+    "Title": "Navigate using Treeview items",
+    "LatestDate": "2013-04-02T06:13:41.717-07:00"
+  },
+  {
+    "Id": "438087",
+    "Title": "Data Binding using Caliburn Micro",
+    "LatestDate": "2013-03-26T17:02:03.3-07:00"
+  },
+  {
+    "Id": "438091",
+    "Title": "Modern UI for WPF needs a logo",
+    "LatestDate": "2013-03-31T06:29:01.557-07:00"
+  },
+  {
+    "Id": "438126",
+    "Title": "Title Bar",
+    "LatestDate": "2013-03-28T10:44:42.53-07:00"
+  },
+  {
+    "Id": "438137",
+    "Title": "Datagrid WPF",
+    "LatestDate": "2013-03-27T04:46:32.293-07:00"
+  },
+  {
+    "Id": "438676",
+    "Title": "ModernWindow.MenuLinkGroups - Is there a way to dynamically add links?",
+    "LatestDate": "2013-04-10T10:05:50.927-07:00"
+  },
+  {
+    "Id": "438685",
+    "Title": "TextBlock not honouring the colour of the preset styles when used within a ListBox's ControlTemplate of a GroupStyle.Container style",
+    "LatestDate": "2013-04-02T07:07:24.287-07:00"
+  },
+  {
+    "Id": "438690",
+    "Title": "Passing Data in Tabview",
+    "LatestDate": "2013-04-02T02:14:25.927-07:00"
+  },
+  {
+    "Id": "438745",
+    "Title": "mui:Link commanding",
+    "LatestDate": "2013-12-08T13:11:51.09-08:00"
+  },
+  {
+    "Id": "438945",
+    "Title": "Annoying flash of white when window loads",
+    "LatestDate": "2013-04-04T06:06:45.783-07:00"
+  },
+  {
+    "Id": "439013",
+    "Title": "Something like RefreshWhenNotNavigatingHistory attached dependency property on ModernFrame?",
+    "LatestDate": "2013-04-03T14:23:25.073-07:00"
+  },
+  {
+    "Id": "439166",
+    "Title": "Adding content to Tab Pages",
+    "LatestDate": "2013-04-05T16:11:58.577-07:00"
+  },
+  {
+    "Id": "439306",
+    "Title": "How to pass a textbox value to another window and close the current window.",
+    "LatestDate": "2013-07-14T02:12:40.127-07:00"
+  },
+  {
+    "Id": "439359",
+    "Title": "Resource DefaultFontFamily is not found.",
+    "LatestDate": "2013-04-09T11:07:46.12-07:00"
+  },
+  {
+    "Id": "439369",
+    "Title": "Bind a BBCodeBlock's command to a property in the page's ViewModel?",
+    "LatestDate": "2013-04-08T14:03:49.573-07:00"
+  },
+  {
+    "Id": "439544",
+    "Title": "Reuse Styles",
+    "LatestDate": "2013-04-09T15:37:34.933-07:00"
+  },
+  {
+    "Id": "439680",
+    "Title": "What happen to AccentColorLight?",
+    "LatestDate": "2013-04-10T04:25:16.35-07:00"
+  },
+  {
+    "Id": "439695",
+    "Title": "Change Tabs from ViewModel",
+    "LatestDate": "2013-12-27T23:14:18.03-08:00"
+  },
+  {
+    "Id": "439700",
+    "Title": "Larger ModernButton w/ IconData from ModernUIIcons.com versus standard button w/ PNG icon",
+    "LatestDate": "2014-05-20T07:54:47.503-07:00"
+  },
+  {
+    "Id": "439762",
+    "Title": "Doesn't work Image in ModernUI project",
+    "LatestDate": "2013-04-10T04:21:53.423-07:00"
+  },
+  {
+    "Id": "439775",
+    "Title": "Rebuild the application extension (FirstFloor.ModernUI.dll)",
+    "LatestDate": "2013-04-11T09:52:47.033-07:00"
+  },
+  {
+    "Id": "439898",
+    "Title": "Show ListView content depending on datacontent",
+    "LatestDate": "2013-04-23T15:39:30.07-07:00"
+  },
+  {
+    "Id": "440056",
+    "Title": "How add a TextBox like the search box in XAMLSpy",
+    "LatestDate": "2013-10-21T19:14:55.337-07:00"
+  },
+  {
+    "Id": "440062",
+    "Title": "How to navigate to pages by using code?",
+    "LatestDate": "2013-04-12T09:58:17.987-07:00"
+  },
+  {
+    "Id": "440079",
+    "Title": "Hide the back Button",
+    "LatestDate": "2013-04-22T10:42:53.663-07:00"
+  },
+  {
+    "Id": "440170",
+    "Title": "Loading and unloading controls",
+    "LatestDate": "2013-04-13T13:24:42.843-07:00"
+  },
+  {
+    "Id": "440192",
+    "Title": "Binding collection to ModernTab.Links",
+    "LatestDate": "2013-04-13T13:18:59.677-07:00"
+  },
+  {
+    "Id": "440401",
+    "Title": "How to modify the source so as to let users choose whether add a statusbar or not?",
+    "LatestDate": "2014-06-12T09:13:41.263-07:00"
+  },
+  {
+    "Id": "440412",
+    "Title": "Change the background of ModernWindow",
+    "LatestDate": "2013-04-16T05:44:44.357-07:00"
+  },
+  {
+    "Id": "440536",
+    "Title": "theme issue .. am I missing something",
+    "LatestDate": "2013-04-17T04:56:51.73-07:00"
+  },
+  {
+    "Id": "440687",
+    "Title": "Please give a few examples of the use of \"ModernDialogs\"",
+    "LatestDate": "2013-08-16T15:03:25.667-07:00"
+  },
+  {
+    "Id": "440781",
+    "Title": "Activate the already initialized view",
+    "LatestDate": "2013-04-20T05:24:34.723-07:00"
+  },
+  {
+    "Id": "440827",
+    "Title": "pre initialize pages",
+    "LatestDate": "2013-04-20T05:29:13.137-07:00"
+  },
+  {
+    "Id": "440859",
+    "Title": "where can I get source code of demo app",
+    "LatestDate": "2013-04-18T23:24:15.253-07:00"
+  },
+  {
+    "Id": "440865",
+    "Title": "Use a theme for a single page",
+    "LatestDate": "2013-04-20T05:54:29.737-07:00"
+  },
+  {
+    "Id": "440932",
+    "Title": "[MVVM] Execute method when mui:Link is clicked",
+    "LatestDate": "2014-04-13T23:00:38.383-07:00"
+  },
+  {
+    "Id": "440970",
+    "Title": "Implement Modern UI in about three days :)",
+    "LatestDate": "2013-04-23T14:44:19.453-07:00"
+  },
+  {
+    "Id": "440991",
+    "Title": "Add Title text / button like Xune application",
+    "LatestDate": "2013-04-20T05:01:33.577-07:00"
+  },
+  {
+    "Id": "441040",
+    "Title": "Link on same xaml page",
+    "LatestDate": "2013-04-24T23:42:44.92-07:00"
+  },
+  {
+    "Id": "441182",
+    "Title": "Getting the manual example to work",
+    "LatestDate": "2013-04-24T12:56:13.14-07:00"
+  },
+  {
+    "Id": "441255",
+    "Title": "Combobox.IsEditable=\"True\" does NOT work!",
+    "LatestDate": "2013-08-01T01:46:43.163-07:00"
+  },
+  {
+    "Id": "441270",
+    "Title": "Can't resolve default StaticResources",
+    "LatestDate": "2014-11-28T01:30:33.433-08:00"
+  },
+  {
+    "Id": "441646",
+    "Title": "Classic Mode",
+    "LatestDate": "2013-04-29T04:30:31.13-07:00"
+  },
+  {
+    "Id": "441766",
+    "Title": "Get at the DataContext of frame.Source and be able to set it",
+    "LatestDate": "2013-04-27T10:33:14.807-07:00"
+  },
+  {
+    "Id": "441811",
+    "Title": "Apply theme/font/accentColor at start",
+    "LatestDate": "2014-04-01T00:57:21.88-07:00"
+  },
+  {
+    "Id": "441838",
+    "Title": "BBCode executing command with parameter",
+    "LatestDate": "2013-04-28T10:01:57.18-07:00"
+  },
+  {
+    "Id": "442023",
+    "Title": "Links and status bar",
+    "LatestDate": "2013-04-30T14:38:38.353-07:00"
+  },
+  {
+    "Id": "442155",
+    "Title": "How to get events on active page when back button is hit?",
+    "LatestDate": "2013-05-01T10:05:35.277-07:00"
+  },
+  {
+    "Id": "442157",
+    "Title": "Great work :-)",
+    "LatestDate": "2013-05-01T10:06:19.427-07:00"
+  },
+  {
+    "Id": "442179",
+    "Title": "ListBox",
+    "LatestDate": "2013-05-01T10:08:17.47-07:00"
+  },
+  {
+    "Id": "442217",
+    "Title": "Globalization and Localization in Modern UI",
+    "LatestDate": "2013-10-01T05:09:29.58-07:00"
+  },
+  {
+    "Id": "442287",
+    "Title": "Cannot locate resource 'assets/modernui.xaml'",
+    "LatestDate": "2013-07-01T16:47:43.46-07:00"
+  },
+  {
+    "Id": "442290",
+    "Title": "ToggleButton style",
+    "LatestDate": "2015-01-24T23:56:27.673-08:00"
+  },
+  {
+    "Id": "442413",
+    "Title": "ModernTab.Links",
+    "LatestDate": "2013-05-03T12:28:51.887-07:00"
+  },
+  {
+    "Id": "442416",
+    "Title": "custom dialog",
+    "LatestDate": "2013-05-03T06:17:48.887-07:00"
+  },
+  {
+    "Id": "442463",
+    "Title": "Selected Link Group when using Query strings",
+    "LatestDate": "2013-07-03T08:42:48.233-07:00"
+  },
+  {
+    "Id": "442472",
+    "Title": "How can I place content after the ModernWindow's MenuLinkGroups",
+    "LatestDate": "2013-05-08T08:46:28.153-07:00"
+  },
+  {
+    "Id": "442497",
+    "Title": "Clear or remove from navigation history",
+    "LatestDate": "2014-05-23T10:18:56.08-07:00"
+  },
+  {
+    "Id": "442644",
+    "Title": "loading page asynchronously",
+    "LatestDate": "2015-09-22T13:19:59.75-07:00"
+  },
+  {
+    "Id": "442650",
+    "Title": "404 at http://firstfloorsoftware.com/ModernUI",
+    "LatestDate": "2013-05-06T23:15:42.993-07:00"
+  },
+  {
+    "Id": "442711",
+    "Title": "Cannot get Caliburn.Micro and the ModernUI to bind",
+    "LatestDate": "2013-05-07T13:42:04.017-07:00"
+  },
+  {
+    "Id": "442724",
+    "Title": "TitleLinks - Open a new Modern UI Window",
+    "LatestDate": "2014-11-06T02:50:36.253-08:00"
+  },
+  {
+    "Id": "442813",
+    "Title": "Example for using Caliburn Micro with m:ui?",
+    "LatestDate": "2013-05-14T14:57:48.33-07:00"
+  },
+  {
+    "Id": "442898",
+    "Title": "Splash screen",
+    "LatestDate": "2013-05-08T19:20:02.863-07:00"
+  },
+  {
+    "Id": "443035",
+    "Title": "ModernButton's TextBlock",
+    "LatestDate": "2013-07-05T14:17:54.263-07:00"
+  },
+  {
+    "Id": "443057",
+    "Title": "comboboxitem width clipped to 80",
+    "LatestDate": "2013-05-13T14:04:53.243-07:00"
+  },
+  {
+    "Id": "443085",
+    "Title": "BBCodeBlock Problem",
+    "LatestDate": "2013-05-14T03:28:48.583-07:00"
+  },
+  {
+    "Id": "443139",
+    "Title": "How can i use NavigationHelper.FindFrame in a viewmodel?",
+    "LatestDate": "2013-06-02T06:29:12.233-07:00"
+  },
+  {
+    "Id": "443145",
+    "Title": "Charting framework used in XAMLSpy",
+    "LatestDate": "2014-06-19T12:40:32.49-07:00"
+  },
+  {
+    "Id": "443250",
+    "Title": "Only one Linkgroup visible?",
+    "LatestDate": "2013-05-10T12:32:39.457-07:00"
+  },
+  {
+    "Id": "443253",
+    "Title": "Add a title to the EmptyWindow style for ModernWindow",
+    "LatestDate": "2013-05-23T09:13:06.453-07:00"
+  },
+  {
+    "Id": "443503",
+    "Title": "hide menu links after login",
+    "LatestDate": "2015-11-20T08:06:44.237-08:00"
+  },
+  {
+    "Id": "443716",
+    "Title": "Subscribe to events of mui:Link-Source",
+    "LatestDate": "2013-05-29T15:09:22.643-07:00"
+  },
+  {
+    "Id": "443805",
+    "Title": "Navigate from one Tab Window to another Tab Window",
+    "LatestDate": "2013-05-15T14:05:18.317-07:00"
+  },
+  {
+    "Id": "443849",
+    "Title": "MVVM DataContext for Link",
+    "LatestDate": "2013-05-23T22:42:17.933-07:00"
+  },
+  {
+    "Id": "443869",
+    "Title": "Images are not displayed",
+    "LatestDate": "2014-06-30T05:47:30.313-07:00"
+  },
+  {
+    "Id": "443903",
+    "Title": "Reinitialize On Navigation",
+    "LatestDate": "2013-06-12T01:11:30.563-07:00"
+  },
+  {
+    "Id": "444036",
+    "Title": "A tip to get rid of Microsoft.Windows.Shell dynamic link library (dll)",
+    "LatestDate": "2013-05-29T18:13:49.95-07:00"
+  },
+  {
+    "Id": "444073",
+    "Title": "Sorry for stupid question",
+    "LatestDate": "2013-05-17T09:05:33.327-07:00"
+  },
+  {
+    "Id": "444079",
+    "Title": "Find out which Link is currently active",
+    "LatestDate": "2013-05-17T10:41:38.47-07:00"
+  },
+  {
+    "Id": "444113",
+    "Title": "Setting DataGridRowHeader's Witdh Property to \"Auto\" could be more common",
+    "LatestDate": "2013-05-20T07:23:10.907-07:00"
+  },
+  {
+    "Id": "444143",
+    "Title": "DatePicker Control",
+    "LatestDate": "2013-05-20T07:22:05.48-07:00"
+  },
+  {
+    "Id": "444165",
+    "Title": "Unresponsive UI when running task in OnNavigatedTo?",
+    "LatestDate": "2013-05-20T10:38:32.843-07:00"
+  },
+  {
+    "Id": "444230",
+    "Title": "VB",
+    "LatestDate": "2013-05-20T07:12:16.83-07:00"
+  },
+  {
+    "Id": "444242",
+    "Title": "How to call an empty UserControl with Uri from Link",
+    "LatestDate": "2013-05-20T18:46:13.917-07:00"
+  },
+  {
+    "Id": "444258",
+    "Title": "Password protected pages",
+    "LatestDate": "2013-05-22T04:02:58.067-07:00"
+  },
+  {
+    "Id": "444586",
+    "Title": "Modern Dialog Buttons",
+    "LatestDate": "2014-07-04T04:49:31.91-07:00"
+  },
+  {
+    "Id": "444588",
+    "Title": "Get values of Modern Dialog",
+    "LatestDate": "2013-05-30T00:58:04.197-07:00"
+  },
+  {
+    "Id": "444644",
+    "Title": "BBCodeBlock as a ItemTemplate for a ListBox not honouring the tags",
+    "LatestDate": "2013-05-24T08:12:34.49-07:00"
+  },
+  {
+    "Id": "445020",
+    "Title": "MUI + Caliburn.Micro context sensitive help",
+    "LatestDate": "2013-05-26T05:53:10.84-07:00"
+  },
+  {
+    "Id": "445133",
+    "Title": "Remove logo and add title",
+    "LatestDate": "2013-05-29T01:30:55.597-07:00"
+  },
+  {
+    "Id": "445143",
+    "Title": "CLSCompliant",
+    "LatestDate": "2013-05-28T04:10:01.5-07:00"
+  },
+  {
+    "Id": "445145",
+    "Title": "digital noise",
+    "LatestDate": "2013-05-28T03:54:24.26-07:00"
+  },
+  {
+    "Id": "445194",
+    "Title": "Possible Scrollviewer Focus / Scroll Wheel Issue...",
+    "LatestDate": "2013-05-29T15:07:02.867-07:00"
+  },
+  {
+    "Id": "445210",
+    "Title": "How can use ModernTab  to add new Tab  Like a Browser?",
+    "LatestDate": "2014-03-30T06:13:58.387-07:00"
+  },
+  {
+    "Id": "445380",
+    "Title": "Considered Git?",
+    "LatestDate": "2013-05-29T15:20:38.307-07:00"
+  },
+  {
+    "Id": "445423",
+    "Title": "Create another Modern Window in a new STA Thread",
+    "LatestDate": "2014-11-11T11:27:00.1-08:00"
+  },
+  {
+    "Id": "445486",
+    "Title": "NavigationHelper.FindFrame issue?",
+    "LatestDate": "2013-06-04T00:55:13.097-07:00"
+  },
+  {
+    "Id": "445507",
+    "Title": "Latest Release",
+    "LatestDate": "2013-06-03T14:35:51.01-07:00"
+  },
+  {
+    "Id": "445631",
+    "Title": "ViewService (NavigationService, DialogueService) for MVVM",
+    "LatestDate": "2014-01-17T16:15:51.837-08:00"
+  },
+  {
+    "Id": "445656",
+    "Title": "Notify Icon",
+    "LatestDate": "2013-06-03T14:28:17.067-07:00"
+  },
+  {
+    "Id": "445703",
+    "Title": "ModernTab Links Events",
+    "LatestDate": "2013-06-03T17:37:15.503-07:00"
+  },
+  {
+    "Id": "445773",
+    "Title": "Listview view",
+    "LatestDate": "2013-06-03T14:27:02.047-07:00"
+  },
+  {
+    "Id": "445774",
+    "Title": "listview date binding",
+    "LatestDate": "2013-06-03T14:23:14.737-07:00"
+  },
+  {
+    "Id": "445922",
+    "Title": "How to Access Child Page Source Control /  Element from MainWindow",
+    "LatestDate": "2013-06-25T05:30:38.7-07:00"
+  },
+  {
+    "Id": "446031",
+    "Title": "Problem with  <mui.ModerFrame />",
+    "LatestDate": "2013-06-07T10:27:47.157-07:00"
+  },
+  {
+    "Id": "446032",
+    "Title": "Trouble with frame.DataContext  ???  Jump  from a UserContol to Another User Control",
+    "LatestDate": "2013-06-05T03:06:13.723-07:00"
+  },
+  {
+    "Id": "446094",
+    "Title": "How do I set the selected link for modern window.",
+    "LatestDate": "2014-05-07T05:37:45.65-07:00"
+  },
+  {
+    "Id": "446125",
+    "Title": "How to set window content like toolbar bar and/or status bar",
+    "LatestDate": "2014-09-06T14:18:02.767-07:00"
+  },
+  {
+    "Id": "446166",
+    "Title": "Emergency: remove Tab using ModernTab ",
+    "LatestDate": "2013-06-13T01:43:07.547-07:00"
+  },
+  {
+    "Id": "446202",
+    "Title": "OnNavigatedTo send to other page",
+    "LatestDate": "2014-08-14T23:29:26.237-07:00"
+  },
+  {
+    "Id": "446248",
+    "Title": "The name \"WindowChrome\" does not exist in the namespace \"http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell\".\t..\\FirstFloor.ModernUI\\FirstFloor.ModernUI\\Themes\\ModernWindow.xaml\"",
+    "LatestDate": "2015-02-10T13:56:51.373-08:00"
+  },
+  {
+    "Id": "446272",
+    "Title": "ModernWindow as full screen window for kiosk app (without min max close)",
+    "LatestDate": "2013-06-11T10:43:43.577-07:00"
+  },
+  {
+    "Id": "446380",
+    "Title": "Displayable as INotifyPropertyChanged instead of DependencyObject",
+    "LatestDate": "2013-06-10T03:36:51.08-07:00"
+  },
+  {
+    "Id": "446619",
+    "Title": "Invoking the progressbar",
+    "LatestDate": "2013-06-11T10:42:36.28-07:00"
+  },
+  {
+    "Id": "446702",
+    "Title": "Two  ModernTab help",
+    "LatestDate": "2013-06-11T10:57:34.45-07:00"
+  },
+  {
+    "Id": "446705",
+    "Title": "ModernTab Content!!! deal with loading Time!!",
+    "LatestDate": "2013-06-11T10:57:51.89-07:00"
+  },
+  {
+    "Id": "446760",
+    "Title": "ModernMenu usage example",
+    "LatestDate": "2013-06-12T08:21:01.207-07:00"
+  },
+  {
+    "Id": "446782",
+    "Title": "How to use SelectedSourceChanged",
+    "LatestDate": "2013-06-12T05:50:55.52-07:00"
+  },
+  {
+    "Id": "446830",
+    "Title": "Window Title",
+    "LatestDate": "2013-06-15T20:14:34.387-07:00"
+  },
+  {
+    "Id": "446837",
+    "Title": "moderntab at left size but with layout tab..",
+    "LatestDate": "2015-03-16T04:12:32.207-07:00"
+  },
+  {
+    "Id": "446893",
+    "Title": "Make the accent color dependent on a ModernWindow instead of an application",
+    "LatestDate": "2013-06-19T21:22:50.84-07:00"
+  },
+  {
+    "Id": "447078",
+    "Title": "Fontsize!!!? can i get more than 2!?? if not how can i create  it",
+    "LatestDate": "2013-06-24T06:17:23.257-07:00"
+  },
+  {
+    "Id": "447177",
+    "Title": "Login screen",
+    "LatestDate": "2013-06-18T20:33:48.54-07:00"
+  },
+  {
+    "Id": "447312",
+    "Title": "ModernDialog and Validation",
+    "LatestDate": "2013-06-18T20:28:21.267-07:00"
+  },
+  {
+    "Id": "447505",
+    "Title": "Dificulties in Making Work IContent",
+    "LatestDate": "2013-06-20T01:36:12.81-07:00"
+  },
+  {
+    "Id": "447520",
+    "Title": "About  Parameter ",
+    "LatestDate": "2013-06-19T23:58:39.14-07:00"
+  },
+  {
+    "Id": "447598",
+    "Title": "Accessing parent Moderntap page from  a child",
+    "LatestDate": "2013-06-24T03:14:28.89-07:00"
+  },
+  {
+    "Id": "447620",
+    "Title": "How to Navigate to another page from ModernDialog content control",
+    "LatestDate": "2013-06-19T18:46:35.557-07:00"
+  },
+  {
+    "Id": "447676",
+    "Title": "Help me",
+    "LatestDate": "2013-10-29T13:58:20.91-07:00"
+  },
+  {
+    "Id": "447894",
+    "Title": "Style Trigger, loss of white text on Dark theme",
+    "LatestDate": "2013-06-22T21:41:36.657-07:00"
+  },
+  {
+    "Id": "447895",
+    "Title": "Window Icon Location",
+    "LatestDate": "2013-06-23T18:37:34.937-07:00"
+  },
+  {
+    "Id": "447920",
+    "Title": "How to use navigation history in ModernTab",
+    "LatestDate": "2013-06-23T08:46:59.233-07:00"
+  },
+  {
+    "Id": "447929",
+    "Title": "Is modern ui support for vb.net ?",
+    "LatestDate": "2014-02-28T07:51:19.683-08:00"
+  },
+  {
+    "Id": "447970",
+    "Title": "[Add on] An animated expander control integrated into ModernUI",
+    "LatestDate": "2013-06-23T21:57:18.2-07:00"
+  },
+  {
+    "Id": "448046",
+    "Title": "Fontsize of Link ",
+    "LatestDate": "2014-05-01T07:11:29.163-07:00"
+  },
+  {
+    "Id": "448131",
+    "Title": "Resize the ContenSource",
+    "LatestDate": "2013-06-25T08:20:09.197-07:00"
+  },
+  {
+    "Id": "448138",
+    "Title": "ComboBox tab problem",
+    "LatestDate": "2013-11-13T05:01:43.757-08:00"
+  },
+  {
+    "Id": "448139",
+    "Title": "Loaded event problem in navigation",
+    "LatestDate": "2013-06-25T08:23:11.327-07:00"
+  },
+  {
+    "Id": "448234",
+    "Title": "MainWindow Resize?",
+    "LatestDate": "2013-06-27T00:39:58.897-07:00"
+  },
+  {
+    "Id": "448676",
+    "Title": "Modern Button Size",
+    "LatestDate": "2014-01-23T13:53:37.957-08:00"
+  },
+  {
+    "Id": "448784",
+    "Title": "OnNavigatedTo Problem",
+    "LatestDate": "2013-07-01T23:47:14.463-07:00"
+  },
+  {
+    "Id": "448967",
+    "Title": "How to close the MainWindow",
+    "LatestDate": "2013-07-03T10:13:33.163-07:00"
+  },
+  {
+    "Id": "449070",
+    "Title": "Is there a way I can catch that the MainWindow is closing? ie: when the user has quit the application using Alt-F4 etc?",
+    "LatestDate": "2013-07-04T14:15:18.363-07:00"
+  },
+  {
+    "Id": "449088",
+    "Title": "ComboBox doesn't show text",
+    "LatestDate": "2013-07-04T13:29:39.467-07:00"
+  },
+  {
+    "Id": "449106",
+    "Title": "Image (PNG,JPG,etc or vector XAML) instead of DisplayName",
+    "LatestDate": "2013-07-05T12:43:46.98-07:00"
+  },
+  {
+    "Id": "449189",
+    "Title": "Extracting Just The ModernWindow",
+    "LatestDate": "2013-07-06T15:25:52.12-07:00"
+  },
+  {
+    "Id": "449195",
+    "Title": "Modern UI for WPF Templates, error ",
+    "LatestDate": "2013-08-21T08:59:24.323-07:00"
+  },
+  {
+    "Id": "449289",
+    "Title": "Change a View  of my application using Viewbox!!",
+    "LatestDate": "2013-07-08T03:13:15.467-07:00"
+  },
+  {
+    "Id": "449412",
+    "Title": "ModernTab link as button",
+    "LatestDate": "2013-07-09T16:49:57.423-07:00"
+  },
+  {
+    "Id": "449414",
+    "Title": "Child pages fit parent window",
+    "LatestDate": "2015-01-02T17:15:33.54-08:00"
+  },
+  {
+    "Id": "449422",
+    "Title": "Optimized Touch App with Modern UI",
+    "LatestDate": "2013-07-11T08:41:13.557-07:00"
+  },
+  {
+    "Id": "449428",
+    "Title": "DatePicker?",
+    "LatestDate": "2013-08-28T13:59:36.38-07:00"
+  },
+  {
+    "Id": "449549",
+    "Title": "Watermarks in Textbox, PasswordBox and Combobox",
+    "LatestDate": "2013-07-10T04:54:58.55-07:00"
+  },
+  {
+    "Id": "449556",
+    "Title": "Using MUI Forms in a Class Library Project",
+    "LatestDate": "2013-07-16T02:22:54.317-07:00"
+  },
+  {
+    "Id": "449578",
+    "Title": "DataGrid is not work in GridLayout",
+    "LatestDate": "2013-07-10T07:54:39.877-07:00"
+  },
+  {
+    "Id": "449700",
+    "Title": "ModernDialog ShowDialog return result issue between 1.0.4 and 1.0.5",
+    "LatestDate": "2014-04-11T04:32:48.14-07:00"
+  },
+  {
+    "Id": "449801",
+    "Title": "It can't run in windows 7 64bit",
+    "LatestDate": "2013-07-12T10:53:24.847-07:00"
+  },
+  {
+    "Id": "450211",
+    "Title": "MUI Datagrid CheckBox Column",
+    "LatestDate": "2013-07-21T20:33:53.897-07:00"
+  },
+  {
+    "Id": "450407",
+    "Title": "MUI:Link from a database ",
+    "LatestDate": "2013-07-20T12:12:44.707-07:00"
+  },
+  {
+    "Id": "450421",
+    "Title": "Publishing Modern UI App to Other users - Grid doesn't load style",
+    "LatestDate": "2013-09-05T10:50:49.563-07:00"
+  },
+  {
+    "Id": "450481",
+    "Title": "Building ModernUI in .NET4",
+    "LatestDate": "2013-07-18T09:17:59.587-07:00"
+  },
+  {
+    "Id": "450615",
+    "Title": "Make Logo clickable",
+    "LatestDate": "2013-07-25T14:51:42.203-07:00"
+  },
+  {
+    "Id": "450699",
+    "Title": "Cannot Create Solution",
+    "LatestDate": "2014-04-26T02:04:44.433-07:00"
+  },
+  {
+    "Id": "450814",
+    "Title": "Passing Parameters",
+    "LatestDate": "2013-07-26T00:46:56.143-07:00"
+  },
+  {
+    "Id": "450818",
+    "Title": "Support for VSTO",
+    "LatestDate": "2013-07-25T13:52:57.563-07:00"
+  },
+  {
+    "Id": "450897",
+    "Title": "how to implemt Login window first appear in wpf using modern ui",
+    "LatestDate": "2013-07-27T15:19:00.567-07:00"
+  },
+  {
+    "Id": "450919",
+    "Title": "How to handle parent navigation",
+    "LatestDate": "2013-07-25T13:50:17.77-07:00"
+  },
+  {
+    "Id": "450974",
+    "Title": "Problem implementing IContent",
+    "LatestDate": "2013-07-25T10:44:28.337-07:00"
+  },
+  {
+    "Id": "451148",
+    "Title": "Parent window isn't inactive when Common dialog show ? ",
+    "LatestDate": "2013-07-25T19:54:26.937-07:00"
+  },
+  {
+    "Id": "451229",
+    "Title": "MUI app not detected in Snoop",
+    "LatestDate": "2013-07-26T02:42:08.433-07:00"
+  },
+  {
+    "Id": "451432",
+    "Title": "DataGrid Highlight entire row",
+    "LatestDate": "2013-07-25T14:22:23.607-07:00"
+  },
+  {
+    "Id": "451439",
+    "Title": "10,000 downloads",
+    "LatestDate": "2013-08-17T16:49:02.017-07:00"
+  },
+  {
+    "Id": "451497",
+    "Title": "the image in theme disappear when popup a moderndialog?",
+    "LatestDate": "2013-08-12T06:27:13.8-07:00"
+  },
+  {
+    "Id": "451503",
+    "Title": "Custom Controls and Styles",
+    "LatestDate": "2013-07-29T03:40:00.263-07:00"
+  },
+  {
+    "Id": "451582",
+    "Title": "StaticResource ContentRoot not found",
+    "LatestDate": "2013-08-02T15:23:39.023-07:00"
+  },
+  {
+    "Id": "451711",
+    "Title": "Seems to ignore star - * - behaviour",
+    "LatestDate": "2013-07-28T21:50:17.567-07:00"
+  },
+  {
+    "Id": "451943",
+    "Title": "change datagrid DataGridColumnHeader",
+    "LatestDate": "2013-08-01T07:21:39.72-07:00"
+  },
+  {
+    "Id": "451967",
+    "Title": "Minimum window size",
+    "LatestDate": "2013-08-01T00:00:59.423-07:00"
+  },
+  {
+    "Id": "451985",
+    "Title": "Getting Data from List Page Item",
+    "LatestDate": "2013-08-01T11:18:20.26-07:00"
+  },
+  {
+    "Id": "452049",
+    "Title": "How to navigate Modern Tab using Keyboard Shortcut??",
+    "LatestDate": "2013-07-31T20:30:42.763-07:00"
+  },
+  {
+    "Id": "452137",
+    "Title": "Navigation problems with list ",
+    "LatestDate": "2013-08-02T06:29:11.21-07:00"
+  },
+  {
+    "Id": "452183",
+    "Title": "Defining your own Modern Window template",
+    "LatestDate": "2013-08-18T12:38:38.833-07:00"
+  },
+  {
+    "Id": "452185",
+    "Title": "Navigating back to page that no longer exists",
+    "LatestDate": "2013-08-02T01:05:12.703-07:00"
+  },
+  {
+    "Id": "452202",
+    "Title": "ModernDialogBox",
+    "LatestDate": "2013-08-02T02:38:58.69-07:00"
+  },
+  {
+    "Id": "452221",
+    "Title": "documentviewer Styling",
+    "LatestDate": "2013-08-02T04:47:30.227-07:00"
+  },
+  {
+    "Id": "452378",
+    "Title": "problem with .NET 4.0",
+    "LatestDate": "2013-08-04T13:16:38.493-07:00"
+  },
+  {
+    "Id": "452520",
+    "Title": "Showing a modern dialog clears current theme",
+    "LatestDate": "2013-08-12T06:24:27.847-07:00"
+  },
+  {
+    "Id": "452575",
+    "Title": "Notification Icon",
+    "LatestDate": "2013-08-15T12:09:46.27-07:00"
+  },
+  {
+    "Id": "452596",
+    "Title": "Change MUI Window to fixed size",
+    "LatestDate": "2013-08-06T12:22:44.71-07:00"
+  },
+  {
+    "Id": "452705",
+    "Title": "How to apply Modern UI Styles",
+    "LatestDate": "2014-06-19T12:41:23.97-07:00"
+  },
+  {
+    "Id": "452782",
+    "Title": "Cannot compile the source code in my VS2012",
+    "LatestDate": "2013-08-08T03:12:10.023-07:00"
+  },
+  {
+    "Id": "452784",
+    "Title": "can't view the Designer Preview on my Visual Studio 2012 Ultimate",
+    "LatestDate": "2013-08-08T02:14:35.82-07:00"
+  },
+  {
+    "Id": "453093",
+    "Title": "Override theme settings",
+    "LatestDate": "2013-08-17T03:19:21.08-07:00"
+  },
+  {
+    "Id": "453131",
+    "Title": "<mui:Link /> With parameter to constructor.",
+    "LatestDate": "2013-09-30T23:15:18.86-07:00"
+  },
+  {
+    "Id": "453227",
+    "Title": "ModernUI Started Externally (Possible bug?)",
+    "LatestDate": "2014-03-12T08:39:53.817-07:00"
+  },
+  {
+    "Id": "453230",
+    "Title": "How to fix the DataGrid column width, banned users to drag",
+    "LatestDate": "2013-08-14T10:05:57.363-07:00"
+  },
+  {
+    "Id": "453262",
+    "Title": "How can I get a title link to open a .chm file?",
+    "LatestDate": "2013-08-20T05:20:20.16-07:00"
+  },
+  {
+    "Id": "453446",
+    "Title": "If project names changed then which things are mandatory?",
+    "LatestDate": "2013-08-16T01:31:46-07:00"
+  },
+  {
+    "Id": "453448",
+    "Title": "How can i add more appbarbutton ?",
+    "LatestDate": "2013-08-14T13:22:17.75-07:00"
+  },
+  {
+    "Id": "453502",
+    "Title": "Save user selected appearance as default value for next start-up",
+    "LatestDate": "2013-09-03T00:09:27.713-07:00"
+  },
+  {
+    "Id": "453721",
+    "Title": "Problem on ModernTab with MVVM and ContentLoader ",
+    "LatestDate": "2013-11-04T05:52:46.23-08:00"
+  },
+  {
+    "Id": "453874",
+    "Title": "Error Message Width",
+    "LatestDate": "2013-08-19T15:02:40.78-07:00"
+  },
+  {
+    "Id": "453941",
+    "Title": "ModernDialog.ShowDialog Not returning true - ever",
+    "LatestDate": "2014-08-22T03:59:30.703-07:00"
+  },
+  {
+    "Id": "453994",
+    "Title": "Slow loading UI control",
+    "LatestDate": "2013-08-21T16:17:20.47-07:00"
+  },
+  {
+    "Id": "453997",
+    "Title": "AccentColor property",
+    "LatestDate": "2013-08-21T12:36:34.963-07:00"
+  },
+  {
+    "Id": "454125",
+    "Title": "How to create a dynamic Splash Screen",
+    "LatestDate": "2013-09-14T00:05:28.033-07:00"
+  },
+  {
+    "Id": "454151",
+    "Title": "WindowBackground Image",
+    "LatestDate": "2013-08-22T08:20:05.273-07:00"
+  },
+  {
+    "Id": "454189",
+    "Title": "Windows 7",
+    "LatestDate": "2013-08-22T07:43:01.51-07:00"
+  },
+  {
+    "Id": "454264",
+    "Title": "\"WindowTitle\" property?",
+    "LatestDate": "2013-08-23T19:41:23.053-07:00"
+  },
+  {
+    "Id": "454291",
+    "Title": "Any suggestions for click and drag reordering of tabs or groups of links?",
+    "LatestDate": "2013-08-26T06:15:14.107-07:00"
+  },
+  {
+    "Id": "454310",
+    "Title": "Delete Back button from Menu bar",
+    "LatestDate": "2015-08-14T09:21:17.267-07:00"
+  },
+  {
+    "Id": "454349",
+    "Title": "Next Release",
+    "LatestDate": "2013-08-31T01:37:57.443-07:00"
+  },
+  {
+    "Id": "454352",
+    "Title": "mui:DataGridTextColumn.HeaderStyle Setter overwriting everything",
+    "LatestDate": "2013-12-01T20:55:01.203-08:00"
+  },
+  {
+    "Id": "454387",
+    "Title": "How do I get the listbox to show a border...",
+    "LatestDate": "2013-08-26T06:04:12.193-07:00"
+  },
+  {
+    "Id": "454400",
+    "Title": "Localization",
+    "LatestDate": "2015-01-30T11:05:57.543-08:00"
+  },
+  {
+    "Id": "454680",
+    "Title": "Adding a custom user control to a grid that has Style=\"{StaticResource ContentRoot}\">",
+    "LatestDate": "2013-08-27T13:21:41.497-07:00"
+  },
+  {
+    "Id": "454700",
+    "Title": "Set Source and ContentSource to a new instance",
+    "LatestDate": "2013-09-20T12:51:38.203-07:00"
+  },
+  {
+    "Id": "454851",
+    "Title": "BackgroundContent: how does it work?",
+    "LatestDate": "2013-08-30T07:39:49.27-07:00"
+  },
+  {
+    "Id": "454935",
+    "Title": "modern button Content",
+    "LatestDate": "2013-08-30T07:34:21.56-07:00"
+  },
+  {
+    "Id": "454965",
+    "Title": "How to check DataGridCheckBox with single click?",
+    "LatestDate": "2013-08-30T07:33:12.547-07:00"
+  },
+  {
+    "Id": "454981",
+    "Title": "Opening a popup when clicked on a <mui:Link>",
+    "LatestDate": "2013-08-30T07:34:23.747-07:00"
+  },
+  {
+    "Id": "455085",
+    "Title": "Open new windows",
+    "LatestDate": "2013-09-01T06:13:57.25-07:00"
+  },
+  {
+    "Id": "455107",
+    "Title": "Change language of tooltip",
+    "LatestDate": "2013-09-03T18:18:47.94-07:00"
+  },
+  {
+    "Id": "455111",
+    "Title": "ModernWindow set MaxWidth has a bug",
+    "LatestDate": "2013-09-04T00:20:41.417-07:00"
+  },
+  {
+    "Id": "455197",
+    "Title": "ModernTab link source routing bug?",
+    "LatestDate": "2013-09-03T04:58:54.853-07:00"
+  },
+  {
+    "Id": "455294",
+    "Title": "Images next to a ModernTab List View",
+    "LatestDate": "2013-11-15T11:00:08.01-08:00"
+  },
+  {
+    "Id": "455405",
+    "Title": " pass value to target page",
+    "LatestDate": "2013-09-04T07:04:16.703-07:00"
+  },
+  {
+    "Id": "455557",
+    "Title": "DataGrid Header Borders",
+    "LatestDate": "2013-09-05T20:57:11.667-07:00"
+  },
+  {
+    "Id": "455566",
+    "Title": "Navigate to different View from ViewModel",
+    "LatestDate": "2013-09-06T11:07:42.727-07:00"
+  },
+  {
+    "Id": "455725",
+    "Title": "Tooltip of system buttons cannot be localized",
+    "LatestDate": "2013-09-05T22:24:57.883-07:00"
+  },
+  {
+    "Id": "455760",
+    "Title": "Transition Animations",
+    "LatestDate": "2013-09-07T01:38:44.74-07:00"
+  },
+  {
+    "Id": "455787",
+    "Title": "Target LinkList default frame with Button or BBCodeBlock",
+    "LatestDate": "2013-09-06T11:58:39.487-07:00"
+  },
+  {
+    "Id": "455846",
+    "Title": "Add data to tab in code",
+    "LatestDate": "2013-09-26T02:19:01.183-07:00"
+  },
+  {
+    "Id": "455909",
+    "Title": "NET 4 Margins issue",
+    "LatestDate": "2013-09-08T05:26:28.057-07:00"
+  },
+  {
+    "Id": "456345",
+    "Title": "Problem With Navigating To Existing Links",
+    "LatestDate": "2013-09-11T06:58:41.01-07:00"
+  },
+  {
+    "Id": "456353",
+    "Title": "minimalize & close right top - ModernDialog",
+    "LatestDate": "2013-09-12T00:52:47.787-07:00"
+  },
+  {
+    "Id": "456422",
+    "Title": "MUI - PRISM Integration",
+    "LatestDate": "2015-02-26T23:52:40.563-08:00"
+  },
+  {
+    "Id": "456506",
+    "Title": "ModernDialog DialogResult",
+    "LatestDate": "2013-09-11T06:41:56.287-07:00"
+  },
+  {
+    "Id": "456608",
+    "Title": "mui:ModernTab - define itemssource",
+    "LatestDate": "2013-09-16T08:41:09.697-07:00"
+  },
+  {
+    "Id": "456653",
+    "Title": "What is the best solution to allow user to login?",
+    "LatestDate": "2013-09-14T06:12:31.613-07:00"
+  },
+  {
+    "Id": "456681",
+    "Title": "Navigate to another page in Code",
+    "LatestDate": "2013-09-16T08:30:42.953-07:00"
+  },
+  {
+    "Id": "456697",
+    "Title": "TreeView Style",
+    "LatestDate": "2013-09-17T08:31:51.277-07:00"
+  },
+  {
+    "Id": "456937",
+    "Title": "How can I show a \"Link\" Content in code the same way i can when i click it with the mouse ?",
+    "LatestDate": "2013-09-16T07:24:11.977-07:00"
+  },
+  {
+    "Id": "457186",
+    "Title": "Write subscript or superscript in textblock",
+    "LatestDate": "2013-09-18T03:31:05.017-07:00"
+  },
+  {
+    "Id": "457351",
+    "Title": "Empty Window Reference Design similar to VS 2012",
+    "LatestDate": "2013-12-12T08:30:53.353-08:00"
+  },
+  {
+    "Id": "457366",
+    "Title": "ModernFrame navigation BrowseBack",
+    "LatestDate": "2013-09-18T16:27:10.12-07:00"
+  },
+  {
+    "Id": "458498",
+    "Title": "Looping between links using timer",
+    "LatestDate": "2013-09-19T23:14:40.003-07:00"
+  },
+  {
+    "Id": "458502",
+    "Title": "Inactive DataGrid SelectedRow Background",
+    "LatestDate": "2013-09-20T00:09:18.11-07:00"
+  },
+  {
+    "Id": "458569",
+    "Title": "LinkGroupCollection is not Serializable",
+    "LatestDate": "2013-09-20T08:49:34.447-07:00"
+  },
+  {
+    "Id": "458578",
+    "Title": "[Solved] LinkGroupCollection and MVVM",
+    "LatestDate": "2013-09-20T09:22:02.793-07:00"
+  },
+  {
+    "Id": "458591",
+    "Title": "[Solved] Show a WPF Control from another Assembly",
+    "LatestDate": "2013-09-20T11:52:53.233-07:00"
+  },
+  {
+    "Id": "458604",
+    "Title": "Grid alongside mui:ModernWindow.MenuLinkGroups",
+    "LatestDate": "2013-09-24T10:07:38.41-07:00"
+  },
+  {
+    "Id": "458643",
+    "Title": "ContentRoot in different assembly",
+    "LatestDate": "2013-09-21T02:05:54.763-07:00"
+  },
+  {
+    "Id": "458804",
+    "Title": "Querystring / fragment navigation and IContent",
+    "LatestDate": "2013-09-23T07:47:08.27-07:00"
+  },
+  {
+    "Id": "458906",
+    "Title": "How do I create master pages?",
+    "LatestDate": "2013-09-24T04:30:33.307-07:00"
+  },
+  {
+    "Id": "458920",
+    "Title": "How do I use accent colours in XAML?",
+    "LatestDate": "2013-09-24T07:56:12.563-07:00"
+  },
+  {
+    "Id": "458934",
+    "Title": "Get the index of a ModernLink when clicked on in a ModernTab",
+    "LatestDate": "2014-02-10T09:42:41.3-08:00"
+  },
+  {
+    "Id": "459034",
+    "Title": "Navigate to another user control after button click from code behind",
+    "LatestDate": "2013-09-26T02:19:42.85-07:00"
+  },
+  {
+    "Id": "459339",
+    "Title": "How does SelectedSource work?",
+    "LatestDate": "2013-09-29T11:04:15.663-07:00"
+  },
+  {
+    "Id": "459468",
+    "Title": "Navigationfailed ",
+    "LatestDate": "2013-09-27T07:24:32.763-07:00"
+  },
+  {
+    "Id": "459561",
+    "Title": "add login control",
+    "LatestDate": "2013-09-28T09:47:23.19-07:00"
+  },
+  {
+    "Id": "459819",
+    "Title": "Hide Window Control",
+    "LatestDate": "2016-04-10T09:50:44.513-07:00"
+  },
+  {
+    "Id": "461054",
+    "Title": "MUI with WPF Application Framework (WAF)",
+    "LatestDate": "2013-10-03T07:55:55.98-07:00"
+  },
+  {
+    "Id": "461211",
+    "Title": "Could somebody help me get started?",
+    "LatestDate": "2013-10-04T22:29:54.847-07:00"
+  },
+  {
+    "Id": "461268",
+    "Title": "How to creating a business app using this tool?",
+    "LatestDate": "2013-10-14T14:23:30.87-07:00"
+  },
+  {
+    "Id": "461409",
+    "Title": "Creating a complex theme background",
+    "LatestDate": "2013-10-14T14:32:52.083-07:00"
+  },
+  {
+    "Id": "461573",
+    "Title": "How to get a list of loaded links?",
+    "LatestDate": "2013-10-14T14:24:37.513-07:00"
+  },
+  {
+    "Id": "462022",
+    "Title": "How to use ValidatesOnDataErrors with PasswordBox",
+    "LatestDate": "2013-11-03T01:52:52.31-08:00"
+  },
+  {
+    "Id": "462093",
+    "Title": "How to get textbox value from user control to user control?",
+    "LatestDate": "2013-10-22T05:32:09.797-07:00"
+  },
+  {
+    "Id": "462095",
+    "Title": "BrowseBack Alt + ArrowLeft",
+    "LatestDate": "2013-10-14T23:05:10.687-07:00"
+  },
+  {
+    "Id": "462134",
+    "Title": "Viewbox scaling broken in ModernWindow",
+    "LatestDate": "2013-10-14T15:02:41.517-07:00"
+  },
+  {
+    "Id": "462234",
+    "Title": "how to use validation on moderndialog",
+    "LatestDate": "2014-03-24T02:21:03.05-07:00"
+  },
+  {
+    "Id": "462242",
+    "Title": "Capitalize the LinkGroup DisplayName",
+    "LatestDate": "2013-11-24T00:13:36.13-08:00"
+  },
+  {
+    "Id": "462568",
+    "Title": "Help understanding passing variables between pages",
+    "LatestDate": "2013-10-17T03:31:03.553-07:00"
+  },
+  {
+    "Id": "462652",
+    "Title": "SystemTray Icon",
+    "LatestDate": "2014-04-20T10:42:06.24-07:00"
+  },
+  {
+    "Id": "462655",
+    "Title": "Navigation from ViewModel",
+    "LatestDate": "2013-10-17T16:46:20.96-07:00"
+  },
+  {
+    "Id": "462841",
+    "Title": "Problems with BBCodeBlock: new line character doesn't work",
+    "LatestDate": "2014-12-25T08:30:31.04-08:00"
+  },
+  {
+    "Id": "462915",
+    "Title": "MVVM Passing Data HELP!",
+    "LatestDate": "2013-10-21T02:18:24.267-07:00"
+  },
+  {
+    "Id": "462979",
+    "Title": "How does Link defined in ModernWindow.TitleLinks relate to LinkGroup defined in ModernWindow.MenuLinkGroups?",
+    "LatestDate": "2014-12-13T03:12:02.213-08:00"
+  },
+  {
+    "Id": "463093",
+    "Title": "ModernTab: How do you align tabs on the left, and keep them there?",
+    "LatestDate": "2014-11-09T02:54:23.537-08:00"
+  },
+  {
+    "Id": "463112",
+    "Title": "ModernToggleButton",
+    "LatestDate": "2015-01-25T00:11:04.973-08:00"
+  },
+  {
+    "Id": "463120",
+    "Title": "Changing width of moderntab.links when mouseenter on content triggered",
+    "LatestDate": "2013-10-22T06:43:38.573-07:00"
+  },
+  {
+    "Id": "463480",
+    "Title": "The resize grip does nothing",
+    "LatestDate": "2013-10-29T16:10:47.937-07:00"
+  },
+  {
+    "Id": "463536",
+    "Title": "[Contribution] Loading theme from external assembly",
+    "LatestDate": "2013-10-25T02:02:20.657-07:00"
+  },
+  {
+    "Id": "463875",
+    "Title": "Validation error tooltip sync ???",
+    "LatestDate": "2013-10-28T12:51:42.727-07:00"
+  },
+  {
+    "Id": "464041",
+    "Title": "Dll used for documenttoolkit/extensions",
+    "LatestDate": "2013-10-29T13:56:27.227-07:00"
+  },
+  {
+    "Id": "464076",
+    "Title": "Localization: Datagrid Decimal Seperator",
+    "LatestDate": "2013-10-29T13:55:41.43-07:00"
+  },
+  {
+    "Id": "464125",
+    "Title": "modern ui demo - source code",
+    "LatestDate": "2013-10-29T13:54:20.503-07:00"
+  },
+  {
+    "Id": "464141",
+    "Title": "Problem with getting the LinkGroups (Only the first linkgroup is visible) ",
+    "LatestDate": "2013-10-29T17:39:19.217-07:00"
+  },
+  {
+    "Id": "464212",
+    "Title": "Best way to show dialog windows",
+    "LatestDate": "2013-10-31T05:40:47.723-07:00"
+  },
+  {
+    "Id": "464825",
+    "Title": "Noob question on overriding m:ui default styles PLEASE help!",
+    "LatestDate": "2013-10-30T21:03:53.637-07:00"
+  },
+  {
+    "Id": "464830",
+    "Title": "Sorry :-(",
+    "LatestDate": "2013-10-30T23:43:50.11-07:00"
+  },
+  {
+    "Id": "464843",
+    "Title": "Best way to going back the navigation like a click in back button",
+    "LatestDate": "2013-11-18T09:24:28.253-08:00"
+  },
+  {
+    "Id": "464931",
+    "Title": "Large TreeView Lags for 2-4 seconds when loading/unloading page.",
+    "LatestDate": "2013-10-31T09:58:19.563-07:00"
+  },
+  {
+    "Id": "465161",
+    "Title": "Passing page instance to Link instead of URI",
+    "LatestDate": "2013-12-28T19:18:02.863-08:00"
+  },
+  {
+    "Id": "465249",
+    "Title": "XamlParseException: The current SyncrhonizationContext may not be used as a TaskScheduler",
+    "LatestDate": "2013-11-03T17:02:35.537-08:00"
+  },
+  {
+    "Id": "465269",
+    "Title": "Using MEF navigation",
+    "LatestDate": "2013-11-03T23:52:51.38-08:00"
+  },
+  {
+    "Id": "465993",
+    "Title": "Is it possible to change location of Title and Logo in the window",
+    "LatestDate": "2013-11-05T15:59:52.817-08:00"
+  },
+  {
+    "Id": "466215",
+    "Title": "telerik radwindows not showing",
+    "LatestDate": "2013-11-05T21:18:28.383-08:00"
+  },
+  {
+    "Id": "466789",
+    "Title": "Custom DataGrid class, style doesn't get inherited...",
+    "LatestDate": "2014-02-28T11:47:06.4-08:00"
+  },
+  {
+    "Id": "466820",
+    "Title": "How do the Tab Pages of the ModernTab get the ViewModel of the ParentView?",
+    "LatestDate": "2013-11-08T09:03:02.013-08:00"
+  },
+  {
+    "Id": "466850",
+    "Title": "Check UnsavedChanges in OnNavigatingFrom",
+    "LatestDate": "2013-11-07T08:31:03.27-08:00"
+  },
+  {
+    "Id": "467034",
+    "Title": "Use Modern UI template in Powerbuilder .net",
+    "LatestDate": "2013-11-07T19:13:17.45-08:00"
+  },
+  {
+    "Id": "467205",
+    "Title": "Putting a Databound form on a MUI page",
+    "LatestDate": "2013-11-08T09:48:25.633-08:00"
+  },
+  {
+    "Id": "467278",
+    "Title": "navigating through pages and links ( code )",
+    "LatestDate": "2013-11-13T09:48:24.103-08:00"
+  },
+  {
+    "Id": "468206",
+    "Title": "an issue found-An exception of type 'System.Reflection.TargetInvocationException' occurred in Sybase.PowerBuilder.Common.dll but was not handled in user code",
+    "LatestDate": "2013-11-11T18:31:20.947-08:00"
+  },
+  {
+    "Id": "468309",
+    "Title": "passing info from page to content",
+    "LatestDate": "2013-11-14T23:52:58.927-08:00"
+  },
+  {
+    "Id": "468425",
+    "Title": "Combobox data wont update WPF MVVM",
+    "LatestDate": "2013-11-12T23:43:11.187-08:00"
+  },
+  {
+    "Id": "468701",
+    "Title": "Navigating to New Page using links",
+    "LatestDate": "2013-11-14T09:31:39.413-08:00"
+  },
+  {
+    "Id": "468769",
+    "Title": "Can`t run .exe file, which generated by Visual Studio 2013",
+    "LatestDate": "2013-11-18T10:01:06.39-08:00"
+  },
+  {
+    "Id": "470301",
+    "Title": "ModernTab -  Is it possible to add content to page directly",
+    "LatestDate": "2013-11-18T06:03:51.23-08:00"
+  },
+  {
+    "Id": "470436",
+    "Title": "Choosing a different theme for a ModernDialog",
+    "LatestDate": "2014-09-23T12:35:05.197-07:00"
+  },
+  {
+    "Id": "470576",
+    "Title": "Using ModernDialog's buttons to trigger validation",
+    "LatestDate": "2014-01-07T08:40:44.71-08:00"
+  },
+  {
+    "Id": "470700",
+    "Title": "m:ui with Telerik controls",
+    "LatestDate": "2013-11-21T11:13:46.98-08:00"
+  },
+  {
+    "Id": "470772",
+    "Title": "Disable all navigation while busy indicator = true",
+    "LatestDate": "2013-11-22T05:43:51.603-08:00"
+  },
+  {
+    "Id": "471138",
+    "Title": "Menu theming and ModernWindow tweaking",
+    "LatestDate": "2013-11-25T17:20:04.767-08:00"
+  },
+  {
+    "Id": "471203",
+    "Title": "Blank view as default of a LinkGroup",
+    "LatestDate": "2013-11-26T07:51:03.15-08:00"
+  },
+  {
+    "Id": "471524",
+    "Title": "How to Integrate MUI in Powershell ?",
+    "LatestDate": "2013-11-29T08:27:44.713-08:00"
+  },
+  {
+    "Id": "471539",
+    "Title": "Change link group and link font size + font family",
+    "LatestDate": "2013-11-29T10:40:47.727-08:00"
+  },
+  {
+    "Id": "471604",
+    "Title": "How to use Loading / Progressbar from ModernUi Framework?",
+    "LatestDate": "2013-12-20T04:49:33.443-08:00"
+  },
+  {
+    "Id": "471780",
+    "Title": "VS 2013 design time error ResourceDictionary ModernUI.xaml",
+    "LatestDate": "2013-12-05T20:34:14.25-08:00"
+  },
+  {
+    "Id": "471806",
+    "Title": "How to integrate unity container with modern UI",
+    "LatestDate": "2013-12-05T14:38:17.3-08:00"
+  },
+  {
+    "Id": "471929",
+    "Title": "Binding DisplayName to a DynamicResource?",
+    "LatestDate": "2013-12-05T02:11:42.31-08:00"
+  },
+  {
+    "Id": "472068",
+    "Title": "Navigate from View Model",
+    "LatestDate": "2013-12-06T06:36:26.55-08:00"
+  },
+  {
+    "Id": "472258",
+    "Title": "Accesing bbcode another Page using c# method",
+    "LatestDate": "2013-12-09T01:17:19.043-08:00"
+  },
+  {
+    "Id": "472383",
+    "Title": "Error : '#FFFFFFFF' is not a valid value for property 'Background'.",
+    "LatestDate": "2013-12-09T22:40:12.427-08:00"
+  },
+  {
+    "Id": "472656",
+    "Title": "ToggleSwitch in MUI?",
+    "LatestDate": "2013-12-12T06:49:13.173-08:00"
+  },
+  {
+    "Id": "472803",
+    "Title": "Crash when closing 64 bit Excel",
+    "LatestDate": "2013-12-11T11:56:06.19-08:00"
+  },
+  {
+    "Id": "473297",
+    "Title": "binding comand button to mui link.",
+    "LatestDate": "2013-12-12T05:47:34.76-08:00"
+  },
+  {
+    "Id": "473330",
+    "Title": "BBCode link navigation to specific frame/",
+    "LatestDate": "2013-12-12T05:41:45.553-08:00"
+  },
+  {
+    "Id": "473357",
+    "Title": "Resize charts",
+    "LatestDate": "2013-12-12T07:36:56.91-08:00"
+  },
+  {
+    "Id": "473528",
+    "Title": "MUI Webbrowser freeze",
+    "LatestDate": "2013-12-13T10:27:55.153-08:00"
+  },
+  {
+    "Id": "474234",
+    "Title": "Navigating with Button MVVM",
+    "LatestDate": "2013-12-16T06:52:05.263-08:00"
+  },
+  {
+    "Id": "474452",
+    "Title": "How to get the instances of tabs when using ModernTab?",
+    "LatestDate": "2013-12-17T23:38:28.423-08:00"
+  },
+  {
+    "Id": "474576",
+    "Title": "Accessing the apps AccentColor in C#...",
+    "LatestDate": "2013-12-19T12:58:03.347-08:00"
+  },
+  {
+    "Id": "474656",
+    "Title": "Next version",
+    "LatestDate": "2013-12-18T12:59:02.92-08:00"
+  },
+  {
+    "Id": "476751",
+    "Title": "hide minimize / maximize / close buttons on (empty)ModernWindow",
+    "LatestDate": "2013-12-20T09:24:56.033-08:00"
+  },
+  {
+    "Id": "477965",
+    "Title": "Flyout and searchbox",
+    "LatestDate": "2013-12-25T06:26:17.907-08:00"
+  },
+  {
+    "Id": "478021",
+    "Title": "Transition effect not working when binding ContentSource property",
+    "LatestDate": "2013-12-26T04:02:07.357-08:00"
+  },
+  {
+    "Id": "478029",
+    "Title": "Using mui styles in modules",
+    "LatestDate": "2013-12-26T05:42:02.223-08:00"
+  },
+  {
+    "Id": "478085",
+    "Title": "Page navigation",
+    "LatestDate": "2013-12-27T01:13:20.6-08:00"
+  },
+  {
+    "Id": "478991",
+    "Title": "Programmatic navigation",
+    "LatestDate": "2013-12-28T22:20:05.163-08:00"
+  },
+  {
+    "Id": "478997",
+    "Title": "How to make ModernFrame remove specific pages from its navigation journal?",
+    "LatestDate": "2013-12-29T00:47:00.7-08:00"
+  },
+  {
+    "Id": "479030",
+    "Title": "I want to make R# happy (-: and in the process learn about wpf styling",
+    "LatestDate": "2013-12-29T11:43:56.633-08:00"
+  },
+  {
+    "Id": "479068",
+    "Title": "Sub item in List ",
+    "LatestDate": "2014-01-02T23:50:19.273-08:00"
+  },
+  {
+    "Id": "479082",
+    "Title": "How do I set the link source to a view in another assembly?",
+    "LatestDate": "2014-01-01T03:49:50.997-08:00"
+  },
+  {
+    "Id": "479405",
+    "Title": "Adorner over whole window",
+    "LatestDate": "2014-01-03T08:23:10.017-08:00"
+  },
+  {
+    "Id": "479438",
+    "Title": "MUI:Link Font Size",
+    "LatestDate": "2014-01-14T06:38:58.93-08:00"
+  },
+  {
+    "Id": "482004",
+    "Title": "Retaining data on other tabs?",
+    "LatestDate": "2014-01-10T01:04:08.35-08:00"
+  },
+  {
+    "Id": "483895",
+    "Title": "Passing parameter from Datagrid to another UserControl",
+    "LatestDate": "2014-01-10T04:43:39.707-08:00"
+  },
+  {
+    "Id": "484128",
+    "Title": "Maximise Mainwindow on startup",
+    "LatestDate": "2014-01-16T22:26:28.61-08:00"
+  },
+  {
+    "Id": "484143",
+    "Title": "Put an image on a button",
+    "LatestDate": "2014-01-09T00:01:35.37-08:00"
+  },
+  {
+    "Id": "484285",
+    "Title": "Set Background Image",
+    "LatestDate": "2014-01-13T10:20:34.4-08:00"
+  },
+  {
+    "Id": "500721",
+    "Title": "Is this project still active?",
+    "LatestDate": "2014-01-20T07:11:31.25-08:00"
+  },
+  {
+    "Id": "501454",
+    "Title": "MS-PL compliance",
+    "LatestDate": "2014-01-20T07:31:58.923-08:00"
+  },
+  {
+    "Id": "501667",
+    "Title": "Pages vs. Content",
+    "LatestDate": "2014-07-21T07:02:30.257-07:00"
+  },
+  {
+    "Id": "502737",
+    "Title": "ModernTab Link transitions?",
+    "LatestDate": "2014-01-16T22:16:06.343-08:00"
+  },
+  {
+    "Id": "508575",
+    "Title": "adding controls to title bar",
+    "LatestDate": "2014-01-26T09:48:47.827-08:00"
+  },
+  {
+    "Id": "512116",
+    "Title": "Datagrid Validation ErrorTemplate",
+    "LatestDate": "2014-01-19T13:43:13.52-08:00"
+  },
+  {
+    "Id": "512373",
+    "Title": "Detect page change?",
+    "LatestDate": "2014-01-26T18:46:03.643-08:00"
+  },
+  {
+    "Id": "519703",
+    "Title": "Fragment query string",
+    "LatestDate": "2014-01-22T01:39:12.433-08:00"
+  },
+  {
+    "Id": "520599",
+    "Title": "how to remove the Close button on right top corner ?",
+    "LatestDate": "2014-01-22T08:25:49.137-08:00"
+  },
+  {
+    "Id": "524152",
+    "Title": "XmlDataProvider 2-way binding",
+    "LatestDate": "2014-01-26T00:21:59.7-08:00"
+  },
+  {
+    "Id": "525774",
+    "Title": "Threadsafe manipulation of m:ui Control",
+    "LatestDate": "2014-01-25T02:47:57.377-08:00"
+  },
+  {
+    "Id": "527293",
+    "Title": "Remove a page from the back stack",
+    "LatestDate": "2014-12-29T15:29:44.307-08:00"
+  },
+  {
+    "Id": "527392",
+    "Title": "General unchangeable size discussion",
+    "LatestDate": "2014-02-10T07:28:29.053-08:00"
+  },
+  {
+    "Id": "527407",
+    "Title": "How to remove the Window Commands like Close Button , Minimize Button Maximize Button",
+    "LatestDate": "2014-01-27T10:52:28.247-08:00"
+  },
+  {
+    "Id": "528492",
+    "Title": "How to remove datagrid sortarrow",
+    "LatestDate": "2014-02-04T13:59:19.84-08:00"
+  },
+  {
+    "Id": "528994",
+    "Title": "Display percentage text to ProgressBar",
+    "LatestDate": "2014-05-03T06:50:33.73-07:00"
+  },
+  {
+    "Id": "529003",
+    "Title": "Best way to modify mui styles",
+    "LatestDate": "2014-02-19T07:56:35.743-08:00"
+  },
+  {
+    "Id": "531328",
+    "Title": "ComboBox with Transparent Background doesn't work",
+    "LatestDate": "2014-02-11T07:15:41.01-08:00"
+  },
+  {
+    "Id": "532251",
+    "Title": "ContentLoader to pick content from MEF Plugin if not found in current assembly.",
+    "LatestDate": "2014-02-18T13:00:13.867-08:00"
+  },
+  {
+    "Id": "532311",
+    "Title": "How to Drag and drop in m:ui?",
+    "LatestDate": "2014-02-27T23:37:55.127-08:00"
+  },
+  {
+    "Id": "533184",
+    "Title": "Can't find ModernProgressRing ",
+    "LatestDate": "2014-02-23T09:23:25.14-08:00"
+  },
+  {
+    "Id": "534343",
+    "Title": "ModernTab Links Property Binding",
+    "LatestDate": "2015-03-04T10:25:19.44-08:00"
+  },
+  {
+    "Id": "534457",
+    "Title": "tab link right click event",
+    "LatestDate": "2014-02-23T12:26:17.73-08:00"
+  },
+  {
+    "Id": "534822",
+    "Title": "Is there a way to set a global contentloader?",
+    "LatestDate": "2014-02-24T08:08:27.807-08:00"
+  },
+  {
+    "Id": "535297",
+    "Title": "Previous next command for modern tab?",
+    "LatestDate": "2014-02-25T12:41:57.997-08:00"
+  },
+  {
+    "Id": "535705",
+    "Title": "Custom Command: How to get parent window / page? ",
+    "LatestDate": "2014-02-26T14:36:29.21-08:00"
+  },
+  {
+    "Id": "535725",
+    "Title": "Dynamically Update Accent Color",
+    "LatestDate": "2014-03-21T09:42:14.383-07:00"
+  },
+  {
+    "Id": "535785",
+    "Title": "Adding a label at the top of the window",
+    "LatestDate": "2014-02-27T06:44:26.44-08:00"
+  },
+  {
+    "Id": "535960",
+    "Title": "how to set the ModernDialog.Owner to current/child window",
+    "LatestDate": "2014-03-05T08:55:29.457-08:00"
+  },
+  {
+    "Id": "537886",
+    "Title": "Extend mui:Link with ICommand",
+    "LatestDate": "2014-03-04T02:09:32.037-08:00"
+  },
+  {
+    "Id": "537925",
+    "Title": "I Reviewed This Project",
+    "LatestDate": "2014-03-04T08:57:40.543-08:00"
+  },
+  {
+    "Id": "538250",
+    "Title": "SQL Database and Datagrid",
+    "LatestDate": "2014-03-06T20:23:41.44-08:00"
+  },
+  {
+    "Id": "538472",
+    "Title": "How does parameters sending between the two page links?",
+    "LatestDate": "2014-03-09T22:51:13.68-07:00"
+  },
+  {
+    "Id": "538732",
+    "Title": "MEF - Reference Page Source from External DLLs",
+    "LatestDate": "2014-03-13T05:38:56.583-07:00"
+  },
+  {
+    "Id": "538761",
+    "Title": "How to add links directly to ModernWindow",
+    "LatestDate": "2014-03-12T07:51:24.853-07:00"
+  },
+  {
+    "Id": "538765",
+    "Title": "'Appearance' always selected",
+    "LatestDate": "2014-03-12T08:44:13.837-07:00"
+  },
+  {
+    "Id": "539116",
+    "Title": "Moderndialog size",
+    "LatestDate": "2014-03-18T13:31:26.94-07:00"
+  },
+  {
+    "Id": "539794",
+    "Title": "Setting a Default Link Source",
+    "LatestDate": "2014-03-22T01:46:01.717-07:00"
+  },
+  {
+    "Id": "539959",
+    "Title": "Generating Dynamic tabs",
+    "LatestDate": "2014-03-24T06:04:44.23-07:00"
+  },
+  {
+    "Id": "540383",
+    "Title": "ViewModel never destroyed",
+    "LatestDate": "2014-03-27T13:28:29.337-07:00"
+  },
+  {
+    "Id": "540560",
+    "Title": "ModernProgressRing DoubleBounceProgressRingStyle",
+    "LatestDate": "2014-11-11T02:56:12.95-08:00"
+  },
+  {
+    "Id": "540624",
+    "Title": "Open new links in tabs and close tabs",
+    "LatestDate": "2014-03-30T07:04:01.32-07:00"
+  },
+  {
+    "Id": "540677",
+    "Title": "Unable to set HorizontalContentAlignment in ListBox to \"Stretch\"",
+    "LatestDate": "2014-03-31T03:29:05.13-07:00"
+  },
+  {
+    "Id": "541033",
+    "Title": "Can not access Class from xaml",
+    "LatestDate": "2014-04-03T05:12:29.65-07:00"
+  },
+  {
+    "Id": "541117",
+    "Title": "Is it possible to change the border width of the window?",
+    "LatestDate": "2014-04-03T16:03:43.78-07:00"
+  },
+  {
+    "Id": "541337",
+    "Title": "Hey, who demo source",
+    "LatestDate": "2014-04-05T22:12:51.97-07:00"
+  },
+  {
+    "Id": "541394",
+    "Title": "SelectedLinkGroupChanged Event or How to get ModermMenu from ModernWindow?",
+    "LatestDate": "2014-04-06T13:02:02.283-07:00"
+  },
+  {
+    "Id": "541659",
+    "Title": "MUI + Caliburn.Micro Navigation",
+    "LatestDate": "2014-04-08T17:15:09.923-07:00"
+  },
+  {
+    "Id": "541961",
+    "Title": "Changing Source=\"\" of mui:Link",
+    "LatestDate": "2014-04-11T04:11:07.053-07:00"
+  },
+  {
+    "Id": "542414",
+    "Title": "Adding and removing links from code using MVVM",
+    "LatestDate": "2014-04-16T05:36:42.473-07:00"
+  },
+  {
+    "Id": "542752",
+    "Title": "How to hide button Close in ModernDialog",
+    "LatestDate": "2014-04-28T01:06:09.367-07:00"
+  },
+  {
+    "Id": "543507",
+    "Title": "Application LifeCycle",
+    "LatestDate": "2014-05-01T22:49:29.78-07:00"
+  },
+  {
+    "Id": "543820",
+    "Title": "Override LoadContent not working",
+    "LatestDate": "2014-04-30T00:50:08.573-07:00"
+  },
+  {
+    "Id": "544043",
+    "Title": "Close ModernWindow from anotherViewModel",
+    "LatestDate": "2014-05-12T07:19:16.94-07:00"
+  },
+  {
+    "Id": "544187",
+    "Title": "creating all views when window is loaded",
+    "LatestDate": "2014-05-03T13:27:23.53-07:00"
+  },
+  {
+    "Id": "544308",
+    "Title": "Resizable List layout with GridSplitter",
+    "LatestDate": "2014-06-26T16:07:17.62-07:00"
+  },
+  {
+    "Id": "544326",
+    "Title": "Slow loading datagrid",
+    "LatestDate": "2014-08-17T17:16:04.09-07:00"
+  },
+  {
+    "Id": "544369",
+    "Title": "Dark Theme, change blue color",
+    "LatestDate": "2014-05-08T05:46:50.057-07:00"
+  },
+  {
+    "Id": "544533",
+    "Title": "How to make access to all UI Control in first load?",
+    "LatestDate": "2014-05-06T23:29:38.41-07:00"
+  },
+  {
+    "Id": "544702",
+    "Title": "Mordern Button ",
+    "LatestDate": "2014-05-08T05:40:04.647-07:00"
+  },
+  {
+    "Id": "544824",
+    "Title": "Adding links to ModernTab.Links programmatically",
+    "LatestDate": "2014-05-09T08:13:30.333-07:00"
+  },
+  {
+    "Id": "545217",
+    "Title": "Performance in Datagrid",
+    "LatestDate": "2014-05-19T08:04:20.197-07:00"
+  },
+  {
+    "Id": "545221",
+    "Title": "ModernUI.APP has to close",
+    "LatestDate": "2014-05-13T09:32:29.967-07:00"
+  },
+  {
+    "Id": "545297",
+    "Title": "How can i delete the extra spaces above user controle in ModernWindow",
+    "LatestDate": "2014-05-14T02:19:48.757-07:00"
+  },
+  {
+    "Id": "545462",
+    "Title": "Suppressing left and right key press navigation",
+    "LatestDate": "2014-05-15T10:07:25.117-07:00"
+  },
+  {
+    "Id": "545508",
+    "Title": "Build error with VS2010",
+    "LatestDate": "2014-05-26T19:42:20.607-07:00"
+  },
+  {
+    "Id": "545668",
+    "Title": "How can i set ContentSource Dynamically?",
+    "LatestDate": "2014-05-17T12:10:16.277-07:00"
+  },
+  {
+    "Id": "545876",
+    "Title": "Next and Back Buttons for ModernTab",
+    "LatestDate": "2014-09-29T15:48:44.097-07:00"
+  },
+  {
+    "Id": "545879",
+    "Title": "select from datagrid to delete from database (Solved)",
+    "LatestDate": "2014-05-21T02:00:56.727-07:00"
+  },
+  {
+    "Id": "545991",
+    "Title": "Application bar",
+    "LatestDate": "2014-05-20T09:45:46.223-07:00"
+  },
+  {
+    "Id": "546092",
+    "Title": "Can i change style cursor from a link or from all application links?",
+    "LatestDate": "2014-05-21T03:33:48.73-07:00"
+  },
+  {
+    "Id": "546426",
+    "Title": "Previous Link content path",
+    "LatestDate": "2014-05-23T14:48:47.003-07:00"
+  },
+  {
+    "Id": "546578",
+    "Title": "ModernUi and Caliburn.micro",
+    "LatestDate": "2014-06-05T11:56:00.15-07:00"
+  },
+  {
+    "Id": "546739",
+    "Title": "How to use alternate loading / progress bar",
+    "LatestDate": "2014-05-28T01:04:11.473-07:00"
+  },
+  {
+    "Id": "546894",
+    "Title": "Setting Default Accent Color for ModernUI.Light.xaml",
+    "LatestDate": "2014-07-11T01:01:49.46-07:00"
+  },
+  {
+    "Id": "547074",
+    "Title": "Does mui support XBAP (Browser Applications)?",
+    "LatestDate": "2014-06-05T11:51:29.443-07:00"
+  },
+  {
+    "Id": "547537",
+    "Title": "ModernWindow: unable to set background image",
+    "LatestDate": "2014-06-05T11:43:12.743-07:00"
+  },
+  {
+    "Id": "547739",
+    "Title": "Retrieve a value from a ModernDialog",
+    "LatestDate": "2014-06-17T06:30:21.537-07:00"
+  },
+  {
+    "Id": "548128",
+    "Title": "Controls not refreshing/reloading when bound to ViewModel",
+    "LatestDate": "2014-06-16T07:03:05.503-07:00"
+  },
+  {
+    "Id": "548215",
+    "Title": "Override ContentMargin in ModernUI.xaml",
+    "LatestDate": "2014-06-10T10:54:10.79-07:00"
+  },
+  {
+    "Id": "548828",
+    "Title": "modern ui wpf navigation",
+    "LatestDate": "2014-06-16T12:33:36.653-07:00"
+  },
+  {
+    "Id": "549001",
+    "Title": "Changing theme Light/Dark",
+    "LatestDate": "2014-09-24T11:39:50.01-07:00"
+  },
+  {
+    "Id": "549189",
+    "Title": "Login Page",
+    "LatestDate": "2014-08-15T05:50:07.973-07:00"
+  },
+  {
+    "Id": "549212",
+    "Title": "Open Multiple form in Modern UI for WPF like Visual Studio ",
+    "LatestDate": "2014-07-12T03:50:42.497-07:00"
+  },
+  {
+    "Id": "549546",
+    "Title": "TabControl Theme?",
+    "LatestDate": "2014-07-01T16:30:51.363-07:00"
+  },
+  {
+    "Id": "549808",
+    "Title": "Crystal Report Viewer for MUI",
+    "LatestDate": "2014-07-03T21:52:13.23-07:00"
+  },
+  {
+    "Id": "549987",
+    "Title": "Default Link in ModernTab",
+    "LatestDate": "2014-06-29T02:52:12.73-07:00"
+  },
+  {
+    "Id": "550452",
+    "Title": "Page navigation from viewmodel",
+    "LatestDate": "2014-07-03T01:46:56.683-07:00"
+  },
+  {
+    "Id": "550914",
+    "Title": "How open ModernWindow from Login Page",
+    "LatestDate": "2014-07-08T00:05:34.1-07:00"
+  },
+  {
+    "Id": "551122",
+    "Title": "#HELP switch page in code behind ",
+    "LatestDate": "2014-07-10T03:50:17.487-07:00"
+  },
+  {
+    "Id": "551365",
+    "Title": "CPU Usage",
+    "LatestDate": "2014-07-12T04:44:25.507-07:00"
+  },
+  {
+    "Id": "551367",
+    "Title": "Image Control display Image only by designtime",
+    "LatestDate": "2014-07-15T08:20:28.897-07:00"
+  },
+  {
+    "Id": "552469",
+    "Title": "Using Windsor Castle Container for Viewmodel Injection",
+    "LatestDate": "2014-07-23T13:51:02.72-07:00"
+  },
+  {
+    "Id": "554289",
+    "Title": "How can I override the lower casing of the Display name?",
+    "LatestDate": "2014-09-02T01:58:43.103-07:00"
+  },
+  {
+    "Id": "554290",
+    "Title": "How to determine which link I clicked",
+    "LatestDate": "2014-08-21T00:49:46.283-07:00"
+  },
+  {
+    "Id": "554757",
+    "Title": "DoubleClick Event on a listview",
+    "LatestDate": "2014-07-31T10:59:12.92-07:00"
+  },
+  {
+    "Id": "560428",
+    "Title": "Bindable links & Selected items",
+    "LatestDate": "2014-08-11T06:40:54.693-07:00"
+  },
+  {
+    "Id": "560761",
+    "Title": "Empty Window Style",
+    "LatestDate": "2014-08-10T03:39:08.37-07:00"
+  },
+  {
+    "Id": "561325",
+    "Title": "The name \"ModernWindow\" does not exist in the namespace http://firstfloorsoftware.com/ModernUI",
+    "LatestDate": "2014-09-15T13:09:24.623-07:00"
+  },
+  {
+    "Id": "561480",
+    "Title": "DataGrid Column count is 0 when loading dataview for the first time",
+    "LatestDate": "2014-08-18T02:37:37.543-07:00"
+  },
+  {
+    "Id": "561577",
+    "Title": "ModernDialog bug",
+    "LatestDate": "2014-08-21T06:59:04.897-07:00"
+  },
+  {
+    "Id": "561773",
+    "Title": "Problem with navigation",
+    "LatestDate": "2014-08-21T08:19:35.907-07:00"
+  },
+  {
+    "Id": "561850",
+    "Title": "m:ui applications gallery",
+    "LatestDate": "2014-11-21T17:14:37.087-08:00"
+  },
+  {
+    "Id": "561878",
+    "Title": "ModernTab Image",
+    "LatestDate": "2014-08-22T09:34:52.263-07:00"
+  },
+  {
+    "Id": "561922",
+    "Title": "How to bind links to TitleLinks using viewModel",
+    "LatestDate": "2015-02-20T07:06:17.94-08:00"
+  },
+  {
+    "Id": "562028",
+    "Title": "How update page?",
+    "LatestDate": "2015-02-06T20:34:06.373-08:00"
+  },
+  {
+    "Id": "562061",
+    "Title": "Navigation Events in VB.Net",
+    "LatestDate": "2014-08-25T10:18:11.923-07:00"
+  },
+  {
+    "Id": "562348",
+    "Title": "How to navigate back by clicking a button?",
+    "LatestDate": "2014-12-29T15:45:17.813-08:00"
+  },
+  {
+    "Id": "562567",
+    "Title": "Why not add a special style for default buttons?",
+    "LatestDate": "2014-09-02T02:02:23.8-07:00"
+  },
+  {
+    "Id": "562616",
+    "Title": "BBCode Link style problem",
+    "LatestDate": "2014-09-02T02:01:13.1-07:00"
+  },
+  {
+    "Id": "564802",
+    "Title": "Retrieve the DataContext of the Content set by using ContentSource property.",
+    "LatestDate": "2014-09-02T08:08:36.98-07:00"
+  },
+  {
+    "Id": "564841",
+    "Title": "path for 5 font sizes ... how to update?",
+    "LatestDate": "2014-09-02T01:50:20.983-07:00"
+  },
+  {
+    "Id": "564932",
+    "Title": "Combobox dropdown doesn't work ",
+    "LatestDate": "2014-09-03T08:51:01.6-07:00"
+  },
+  {
+    "Id": "565171",
+    "Title": "Vertical Menu like Avast",
+    "LatestDate": "2014-10-02T13:12:54.063-07:00"
+  },
+  {
+    "Id": "566776",
+    "Title": "Unable to override DataGridColumHeader template",
+    "LatestDate": "2014-09-08T10:44:31.21-07:00"
+  },
+  {
+    "Id": "566967",
+    "Title": "DataGrid validation, where is the error message?",
+    "LatestDate": "2014-12-13T03:10:29.737-08:00"
+  },
+  {
+    "Id": "567231",
+    "Title": "Ask about modern ui",
+    "LatestDate": "2014-09-12T02:13:57.987-07:00"
+  },
+  {
+    "Id": "567236",
+    "Title": "Link navigation with BBCodeBlock to local folder",
+    "LatestDate": "2014-09-19T08:07:34.713-07:00"
+  },
+  {
+    "Id": "567277",
+    "Title": "Localizing ModernDialog buttons",
+    "LatestDate": "2014-09-15T09:49:47.863-07:00"
+  },
+  {
+    "Id": "567931",
+    "Title": "Add glow to the m:ui windows and dialogs",
+    "LatestDate": "2014-12-05T02:26:08.803-08:00"
+  },
+  {
+    "Id": "568270",
+    "Title": "What is ModernFrame frame;",
+    "LatestDate": "2014-09-24T08:57:33.737-07:00"
+  },
+  {
+    "Id": "568539",
+    "Title": "Theme Color",
+    "LatestDate": "2014-10-02T13:23:50.807-07:00"
+  },
+  {
+    "Id": "568560",
+    "Title": "How Can I just Change the fontfamily?",
+    "LatestDate": "2014-10-02T13:21:10.783-07:00"
+  },
+  {
+    "Id": "568651",
+    "Title": "Modern UI login page before the mainwindow",
+    "LatestDate": "2014-10-02T13:19:00.443-07:00"
+  },
+  {
+    "Id": "568672",
+    "Title": "Help with a question",
+    "LatestDate": "2014-10-02T13:16:54.863-07:00"
+  },
+  {
+    "Id": "568700",
+    "Title": "Vertical Window title in 1.0.6?",
+    "LatestDate": "2014-10-03T10:40:41.89-07:00"
+  },
+  {
+    "Id": "568905",
+    "Title": "New instance of ViewModel each time view is activated",
+    "LatestDate": "2014-10-03T00:30:17.4-07:00"
+  },
+  {
+    "Id": "568940",
+    "Title": "OnNavigatingFrom cancellation after exception Handling ",
+    "LatestDate": "2014-10-06T13:07:58.047-07:00"
+  },
+  {
+    "Id": "568999",
+    "Title": "How to do inputbindings in a ModernUi project",
+    "LatestDate": "2014-10-11T18:33:18.603-07:00"
+  },
+  {
+    "Id": "569303",
+    "Title": "Problem to navigate to the previous frame",
+    "LatestDate": "2014-10-16T14:10:34.31-07:00"
+  },
+  {
+    "Id": "569333",
+    "Title": "How do I change caps for the LinkGroups and Links",
+    "LatestDate": "2014-10-15T14:18:29.183-07:00"
+  },
+  {
+    "Id": "569480",
+    "Title": "How to Add Button at the top of main Frame??",
+    "LatestDate": "2014-10-15T14:20:25.51-07:00"
+  },
+  {
+    "Id": "569639",
+    "Title": "threestate checkbox",
+    "LatestDate": "2014-10-15T14:19:01.91-07:00"
+  },
+  {
+    "Id": "569823",
+    "Title": "how to disable LinkGroup",
+    "LatestDate": "2014-10-15T14:21:06.79-07:00"
+  },
+  {
+    "Id": "569977",
+    "Title": "How to use ModernProgressRing",
+    "LatestDate": "2014-10-16T10:03:06.58-07:00"
+  },
+  {
+    "Id": "570049",
+    "Title": "Key Shortcuts for LinkGroups",
+    "LatestDate": "2014-10-17T03:56:24.03-07:00"
+  },
+  {
+    "Id": "570455",
+    "Title": "Setting textblock to current accent brush color",
+    "LatestDate": "2014-10-22T13:29:03.393-07:00"
+  },
+  {
+    "Id": "570477",
+    "Title": "Best way to implement a \"tile\" start page in a m:ui app?",
+    "LatestDate": "2014-10-23T12:22:07.983-07:00"
+  },
+  {
+    "Id": "570535",
+    "Title": "Collapse the back button in MainWindow.xaml",
+    "LatestDate": "2014-10-23T13:20:01.08-07:00"
+  },
+  {
+    "Id": "570629",
+    "Title": "Handling navigation events by bound commands?",
+    "LatestDate": "2014-10-26T05:22:06.84-07:00"
+  },
+  {
+    "Id": "570649",
+    "Title": "Animate AccentColor change?",
+    "LatestDate": "2014-10-26T20:08:13.507-07:00"
+  },
+  {
+    "Id": "570892",
+    "Title": "INotifyPropertyChanged, Collections and DependencyObject",
+    "LatestDate": "2014-10-30T02:10:34.853-07:00"
+  },
+  {
+    "Id": "571107",
+    "Title": "BBCodeBlock into BBCodeBox",
+    "LatestDate": "2014-11-02T08:05:29.17-08:00"
+  },
+  {
+    "Id": "571273",
+    "Title": "too much switching time when switching mui:Link item which contains big datas",
+    "LatestDate": "2014-11-04T07:30:12.05-08:00"
+  },
+  {
+    "Id": "571495",
+    "Title": "请教kozw一个简单的问题",
+    "LatestDate": "2014-11-06T23:36:21.173-08:00"
+  },
+  {
+    "Id": "571621",
+    "Title": "Will there be a NumericUpAndDown control?",
+    "LatestDate": "2014-12-01T14:12:55.857-08:00"
+  },
+  {
+    "Id": "571925",
+    "Title": "Set input to search in the Main Window",
+    "LatestDate": "2014-11-20T04:14:53.91-08:00"
+  },
+  {
+    "Id": "572137",
+    "Title": "mui:ModernButton.CommandBindings",
+    "LatestDate": "2015-01-29T19:14:21.537-08:00"
+  },
+  {
+    "Id": "572521",
+    "Title": "How to remove the tool bar (app name & min/max/close buttons)",
+    "LatestDate": "2014-12-01T14:15:49.737-08:00"
+  },
+  {
+    "Id": "572805",
+    "Title": "ModernProgressRing",
+    "LatestDate": "2014-11-21T10:45:35.693-08:00"
+  },
+  {
+    "Id": "572820",
+    "Title": "moderndialog - change to additional 'details' field",
+    "LatestDate": "2014-11-21T12:59:09.827-08:00"
+  },
+  {
+    "Id": "572882",
+    "Title": "ModernTab List UpdateSelection, Scroll to selected Item (Solution)",
+    "LatestDate": "2014-11-22T14:09:13.953-08:00"
+  },
+  {
+    "Id": "573467",
+    "Title": "ComboBox does not work inside TreeView",
+    "LatestDate": "2014-11-28T11:35:36.383-08:00"
+  },
+  {
+    "Id": "573671",
+    "Title": "Is this ok usage according to current Licence?",
+    "LatestDate": "2014-12-01T14:11:36.733-08:00"
+  },
+  {
+    "Id": "573673",
+    "Title": "CPU Usage #2",
+    "LatestDate": "2014-12-02T00:29:08.007-08:00"
+  },
+  {
+    "Id": "574119",
+    "Title": "Threading, Binding and Progress Updates",
+    "LatestDate": "2014-12-13T03:32:22.93-08:00"
+  },
+  {
+    "Id": "574129",
+    "Title": "New Window not displaying content",
+    "LatestDate": "2014-12-13T03:18:26.053-08:00"
+  },
+  {
+    "Id": "574682",
+    "Title": "Validations not showing inside ListView",
+    "LatestDate": "2014-12-13T03:09:21.207-08:00"
+  },
+  {
+    "Id": "574733",
+    "Title": "Licensing",
+    "LatestDate": "2014-12-14T21:05:44.747-08:00"
+  },
+  {
+    "Id": "574966",
+    "Title": "ToggleButton content image is invisible",
+    "LatestDate": "2014-12-22T01:56:22.427-08:00"
+  },
+  {
+    "Id": "575822",
+    "Title": "Using m:ui for WiX Bootstrapper possible?",
+    "LatestDate": "2015-01-05T02:02:39.767-08:00"
+  },
+  {
+    "Id": "576123",
+    "Title": "BingMaps WPF Control slow startup",
+    "LatestDate": "2014-12-23T04:58:01.43-08:00"
+  },
+  {
+    "Id": "576126",
+    "Title": "Disable navigation transition for a single page",
+    "LatestDate": "2014-12-23T05:11:34.033-08:00"
+  },
+  {
+    "Id": "576519",
+    "Title": "ModernProgressRing IsActive Databinding",
+    "LatestDate": "2015-06-09T06:16:03.157-07:00"
+  },
+  {
+    "Id": "576787",
+    "Title": "Is it possible to use the built in TransitioningContentControl in custom navigation framework?",
+    "LatestDate": "2015-01-09T09:31:31.677-08:00"
+  },
+  {
+    "Id": "577440",
+    "Title": "get navigated page as FrameworkElement programmatically...",
+    "LatestDate": "2015-01-11T20:43:17.283-08:00"
+  },
+  {
+    "Id": "577770",
+    "Title": "Dynamic Top and Side Images in Demo App",
+    "LatestDate": "2015-01-15T07:22:12.74-08:00"
+  },
+  {
+    "Id": "578237",
+    "Title": "Open File Dialog",
+    "LatestDate": "2015-01-22T18:00:21.74-08:00"
+  },
+  {
+    "Id": "578355",
+    "Title": "ModernTab Tree View in Left Nav",
+    "LatestDate": "2015-01-22T07:12:31.34-08:00"
+  },
+  {
+    "Id": "578535",
+    "Title": "Changing the ModernWindow and ModernTab.xaml",
+    "LatestDate": "2015-01-25T10:04:55.7-08:00"
+  },
+  {
+    "Id": "579131",
+    "Title": "Title Link Icon",
+    "LatestDate": "2015-01-31T16:59:07.753-08:00"
+  },
+  {
+    "Id": "579297",
+    "Title": "ModernWindow.MenuLinkGroups + LinkGroup.Links + Link - Command and CommandParameter",
+    "LatestDate": "2015-02-02T13:12:34.21-08:00"
+  },
+  {
+    "Id": "579298",
+    "Title": "ModernWindow.MenuLinkGroups + LinkGroup.Links + Link - Command and CommandParameter",
+    "LatestDate": "2015-02-02T13:12:37.673-08:00"
+  },
+  {
+    "Id": "579299",
+    "Title": "ModernWindow.MenuLinkGroups + LinkGroup.Links + Link - Command and CommandParameter",
+    "LatestDate": "2015-02-02T13:12:40.513-08:00"
+  },
+  {
+    "Id": "579518",
+    "Title": "Image on button/tile",
+    "LatestDate": "2015-02-04T20:30:23-08:00"
+  },
+  {
+    "Id": "579717",
+    "Title": "Heads Up! MUI will move to GitHub soon",
+    "LatestDate": "2015-02-09T07:04:41.477-08:00"
+  },
+  {
+    "Id": "579927",
+    "Title": "Modern UI - Few Queries on Customization",
+    "LatestDate": "2015-02-10T10:57:55.543-08:00"
+  },
+  {
+    "Id": "580657",
+    "Title": "Open/Close Application: disable history",
+    "LatestDate": "2015-02-13T02:05:25.313-08:00"
+  },
+  {
+    "Id": "581450",
+    "Title": "ModerUI Icons SVG: full list and custom color icon",
+    "LatestDate": "2015-02-27T07:44:12.6-08:00"
+  },
+  {
+    "Id": "586159",
+    "Title": "How to customize ModernWindow Theme?",
+    "LatestDate": "2015-03-12T08:09:28.353-07:00"
+  },
+  {
+    "Id": "586301",
+    "Title": "how to use mui by vsto in ms office addin?",
+    "LatestDate": "2015-03-13T14:11:03.67-07:00"
+  },
+  {
+    "Id": "586317",
+    "Title": "RE: Modern UI Navigation",
+    "LatestDate": "2015-03-14T01:07:05.637-07:00"
+  },
+  {
+    "Id": "586834",
+    "Title": "Modernbutton content",
+    "LatestDate": "2015-03-16T07:48:04.313-07:00"
+  },
+  {
+    "Id": "616454",
+    "Title": "Navigate back to previous LinkGroup",
+    "LatestDate": "2015-04-02T08:26:36.19-07:00"
+  },
+  {
+    "Id": "627600",
+    "Title": "enable and disable links on main window",
+    "LatestDate": "2015-04-14T06:11:28.283-07:00"
+  },
+  {
+    "Id": "631546",
+    "Title": "navigation Cashes all the pages",
+    "LatestDate": "2015-04-18T12:43:56.377-07:00"
+  },
+  {
+    "Id": "632503",
+    "Title": "Create another Modern Window in a new STA Thread",
+    "LatestDate": "2015-04-23T21:52:50.213-07:00"
+  },
+  {
+    "Id": "633604",
+    "Title": "moderntabs - access to tabitem object",
+    "LatestDate": "2015-04-27T00:05:00.207-07:00"
+  },
+  {
+    "Id": "636045",
+    "Title": "I can't enable my listBox (or any other item) in my page",
+    "LatestDate": "2015-04-30T02:13:33.137-07:00"
+  },
+  {
+    "Id": "637470",
+    "Title": "drag area on window top",
+    "LatestDate": "2015-05-08T14:22:10.233-07:00"
+  },
+  {
+    "Id": "638310",
+    "Title": "OnNavigating, OnNavigated and OnNavigationFailed not exposed for use?",
+    "LatestDate": "2015-05-19T04:50:38.323-07:00"
+  },
+  {
+    "Id": "638908",
+    "Title": "MUI Extension won't install on VS2015 on Windows 10",
+    "LatestDate": "2015-10-21T09:38:42.203-07:00"
+  },
+  {
+    "Id": "638956",
+    "Title": "How to make a link load its content in \"_top\" ?",
+    "LatestDate": "2015-06-02T06:25:19.697-07:00"
+  },
+  {
+    "Id": "643925",
+    "Title": "Moderui and ListView",
+    "LatestDate": "2015-08-20T08:53:00.5-07:00"
+  },
+  {
+    "Id": "645357",
+    "Title": "Multiple ModernMenu in ModernWindow",
+    "LatestDate": "2015-09-22T23:51:22.89-07:00"
+  },
+  {
+    "Id": "645545",
+    "Title": "How launch the Demo from Source Code",
+    "LatestDate": "2015-09-28T09:14:08.857-07:00"
+  },
+  {
+    "Id": "646747",
+    "Title": "Why does this not allow for the creation of resource dictionaries?",
+    "LatestDate": "2015-11-05T07:42:27.003-08:00"
+  },
+  {
+    "Id": "646864",
+    "Title": "Add text to TabWindow",
+    "LatestDate": "2015-10-31T17:13:27.22-07:00"
+  },
+  {
+    "Id": "651493",
+    "Title": "Programmatically navigation?",
+    "LatestDate": "2016-02-24T04:09:45.597-08:00"
+  },
+  {
+    "Id": "653467",
+    "Title": "Customize looks to <mui:Link>",
+    "LatestDate": "2016-04-11T10:31:47.837-07:00"
+  },
+  {
+    "Id": "655016",
+    "Title": "How can I navigate to page in an other group?",
+    "LatestDate": "2016-05-27T08:25:27.083-07:00"
+  },
+  {
+    "Id": "655463",
+    "Title": "Add content to Title bar of BlankWindow?",
+    "LatestDate": "2016-06-12T17:58:04.47-07:00"
+  },
+  {
+    "Id": "656486",
+    "Title": "MEF + MUI + DLLs",
+    "LatestDate": "2016-07-16T18:14:36.24-07:00"
+  },
+  {
+    "Id": "656703",
+    "Title": "KeepContentAlive in MEF",
+    "LatestDate": "2016-07-26T08:13:39.23-07:00"
+  },
+  {
+    "Id": "657850",
+    "Title": "Navigate to Page and Selected Source",
+    "LatestDate": "2016-09-09T17:55:45.9-07:00"
+  },
+  {
+    "Id": "660071",
+    "Title": "ModernDialog size",
+    "LatestDate": "2016-12-11T17:01:57.787-08:00"
+  },
+  {
+    "Id": "660611",
+    "Title": "Need to be able to see the header in a tabitem of a tabcontrol",
+    "LatestDate": "2017-01-10T10:56:31.373-08:00"
+  },
+  {
+    "Id": "662669",
+    "Title": "Create UIControl and render it in other theard",
+    "LatestDate": "2017-04-24T00:16:28.37-07:00"
+  }
+]

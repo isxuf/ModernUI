@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1303139",
+    "ThreadId": "566967",
+    "Html": "When using validation in DataGrid, the nice red message (that I provide via IDataErrorInfo interface) indicating an illegal input value of a cell almost never shows up. It actually shows up in a specific situation, where the illegal value is there initially when loading the data model. But it never shows when I am actually modifying the cells.\r<br />\n<br />\nThe red box around the cell is there, so I know the validation implementation works.\r<br />\n<br />\nAny thoughts?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2014-09-10T02:27:07.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1330749",
+    "ThreadId": "566967",
+    "Html": "Same issue here. I can't get any validations displaying from within a DataGrid.<br />\n",
+    "PostedDate": "2014-12-10T12:28:28.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1331567",
+    "ThreadId": "566967",
+    "Html": "Most likely related to <a href=\"https://mui.codeplex.com/discussions/574682\" rel=\"nofollow\">https://mui.codeplex.com/discussions/574682</a>, which is about the GridView template in the ListView control.<br />\n",
+    "PostedDate": "2014-12-13T03:10:29.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

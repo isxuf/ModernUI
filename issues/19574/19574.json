@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "A little bit more horizontal space between Minimize, Maximize/RestoreDown and Close buttons. We (developers) can easily click, but the regular users, is a little bit more difficult.",
+    "LastUpdatedDate": "2014-10-10T00:07:28.777-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-04-09T02:28:30.577-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Minimize, Maximize/RestoreDown and Close buttons",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 9,
+    "Id": 19574
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This should probably be a separate issue, but it'd be nice if you could specify which buttons to show as well.  For example on one of the projects I'm working on, I want to remove maximize.",
+      "PostedDate": "2013-12-18T18:29:28.72-08:00",
+      "Id": 158482
+    },
+    {
+      "Message": "This is a test comment (i'm trying to prove that i'm receiving email notifications when i shouldn't)",
+      "PostedDate": "2013-12-18T21:58:55.08-08:00",
+      "Id": 158483
+    }
+  ]
+}

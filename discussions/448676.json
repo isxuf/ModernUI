@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1063028",
+    "ThreadId": "448676",
+    "Html": "Hi,\r<br />\n<br />\nCould you help me on how to increase the Icon height and width of Modern Button. I tried IconWidth and IconHeight Property but it doesn't change the icon area.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-06-30T20:50:15.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1063227",
+    "ThreadId": "448676",
+    "Html": "See this proposed work item <a href=\"https://mui.codeplex.com/workitem/19918\" rel=\"nofollow\">https://mui.codeplex.com/workitem/19918</a>\r<br />\n<br />\nIf you make these code changes then just set the EllipseDiameter property of the ModernButton.<br />\n",
+    "PostedDate": "2013-07-01T09:45:27.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1065023",
+    "ThreadId": "448676",
+    "Html": "Variable sized ModernButtons now supported (added in changeset 101521)<br />\n",
+    "PostedDate": "2013-07-05T14:18:39.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1066338",
+    "ThreadId": "448676",
+    "Html": "I've tried to use the new ModernButton and found that the picture in a button does not change a size automatically. Obviously, I can change that by IconHeight/IconWidth, but it brings more complexity if the button has a dynamic size. \r<br />\n<br />\nI also found that the original (W8) buttons have a titles under the button.<br />\n",
+    "PostedDate": "2013-07-09T16:28:14.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1193601",
+    "ThreadId": "448676",
+    "Html": "Hi,\r<br />\n<br />\nis it possible to make a button' border is thicker? It looks very tiny if an ellipse diameter is over 40.<br />\n",
+    "PostedDate": "2014-01-23T13:53:37.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

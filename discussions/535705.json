@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1215352",
+    "ThreadId": "535705",
+    "Html": "Thanks for the awesome library. Looks great and super easy to use.\r<br />\n<br />\nI'm generating some clickable links in a BBCodeBlock to load recently used items:<br />\n<pre><code>foreach (string entry in Properties.Settings.Default.RecentConfigs)\n {\n      bb_recentConfigs.BBCode += &quot;[url=cmd://loadconfig|&quot; + entry + &quot;]&quot; + entry + &quot;[/url]\\n&quot;;\n }</code></pre>\n\nSo I have a LoadConfig class that subclasses CommandBase. All good. But when LoadConfig.OnExecute gets called, I need to get information back to the parent window (to do more UI updates). How can I do this?<br />\n",
+    "PostedDate": "2014-02-26T14:36:29.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

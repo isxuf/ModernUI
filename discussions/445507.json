@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1050853",
+    "ThreadId": "445507",
+    "Html": "When is the latest 'production' release to be available for general consumption which includes all the new goodies I've seen in the source.\r<br />\n<br />\nI know I can download the latest source code and do my own compile, but I don't want to take that course of action.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-05-30T13:42:36.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050855",
+    "ThreadId": "445507",
+    "Html": "@thebohonk,<br />\n<br />\nI think the best way is using <a href=\"http://nuget.org/packages/ModernUI.WPF/\" rel=\"nofollow\">nuget package</a>.<br />\n<br />\nIf need more help on how get started take a look <a href=\"https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app%20using%20templates&amp;referringTitle=Documentation\" rel=\"nofollow\">here</a><br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-05-30T13:48:35.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050889",
+    "ThreadId": "445507",
+    "Html": "Yeah, thanks, but, I'm already at 1.0.3.\r<br />\nI want the 'next' latest - 1.0.4 ?? the new stuff I've seen in the current source code that is on this site.  <br />\n",
+    "PostedDate": "2013-05-30T15:09:41.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051234",
+    "ThreadId": "445507",
+    "Html": "OK got it. There is no 1.04 pre-compiled option, you'll need to compile from source.<br />\n",
+    "PostedDate": "2013-05-31T07:49:36.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052361",
+    "ThreadId": "445507",
+    "Html": "A new release is coming soon.<br />\n",
+    "PostedDate": "2013-06-03T14:35:51.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

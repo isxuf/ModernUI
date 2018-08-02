@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "1040382",
+    "ThreadId": "442813",
+    "Html": "Hey,\r<br />\n<br />\ncan anyone share an example or tutorial on how to combine CM with m:ui?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-05-07T07:05:16.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040402",
+    "ThreadId": "442813",
+    "Html": "<a href=\"436518\" rel=\"nofollow\">This thread</a> may help <br />\n",
+    "PostedDate": "2013-05-07T07:39:19.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040408",
+    "ThreadId": "442813",
+    "Html": "Thanks for pointing me to this thread, but I guess I still miss a starting point...<br />\n",
+    "PostedDate": "2013-05-07T07:48:43.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040553",
+    "ThreadId": "442813",
+    "Html": "Kozw, do you have a simple example to get me startend?<br />\n",
+    "PostedDate": "2013-05-07T12:35:45.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040585",
+    "ThreadId": "442813",
+    "Html": "I would love to provide you with a sample demonstrating Caliburn and mui, but my experience with caliburn micro is severely limited. This will take me some time to create.\r<br />\n<br />\nAnyone care to chime in?<br />\n",
+    "PostedDate": "2013-05-07T13:47:09.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040624",
+    "ThreadId": "442813",
+    "Html": "Guys,\r<br />\n<br />\nI just created a very, very, very simple sample app using &quot;Modern UI for WPF&quot; and &quot;Caliburn Micro&quot;.\r<br />\nI'm new to WPF/MVVM world then do not expect too much on it, but it's something.\r<br />\n<br />\n<a href=\"https://github.com/gblmarquez/mui-sample-chat\" rel=\"nofollow\">Link to sample git repository</a>\r<br />\n<br />\nKozw, if you any idea of another sample please fell free to contact me.\r<br />\n<br />\n<br />\nKind regards,\r<br />\n<br />\nGabriel Marquez<br />\n",
+    "PostedDate": "2013-05-07T16:39:45.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040899",
+    "ThreadId": "442813",
+    "Html": "Hey,<br />\n<br />\nover at StackOverflow, someone (Charleh) answered my question providing some usefull (at least for me) stuff: <a href=\"http://stackoverflow.com/questions/16421582/caliburn-micro-and-modernui-examples-tutorials\" rel=\"nofollow\">StackOverflow</a><br />\n<br />\nRegards,<br />\n<br />\nMatthias<br />\n",
+    "PostedDate": "2013-05-08T07:40:43.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1041092",
+    "ThreadId": "442813",
+    "Html": "Have you tried the example at StackOverflow and try to bind?  I can get the views to load, but i cannot get the views and viewmodels to be bound when the view is loaded.<br />\n<br />\nIn CaliburnContentLoader::LoadContent() vm is always null.<br />\n",
+    "PostedDate": "2013-05-08T14:54:40.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1041100",
+    "ThreadId": "442813",
+    "Html": "Yes, same problem here...Log shows (for View ExampleView): &quot;View Model not found. Searched: ModernUIApp1, ModernUIApp1, ModernUIApp1.ExampleViewModel, ModernUIApp1.Example.&quot;<br />\n",
+    "PostedDate": "2013-05-08T15:10:22.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1041148",
+    "ThreadId": "442813",
+    "Html": "The trick to &quot;found&quot; the ViewModel is override some methods and if needed add rule on ViewLocator.NameTransformer in the Caliburn Micro Bootstrap class.\r<br />\nOn the sample provide <a href=\"https://github.com/gblmarquez/mui-sample-chat/blob/master/src/MuiChat.App/Bootstrapper.cs\" rel=\"nofollow\">here</a>, it's all covered using MEF as IoC.<br />\n",
+    "PostedDate": "2013-05-08T17:48:19.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1041472",
+    "ThreadId": "442813",
+    "Html": "gblmarquez that worked.<br />\nI am able to find the viewmodel and they are now bound.  Based off the previous example, i just needed to add to my bootstrapper:<br />\n<pre><code>        protected override void Configure()\n        {\n\n            ViewLocator.NameTransformer.AddRule(\n                @&quot;(?&lt;nsbefore&gt;([A-Za-z_]\\w*\\.)*)?(?&lt;nsvm&gt;ViewModels\\.)(?&lt;nsafter&gt;([A-Za-z_]\\w*\\.)*)(?&lt;basename&gt;[A-Za-z_]\\w*)(?&lt;suffix&gt;ViewModel$)&quot;,\n                @&quot;${nsbefore}Views.${nsafter}${basename}View&quot;,\n                @&quot;(([A-Za-z_]\\w*\\.)*)?ViewModels\\.([A-Za-z_]\\w*\\.)*[A-Za-z_]\\w*ViewModel$&quot;\n                );\n\n         ...</code></pre>\n\nI use the simplecontainer so my code remaining is different from gblmarquez.\r<br />\n<br />\nThanks gblmarquez for figuring out that piece.\r<br />\n<br />\nNow i have to figure out how to navigate from within a viewmodel.<br />\n",
+    "PostedDate": "2013-05-09T10:22:52.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1041629",
+    "ThreadId": "442813",
+    "Html": "@ricorx7 I'm working on navigation right now, I'm not satisfied with my solution.\r<br />\nIf you find something interesting please share :D thanks.\r<br />\n<br />\nKind regards,\r<br />\n<br />\nGabriel Marquez<br />\n",
+    "PostedDate": "2013-05-09T16:20:59.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1042074",
+    "ThreadId": "442813",
+    "Html": "If i use the standard MenuLinksGroup, the navigation works fine.  The ContentLoader finds the ViewModel based off the View path given and the ModernWindow navigates to the correct view and binding works fine.<br />\n<br />\nBut i am also trying to navigate by a button click.  And this does not work.<br />\n<br />\nSo in ShellViewModel i have added this:<br />\n<pre><code>        private void NavigateToView(string view)\n        {\n            var frame = (ShellView) ViewLocator.LocateForModelType(typeof(ShellViewModel), null, null);\n            if (frame != null)\n            {\n                frame.ContentSource = new Uri(view, UriKind.Relative);\n            }\n        }</code></pre>\n\nAnd when i run the method:<br />\n<pre><code>NavigateToView(&quot;/Views/Page1.xaml&quot;);</code></pre>\n\ni would expect the ContentLoader to be called and the frame to navigate to the page.  But none of this happens.<br />\nThe constructor for Pag1's view or viewmodel is not called.  The ContentLoader is not called.<br />\n<br />\nAm i suppose to do something after ContentSource is set?  In all the examples, Source is set, but i cannot find this property for the ModernWindow.<br />\n<br />\nI also have not gotten the IContent interface to work.  None of the Navigate methods are called when i navigate using the MenuLinksGroup links.<br />\n",
+    "PostedDate": "2013-05-10T14:02:04.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1042128",
+    "ThreadId": "442813",
+    "Html": "Ok so i found what i was missing, a ModernFrame, but when i incorporate the ModernFrame somewhere i still do not get navigation to work.  But i believe i am getting closer.<br />\n<br />\nThe Shell is a ModernWindow.  The Shell's ContentSource is a ModernFrame called mainFrame.  I made mainFrame's ContentLoader be my CaliburnContentLoader.  Then i made mainFrame's Source HomeView which is a UserControl (this is a hack until i figure out how to load mainFrame somewhere properly).  The HomeView is loaded at startup properly.  But navigation does not work from a button in code.  It does work from a button using xaml.<br />\n<br />\n<br />\nWORKS<br />\n<pre><code>Command=&quot;NavigationCommands.GoToPage&quot; CommandParameter=&quot;/Views/Page1View.xaml&quot;</code></pre>\n\nDOES NOT WORK<br />\n<pre><code>var frame = NavigationHelper.FindFrame(null, Shell);\nframe.Source = new Uri(&quot;/Views/Page1View.xaml&quot;, UriKind.Relative);</code></pre>\n\nNow i thought that because Shell had mainFrame as it's ContentSource i could use Shell to find the frame.<br />\nBut no frame is found.  I found the code for NavigationHelper and it is looking for the Decendents of Shell that are ModernFrames which it finds none.<br />\n<br />\nSo i cheated and put mainFrame in my container so at least i could find it and then set the Source for mainFrame, but the view never navigates.<br />\n<br />\nI followed how NavigationCommands.GoToPage does it of setting the Source to a URI of the page path, so i am not sure why it does not work.<br />\n",
+    "PostedDate": "2013-05-10T17:18:30.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043570",
+    "ThreadId": "442813",
+    "Html": "<a href=\"mailto:@ricorx7,\r\n\r\nNice.\r\n\r\nI'll\" rel=\"nofollow\">@ricorx7,\r\n\r\nNice.\r\n\r\nI'll</a> create a lab to test this approach! \r<br />\n<br />\nThanks for sharing<br />\n",
+    "PostedDate": "2013-05-14T14:57:48.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

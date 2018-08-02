@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1084298",
+    "ThreadId": "454387",
+    "Html": "Simple question, I have the following:\r<br />\n<br />\n &lt;ListBox ItemsSource=&quot;{Binding Path=LoadedData}&quot; Grid.Column=&quot;0&quot; Grid.Row=&quot;2&quot; Margin=&quot;5&quot; Padding=&quot;1&quot; BorderThickness=&quot;1&quot; BorderBrush=&quot;#FF818A90&quot; /&gt;\r<br />\n<br />\nYet, I can't get the border to show.<br />\n",
+    "PostedDate": "2013-08-23T12:15:15.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084904",
+    "ThreadId": "454387",
+    "Html": "The ListBox mui style didn't take the border properties into account. I checked in a fix for that. Get latest source and re-compile the mui project<br />\n",
+    "PostedDate": "2013-08-26T06:04:12.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

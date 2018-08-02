@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1133928",
+    "ThreadId": "472656",
+    "Html": "Is it possible to have a toggleswitch in MUI? If Possible how? Tnx in advance. :D<br />\n",
+    "PostedDate": "2013-12-10T14:03:31.717-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1135037",
+    "ThreadId": "472656",
+    "Html": "How about a toggle button? (<a href=\"https://mui.codeplex.com/discussions/463112\" rel=\"nofollow\">https://mui.codeplex.com/discussions/463112</a>)\r<br />\n<br />\nAlso take a look at another library MahApps. They have a toggle switch in their library. <br />\n",
+    "PostedDate": "2013-12-12T06:49:13.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

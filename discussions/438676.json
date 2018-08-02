@@ -1,0 +1,162 @@
+[
+  {
+    "Id": "1023811",
+    "ThreadId": "438676",
+    "Html": "As with the ModernMenu control, is there a way to dynamically add new links to the ModernWindow.MenuLinkGroups?\r<br />\n<br />\n(I am not sure if this is against CodePlex etiquette, but here is another question unrelated to the title.)\r<br />\nI have checked out a few Metro UI libraries: MahApps, Elysium, and ModernUI. I would say that my favorite is ModernUI. It is a really great library and I thank you for making it. One thing I would like to ask in regards to more features is a notifications feature. In Elysium, there is a NotificationManager that displays a custom message box in the top right of the screen as default due to some designated event. I would like that feature in ModernUI because I would use that as a notification for when the program loses focus and some event happens (similar to the taskbar icon flashing but more noticeable). Are there any plans to release something similar to Elysium's NotificationManager?<br />\n",
+    "PostedDate": "2013-04-01T08:31:23.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023832",
+    "ThreadId": "438676",
+    "Html": "Yes, both LinkGroupCollection and LinkCollection derive from ObservableCollection&lt;T&gt;. Just add your group or link and it automatically appears in the ModernMenu. See also the menu demo in the MUI demo app (controls &gt; modern controls &gt; modernmenu)<br />\n",
+    "PostedDate": "2013-04-01T09:24:21.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023991",
+    "ThreadId": "438676",
+    "Html": "I have been trying to find out how to do it since your reply but I just can't figure it out. I understand how to dynamically add with <code>&lt;mui:ModernMenu&gt;</code> but can't do it with <code>&lt;mui:ModernWindow.MenuLinkGroups&gt;</code>. Didn't want to let my amateurishness show.\r<br />\n<br />\nI have this as my MainWindow.<br />\n<pre><code>&lt;mui:ModernWindow x:Class=&quot;ChatWPF.MainWindow&quot;\n        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n        xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n        WindowStartupLocation=&quot;CenterScreen&quot;\n        Title=&quot;MainWindow&quot; Height=&quot;420&quot; Width=&quot;550&quot; ContentSource=&quot;/Chat.xaml&quot; &gt;\n\n    &lt;mui:ModernWindow.MenuLinkGroups&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;Chat&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;Chat&quot; Source=&quot;/Chat.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Theme&quot; Source=&quot;/Theme.xaml&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n    &lt;/mui:ModernWindow.MenuLinkGroups&gt;\n\n&lt;/mui:ModernWindow&gt;</code></pre>\n\nThis is the UserControl for Chat.xaml.<br />\n<pre><code>&lt;UserControl x:Class=&quot;ChatWPF.Chat&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;\n             xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;\n\n    &lt;Button x:Name=&quot;AddLink&quot; Margin=&quot;100,6,0,0&quot; VerticalAlignment=&quot;Top&quot; HorizontalAlignment=&quot;Left&quot; Content=&quot;add link&quot; /&gt;\n\n&lt;/UserControl&gt;</code></pre>\n\nI want to add a link to the <code>&lt;mui:ModernWindow.MenuLinkGroups&gt;</code> of MainWindow when the the Button of Chat is clicked.\r<br />\nThe code to add a link to a ModernMenu as in the ModernUIDemo is here.<br />\n<pre><code>this.AddLink.Command = new RelayCommand(o =&gt; {\n                this.Menu.SelectedLinkGroup.Links.Add(new Link {\n                    DisplayName = string.Format(CultureInfo.InvariantCulture, &quot;link {0}&quot;, ++linkId),\n                    Source = new Uri(string.Format(CultureInfo.InvariantCulture, &quot;/link{0}&quot;, linkId), UriKind.Relative)\n                });\n            }, o =&gt; this.Menu.SelectedLinkGroup != null);</code></pre>\n\nSo far, I have tried naming <code>&lt;mui:ModernWindow.MenuLinkGroups x:Uid=&quot;Menu&quot;&gt;</code> and <code>&lt;mui:LinkGroup DisplayName=&quot;Chat&quot; x:Name=&quot;Menu&quot;&gt;</code> but IntelliSense doesn't find them in the .cs files. I also tried doing something like changing the <code>this.Menu. ...</code> <code>ChatWPF.Chat.Menu. ...</code> but that is also invalid.\r<br />\n<br />\nI would like to humbly ask how I would make new links for the window menu. I want to add new links to a window link group not a page or usercontrol link group.\r<br />\n<br />\n<img src=\"http://i.imgur.com/GeGxOaS.png\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-04-01T17:32:15.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024063",
+    "ThreadId": "438676",
+    "Html": "You need to access the ModernWindow instance that is hosting your user control. Then you can access the MenuLinkGroups.\r<br />\n(<code>this</code> is your usercontrol instance)<br />\n<pre><code>var wnd = Window.GetWindow(this) as ModernWindow;\nif (wnd != null) {\n  wnd.MenuLinkGroups.Add(new LinkGroup {\n    DisplayName = &quot;new group&quot;\n  });\n}</code></pre>\n\n",
+    "PostedDate": "2013-04-01T23:45:30.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024202",
+    "ThreadId": "438676",
+    "Html": "I have the same problem and I tried your snippit, but wnd is Always null in my project.<br />\n",
+    "PostedDate": "2013-04-02T05:04:39.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024286",
+    "ThreadId": "438676",
+    "Html": "Are you sure your usercontrol is available in the visual tree? If you execute Window.GetWindow before the Load event, null is returned. <br />\n<br />\nAlternatively you can use the following to reference the main window;<br />\n<pre><code>var wnd = Application.Current.MainWindow as ModernWindow;</code></pre>\n\nor access all available modern windows;<br />\n<pre><code>var wnds = Application.Current.Windows.OfType&lt;ModernWindow&gt;();</code></pre>\n\n",
+    "PostedDate": "2013-04-02T07:40:42.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024359",
+    "ThreadId": "438676",
+    "Html": "I was able to add a LinkGroup to the main menu using this code.<br />\n<pre><code>private void AddLink_Click(object sender, RoutedEventArgs e)\n{\n    var wnd = Application.Current.MainWindow as ModernWindow;\n\n    if (wnd != null)\n    {\n        wnd.MenuLinkGroups.Add(new LinkGroup\n        {\n            DisplayName = &quot;Chat Control&quot;\n        });\n    }\n}</code></pre>\n\nI want to add a Link to an existing LinkGroup. I am trying to follow the same logic as above but I can't find anything that is valid. Sorry for taking you away from other important matters.<br />\n<br />\n<strong>EDIT</strong><br />\nRight after posting I found something that satisfies me for the moment. I am not sure if this is the best way to do it.<br />\n<pre><code>wnd.MenuLinkGroups.First&lt;LinkGroup&gt;().Links.Add(new Link\n{\n    DisplayName = &quot;link&quot;\n});</code></pre>\n\n",
+    "PostedDate": "2013-04-02T09:59:41.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024363",
+    "ThreadId": "438676",
+    "Html": "Are you using the same GroupName for all your links? I made the same mistake and link groups are shown per group name (see <a href=\"http://mui.codeplex.com/workitem/19544\" rel=\"nofollow\">here</a>)<br />\n<br />\nAnd btw. Don't make yourself uncomfortable with asking questions. If we don't ask, we can't learn. There's so much people that are happy to help...<br />\n",
+    "PostedDate": "2013-04-02T10:03:10.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024376",
+    "ThreadId": "438676",
+    "Html": "For my purposes, I have one LinkGroup at the moment and more LinkGroups will be in numerical order. So, I can only think of using the index of the LinkGroup to find the group and then add my Links or whatever.\r<br />\n<br />\nI understand that if I don't ask I won't ever learn (while I have hit a wall), but then I can't expect everyone to help me figure it out. Especially not the creator of this library who didn't set out to teach but create. Thanks for the encouragement, though.\r<br />\n<br />\nI would consider my question answered at this point. This discussion can be closed if desired.<br />\n",
+    "PostedDate": "2013-04-02T10:29:21.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024507",
+    "ThreadId": "438676",
+    "Html": "The GroupName property is for grouping link groups, not for uniquely identifying the group itself (as codedevote correctly states). I see that this causes confusion and renaming the GroupName property might be a good idea. Suggestions welcome.<br />\n",
+    "PostedDate": "2013-04-02T14:33:08.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025187",
+    "ThreadId": "438676",
+    "Html": "I have a display prob with creating dynamic menu. So I add two menu link groups, but only the first group links with its sublinks shows, here the code below. Any ideas why ?<br />\n<pre><code>    public void BuildUpMenu()\n    {\n        if ( main == null)\n            main = Application.Current.MainWindow as ModernWindow;\n\n        Guard.NotNull&lt;ModernWindow&gt;(() =&gt; this.main, main);\n\n        if (main != null)\n        {\n            main.MenuLinkGroups.Clear();\n\n            // ******************************\n            // Build up default menu\n            string grpkey = &quot;welcome&quot;;\n\n            LinkGroup welcomeGrp = new LinkGroup { GroupName = grpkey, DisplayName = grpkey };\n            Link homelnk = new Link { DisplayName = &quot;home&quot;, Source = new Uri(@&quot;/View/Home.xaml&quot;, UriKind.Relative) };\n            Link softlnk = new Link { DisplayName = &quot;settings&quot;, Source = new Uri(@&quot;/View/settings.xaml&quot;, UriKind.Relative) };\n            Link loginlnk = new Link { DisplayName = &quot;login&quot;, Source = new Uri(@&quot;/View/login.xaml&quot;, UriKind.Relative) };\n\n            welcomeGrp.Links.Add(homelnk);\n            welcomeGrp.Links.Add(softlnk);\n            welcomeGrp.Links.Add(loginlnk);\n\n            main.MenuLinkGroups.Add(welcomeGrp);\n\n            // ******************************\n            // Build up dashboard menu\n            grpkey = &quot;dashboard&quot;;\n            LinkGroup dashboardGrp = new LinkGroup { GroupName = grpkey, DisplayName = grpkey };\n            Link consolidatedlnk = new Link { DisplayName = &quot;consolidated&quot;, Source = new Uri(@&quot;/View/dashboard.xaml&quot;, UriKind.Relative) };\n\n            dashboardGrp.Links.Add(consolidatedlnk);\n            main.MenuLinkGroups.Add(dashboardGrp);\n\n            // ******************************\n            // Build up title menu\n            // ******************************\n            main.TitleLinks.Add(softlnk);\n            main.TitleLinks.Add(loginlnk);\n\n        }\n   }\n</code></pre>\n\n",
+    "PostedDate": "2013-04-03T19:54:15.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025194",
+    "ThreadId": "438676",
+    "Html": "ok I think I narrow the problem, I modified your NotifyPropertyChanged.cs to be a bit stricter like the code below, and what I found is at some point when you add the linkgroup, the selected link cannot be set, which throw an exception.\r<br />\n<br />\nusing System;\r<br />\nusing System.ComponentModel;\r<br />\nusing System.Diagnostics;\r<br />\nusing System.Diagnostics.CodeAnalysis;\r<br />\nusing System.Linq;\r<br />\nusing System.Linq.Expressions;\r<br />\nusing System.Reflection;\r<br />\n<br />\nnamespace FirstFloor.ModernUI.Presentation\r<br />\n{<br />\n<pre><code>/// &lt;summary&gt;\n/// The base implementation of the INotifyPropertyChanged contract.\n/// &lt;/summary&gt;\npublic abstract class NotifyPropertyChanged\n    : INotifyPropertyChanged\n{\n    /// &lt;summary&gt;\n    /// Occurs when a property value changes.\n    /// &lt;/summary&gt;\n    public event PropertyChangedEventHandler PropertyChanged;\n\n\n    /// &lt;summary&gt;\n    /// Provides access to the PropertyChanged event handler to derived classes.\n    /// &lt;/summary&gt;\n    protected PropertyChangedEventHandler PropertyChangedHandler\n    {\n        get\n        {\n            return PropertyChanged;\n        }\n    }\n\n    /// &lt;summary&gt;\n    /// Verifies that a property name exists in this ViewModel. This method\n    /// can be called before the property is used, for instance before\n    /// calling RaisePropertyChanged. It avoids errors when a property name\n    /// is changed but some places are missed.\n    /// &lt;para&gt;This method is only active in DEBUG mode.&lt;/para&gt;\n    /// &lt;/summary&gt;\n    /// &lt;param name=&quot;propertyName&quot;&gt;&lt;/param&gt;\n    [Conditional(&quot;DEBUG&quot;)]\n    [DebuggerStepThrough]\n    public void VerifyPropertyName(string propertyName)\n    {\n        var myType = this.GetType();\n\n        if (!string.IsNullOrEmpty(propertyName)\n            &amp;&amp; myType.GetProperty(propertyName) == null)\n        {\n            var descriptor = this as ICustomTypeDescriptor;\n\n            if (descriptor != null)\n            {\n                if (descriptor.GetProperties()\n                    .Cast&lt;PropertyDescriptor&gt;()\n                    .Any(property =&gt; property.Name == propertyName))\n                {\n                    return;\n                }\n            }\n            throw new ArgumentException(&quot;Property not found&quot;, propertyName);\n        }\n    }\n\n    /// &lt;summary&gt;\n    /// Raises the PropertyChanged event if needed.\n    /// &lt;/summary&gt;\n    /// &lt;remarks&gt;If the propertyName parameter\n    /// does not correspond to an existing property on the current class, an\n    /// exception is thrown in DEBUG configuration only.&lt;/remarks&gt;\n    /// &lt;param name=&quot;propertyName&quot;&gt;The name of the property that\n    /// changed.&lt;/param&gt;\n    [SuppressMessage(&quot;Microsoft.Design&quot;, &quot;CA1030:UseEventsWhereAppropriate&quot;,\n        Justification = &quot;This cannot be an event&quot;)]\n    protected virtual void OnPropertyChanged(string propertyName)\n    {\n        VerifyPropertyName(propertyName);\n\n        var handler = PropertyChanged;\n        if (handler != null)\n        {\n            handler(this, new PropertyChangedEventArgs(propertyName));\n        }\n    }\n\n    /// &lt;summary&gt;\n    /// Raises the PropertyChanging event if needed.\n    /// &lt;/summary&gt;\n    /// &lt;typeparam name=&quot;T&quot;&gt;The type of the property that\n    /// changes.&lt;/typeparam&gt;\n    /// &lt;param name=&quot;propertyExpression&quot;&gt;An expression identifying the property\n    /// that changes.&lt;/param&gt;\n    [SuppressMessage(&quot;Microsoft.Design&quot;, &quot;CA1030:UseEventsWhereAppropriate&quot;,\n        Justification = &quot;This cannot be an event&quot;)]\n    [SuppressMessage(\n        &quot;Microsoft.Design&quot;,\n        &quot;CA1006:GenericMethodsShouldProvideTypeParameter&quot;,\n        Justification = &quot;This syntax is more convenient than other alternatives.&quot;)]\n    protected virtual void OnPropertyChanged&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; propertyExpression)\n    {\n        var handler = PropertyChanged;\n        if (handler != null)\n        {\n            var propertyName = GetPropertyName(propertyExpression);\n            handler(this, new PropertyChangedEventArgs(propertyName));\n        }\n    }\n\n    /// &lt;summary&gt;\n    /// Extracts the name of a property from an expression.\n    /// &lt;/summary&gt;\n    /// &lt;typeparam name=&quot;T&quot;&gt;The type of the property.&lt;/typeparam&gt;\n    /// &lt;param name=&quot;propertyExpression&quot;&gt;An expression returning the property's name.&lt;/param&gt;\n    /// &lt;returns&gt;The name of the property returned by the expression.&lt;/returns&gt;\n    /// &lt;exception cref=&quot;ArgumentNullException&quot;&gt;If the expression is null.&lt;/exception&gt;\n    /// &lt;exception cref=&quot;ArgumentException&quot;&gt;If the expression does not represent a property.&lt;/exception&gt;\n    protected string GetPropertyName&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt; propertyExpression)\n    {\n        if (propertyExpression == null)\n        {\n            throw new ArgumentNullException(&quot;propertyExpression&quot;);\n        }\n\n        var body = propertyExpression.Body as MemberExpression;\n\n        if (body == null)\n        {\n            throw new ArgumentException(&quot;Invalid argument&quot;, &quot;propertyExpression&quot;);\n        }\n\n        var property = body.Member as PropertyInfo;\n\n        if (property == null)\n        {\n            throw new ArgumentException(&quot;Argument is not a property&quot;, &quot;propertyExpression&quot;);\n        }\n\n        return property.Name;\n    }\n\n\n\n\n    ///// &lt;summary&gt;\n    ///// Raises the PropertyChanged event.\n    ///// &lt;/summary&gt;\n    ///// &lt;param name=&quot;propertyName&quot;&gt;Name of the property.&lt;/param&gt;\n    //protected virtual void OnPropertyChanged(string propertyName)\n    //{\n    //    if (PropertyChanged != null) {\n    //        PropertyChanged(this, new PropertyChangedEventArgs(propertyName));\n    //    }\n    //}\n}</code></pre>\n\n}\r<br />\n<br />\n<br />\nIn ModernMenu.cs method: UpdateSelection()\r<br />\n<br />\n ReadOnlyLinkGroupCollection groups = null;<br />\n<pre><code>        if (selectedGroup != null) {\n            // ensure group itself maintains the selected link\n            selectedGroup.SelectedLink = selectedLink;     // throws exception here !!!!\n\n            // find the collection this group belongs to\n            var groupName = GetGroupName(selectedGroup);\n            this.groupMap.TryGetValue(groupName, out groups);\n        }\n</code></pre>\n\n",
+    "PostedDate": "2013-04-03T20:56:55.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025483",
+    "ThreadId": "438676",
+    "Html": "You need to make sure the LinkGroup.GroupName property is identical for all link groups that you want to display at once. The GroupName is used for grouping link groups, not for uniquely identifying a group.\r<br />\n<br />\nThis API will change in a future update, it causes confusion.<br />\n",
+    "PostedDate": "2013-04-04T09:23:39.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025564",
+    "ThreadId": "438676",
+    "Html": "Thanks got it to work now, however I still noticed with the changes I made to your NotifyPropertyChanged.cs class, there was a exception throwned in the ModernMenu.cs method: UpdateSelection(). Can I suggest that it would be cleaner to only update the backing store variable of a property and never the property itself, and only raise OnPropertyChanged(() =&gt; property)  only when the UI needs updating, otherwise updating the UI can become an expensive operation if the controls get bulky. Lastly one more small change to your OnPropertyChanged event to get the correct instance of the event in a multi threaded case.\r<br />\n<br />\nprotected virtual void OnPropertyChanged(string propertyName)<br />\n<pre><code>{\n    var handler = PropertyChanged;    /// small change\n    if (handler != null)\n    {\n        handler(this, new PropertyChangedEventArgs(propertyName));\n    }\n}</code></pre>\n\n",
+    "PostedDate": "2013-04-04T11:21:01.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1026515",
+    "ThreadId": "438676",
+    "Html": "Your VerifyPropertyName does not take non-public properties into account. The SelectedLink property is internal and cannot be found by your implementation because it only looks for public properties.<br />\n",
+    "PostedDate": "2013-04-06T04:36:41.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028138",
+    "ThreadId": "438676",
+    "Html": "Thanks, I seen that. But you are calling OnPropertyChanged() which infers that you giving notification that you want the UI updated. So if you want the UI updated then it has to public and raise OnPropertyChanged(), or if not, then it be a simple property, which is internal without raising OnPropertyChanged(). If you don't do it this way then you could incur a possible performance hit, as updating the UI usually is, especially if someone make it complex, or use that property excessively.<br />\n<br />\nForgot to add I using your cool Modern UI with MVVMLight, so far so good, just that I need to replace your NotifyPropertyChanged with MVVMLight ViewModelBase, which why I'm having some of these issues. Would like your presentation little bit more decoupled, to implement my mvvm framework of choice.<br />\n",
+    "PostedDate": "2013-04-09T16:38:56.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028352",
+    "ThreadId": "438676",
+    "Html": "Not raising PropertyChanged for non-public properties does make sense. I'll need to check the ramifications.<br />\n",
+    "PostedDate": "2013-04-10T04:02:02.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028448",
+    "ThreadId": "438676",
+    "Html": "I too am using ModernUI with MVVMLight. \r<br />\n<br />\nWhy do you feel like you have to replace mui's NotifyPropertyChanged? I have done nothing of the sort and am using it just fine.<br />\n",
+    "PostedDate": "2013-04-10T07:14:12.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028518",
+    "ThreadId": "438676",
+    "Html": "Using literal strings in NotifyPropertyChanged in this case can allow incorrectly passed property names through. If you use the viewmodelbase of mvvmlight you get strongly typed checking on your property names. There is minimal reflection done, to reflect the property back to its name, and the performance impact is negligible.\r<br />\n<br />\nI don't know about you but I rather catch problems at compile time instead of runtime. <br />\n",
+    "PostedDate": "2013-04-10T09:03:44.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028553",
+    "ThreadId": "438676",
+    "Html": "Right.\r<br />\n<br />\nSo you are already using ViewModelBase in your VMs.. where is the issue? MUI's implementation of INotifiyPropertyChanged should be of no concern in your VMs? (or am I missing something here?)<br />\n",
+    "PostedDate": "2013-04-10T10:05:50.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1055760",
+    "ThreadId": "446782",
+    "Html": "the SelectedSourceChanged Event is new in mui 1.04 and i wonder how to use it. Couldn't find any samples or any documentation about it.<br />\n",
+    "PostedDate": "2013-06-12T03:30:12.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055793",
+    "ThreadId": "446782",
+    "Html": "There's no need to use the SelectedSourceChanged event if you use bindings. It has been added to address scenario's where you do want to handle source changes in code behind.<br />\n",
+    "PostedDate": "2013-06-12T05:09:09.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055805",
+    "ThreadId": "446782",
+    "Html": "What about the <a href=\"https://mui.codeplex.com/workitem/19530\" rel=\"nofollow\">Event on Links Issue</a> which should be resolved in changeset 103030? How and where do i use those events?\r<br />\n<br />\nThanks in advance<br />\n",
+    "PostedDate": "2013-06-12T05:50:55.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

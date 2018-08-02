@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "I think it would be very beneficial to be able to open up the style property on the link items \n\nThat will give us the ability to change things such as font size, right now the font is very small",
+    "LastUpdatedDate": "2014-02-11T20:26:02.53-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-12-11T11:08:48.01-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add the ability to add styles (font-size) to links",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 20509
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I support this suggestion. It would be very useful for touch applications.",
+      "PostedDate": "2013-12-26T12:45:01.13-08:00",
+      "Id": 158567
+    }
+  ]
+}

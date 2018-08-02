@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "For example, I have UI with two tabs and pages.\r\n\r\nThe first one contains form with combo box. This combo box has got binding for selected value.\r\nWhen I navigate to the second page and go back and after that I change combo box value then Selected value setter will be called twice: first with selected value, second time with null value:\r\n\r\nP.S.: I'm using GalaSoft light mvvm framework\r\n\r\n        public KeyValueModel SelectedValue\r\n        {\r\n            get { return _selectedValue; }\r\n            private set\r\n            {\r\n                _selectedValue = value;\r\n                RaisePropertyChanged();\r\n            }\r\n        }",
+    "LastUpdatedDate": "2014-11-29T08:37:20.407-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-11-29T08:36:48.17-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ComboBox selected value set twice",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21260
+  },
+  "FileAttachments": [
+    {
+      "FileId": 954693,
+      "FileName": "WpfTest.zip",
+      "DownloadUrl": ".\\954693"
+    }
+  ],
+  "Comments": []
+}

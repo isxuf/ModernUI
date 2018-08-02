@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1039764",
+    "ThreadId": "442644",
+    "Html": "I have the following code in my MainWindow.xaml:<br />\n<pre><code>        &lt;mui:LinkGroup DisplayName=&quot;Result&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;Form&quot; Source=&quot;/Pages/Result/Result.xaml&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;</code></pre>\n\nThe linked file (Result.xaml) looks like this:<br />\n<pre><code>    &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n        &lt;ScrollViewer HorizontalScrollBarVisibility=&quot;Auto&quot; &gt;\n            &lt;StackPanel MinWidth=&quot;200&quot;&gt;\n                &lt;ContentControl Content=&quot;{Binding GeneratedUserControl}&quot; HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot; /&gt;\n            &lt;/StackPanel&gt;\n        &lt;/ScrollViewer&gt;\n    &lt;/Grid&gt;</code></pre>\n\nThe ContentControl in the Result.xaml binds to an UserControl which is generated at runtime. The UserControl Generation Process is triggered in the OnNavigatedTo from the IContent interface. Once, the generation and compilation is done i create an instance of the generated UserControl and assign it to the variable GeneratedUserControl which is the Binding target of the ContentControl in the Result.xaml.<br />\n<br />\nIt it working, but it freezes the GUI. Any idea how i can fix this?<br />\n<br />\nEDIT:<br />\nThis is what i already tried: (really bad code, don't do it like this!!)<br />\n<pre><code>        public void OnNavigatedTo(NavigationEventArgs e)\n        {\n            var vm = this.DataContext as MainViewModel;\n\n            Thread FirstThread = new Thread(() =&gt; testMethod(vm));\n            FirstThread.Start();\n        }\n\n        private void testMethod(MainViewModel vm)\n        {\n            vm.DisplayFlexFormCommand.Execute(new object());\n        }</code></pre>\n\nProblem is that the ViewModel is then used in another thread which means you can't navigate to any other page using this view model.<br />\n",
+    "PostedDate": "2013-05-06T01:31:44.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039919",
+    "ThreadId": "442644",
+    "Html": "You should wrap your long-run code in a task. Thread.Start works, but Task is recommended. For accessing the UI, you need to schedule a completion task on the UI thread. Something like this works:\r<br />\n<br />\nAlso, consider moving your logic from code-behind to a view model.<br />\n<pre><code>public void OnNavigatedTo(NavigationEventArgs e)\n{\n  // get the UI scheduler\n  var scheduler = TaskScheduler.FromCurrentSynchronizationContext();\n  // start background task\n  var task = Task.Factory.StartNew(() =&gt; OnWork());\n  // start completion task on UI thread\n  task.ContinueWith(t =&gt; OnWorkCompleted(t), scheduler);\n}\n\nprivate object OnWork()\n{\n  // TODO: do work, cannot access UI\n  var result = new object();\n\n  // return result \n  return result;\n}\n\nprivate void OnWorkCompleted(Task t)\n{\n  // handle completion, UI access allowed\n  if (t.IsFaulted) {\n    // TODO: handle error\n  }\n  else {\n    var result = t.Result;\n\n    // TODO: handle result\n  } \n}\n</code></pre>\n\n",
+    "PostedDate": "2013-05-06T08:16:26.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1445442",
+    "ThreadId": "442644",
+    "Html": "Hi,\r<br />\n<br />\nIn this case, what should I do to make the default progress bar visible while the async operation is running?\r<br />\n<br />\nThank you,\r<br />\n<br />\nIgor.<br />\n",
+    "PostedDate": "2015-09-22T13:19:59.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

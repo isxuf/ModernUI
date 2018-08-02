@@ -1,0 +1,114 @@
+[
+  {
+    "Id": "1081819",
+    "ThreadId": "453721",
+    "Html": "Hi, I'm new in using this great project and try to migrate an existing wpf application to this modern ui style. I try to use the ModernTab with MVVM binding and ContentLoader as followed<br />\n<pre><code>&lt;Grid&gt;\n        &lt;mui:ModernTab SelectedSource=&quot;{Binding SelectedFile, Mode=TwoWay}&quot; Links=&quot;{Binding Files}&quot; Layout=&quot;List&quot; &gt;\n            &lt;mui:ModernTab.ContentLoader&gt;\n                &lt;app:LoremLoader /&gt;\n            &lt;/mui:ModernTab.ContentLoader&gt;\n        &lt;/mui:ModernTab&gt;\n    &lt;/Grid&gt;</code></pre>\n\nI use a ModelView as datacontext for the view / page with Files list and SelectFile property as followed:<br />\n<pre><code>        public Uri SelectedFile\n        {\n            get { return _selectedFile; }\n            set\n            {\n                if (_selectedFile != value)\n                {\n                    _selectedFile = value;\n                    OnPropertyChanged(&quot;SelectedFile&quot;);\n                }\n            }\n        }\n</code></pre>\n\nAnd I have a ContentLoader class in this form<br />\n<pre><code>public class LoremLoader: DefaultContentLoader\n    {\n\n        protected override object LoadContent(Uri uri)\n        {\n            return new Lorem();\n        }\n    }</code></pre>\n\nProblem is that the ContentLoader will called only the first one I select a link. The SelectedFile setter is called every time, but not the Loader. Any idea whats wrong?  Thanks in advanced.<br />\n",
+    "PostedDate": "2013-08-18T05:49:55.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081871",
+    "ThreadId": "453721",
+    "Html": "Do you navigate to a new uri? Could you otherwise create a repro project?<br />\n",
+    "PostedDate": "2013-08-18T12:28:35.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082086",
+    "ThreadId": "453721",
+    "Html": "Sorry for late response. I try to navigate to the same view with appending parameter like\r<br />\n<br />\n /Views/Template/TemplateFiles.xaml#1-109.hst\r<br />\n /Views/Template/TemplateFiles.xaml#1-110.hst\r<br />\n /Views/Template/TemplateFiles.xaml#1-111.hst\r<br />\n<br />\nI create Link objects for each link, insert file name as displayname and uri like above for source attribute like this<br />\n<pre><code>foreach (string file in files)\n            {\n                Files.Add(new Link()\n                {\n                    DisplayName = file,\n                    Source = new Uri(&quot;/Views/Template/TemplateFiles.xaml#&quot; + file, UriKind.Relative)\n                });\n            }  </code></pre>\n\nFiles is a LinkCollection in ModelView and binded to ModernTab as shown before. I would like to get the same behavior as in the modern app demo <br />\n<pre><code>&lt;mui:ModernTab.Links&gt;\n                &lt;mui:Link DisplayName=&quot;Lorem Ipsum 1&quot; Source=&quot;/1&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Lorem Ipsum 2&quot; Source=&quot;/2&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Lorem Ipsum 3&quot; Source=&quot;/3&quot;/&gt;\n                &lt;mui:Link DisplayName=&quot;Lorem Ipsum 4&quot; Source=&quot;/4&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Lorem Ipsum 5&quot; Source=&quot;/5&quot;/&gt;\n            &lt;/mui:ModernTab.Links&gt;</code></pre>\n\nFor each link the contentloader will be called once. Perhaps the the Uri usage for the source attribute is wrong? Thanks in advanced.<br />\n",
+    "PostedDate": "2013-08-19T04:10:58.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083672",
+    "ThreadId": "453721",
+    "Html": "i have the same problem\r<br />\nyou have to set ModernFrame's KeepContentAlive property to false and than recomplie FirstFloor.ModernUI project \r<br />\n<br />\nif you don't want to do this try this:\r<br />\n<br />\nclass MainWindow : ModernWindow // your ModernWindow \r<br />\n{<br />\n<pre><code>   public MainWindow()\n   {\n        InitializeComponent();\n        this.Loaded += MainWindow_Loaded;\n    }\n\n    void MainWindow_Loaded(object sender, System.Windows.RoutedEventArgs e)\n    {\n\n        ModernFrame contentFrame = base.GetTemplateChild(&quot;ContentFrame&quot;) as ModernFrame;\n        contentFrame.KeepContentAlive = false;      \n    }</code></pre>\n\n}<br />\n",
+    "PostedDate": "2013-08-22T07:57:31.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1089529",
+    "ThreadId": "453721",
+    "Html": "I have the same problem but the 2 method gived by @mcd wont work for me\r<br />\n<br />\n@asto65 did you have found a solution ?<br />\n",
+    "PostedDate": "2013-09-07T02:26:07.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090458",
+    "ThreadId": "453721",
+    "Html": "<strong>kozw wrote:</strong><br />\n<blockquote>\nDo you navigate to a new uri? Could you otherwise create a repro project?<br />\n</blockquote>\nHere is a example project with the bug<br />\n<a href=\"http://www.sendspace.com/file/yz4vea\" rel=\"nofollow\">Src project</a><br />\n",
+    "PostedDate": "2013-09-09T23:29:17.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090870",
+    "ThreadId": "453721",
+    "Html": "The uri fragment (everything after the # character) is omitted in MUI when comparing uri's. Meaning that /page#1 and /page#2 are equal and will refer to the same /page. This behavior is needed in order to support IContent.OnFragmentNavigation on an existing page.\r<br />\n<br />\nUse the uri query (? character), to make sure your page uris are unique. /page?1 and /page?2 are different uris<br />\n",
+    "PostedDate": "2013-09-10T13:48:06.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090991",
+    "ThreadId": "453721",
+    "Html": "Thanks, that solve my issue ;)<br />\n<br />\nEdit, Its seems with (? char) OnFragmentNavigation is never called<br />\n<pre><code>    public partial class NewsControl : IContent\n    {\n        private bool called;\n\n        public NewsControl()\n        {\n            InitializeComponent();\n        }\n\n        public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n        {\n            called = true;\n            Console.WriteLine(&quot;OnFragmentNavigation &quot; + called);\n            called = false;\n        }\n\n        public void OnNavigatedFrom(NavigationEventArgs e)\n        {\n            called = true;\n            Console.WriteLine(&quot;OnNavigatedFrom &quot; + called);\n            called = false;\n        }\n\n        public void OnNavigatedTo(NavigationEventArgs e)\n        {\n            called = true;\n            Console.WriteLine(&quot;OnNavigatedTo &quot; + called);\n            called = false;\n        }\n\n        public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n        {\n            called = true;\n            Console.WriteLine(&quot;OnNavigatingFrom &quot; + called);\n            called = false;\n        }\n    }\n}\n</code></pre>\n\nOutput :<br />\n<br />\nNavigating from '/Content/NewsControl.xaml?0' to '/Content/NewsControl.xaml?1'<br />\nOnNavigatingFrom True<br />\nOnNavigatedFrom True<br />\nOnNavigatedTo True<br />\n<br />\nFrangment is handled by '#'<br />\nBut how to pass fragment if my Uri is like *.xaml?xxxxx<br />\n",
+    "PostedDate": "2013-09-10T22:18:05.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1108990",
+    "ThreadId": "453721",
+    "Html": "Like kozw said, '/Content/NewControl.xaml?0' and '/Content/NewControl.xaml?1' are two different pages. There is no fragment in theses urls so the OnFragmentNavigation event won't be fired.\r<br />\n<br />\nIf you need to call the same instance of a page with different parameters, use the fragment method (append your parameters with '#' at the end of your Uri).\r<br />\nIf you need to call a new instance of a page, each with its own parameters, use the query method (append your parameters with '?' at the end of your Uri).\r<br />\nYou can mix both techniques, for instance :\r<br />\n/Content/NewsControl.xaml?0#simple\r<br />\nwill call a new NewsControl page to display item 0 in simple mode\r<br />\n/Content/NewsControl.xaml?0#detail\r<br />\nwill call the same NewsControl page to display item 0 in detail mode\r<br />\n/Content/NewsControl.xaml?1#detail\r<br />\nwill call a new NewsControl page to display item 1 in detail mode\r<br />\nand so on...\r<br />\n<br />\nThe fragment technique is already supported in ModernUi but not the query technique (using '?' in your Uris).\r<br />\nYou will need to implement your own ContentLoader implementation.\r<br />\nFor instance :<br />\n<pre><code>    public static class UriExtensions\n    {\n        public static Uri Split(this Uri uri, out string query, out string fragment)\n        {\n            query = null;\n            fragment = null;\n            if (uri == null) return null;\n            var value = uri.OriginalString;\n\n            var i = value.IndexOf('#');\n            if (i != -1)\n            {\n                fragment = value.Substring(i + 1);\n                value = value.Substring(0, i);\n            }\n\n            i = value.IndexOf('?');\n            if (i != -1)\n            {\n                query = value.Substring(i + 1);\n                value = value.Substring(0, i);\n            }\n            return new Uri(value, uri.IsAbsoluteUri ? UriKind.Absolute : UriKind.Relative);\n        }\n    }\n\n    public class LoremLoader: DefaultContentLoader\n    {\n        protected override object LoadContent(Uri uri)\n        {\n            String query;\n            String fragment;\n            uri = uri.Split(out query, out fragment);\n// at this point the query and fragment parts have been removed from the initial uri, you can now search the Content corresponding to your uri\n            return new Lorem();\n        }\n    }</code></pre>\n\n<pre><code>    public partial class NewsControl : IContent\n    {\n        public NewsControl()\n        {\n            InitializeComponent();\n        }\n\n        public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n        {\n// here you may check the fragment to change the state of your current page\n            DataContext.Mode = e.Fragment;\n        }\n\n        public void OnNavigatedFrom(NavigationEventArgs e)\n        {\n        }\n\n        public void OnNavigatedTo(NavigationEventArgs e)\n        {\n            String query;\n            String fragment;\n            e.Source.Split(out query, out fragment);\n// Here you may instantiate your datacontext with the query part as a parameter\n            DataContext = new NewsVM(query);\n        }\n\n        public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n        {\n        }\n    }</code></pre>\n\n",
+    "PostedDate": "2013-10-17T16:33:10.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109012",
+    "ThreadId": "453721",
+    "Html": "in fact, my problem was solved 20 min after my last post.<br />\nbut i am using an other method<br />\n<br />\nexample:<br />\n<pre><code>public partial class NewsControl\n{\n    public NewsControl (string param)\n    {\n        InitializeComponent();\n        DataContext = new NewsControlViewModel(param);\n    }\n}</code></pre>\n\n<pre><code>internal class NewsLoader : DefaultContentLoader\n{\n    protected override object LoadContent(Uri uri)\n    {\n        var str = uri.ToString();\n        var param = str.Replace(&quot;/Content/NewsControl.xaml?&quot;, string.Empty);\n        return new NewsControl(param);\n    }\n}</code></pre>\n\n<pre><code>public NewsControlViewModel(string param)\n{\n    currentNews = NewsService.GetNewsList().FirstOrDefault(n =&gt; n.News == param);\n}</code></pre>\n\n",
+    "PostedDate": "2013-10-17T18:27:28.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109590",
+    "ThreadId": "453721",
+    "Html": "<blockquote>\nin fact, my problem was solved 20 min after my last post.<br />\n</blockquote>\nWould you mind posting your updated project or a general sample? \r<br />\nI have the same problem and still cant get it to work correctly<br />\n",
+    "PostedDate": "2013-10-19T21:02:42.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109632",
+    "ThreadId": "453721",
+    "Html": "A working example:\r<br />\n<a href=\"http://www.sendspace.com/file/mhidyq\" rel=\"nofollow\">http://www.sendspace.com/file/mhidyq</a><br />\n",
+    "PostedDate": "2013-10-20T01:04:48.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109999",
+    "ThreadId": "453721",
+    "Html": "thank you very much!\r<br />\nI was able to get it working in program using your sample :)<br />\n",
+    "PostedDate": "2013-10-21T06:59:51.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1117159",
+    "ThreadId": "453721",
+    "Html": "@smokingfish<br />\n<br />\nYou can simply solve this problem in another way.<br />\nif the Loader is not called everytime, just do the loading things without it.<br />\nbased on SheppeR's program, here's the code:<br />\n<br />\nfirist of all, declare a behavior in your xaml file:<br />\n<pre><code>xmlns:behavior:&quot;clr-namespace:Test&quot;\n\n&lt;i:Interaction.Behaviors&gt;\n  &lt;behavior:NewsTabBehavior&gt;&lt;/behavior:NewsTabBehavior&gt;\n&lt;/i:Interaction.Behaviors&gt;</code></pre>\n\nand then in this behavior you can declare a event to notify when ModernTab.SelectedSource is changing:<br />\n<pre><code>public class NewsTabBehavior : Behavior&lt;ModernTab&gt;\n{\n  public static event EventHandler&lt;UpdateUIEventArgs&lt;string&gt;&gt; Selected;\n\n  private ModernTab tab;\n\n  protected override void OnAttached()\n  {\n            base.OnAttached();\n            tab = AssociatedObject;\n            tab.SelectedSourceChanged += new EventHandler&lt;SourceEventArgs&gt;(HandleSelectedSourceChanged);\n  }\n\n  private void  HandleSelectedSourceChanged(object sender, FirstFloor.ModernUI.Windows.Controls.SourceEventArgs e)\n  {\n           string selectedLink = tab.SelectedSource.ToString();\n\n            if(selectedLink.Contains(&quot;x&quot;))\n            {\n                UpdateUI.Post&lt;string&gt;(&quot;xxx&quot;, Selected, null);\n            } // x is your param\n             \n            // you can do some other things\n  }\n}\n\npublic class UpdateUIEventArgs&lt;T&gt; : EventArgs\n{\n        public T Content\n        {\n            get;\n            private set;\n        }\n\n        public UpdateUIEventArgs(T currentContent)\n        {\n            Content = currentContent;\n        }\n}\n\npublic static class UpdateUI\n{\n        public static void Post&lt;T&gt;(T content, EventHandler&lt;UpdateUIEventArgs&lt;T&gt;&gt; handler, object sender)\n        {\n            EventHandler&lt;UpdateUIEventArgs&lt;T&gt;&gt; securityhandler = Interlocked.CompareExchange(ref handler, null, null);\n\n            if (securityhandler != null)\n            {\n                securityhandler(sender, new UpdateUIEventArgs&lt;T&gt;(content));\n            }\n        }\n}</code></pre>\n\nand next step, revise the Loader to return the object only once:<br />\n<pre><code>internal class NewsLoader : DefaultContentLoader\n{\n        private NewsControl newsControl;\n\n        public NewsLoader()\n        {\n            newsControl = new NewsControl();\n        }\n\n        protected override object LoadContent(Uri uri)\n        {\n            return newsControl;\n        }\n}</code></pre>\n\nat last, Handle the event in the NewsControlViewModel:<br />\n<pre><code>public NewsControlViewModel()\n{\n  NewsTabBehavior.Selected += new EventHandler&lt;UpdateUIEventArgs&lt;string&gt;&gt;(Display);\n}\n\nprivate void Display(object obj, UpdateUIEventArgs&lt;string&gt; e)\n{\n  switch (e.Content)\n  {\n                case &quot;xxx&quot;:\n                 // change your content in NewsControl.xaml by Binding\n                 break;\n  }\n}</code></pre>\n\nRegards<br />\n",
+    "PostedDate": "2013-11-04T05:52:46.23-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

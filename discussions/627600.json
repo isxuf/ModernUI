@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1410993",
+    "ThreadId": "627600",
+    "Html": "Hello,\r<br />\nI'm really new to this project.\r<br />\nI would like to enable some links in the main window after doing log in function.\r<br />\nMy main window have a source to home.xaml which is also the log in page directly <br />\n<pre><code>&lt;mui:ModernWindow x:Class=&quot;ModernUINavigationApp1.MainWindow&quot;\n        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n        xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n        Title=&quot;mui&quot; IsTitleVisible=&quot;True&quot;    \n        ContentSource=&quot;/Pages/Home.xaml&quot;&gt;\n\n    &lt;mui:ModernWindow.MenuLinkGroups&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;Welcome&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;Log In&quot; Source=&quot;/Pages/Home.xaml&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;</code></pre>\n\nand In home.xaml I have a button to trigger the event which implemented like this:<br />\n<pre><code>public partial class Home : UserControl\n    {\n        public Home()\n        {\n            InitializeComponent();\n        }\n\n        private void LogInClick(object sender, RoutedEventArgs e)\n        {  \n              if(Loged in){\n                   // add remove this link and add more links to the main window\n              }\n         ////\n        }\n\n......</code></pre>\n\nas you seen in the code, at first the main window will have only one link which is the log-in one;\r<br />\nmy question is how to add more links to main window and disable the old one from main window? \r<br />\n<br />\nor is there better approach of doing log-in function to enable other pages later ?\r<br />\n<br />\nthank you for helps in advance :D<br />\n",
+    "PostedDate": "2015-04-14T06:11:28.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

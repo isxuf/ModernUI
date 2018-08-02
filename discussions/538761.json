@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1221895",
+    "ThreadId": "538761",
+    "Html": "Hi guys, \r<br />\n<br />\nRight now, the demo/default application gives a LinkGroup on MainWindow and in each group you can add multiple links. But all my link groups basically have single links, so I dont want to show it inside the LinkGroup.\r<br />\n<br />\nIs there a way I can achieve that? \r<br />\n<br />\nThanks.\r<br />\n<br />\nAlso, I have just started off with developing for WPF. If its a VERY basic question, please dont kill me.<br />\n",
+    "PostedDate": "2014-03-12T07:51:24.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

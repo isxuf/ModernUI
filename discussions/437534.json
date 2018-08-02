@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "1019026",
+    "ThreadId": "437534",
+    "Html": "Hi,\r<br />\n<br />\nHow can I use the ModernTab control show a progress bar control during loading content?<br />\n",
+    "PostedDate": "2013-03-21T09:47:52.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1019126",
+    "ThreadId": "437534",
+    "Html": "You mean loading content in a ModernFrame? A progressbar is automatically shown when a content load operation takes a long time (as is demonstrated in the sample application). The progressbar is part of the default ModernFrame style and made visible when the ModernFrame.IsLoadingContent property is true.<br />\n",
+    "PostedDate": "2013-03-21T12:49:05.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1047821",
+    "ThreadId": "437534",
+    "Html": "It is possible to activate/deativacte the progress bar &quot;manually&quot;?<br />\n",
+    "PostedDate": "2013-05-23T09:21:21.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048276",
+    "ThreadId": "437534",
+    "Html": "The progress bar is in the default ModernFrame style. Create your own style if you want to show a progress bar based on custom conditions.<br />\n",
+    "PostedDate": "2013-05-24T08:08:49.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050324",
+    "ThreadId": "437534",
+    "Html": "<strong>kozw wrote:</strong><br />\n<blockquote>\nA progressbar is automatically shown when a content load operation takes a long time (as is demonstrated in the sample application).<br />\n</blockquote>\nWhere exactly?<br />\n",
+    "PostedDate": "2013-05-29T14:09:12.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050330",
+    "ThreadId": "437534",
+    "Html": "In the content loader flickr image page (advanced &gt; content loader &gt; images), when selecting an image, a progressbar is shown at the top of the frame.<br />\n",
+    "PostedDate": "2013-05-29T14:44:57.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050370",
+    "ThreadId": "437534",
+    "Html": "Hmm, I expected this. Couldn't you use an example where no flickr API key or a registration at all is needed? e.g. Task.Delay() ...\r<br />\n<br />\nBtw. I try to use MUI with Telerik's RadGridView. Right now I didn't find out how to combine both w/o performance issue. The RadGridView needs a lot of time in MeasureOverride(). Telerik's <a href=\"http://www.telerik.com/help/wpf/gridview-troubleshooting-performance.html\" rel=\"nofollow\">documentation</a> lists some reasons. But giving the Grid in the UserControl both Witdh and Height doesn't help. Even with only 100 sample data records in a List shows a delay in navigating to and especially from the page. Also there is no transition animation. I tried to set the DataContext in OnNavigatedTo() but the delay appears after leaving this method and then the content becomes visible. I don't know how to catch an event or something other after the page becomes visible. But I think this is not the solution. Setting DataContext to null in OnNavigatingFrom() the delay is gone, but also the information of scroll position/filtering/grouping/...<br />\n",
+    "PostedDate": "2013-05-29T16:08:41.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052370",
+    "ThreadId": "437534",
+    "Html": "The progressbar works fine when the task at hand is being executed on a background thread. MeasureOverrride typically executes on the UI thread and will block the entire UI when this takes a long time.<br />\n",
+    "PostedDate": "2013-06-03T15:02:16.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1053067",
+    "ThreadId": "437534",
+    "Html": "That's right, but I now found out that the transition makes it even worse. It leads to a call of MeasureOverride when both navigating from and to. For now I set <br />\n<pre><code>&lt;Style TargetType=&quot;mui:TransitioningContentControl&quot;&gt;&lt;Setter Property=&quot;Transition&quot; Value=&quot;Normal&quot; /&gt;&lt;/Style&gt;</code></pre>\n\nThat's a lot better but still not the solution. I have to investigate further. (It is also remarkable that MeasureOverride is not called with infinity, what the documentation says is one of the reasons.)<br />\n",
+    "PostedDate": "2013-06-05T04:46:14.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1053073",
+    "ThreadId": "437534",
+    "Html": "MeasureOverride is invoked twice since ModernFrame works with a TransitioningContentControl containing two content presenters; one for the current content and one for the previous content which is there for smooth transitions. Your approach by disabling the Transition sounds like a smart move.<br />\n",
+    "PostedDate": "2013-06-05T05:11:09.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1089963",
+    "ThreadId": "437534",
+    "Html": "felixdd, could you please tell me where did you exactly place that last piece of code? Thank you very much.<br />\n",
+    "PostedDate": "2013-09-08T15:38:54.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090072",
+    "ThreadId": "437534",
+    "Html": "A Style for a TargetType that should apply to everything in your MainWindow should be at least placed into the MainWindow's Resources section (i.e. &lt;mui:ModernWindow.Resources&gt;). It should also work in the Application.Resources.<br />\n",
+    "PostedDate": "2013-09-09T01:01:35.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090201",
+    "ThreadId": "437534",
+    "Html": "Thank you!<br />\n",
+    "PostedDate": "2013-09-09T07:20:02.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1215328",
+    "ThreadId": "437534",
+    "Html": "<strong>felixdd wrote:</strong><br />\n<blockquote>\nHmm, I expected this. Couldn't you use an example where no flickr API key or a registration at all is needed? e.g. Task.Delay() ...<br />\n<br />\nBtw. I try to use MUI with Telerik's RadGridView. Right now I didn't find out how to combine both w/o performance issue. The RadGridView needs a lot of time in MeasureOverride(). Telerik's <a href=\"http://www.telerik.com/help/wpf/gridview-troubleshooting-performance.html\" rel=\"nofollow\">documentation</a> lists some reasons. But giving the Grid in the UserControl both Witdh and Height doesn't help. Even with only 100 sample data records in a List shows a delay in navigating to and especially from the page. Also there is no transition animation. I tried to set the DataContext in OnNavigatedTo() but the delay appears after leaving this method and then the content becomes visible. I don't know how to catch an event or something other after the page becomes visible. But I think this is not the solution. Setting DataContext to null in OnNavigatingFrom() the delay is gone, but also the information of scroll position/filtering/grouping/...<br />\n</blockquote>\nI have a similar issue where I have a MVVM page and when navigating to it i call its default constructor from the OnNavigatedTo method - I tried putting the call to base.datacontext = ... in a background thread but that does not seem to help\r<br />\n<br />\nFor some reason I cannot get the progress bar to come up while loading - the entire UI freezes for tor those 2-3 seconds it takes to load and the users want some indication of loading...\r<br />\n<br />\nHas anyone had a similar issue or knows what the problem is?<br />\n",
+    "PostedDate": "2014-02-26T13:19:35.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1219077",
+    "ThreadId": "437534",
+    "Html": "After a few days of exploring modern XAML pages and code I pretty I decided to try to add some performance improvements on my side seeing as it didn't look like MUI will let me do anything to improve it. On a side note anything in the MUI framework is hard to modify as everything runs off a resource dictionary.. might have been better to make it more open and edit friendly.<br />\n<br />\nI found out that my view model was holding up the page because of the many getter properties in there and I ended up making it async to speed up the page load.. it about halved the time it was taking before.<br />\n",
+    "PostedDate": "2014-03-04T09:01:08.96-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

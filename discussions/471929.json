@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1131866",
+    "ThreadId": "471929",
+    "Html": "Hi there,<br />\n<br />\nI was wondering if there is a way to bind the &quot;DisplayName&quot; property of &quot;Links&quot; and &quot;LinkGroups&quot; to a DynamicResource?<br />\nWhy? Because I want to implement a localisation into my application. It works fine for the content of pages and usercontrols, but the menu is not updated whatever I try.<br />\nSo far I derived &quot;Displayable&quot; from DependendyObject but now I am struggling with the question, how to update the &quot;MenuLinkGroupProperty&quot; in &quot;ModernMenu&quot;. Or maybe in &quot;ModernWindow&quot;? <br />\nI would really appreciate every single one of your ideas. <br />\nI am still new to C#, WPF and ModernUI and my english may not be perfect so please be patient ;-) <br />\n<br />\nGreetings, <br />\nBoi<br />\n",
+    "PostedDate": "2013-12-04T12:15:47.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1132055",
+    "ThreadId": "471929",
+    "Html": "Hi Boi,\r<br />\n<br />\nCurrently is not possible since the displayname isn't a DependencyProperty, the only way without chaging the mui code is to do it in the code behind.\r<br />\nsee <a href=\"https://mui.codeplex.com/discussions/446380\" rel=\"nofollow\">https://mui.codeplex.com/discussions/446380</a>\r<br />\n<br />\nRegards<br />\n",
+    "PostedDate": "2013-12-05T02:11:42.31-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1072559",
+    "ThreadId": "451148",
+    "Html": "I use modern ui (wpf) with vb.net in vs2012 and this is my code<br />\n<pre><code> Private Sub btnModernDialog_Click(sender As Object, e As RoutedEventArgs)\n        Dim cdiag As New ModernDialog With {\n            .Title = &quot;common dialog&quot;,\n            .Content = New District\n        }\n        cdiag.Show()\n\n    End Sub</code></pre>\n\nMy problem is a parent window isn't inactive when the dialog active , I can click any button or menu in the parrent window . What can i do to set inactive parent window like a demo program.\r<br />\n<br />\nRegard. Migkie<br />\n",
+    "PostedDate": "2013-07-24T20:10:43.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1072596",
+    "ThreadId": "451148",
+    "Html": "Do it, like you would do it with any other WPF window that should be modal: call ShowDialog() instead of just Show().<br />\n",
+    "PostedDate": "2013-07-24T23:35:06.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1072735",
+    "ThreadId": "451148",
+    "Html": "<strong>felixdd wrote:</strong><br />\n<blockquote>\nDo it, like you would do it with any other WPF window that should be modal: call ShowDialog() instead of just Show().<br />\n</blockquote>\nIt's not work , I tested. When I call Showdialog() instead of Show(); The parent windows can do every things ....<br />\n",
+    "PostedDate": "2013-07-25T05:21:25.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1072851",
+    "ThreadId": "451148",
+    "Html": "If there is a second thread, doing something with the UI of the parent window, then the ShowDialog() doesn't stop this. But it prevents a user from accessing the parent window. If not then you are doing something wrong. What is it? I don't know, w/o a sample project I can't analyze your code.<br />\n<br />\nTo prove the other way round, start the m:ui demo app, change in Content\\ControlsModernDialog.xaml.cs the ShowDialog() to Show(), and watch the difference.<br />\n",
+    "PostedDate": "2013-07-25T08:47:47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073288",
+    "ThreadId": "451148",
+    "Html": "It's look like a bug in vb.net -*- , I try to test as C# and every things work.<br />\n",
+    "PostedDate": "2013-07-25T19:54:26.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

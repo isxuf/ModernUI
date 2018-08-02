@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Hi,\n\nI have a ListBox. I set a new item data template:\n\n<ListBox.ItemTemplate>\n    <DataTemplate DataType=\"model:GeneralUser\">\n        <StackPanel >\n             <StackPanel Orientation=\"Horizontal\">\n                 <Label Content=\"{Binding FourLetterCode}\" Margin=\"0,0,15,0\"/>\n                 <Label Content=\"{Binding DisplayName}\"/>\n             </StackPanel>\n            <Label Content=\"{Binding EmailAddress}\"/>\n        </StackPanel>\n     </DataTemplate>\n</ListBox.ItemTemplate>\n\nSelected item foreground is not White anymore but black.\nWhich is not user friendly at all.",
+    "LastUpdatedDate": "2013-09-20T02:28:28.623-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-09-20T02:28:28.623-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ListBox ItemTemplate Style issue",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20218
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

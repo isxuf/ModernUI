@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1038852",
+    "ThreadId": "442413",
+    "Html": "Hi..\r<br />\nI have a ModernTab.Link in a ModernWindow and need to translation at RunTime the string in DisplayName using the ResourceDictionary<br />\n<pre><code>&lt;mui:ModernTab.Links&gt;\n                &lt;mui:Link DisplayName=&quot;Interfaccia Grafica&quot; Source=&quot;/Settings/InterfacciaGrafica.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;About&quot; Source=&quot;/Content/About.xaml&quot; /&gt;\n            &lt;/mui:ModernTab.Links&gt;</code></pre>\n\nThe property DisplayName is string and not accept the DynamicResource.\r<br />\nHow can I do to change the string of the Property DisplayName at runTime for Localization my application ?\r<br />\n<br />\nCongratulations for the work done\r<br />\n<br />\nThanks\r<br />\nAurelio<br />\n",
+    "PostedDate": "2013-05-02T19:21:46.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039014",
+    "ThreadId": "442413",
+    "Html": "Don't create the links in XAML, create them in code instead. There you can provide your own localized strings.\r<br />\n<br />\nSomething like this works (where <code>this.tab</code> is the name for the mui;ModernTab instance) in the code-behind:<br />\n<pre><code>this.tab.Links.Add(new Link {\n    DisplayName = &quot;Interfaccia Grafica&quot;,\n    Source = new Uri(&quot;/Settings/InterfacciaGrafica.xaml&quot;, UriKind.Relative)\n  });</code></pre>\n\n",
+    "PostedDate": "2013-05-03T06:15:37.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039159",
+    "ThreadId": "442413",
+    "Html": "Hi..Kozw\r<br />\n<br />\nI use MVVM, for now i have resolve using the Message then Window is loaded..\r<br />\nI now test with you solution using MVVM...\r<br />\n<br />\nThank for the response\r<br />\n<br />\nAurelio<br />\n",
+    "PostedDate": "2013-05-03T12:28:51.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

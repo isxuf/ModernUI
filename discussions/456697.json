@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1091801",
+    "ThreadId": "456697",
+    "Html": "Hi,\r<br />\n<br />\non question to treeview style. I develop a application based on this wonderful framework and build on customcontrol with a treeview like this<br />\n<pre><code>&lt;TreeView ItemsSource=&quot;{Binding Items}&quot; ScrollViewer.HorizontalScrollBarVisibility=&quot;Disabled&quot; &gt;\n                    &lt;TreeView.ItemContainerStyle&gt;\n                        &lt;Style TargetType=&quot;{x:Type TreeViewItem}&quot;&gt;\n                            &lt;Setter Property=&quot;IsExpanded&quot; Value=&quot;{Binding ItemModel.IsExpanded, Mode=TwoWay}&quot; /&gt;\n                            &lt;Setter Property=&quot;IsSelected&quot; Value=&quot;{Binding ItemModel.IsSelected, Mode=TwoWay}&quot; /&gt;\n                            &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;Normal&quot; /&gt;\n                            &lt;Style.Triggers&gt;\n                                &lt;Trigger Property=&quot;IsSelected&quot; Value=&quot;True&quot;&gt;\n                                    &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;Bold&quot; /&gt;\n                                &lt;/Trigger&gt;\n                            &lt;/Style.Triggers&gt;\n                        &lt;/Style&gt;\n                    &lt;/TreeView.ItemContainerStyle&gt;\n                    &lt;TreeView.ItemTemplate&gt;\n                        &lt;HierarchicalDataTemplate ItemsSource=&quot;{Binding Children}&quot;&gt;\n                            &lt;TextBlock Text=&quot;{Binding ItemModel.Text}&quot; /&gt;\n                        &lt;/HierarchicalDataTemplate&gt;\n                    &lt;/TreeView.ItemTemplate&gt;\n                &lt;/TreeView&gt;</code></pre>\n\nIf I changed the style via appearance page to dark or to small font size nothing happens. In the ui example it works well (dark background, white tree nodes). Any idea?\r<br />\n<br />\nThanks in advanced <br />\n",
+    "PostedDate": "2013-09-12T09:17:40.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1093591",
+    "ThreadId": "456697",
+    "Html": "because the ItemContainerStyle override the mui default style!\r<br />\nand you doesn't set the template property,so it come to find the system treeitem style!\r<br />\nyou can fix this by this code:\r<br />\n<strong>&lt;Style TargetType=&quot;{x:Type TreeViewItem}&quot; BasedOn=&quot;{StaticResource {x:Type TreeViewItem}}&quot;&gt;</strong>\r<br />\n<br />\nBTW,i think the fontsize will change,but the small and the large fontsize isn't very difference.so you can't identified it.<br />\n",
+    "PostedDate": "2013-09-17T08:31:51.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

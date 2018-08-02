@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1310416",
+    "ThreadId": "568999",
+    "Html": "Hi.\r<br />\n<br />\nI have a verty simple ModernUi application containing a ModerUIWindow which content is set to an usercontrol.\r<br />\n<br />\nMy problem is that I want to implement a generel KeyBinding on the UserControl and maybe later on also a keybinding on application level  (the ModerUiWindow I assume).\r<br />\n<br />\nI have tried to do:<br />\n<pre><code>UserControl.InputBindings&gt;\n  &lt;KeyBinding Command=&quot;{Binding SomeCommand}&quot; Key=&quot;F5&quot;/&gt;\n&lt;/UserControl.InputBindings&gt;</code></pre>\n\nBut nothing happens. The &quot;SomeCommand&quot; is never executed.\r<br />\n<br />\nAlso tried to place the code on Window level as I assume it has something to do with focus, but I haven't been able to do it. It might be kind of an easy question so hopefully somebody are able to answer me quickly/shortly.\r<br />\n<br />\nThanks in advance<br />\n",
+    "PostedDate": "2014-10-04T00:28:54.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310905",
+    "ThreadId": "568999",
+    "Html": "Are you hosting your content in a ModernFrame instance? Previous versions of MUI included a keybinding for refreshing the content on F5. The latest version of MUI no longer includes that keybinding. Could that be the case?<br />\n",
+    "PostedDate": "2014-10-06T13:11:07.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310909",
+    "ThreadId": "568999",
+    "Html": "No I am not using a ModernFrame instance. And the F5 was just an arbitrary keybinding used for this thread.<br />\n",
+    "PostedDate": "2014-10-06T13:29:23.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1311046",
+    "ThreadId": "568999",
+    "Html": "Hi,\r<br />\n<br />\nMaybe I could ask you in another way.\r<br />\n<br />\nIn your Modern Ui Demo. How could/would you implement that fx. LEFT and RIGHT arrow will change the active Linkgroup. For now this only works if linkgroup has focus. I want this functionality to a specific content/page or maybe also in generel all over the application.\r<br />\n<br />\nHope this make sense to you:-)<br />\n",
+    "PostedDate": "2014-10-06T23:38:31.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1312522",
+    "ThreadId": "568999",
+    "Html": "Hi,\r<br />\n<br />\nI found a solution to this myself inspired by this link:\r<br />\n<br />\n<a href=\"http://stackoverflow.com/questions/12941707/keybinding-in-usercontrol-doesnt-work-when-textbox-has-the-focus\" rel=\"nofollow\">Attached properties/behavior</a><br />\n",
+    "PostedDate": "2014-10-11T18:33:18.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

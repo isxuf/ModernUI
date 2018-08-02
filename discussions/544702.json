@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1243021",
+    "ThreadId": "544702",
+    "Html": "Hello,<br />\ni have issue regarding modern button focus.<br />\nI have modify the ModernWindows template and add some Mordern  button at top after Menu.<br />\n<br />\n&lt;controls:ModernButton Name=&quot;Button&quot; Grid.Row=&quot;2&quot; EllipseDiameter=&quot;48&quot; EllipseStrokeThickness=&quot;2&quot; IconWidth=&quot;36&quot; IconHeight=&quot;36&quot;   CommandTarget=&quot;{Binding ElementName=ContentFrame}&quot;                                                    ToolTip=&quot;Button&quot; Content=&quot;Button&quot; Foreground=&quot;{DynamicResource Accent}&quot; <br />\nCommand=&quot;NavigationCommands.GoToPage&quot; CommandParameter=&quot;page.xaml&quot;<br />\n HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot; Margin=&quot;34,4,0,0&quot;<br />\n  shell:WindowChrome.IsHitTestVisibleInChrome=&quot;True&quot; &gt;<br />\n<br />\n<br />\nNow page.xaml is loading in to content frame but Modern button not get focus.<br />\nI want same as Modern Menu,<br />\n<br />\nThanks <br />\n",
+    "PostedDate": "2014-05-08T05:40:04.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

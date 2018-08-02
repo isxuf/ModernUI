@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "1147878",
+    "ThreadId": "482004",
+    "Html": "Hi all,\r<br />\n<br />\nI apologize in advance if this is a stupidly easy question. I tried searching but I'm not entirely sure what I'm searching for which makes it difficult. \r<br />\n<br />\nEffectively, I have a MainWindow. It's source is set to Config.xaml:<br />\n<pre><code>&lt;UserControl\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n             xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n             xmlns:Content=&quot;clr-namespace:DeployWiz.Content&quot; x:Class=&quot;DeployWiz.Pages.Config&quot;\n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;356.978&quot; d:DesignWidth=&quot;333.582&quot;&gt;\n    &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot; Margin=&quot;16,28,16,5&quot;&gt;\n        &lt;mui:ModernTab Layout=&quot;List&quot; SelectedSource=&quot;/Content/Info.xaml&quot; Margin=&quot;0,0,0,40&quot;&gt;\n            &lt;mui:ModernTab.Links&gt;\n                &lt;mui:Link DisplayName=&quot;Settings&quot; Source=&quot;/Content/Info.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Applications&quot; Source=&quot;/Content/Applications.xaml&quot; /&gt;\n            &lt;/mui:ModernTab.Links&gt;\n        &lt;/mui:ModernTab&gt;\n        &lt;Button Content=&quot;Start&quot; HorizontalAlignment=&quot;Center&quot; Margin=&quot;0,0,0,5&quot; VerticalAlignment=&quot;Bottom&quot; Width=&quot;75&quot; Click=&quot;Button_Click&quot;/&gt;\n    &lt;/Grid&gt;\n\n&lt;/UserControl&gt;</code></pre>\n\nThe info and application pages both have a set of text and checkboxes. When I click Start on the config page I want to be able to get their values and do things with it. \r<br />\n<br />\nI'm extremely new to C#, I feel like I'm missing something obvious here. If anyone has an tips or suggestions on how to accomplish this it would be most appreciated. Thanks in advance for the help!<br />\n",
+    "PostedDate": "2014-01-04T14:10:20.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150681",
+    "ThreadId": "482004",
+    "Html": "I rewrote my whole program to use MVVM since it seemed to me like that was going to be a step in the right direction. I still have the exact same problem though. The config page and the settings page both need to access the view model. They both create their own instances so the changes that occur on the settings page are irrelevant when the start button is clicked. \r<br />\n<br />\nPlease help me! :'(<br />\n",
+    "PostedDate": "2014-01-07T17:49:27.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150790",
+    "ThreadId": "482004",
+    "Html": "Hi,\r<br />\n<br />\nI  am in the process of developing an application using MUI where I needed to achieve something similar. I have a number of views all backed by ViewModels that need to pass data around and/or potentially access the same &quot;persistent&quot; data.\r<br />\n<br />\nI decided the neatest solution was to create a &quot;controlling&quot; class that contained public properties that exposed instances of my ViewModel classes (and other properties). This controlling class was then specified as a public property on the application class itself (added on app.xaml.cs) making it accessible from anywhere and everywhere and was instantiated when the application opens, ensuring it was available and persistent for the lifetime of the session.\r<br />\n<br />\nWhen I wanted to use the same  instance of a ViewModel between views rather than separate instances, I implemented the IContent interface on my View(s), this allows you to code a number of methods that are triggered when navigating to/from said view. I coded up the navigate to method so that the views ViewModel/Datacontext was set to the appropriate ViewModel property on the instance of the controlling class (which on the first pass would replace the instance of the ViewModel the view created when it was first created).\r<br />\n<br />\nUnfortunately I don't have the code to hand to provide examples, but happy to provide an example if needed.\r<br />\n<br />\nIt may not follow the &quot;MVVM&quot; rules rigidly or be the absolute best solution, but it was neat enough for what I am developing and more importantly it worked :-)\r<br />\n<br />\nAnts<br />\n",
+    "PostedDate": "2014-01-08T02:24:44.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150900",
+    "ThreadId": "482004",
+    "Html": "Hello,\r<br />\njust set the DataContext of the ViewModel to the Mainpage with the ModernTabs.\r<br />\nThen you can bind your settings from the Usercontrolls to the same instance of the ViewModel\r<br />\nand use it in all UserControlls below the MainPage.\r<br />\n<br />\ngreets<br />\n",
+    "PostedDate": "2014-01-08T06:56:58.26-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150943",
+    "ThreadId": "482004",
+    "Html": "<strong>AntsInYaPants wrote:</strong><br />\n<blockquote>\nIt may not follow the &quot;MVVM&quot; rules rigidly or be the absolute best solution, but it was neat enough for what I am developing and more importantly it worked :-)<br />\n</blockquote>\nI wouldn't suggest this as being &quot;neat&quot; ;)<br />\n<br />\nUnderstanding the MVVM design pattern and properly implementing it will be worth while and save you lots of headaches in the future. I use <a href=\"https://mvvmlight.codeplex.com/\" rel=\"nofollow\">mvvm light</a> for a light weight MVVM framework that provides services that will let your view models communicate in a loosely coupled manner (messages). It also has the the concept of a ViewModelLocator that is similar to your &quot;Controlling&quot; class, but is much cleaner than being exposed by the Application object.<br />\n<br />\nAlso check out dependency injection / IoC. It will solve the issue of how/when your ViewModels are resolved and how they can be cleanly accessed. For this, I use Microsoft's <a href=\"http://msdn.microsoft.com/en-us/library/ff647202.aspx\" rel=\"nofollow\">unity</a> even though mvvm light does offer its own IoC.<br />\n<br />\nIn either case, none of these questions are MUI specific and don't really belong in these forums. <br />\n",
+    "PostedDate": "2014-01-08T08:17:50.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150984",
+    "ThreadId": "482004",
+    "Html": "<strong>SnuSnu wrote:</strong><br />\n<blockquote>\nHello,<br />\njust set the DataContext of the ViewModel to the Mainpage with the ModernTabs.<br />\nThen you can bind your settings from the Usercontrolls to the same instance of the ViewModel<br />\nand use it in all UserControlls below the MainPage.<br />\n</blockquote>\nCan you elaborate on that just a bit or maybe show me an example? This sounds like it would be the best solution in my case but I'm not entirely sure how that would work. The page with the ModernTabs is what I posted above. So I should set the DataContext of the ViewModel to point to that page? How would the tabs be bound to the same instance of the ViewModel at that point? <br />\n\r<br />\n<strong>flyte wrote:</strong><br />\n<blockquote>\nIn either case, none of these questions are MUI specific and don't really belong in these forums. <br />\n</blockquote>\nI suppose this is technically true, sorry about that. Since I was using ModernUI this is just where I came by default. I'll be more mindful of that next time if I hit another road block.<br />\n",
+    "PostedDate": "2014-01-08T09:50:34.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151207",
+    "ThreadId": "482004",
+    "Html": "<blockquote>\nCan you elaborate on that just a bit or maybe show me an example? This sounds like it would be the best solution in my case but I'm not entirely sure how that would work. The page with the ModernTabs is what I posted above. So I should set the DataContext of the ViewModel to point to that page? How would the tabs be bound to the same instance of the ViewModel at that point? <br />\n</blockquote>\nJust reference the ViewModel (in example &quot;allgemein:Adressen&quot;) to the XAML.<br />\nA UserControl in a UserControl/Window get its DataContext from his Parent-Control:<br />\n<pre><code>&lt;UserControl x:Class=&quot;licpsa_desktopclient.Views.Allgemein.Adressen.frmAdressen&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n             xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n             xmlns:resx=&quot;clr-namespace:licpsa_desktopclient.Properties.Languages&quot;\n             xmlns:allgemein=&quot;clr-namespace:licpsa_desktopclient.Controller.Allgemein&quot;\n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;\n    \n    &lt;UserControl.DataContext&gt;\n        &lt;allgemein:Adressen/&gt;\n    &lt;/UserControl.DataContext&gt;\n    \n    &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot; \n          Margin=&quot;0,28,0,0&quot;&gt;\n        &lt;mui:ModernTab SelectedSource=&quot;{Binding SelectedSource, Mode=TwoWay}&quot; \n                       Layout=&quot;Tab&quot;&gt;\n            &lt;mui:ModernTab.Links&gt;\n                &lt;mui:Link DisplayName=&quot;{x:Static resx:Default.default_search}&quot; \n                          Source=&quot;/Views/Allgemein/Adressen/frmAdressenSuche.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;{x:Static resx:Default.default_result}&quot; \n                          Source=&quot;/Views/Allgemein/Adressen/frmAdressenErgebnis.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;{x:Static resx:Default.default_detail}&quot; \n                          Source=&quot;/Views/Allgemein/Adressen/frmAdressenDetail.xaml&quot; /&gt;\n            &lt;/mui:ModernTab.Links&gt;\n        &lt;/mui:ModernTab&gt;\n    &lt;/Grid&gt;\n    \n&lt;/UserControl&gt;\n</code></pre>\n\nThen, for example in &quot;frmAdressenSuche.xaml&quot; (AddressSearch), you can access a DepencyProperty from the ViewModel and bind it to a Label/Textbox/...<br />\n<pre><code>&lt;UserControl\n    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;\n    xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n    xmlns:validators=&quot;clr-namespace:licpsa_desktopclient.Classes&quot;\n    xmlns:resx=&quot;clr-namespace:licpsa_desktopclient.Properties.Languages&quot;\n    x:Class=&quot;licpsa_desktopclient.Views.Allgemein.Adressen.frmAdressenSuche&quot;\n    mc:Ignorable=&quot;d&quot; \n    d:DesignHeight=&quot;600&quot; \n    d:DesignWidth=&quot;600&quot;&gt;\n\n    &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n        &lt;Label Content=&quot;{Binding YourProperty}&quot;/&gt;\n...</code></pre>\n\nIf you need to set the Content of the Label by the ViewModel, you have to set a Two-Way Binding like &quot;{Binding YourProperty, Mode=TwoWay}&quot;<br />\n<br />\nHope this helps you a lot ;)<br />\ngreets<br />\n",
+    "PostedDate": "2014-01-08T22:46:25.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151434",
+    "ThreadId": "482004",
+    "Html": "You're the best! That's exactly what I wanted!<br />\n",
+    "PostedDate": "2014-01-09T09:43:42.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151645",
+    "ThreadId": "482004",
+    "Html": "<strong>Homeskewld wrote:</strong><br />\n<blockquote>\nYou're the best! That's exactly what I wanted!<br />\n</blockquote>\nno problem, if you have any other trouble, feel free to send me a mail... if you forgive me my bad english ;)<br />\n",
+    "PostedDate": "2014-01-10T01:04:08.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

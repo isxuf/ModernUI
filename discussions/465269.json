@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1117072",
+    "ThreadId": "465269",
+    "Html": "I have the navigation up and running with MEF and it is all working for the MainWindow and the related loading of content for Sources.\r<br />\n<br />\nWhere I am stuck is I have the scenario where I want to open a second ModernWindow.\r<br />\n<br />\nThe scenario I use is as follows\r<br />\n<br />\nThere is a ModernButton<br />\n<pre><code>&lt;mui:ModernButton IconData=&quot;{DynamicResource icon_config}&quot;  Command=&quot;{Binding cmdDialogSupplier}&quot; EllipseDiameter=&quot;20&quot;  Margin=&quot;2,0,0,0&quot; &gt;\n     &lt;mui:ModernButton.CommandParameter&gt;\n      &lt;MultiBinding Converter=&quot;{StaticResource URLStringMultiple}&quot; ConverterParameter=&quot;SBO.Client.View.Pricing;Component/Content/Supplier/SupplierConfig.xaml?new={0}&amp;amp;code={1}&amp;amp;name={2}&quot;&gt;\n      &lt;Binding  Path=&quot;SelectedSupplier.IsNew&quot;  /&gt;\n       &lt;Binding  Path=&quot;SelectedSupplier.Code&quot;  /&gt;\n       &lt;Binding  Path=&quot;SelectedSupplier.Name&quot;  /&gt;\n       &lt;/MultiBinding&gt;\n&lt;/mui:ModernButton.CommandParameter&gt;</code></pre>\n\nThis goes to the ViewModel which has a shared import which then opens a new ModenWindow based on the URI\r<br />\n<br />\nThe ModernWindow opens and the source is loaded.\r<br />\n<br />\nHowever the navigation within the new ModernWindow is NOT using the MEF content loader.\r<br />\n<br />\nInitially I was confused as to why the ViewModels were not being imported and then I noticed that the content was loaded as the project directory layout matches the URI schema. So it was loading, but not through MEF.\r<br />\n<br />\nIf I remove the MEF Content Metadata for the &quot;ContentExport&quot; the content loads.\r<br />\n<br />\nIs there a method of having the 'second' ModernWindow also use the MEF content loader ?<br />\n",
+    "PostedDate": "2013-11-03T23:47:05.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1117075",
+    "ThreadId": "465269",
+    "Html": "Found what I was doing wrong.\r<br />\n<br />\nI needed to change to use a ModernWindow which was a control (and not just a new ModerWindow) and add the reference to the Application.xaml as a style similar to what it say in the documentation about creating MEF !<br />\n<pre><code>            &lt;Style TargetType=&quot;pricingModule:SupplierWindow&quot;&gt;\n                &lt;Setter Property=&quot;ContentLoader&quot; Value=&quot;{DynamicResource MefURILoader}&quot; /&gt;\n            &lt;/Style&gt;\n</code></pre>\n\n",
+    "PostedDate": "2013-11-03T23:52:51.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2013-11-03T23:53:32.297-08:00"
+  }
+]

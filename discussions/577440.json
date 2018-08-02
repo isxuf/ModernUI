@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1340945",
+    "ThreadId": "577440",
+    "Html": "hello. \r<br />\n<br />\nCould someone give me some tips about navigation services?\r<br />\n<br />\nI need to get a navigated page as FrameworkElement to navigate other page.<br />\n<pre><code>BBCodeBlock link = new BBCodeBlock();\nlink.LinkNavigator.Navigate( destination uri , here how can I find the navigated page as FrameworkElement );</code></pre>\n\nthis explanation may insufficient...\r<br />\nI don't know how to explain my case...\r<br />\n<a href=\"https://onedrive.live.com/redir?resid=A5DA41DB4F1AC67E%216062\" rel=\"nofollow\">my source code is here </a>\r<br />\nWidget/movie/moviePlayer.xaml.cs  at 65~89 lines<br />\n",
+    "PostedDate": "2015-01-11T20:43:17.283-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

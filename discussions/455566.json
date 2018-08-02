@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1088602",
+    "ThreadId": "455566",
+    "Html": "Hi,\r<br />\n<br />\nI'm using m:ui with Caliburn Micro, but I'm having problems with using the DefaultLinkNavigator from the ViewModel to browse to a new page.\r<br />\n<br />\nWhat is the best way to do this? I don't want to have any UI Element references in my ViewModel.\r<br />\n<br />\nBest Regards,\r<br />\nMartin<br />\n",
+    "PostedDate": "2013-09-04T23:32:16.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088819",
+    "ThreadId": "455566",
+    "Html": "What UI elements do you want to keep from your view model?<br />\n",
+    "PostedDate": "2013-09-05T09:02:51.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1089308",
+    "ThreadId": "455566",
+    "Html": "Essentially all of them, that is the intension of mvvm.\r<br />\n<br />\nWhat is the best way to navigate in my viewmodel?<br />\n",
+    "PostedDate": "2013-09-06T11:07:42.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

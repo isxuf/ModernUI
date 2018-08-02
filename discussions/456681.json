@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1091747",
+    "ThreadId": "456681",
+    "Html": "Would someone point me on the right track to be able to navigate to another page with code.<br />\n",
+    "PostedDate": "2013-09-12T07:28:59.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091785",
+    "ThreadId": "456681",
+    "Html": "Figured it out.<br />\n<pre><code>DefaultLinkNavigator dln = new DefaultLinkNavigator();\ndln.Navigate(new Uri(&quot;&lt;PATH&gt;&quot;, UriKind.Relative), this);</code></pre>\n\n",
+    "PostedDate": "2013-09-12T08:30:08.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1093154",
+    "ThreadId": "456681",
+    "Html": "it's very simply,just use the code(.net 4.5):\r<br />\n \r<br />\nNavigationCommands.GoToPage.Execute(&quot;your xaml uri&quot;, Application.Current.MainWindow/other embed window); \r<br />\nbut it use Application.LoadComponent(uri)(DefaultContentLoader.cs),so first time may be you will has a new usercontrol class instance... \r<br />\n<br />\nif you use .net 4,you should reference the shell library.<br />\n",
+    "PostedDate": "2013-09-16T08:30:42.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

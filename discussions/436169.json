@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1013321",
+    "ThreadId": "436169",
+    "Html": "Hi,\r<br />\n<br />\nWhat kind of bbcode tag did you guys support? Are there any list that i can refer. I want to tag email. I tried using <a href=\"http://www.ecardmax.com/hoteditor/\" rel=\"nofollow\">http://www.ecardmax.com/hoteditor/</a> but it doesnt work(low caps tag only)<br />\n",
+    "PostedDate": "2013-03-11T08:51:57.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013523",
+    "ThreadId": "436169",
+    "Html": "I've added a <a href=\"http://mui.codeplex.com/wikipage?title=BBCode%20tag%20reference\" rel=\"nofollow\">BBCode tag reference</a>. The tag email doesn't exist, but you can use the mailto protocol like so:<br />\n<pre><code>Send an [url=mailto:foo@test.com?subject=This%20is%20the%20subject&amp;amp;body=This%20is%20the%20body]email[/url]</code></pre>\n\n",
+    "PostedDate": "2013-03-11T14:04:49.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013609",
+    "ThreadId": "436169",
+    "Html": "Thank you!<br />\n",
+    "PostedDate": "2013-03-11T17:32:51.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

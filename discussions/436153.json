@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "1013273",
+    "ThreadId": "436153",
+    "Html": "This project looks great! But I have a requirement to be able to target XP machines, which means that the latest .NET framework that I can use is 4.0.\r<br />\n<br />\nWill this be able to run on a .NET 4 machine, or is 4.5 a hard requirement?\r<br />\n<br />\nif the latter, is there a possibility that this -could- be built on 4.0?<br />\n",
+    "PostedDate": "2013-03-11T07:24:46.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013529",
+    "ThreadId": "436153",
+    "Html": ".NET 4.5 is not a hard requirement, although some 4.5 features such as async/await are used. As far as XP is concerned; I'm not entirely sure the chromeless window feature of Modern UI works on XP, need to test that.\r<br />\n<br />\nSee also <a href=\"http://mui.codeplex.com/workitem/19413\" rel=\"nofollow\">this related workitem</a><br />\n",
+    "PostedDate": "2013-03-11T14:09:02.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013546",
+    "ThreadId": "436153",
+    "Html": "I've also placed a comment on that workitem.\r<br />\n<br />\nWith not having seen the code, how much effort would the migration away from the async/await be? Where does it lie on your radar in terms of priority? I'm trying to plan out the design of a new project that will be starting soon and get a rough guage on if we can wait for a .NET 4 port to be available.<br />\n",
+    "PostedDate": "2013-03-11T14:31:11.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013550",
+    "ThreadId": "436153",
+    "Html": "Migrating away from async/await is fairly straightforward. I expect the most work to be in setting up and maintaining an additional WPF4 classlib project and testing chromeless windows on XP.\r<br />\n<br />\nIt seems .NET4 support is in demand, so I'll most likely start working on it very soon. <br />\n",
+    "PostedDate": "2013-03-11T14:40:32.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014214",
+    "ThreadId": "436153",
+    "Html": "Hi,\r<br />\n<br />\nToday I was analysing the source code and I found just 1 interface (IContentLoader) that forces the use of new async feature.\r<br />\nI think it's not hard to replace that piece of code.\r<br />\n<br />\nMaybe if we could not replace, maybe we could use <a href=\"http://www.microsoft.com/en-us/download/details.aspx?id=29576\" rel=\"nofollow\">Async Targeting Pack for Visual Studio 2012</a>, its a plugin JUST FOR VS 2012 that enables async features for .NET 4.0 \r<br />\n<br />\nLet me now if I can help in something as I'm looking forward in use this library to an application I should try to contribute.\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-03-12T15:26:43.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015068",
+    "ThreadId": "436153",
+    "Html": "Do you have any ideas when it will be released ?<br />\n",
+    "PostedDate": "2013-03-14T01:48:17.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015155",
+    "ThreadId": "436153",
+    "Html": "I've commented on the <a href=\"http://mui.codeplex.com/workitem/19413\" rel=\"nofollow\">workitem</a> with a possible solution and code.  Thanks gblmarquez for the info on Async Targeting Pack!<br />\n",
+    "PostedDate": "2013-03-14T04:28:02.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036134",
+    "ThreadId": "436153",
+    "Html": "So indeed v1.0.3 does work with .net 4, however it seems that none of the control styles are preserved when it is run on XP. The windows that comes up appears chrome-less, but buttons / textboxes / scrollbars / everything look as original unstyled controls.\r<br />\n<br />\nany ideas? this is a show-stopper for me :/<br />\n",
+    "PostedDate": "2013-04-26T08:28:39.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036144",
+    "ThreadId": "436153",
+    "Html": "@flyte,\r<br />\n<br />\ndo you have windows xp themes enabled?<br />\n",
+    "PostedDate": "2013-04-26T08:38:56.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036194",
+    "ThreadId": "436153",
+    "Html": "Themes are enabled on my XP machine.\r<br />\n<br />\nI also noticed that for the .net 4 version of MUI, that on my Win7 machine --without .net 4.5--, the controls also look unstyled.. however as soon as I install .net 4.5, but still run the .net 4.0 version, the app looks perfecct....<br />\n",
+    "PostedDate": "2013-04-26T10:26:44.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036207",
+    "ThreadId": "436153",
+    "Html": "flyte, \r<br />\n<br />\nThis can be an issue, maybe we should warning @kozw about it.<br />\n",
+    "PostedDate": "2013-04-26T10:43:57.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036563",
+    "ThreadId": "436153",
+    "Html": "Make sure you implement a workaround for WPF 4.0 so control styling works. See this <a href=\"https://mui.codeplex.com/wikipage?title=Working%20with%20WPF%204.0&amp;referringTitle=Documentation\" rel=\"nofollow\">newly created document page</a> for details.<br />\n",
+    "PostedDate": "2013-04-27T10:12:29.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1044703",
+    "ThreadId": "436153",
+    "Html": "Demo Revision: 100280 (1.0.3+) does works fine here in XP aswell in Windows 8 after recompilation without the WPF4 patch and any difference I could notice, look the screenshot<br />\n<br />\n<a href=\"http://goo.gl/klmiy\" rel=\"nofollow\">http://goo.gl/klmiy</a><br />\n<br />\nTo compile the demo, I have used VS2012, NuGet and TortoiseSVN (if you don't have check the bottom of my post I posted modified binaries)<br />\n<br />\n1) Checkout svn mui sources from <a href=\"https://mui.svn.codeplex.com/svn\" rel=\"nofollow\">https://mui.svn.codeplex.com/svn</a><br />\n<br />\n2) Set FirstFloor.ModernUI.App startup project<br />\n<br />\n3) In the FirstFloor.ModernUI build properties set 'Conditional compilation symbols' to NET4<br />\n<br />\n4) Change FirstFloor.ModernUI and  FirstFloor.ModernUI.App to target Framework 4.0<br />\n<br />\n5) For the project FirstFloor.ModernUI.App Right click Reference and select Manage nuget packages<br />\n<br />\n6) Select Online, select show pre releases, and search &quot;Microsoft.Bcl.Async&quot; and Install it<br />\n<br />\n7) Set all references in FirstFloor.ModernUI.App to Copy Local = False except for FirstFloor.ModernUI and Microsoft.Windows.Shell<br />\n<br />\nAlso on XP install these redistributables (ModerUIDemo.exe shows a link to msvcr100_clr0400.dll in my VM)<br />\n<br />\nNET Framework 4.0<br />\nVisual C++ Redistributable for Visual Studio 2012 Update 1<br />\n<br />\nHave 7zipped the modified sources and binaries if you cant get it so you can confirm it also works for you, hosted on google drive<br />\n<br />\n<a href=\"http://goo.gl/wMYS7\" rel=\"nofollow\">http://goo.gl/wMYS7</a><br />\n<br />\n<br />\nGave kozw's project a 5/5, that's a pity I couldn't give it a 6/5 :P, I just would have compiled ModernUIDemo.exe against 4.0 so that it runs out of the box in XP. Yet for XP you best have to compile with the steps I showed you to benefits most up to date async component<br />\n",
+    "PostedDate": "2013-05-16T12:40:59.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

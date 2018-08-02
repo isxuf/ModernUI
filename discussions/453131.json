@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1079462",
+    "ThreadId": "453131",
+    "Html": "hello sir , \r<br />\ni am bit new to mui: library .\r<br />\nI just want to know is it possible to pass object to next frame in &lt;mui:Link /&gt;.\r<br />\n<br />\ni have implemented FirstFloor.ModernUI.Windows.IContent. \r<br />\n<br />\nSorry, I am not good in english.\r<br />\n<br />\nLet take example.\r<br />\n<br />\nMy user control is having parameterized  constructor. and i want to send parameter to that constructor. \r<br />\nCan you tell in how to do that in &lt;mui:Link /&gt;?<br />\n",
+    "PostedDate": "2013-08-12T01:51:42.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091926",
+    "ThreadId": "453131",
+    "Html": "did you find a solution yet? I have the same problem here. I have a list of players with ID's. This list is dynamic and they actually all link to the same details page, but with different ID's. Is it possible to do something like Source=/Pages/Details.xaml#id=1?<br />\n",
+    "PostedDate": "2013-09-12T14:46:53.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1093151",
+    "ThreadId": "453131",
+    "Html": "i have an Ugly way to do that!\r<br />\nlook at the LoremIpsumLoader for examle,you can define a dependency property in  LoremIpsumLoader,may be a collection of parameters in the VM\r<br />\nthen in the &lt;mui:Link DisplayName=&quot;Lorem Ipsum 1&quot; Source=&quot;/1#indentifier of parameter&quot; /&gt;\r<br />\nthought indentifier of parameter,you can find the parameter,and protected override object LoadContent(Uri uri),you already have uri,\r<br />\njust use the NavigationHelper to get the fragment(indentifier of parameter)!\r<br />\nthen you have the parameter to that constructor!\r<br />\nreturn new LoremIpsum(parameter);<br />\n",
+    "PostedDate": "2013-09-16T08:24:52.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1101185",
+    "ThreadId": "453131",
+    "Html": "Thank you for your help. I had a quite similar solution, but still yours is a little nicer (even if I'm still not fully happy with it).<br />\n",
+    "PostedDate": "2013-09-30T23:15:18.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

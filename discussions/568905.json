@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1310006",
+    "ThreadId": "568905",
+    "Html": "Hi,\r<br />\n<br />\nFirst of all thank you for a great design !\r<br />\n<br />\nI need a little assistance with implementing MVVM in it... \r<br />\n<br />\nI am loading viewModels from DI container using contentLoader and it works fine. \r<br />\nMy problem is that I would like to force ModernUI to ask contentLoader each time view is activated so that for some viewModels it will be new instance and for some it will the same (as specified in container).\r<br />\n<br />\nBasically some forms should be loaded each time new instance so that i dont need to clear values and for some other views viewModels need to be the same to save values. \r<br />\n<br />\n<br />\nThx in advance for your help. <br />\n",
+    "PostedDate": "2014-10-02T11:39:22.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310032",
+    "ThreadId": "568905",
+    "Html": "You can decorate your view with the ModernFrame.KeepAlive attached property so you control whether the view should be created each time it's activated or not.<br />\n",
+    "PostedDate": "2014-10-02T13:11:36.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-10-03T12:23:48.123-07:00"
+  },
+  {
+    "Id": "1310136",
+    "ThreadId": "568905",
+    "Html": "Thank you! It works like a charm !<br />\n",
+    "PostedDate": "2014-10-03T00:30:17.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

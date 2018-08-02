@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "The header for listviews is using standard colors.  Hover, press, etc.",
+    "LastUpdatedDate": "2014-10-18T10:30:52.227-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-12-18T18:02:43.077-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ListView header needs to use theme colors",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 20543
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This is working actually.  Please close.",
+      "PostedDate": "2013-12-22T11:35:01.737-08:00",
+      "Id": 158569
+    }
+  ]
+}

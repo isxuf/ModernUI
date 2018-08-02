@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "Seems pretty clear for me. Should provide this.",
+    "LastUpdatedDate": "2015-01-29T03:32:01.26-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-10-01T07:25:12.807-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Localization: ModernDialog",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 20258
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Please see this discussion:[Globalization and Localization in Modern UI](https://mui.codeplex.com/discussions/442217)",
+      "PostedDate": "2013-10-02T00:29:07.837-07:00",
+      "Id": 158555
+    },
+    {
+      "Message": "Thank you for this reply, too. :D. \r\n\r\nI think one of the biggest Problems with mui is less written documentation. Really the only way to get to know all the classes is using the sample app. As a Suggestion I would recommend putting a Little words to this stuff to the Documentation Tab. \r\n\r\n(And the codeplex search sucks...)",
+      "PostedDate": "2013-10-02T03:25:47.947-07:00",
+      "Id": 158556
+    }
+  ]
+}

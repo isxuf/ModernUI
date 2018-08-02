@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "1098590",
+    "ThreadId": "458934",
+    "Html": "Basically, what the title says.<br />\n<pre><code>MsgBox(mtCommands.SelectedIndex)</code></pre>\n\nOr something similar. The reason why is because I am dynamically adding links, and reusing the same User Control as the SelectedSource for the ModernTab, for each Link. However, The content in the reused User Control will get changed based on what link is selected. The reason is, because this particular ModernTab is meant to support an infinite amount of Links based on an external variable, and I cannot create an infinite amount of User Controls.<br />\n<br />\nAny suggestions?<br />\n",
+    "PostedDate": "2013-09-24T08:56:55.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107328",
+    "ThreadId": "458934",
+    "Html": "Still looking for a way to do this. Can't seem to find any workarounds yet :/<br />\n",
+    "PostedDate": "2013-10-14T12:52:52.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107353",
+    "ThreadId": "458934",
+    "Html": "The ModernTab.SelectedSource property is of type Uri. You'll first need to find the associated link, then you can use the LinkCollection.IndexOf to get the index of specified link. Something link this works;<br />\n<pre><code>private void ModernTab_SelectedSourceChanged(object sender, SourceEventArgs e)\n{\n  var links = ((ModernTab)sender).Links;\n\n  // find link having selected source\n  var link = this.modernTab.Links.FirstOrDefault(l =&gt; l.Source == e.Source);\n\n  // get index of link\n  if (link != null) {\n    var index = this.modernTab.Links.IndexOf(link);\n  }\n}</code></pre>\n\nOr in a single (rather unreadable) LINQ query<br />\n<pre><code>private void ModernTab_SelectedSourceChanged(object sender, SourceEventArgs e)\n{\n  var links = ((ModernTab)sender).Links;\n  var index = links.Select((l, i) =&gt; new { l, i }).Where(z =&gt; z.l.Source == e.Source).Select(z =&gt; z.i).FirstOrDefault();\n}</code></pre>\n\n",
+    "PostedDate": "2013-10-14T13:58:01.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107503",
+    "ThreadId": "458934",
+    "Html": "Through testing, the following only seems to work if the URI of each Link is unique. Since I am reusing the same URI, is there any of way of doing this?<br />\n",
+    "PostedDate": "2013-10-15T00:17:16.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1108041",
+    "ThreadId": "458934",
+    "Html": "In the past, when this issue arised, I've been able to assign the &quot;Tag&quot; property of a control that belongs to a collection when first adding it to the list. That way, I could read the value of that Tag property later on, during a selection changed event. For example:<br />\n<pre><code>for (i = 0; i &lt;= 5; i++) {\n    Windows.Controls.MenuItem item = new Windows.Controls.MenuItem();\n    item.Name = &quot;somename&quot; + Convert.ToString(i);\n    item.Header = &quot;somename&quot; + Convert.ToString(i);\n    item.Tag = i;\n    somecontrol.Items.Add(item);\n}</code></pre>\n\nThe reason why I used the Tag property for this, was because the particular control I was working with did not have a SelectedIndex property. By reading from the Tag property, I could conclude it's position in the collection, since I dynamically added the control to the collection earlier.\r<br />\n<br />\nThe Link object doesn't seem to have such a property, so I explored into adding such a property to it through creating a custom class object, which inherited the Link object. Doing so added the property, however the SourceEventArgs doesn't support this; I would need to make a custom version of that also, so I could read the Tag property. When I tried doing that, I get an error from the SelectedSourceChanged event regarding to not having a compatible signature with the new SourceEventArgs I have created.\r<br />\n<br />\nAfter that, I'm not sure which step to take. I thought I could create a custom property, set it while I was adding the links, and read from it later. However although that concept seems like it would work, I got stuck at the event part. Also, there may be a better alternative I'm unaware of.\r<br />\n<br />\nJust trying to provide some insight on what I've tried, and the main goal I'm trying to accomplish.<br />\n",
+    "PostedDate": "2013-10-15T17:29:21.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1108555",
+    "ThreadId": "458934",
+    "Html": "So after some more experimenting, I was able to use the standard SelectedSourceChanged event, and retrieve the custom tag info like so:<br />\n<pre><code>TxtCmdLink link = (TxtCmdLink)mtCommands.Links.FirstOrDefault(l =&gt; l.Source == e.Source);</code></pre>\n\nHowever still did not resolve my problem; only works if the URIs are different.\r<br />\n<br />\nSo I've concluded I must come up with a new, custom event, to add onto a custom version of ModernTab. This event would need to fire when the selected item on the left in the list is changed, regardless or whether or not the source has changed. However, I'm at a loss at how to go about doing this, but I'll look into it some more. I can think of how to add the event so it would show up and everything in it's list of events, but creating a custom &quot;event args&quot; is something I don't have any experience with. I'll keep you updated with what happens. Any ideas or input would be great.<br />\n",
+    "PostedDate": "2013-10-16T17:22:41.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1136540",
+    "ThreadId": "458934",
+    "Html": "Okay, so it seems I've bit off a little more than I could chew on this one. Tried every route I knew with custom classes and custom properties, inheritance, and event creation. I do know something of this nature will involve a custom class, but since the ModernLink does not have any of the standard System.Windows.FramewordElement, or System.Windows.UIElement event handlers, and I don't know how to add them without inheritance (my custom control is already inheriting ModernLink; multiple inheritances aren't allowed), I'm at a loss at what to do, as any clever work-arounds with the standard control events can't be done.\r<br />\n<br />\nI need a way to detect when the selection of a link in a ModernTab changes; not the source of the modern tab. I am reusing the source of the same usercontrol, so this doesn't work (read above).\r<br />\n<br />\nDoes anyone know where to go from here?<br />\n",
+    "PostedDate": "2013-12-15T18:07:47.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1138726",
+    "ThreadId": "458934",
+    "Html": "sooo... why not use fragment navigation if you are reusing the source?\r<br />\n<br />\ni.e:\r<br />\n<br />\n/content/myusercontrol.xaml#myidentifier1\r<br />\n/content/myusercontrol.xaml#myidentifier2\r<br />\n<br />\nand then you can use the selected source binding in your VM and just simply parse out everything after the # to find you &quot;index&quot; of the tab selected. I use this approach LOTS in my apps and lets me use the ModernTab in places where I want the same user control and same view model.\r<br />\n<br />\nuse whats already given to you, and understand the fragment navigation, and you can accomplish everything.<br />\n",
+    "PostedDate": "2013-12-19T14:21:18.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1140434",
+    "ThreadId": "458934",
+    "Html": "Will this still trigger the SourceChanged event that ModernTab uses?\r<br />\n<br />\nIf so, this may work. Also, Can I dynamically add new (fragments?) to a predefined user control via code? This is essential; I'm in a scenario where the tab count in ModernTab can change based on user input. Some short examples would be nice too. I'll research the topic further though, thanks for the input.<br />\n",
+    "PostedDate": "2013-12-20T13:43:32.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1140443",
+    "ThreadId": "458934",
+    "Html": "Yes it should still trigger the event.\r<br />\n<br />\nYou should be able to dynamically add new entries into the ModernTab links (bind to a property in the VM) <br />\n",
+    "PostedDate": "2013-12-20T14:10:02.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1140485",
+    "ThreadId": "458934",
+    "Html": "Great! Thanks, this solved a problem that has plagued me for quite awhile now. Now that I have a way to uniquely identify the URI of the user control, while at the same time always pointing to it, allows for this to work (kozw's example above now works for getting the index as well, in case anyone was wondering).\r<br />\n<br />\nHowever, I ran into another snag. While the ModernTab event SourceChanged get's fired everytime, the UserContorl that Implements IContent, and the event OnNavigatedTo does not get fired everytime, however.\r<br />\n<br />\nIs there a way to force this behavior? I want the UserControl to be re-loaded essentially, just as it would if the URI sources were actually different.<br />\n",
+    "PostedDate": "2013-12-20T21:20:03.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1141378",
+    "ThreadId": "458934",
+    "Html": "I found by using the event OnFragmentNavigation by implementing IContent works.\r<br />\n<br />\nOne last thing. When switching between the tabs on the left, the smooth &quot;slide-in&quot; animation doesn't show (I assume because it's still the same source technically).\r<br />\n<br />\nI've looked at invalidation techniques, the ModernTab.SelectedSource property, and others, but nothing seems to work. How can I manually activate that? Any thoughts?<br />\n",
+    "PostedDate": "2013-12-24T10:48:20.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1144824",
+    "ThreadId": "458934",
+    "Html": "perhaps send a refresh navigation command to the ModernTab's frame, for example I do this quite often:<br />\n<br />\nin my xaml:<br />\n<pre><code>&lt;mui:ModernFrame x:Name=&quot;loadCaseFrame&quot;\n                         Grid.Row=&quot;0&quot;\n                         Source=&quot;{Binding LoadCaseSource}&quot;\n                         Margin=&quot;0,10,0,0&quot; /&gt;</code></pre>\n\nin my code behind:<br />\n<pre><code>\npublic partial class SomeUserControl : UserControl, IFrameRefreshHelper\n{\n    private ModernFrame f;\n    private void OnLoaded(object sender, RoutedEventArgs e)\n     {\n        var ndvm = (NodeDetailsViewModel)this.DataContext;\n        ndvm.LoadCaseFrameRefresher = (IFrameRefreshHelper)this;\n\n        f = NavigationHelper.FindFrame(&quot;loadCaseFrame&quot;, this);\n    }\n\n  #region IFrameRefreshHelper Members\n  public void RefreshFrame()\n  {\n      NavigationCommands.Refresh.Execute(null, f);\n  }\n  #endregion\n}</code></pre>\n\nand in my VM:<br />\n<pre><code>public IFrameRefreshHelper LoadCaseFrameRefresher { get; set; }\n</code></pre>\n\nso now I can, for example, respond to some ICommand in my VM and call upon my IFrameRefreshHelper abstraction like so:<br />\n<pre><code>public RelayCommand NextLoadCaseCommand { get; private set; }\n        public void ExecuteNextLoadCase()\n        {\n            if (SelectedNode != null)\n            {\n                SelectedNode.ExecuteNextLoadCase();\n                LoadCaseFrameRefresher.RefreshFrame();\n            }\n        }\n</code></pre>\n\nOR you can send a Message from your VM to your view to perform the refresh. In either approach, (message vs setting an interface in the VM), it doesn't violate MVVM with specific UI (control) knowledge in your VM. <br />\n",
+    "PostedDate": "2014-01-02T14:29:04.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1205232",
+    "ThreadId": "458934",
+    "Html": "I searched the assembly Firstfloor.ModernUI and the entire .NET 4.5 framework, and couldn't find a reference to IFrameRefreshHelper through the Object Browser. What assembly does this belong to?\r<br />\n<br />\nAlso, I found another way to do this, however the process seems a bit inefficient.\r<br />\n<br />\nThe control Control TransitioningContentControl has a property called &quot;RestartTransitionOnContentChange&quot; that once set to true, anytime the content is changed programmatically in this container, the control gets refreshed and animation replays, which ultimately solves the entire problem.\r<br />\n<br />\nWould the way described above work more efficiently? If so, could you further explain where IFrameRefreshHelper comes from?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-02-08T17:54:45.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1206434",
+    "ThreadId": "458934",
+    "Html": "IFrameRefreshHelper is my own interface. Its simple:<br />\n<pre><code> public interface IFrameRefreshHelper\n    {\n        void RefreshFrame();        \n    }</code></pre>\n\nMake your View implement this as I show above, and you're golden.<br />\n",
+    "PostedDate": "2014-02-10T09:42:41.3-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1033324",
+    "ThreadId": "440991",
+    "Html": "Is there anyway to add a Title 'button' next to the Logo, so it can function like the Login button of the Xune application ?\r<br />\n<br />\nThanks in advance<br />\n",
+    "PostedDate": "2013-04-20T03:40:11.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033329",
+    "ThreadId": "440991",
+    "Html": "You can add any visual you like by creating your own ModernWindow template.<br />\n",
+    "PostedDate": "2013-04-20T03:56:31.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033341",
+    "ThreadId": "440991",
+    "Html": "Cool, I am doing this now ;-)\r<br />\n<br />\nThanks for the project by the way.<br />\n",
+    "PostedDate": "2013-04-20T04:58:59.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033342",
+    "ThreadId": "440991",
+    "Html": "I just checked in a custom ModernWindow style that is completely empty and renders Content only. You might want to use this as reference. Available in the source code.<br />\n",
+    "PostedDate": "2013-04-20T05:01:33.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

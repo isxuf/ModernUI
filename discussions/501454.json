@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1170566",
+    "ThreadId": "501454",
+    "Html": "Hello<br />\n<br />\nI have been hitting my head against MS-PL, so practically what requirements there are when using  MUI in c# WPF application? What is exactly what you want us (developers who use MUI) to do.<br />\n<br />\nDo I have to make end users accept ms-pl license for MUI components or just add something like &quot;this software uses MUI components&quot; to about dialog and link it here. Or.. copy MS-PL license to \\licenses folder.. ?<br />\n<br />\nDoes anyone have experience (or better.. SOLUTION!) for this?<br />\n",
+    "PostedDate": "2014-01-16T09:10:42.63-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1184504",
+    "ThreadId": "501454",
+    "Html": "OK, talking to my self.. Theres 17420 downloads for MUI (not to mention about other MS-PL projects) so I must conclude:<br />\n<ol>\n<li>Everyone knows how to deal with MS-PL.</li>\n<li>No one knows.. no one cares.</li>\n<li>\nShhh...<br />\n</li>\n</ol>\nSo Im struggling whether or not my interpitations about MS-PL 3C and 3D are right, this is how I see em:\r<br />\n<br />\n<br />\n3(C) If you distribute any portion of the software, you must retain all copyright, patent, trademark, and attribution notices that are present in the software.\r<br />\n<br />\nRETAIN: You do not have to add anything. So basically I dont have to add anything about these components for example:<br />\n<ol>\n<li>Add MS-PL license agreement to my executable that user has to accept.</li>\n<li>Add anything about these components to ”About” –box.</li>\n<li>\nAdd folder to my software wich contains ms-pl license. <br />\n</li>\n</ol>\n<a href=\"http://xboxforums.create.msdn.com/forums/p/4893/25530.aspx\" rel=\"nofollow\">http://xboxforums.create.msdn.com/forums/p/4893/25530.aspx</a>\r<br />\n<br />\n<br />\n3(D) If you distribute any portion of the software in compiled or object code form, you may only do so under a license that complies with this license.\r<br />\n<br />\nIf I use MUI on my project and compile it to executable, I must comply with MP-PL. So basically I cant make license that.. for example:<br />\n<ol>\n<li>Claims that all responsibilities and warrantys are on MUI author.</li>\n<li>Claim that they are responsible for my software.</li>\n<li>\nSomething completely stupid that I cant even think of..<br />\n</li>\n</ol>\nAnd disclaimer: Im not lawyer, I hate lawyers, I hate stupid licenses, this is no legal advise, you may not sue me for writing this text.<br />\n",
+    "PostedDate": "2014-01-20T06:50:27.15-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1184528",
+    "ThreadId": "501454",
+    "Html": "This might help -&gt; <a href=\"http://www.tldrlegal.com/license/microsoft-public-license-(ms-pl\" rel=\"nofollow\">http://www.tldrlegal.com/license/microsoft-public-license-(ms-pl</a>)\r<br />\n<br />\nAs a creator of MUI I wanted the license to be as open and flexible as possible, while retaining the copyright. Ms-pl seemed a right fit.\r<br />\n<br />\nNote; I'm a developer, not a lawyer<br />\n",
+    "PostedDate": "2014-01-20T07:03:24.453-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1184579",
+    "ThreadId": "501454",
+    "Html": "Thank you, your work on MUI is something out of this word! Its freaking awesome!\r<br />\n<br />\nMostly I would like to have some sort of guideline that I wont be un-complient with MS-Pl. (yea, still hate lawyers) :) \r<br />\n<br />\nFor example: I have computer management WPF project that uses MUI, (its almost beta ready, yay!). So I compile it to executable -&gt; BANG!\r<br />\n<br />\nNow I have executable that I would like to distribute, at some point maybe I can sell licenses for that manager or it sinks down to my &quot;failed projects&quot; folder (who knows). But believe or not that sinking is nothing compared to feeling that maybe I have not done something simple and I'm not in compliance with your license terms.\r<br />\n<br />\nMostly 3C and 3D,, I have consulted lawyer briefly but you cant expect much with just one bottle of wine. \r<br />\n<br />\nNote: I'm simple freetime developer with: half eaten banana and that empy case of energy drink. :D<br />\n",
+    "PostedDate": "2014-01-20T07:31:58.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

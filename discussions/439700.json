@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1028059",
+    "ThreadId": "439700",
+    "Html": "I'm trying to get a larger ModernButton using the IconData that is available from modernuiicons.com, however those appear to be sized specific for the WP7/8 app bar.\r<br />\n<br />\nWhat would be the best way to get a a larger icon?\r<br />\n<br />\nI have thought about using the PNGs that are available from the modernuiicons.com download and just using that as the a standard button's image, however I am not what I would do upon detecting that the ThemeSource has changed and thus I would need to swap out each button's image (light or dark depending on the current theme).\r<br />\n<br />\nany ideas what I could do here?\r<br />\n<br />\nThe nice thing about using the IconData for the icons in a ModernButton is that it works regardless of which theme is being used.<br />\n",
+    "PostedDate": "2013-04-09T12:51:56.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028083",
+    "ThreadId": "439700",
+    "Html": "I have not yet used the ModernButton, but maybe you should have a look at <a href=\"http://www.syncfusion.com/downloads/metrostudio\" rel=\"nofollow\">Syncfusion MetroStudio</a> (it's free!). You can export to XAML, so the icons scale as you like. I really like it :)<br />\n",
+    "PostedDate": "2013-04-09T14:09:24.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028121",
+    "ThreadId": "439700",
+    "Html": "All icons from modernuiicons.com come with a XAML version as well (located in the xaml folder). The vector based paths can be stretched to any size you like and support changing themes as well.<br />\n",
+    "PostedDate": "2013-04-09T15:41:09.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1037741",
+    "ThreadId": "439700",
+    "Html": "How exactly do I stretch these vector based paths? Simply changing the width/height of the button in my page's xaml doesn't seem to work. Is this something I need to do in blend (stretch the icon) to get the new path data that I can use on the button? I've never used blend, so I am not exaclty how to work with xaml icons..<br />\n",
+    "PostedDate": "2013-04-30T10:36:09.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1037837",
+    "ThreadId": "439700",
+    "Html": "ModernButton has a default style (in Themes\\ModernButton.xaml) that has a Grid with a fixed size of 18x18px for icons. Furthermore the IconWidth and IconHeight properties are used to properly size icons within this grid. For larger icons you'll need to create a custom ModernButton style and set your own sizing.<br />\n",
+    "PostedDate": "2013-04-30T14:41:39.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1247444",
+    "ThreadId": "439700",
+    "Html": "Try applying a ScaleTransform like this:<br />\n<pre><code>&lt;mui:ModernButton IconData=&quot;F1 M 42.3542,38L 26.5208,53.8333L 37.2083,53.8333L 53.8333,38L 37.2083,22.1667L 26.5208,22.1667L 42.3542,38 Z &quot;&gt;\n    &lt;Button.RenderTransform&gt;\n        &lt;ScaleTransform ScaleX=&quot;5&quot; ScaleY=&quot;5&quot;/&gt;\n    &lt;/Button.RenderTransform&gt;\n&lt;/mui:ModernButton&gt;</code></pre>\n\n",
+    "PostedDate": "2014-05-20T07:54:47.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

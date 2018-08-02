@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Navigation Item remove.\n\n```\n<mui:ModernWindow x:Class=\"Sample.WPF.Main.MainWindow\"\n        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n        xmlns:mui=\"http://firstfloorsoftware.com/ModernUI\"\n        IsTitleVisible=\"True\" WindowState=\"Maximized\"          \n        ContentSource=\"/Login.xaml\">\n```\n\nHow to remove \"/Login.xaml\" from navigation on above example..\n\n\nThanks for your help.",
+    "LastUpdatedDate": "2014-08-02T06:16:24.497-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-05-08T12:48:50.763-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to remove item from Navigation",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 20986
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

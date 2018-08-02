@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1071766",
+    "ThreadId": "450919",
+    "Html": "By implenting IContent I can obviously catch when my page is being navigated to/from etc.. but from this child page is there anyway I can handle when the parent page is being navigated from in particular?<br />\n",
+    "PostedDate": "2013-07-23T06:17:28.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073163",
+    "ThreadId": "450919",
+    "Html": "IContent.OnNavigatingFrom is invoked for the current frame and any parent frames. The event args of type NavigatingCancelEventArgs has property IsParentFrameNavigating indicating whether it's this or a parent frame that is doing a navigate.\r<br />\n<br />\nOther IContent navigation methods operate on the current frame only.<br />\n",
+    "PostedDate": "2013-07-25T13:50:17.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

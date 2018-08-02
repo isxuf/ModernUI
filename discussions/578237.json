@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1343806",
+    "ThreadId": "578237",
+    "Html": "Is there Open File Dialog in Modern UI for WPF? I only found ModernDialog in the source code. <br />\n",
+    "PostedDate": "2015-01-21T06:38:59.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1345025",
+    "ThreadId": "578237",
+    "Html": "There is no ModernUI version of the open file dialog, and there are no plans to create one. I would suggest using the standard OpenFileDialog.<br />\n",
+    "PostedDate": "2015-01-22T00:49:54.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1345246",
+    "ThreadId": "578237",
+    "Html": "thanks<br />\n",
+    "PostedDate": "2015-01-22T18:00:21.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

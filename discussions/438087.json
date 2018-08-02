@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1021472",
+    "ThreadId": "438087",
+    "Html": "Hello,\r<br />\n<br />\nI'm new to WPF and MVVM.\r<br />\n<br />\nAny idea how to bind a ViewModel property of type FirstFloor.ModernUI.Presentation.LinkCollection with a ModernWindow.MenuLinkGroups.LinkGroup.Links element?\r<br />\n<br />\nI'm tring to accomplish that using Caliburn Micro, or something similar.\r<br />\nWHY: I need to change a source of link in the collection based on a value loaded from the config file.\r<br />\n<br />\n<br />\nThank you in advance for your help<br />\n",
+    "PostedDate": "2013-03-26T16:34:55.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021487",
+    "ThreadId": "438087",
+    "Html": "You can define your own LinkGroupCollection property in your ViewModel and bind it to the ModernWindow.MenuLinkGroups property. This way you have complete control over the groups and links in your view model.<br />\n",
+    "PostedDate": "2013-03-26T17:02:03.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

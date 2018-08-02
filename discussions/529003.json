@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "1202997",
+    "ThreadId": "529003",
+    "Html": "I want to make small adjustment to the mui styles without modifying them. \r<br />\n<br />\nIf I want to base my styles on existing styles then I have to give them a key, don't I?\r<br />\n<br />\nmui modified with a key\r<br />\n&lt;Style x:Key=&quot;TextBoxBaseStyle&quot; TargetType=&quot;{x:Type TextBoxBase}&quot; BasedOn=&quot;{x:Null}&quot;&gt;\r<br />\n<br />\nMy style\r<br />\n&lt;Style x:Key=&quot;{x:Type TextBoxBase}&quot; TargetType=&quot;{x:Type TextBoxBase}&quot; BasedOn=&quot;{StaticResource TextBoxBaseStyle}&quot;&gt;\r<br />\n<br />\nIs there a way to avoid breaking into the source, so I can use the assemblies instead?  <br />\n",
+    "PostedDate": "2014-02-05T07:01:17.073-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1206850",
+    "ThreadId": "529003",
+    "Html": "You should be able to override the default styles by just adding them to your App.xaml. Make sure you use the same x:Key as in the mui styles and your custom styled will be implicitly applied to the controls<br />\n",
+    "PostedDate": "2014-02-11T07:39:26.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1207488",
+    "ThreadId": "529003",
+    "Html": "I Think that it's very cool that the user can choose between the dark and light theme.\r<br />\nAnd I would like to thank you for sharing you code. I think that this is the only open source project that shows you how to create a full skin and switch between skins.\r<br />\n<br />\nSo how should I organize my custom styles to keep using the light and dark theme?<br />\n",
+    "PostedDate": "2014-02-12T11:48:54.207-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1207494",
+    "ThreadId": "529003",
+    "Html": "See <a href=\"https://mui.codeplex.com/wikipage?title=Creating%20a%20custom%20theme\" rel=\"nofollow\">Creating a custom theme</a> in the documentation. Also, you probably want to check the source code of the demo app which uses multiple themes.<br />\n",
+    "PostedDate": "2014-02-12T11:53:59.503-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1208344",
+    "ThreadId": "529003",
+    "Html": "I have followed the tutorial &quot;Creating a custom theme&quot; but if add my own theme then I am unable to switch theme\r<br />\nI get this error:<br />\n<pre><code>System.NullReferenceException was unhandled by user code\n  HResult=-2147467261\n  Message=Object reference not set to an instance of an object.\n  Source=ModernUIApp1\n  StackTrace:\n       at ModernUIApp1.Content.SettingsAppearanceViewModel.set_SelectedTheme(Link value) in c:\\Projects\\ModernUIApp1\\ModernUIApp1\\Content\\SettingsAppearanceViewModel.cs:line 118\n       at ModernUIApp1.Content.SettingsAppearanceViewModel.SyncThemeAndColor() in c:\\Projects\\ModernUIApp1\\ModernUIApp1\\Content\\SettingsAppearanceViewModel.cs:line 78\n       at ModernUIApp1.Content.SettingsAppearanceViewModel.OnAppearanceManagerPropertyChanged(Object sender, PropertyChangedEventArgs e) in c:\\Projects\\ModernUIApp1\\ModernUIApp1\\Content\\SettingsAppearanceViewModel.cs:line 88\n       at System.ComponentModel.PropertyChangedEventHandler.Invoke(Object sender, PropertyChangedEventArgs e)\n       at FirstFloor.ModernUI.Presentation.NotifyPropertyChanged.OnPropertyChanged(String propertyName)\n       at FirstFloor.ModernUI.Presentation.AppearanceManager.SetThemeSource(Uri source, Boolean useThemeAccentColor)\n       at FirstFloor.ModernUI.Presentation.AppearanceManager.set_ThemeSource(Uri value)\n       at ModernUIApp1.Content.SettingsAppearanceViewModel.set_SelectedTheme(Link value) in c:\\Projects\\ModernUIApp1\\ModernUIApp1\\Content\\SettingsAppearanceViewModel.cs:line 118\n       at ModernUIApp1.Content.SettingsAppearanceViewModel.SyncThemeAndColor() in c:\\Projects\\ModernUIApp1\\ModernUIApp1\\Content\\SettingsAppearanceViewModel.cs:line 78\n       at ModernUIApp1.Content.SettingsAppearanceViewModel.OnAppearanceManagerPropertyChanged(Object sender, PropertyChangedEventArgs e) in c:\\Projects\\ModernUIApp1\\ModernUIApp1\\Content\\SettingsAppearanceViewModel.cs:line 88\n       at System.ComponentModel.PropertyChangedEventHandler.Invoke(Object sender, PropertyChangedEventArgs e)\n       at FirstFloor.ModernUI.Presentation.NotifyPropertyChanged.OnPropertyChanged(String propertyName)\n       at FirstFloor.ModernUI.Presentation.AppearanceManager.SetThemeSource(Uri source, Boolean useThemeAccentColor)\n       at FirstFloor.ModernUI.Presentation.AppearanceManager.set_ThemeSource(Uri value)\n       at ModernUIApp1.Content.SettingsAppearanceViewModel.set_SelectedTheme(Link value) in c:\\Projects\\ModernUIApp1\\ModernUIApp1\\Content\\SettingsAppearanceViewModel.cs:line 118\n  InnerException: </code></pre>\n\n<pre><code> &lt;!-- derive from Light or Dark theme--&gt;\n    &lt;ResourceDictionary.MergedDictionaries&gt;\n        &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot; /&gt;\n    &lt;/ResourceDictionary.MergedDictionaries&gt;\n\n    &lt;!-- specify the accent color (optional) --&gt;\n    &lt;Color x:Key=&quot;AccentColor&quot;&gt;#60a917&lt;/Color&gt;\n\n    &lt;!-- custom theme resources--&gt;\n    &lt;Rectangle x:Key=&quot;WindowBackgroundContent&quot; x:Shared=&quot;false&quot;&gt;\n        &lt;Rectangle.Fill&gt;\n            &lt;LinearGradientBrush EndPoint=&quot;0,1&quot; Opacity=&quot;.2&quot;&gt;\n                &lt;GradientStop Offset=&quot;0&quot; Color=&quot;Transparent&quot; /&gt;\n                &lt;GradientStop Offset=&quot;1&quot; Color=&quot;{DynamicResource AccentColor}&quot; /&gt;\n            &lt;/LinearGradientBrush&gt;\n        &lt;/Rectangle.Fill&gt;\n    &lt;/Rectangle&gt;</code></pre>\n\nApp.xaml:<br />\n<pre><code>&lt;ResourceDictionary.MergedDictionaries&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot;/&gt;\n                &lt;ResourceDictionary Source=&quot;/ModernUIApp1;component/Assets/ModernUI.MyDarkTheme.xaml&quot; /&gt;\n                &lt;ResourceDictionary Source=&quot;/ModernUIApp1;component/Assets/ModernUI.MyLightTheme.xaml&quot; /&gt;\n            &lt;/ResourceDictionary.MergedDictionaries&gt;</code></pre>\n\n",
+    "PostedDate": "2014-02-14T05:18:14.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1208353",
+    "ThreadId": "529003",
+    "Html": "You shouldn't add all themes to App.xaml, the last one will be used. You need to add those theme links to the SettingsAppearanceViewModel (as is done in the sample app)<br />\n",
+    "PostedDate": "2014-02-14T05:42:41.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1208369",
+    "ThreadId": "529003",
+    "Html": "Sorry I just don't get it. \r<br />\nThis is the code for the light theme in app.xaml<br />\n<pre><code>&lt;ResourceDictionary.MergedDictionaries&gt;\n     &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n     &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot;/&gt;\n     &lt;ResourceDictionary Source=&quot;/ModernUIApp1;component/Assets/ModernUI.MyLightTheme.xaml&quot; /&gt;\n&lt;/ResourceDictionary.MergedDictionaries&gt;</code></pre>\n\nAnd it' works. If I want to change the theme to dark, then I guess that I have to modify this; <br />\n<pre><code>this.themes.Add(new Link { DisplayName = &quot;dark&quot;, Source = AppearanceManager.DarkThemeSource });\nthis.themes.Add(new Link { DisplayName = &quot;light&quot;, Source = AppearanceManager.LightThemeSource });</code></pre>\n\nto this:<br />\n<pre><code>this.themes.Add(new Link { DisplayName = &quot;dark&quot;, Source = MyDarkThemeSource });\nthis.themes.Add(new Link { DisplayName = &quot;light&quot;, Source = MyLightThemeSource });</code></pre>\n\nIs this correct?<br />\n",
+    "PostedDate": "2014-02-14T06:14:57.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1208371",
+    "ThreadId": "529003",
+    "Html": "That is correct. You can remove the ModernUI.Light.xaml reference from App.xaml as well. It's overwritten with your MyLightTheme.xaml.\r<br />\n<br />\nMake sure the MyDarkThemeSource and MyLightThemeSource do contain the correct values.<br />\n",
+    "PostedDate": "2014-02-14T06:17:24.26-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1210588",
+    "ThreadId": "529003",
+    "Html": "I have deleted this post<br />\n",
+    "PostedDate": "2014-02-19T07:56:35.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

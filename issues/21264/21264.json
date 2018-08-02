@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, \r\n\r\nApologies for my ineptitude, but I am unable to resolve the a similar to that posted by BlazingArdor on 28th December.\r\n\r\nHaving installed the extension I create Modern UI WPF Application, it builds but when I go to the mainwindow.xaml the line __Style=\"{StaticResource BlankWindow}\"__ has en error with the 'Object reference not set to an instance of an object' description.  I have tried a number of things to resolve (re-installing etc) but cannot resolve this issue.\r\n\r\nSimilar to this, when viewing the samples, they build but changing any other the styling options causes errors. \r\n\r\nAny help appreciated.\r\n\r\nThanks\r\n\r\nJack\r\n",
+    "LastUpdatedDate": "2015-01-07T07:01:11.593-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2015-01-07T07:01:11.593-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Object Reference Issues",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21264
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

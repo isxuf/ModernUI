@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1228136",
+    "ThreadId": "540560",
+    "Html": "It looks like i am not able to use custom style for ModernProgressRing:<br />\n<pre><code>&lt;UserControl x:Class=&quot;PFAdmin.Pages.Purge&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n             xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;\n    &lt;Grid x:Name=&quot;gridMain&quot; Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n        &lt;StackPanel&gt;\n            &lt;TextBlock Text=&quot;OPERAZIONE DI PULIZA DEL DATABASE&quot; Style=&quot;{StaticResource Heading2}&quot; /&gt;\n            &lt;mui:BBCodeBlock BBCode=&quot;L'operazione di pulizia del database è irreversibile. In base alle dimensioni attuali del database potrebbe richiedere svariati minuti per essere completata. Prima di eseguire l'operazione è consigliabile:&quot; Margin=&quot;0,20,0,0&quot; /&gt;\n            &lt;mui:BBCodeBlock BBCode=&quot;- Non effettuare operazione sull'applicativo PrintFlow&quot; Margin=&quot;0,3,0,0&quot; /&gt;\n            &lt;mui:BBCodeBlock BBCode=&quot;- Effettuare un backup completo del database&quot; Margin=&quot;0,3,0,0&quot; /&gt;\n            &lt;Button x:Name=&quot;btnPurge&quot; Content=&quot;Esegui&quot; Height=&quot;Auto&quot; Width=&quot;76&quot; Click=&quot;btnPurge_Click&quot; Margin=&quot;0,50,0,0&quot; /&gt;\n            &lt;mui:ModernProgressRing x:Name=&quot;progressRing&quot; IsActive=&quot;False&quot; Width=&quot;80&quot; Height=&quot;80&quot; Style=&quot;{StaticResource DoubleBounceProgressRingStyle}&quot; /&gt;\n        &lt;/StackPanel&gt;\n    &lt;/Grid&gt;\n&lt;/UserControl&gt;</code></pre>\n\nDefault style works fine but StaticResource DoubleBounceProgressRingStyle cannot be resolved by XAML parser, and throw an exception at runtime.<br />\n",
+    "PostedDate": "2014-03-29T04:07:42.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1229331",
+    "ThreadId": "540560",
+    "Html": "I have the same problem, any help??<br />\n",
+    "PostedDate": "2014-04-02T01:13:33.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1236032",
+    "ThreadId": "540560",
+    "Html": "I got same problem..<br />\n",
+    "PostedDate": "2014-04-20T21:51:34.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1320830",
+    "ThreadId": "540560",
+    "Html": "Same here...but also in source code there is a problem with projects if u change from 4.5 to 4.0 .Net framework...i guess this is related to 4.0...<br />\n",
+    "PostedDate": "2014-11-11T02:56:12.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

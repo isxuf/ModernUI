@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1051679",
+    "ThreadId": "445703",
+    "Html": "Hey there everyone. \r<br />\n<br />\nI've got a question about this suite- I'm using it and it's amazing so far, and other than this one thing the framework is perfect. Amazing job and thanks to all who have contributed!\r<br />\n<br />\nAnyway, I'm looking for whether the ModernTab control has any form of notifying on click- I need to create a set of tabs programmatically for editing employees in my database, and rather than go with a list box or anything I'd like to use a list of tabs and just have a tab for each user created at runtime. \r<br />\n<br />\nIf anyone knows of a way that I can do this, I'd sure appreciate it!<br />\n",
+    "PostedDate": "2013-06-01T23:42:22.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052360",
+    "ThreadId": "445703",
+    "Html": "Adding events to the ModernTab is not available yet, working on it. In the meantime you could use a viewmodel approach as described in <a href=\"https://mui.codeplex.com/discussions/445210\" rel=\"nofollow\">this disccussion</a>.<br />\n",
+    "PostedDate": "2013-06-03T14:30:20.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052407",
+    "ThreadId": "445703",
+    "Html": "Ah, ok. Thanks a lot! <br />\n",
+    "PostedDate": "2013-06-03T17:37:15.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

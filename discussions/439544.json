@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1027412",
+    "ThreadId": "439544",
+    "Html": "Hi,\r<br />\n<br />\nI'm using WatermarkTextBox control from the Extended WPF Toolkit.\r<br />\nThere is a way to reuse the style from TextBox on it?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-04-08T11:44:54.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1027496",
+    "ThreadId": "439544",
+    "Html": "When the WatermarkTextBox derives from TextBoxBase you may be able to re-use the style. Something like this might work as a default style for WatermarkTextBox (I did not test this):<br />\n<pre><code>&lt;Style BasedOn=&quot;{StaticResource {x:Type TextBoxBase}}&quot; TargetType=&quot;{x:Type toolkit:WatermarkTextBox}&quot; /&gt;</code></pre>\n\nThis doesn't take the watermark styling into account though.<br />\n",
+    "PostedDate": "2013-04-08T14:01:18.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1027612",
+    "ThreadId": "439544",
+    "Html": "kozw,\r<br />\n<br />\nWorked but as you predicted the style of the watermark (the gray text) is not being displayed.\r<br />\nI'm very new to WPF world, do you any clue to help solve this?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-04-08T19:01:10.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028005",
+    "ThreadId": "439544",
+    "Html": "Sure, do you have access to the default WatermarkTextBox style?<br />\n",
+    "PostedDate": "2013-04-09T11:08:10.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028042",
+    "ThreadId": "439544",
+    "Html": "Yes, here is the code <a href=\"https://wpftoolkit.codeplex.com/SourceControl/changeset/view/98195#2380457\" rel=\"nofollow\">https://wpftoolkit.codeplex.com/SourceControl/changeset/view/98195#2380457</a>\r<br />\nIt's open-source too :D\r<br />\n<br />\nDo you think can be valuable to implement some styles for the Extended WPF Toolkit?\r<br />\n<br />\nThanks for the HELP!<br />\n",
+    "PostedDate": "2013-04-09T12:23:28.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028118",
+    "ThreadId": "439544",
+    "Html": "Providing mui styles for extended WPF controls is a great idea. The only thing that I want to avoid is adding a toolkit dependency to mui. Having seperate toolkit styles don't seem to be a problem. I'll look into it<br />\n",
+    "PostedDate": "2013-04-09T15:37:34.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

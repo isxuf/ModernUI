@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1316565",
+    "ThreadId": "570629",
+    "Html": "Hello all,<br />\n<br />\nI'm working on an m:ui application where I want to select an entity to display from the links in a list layout page. I want to use only one view and one viewmodel. From the documentation I understand that I should implement the IContent interface on the view and handle the OnFragmentNavigation event to tell the viewmodel which data to supply. So far so good!<br />\n<br />\nNow I'm trying to avoid code-behind wherever possible so the solution provided by &quot;MuiContentControl&quot; in <a href=\"https://stackoverflow.com/questions/16968090/caliburn-micro-mef-modern-ui-icontent-events\" rel=\"nofollow\">this post</a> combined with MVVMLights &quot;EventToCommand&quot; seemed to be the perfect solution.<br />\n<pre><code>&lt;i:Interaction.Triggers&gt;\n        &lt;i:EventTrigger EventName=&quot;FragmentNavigation&quot;&gt;\n            &lt;cmd:EventToCommand Command=&quot;{Binding FragmentNavigationCommand}&quot; PassEventArgsToCommand=&quot;True&quot;/&gt;\n        &lt;/i:EventTrigger&gt;\n&lt;/i:Interaction.Triggers&gt;</code></pre>\n\nHowever, since the &quot;FragmentNavigation&quot; event handler isn't set up the first time the view is navigated to the command isn't executed the first time the page is displayed. My question is: Is there a good way to handle this (maybe creating the view before actually being navigated to) or should I just take the easy way out and use the code-behind this time?<br />\n<br />\nThanks in advance!<br />\n<br />\n// Magnus<br />\n",
+    "PostedDate": "2014-10-26T05:22:06.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

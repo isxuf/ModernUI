@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:26:35.567-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Hi!\n\nThe comboxbox I have within a user control isn't showing any text.\n\nThanks",
+    "LastUpdatedDate": "2013-07-05T13:26:35.567-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-07-04T08:10:59.2-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ComboBox doesn't show text",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19931
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903302,
+      "FileName": "Modern UI - Combobox.png",
+      "DownloadUrl": ".\\903302"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Should have been under discussions....  how can I remove this issue?",
+      "PostedDate": "2013-07-04T09:43:49.993-07:00",
+      "Id": 158534
+    }
+  ]
+}

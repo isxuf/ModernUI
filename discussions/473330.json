@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1135000",
+    "ThreadId": "473330",
+    "Html": "in your documentation, you mentioned that;\r<br />\n&quot;(name): loads the page in the frame having specified name&quot;\r<br />\n<br />\ni tried applying it like this\r<br />\n<br />\n&lt;mui:BBCodeBlock BBCode=&quot;[url=/Pages/MyPage.xaml|_(example)]go to my page[/url]&quot; /&gt;?\r<br />\n<br />\nand\r<br />\n<br />\n&lt;mui:BBCodeBlock BBCode=&quot;[url=/Pages/MyPage.xaml|_example]go to my page[/url]&quot; /&gt;?\r<br />\n<br />\nand even without the underscores but i keep getting the error message my frame was not found.\r<br />\n<br />\ncould you please give an example just so I can understand the context you ment it in?<br />\n",
+    "PostedDate": "2013-12-12T04:51:02.05-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1135015",
+    "ThreadId": "473330",
+    "Html": "Nevermind. I just discovered this could only be applied to the ModernFrame. Appologies for wasting your time. Everything's working now.<br />\n",
+    "PostedDate": "2013-12-12T05:41:45.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

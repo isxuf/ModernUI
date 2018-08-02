@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1092824",
+    "ThreadId": "456937",
+    "Html": "Hi I want to do a very simple, not supposed to be complex navigation here...\r<br />\n<br />\nwhen you click a link with your mouse it navigates to it right ?\r<br />\n<br />\nhow can i do the same-in code- without having the user to go and click on the link ?? \r<br />\n<br />\n<br />\nplease please i am tired of searching and nothing works for me,,, don't ignore me please.<br />\n",
+    "PostedDate": "2013-09-15T06:22:19.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1092838",
+    "ThreadId": "456937",
+    "Html": "there is a xaml way of doing this,,, i need the c# way to do it...<br />\n<br />\nwe can use the BBCodeBlock in xaml and achieve it like this but still needs to be automatically done without the must of the user click on the link<br />\n<pre><code>            &lt;mui:BBCodeBlock BBCode=&quot;» navigate to the [url=/Pages/translator.xaml]translator page[/url]&quot; x:Name=&quot;CodeBlock&quot;/&gt;</code></pre>\n\n",
+    "PostedDate": "2013-09-15T08:00:57.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1092839",
+    "ThreadId": "456937",
+    "Html": "And when using code like this on a page constructor...\r<br />\n<br />\nnew DefaultLinkNavigator().Navigate(new Uri(&quot;/Pages/translator.xaml&quot;, UriKind.Relative), LayoutRoot);\r<br />\n<br />\n<br />\nan error with this description arises:\r<br />\n<br />\n<br />\nSystem.ArgumentException was unhandled by user code\r<br />\n  HResult=-2147024809\r<br />\n  Message=Unable to navigate to /Pages/translator.xaml, could not find a ModernFrame target ''\r<br />\n  Source=FirstFloor.ModernUI\r<br />\n  StackTrace:<br />\n<pre><code>   at FirstFloor.ModernUI.Windows.Navigation.DefaultLinkNavigator.Navigate(Uri uri, FrameworkElement source, String parameter)\n   at Active_Dictionary.Pages.aboutKhaterah..ctor() in d:\\Projects\\ActiveDict\\Active Dictionary\\Pages\\aboutKhaterah.xaml.cs:line 15</code></pre>\n\nInnerException: <br />\n",
+    "PostedDate": "2013-09-15T08:06:30.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1093108",
+    "ThreadId": "456937",
+    "Html": "it's very simply,just use the code(.net 4.5):\r<br />\nNavigationCommands.GoToPage.Execute(&quot;your xaml uri&quot;, Application.Current.MainWindow);\r<br />\nbut it use Application.LoadComponent(uri)(DefaultContentLoader.cs),so first time may be you will has a new interface class instance...\r<br />\n<br />\nif you use .net 4,you should reference the shell library.<br />\n",
+    "PostedDate": "2013-09-16T07:24:11.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

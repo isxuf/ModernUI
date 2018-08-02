@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed",
+    "ClosedDate": "2013-03-02T17:07:40.097-08:00",
+    "CommentCount": 5,
+    "Custom": "",
+    "Description": "Noticed that you leave create the controls in the memory. Clearly, it is better to back button works, and of navigation in general. but for example, if a heavy load control, we get overrun memory.\nAdd the ability to manually unload unneeded controls please!",
+    "LastUpdatedDate": "2013-05-16T05:30:56.347-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-02-25T06:18:44.057-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "unload user controls over time",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19382
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "ModernFrame has a property KeepContentAlive. When false content pages are recreated each time. At this point in time it's either all or no pages in memory. I have some improvements in mind.",
+      "PostedDate": "2013-02-25T09:50:41.52-08:00",
+      "Id": 158431
+    },
+    {
+      "Message": "thanks for the info! or you can use a sample? in your examples, you are not using ModernFrame. I would like to understand how to do it, I really liked your control, I'm trying to use it in an application. By the way, if suddenly you need help with a project please let me know! I am willing to help with the development!...",
+      "PostedDate": "2013-02-25T22:19:36.72-08:00",
+      "Id": 158432
+    },
+    {
+      "Message": "I just thought it would be good to make more beads inditsator while loading the control",
+      "PostedDate": "2013-02-25T22:35:48.523-08:00",
+      "Id": 158433
+    },
+    {
+      "Message": "the Busy indicator I mean",
+      "PostedDate": "2013-02-25T22:36:47.873-08:00",
+      "Id": 158434
+    },
+    {
+      "Message": "The 1.0.1 release includes a ModernFrame.KeepAlive attached dependency property which you can use to keep specific pages in memory when loaded in the ModernFrame.\r\n\r\nFurthermore the Indeterminate state of the ProgressBar has been restyled to a more modern ui like style.",
+      "PostedDate": "2013-02-27T17:08:08.19-08:00",
+      "Id": 158435
+    }
+  ]
+}

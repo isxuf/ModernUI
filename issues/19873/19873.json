@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "fixed in changeset 101533",
+    "ClosedDate": "2013-07-06T08:08:28.777-07:00",
+    "CommentCount": 7,
+    "Custom": "",
+    "Description": "I seem to be having an issue with Context menu styling using the built in Light Theme.  Whenever I have a menu item that has sub menu items, the text is white and can only be seen if you hover over it.  If you use the dark theme though it seems to work fine. I created a blank project to show an example.\n\n![Image](http://s24.postimg.org/ber25ey3p/Context_Menu_Issue.jpg)\n\nAnyone know of a work around to this until a fix comes in?\n\n\nThanks!",
+    "LastUpdatedDate": "2013-07-06T08:08:28.777-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-18T12:10:54.99-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Context Menu Styling incorrect",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 19873
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Do you see the same behavior in the ModernUIDemo (in the download package)? See controls > styles > itemscontrol and select 'show context menu'",
+      "PostedDate": "2013-06-18T12:42:17.497-07:00",
+      "Id": 158521
+    },
+    {
+      "Message": "No.  It seems to work in the demo fine.",
+      "PostedDate": "2013-06-18T12:48:10.49-07:00",
+      "Id": 158522
+    },
+    {
+      "Message": "Interesting. Any obvious differences? Are you using a custom control template?",
+      "PostedDate": "2013-06-18T13:26:07.557-07:00",
+      "Id": 158523
+    },
+    {
+      "Message": "I'm not seeing any differences.  I'm not using any custom control templates in the example I sent.  I just created a blank project and got the nuget package and thats what I'm getting.  Heres a snippet of how applied the context menu in the photo I posted (Home.xaml):\r\n\r\n```                                                                                                                                                                                                                                                                            ```",
+      "PostedDate": "2013-06-18T13:38:07.883-07:00",
+      "Id": 158524
+    },
+    {
+      "Message": "The only difference is that your ContextMenu is defined in XAML and in the demo it's defined in code. In XAML it likely inherits some brush values which it shouldn't. Looks like a valid bug report to me.\r\n\r\nAs a workaround for now, I suggest creating the menu in code.",
+      "PostedDate": "2013-06-18T14:09:14.393-07:00",
+      "Id": 158525
+    },
+    {
+      "Message": "I will give that a shot.\r\n\r\nThanks for all of your help!  ",
+      "PostedDate": "2013-06-19T06:35:13.377-07:00",
+      "Id": 158526
+    },
+    {
+      "Message": "After some further inspection, the problem seems to be coming when adding a sub Menu Item.  I altered the code from the ModernUIDemo to add a new MenuItem instead of just adding the \"item 1\" string.\r\n\r\n```        private MenuItem CreateSubMenu(string header)        {            var item = new MenuItem { Header = header };            item.Items.Add(new MenuItem { Header = \"Doesnt work\"});            item.Items.Add(\"Item 2\");            item.Items.Add(new Separator());            item.Items.Add(\"item 3\");            return item;        }     ```\r\n\r\nWhich results in: ![Image](http://s7.postimg.org/peksxif2z/sub_Menu_Item_Issue.jpg)",
+      "PostedDate": "2013-06-19T11:03:15.94-07:00",
+      "Id": 158527
+    }
+  ]
+}

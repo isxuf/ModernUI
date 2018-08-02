@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1331214",
+    "ThreadId": "574733",
+    "Html": "I don't know whether this question has already been answered, I want to know  whether is it allowed to use the MUI template with customization in commercial products ? Also let I want to know the usage licensing in Freewares. <br />\n",
+    "PostedDate": "2014-12-11T22:40:49.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1331565",
+    "ThreadId": "574733",
+    "Html": "Commercial usage is allowed under the <a href=\"https://mui.codeplex.com/license\" rel=\"nofollow\">MUI license</a>. See also <a href=\"http://mui.codeplex.com/discussions/573671\" rel=\"nofollow\">http://mui.codeplex.com/discussions/573671</a><br />\n",
+    "PostedDate": "2014-12-13T03:07:40.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1331900",
+    "ThreadId": "574733",
+    "Html": "Thank you. <br />\n",
+    "PostedDate": "2014-12-14T21:05:44.747-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

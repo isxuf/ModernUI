@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "This would be nice, especially if it has capabilities like flyout control",
+    "LastUpdatedDate": "2014-12-17T12:43:14.647-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-02T08:13:37.34-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Status Bar Control",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 10,
+    "Id": 19794
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "See https://mui.codeplex.com/discussions/446125",
+      "PostedDate": "2013-06-05T13:09:33.897-07:00",
+      "Id": 158511
+    }
+  ]
+}

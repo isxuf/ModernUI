@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "1042933",
+    "ThreadId": "443503",
+    "Html": "I'm trying to create a login page which should disappear after login and displays the program pages.<br />\n<br />\nThis is MainView.xaml:<br />\n<pre><code>&lt;mui:ModernWindow.MenuLinkGroups&gt;\n    &lt;!-- Pages/Login.xaml contains the login logic, method shown below --&gt;\n    &lt;!-- The link group GroupName=&quot;credentials&quot; should disappear after login --&gt;\n    &lt;mui:LinkGroup DisplayName=&quot;Welcome&quot; GroupName=&quot;credentials&quot;&gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;login&quot; Source=&quot;Pages/Login.xaml&quot;/&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;\n    &lt;!-- The link group GroupName=&quot;program&quot; should appear after login --&gt;\n    &lt;mui:LinkGroup DisplayName=&quot;Welcome&quot; GroupName=&quot;program&quot;&gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;dashboard&quot; Source=&quot;Pages/Dashboard.xaml&quot;/&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;\n&lt;/mui:ModernWindow.MenuLinkGroups&gt;</code></pre>\n\nThe Login.xaml pages has a button which triggers the following method in the LoginViewModel:<br />\n<pre><code>public class LoginViewModel : NotifyPropertyChanged\n{\n    private void Login(object commandParameter)\n    {\n        var passwordbox = commandParameter as PasswordBox;\n        if (passwordbox != null)\n        {\n            // Validate credentials against webservices\n            // Set login flag\n            // deactivate login views, activate normal menu links\n        }\n    }\n}</code></pre>\n\nHow can i deactivate link groups and activate other from a viewmodel?<br />\n",
+    "PostedDate": "2013-05-13T09:38:18.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043068",
+    "ThreadId": "443503",
+    "Html": "Move your menu links to the view model and fill them based on whatever business logic you have. Something like this works:<br />\n<pre><code>public class MyViewModel : NotifyPropertyChanged\n{\n  public MyViewModel()\n  {\n    this.MenuLinkGroups= new LinkGroupCollection()\n    UpdateMenu();\n  }\n  public LinkGroupCollection MenuLinkGroups{ get; private set; }\n\n  private void UpdateMenu()\n  {\n    this.MenuLinkGroups.Clear();\n    if (this.loggedIn){\n      // fill with groups when logged in\n      this.MenuLinkGroups.Add(..);\n    }\n    else {\n      // fill with groups when not logged in\n      this.MenuLinkGroups.Add(..);\n    }\n  }\n}</code></pre>\n\nAnd your xaml (assuming MyViewModel is set as DataContext):<br />\n<pre><code>&lt;mui:ModernWindow MenuLinkGroups=&quot;{Binding MenuLinkGroups}&quot;\n&lt;/mui:ModernWindow&gt;</code></pre>\n\nSince the LinkGroupCollection derives from ObservableCollection&lt;T&gt; any updates are automatically applied to the view when bound.<br />\n",
+    "PostedDate": "2013-05-13T14:02:53.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043272",
+    "ThreadId": "443503",
+    "Html": "works fine thank you!\r<br />\n<br />\nOne more question: How can i select the first link from the first linkgroup by default?\r<br />\n<br />\nI tried to bind the ContentSource of the ModernWindow to an Uri in my ViewModel.\r<br />\nViewModel<br />\n<pre><code>        private Uri startpage;\n        public Uri Startpage\n        {\n            get { return this.startpage; }\n            set\n            {\n                this.startpage = value;\n                this.OnPropertyChanged(&quot;Startpage&quot;);\n            }\n        }</code></pre>\n\nXaml:<br />\n<pre><code>&lt;mui:ModernWindow ContentSource=&quot;{Binding Startpage, Mode=OneWay, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}&quot;\n&lt;/mui:ModernWindow&gt;</code></pre>\n\nDoesn't work so far, it behaves like an OneTime Binding.<br />\n",
+    "PostedDate": "2013-05-14T02:30:46.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054104",
+    "ThreadId": "443503",
+    "Html": "Your approach looks correct. Are you sure the uri value exists in the link sources defined in XAML? Also, make sure that the link sources are unique among all link groups in the xaml.<br />\n<br />\nAny binding errors in the output window?<br />\n",
+    "PostedDate": "2013-06-07T10:11:37.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054770",
+    "ThreadId": "443503",
+    "Html": "No errors in the output window, i created <a href=\"http://sdrv.ms/1bnnemA\" rel=\"nofollow\">this demo project</a> to illustrate the problem.<br />\n",
+    "PostedDate": "2013-06-10T03:11:59.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054785",
+    "ThreadId": "443503",
+    "Html": "The problem in your demo project is that the links added to the link groups are prefixed with a '/' where the selected link is not. The link uri's simply don't match, either both should have a '/' prefix or remove it from both.\r<br />\n<br />\nFurthermore; you do not need to clear the link groups. Just add all groups and links to the MenuLinkGroups and select the link you need. The LinkGroup.GroupName is used for grouping the linkgroups.\r<br />\n<br />\nSo split your UpdateMenu in two, invoke CreateMenu from the constructor and you are all set.<br />\n<pre><code>public MainViewModel()\n{\n  this.MenuLinkGroups = new LinkGroupCollection();\n  this.ToggleMenuCommand = new RelayCommand(this.ToggleMenu);\n  this.CreateMenu();\n}\n\nprivate void CreateMenu()\n{\n  this.MenuLinkGroups.Clear();\n\n  var linkTestGroup1 = new LinkGroup { DisplayName = &quot;TestGroup1&quot;, GroupName = &quot;test1&quot; };\n  var link1 = new Link { DisplayName = &quot;Link 1&quot;, Source = new Uri(&quot;/Pages/Link1.xaml&quot;, UriKind.Relative) };\n  linkTestGroup1.Links.Add(link1);\n  this.MenuLinkGroups.Add(linkTestGroup1);\n\n  var linkTestGroup2 = new LinkGroup { DisplayName = &quot;TestGroup2&quot;, GroupName = &quot;test2&quot; };\n  var link2 = new Link { DisplayName = &quot;Link 2&quot;, Source = new Uri(&quot;/Pages/Link2.xaml&quot;, UriKind.Relative) };\n\n  linkTestGroup2.Links.Add(link2);\n\n  this.MenuLinkGroups.Add(linkTestGroup2);\n\n  UpdateMenuSelection();\n}\n\nprivate void UpdateMenuSelection()\n{\n  if (!this.ButtonClicked) {\n    this.SelectedLink = new Uri(&quot;/Pages/Link1.xaml&quot;, UriKind.Relative);\n  }\n  else {\n    this.SelectedLink = new Uri(&quot;/Pages/Link2.xaml&quot;, UriKind.Relative);\n  }\n}\n\nprivate void ToggleMenu(object parameter)\n{\n  this.ButtonClicked = !this.ButtonClicked;\n  this.UpdateMenuSelection();\n}</code></pre>\n\n",
+    "PostedDate": "2013-06-10T04:05:09.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054820",
+    "ThreadId": "443503",
+    "Html": "Thanks a lot, it is working now :)<br />\n",
+    "PostedDate": "2013-06-10T05:24:38.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1066829",
+    "ThreadId": "443503",
+    "Html": "Hi Guys,\r<br />\n<br />\nDoes anyone know how this could be done with a datatrigger, ie on a boolean change the menulinkgroup in xaml.\r<br />\n<br />\nI am trying to keep the view separate from the viewmodel and keeping the LinkGroupCollection in the viewmodel breaks that.\r<br />\n<br />\nI am not sure if it is possible but it would be good to have a window resource of possible menus and switch between them using a datatrigger or something like that.\r<br />\n<br />\nAnyone know if this is possible?\r<br />\n<br />\nsomething like this (i know this doesn't work but just an example of what I mean).<br />\n<pre><code>&lt;&lt;Style BasedOn=&quot;{StaticResource {x:Type mui:ModernWindow}}&quot;&gt;\n        &lt;Style.Triggers&gt;\n            &lt;DataTrigger on backend value == true&gt;\n                &lt;Setter Property=&quot;&quot; Value=&quot;{Binding groupA}&quot;&gt;&lt;/Setter&gt;\n            &lt;/DataTrigger&gt;\n            &lt;DataTrigger on backend value == false&gt;\n                &lt;Setter Property=&quot;&quot; Value=&quot;{Binding groupB}&quot;&gt;&lt;/Setter&gt;\n            &lt;/DataTrigger&gt;\n        &lt;/Style.Triggers&gt;\n    &lt;/Style&gt;\n\n    &lt;Window.Resources&gt;\n        &lt;mui:LinkGroup x:Name=&quot;groupA&quot; DisplayName=&quot;Welcome&quot; GroupName=&quot;credentials&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;login&quot; Source=&quot;Pages/Login.xaml&quot;/&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n         The link group GroupName=&quot;program&quot; should appear after login \n        &lt;mui:LinkGroup x:Name=&quot;groupB&quot; DisplayName=&quot;Welcome&quot; GroupName=&quot;program&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;dashboard&quot; Source=&quot;Pages/Dashboard.xaml&quot;/&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n    &lt;/Window.Resources&gt;</code></pre>\n\nCheers<br />\n",
+    "PostedDate": "2013-07-10T17:07:56.02-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088636",
+    "ThreadId": "443503",
+    "Html": "Is it possible to share a example src of a login method ?<br />\nI have some difficulty to understand this thread<br />\n<br />\nThanks by advance<br />\nSheppeR<br />\n",
+    "PostedDate": "2013-09-05T01:04:22.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088818",
+    "ThreadId": "443503",
+    "Html": "Why is keeping the LinkGroupCollection in the view model breaking your MVVM model? LinkGroupCollection itself is not a visual.<br />\n",
+    "PostedDate": "2013-09-05T09:01:32.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1317595",
+    "ThreadId": "443503",
+    "Html": "Hi\r<br />\nI am having trouble implementing the code from kozw and the demo project from Xenolith is not available on skydrive. Could someone please provide me with a demo project with this implementation..\r<br />\n<br />\nWhat i am trying to do is this, when the application loads, it displays the login page link only. The settings link should be greyed or inactive. Then when a user logs in successfully, only links associated with a user role  are displalyed. Example if Administrator logs in, all links become available.\r<br />\n<br />\nI will greatly appreciate any help.<br />\n",
+    "PostedDate": "2014-10-30T01:51:18.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1338090",
+    "ThreadId": "443503",
+    "Html": "I am also applying a log in logic. But cannot place it in the main window, because only content source is shown when program starts. I Implemented log in Logic in a user control and set it as content source. However, from the control I cannot access MainWindowViewModel to call the method that constructs Menu Link Groups.\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2014-12-30T23:50:33.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1453329",
+    "ThreadId": "443503",
+    "Html": "Hy...\r<br />\nI have no idea how to binding that ViewModel to my project,\r<br />\n<br />\nI already creat ViewModel like MyModelView sample modelView from kwoz, and i have add binding to my modernWindow.xaml to,\r<br />\n&lt;mui:ModernWindow MenuLinkGroups=&quot;{Binding MenuLinkGroups}&quot;\r<br />\n&lt;/mui:ModernWindow&gt;\r<br />\n<br />\nBut than my ModernWindow get error,\r<br />\nCan some one give a sample demo how to hide or add MenuLinkGroups...\r<br />\n<br />\nSorry about my language, i'm from indonesia.<br />\n",
+    "PostedDate": "2015-11-20T08:06:44.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1243513",
+    "ThreadId": "544824",
+    "Html": "Good day,<br />\n<br />\nI'm new to m:ui and I find it fascinating! However, I've come across a small problem for which I can not figure out a workaround.<br />\n<br />\nI'd like to do the following:<br />\n<br />\nFetch workout exercises from a database and add their names to ModernTab.Links. Each exercise consists of similar attributes which I'd like to display in identical form, but with different values. That said, I believe I'd like to add Links to moderntab programmatically, where the source xaml is identical.<br />\n<br />\nI realize I could do this by creating a listbox, but then I would lose the swiping effect of a ListPage.<br />\n<br />\nAs I believe this should be possible, I ask: has anyone done anything related to this? I'd be glad if someone could help me out here. If you need me to elaborate on the issue, please let me know. <br />\n<br />\nBest regards,<br />\n<br />\nJonne<br />\n",
+    "PostedDate": "2014-05-09T08:13:30.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

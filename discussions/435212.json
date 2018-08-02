@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1009602",
+    "ThreadId": "435212",
+    "Html": "Do you have anything coming down the line on how to implement a MessageWindow, with popular frameworks like mvvmlight, caliburn etc.. in your template<br />\n",
+    "PostedDate": "2013-03-03T16:20:43.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010170",
+    "ThreadId": "435212",
+    "Html": "To be sure I understand correctly; are you referring to implementing dialog support for MVVM?<br />\n",
+    "PostedDate": "2013-03-04T13:07:05.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011934",
+    "ThreadId": "435212",
+    "Html": "That's correct. As you know MVVM is simpler using a MVVM framework and I can see the template in VS2012 is not bound to any mvvm framework which is good. Now with modern UI template in VS2012, in the solution project created there is no code or sample showing how to implement dialog support.\r<br />\n<br />\nSo how would you implement dialog support using your preferred mvvm framework. A example would be appreciated.\r<br />\n<br />\nRegards<br />\n",
+    "PostedDate": "2013-03-07T11:03:43.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

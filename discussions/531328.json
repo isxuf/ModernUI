@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1206830",
+    "ThreadId": "531328",
+    "Html": "After Creating a Combobox as the following, dropdown doesn't work properly.\r<br />\n<br />\n&lt;ComboBox Width=&quot;150&quot; Background=&quot;{x:Null} /&gt;\r<br />\n<br />\nhow to fix it? \r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2014-02-11T07:07:12.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1206837",
+    "ThreadId": "531328",
+    "Html": "You should set the Background to Transparent, not {x:Null}. When Background is set to null, mouseclicks are not registered by the control, they are when the background is Transparent.<br />\n",
+    "PostedDate": "2014-02-11T07:15:41.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-02-12T12:05:20.977-08:00"
+  }
+]

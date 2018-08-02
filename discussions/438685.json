@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1023838",
+    "ThreadId": "438685",
+    "Html": "I have a grouped listbox where I am trying to set the appearance of each group. I have set the proper style on the textblock in question (see xaml where I put &lt;!-- LOOK HERE --&gt;), and everything but the proper color is set for the textblock. <br />\n<br />\nI can switch betweem Normal, Header1, Emphasis, Small etc. and it changes the proper font/size.. but it never sets the proper colour. It is always black, which <em>is</em> the proper color for the Light theme, but not for the Dark theme. <br />\n<pre><code> &lt;ListBox Grid.Row=&quot;1&quot;\n                 Margin=&quot;0,2,0,0&quot;\n                 ItemsSource=&quot;{Binding Projects}&quot;\n                 ItemTemplate=&quot;{StaticResource ProjectTemplate}&quot;\n                 SelectedItem=&quot;{Binding SelectedProject, Mode=TwoWay}&quot;\n                 ScrollViewer.CanContentScroll=&quot;False&quot;&gt;\n\n            &lt;ListBox.GroupStyle&gt;\n                &lt;GroupStyle&gt;\n                    &lt;GroupStyle.ContainerStyle&gt;\n                        &lt;Style TargetType=&quot;{x:Type GroupItem}&quot;&gt;\n                            &lt;Setter Property=&quot;Template&quot;&gt;\n                                &lt;Setter.Value&gt;\n                                    &lt;ControlTemplate TargetType=&quot;{x:Type GroupItem}&quot;&gt;\n                                        &lt;Grid&gt;\n                                            &lt;Grid.RowDefinitions&gt;\n                                                &lt;RowDefinition Height=&quot;Auto&quot; /&gt;\n                                                &lt;RowDefinition Height=&quot;Auto&quot; /&gt;\n                                            &lt;/Grid.RowDefinitions&gt;\n\n                                            &lt;Grid&gt;\n                                                &lt;Grid.ColumnDefinitions&gt;\n                                                    &lt;ColumnDefinition Width=&quot;Auto&quot; /&gt;\n                                                    &lt;ColumnDefinition Width=&quot;*&quot; /&gt;\n                                                &lt;/Grid.ColumnDefinitions&gt;\n\n                                                &lt;Button x:Name=&quot;expandCollapseBtn&quot;\n                                                        BorderThickness=&quot;0&quot;\n                                                        HorizontalAlignment=&quot;Left&quot;\n                                                        Width=&quot;12&quot;\n                                                        Height=&quot;12&quot;\n                                                        Command=&quot;{Binding Path=Items[0].ExpandCollapseCommand}&quot;\n                                                        CommandParameter=&quot;{Binding}&quot;&gt;\n\n                                                    &lt;Button.Style&gt;\n                                                        &lt;Style TargetType=&quot;{x:Type Button}&quot;&gt;\n                                                            &lt;Style.Triggers&gt;\n                                                                &lt;DataTrigger Binding=&quot;{Binding ItemCount}&quot;\n                                                                             Value=&quot;1&quot;&gt;\n                                                                    &lt;Setter Property=&quot;Visibility&quot;\n                                                                            Value=&quot;Hidden&quot; /&gt;\n                                                                &lt;/DataTrigger&gt;\n                                                            &lt;/Style.Triggers&gt;\n                                                        &lt;/Style&gt;\n                                                    &lt;/Button.Style&gt;\n\n                                                    &lt;Button.Template&gt;\n                                                        &lt;ControlTemplate&gt;\n                                                            &lt;Border HorizontalAlignment=&quot;Center&quot;\n                                                                    VerticalAlignment=&quot;Center&quot;&gt;\n                                                                &lt;Image x:Name=&quot;exImage&quot;\n                                                                       Source=&quot;{Binding Path=Items[0].ExpandButtonImage}&quot;\n                                                                       Width=&quot;12&quot;\n                                                                       Height=&quot;12&quot;\n                                                                       Opacity=&quot;.85&quot;&gt;\n                                                                    &lt;Image.BitmapEffect&gt;\n                                                                        &lt;DropShadowBitmapEffect /&gt;\n                                                                    &lt;/Image.BitmapEffect&gt;\n                                                                &lt;/Image&gt;\n                                                            &lt;/Border&gt;\n                                                        &lt;/ControlTemplate&gt;\n                                                    &lt;/Button.Template&gt;\n                                                    &lt;Button.ToolTip&gt;\n                                                        &lt;ToolTip Content=&quot;{Binding ExpandButtonToolTip}&quot; /&gt;\n                                                    &lt;/Button.ToolTip&gt;\n\n                                                &lt;/Button&gt;\n\n \n                                              \n&lt;!--  BEGIN LOOK HERE --&gt;\n\n                                               &lt;TextBlock Grid.Column=&quot;1&quot;\n                                                           Margin=&quot;5,0,0,0&quot;\n                                                           Style=&quot;{StaticResource Heading2}&quot;\n                                                           Text=&quot;{Binding Path=Name}&quot;&gt;                                                   \n                                                &lt;/TextBlock&gt;\n&lt;!-- END LOOK HERE --&gt;\n                                            &lt;/Grid&gt;\n\n                                            &lt;Grid Grid.Row=&quot;1&quot;\n                                                  Visibility=&quot;{Binding Path=Items[0].IsExpanded, Converter={StaticResource boolToVis}}&quot;&gt;\n                                                &lt;ItemsPresenter /&gt;\n                                            &lt;/Grid&gt;\n                                        &lt;/Grid&gt;                                      \n                                    &lt;/ControlTemplate&gt;\n                                &lt;/Setter.Value&gt;\n                            &lt;/Setter&gt;\n                        &lt;/Style&gt;\n                    &lt;/GroupStyle.ContainerStyle&gt;\n                &lt;/GroupStyle&gt;\n            &lt;/ListBox.GroupStyle&gt;\n        &lt;/ListBox&gt;</code></pre>\n\n<img src=\"http://picpaste.com/screenshot-aOlNGjMY.png\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-04-01T09:52:27.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023839",
+    "ThreadId": "438685",
+    "Html": "The TextBlock styles Normal, Header1, Emphasis, Small etc. do not include a Foreground brush. Their values are inherited.\r<br />\n<br />\nWhat if you explicitly derive from the default ListBox style by specifiying the BasedOn like so:<br />\n<pre><code>&lt;Style BasedOn=&quot;{StaticResource {x:Type ListBox}}&quot; &gt;</code></pre>\n\n",
+    "PostedDate": "2013-04-01T09:59:01.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023846",
+    "ThreadId": "438685",
+    "Html": "I am not sure how to apply this. It appears that the listbox is getting the style, but it is not being applied to the group style.<br />\n",
+    "PostedDate": "2013-04-01T10:12:21.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023863",
+    "ThreadId": "438685",
+    "Html": "The default ListBox style specifies an ItemContainerStyle that does use the correct foreground brush. Adding the BasedOn attribute to your custom ListBox style explicitly states that the default style should be used as base.<br />\n",
+    "PostedDate": "2013-04-01T11:05:32.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024013",
+    "ThreadId": "438685",
+    "Html": "Yes I understand inheriting a style, but in this case I am <strong>not</strong> modifying the ItemContainerStyle, but rather the <strong>GroupStyle</strong>. I am not certian how to apply a style to the listbox's GroupStyle which is based on an inherited StaticResource.<br />\n<br />\nBecause the listbox is already showing that it is displaying the proper style, I would have thought that the TextBlock's foreground brushes would be carried into the GroupStyle..but this is not the case.<br />\n",
+    "PostedDate": "2013-04-01T19:29:10.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024057",
+    "ThreadId": "438685",
+    "Html": "The default mui ListBox style does not define a GroupStyle. It's my guess a default GroupStyle is used with a Foreground set to black. You may want to add the following Foreground Setter to the GroupStyle.ContainerStyle:<br />\n<pre><code>&lt;Setter Property=&quot;Foreground&quot; Value=&quot;{DynamicResource ItemText}&quot; /&gt;</code></pre>\n\n",
+    "PostedDate": "2013-04-01T23:35:12.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024272",
+    "ThreadId": "438685",
+    "Html": "Thanks kozw - that solved my problem!<br />\n",
+    "PostedDate": "2013-04-02T07:07:24.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

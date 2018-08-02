@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "<DataGrid.CellStyle>\n     <Style TargetType=\"DataGridCell\" >\n         <Style.Triggers>\n             <DataTrigger Binding=\"{Binding SentOffice}\" Value=\"1 CBPO\"   >\n                  <Setter Property=\"Background\"  Value=\"#FF900000\"/>\n             </DataTrigger>\n         </Style.Triggers>\n     </Style>\n </DataGrid.CellStyle>\n\n\nif i use Datatrigger then matching row background color will be changed but apart from that all other rows background also will be changed to Dark Blue on Clicking. those rows background color should be the color which was set by \"SettingsAppearanceViewModel\". Please Help me in this regard.",
+    "LastUpdatedDate": "2013-06-04T21:54:57.093-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-04T21:54:52.58-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "DataTrigger Row Background Color Problem",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19814
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903300,
+      "FileName": "Untitled.jpg",
+      "DownloadUrl": ".\\903300"
+    }
+  ],
+  "Comments": []
+}

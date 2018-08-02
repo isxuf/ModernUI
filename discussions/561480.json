@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1290990",
+    "ThreadId": "561480",
+    "Html": "I am using mui wpf templates. I have a datagrid which is binding to a dataview object inside \r<br />\nOnNavigatedTo() event (present in IContent interface). My code is something looks like below\r<br />\n<br />\npublic void OnNavigatedTo(NavigationEventArgs e)\r<br />\n{ \r<br />\n   datagrid1.ItemSource = dataviewObj ;\r<br />\n  <br />\n   datagrid1.Columns[0].Visibility = Visisbility.Hidden ;\r<br />\n   datagrid1.Columns[1].Visibility = Visisbility.Hidden ; \r<br />\n   datagrid1.Columns[2].Visibility = Visisbility.Hidden ;<br />\n\r<br />\n}\r<br />\n<br />\nMy problem is when this page is loading for the very 1st time then ,\r<br />\ndatagrid1.Columns[0].Visibility = Visisbility.Hidden ;  this line gives as error as index out of bound exception.\r<br />\n<br />\nBut if I navigate to any other page and revert back to again this page after that no error is comming and these three lines executing fine. Basically I want to hide some columns at run time after binding to gridview. \r<br />\n<br />\nI have tried a lot , How to achieve this please advice.<br />\n",
+    "PostedDate": "2014-08-18T02:37:37.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

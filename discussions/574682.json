@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1331034",
+    "ThreadId": "574682",
+    "Html": "When I use validations on a TextBox in a plain grid, it works just fine:<br />\n<pre><code>&lt;TextBox Grid.Row=&quot;0&quot; Grid.Column=&quot;1&quot; Height=&quot;28&quot; Margin=&quot;3&quot;&gt;\n    &lt;TextBox.ToolTip&gt;\n        &lt;TextBlock MaxWidth=&quot;400&quot; TextWrapping=&quot;Wrap&quot;\n               Text=&quot;...&quot; /&gt;\n    &lt;/TextBox.ToolTip&gt;\n    &lt;TextBox.Text&gt;\n        &lt;Binding Path=&quot;WindowsAdminUser&quot; UpdateSourceTrigger=&quot;PropertyChanged&quot; ValidatesOnDataErrors=&quot;True&quot;&gt;\n            &lt;Binding.ValidationRules&gt;\n                &lt;validationRules:RequiredField ErrorMessage=&quot;Windows admin user is required.&quot; /&gt;\n            &lt;/Binding.ValidationRules&gt;\n        &lt;/Binding&gt;\n    &lt;/TextBox.Text&gt;\n&lt;/TextBox&gt;</code></pre>\n\n<img src=\"http://i.stack.imgur.com/7qfiU.jpg\" alt=\"Image\" />\r<br />\n<br />\nHowever when I use the same pattern in a ListView I don't see any message displayed, though I can step through the validator, so I know it's being invoked.<br />\n<pre><code>&lt;ListView ItemsSource=&quot;{Binding DatabaseInfos}&quot; VerticalAlignment=&quot;Stretch&quot; Margin=&quot;10&quot;&gt;\n    &lt;ListView.View&gt;\n        &lt;GridView&gt;\n            ...\n            &lt;GridViewColumn Header=&quot;SQL Server&quot;&gt;\n                &lt;GridViewColumn.CellTemplate&gt;\n                    &lt;DataTemplate&gt;\n                        &lt;TextBox Width=&quot;130&quot;&gt;\n                            &lt;TextBox.Text&gt;\n                                &lt;Binding Path=&quot;Server&quot; Mode=&quot;TwoWay&quot; ValidatesOnDataErrors=&quot;True&quot;\n                                         UpdateSourceTrigger=&quot;PropertyChanged&quot;&gt;\n                                    &lt;Binding.ValidationRules&gt;\n                                        &lt;validationRules:RequiredField ErrorMessage=&quot;Required&quot; /&gt;\n                                    &lt;/Binding.ValidationRules\n                                &lt;/Binding&gt;       \n                            &lt;/TextBox.Text&gt;\n                        &lt;/TextBox&gt;\n                    &lt;/DataTemplate&gt;\n                &lt;/GridViewColumn.CellTemplate&gt;\n            &lt;/GridViewColumn&gt;\n...\n&lt;/ListView&gt;</code></pre>\n\n<img src=\"http://i.stack.imgur.com/RiIsF.jpg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2014-12-11T07:44:13.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1331566",
+    "ThreadId": "574682",
+    "Html": "This is most likely because the default GridView style doesn't include a template for rendering validation errors. Somethings worth checking. Care to create an issue in the issue tracker?<br />\n",
+    "PostedDate": "2014-12-13T03:09:21.207-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

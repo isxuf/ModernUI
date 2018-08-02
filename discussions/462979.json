@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1110022",
+    "ThreadId": "462979",
+    "Html": "Hi, I installed the template from VS Gallery, and created a program to investigate. Here's the code from the project:<br />\n<pre><code>    &lt;mui:ModernWindow.MenuLinkGroups&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;welcome&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;home&quot; Source=&quot;/Pages/Home.xaml&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;settings&quot; GroupName=&quot;settings&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;software&quot; Source=&quot;/Pages/Settings.xaml&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n    &lt;/mui:ModernWindow.MenuLinkGroups&gt;\n    \n    &lt;mui:ModernWindow.TitleLinks&gt;\n        &lt;mui:Link DisplayName=&quot;settings&quot; Source=&quot;/Pages/Settings.xaml&quot; /&gt;\n    &lt;/mui:ModernWindow.TitleLinks&gt;</code></pre>\n\nHow does the framework know to show the &quot;settings&quot; link group when I click the &quot;settings&quot; link in the title bar? Is it the DisplayName of Link mapped to the DisplayName of LinkGroup?\r<br />\n<br />\nThanks/Allen<br />\n",
+    "PostedDate": "2013-10-21T07:41:24.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1110036",
+    "ThreadId": "462979",
+    "Html": "Hi, I experimented a little bit. Looks like the link in the title bar is related to link group in menu link groups via the Source property of both. Can someone confirm this and explain a little bit?\r<br />\n<br />\nThanks/Allen<br />\n",
+    "PostedDate": "2013-10-21T07:59:58.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1252387",
+    "ThreadId": "462979",
+    "Html": "Any Ideas ??<br />\n",
+    "PostedDate": "2014-06-03T06:59:59.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253419",
+    "ThreadId": "462979",
+    "Html": "ModernWindow.TitleLinks is the collection of links shown at the top of each MUI window (in your case, currently showning settings). ModernWindow.MenuLinkGroups is the collection of link groups that forms the main menu.\r<br />\n<br />\nIt is important to understand that TitleLinks is a collection of Link instances, MenuLinkGroups is a collection of LinkGroup instances. \r<br />\n<br />\nWhen selecting the settings link, the associated source page (/Pages/Settings.xaml) is loaded in the main frame. This settings page usually contains another set of links.<br />\n",
+    "PostedDate": "2014-06-05T11:47:32.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253479",
+    "ThreadId": "462979",
+    "Html": "Tranks kozw !!\r<br />\n<br />\nAlso, when the page Settings.xaml is loaded in the main frame, the MenuLinkGroups change. I don't understand how or where this is made. The complete menu structure is defined in the window, but the settings MenuLinkGroup is not showed. When the Settings page is loaded only the settings MenuLinkGroup is loaded.\r<br />\n<br />\nI think this is controlled by GroupName, but I don't know how.\r<br />\n<br />\nI have defined a complete menu structure, but I want to show only a few MenuLinkGroup for each page... This is the problem\r<br />\n<br />\nThanks in advance.\r<br />\n<br />\nMike<br />\n",
+    "PostedDate": "2014-06-05T14:08:49.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1330193",
+    "ThreadId": "462979",
+    "Html": "kozw, \r<br />\n<br />\nWould also like to know how the Settings page (TitleLink) gets tied to the MenuLinkGroup as I would like to add more &quot;links&quot; and have them behave as the Settings page.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-12-09T08:50:13.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1331568",
+    "ThreadId": "462979",
+    "Html": "The TitleLinks are not related to the MenuLinkGroups, anything added to the TitleLinks is showed at the top of the window.<br />\n",
+    "PostedDate": "2014-12-13T03:12:02.213-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

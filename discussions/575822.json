@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1334808",
+    "ThreadId": "575822",
+    "Html": "Hey,\r<br />\n<br />\nat work I'm trying to develop a WiX bootstrapper with a matching GUI for our main product. I just managed to build a GUI (in a .dll) with WPF and then I found m:ui yesterday and fell in love :D\r<br />\n<br />\nSo I tried to get m:ui working for my bootstrapper, but I failed.\r<br />\nI believe my mistake is deleting the app.xaml, because this file cannot stay in a class libary. \r<br />\nDo you have any suggestions for a newbie?\r<br />\n<br />\nthank you in advance,,\r<br />\nkhahn\r<br />\n<br />\n<strong>Additionally:</strong>\r<br />\nSteps in a WiX Bootstrapper to load my GUI (working with WPF): <a href=\"http://bryanpjohnston.com/2012/09/28/custom-wix-managed-bootstrapper-application/\" rel=\"nofollow\">http://bryanpjohnston.com/2012/09/28/custom-wix-managed-bootstrapper-application/</a><br />\n",
+    "PostedDate": "2014-12-19T01:53:16.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1335446",
+    "ThreadId": "575822",
+    "Html": "This is uncharted territory, but you will need to move the ModernUI resources from App.xaml to a resource dictionary in your user control. That will probably work, but the AppearanceManager will most likely fail, since it assumes those resources are available in the global app resources.\r<br />\n<br />\nBasically you are on your own here, this is an unsupported scenario, but it might work fine.<br />\n",
+    "PostedDate": "2014-12-22T01:58:39.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1339028",
+    "ThreadId": "575822",
+    "Html": "Happy new year! Thank you for your answer. I will try to conquer this territory and will let you know, if I found a way :)<br />\n",
+    "PostedDate": "2015-01-05T02:02:39.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

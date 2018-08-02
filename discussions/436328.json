@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "1013978",
+    "ThreadId": "436328",
+    "Html": "since i need to do two thing when clicking button, i figure i could do it in code behind.\r<br />\n<br />\ni try by creating click event that would do <br />\n<ol>\n<li>DoSomething()</li>\n<li>\nnavigate to Page.xaml if DoSomething returns true.<br />\n</li>\n</ol>\ni try <br />\n<pre><code>NavigationService nav = NavigationService.GetNavigationService(this);\nnav.Navigate(new System.Uri(&quot;Page.xaml&quot;, UriKind.RelativeOrAbsolute));</code></pre>\n\nbut got runtime error. \r<br />\n<br />\ni noticed that the template are using mvvm(is it?) pattern. but im not experience with that pattern, and there are no standard mvvm workflow that i can follow.\r<br />\n<br />\nit would be wonderfull if i you could provide example in this pattern.\r<br />\n<br />\nthanks.<br />\n",
+    "PostedDate": "2013-03-12T08:22:15.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014150",
+    "ThreadId": "436328",
+    "Html": "The NavigationService is not part of ModernUI, it's the standard service that works with WPF Frames, not with ModernFrame instances.\r<br />\n<br />\nIn your click event handler you can navigate the Frame by specifying the Source property in your code behind. Additionally you can do anything else in your event handler.<br />\n",
+    "PostedDate": "2013-03-12T13:11:43.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014710",
+    "ThreadId": "436328",
+    "Html": "Ok. Pardon me for asking, but how do i navigate to other pages in code behind? \r<br />\n<br />\nYou said &quot;navigate the Frame by specifying the Source property in your code behind&quot;. Source property of what?\r<br />\n<br />\nthanks.<br />\n",
+    "PostedDate": "2013-03-13T10:22:42.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014895",
+    "ThreadId": "436328",
+    "Html": "You'll need to get the reference of the ModernFrame instance you want to navigate. You can use the NavigationHelper.FindFrame for this purpose.\r<br />\n<br />\nAssuming you are in an event handler method of a UserControl, the following snippet finds the ModernFrame hosting the UserControl (referenced by this) and navigates the frame to another page.<br />\n<pre><code>using FirstFloor.ModernUI.Windows;\n\nprivate void Button_Click(object sender, RoutedEventArgs e)\n{\n  var frame = NavigationHelper.FindFrame(null, this);\n  if (frame != null) {\n    frame.Source = new Uri(&quot;Page.xaml&quot;, UriKind.Relative);\n  }\n}</code></pre>\n\n",
+    "PostedDate": "2013-03-13T15:31:13.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014948",
+    "ThreadId": "436328",
+    "Html": "Thank you. saves me the trouble threading the source.<br />\n",
+    "PostedDate": "2013-03-13T18:29:15.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029058",
+    "ThreadId": "436328",
+    "Html": "I noticed a problem with this method.\r<br />\n<br />\nIf i navigate to a link in different link group, the active link group is not activated. Navigate through button command in xaml works though. Navigating in code behind doesnt update active link group. How can i navigate in code behind properly?\r<br />\n<br />\nBy the way, i found a links that might interest you(list of win 8 colors) <a href=\"http://www.creepyed.com/2012/09/windows-8-colors-hex-code/\" rel=\"nofollow\">http://www.creepyed.com/2012/09/windows-8-colors-hex-code/</a>\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-04-11T08:41:50.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029075",
+    "ThreadId": "436328",
+    "Html": "I tried this in button click event code behind without success.<br />\n<pre><code>            Button b = sender as Button;\n            b.Command = NavigationCommands.GoToPage;\n            b.CommandParameter = @&quot;/Content/MyContent.xaml&quot;;\n            b.CommandTarget = NavigationHelper.FindFrame(null, this);\n            b.Command.Execute(null);\n</code></pre>\n\nThe page doesnt navigate at all.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-04-11T09:09:26.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029091",
+    "ThreadId": "436328",
+    "Html": "Your menu instance is not synced when navigating a frame in the code behind? That's weird. Can you post (or send) the source?<br />\n",
+    "PostedDate": "2013-04-11T09:47:09.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029267",
+    "ThreadId": "436328",
+    "Html": "I know why. I missed first &quot;/&quot; in my links. Example. &quot;Content/ProtocolEntry.xaml&quot; should be &quot;/Content/ProtocolEntry.xaml&quot;<br />\n<br />\nThank you and im truly sorry for bothering you.<br />\n",
+    "PostedDate": "2013-04-11T16:49:44.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029268",
+    "ThreadId": "436328",
+    "Html": "No worries. Good to hear it works as advertised.<br />\n",
+    "PostedDate": "2013-04-11T16:54:51.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1032763",
+    "ThreadId": "436328",
+    "Html": "First, I wanted to say thanks for the work you have done with this. Very nice!\r<br />\n<br />\nSecond, in earlier post you said <br />\n<blockquote>\n&quot;The NavigationService is not part of ModernUI, it's the standard service that works with WPF Frames, not with ModernFrame instances.&quot;<br />\n</blockquote>\nGiven that what's the recommended way to pass parameters to a page, is it by passing query string data value in the URI? \r<br />\n<br />\nThanks in advance:)<br />\n",
+    "PostedDate": "2013-04-18T17:45:45.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033348",
+    "ThreadId": "436328",
+    "Html": "Pass parameters using fragments and use IContent.OnFragmentNavigation to retrieve the uri fragment. See also <a href=\"https://mui.codeplex.com/discussions/438690\" rel=\"nofollow\">this thread</a>.<br />\n",
+    "PostedDate": "2013-04-20T05:22:13.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

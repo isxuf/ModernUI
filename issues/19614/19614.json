@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": ".net 4 workaround required",
+    "ClosedDate": "2013-04-24T12:59:30.29-07:00",
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "Hi,\n\nRunning mui under .net 4 always shows a disabled scroll bar in the list layout (see attachment), the only way I was able to get rid of it was by inserting the style for ModernTab directly inside the page.\n\nAny ideas how to fix this without having to insert a copy of the style ?\n\nMany thanks.",
+    "LastUpdatedDate": "2013-05-16T05:30:54.32-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-04-18T03:05:00.213-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Visible Scroll bars in List Layout",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 19614
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903291,
+      "FileName": "mui.png",
+      "DownloadUrl": ".\\903291"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Most likely related to a bug in WPF4. Make sure you add a dummy Rectangle style to your App.xaml. See also the updated tutorial [My first MUI app](https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app)",
+      "PostedDate": "2013-04-20T05:40:52.433-07:00",
+      "Id": 158487
+    },
+    {
+      "Message": "Many thanks, the dummy rectangle fixed it.",
+      "PostedDate": "2013-04-21T01:59:46.137-07:00",
+      "Id": 158488
+    }
+  ]
+}

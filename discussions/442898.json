@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1040674",
+    "ThreadId": "442898",
+    "Html": "Hi,\r<br />\n<br />\nI tried to create a custom splash screen that displays the loading process (e.g. plugins, connecting to server etc.). \r<br />\n<br />\nSo, I have WPF window that contains a progress bar and labels, that show those information. I override the OnStartup method in App.xaml.cs like that:<br />\n<pre><code>    protected override void OnStartup(StartupEventArgs e)\n    {\n      var splashScreen = new myNamespace.Forms.SplashScreen();\n      splashScreen.Show();\n\n      var startupTask = new Task(() =&gt;\n      {\n        //Load plugins, connect etc.\n      });\n\n      startupTask.ContinueWith(p =&gt;\n      {\n        MainWindow mainWindow = new MainWindow();\n\n        //when main windows is loaded close splash screen\n        mainWindow.Loaded += (sender, args) =&gt; splashScreen.Close();\n\n        //set application main window;\n        this.MainWindow = mainWindow;\n\n        //and finally show it\n        mainWindow.Show();\n        //});\n      }, TaskScheduler.FromCurrentSynchronizationContext());\n\n      startupTask.Start();\n\n      base.OnStartup(e);\n    }</code></pre>\n\nThe problem is the splashScreen is never closing and applying the ModernUI style.\r<br />\n<br />\nIs it any solution how to show a dynamic splashScreen?<br />\n",
+    "PostedDate": "2013-05-07T19:56:07.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040857",
+    "ThreadId": "442898",
+    "Html": "poborin,\r<br />\n<br />\nI suggest you looking on solution below using native code since in WPF application has significant startup costs, especially in a cold start situation.\r<br />\n<br />\n<a href=\"http://code.logos.com/blog/2008/09/displaying_a_splash_screen_with_c_introduction.html\" rel=\"nofollow\">Displaying a Splash Screen for WPF with C++</a>.\r<br />\nAnd Stefan Olson posted a <a href=\"http://olsonsoft.com/blogs/stefanolson/post/A-better-WPF-splash-screen.aspx\" rel=\"nofollow\">Visual C++ project containing all the code</a> in this series (with a few extra features, including fading out the splash screen and the ability to load from any file, not just application resources).\r<br />\n<br />\nI use this solution to my apps, it's faster then everything and works like a charm.\r<br />\n<br />\n<br />\nKind regards,\r<br />\n<br />\nGabriel Marquez<br />\n",
+    "PostedDate": "2013-05-08T06:35:05.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1041165",
+    "ThreadId": "442898",
+    "Html": "Thank you Gabriel! I'll definitely have a look closer to the solution.<br />\n",
+    "PostedDate": "2013-05-08T19:20:02.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1265099",
+    "ThreadId": "551365",
+    "Html": "Hello, \r<br />\n<br />\nI just wanted to make a quick post about the CPU usage. \r<br />\nI see in the given example &quot;FirstFloor.ModernUI.App&quot; the CPU usage is around 1-5% idling on my laptops i7-2630QM CPU (2Ghz). Just doing a quick google search on animations showed that one can simply set the Timeline's DesiredFrameRate to a lower framerate (anything 30fps and below) and it will fix the animations CPU usage. I didn't want to do this as animations look bad, so I looked through the code to see what animations are working in the background. It seems like the progressbar's template is using an animation in the background? So I simply removed the RepeatBehavior property from it's StoryBoard. This code can be found in ProgressBar.xaml (line 24) [RepeatBehavior=&quot;Forever&quot;]. \r<br />\nNow the CPU usage is down to 0% on idle. I'm sure there is a better way of doing this instead of just removing the RepeatBehavior. \r<br />\n<br />\nAnyway thanks for the awesome code, I'm using it in my latest project and works great :-)<br />\n",
+    "PostedDate": "2014-07-12T04:44:25.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

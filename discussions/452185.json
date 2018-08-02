@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1075873",
+    "ThreadId": "452185",
+    "Html": "If a page no longer exists, and you use the back button to navigate back to it, then you have to click back again to get to a page that does exist, and obviously this could happen again etc. I know there isn't any current way of removing a page from the navigation stack, but any ideas how I could get around this? I want to almost check if the page is there before navigating to it, and if not go somewhere else (home maybe?)<br />\n",
+    "PostedDate": "2013-08-02T01:05:12.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

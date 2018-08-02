@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "1292064",
+    "ThreadId": "561773",
+    "Html": "Hi,<br />\n<br />\nmy MainWindow looks like this:<br />\n<pre><code>&lt;mui:ModernWindow.TitleLinks&gt;\n    &lt;mui:Link DisplayName=&quot;Settings&quot; Source=&quot;/Views/Settings.xaml&quot; /&gt;\n    &lt;mui:Link DisplayName=&quot;Help&quot; Source=&quot;http://mui.codeplex.com&quot; /&gt;\n&lt;/mui:ModernWindow.TitleLinks&gt;\n&lt;mui:ModernWindow.MenuLinkGroups&gt;\n    &lt;mui:LinkGroup DisplayName=&quot;Main menu&quot; &gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;Log&quot; Source=&quot;/Views/Log.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Settings&quot; Source=&quot;/Views/Settings.xaml&quot; /&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;\n</code></pre>\n\nNavigating to the settings page in the main menu works fine, but navigating from the title link throws an exception:<br />\n<br />\nSystem.ArgumentException was unhandled<br />\n  HResult=-2147024809<br />\n  Message=Unable to navigate to /Views/Settings.xaml, could not find a ModernFrame target ''<br />\n  Source=FirstFloor.ModernUI<br />\n  StackTrace:<br />\n<pre><code>   bei FirstFloor.ModernUI.Windows.Navigation.DefaultLinkNavigator.Navigate(Uri uri, FrameworkElement source, String parameter)\n   bei FirstFloor.ModernUI.Windows.Controls.ModernWindow.OnNavigateLink(Object sender, ExecutedRoutedEventArgs e)\n   bei System.Windows.Input.CommandBinding.OnExecuted(Object sender, ExecutedRoutedEventArgs e)\n   bei System.Windows.Input.CommandManager.ExecuteCommandBinding(Object sender, ExecutedRoutedEventArgs e, CommandBinding commandBinding)\n   bei System.Windows.Input.CommandManager.FindCommandBinding(CommandBindingCollection commandBindings, Object sender, RoutedEventArgs e, ICommand command, Boolean execute)\n   bei System.Windows.Input.CommandManager.FindCommandBinding(Object sender, RoutedEventArgs e, ICommand command, Boolean execute)\n   bei System.Windows.Input.CommandManager.OnExecuted(Object sender, ExecutedRoutedEventArgs e)\n   bei System.Windows.UIElement.OnExecutedThunk(Object sender, ExecutedRoutedEventArgs e)\n   bei System.Windows.Input.ExecutedRoutedEventArgs.InvokeEventHandler(Delegate genericHandler, Object target)\n   bei System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)\n   bei System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)\n   bei System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)\n   bei System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)\n   bei System.Windows.UIElement.RaiseEvent(RoutedEventArgs args, Boolean trusted)\n   bei System.Windows.Input.RoutedCommand.ExecuteImpl(Object parameter, IInputElement target, Boolean userInitiated)\n   bei System.Windows.Input.RoutedCommand.ExecuteCore(Object parameter, IInputElement target, Boolean userInitiated)\n   bei MS.Internal.Commands.CommandHelpers.CriticalExecuteCommandSource(ICommandSource commandSource, Boolean userInitiated)\n   bei System.Windows.Controls.Primitives.ButtonBase.OnClick()\n   bei System.Windows.Controls.Button.OnClick()\n   bei System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)\n   bei System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)\n   bei System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)\n   bei System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)\n   bei System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)\n   bei System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)\n   bei System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)\n   bei System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)\n   bei System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)\n   bei System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)\n   bei System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)\n   bei System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)\n   bei System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)\n   bei System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)\n   bei System.Windows.UIElement.RaiseEvent(RoutedEventArgs args, Boolean trusted)\n   bei System.Windows.Input.InputManager.ProcessStagingArea()\n   bei System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)\n   bei System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)\n   bei System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)\n   bei System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)\n   bei System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)\n   bei MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean&amp; handled)\n   bei MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)\n   bei System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)\n   bei MS.Internal.Threading.ExceptionFilterHelper.TryCatchWhen(Object source, Delegate method, Object args, Int32 numArgs, Delegate catchHandler)\n   bei System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)\n   bei MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)\n   bei MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG&amp; msg)\n   bei System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)\n   bei System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)\n   bei System.Windows.Threading.Dispatcher.Run()\n   bei System.Windows.Application.RunDispatcher(Object ignore)\n   bei System.Windows.Application.RunInternal(Window window)\n   bei System.Windows.Application.Run(Window window)\n   bei System.Windows.Application.Run()\n   bei RedmineLogger.App.Main() in e:\\Subversion\\v4h-Local\\RedmineLogger\\RedmineLogger\\obj\\Debug\\App.g.cs:Zeile 0.\n   bei System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)\n   bei System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)\n   bei Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()\n   bei System.Threading.ThreadHelper.ThreadStart_Context(Object state)\n   bei System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)\n   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)\n   bei System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)\n   bei System.Threading.ThreadHelper.ThreadStart()</code></pre>\n\nInnerException: <br />\n<br />\nAny quick idea about that? Cannot see any difference to the sample app...<br />\n<br />\nBest regards,<br />\nWilfried<br />\n",
+    "PostedDate": "2014-08-21T06:42:07.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292069",
+    "ThreadId": "561773",
+    "Html": "Do you happen to use a custom Windows style (possible derived from 1.0.5)? If so, make sure you the title link button template contains the following:<br />\n<pre><code>&lt;Button Content=&quot;{Binding DisplayName}&quot;\n  Command=&quot;navigation:LinkCommands.NavigateLink&quot;\n  CommandParameter=&quot;{Binding Source}&quot;\n  CommandTarget=&quot;{Binding ElementName=ContentFrame}&quot;\n  Style=&quot;{StaticResource SystemButtonLink}&quot; /&gt;</code></pre>\n\n",
+    "PostedDate": "2014-08-21T06:52:45.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292074",
+    "ThreadId": "561773",
+    "Html": "No, just a plain mainwindow:\r<br />\n<br />\n&lt;mui:ModernWindow<br />\n<pre><code>x:Class=&quot;RedmineLogger.MainWindow&quot;\nxmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\nxmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\nxmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\nxmlns:tb=&quot;http://www.hardcodet.net/taskbar&quot;\nTitle=&quot;MainWindow&quot;\nHeight=&quot;700&quot;\nWidth=&quot;1000&quot;\nContentSource=&quot;/Views/Log.xaml&quot;\nLogoData=&quot;F1 M 24.9015,43.0378L 25.0963,43.4298C 26.1685,49.5853 31.5377,54.2651 38,54.2651C 44.4623,54.2651 49.8315,49.5854 50.9037,43.4299L 51.0985,43.0379C 51.0985,40.7643 52.6921,39.2955 54.9656,39.2955C 56.9428,39.2955 58.1863,41.1792 58.5833,43.0379C 57.6384,52.7654 47.9756,61.75 38,61.75C 28.0244,61.75 18.3616,52.7654 17.4167,43.0378C 17.8137,41.1792 19.0572,39.2954 21.0344,39.2954C 23.3079,39.2954 24.9015,40.7643 24.9015,43.0378 Z M 26.7727,20.5833C 29.8731,20.5833 32.3864,23.0966 32.3864,26.197C 32.3864,29.2973 29.8731,31.8106 26.7727,31.8106C 23.6724,31.8106 21.1591,29.2973 21.1591,26.197C 21.1591,23.0966 23.6724,20.5833 26.7727,20.5833 Z M 49.2273,20.5833C 52.3276,20.5833 54.8409,23.0966 54.8409,26.197C 54.8409,29.2973 52.3276,31.8106 49.2273,31.8106C 46.127,31.8106 43.6136,29.2973 43.6136,26.197C 43.6136,23.0966 46.127,20.5833 49.2273,20.5833 Z&quot;&gt;\n&lt;mui:ModernWindow.TitleLinks&gt;\n    &lt;mui:Link DisplayName=&quot;Settings&quot; Source=&quot;/Views/Settings.xaml&quot; /&gt;\n    &lt;mui:Link DisplayName=&quot;Help&quot; Source=&quot;http://mui.codeplex.com&quot; /&gt;\n&lt;/mui:ModernWindow.TitleLinks&gt;\n&lt;mui:ModernWindow.MenuLinkGroups&gt;\n    &lt;mui:LinkGroup DisplayName=&quot;Main menu&quot; &gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;Log&quot; Source=&quot;/Views/Log.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Settings&quot; Source=&quot;/Views/Settings.xaml&quot; /&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;\n    &lt;mui:LinkGroup DisplayName=&quot;2nd menu&quot; &gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;Page 1&quot; Source=&quot;/Views/Page1.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Page 2&quot; Source=&quot;/Views/Page2.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Page 3&quot; Source=&quot;/Views/Page3.xaml&quot; /&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;\n    &lt;mui:LinkGroup DisplayName=&quot;Settings&quot; GroupKey=&quot;settings&quot;&gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;Software&quot; Source=&quot;/Views/Settings.xaml&quot; /&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;\n&lt;/mui:ModernWindow.MenuLinkGroups&gt;\n&lt;Grid&gt;\n    &lt;tb:TaskbarIcon IconSource=&quot;/Icons/Main.ico&quot; ToolTipText=&quot;hello world&quot; /&gt;\n&lt;/Grid&gt;</code></pre>\n\n&lt;/mui:ModernWindow&gt;<br />\n",
+    "PostedDate": "2014-08-21T07:01:44.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292079",
+    "ThreadId": "561773",
+    "Html": "Used Xaml Spy (yes, we love it) to analyze the &quot;Setting&quot; button: It has a CommandParameter: /Views/Settings.xaml. Looks fine...<br />\n",
+    "PostedDate": "2014-08-21T07:07:42.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292083",
+    "ThreadId": "561773",
+    "Html": "When I create a new mui app using the <strong>Modern UI WPF Navigation Application</strong> template in Visual Studio, and I use the content of your main window, and add the various pages in the Views folder everything seems to work just fine.\r<br />\n<br />\nHow did you create your project?\r<br />\n<br />\nGood to hear you're using xaml spy :)<br />\n",
+    "PostedDate": "2014-08-21T07:11:13.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292085",
+    "ThreadId": "561773",
+    "Html": "I created the project as a plain WPF app, added (via NuGet) various packages, and changed the main window to be ModernWindow.<br />\n",
+    "PostedDate": "2014-08-21T07:12:52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292087",
+    "ThreadId": "561773",
+    "Html": "Is that WPF 4.5? Did you follow all steps in <a href=\"https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app\" rel=\"nofollow\">this tutorial</a>?<br />\n",
+    "PostedDate": "2014-08-21T07:18:51.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292094",
+    "ThreadId": "561773",
+    "Html": "Double-checked, and yes, it is WPF 4.5, I followed the steps, and I use VS 2013 under Win 8.1<br />\n",
+    "PostedDate": "2014-08-21T07:40:18.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292102",
+    "ThreadId": "561773",
+    "Html": "Ok, found the problem: Did not remove the content of the main window (the grid). When doing that, everything is fine.<br />\n",
+    "PostedDate": "2014-08-21T07:59:13.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292108",
+    "ThreadId": "561773",
+    "Html": "Interesting. That should not fail (then again Content is not used at all in a default styled ModernWindow)<br />\n<br />\nAnyway, good to hear all is fine<br />\n",
+    "PostedDate": "2014-08-21T08:11:41.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292113",
+    "ThreadId": "561773",
+    "Html": "Thanks for your quick response and support :-)<br />\n",
+    "PostedDate": "2014-08-21T08:19:35.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

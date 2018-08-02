@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1075678",
+    "ThreadId": "452137",
+    "Html": "I have a list page that get's it's links from a database. The first item of the list wont be selected when I navigate to the list and the source pages from the list items wont select the first tab when selected either. \r<br />\n<br />\nMy create link code.<br />\n<pre><code>SqlDataReader reader = db.Query(query);\n\nwhile (reader.Read())\n{\n    Link link = new Link()\n     {\n         DisplayName = reader[&quot;Name&quot;].ToString(),\n         Source = new Uri(string.Format(&quot;/Content/ActiveProjectContent.xaml#{0}&quot;,\n                        reader[&quot;UID&quot;].ToString()), UriKind.Relative)\n     };\n\n      List.Links.Add(link)\n}</code></pre>\n\nI'm guessing it has something to do with my Source because even when I select a different item in the list it seems the conent does not get updated. The content is a tab page and that is not even selecting the first tab by default.<br />\n",
+    "PostedDate": "2013-08-01T11:27:49.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1075990",
+    "ThreadId": "452137",
+    "Html": "Sorry to keep asking questions that seem to have easy answers. What I was looking for was the SelectedSource. Amazing framework... just new to WPF.<br />\n",
+    "PostedDate": "2013-08-02T06:29:11.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

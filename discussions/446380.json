@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1054203",
+    "ThreadId": "446380",
+    "Html": "Is there a reason that Displayable isn't a DependencyObject?  I was trying to set Bindings on the DisplayName of the LinkGroups and noticed this.  I tried switching Displayable and its subclasses over to using DependencyProperties and things seem to work, but I'm not sure if anything is looking for those particular NotifyPropertyChanges.\r<br />\n<br />\nWould this be a bad change to make in the framework?\r<br />\n<br />\nThanks,<br />\n",
+    "PostedDate": "2013-06-07T16:26:37.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054779",
+    "ThreadId": "446380",
+    "Html": "Displayable is part of the ViewModel, not the View. There are a number of reasons not to derive from DependencyObject. Among those; DependencyObject not serializable, not lightweight and it can only be accessed on the thread it was created on.\r<br />\n<br />\nSee also <a href=\"https://channel9.msdn.com/Forums/TechOff/466194-ViewModel--INotifyPropertyChanged-or-DependencyObject\" rel=\"nofollow\">this discussion on channel9</a><br />\n",
+    "PostedDate": "2013-06-10T03:36:51.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

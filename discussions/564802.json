@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1297689",
+    "ThreadId": "564802",
+    "Html": "Greetings,<br />\n<br />\nI need to get the DataContext of the View set by using ContentSource property of the ModernWindow, Could you please help.<br />\n<br />\nThank you.<br />\n",
+    "PostedDate": "2014-09-01T03:16:43.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298042",
+    "ThreadId": "564802",
+    "Html": "Sounds like you are having an issue with separation of concerns. What problem are you trying to solve?<br />\n",
+    "PostedDate": "2014-09-02T01:51:47.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1298180",
+    "ThreadId": "564802",
+    "Html": "Hi kozw,\r<br />\n<br />\nI had to show Prompt Messages and get the User's input and pass it onto a python script which is waiting for an input, I am using MVVM framework and I have multiple instances of the many Views and ViewModels so I had to map them with each other, I was able to solve this by setting the ModernWindow's Content manually by getting its ModernFrame from the Template I am posting the code below in case if any one would need it and I've uploaded a sample at <a href=\"https://wpfmvvmsamples.codeplex.com/SourceControl/latest\" rel=\"nofollow\">https://wpfmvvmsamples.codeplex.com/SourceControl/latest</a>.\r<br />\n<br />\nThanks.<br />\n<pre><code>    public void ShowPrompt()\n    {\n        this.PromptWindow = ObjectFactory.GetInstance&lt;IPromptWindowViewModel&gt;().Window as ModernWindow;\n        this.PromptWindow.Title = string.Concat(&quot;Control &quot;, this.PromptOriginsEntity.PromptOriginsIdentity);\n        this.PromptWindow.Tag = this.PromptOriginsEntity.PromptOriginsIdentity;\n        this.PromptWindow.Owner = Application.Current.MainWindow;\n\n        // Store Window object in PromptWindowsCollection\n        this.PWPMainViewModel.PromptWindowsCollection.Add(this.PromptWindow);\n        this.PromptWindow.Show(); // inorder to retrieve the ModernFrame the ModernWindow is to be shown first\n\n        ModernFrame frameContent = (ModernFrame)this.PromptWindow.Template.FindName(&quot;ContentFrame&quot;, this.PromptWindow);\n        UserControl userControl = new UserControl { Content = GetView&lt;IPromptViewModel&gt;(), Tag = this.PromptOriginsEntity.PromptOriginsIdentity };\n        frameContent.Content = userControl;\n        this.PWPMainViewModel.PromptsCollection.Add(userControl);\n\n        IPromptViewModel promptViewModel = (IPromptViewModel)((IView)userControl.Content).DataContext;\n        promptViewModel.PromptEntity.Identity = this.PromptOriginsEntity.PromptOriginsIdentity;\n    }</code></pre>\n\n",
+    "PostedDate": "2014-09-02T08:08:36.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

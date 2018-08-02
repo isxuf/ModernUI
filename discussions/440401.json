@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1030917",
+    "ThreadId": "440401",
+    "Html": "I want to add a statusbar for my application, it'll be cool if there is a statusbar whose background is AccentColor. So, I wanna to know, whether you have the plan to add statusbar from the source on the following versions? Or if I want to modify from source, any guide advice?<br />\n<br />\nPS: Like this: <a href=\"http://www.devcomponents.com/kb2/?p=1197\" rel=\"nofollow\">http://www.devcomponents.com/kb2/?p=1197</a><br />\n<br />\nAnother thing, I realized to save the settings for themes. I think this function might need to be added to &quot;Modern UI for WPF Templates&quot;.<br />\n<br />\nThank you guys very much for realizing such a good UI!<br />\n<br />\nBest Regards,<br />\nClaude<br />\n",
+    "PostedDate": "2013-04-15T21:38:38.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1031101",
+    "ThreadId": "440401",
+    "Html": "There are no plans to add a statusbar to ModernWindow. The page layout do however include room for a custom statusbar per page, as shown in wireframe page of the mui demo app.\r<br />\n<br />\n<img src=\"http://i3.codeplex.com/Download?ProjectName=mui&amp;DownloadId=632729\" alt=\"Image\" />\r<br />\n<br />\nIf you need a permanent statusbar, you can create a custom ModernWindow template.<br />\n",
+    "PostedDate": "2013-04-16T05:48:21.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1255648",
+    "ThreadId": "440401",
+    "Html": "How do I programmatically reference those sections (root, page, header, content, status)?<br />\n",
+    "PostedDate": "2014-06-12T09:13:41.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

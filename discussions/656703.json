@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1479840",
+    "ThreadId": "656703",
+    "Html": "Hello. Below the feature does not work in the MEF:<br />\n<pre><code>&lt;Style xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot; TargetType=&quot;mui:ModernFrame&quot;&gt;\n         &lt;Setter Property=&quot;KeepContentAlive&quot; Value=&quot;False&quot;/&gt;\n&lt;/Style&gt;</code></pre>\n\nI also tried to insert in the event loaded the MainWindow, without success. Does anyone know how to do this?<br />\n",
+    "PostedDate": "2016-07-26T08:13:39.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

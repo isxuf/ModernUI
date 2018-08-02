@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "MUI RadioButton template uses TextBlock to display content, why dont replace it with content presenter, which will allow do such a things:\n![Image](https://lh3.googleusercontent.com/-bgWwcvK9Z2s/UyHArXmsgCI/AAAAAAAACEU/D57JEOh8A04/s284/1.png)\n\n```\n<TextBlock Text=\"{TemplateBinding Content}\" VerticalAlignment=\"Center\" />\n```\n=>\n```\n <ContentPresenter VerticalAlignment=\"Center\" />\n```",
+    "LastUpdatedDate": "2015-04-30T00:13:19.247-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-03-13T07:32:49.867-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "RadioButton custom content not text",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 20817
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hm, few months old...still no solution?",
+      "PostedDate": "2015-04-30T00:13:19.247-07:00",
+      "Id": 183649
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1079304",
+    "ThreadId": "453093",
+    "Html": "Hi,\r<br />\n<br />\nIs it possible to override some of the theme settings? I tried to get my datagrid column headers text to be aligned left, however it clears the whole theming. Also i'm trying to override the minheight of the DialogWindow and that also does not seem to respond?\r<br />\n<br />\nWhat is the easiest way to change one or two settings in the theme?\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-08-11T12:48:23.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081610",
+    "ThreadId": "453093",
+    "Html": "You must set BasedOn attribute of your style to Mui's style for column header, like this:<br />\n<pre><code>&lt;Style TargetType=&quot;DataGridColumnHeader&quot; BasedOn=&quot;{StaticResource {x:Type DataGridColumnHeader}}&gt;\n   ...\n&lt;/Style&gt;</code></pre>\n\nPS: Sorry for my bad English. :)<br />\n",
+    "PostedDate": "2013-08-17T03:19:21.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

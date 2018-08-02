@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1058534",
+    "ThreadId": "447505",
+    "Html": "Hi,\r<br />\n<br />\ni´m trying to use iContent.\r<br />\n<br />\nMy Code:<br />\n<pre><code>MainWindow\n\n&lt;mui:LinkGroup DisplayName=&quot;testes&quot;&gt;\n\n    &lt;mui:LinkGroup.Links&gt;\n        &lt;mui:Link DisplayName=&quot;Teste Pdf&quot; Source=&quot;pdf/visualizador_pdf.xaml#1&quot; /&gt;\n    &lt;/mui:LinkGroup.Links&gt;\n\n&lt;/mui:LinkGroup&gt;</code></pre>\n\nvisualizador_pdf.xaml<br />\n<pre><code>&lt;UserControl x:Class=&quot;CalculoPrecosTransferes.Pdf.visualizador_pdf&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n             xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;800&quot; d:DesignWidth=&quot;800&quot;&gt;\n    &lt;Grid&gt;\n\n        &lt;mui:ModernFrame x:Name=&quot;Frame&quot;/&gt;\n\n    &lt;/Grid&gt;\n&lt;/UserControl&gt;</code></pre>\n\nvisualizador_pdf.xaml.cs<br />\n<pre><code>using FirstFloor.ModernUI.Windows.Navigation;\nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Windows;\nusing System.Windows.Controls;\nusing System.Windows.Data;\nusing System.Windows.Documents;\nusing System.Windows.Input;\nusing System.Windows.Media;\nusing System.Windows.Media.Imaging;\nusing System.Windows.Shapes;\n\nnamespace CalculoPrecosTransferes.Pdf\n{\n    public interface IContent\n    {\n        void OnFragmentNavigation(FragmentNavigationEventArgs e);\n        void OnNavigatedFrom(NavigationEventArgs e);\n        void OnNavigatedTo(NavigationEventArgs e);\n        void OnNavigatingFrom(NavigatingCancelEventArgs e);\n    }\n\n    /// &lt;summary&gt;\n    /// Interaction logic for Visualizador_PDFs.xaml\n    /// &lt;/summary&gt;\n    public partial class visualizador_pdf : UserControl, IContent\n    {\n        public visualizador_pdf()\n        {\n            InitializeComponent();\n        }\n\n        public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n        {\n            MessageBox.Show(e.Fragment);\n\n            MessageBox.Show(&quot;OLá&quot;);\n        }\n        public void OnNavigatedFrom(NavigationEventArgs e)\n        {\n            \n        }\n        public void OnNavigatedTo(NavigationEventArgs e)\n        {\n            MessageBox.Show(&quot;OLá&quot;);\n        }\n        public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n        {\n            MessageBox.Show(&quot;OLá&quot;);\n        }\n        \n    }\n}</code></pre>\n\nThe events don´t &quot;fire&quot; ... What i am doing wrong? \r<br />\n<br />\nPlease help.\r<br />\n<br />\nTIA\r<br />\n<br />\nBaltazar\r<br />\n<br />\n(Modern UI 1.0.4)<br />\n",
+    "PostedDate": "2013-06-19T01:26:46.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058837",
+    "ThreadId": "447505",
+    "Html": "You have to implement the already existing interface FirstFloor.ModernUI.Windows.IContent. You implemented a different one.<br />\n",
+    "PostedDate": "2013-06-19T13:01:35.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059033",
+    "ThreadId": "447505",
+    "Html": "Thanks a Lot. It working.<br />\n",
+    "PostedDate": "2013-06-20T01:36:12.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

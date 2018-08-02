@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1218914",
+    "ThreadId": "537886",
+    "Html": "Hi, <br />\nI just wondered if we have a timeframe for making the mui Link command-bindable. It would seem reasonable that besides page navigation, one might want to execute a command instead, from clicking on the link. <br />\n<br />\nI notice the following posts (at the end) have requested the same thing and the solution is in the pipeline but I don't see any updates. Can we perhaps clarify the status on this? <br />\nThank you for your continued good work..<br />\nRegards<br />\nIke<br />\n<br />\nP/S -No doubt it's not a trivial solution (I've tried) if anyone has a workaround to share in the meantime, it would be appreciated - although it would be better to have a standardised solution<br />\n<br />\n<a href=\"http://mui.codeplex.com/discussions/438745\" rel=\"nofollow\">http://mui.codeplex.com/discussions/438745</a><br />\n<a href=\"http://mui.codeplex.com/discussions/440932\" rel=\"nofollow\">http://mui.codeplex.com/discussions/440932</a><br />\n<a href=\"https://mui.codeplex.com/workitem/19530\" rel=\"nofollow\">https://mui.codeplex.com/workitem/19530</a><br />\n",
+    "PostedDate": "2014-03-04T02:09:32.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1019945",
+    "ThreadId": "437726",
+    "Html": "hi,<br />\nsomebody tell me the way to do..<br />\nits wpf windows application. i have button in xaml in which is under (mui:link-4 source=&quot;some xaml page&quot;) and if i click that button then i must able to jump to mui:link-1. and load xaml associated with link-1 i mean i must to see what ever the xaml associated with mui:link-1<br />\ni want code behand or xaml code for that. if i get this then i can able to design my trail application.<br />\n",
+    "PostedDate": "2013-03-23T03:58:59.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1019974",
+    "ThreadId": "437726",
+    "Html": "Answerred in <a href=\"http://mui.codeplex.com/discussions/434905\" rel=\"nofollow\">this discussion</a> on how to navigate by button<br />\n",
+    "PostedDate": "2013-03-23T05:50:46.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1219423",
+    "ThreadId": "437726",
+    "Html": "Hello kozw~\r<br />\nThe discussion you provided seems not to solve my problem.\r<br />\nUsing NavigationCommands.GoToPage will change the source of Frame which have the button.\r<br />\nWhat I want is switching to another Link. For instance, the button is in link1, and I wanna jump to link2 in the same linkgroup.\r<br />\nIs there anyway to do this? Or is there something wrong with my understanding?\r<br />\nThanks a lot.<br />\n",
+    "PostedDate": "2014-03-05T05:17:05.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

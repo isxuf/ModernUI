@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1074176",
+    "ThreadId": "451711",
+    "Html": "Hey, I really love the project. The only problem I have come up against is it seems to ignore star behaviour.<br />\n<br />\nFor example I could have the following grid<br />\n<pre><code>&lt;Grid&gt;\n    &lt;Grid.RowDefinitions&gt;\n        &lt;RowDefinition Height=&quot;*&quot; /&gt;\n        &lt;RowDefinition Height=&quot;10&quot; /&gt;\n        &lt;RowDefinition Height=&quot;*&quot; /&gt;\n    &lt;/Grid.RowDefinitions&gt;\n    &lt;TextBox HorizontalAlignment=&quot;Stretch&quot; VerticalAlignment=&quot;Stretch&quot; AcceptReturn=&quot;True&quot; HorizontalScrollBarVisibility=&quot;Auto&quot; VerticalScrollBarVisibility=&quot;Auto&quot; /&gt;\n    &lt;DataGrid Grid.Row=&quot;2&quot;&gt;&lt;/DataGrid&gt;\n&lt;/Grid&gt;</code></pre>\n\nNow usually if I was to hit return enough times the textbox's vertical scrollbar will appear, but now it starts to 'shrink' the datagrid. And vice versa, if I fill the datagrid with enough values that would usually make a scrollbar appear, it instead 'shrinks' the textbox.<br />\n<br />\nDo you know what would cause this and anyway to prevent it from happening?<br />\n<br />\nThanks in advance<br />\n<br />\n<strong>EDIT</strong> Never mind, it seems to happen in WPF, when a grid is inside a scrollviewer :)<br />\n",
+    "PostedDate": "2013-07-28T21:50:17.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

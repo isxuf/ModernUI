@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1048836",
+    "ThreadId": "445020",
+    "Html": "Hello guys.\r<br />\n<br />\nMay you suggest the best strategy for implement a context sensitive help?\r<br />\nFrom each MUI page, when the user press F1, I would like to receive in the <strong>model</strong> the active page Uri; so I can easily map it to the corresponding entry inside the .CHM file.\r<br />\nIf possible without ‘break’ the MVVM pattern.\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-05-26T05:53:10.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

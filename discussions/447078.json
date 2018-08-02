@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1056881",
+    "ThreadId": "447078",
+    "Html": "Hello,\r<br />\nI wan to create  more than 2 Fonsize emu  with mui!!?\r<br />\nany Idee??<br />\n",
+    "PostedDate": "2013-06-14T06:29:14.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058360",
+    "ThreadId": "447078",
+    "Html": "Mui fontsize is currently limited to small/large as set in FontSize enum. I'm aware this limitation is not ideal, thinking about a more flexible solution. You could extend the enum yourself and adjust the AppearanceManager accordingly to handle the new FontSize values.<br />\n",
+    "PostedDate": "2013-06-18T12:12:20.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060370",
+    "ThreadId": "447078",
+    "Html": "ok!!\r<br />\ni extend the enum myself like this\r<br />\n   public  enum MyFontSize<br />\n<pre><code>    {\n\n        Large = 0,\n        Small = 1,\n        Normal=10,\n        Big=21,\n        Biggest=30,\n    }\n</code></pre>\n\nhow can i adjust it  with AppearanceManager ??\r<br />\nmy approch :\r<br />\n AppearanceManager.Current.FontSize =MyFontSize.Biggest;  it s not work ?ß why??<br />\n",
+    "PostedDate": "2013-06-24T06:17:23.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

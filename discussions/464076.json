@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1113704",
+    "ThreadId": "464076",
+    "Html": "How can I change the Decimal and the Thousand Seperator for the DataGrid. It seems that the Thousand Seperator is always &quot;,&quot; regardless of the Locale installed on the computer.\r<br />\n<br />\nThanks for the help<br />\n",
+    "PostedDate": "2013-10-29T08:20:24.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1113827",
+    "ThreadId": "464076",
+    "Html": "Try changing the Thread.CurrentCulture and/or CurrentUICulture<br />\n",
+    "PostedDate": "2013-10-29T13:55:41.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

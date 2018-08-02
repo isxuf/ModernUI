@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1070864",
+    "ThreadId": "450699",
+    "Html": "I am trying to create a new project on Windows 8 with Visual Studio 2012. I selected to create a new &quot;Modern UI WPF Application&quot; from the template menu and I get an error that says - &quot;Unable to locate the solution directory. Please ensure that the solution has been saved&quot; prior to even showing the MainWindow.\r<br />\n<br />\nTrying to run I get \r<br />\n<br />\nError\t1\tThe tag 'ModernWindow' does not exist in XML namespace '<a href=\"http://firstfloorsoftware.com/ModernUI\" rel=\"nofollow\">http://firstfloorsoftware.com/ModernUI</a>'. Line 1 Position 19.\tC:\\Users\\David\\AppData\\Local\\Temporary Projects\\ModernUIApp1\\MainWindow.xaml\t1\t19\tModernUIApp1\r<br />\n<br />\nError\t2\tThe tag 'ModernTab' does not exist in XML namespace '<a href=\"http://firstfloorsoftware.com/ModernUI\" rel=\"nofollow\">http://firstfloorsoftware.com/ModernUI</a>'. Line 10 Position 10.\tC:\\Users\\David\\AppData\\Local\\Temporary Projects\\ModernUIApp1\\Pages\\Settings.xaml\t10\t10\tModernUIApp1<br />\n",
+    "PostedDate": "2013-07-20T14:50:51.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073187",
+    "ThreadId": "450699",
+    "Html": "Odd. Are you using the express edition of VS or the full version.\r<br />\n<br />\nAnyone else experienced this?<br />\n",
+    "PostedDate": "2013-07-25T14:23:09.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073246",
+    "ThreadId": "450699",
+    "Html": "\r\n<p dir=\"ltr\">VS 2012 Ultimate on Windows 8</p>\r\n<div></div>\r\n",
+    "PostedDate": "2013-07-25T16:47:55.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088008",
+    "ThreadId": "450699",
+    "Html": "add reference firtfloor.modernui.dll <br />\n",
+    "PostedDate": "2013-09-03T19:39:44.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1238274",
+    "ThreadId": "450699",
+    "Html": "For anyone who is looking for the answer to this. The problem is the VS IDE is not saving the project when creating it, and  generating the &quot;unable to locate the solution directory warning&quot; This error also prevents the correct references being loaded and files being copied.\r<br />\n<br />\nTo fix this error, before creating the ModernUI WPF project, select TOOLS-&gt;OPTIONS-&gt;Projects and Solutions from the VS2012 menu and ensure &quot;Save new projects when createted is checked.<br />\n",
+    "PostedDate": "2014-04-26T02:04:44.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

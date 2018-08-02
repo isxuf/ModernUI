@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm using my own BindablePasswordBox control, and attempting to duplicate the MUI TextBox error template style:\r\n\r\n```\r\n<Style TargetType=\"{x:Type controls:BindablePasswordBox}\" BasedOn=\"{StaticResource {x:Type controls:BindablePasswordBox}}\">  \r\n        <Style.Triggers>\r\n            <Trigger Property=\"Validation.HasError\" Value=\"true\">\r\n                <Setter Property=\"ToolTip\"\r\n                            Value=\"{Binding RelativeSource={RelativeSource Self},\r\n                                    Path=(Validation.Errors)[0].ErrorContent}\"/>\r\n                <Setter Property=\"BorderBrush\" Value=\"Red\" />\r\n                <Setter Property=\"Validation.ErrorTemplate\">\r\n                    <Setter.Value>\r\n                        <ControlTemplate>\r\n                            <StackPanel Orientation=\"Horizontal\">\r\n                                <Border BorderThickness=\"1\" BorderBrush=\"#FFdc000c\" VerticalAlignment=\"Top\">\r\n                                    <Grid>\r\n                                        <AdornedElementPlaceholder x:Name=\"adorner\" Margin=\"-1\"/>\r\n                                    </Grid>\r\n                                </Border>\r\n                                <Border x:Name=\"errorBorder\" Background=\"#FFdc000c\" Margin=\"8,0,0,0\"\r\n                                Opacity=\"0\" CornerRadius=\"0\"\r\n                                IsHitTestVisible=\"False\"\r\n                                MinHeight=\"24\" >\r\n                                    <TextBlock Text=\"{Binding ElementName=adorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}\"\r\n                                       Foreground=\"White\" Margin=\"8,2,8,3\" TextWrapping=\"Wrap\" VerticalAlignment=\"Center\"/>\r\n                                </Border>\r\n                            </StackPanel>\r\n                            <ControlTemplate.Triggers>\r\n                                <DataTrigger Value=\"True\">\r\n                                    <DataTrigger.Binding>\r\n                                        <Binding ElementName=\"adorner\" Path=\"AdornedElement.IsKeyboardFocused\" />\r\n                                    </DataTrigger.Binding>\r\n                                    <DataTrigger.EnterActions>\r\n                                        <BeginStoryboard x:Name=\"fadeInStoryboard\">\r\n                                            <Storyboard>\r\n                                                <DoubleAnimation Duration=\"00:00:00.15\"\r\n                                                         Storyboard.TargetName=\"errorBorder\"\r\n                                                         Storyboard.TargetProperty=\"Opacity\"\r\n                                                         To=\"1\"/>\r\n                                            </Storyboard>\r\n                                        </BeginStoryboard>\r\n                                    </DataTrigger.EnterActions>\r\n                                    <DataTrigger.ExitActions>\r\n                                        <StopStoryboard BeginStoryboardName=\"fadeInStoryboard\"/>\r\n                                        <BeginStoryboard x:Name=\"fadeOutStoryBoard\">\r\n                                            <Storyboard>\r\n                                                <DoubleAnimation Duration=\"00:00:00\"\r\n                                                         Storyboard.TargetName=\"errorBorder\"\r\n                                                         Storyboard.TargetProperty=\"Opacity\"\r\n                                                         To=\"0\"/>\r\n                                            </Storyboard>\r\n                                        </BeginStoryboard>\r\n                                    </DataTrigger.ExitActions>\r\n                                </DataTrigger>\r\n                            </ControlTemplate.Triggers>\r\n                        </ControlTemplate>\r\n                    </Setter.Value>\r\n                </Setter>  \r\n            </Trigger>\r\n        </Style.Triggers>\r\n    </Style>    \r\n```\r\n\r\n![Image](http://s7.postimg.org/fbfxsword/2014_12_18_11_09_46_Campus_Nexus_Installation_Man.png)\r\n\r\nNotice in the screenshot, it displays the error border around the password controls, but not the error template control.",
+    "LastUpdatedDate": "2014-12-18T08:15:06.937-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-12-18T08:15:06.673-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Can't Apply ErrorTemplate to Custom BindablePasswordBox",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21261
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1011732,
+      "FileName": "2014-12-18 11_09_46-CampusNexus Installation Manager.png",
+      "DownloadUrl": ".\\1011732"
+    }
+  ],
+  "Comments": []
+}

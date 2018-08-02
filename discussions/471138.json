@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1128983",
+    "ThreadId": "471138",
+    "Html": "Hello,\r<br />\n<br />\nI was wondering what the easiest way to theme a normal Menu control to fit in with the current Modern UI theme is? Should I create my own style? Or is there a way to reuse some styles that have already been provided?\r<br />\n<br />\nAlso, I was wondering if there was a simple way to reclaim some of the header space on a modern window? I am talking about the rather large gap between the top of the content and the top of the window.\r<br />\n<br />\nLastly, I believe this might relate to modifying the header space as well, can the position of the title links be altered?\r<br />\n<br />\nThanks,\r<br />\nAlex.<br />\n",
+    "PostedDate": "2013-11-25T17:20:04.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

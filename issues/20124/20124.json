@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "First of all thank you for creating Modern UI, we're going to release our software using it and looks great.\n\nI have a tiny suggestion regarding the border of the standard buttons that I consider would make a difference. Right now a standard button has the same border color as a disabled button. When you have 2 or more such buttons next to each other is a bit difficult to distinguish which one is disabled and which isn't, thus my suggestion is to darken the border of the standard button a bit so that it differentiates from the disabled one - just like I did in the image below:\n\n![Image](http://i.imgur.com/9iXv49q.png)",
+    "LastUpdatedDate": "2013-08-22T06:13:40.29-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-08-22T06:13:40.29-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Suggestion: Darker border for standard buttons",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20124
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

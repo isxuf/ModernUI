@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1319021",
+    "ThreadId": "571273",
+    "Html": "hello.\r<br />\nI wonder why a usercontrol page, which contains large datas such as TreeView having 500 TreeViewItems, takes too much time when switching between mui:Links.\r<br />\n<br />\nIt takes time bout 5 seconds. It's a little boring. \r<br />\nAlso, it takes same time whether swiching large datas page to other page or inversely.\r<br />\n<br />\nThanks for your help.<br />\n",
+    "PostedDate": "2014-11-04T07:30:12.05-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

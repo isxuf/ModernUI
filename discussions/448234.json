@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1061226",
+    "ThreadId": "448234",
+    "Html": "Sorry if this is a terrible question, but how do I re-size the main window after start-up?<br />\n",
+    "PostedDate": "2013-06-25T23:11:14.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1061302",
+    "ThreadId": "448234",
+    "Html": "Use the grip in the lower right corner, because <code>ResizeMode=&quot;CanResizeWithGrip&quot;</code> is the default. To resize programmatically just set Width and Height of the MainWindow.<br />\n",
+    "PostedDate": "2013-06-26T02:07:46.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1061572",
+    "ThreadId": "448234",
+    "Html": "What is the default name of MainWindow?<br />\n",
+    "PostedDate": "2013-06-26T10:32:53.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1061819",
+    "ThreadId": "448234",
+    "Html": "Look at your code, <code>x:Name=&quot;...&quot;</code> But you don't need a name, there is a reference in <code>App.Current.MainWindow</code> or in thecode behind just <code>this</code>.<br />\n",
+    "PostedDate": "2013-06-27T00:39:58.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

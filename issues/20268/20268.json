@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "When navigating to a new page with code behind, e.cancel is not working properly anymore on that new page. The frame content is cancelled correctly but the LinkGroups and Links are refreshed when you click on one of the LinkGroups.\n\nIs this a bug or what is the correct way to navigate in code behind? I tried every code behind navagation solution on this website but nothing is working.",
+    "LastUpdatedDate": "2013-10-04T00:17:46.827-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-10-04T00:17:46.827-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "e.cancel not working properly",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20268
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "not a bug",
+    "ClosedDate": "2013-07-05T14:21:17.99-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Despite of setting ResizeMode=\"NoResize\" and WindowStyle=\"None\", I am not able to prevent window resize for the MainWindow",
+    "LastUpdatedDate": "2013-07-05T14:21:17.99-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-07-03T22:43:02.837-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "MainWindow Resize Issue",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19928
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "For me it seems like this is no issue of m:ui. Just setting ```ResizeMode=\"NoResize\"``` in the demo app works as intended. I can only say: you are doing something wrong. You could zip and attach a small project here in which your problem can be seen.",
+      "PostedDate": "2013-07-03T23:27:44.707-07:00",
+      "Id": 158533
+    }
+  ]
+}

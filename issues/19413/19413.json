@@ -1,0 +1,101 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:16:34.397-07:00",
+    "CommentCount": 11,
+    "Custom": "",
+    "Description": "This library + src does not work in environment where .net v4.5 can not be installed, i.e. Windows XP.\n\nIs it possible to have a version compatible with Windows XP/.NET v4.0 and Visual Studio 2010?",
+    "LastUpdatedDate": "2013-07-05T13:16:34.397-07:00",
+    "PlannedForRelease": "Modern UI 1.0.2",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-03-01T07:55:56.107-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Target .NET 4",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 4,
+    "Id": 19413
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903287,
+      "FileName": "FirstFloor.ModernUI.zip",
+      "DownloadUrl": ".\\903287"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Not impossible. Current ModernUI version relies on 4.5 specific features such as async/await, which need to be rewritten for 4.0.",
+      "PostedDate": "2013-03-02T09:33:54.527-08:00",
+      "Id": 158436
+    },
+    {
+      "Message": "Thanks for your comment. Unfortunately for may corporate environments XP is still live platform which means no shortcut to 4.5 yet. Do you see this project being ported to target for 4.0?  ",
+      "PostedDate": "2013-03-02T16:33:44.61-08:00",
+      "Id": 158437
+    },
+    {
+      "Message": "I would love to forget anything pre 4.5, but at the same time I can't deny you have a valid argument. Will look into the ramifications.",
+      "PostedDate": "2013-03-02T17:05:59.46-08:00",
+      "Id": 158438
+    },
+    {
+      "Message": "I too require to be able to target XP machines..there are loads of corporations that still use XP as their main platform. I think it would be very limiting to this project to ignore those potential users.\r\n\r\nI think for now our only good choice for getting Metro style UIs for .NET 4.0 users would be using the mahapps.Metro library for now..\r\n\r\nStrongly voting for this.",
+      "PostedDate": "2013-03-11T08:02:36.667-07:00",
+      "Id": 158439
+    },
+    {
+      "Message": "As I had some spare time and thought this would be useful for a .NET 4 app I'm working on I've made an attempt to get this running on .NET 4.\r\n\r\nI'll run through the steps I've taken, working from snapshot [99102](http://mui.codeplex.com/SourceControl/changeset/99102).* Added an additional class library project called First.Floor.ModernUI.WP4 which targets .NET 4 and has a compilation symbol of NET4, other than this the project has the same Assembly info and project settings as the .NET 4.5 version.* Added __links__ to all the project files of the FirstFloor.ModernUI project.* Installed nugget package for [async targeting](http://nuget.org/packages/Microsoft.CompilerServices.AsyncTargetingPack/) to the WP4 project.* Edited FirstFloor.ModernUI\\Windows\\Controls\\ModernWindow.cs as Maximize, Minimize, Close and Restore command handlers use .NET 4.5 bits.  The edits are within a #if compiler command block for the NET4 symbol.\r\n\r\nI've made the WP4 project output to a shared Output folder but haven't configured the .NET 4.5 to do the same.\r\n\r\nI haven't given this a great deal of testing and can't yet confirm that the chrome stuff actually works on XP, will report back here if I find any issues.@kozw: feel free to use this as you wish.\r\n\r\nMany Thanks\r\n\r\nBen",
+      "PostedDate": "2013-03-14T04:23:35.307-07:00",
+      "Id": 158440
+    },
+    {
+      "Message": "No edit for comments :(The attached file FirstFloor.ModernUI.zip is a full snapshot of my changes.",
+      "PostedDate": "2013-03-14T04:26:25.353-07:00",
+      "Id": 158441
+    },
+    {
+      "Message": "Great work! Looks a lot like what I have in mind. The only thing is that I'm not sure whether I want to add a dependency on this AsynTargetting NuGet package. The await/async constructs can be rewritten with plain Tasks.",
+      "PostedDate": "2013-03-14T07:00:14.77-07:00",
+      "Id": 158442
+    },
+    {
+      "Message": "> The only thing is that I'm not sure whether I want to add a dependency on this AsynTargetting NuGet package. \r\n\r\nYeah understandable, it does the trick for me but does limit it to VS11.",
+      "PostedDate": "2013-03-14T07:32:53-07:00",
+      "Id": 158443
+    },
+    {
+      "Message": "Given the VS11 restriction, I'll create a .NET4 version without dependencies",
+      "PostedDate": "2013-03-14T08:13:41.473-07:00",
+      "Id": 158444
+    },
+    {
+      "Message": "This is simply amazing.  Thanks so much!  I'm just wondering about the 4.0 support.  I created an app using the Visual Studio 2012 template (as is) targeting .NET 4.0.  Then, I ran the compiled app on a machine that has 4.0 but not 4.5.  It runs fine, but the style is not consistent (i.e. text box, combo box, etc).  The same app is rendered perfectly if I install .NET 4.5.  Is there a workaround for this?",
+      "PostedDate": "2013-04-08T18:35:45.293-07:00",
+      "Id": 158445
+    },
+    {
+      "Message": "Oh... the ****in awesome... thanks so much for the WPF4 version!",
+      "PostedDate": "2013-05-15T22:11:47.653-07:00",
+      "Id": 158446
+    }
+  ]
+}

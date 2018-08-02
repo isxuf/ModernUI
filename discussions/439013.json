@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1025090",
+    "ThreadId": "439013",
+    "Html": "I would like to set a property on a Content object for the ModernFrame that would allow me to specify that I want the content to KeepAlive, but only use the Content in the contentCache when the user is navigating history. Otherwise force the ContentLoader to LoadContent again replacing what is currently in the contentCache.\r<br />\n<br />\nAlso, I want to mention that this is an excellent project and you support it very well. Thank you very much.<br />\n",
+    "PostedDate": "2013-04-03T14:05:26.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025100",
+    "ThreadId": "439013",
+    "Html": "Interesting proposal. I'm thinking of completely abstracting the navigation history and keeping content alive away from ModernFrame and provide interfaces so you are free in choosing your own strategy. Stay tuned.<br />\n<br />\nSee also <a href=\"http://mui.codeplex.com/discussions/438029\" rel=\"nofollow\">this post</a> for a slightly related discussion.<br />\n",
+    "PostedDate": "2013-04-03T14:23:25.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

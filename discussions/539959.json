@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1225979",
+    "ThreadId": "539959",
+    "Html": "My requirement is to generate tabs dynamically but in each tab I have to display same content (same user control).\r<br />\n<br />\nThe only way to set the Link content is through Source property which accepts an object of Type URI.\r<br />\n<br />\nSuppose if I create 5 tabs (5 links) and set the same URI for each tab then the <strong>UserControl</strong> object is shared among tabs.(If I make change on 1 tab it reflects on all the other tabs).\r<br />\n<br />\nHow should I prevent this? Is there a way I can use a Runtime object as an URI?\r<br />\n<br />\nAny suggestions are welcome if it can be done using some alternate approach?<br />\n",
+    "PostedDate": "2014-03-24T06:04:44.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

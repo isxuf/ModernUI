@@ -1,0 +1,95 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:15:59.3-07:00",
+    "CommentCount": 11,
+    "Custom": "",
+    "Description": "The user should be able to __simply__ set a window title by specificing an attribute against the ModernWindow.",
+    "LastUpdatedDate": "2014-05-05T01:30:05.997-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-04-01T08:05:18.77-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add ability to set a window title without having to modify the ModernWindow template",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 9,
+    "Id": 19548
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I am sorry if I am not getting it. But I think the title of the window can be still set using a simple attribute:\r\n\r\n```        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"        xmlns:mui=\"http://firstfloorsoftware.com/ModernUI\"        Title=\"MainWindow\"        ContentSource=\"/Pages/Introduction.xaml\">.........................................```The above code is from the sample application.regards,Sid",
+      "PostedDate": "2013-04-01T08:34:47.01-07:00",
+      "Id": 158469
+    },
+    {
+      "Message": "Ahha...do you mean a __title bar__ sort of thing? I am sorry I took it for title text! :)",
+      "PostedDate": "2013-04-01T08:41:34.203-07:00",
+      "Id": 158470
+    },
+    {
+      "Message": "Agree that it should be that simple. However, I do not know where the title should appear in a modern window. Do you have a suggestion?",
+      "PostedDate": "2013-04-01T09:21:45.777-07:00",
+      "Id": 158471
+    },
+    {
+      "Message": "My first reaction is to suggest that the window title would be placed in the traditional location (that is, the left most area on the title bar)\r\n\r\nI think it would fit there nicely and still preserve the style of the ModenWindow.",
+      "PostedDate": "2013-04-01T09:30:14.247-07:00",
+      "Id": 158472
+    },
+    {
+      "Message": "There isn't much room, the back button takes most space.\r\n\r\n![Image](http://xamlspy.com/Media/Default/Page/modernwindow.png)",
+      "PostedDate": "2013-04-01T09:52:20.363-07:00",
+      "Id": 158473
+    },
+    {
+      "Message": "Why wouldn't it be at the same plane as the \"settings\" link? \r\n\r\n",
+      "PostedDate": "2013-04-01T13:46:56.07-07:00",
+      "Id": 158474
+    },
+    {
+      "Message": "in other words, above and to the left of the back button.",
+      "PostedDate": "2013-04-01T20:05:35.827-07:00",
+      "Id": 158475
+    },
+    {
+      "Message": "Please, add title!Why is it absent?",
+      "PostedDate": "2013-05-17T00:27:07.797-07:00",
+      "Id": 158476
+    },
+    {
+      "Message": "Not really sure about this issue's lack of votes. This requirement is key when you have a number of apps constructed based on this framework, and that are used regularily. \r\n\r\nMy users can't readily distinguish between the various (LOB) applications that I have constructed on this framework. Of course they can goto the \"Welcome\" page of each app and see the application's title there, but a quick identifier (i.e: application's title) needs to be part of the user interface ASAP.\r\n\r\nTo make it simple, the title can simply a disabled title link docked to the left of the main window which would make it be at the same height as the other title links, but have some visual distintion between them.\r\n\r\n__Awesome__ framework and my users are super satisified, but they __need__ to be able to __quickly identify__ what application they are in.\r\n\r\n",
+      "PostedDate": "2013-06-03T07:42:36.65-07:00",
+      "Id": 158477
+    },
+    {
+      "Message": "Resolved in changeset 101031",
+      "PostedDate": "2013-06-11T13:02:30.017-07:00",
+      "Id": 158478
+    },
+    {
+      "Message": "@Arteny\r\n\r\nadd this line in your MainWindow.xaml --> LogoData=\"\"```  xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"  xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"  xmlns:mui=\"http://firstfloorsoftware.com/ModernUI\"  LogoData=\"\"  Title=\"MainWindow\"   Height=\"350\" Width=\"525\">                                                                                                \r\n\r\n```",
+      "PostedDate": "2014-05-05T01:30:05.997-07:00",
+      "Id": 158479
+    }
+  ]
+}

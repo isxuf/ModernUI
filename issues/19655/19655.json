@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "ShowMessage now return MessageBoxResult (addressed in changeset 101528)",
+    "ClosedDate": "2013-07-06T06:29:35.463-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "It seems to be impossible to know whether user pressed \"cancel\" or \"no\" button. Both buttons return the same result \"false\", but I need to differ my logic depending on the pressed button.",
+    "LastUpdatedDate": "2013-07-06T06:29:35.463-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-01T04:07:20.69-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problem with ModernDialog.ShowMessage",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 19655
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "You sir, raise a valid point. I'm thinking about changing the return type to [MessageBoxResult](http://msdn.microsoft.com/en-us/library/system.windows.messageboxresult.aspx). This does break the API.\r\n\r\nThoughts?",
+      "PostedDate": "2013-05-06T08:28:28.487-07:00",
+      "Id": 158494
+    }
+  ]
+}

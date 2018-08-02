@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1137375",
+    "ThreadId": "474452",
+    "Html": "Hi. Thanks for the awesome library.<br />\nI have a problem with the ModernTab control. Basically I have a dialog (ModernWindow) with 2 tabs. When clicking &quot;OK&quot; I need to collect some data from the tabs. In the demo app, there was just displaying &quot;lorem ipsum&quot;. How can I get values from the controls placed on the tabs? Any ideas would be greatly appreciated.<br />\nThanks,<br />\nValeriy Streltsov<br />\n",
+    "PostedDate": "2013-12-17T23:38:28.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1078125",
+    "ThreadId": "452782",
+    "Html": "I think this is the best WPF UI solution I've come across. however, when i try to compile the source code, i get errors like these:<br />\n<br />\n&quot;A project with an output type of class library cannot be started directly. In order to debug this project, add an executable project to this solution which references the library project. Set the executable project as the start-up project&quot;<br />\n<br />\nI'm just a beginner-level developer and have no idea what this means.<br />\n<br />\nPlease how do i resolve this?<br />\n",
+    "PostedDate": "2013-08-08T02:05:24.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1078161",
+    "ThreadId": "452782",
+    "Html": "I resolved it already. Thanks for such a great job, Ready to contribute in any way i can<br />\n",
+    "PostedDate": "2013-08-08T03:12:10.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

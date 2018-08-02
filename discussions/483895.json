@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1150242",
+    "ThreadId": "483895",
+    "Html": "I have a datagrid in my HomePage.\r<br />\nWhen user clicks on an item in the datagrid, another UserControl with details on the clicked item should display.\r<br />\nNote: data is retrieved from database.\r<br />\n<br />\nHow do I achieve this? \r<br />\nAny suggestion will be of great help.\r<br />\nThanks.<br />\n",
+    "PostedDate": "2014-01-06T22:08:40.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151737",
+    "ThreadId": "483895",
+    "Html": "Thats not a special question to the mui-project.\r<br />\n<br />\nIf you use CodeBehind, you can take for Example a Doubleclickevent to fill the fields.\r<br />\n<br />\nIf you use the MVVM Pattern you can fire a Command (for Example a Doubleclick) which is bound in the Viewmodel.\r<br />\nThe &quot;HomePage&quot; should have set the ViewModel as DataContext. The UserControl gets its Viewmodel Instance from the Parentcontrol.<br />\n",
+    "PostedDate": "2014-01-10T04:43:39.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

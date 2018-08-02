@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1322393",
+    "ThreadId": "572137",
+    "Html": "it seems it is not possible to bind a command on a modernbutton, because nothing happend.\r<br />\nif possible - what do i wrong? \r<br />\nif not possible - why not? :/<br />\n<pre><code>            &lt;mui:ModernButton EllipseDiameter=&quot;32&quot; IconWidth=&quot;20&quot; IconHeight=&quot;20&quot; IconData=&quot;{StaticResource IconAdd}&quot;&gt;\n                &lt;mui:ModernButton.CommandBindings&gt;\n                    &lt;CommandBinding Command=&quot;ApplicationCommands.New&quot; CanExecute=&quot;New_CanExecute&quot; Executed=&quot;New_Executed&quot; /&gt;\n                &lt;/mui:ModernButton.CommandBindings&gt;\n            &lt;/mui:ModernButton&gt;</code></pre>\n\n",
+    "PostedDate": "2014-11-14T15:39:12.02-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1322427",
+    "ThreadId": "572137",
+    "Html": "this works just fine for me:<br />\n<pre><code>&lt;mui:ModernButton Command=&quot;{Binding SearchCommand}&quot;\n                               Margin=&quot;0,0,0,0&quot;\n                               Content=&quot;search&quot;\n                               ToolTip=&quot;search projects&quot; /&gt;</code></pre>\n\n",
+    "PostedDate": "2014-11-14T18:34:12.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-12-01T14:13:23.39-08:00"
+  },
+  {
+    "Id": "1323890",
+    "ThreadId": "572137",
+    "Html": "thx for your answer, but of course it this not the same like that what i want. :/<br />\n",
+    "PostedDate": "2014-11-19T10:26:15.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327009",
+    "ThreadId": "572137",
+    "Html": "i changed the source to solve that :/<br />\n",
+    "PostedDate": "2014-11-28T05:28:56.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1328818",
+    "ThreadId": "572137",
+    "Html": "Works fine for me... just didn't use the same specific command nowhere, but I use a lot &quot;NavigationCommands.GoToPage&quot; and some others<br />\n",
+    "PostedDate": "2014-12-04T09:28:14.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1341538",
+    "ThreadId": "572137",
+    "Html": "I experienced something similar: a MVVM Light RelayCommand with this body works fine:<br />\n<pre><code>toggleIsEditingNumberCommand = new RelayCommand(() =&gt; { IsEditingNumber = !IsEditingNumber; });</code></pre>\n\nbut when adding some more lines to the lambda body it just stops to work. Don't know if this is somehow related to MVVM Light or something non-async in the lambda body (like it is in Silverlight, whichs won't even compile AFAIR when e.g. calling a service synchronuously). Could you please specify your MVVM-framework?<br />\n",
+    "PostedDate": "2015-01-13T10:23:10.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1347363",
+    "ThreadId": "572137",
+    "Html": "I remember dealing with this in mvvmlight. I just <em>stopped using lambdas</em> as my command method, and instead just always had my command call a method.<br />\n<br />\nfor example:<br />\n<pre><code>public RelayCommand MyCommand { get; private set;}\nprivate void ExecuteMyCommand()\n{\n    // do stuff. \n}\n\nMyCommand = new RelayCommand(() =&gt; ExecuteMyCommand());\n</code></pre>\n\nTo, this is more readable anyhow.<br />\n",
+    "PostedDate": "2015-01-29T19:14:21.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

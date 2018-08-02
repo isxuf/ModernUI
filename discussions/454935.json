@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1086425",
+    "ThreadId": "454935",
+    "Html": "Can the modern button content be under the button? In according to the following image <img src=\"http://screenshots.en.sftcdn.net/en/scrn/6654000/6654791/image-05-700x393.jpg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-08-29T17:56:52.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086662",
+    "ThreadId": "454935",
+    "Html": "Yes, that requires you to create a custom style with a template for ModernButton. The default ModernButton style is available in the Themes\\ModernButton.xaml resource in the source.<br />\n",
+    "PostedDate": "2013-08-30T07:34:21.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1260847",
+    "ThreadId": "549987",
+    "Html": "I have a ModernTab with 2 Links (Product Info and Extra Info). I want to set Product Info as default link, which means when the form run, the content in Product Info will be automatically loaded.<br />\n<pre><code>&lt;mui:ModernTab Layout=&quot;Tab&quot;&gt;\n            &lt;mui:ModernTab.Links&gt;\n                &lt;!-- TODO: set @Source --&gt;\n                &lt;mui:Link DisplayName=&quot;Product Info&quot; Source=&quot;/Content/CreateProductBasic.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Extra Info&quot; Source=&quot;/Content/CreateProductExtraInfo.xaml&quot; /&gt;\n            &lt;/mui:ModernTab.Links&gt;\n        &lt;/mui:ModernTab&gt;</code></pre>\n\n",
+    "PostedDate": "2014-06-29T01:52:15.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1260851",
+    "ThreadId": "549987",
+    "Html": "See LayoutTab.xaml in Demo application for complete example<br />\n<pre><code>&lt;mui:ModernTab SelectedSource=&quot;/Content/CreateProductExtraInfo.xaml&quot; Layout=&quot;Tab&quot;&gt;</code></pre>\n\n",
+    "PostedDate": "2014-06-29T02:45:12.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-06-29T02:51:46.903-07:00"
+  },
+  {
+    "Id": "1260852",
+    "ThreadId": "549987",
+    "Html": "<strong>macgile wrote:</strong><br />\n<blockquote>\nSee LayoutTab.xaml in Demo application for complete example<br />\n<pre><code>&lt;mui:ModernTab SelectedSource=&quot;/Content/CreateProductExtraInfo.xaml&quot; Layout=&quot;Tab&quot;&gt;\n</code></pre>\n\n</blockquote>\nIt works perfectly. Thanks!<br />\n",
+    "PostedDate": "2014-06-29T02:52:12.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

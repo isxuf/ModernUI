@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1127035",
+    "ThreadId": "470576",
+    "Html": "I needed to display a small modal dialog to ask a few data fields. I implemented it by creating a XAML (NewPersonView) class inheriting from ModernDialog.\r<br />\n<br />\nI'm using Caliburn Micro for MVVM and so I have the NewPersonViewModel where I have properties corresponding to the Textboxes in my view as well as DataAnnotation attributes for the properties validation.\r<br />\n<br />\nEverything is working fine except for 2 things:<br />\n<ul>\n<li>The width of the dialog is too small and I can't see the validation text correctly. Is there a way to know the size of those validation, or resize the dialog when they're displayed?</li>\n<li>\nIf I try to use the &quot;standard&quot; OKButton and CancelButton that are defined in ModernDialog, how can I tell them to trigger the validation? And how can I disable the OKButton until all the validation has been fixed?<br />\n</li>\n</ul>\nFinally, I'm displaying my modal dialog like this:<br />\n<div style=\"color:Black;background-color:White;\"><pre>\r\nNewPersonViewModel np = <span style=\"color:Blue;\">new</span> NewPersonViewModel();\n<span style=\"color:Blue;\">var</span> result = windowManager.ShowDialog(np);\n<span style=\"color:Blue;\">if</span> (result.HasValue &amp;&amp; result.Value == <span style=\"color:Blue;\">true</span>)\n{\n   <span style=\"color:Blue;\">this</span>.people.Add(<span style=\"color:Blue;\">new</span> Person(np.Age)\n   {\n      Name = np.Name\n   });\n}\r\n</pre></div>But for some reason, result.Value is always false, even if I click &quot;OK&quot; and not &quot;Cancel&quot;.<br />\n",
+    "PostedDate": "2013-11-20T05:19:28.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150494",
+    "ThreadId": "470576",
+    "Html": "1: you have to re-build a custom version of your modernUI library to remove the MaxWidth, MaxHeight, and SizeToContent attributes in ModernDialog.xaml. Not really sure why there were size restrictions enforced.<br />\n<br />\n2: in your subclass of ModernDialog, override the OkButton's command with one of your own. (I'm using a different RelayCommand, but you should get the idea) For example:<br />\n<pre><code>    private void OnLoaded(object sender, RoutedEventArgs e)\n    {\n        this.OkButton.Command = new RelayCommand&lt;object&gt;(o =&gt; ExecuteOkBtnClick(o), IsOkEnabled); \n    }</code></pre>\n\n<pre><code>private void ExecuteOkBtnClick(object o)\n{\n    if (Validate())\n    {\n        var result = o as MessageBoxResult?;\n        if (result.HasValue)\n        {\n            Result = result.Value;\n        }\n        Close();\n    }            \n}</code></pre>\n\n<pre><code>private bool IsOkEnabled(object arg)\n{\n        return !cFileTxt.GetBindingExpression(TextBox.TextProperty).HasError &amp;&amp;\n               !xTxt.GetBindingExpression(TextBox.TextProperty).HasError &amp;&amp;\n               !yTxt.GetBindingExpression(TextBox.TextProperty).HasError &amp;&amp;\n               !zTxt.GetBindingExpression(TextBox.TextProperty).HasError &amp;&amp;\n               !pdsReportTxt.GetBindingExpression(TextBox.TextProperty).HasError;\n}</code></pre>\n\n3: while you're adjusting the ModernDialog's code for item 1, do the change outlined <a href=\"https://mui.codeplex.com/discussions/449700\" rel=\"nofollow\">here</a> and then you will get a proper return value for DialogResult. (in fact, you will have to do the change to get the code for item 2 to work)<br />\n",
+    "PostedDate": "2014-01-07T08:40:44.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

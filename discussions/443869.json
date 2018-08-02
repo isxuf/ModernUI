@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1044340",
+    "ThreadId": "443869",
+    "Html": "HI!\r<br />\n<br />\nI want to use Images, but the images are not displayd:<br />\n<pre><code>&lt;UserControl x:Class=&quot;VisualTestHelper.UserManagement.Views.UserManagementMainView&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;\n    &lt;Grid&gt;\n            &lt;TextBlock Text=&quot;Hallo World!!&quot;/&gt;\n        &lt;Image Source=&quot;/Images/untitled.bmp&quot;/&gt;\n    &lt;/Grid&gt;\n&lt;/UserControl&gt;</code></pre>\n\nHow can I solve this problem? Thank you very much!<br />\n",
+    "PostedDate": "2013-05-16T01:49:21.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1045006",
+    "ThreadId": "443869",
+    "Html": "Try to use &quot;pack:&quot;-URI scheme:<br />\n<pre><code>&lt;Image Source=&quot;pack://siteoforigin:,,,/Images/untitled.bmp&quot;/&gt;</code></pre>\n\n<a href=\"http://msdn.microsoft.com/en-us/library/aa970069.aspx\" rel=\"nofollow\">http://msdn.microsoft.com/en-us/library/aa970069.aspx</a><br />\n",
+    "PostedDate": "2013-05-17T03:42:34.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1045046",
+    "ThreadId": "443869",
+    "Html": "Hi Giovanissimo!\r<br />\n<br />\nI tryed with:\r<br />\npack://application:,,,/Images/untitled.bmp\r<br />\nand\r<br />\npack://siteoforgin:,,,/Images/untitled.bmp\r<br />\n<br />\nI can see the image at design time in the designer, but at runtime it is not displayed.\r<br />\n<br />\nI found one way to bring this image to work. I used and referenced a library and stored the image in the library and\r<br />\nused the following code:<br />\n<pre><code>&lt;Image Source=&quot;/VisualTestHelper.UserManagement;component/Images/untitled.bmp&quot;/&gt;</code></pre>\n\n",
+    "PostedDate": "2013-05-17T05:34:48.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1045185",
+    "ThreadId": "443869",
+    "Html": "Hi RiskyFox,\r<br />\n<br />\nDo you have the image file set as Resource?\r<br />\n<br />\nI had an issue where I was trying to use an image on a button.  The image would show fine in the designer, but when I ran the code the image did not show up on the button.  After changing the image to a Resource, the image showed up fine when I ran the code.\r<br />\n<br />\nI hope that helps.<br />\n",
+    "PostedDate": "2013-05-17T09:29:33.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253099",
+    "ThreadId": "443869",
+    "Html": "So what is finally  the solution of setting source image?? \r<br />\n<br />\npack://application:,,, and pack://siteoforgin:,,, don't work .\r<br />\n<br />\nYou gave us everything except this? plz I want a clear solution , it is really a BIG problem!!<br />\n",
+    "PostedDate": "2014-06-04T17:44:21.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253413",
+    "ThreadId": "443869",
+    "Html": "Check the Build Action of your image. Is it set to content or resource? Not related to MUI<br />\n",
+    "PostedDate": "2014-06-05T11:39:12.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253549",
+    "ThreadId": "443869",
+    "Html": "The built Action is set  for the whole Page , not for the Image , and it is set by Default &quot;Page&quot;  ,I didn't find Built Action only for Image... , The problem was ,  Image shows only in Design<br />\n",
+    "PostedDate": "2014-06-05T20:00:36.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1261135",
+    "ThreadId": "443869",
+    "Html": "hi,\r<br />\n<br />\nits an old post - but i have the solution on this:\r<br />\npack://application:,,,/MyApplication;component/Images/untitled.bmp \r<br />\n<br />\ni had this problem too and couldnt find any answer.\r<br />\n<br />\nregards\r<br />\nMike<br />\n",
+    "PostedDate": "2014-06-30T05:47:30.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

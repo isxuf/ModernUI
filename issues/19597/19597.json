@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "Add control like textbox or combobox in <mui:LinkGroup>.\n\nHere an exemple of a TextBox\n![Image](http://xamlspy.com/Media/Default/Page/quickstart.apps.png)",
+    "LastUpdatedDate": "2014-12-17T12:54:14.96-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-04-15T01:04:27.287-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add a control in mui:LinkGroup like XAMLSpy",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 8,
+    "Id": 19597
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Is the request about adding a custom control in linkgroup space? if its not, i failed to see how this is related to mui. \r\n\r\nanyway, its always nice to have a decent search control.",
+      "PostedDate": "2013-04-15T04:25:03.223-07:00",
+      "Id": 158485
+    },
+    {
+      "Message": "Yes it is.",
+      "PostedDate": "2013-04-15T06:54:04.993-07:00",
+      "Id": 158486
+    }
+  ]
+}

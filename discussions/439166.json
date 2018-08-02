@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1025748",
+    "ThreadId": "439166",
+    "Html": "Hello. I'm trying to add some content to a Tab Page using this line of code:<br />\n<pre><code>&lt;mui:Link DisplayName=&quot;My Link&quot; Source=&quot;Pages/MyPage.xaml&quot;/&gt;</code></pre>\n\nThis works fine for when I click on the link, but how do I set this as the default tab so when the page loads, it displays this tab first?\r<br />\n<br />\nThanks for any help.<br />\n",
+    "PostedDate": "2013-04-04T16:49:29.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025824",
+    "ThreadId": "439166",
+    "Html": "You can set the selected source for the tab control:<br />\n<pre><code>&lt;mui:ModernTab SelectedSource=&quot;Pages/MyPage.xaml&quot; Layout=&quot;Tab&quot;&gt;\n            &lt;mui:ModernTab.Links&gt;\n                &lt;mui:Link DisplayName=&quot;My Link&quot; Source=&quot;Pages/MyPage.xaml&quot;/&gt;\n            &lt;/mui:ModernTab.Links&gt;\n&lt;/mui:ModernTab&gt;</code></pre>\n\nSee Pages/LayoutTab.xaml in the FirstFloor.ModernUI.App demo project as well.<br />\n",
+    "PostedDate": "2013-04-04T22:52:10.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025960",
+    "ThreadId": "439166",
+    "Html": "This is what I already have, but the source isn't selected when the tab page loads. It's only when I click on the link that the source loads.  I need it to automatically load the source, but it isn't for some reason.<br />\n<br />\nAlso, where's this demo project? I can find the demo.exe, but is there a demo project file as well?<br />\n<br />\nThanks for you input.<br />\n",
+    "PostedDate": "2013-04-05T02:47:34.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025977",
+    "ThreadId": "439166",
+    "Html": "<blockquote>\nThis is what I already have, but the source isn't selected when the tab page loads. It's only when I click on the link that the source loads. I need it to automatically load the source, but it isn't for some reason.<br />\n</blockquote>\nOk, sorry, didn't get that from your question.<br />\n<blockquote>\nAlso, where's this demo project? I can find the demo.exe, but is there a demo project file as well?<br />\n</blockquote>\nJust download the latest sources of the project. <br />\n",
+    "PostedDate": "2013-04-05T03:24:11.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1026382",
+    "ThreadId": "439166",
+    "Html": "Ah, excellent, got it working. Thanks a lot.<br />\n",
+    "PostedDate": "2013-04-05T16:11:58.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

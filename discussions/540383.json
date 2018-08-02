@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1227553",
+    "ThreadId": "540383",
+    "Html": "Hi,\r<br />\n<br />\ni have a mui:ModernTab with binded Links to my LinkCollection in my ViewModel.\r<br />\nWhen i navigate throught LinkGroupCollections and tabs i have many ViewModel (and UserControl) instances that are in the memory and never destroyed...\r<br />\n<br />\nI use this:\r<br />\nModernFrame contentFrame = base.GetTemplateChild(&quot;ContentFrame&quot;) as ModernFrame;\r<br />\ncontentFrame.KeepContentAlive = false;\r<br />\n<br />\nto deactivate the cache but the view modeles are still cached...\r<br />\n<br />\nCan you help me please?\r<br />\n(Sorry for my bad english)<br />\n",
+    "PostedDate": "2014-03-27T13:28:29.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

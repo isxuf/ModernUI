@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1083268",
+    "ThreadId": "454125",
+    "Html": "How to create a dynamic splash screen without minimize, maximize and close button that can perform and display warmup/start up progress, ultimately destroy itself and launch the MainWindow?\r<br />\n<br />\nCan we have a template available in Add new item section?<br />\n",
+    "PostedDate": "2013-08-21T12:50:00.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083584",
+    "ThreadId": "454125",
+    "Html": "This is a more general WPF question; see also <a href=\"http://msdn.microsoft.com/en-us/library/cc656886.aspx\" rel=\"nofollow\">http://msdn.microsoft.com/en-us/library/cc656886.aspx</a>. There are no plans to add a splashscreen template.<br />\n",
+    "PostedDate": "2013-08-22T05:05:31.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083874",
+    "ThreadId": "454125",
+    "Html": "if you happy with the static splash screen you should have a look this answer: <a href=\"https://mui.codeplex.com/discussions/442898\" rel=\"nofollow\">Static splash screen</a>. I'm pretty sure that it's possible to make it dynamic (e.g. progress bar or messaging) by implementing events, but I didn't try it yet. <br />\n",
+    "PostedDate": "2013-08-22T16:36:56.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1092629",
+    "ThreadId": "454125",
+    "Html": "Thanks, poborin. Static splash screens - yes, I am aware of those.<br />\n",
+    "PostedDate": "2013-09-14T00:02:30.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1092631",
+    "ThreadId": "454125",
+    "Html": "Thank you, kozw.<br />\n",
+    "PostedDate": "2013-09-14T00:05:28.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

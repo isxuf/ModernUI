@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1055910",
+    "ThreadId": "446830",
+    "Html": "Thanks so much for adding the window title in v1.0.4\r<br />\n<br />\nAny way to make the title appear horizontal and at the top edge, instead of vertical on the left edge?<br />\n",
+    "PostedDate": "2013-06-12T08:43:53.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1057324",
+    "ThreadId": "446830",
+    "Html": "<strong>flyte wrote:</strong><br />\n<blockquote>\nThanks so much for adding the window title in v1.0.4<br />\n<br />\nAny way to make the title appear horizontal and at the top edge, instead of vertical on the left edge?<br />\n</blockquote>\nModify or custom your ModernWindow's Style, in which it contains a Template for ModernWindow.<br />\n",
+    "PostedDate": "2013-06-15T20:14:34.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

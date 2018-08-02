@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "not an issue",
+    "ClosedDate": "2013-03-22T07:06:00.947-07:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "__The below Solution which i received from Koen Zwikstra below worked fine.. its perfect__\n\n\nIf you need to reset the content in a modern frame, you need to set the ModernFrame.KeepContentAlive property to false. This effectively causes a reload every time content is loaded in a frame.\n\nYou can easily set the KeepContentAlive for all ModernFrames by specifying the following default style in App.xaml;\n\n<Style TargetType=\"mui:ModernFrame\">\n  <Setter Property=\"KeepContentAlive\" Value=\"False\"/>\n</Style>",
+    "LastUpdatedDate": "2013-05-16T05:30:55.037-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-03-22T03:22:58.32-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Resetting All Controls when Re-visited via mui:Link",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19503
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

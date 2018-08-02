@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1098542",
+    "ThreadId": "458920",
+    "Html": "Sorry for really newbie question, how do I use the current AccentColor to set control colours in XAML? Eg\r<br />\n<br />\n&lt;Border CornerRadius=&quot;1&quot; BorderBrush=&quot;<strong>??</strong>&quot; BorderThickness=&quot;2&quot;&gt; &lt;/Border&gt;<br />\n",
+    "PostedDate": "2013-09-24T06:56:21.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1098552",
+    "ThreadId": "458920",
+    "Html": "BorderBrush=&quot;{DynamicResource Accent}&quot;<br />\n",
+    "PostedDate": "2013-09-24T07:41:03.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1098556",
+    "ThreadId": "458920",
+    "Html": "Wonderful, thank you.<br />\n",
+    "PostedDate": "2013-09-24T07:56:12.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

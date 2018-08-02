@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1059119",
+    "ThreadId": "447676",
+    "Html": "Hi!<br />\n<ol>\n<li>\nHow to display an Image (ICO, PNG, BMP) on the form of UserControl? (Content, Pages) I couldn't do it. In the editing program Visual Studio Image (ICO, PNG, BMP) is visually reflected, but when the program is actuated (launched) the Image can not be seen on the form.<br />\n</li>\n<li>\nWhy localization of pop-up tooltip (CultureInfo) on system buttons such as &quot;minimize&quot;, &quot;maximize&quot;, &quot;close&quot; and ModernDialog is not supported? How can it be fixed???<br />\n</li>\n</ol>\n",
+    "PostedDate": "2013-06-20T05:04:13.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059206",
+    "ThreadId": "447676",
+    "Html": "Hello, I try to help you with my bad English.\r<br />\n<br />\n1) I had the same problem and I solved it by setting the Build Action property to Resource.\r<br />\nHowever, after discovering vector images (modern ui icons), I dropped the png file and now I manage everything with StreamGeometry tag.\r<br />\n<br />\n2) I was going to do your own request when I read your post. We hope that our desire is fulfilled, unfortunately, these strings are not handled as resources.<br />\n",
+    "PostedDate": "2013-06-20T07:49:56.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059215",
+    "ThreadId": "447676",
+    "Html": "diam0nds is correct; the most common reason images are not rendered is an invalid Build Action<br />\n<br />\nLocalized tooltip values; that needs to move to resources. Currently hardcoded in the ModernWindow and ModernDialog templates. You could replace the default control styles for now to provide your own tooltips.<br />\n",
+    "PostedDate": "2013-06-20T08:06:06.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059287",
+    "ThreadId": "447676",
+    "Html": "<ol>\n<li>\nThanks for the help. Works. (Спасибо)<br />\n</li>\n<li>\nI'm writing multilingual applications. Use this code.<br />\n</li>\n</ol>\n<pre><code>   // Change culture under which this application runs\n   CultureInfo ci = new CultureInfo(&quot;ru-RU&quot;);    // or  CultureInfo ci = new CultureInfo(&quot;en-US&quot;);\n   Thread.CurrentThread.CurrentCulture = ci;\n   Thread.CurrentThread.CurrentUICulture = ci;</code></pre>\n\nI would like to see in future support in the ModernWindow and ModernDialog templates, so that the application can automatically switch resources.\r<br />\n<br />\nThanks. :)<br />\n",
+    "PostedDate": "2013-06-20T10:02:36.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1112912",
+    "ThreadId": "447676",
+    "Html": "<strong>kozw wrote:</strong><br />\n<blockquote>\ndiam0nds is correct; the most common reason images are not rendered is an invalid Build Action<br />\n</blockquote>\nHi, I'm student. This is the first I use MUI. I saw in demo of MUI, they can show images from Flick, use IContentLoader for loading content in the ModernFrame. But I can't find documents. So I can't do.  I have a problem is I only want to display a image in my application. My English is bad, I hope you understand my problem and help me. (Load a images from disk and show in app). Thanks.<br />\n",
+    "PostedDate": "2013-10-28T01:19:17.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1113830",
+    "ThreadId": "447676",
+    "Html": "Looks like a generic WPF question; see <a href=\"http://stackoverflow.com/questions/4332652/use-wpf-image-control-to-show-an-image-from-filesystem\" rel=\"nofollow\">Use wpf image control to show an image from filesystem</a> (StackOverflow)<br />\n",
+    "PostedDate": "2013-10-29T13:58:20.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1143635",
+    "ThreadId": "478991",
+    "Html": "I do not have much working experience with WPF, and am new to this Modern UI framework. I observe that the navigation wiring between the controls and sub-page user controls are declared statically in XAML.\r<br />\n<br />\nHow can one dynamically influence this with programmatic logic? What is the object hierarchy to use to properly navigate one section or sub-section to another user control?<br />\n",
+    "PostedDate": "2013-12-28T22:20:05.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

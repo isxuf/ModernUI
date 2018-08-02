@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1450061",
+    "ThreadId": "646747",
+    "Html": "I downloaded ModernUI for WPF about a month or so ago. I've been experimenting with it ever since. Recently I discovered that I couldn't easily create a resource dictionary file. The option to create a resource dictionary file is not in the <strong>Add Item</strong> menu. I verified this by creating a new ModernUI Navigation App and then tried doing an Add Item on the project; adding a resource dictionary isn't there. It's possible to create a resource file, but that is not the same thing.\r<br />\n<br />\nSo why does this template remove the ability to create a resource dictionary file?<br />\n",
+    "PostedDate": "2015-10-28T08:52:49.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1450350",
+    "ThreadId": "646747",
+    "Html": "Interesting observation. I haven't noticed it before. Not sure why this happens. It's possible the WPF items such as resource dictionary are only shown when you create a project based on the WPF Application project. I have no solution at this point in time.<br />\n",
+    "PostedDate": "2015-10-29T13:28:14.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1450579",
+    "ThreadId": "646747",
+    "Html": "I had the same issue. It is easily fixed by manually adding a line in the project file. You can find the details here: \r<br />\n<a href=\"http://stackoverflow.com/questions/12558076/cant-find-resourcedictionary-in-add-new-item-window\" rel=\"nofollow\">http://stackoverflow.com/questions/12558076/cant-find-resourcedictionary-in-add-new-item-window</a><br />\n",
+    "PostedDate": "2015-10-31T12:23:47.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1451029",
+    "ThreadId": "646747",
+    "Html": "Thank you for that information, luni64!<br />\n",
+    "PostedDate": "2015-11-05T07:42:27.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

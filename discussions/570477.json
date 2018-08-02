@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1315907",
+    "ThreadId": "570477",
+    "Html": "Hello forum,\r<br />\n<br />\nI understand that there are no plans for adding a &quot;tile control&quot; (like this: <a href=\"https://mui.codeplex.com/workitem/19497\" rel=\"nofollow\">https://mui.codeplex.com/workitem/19497</a>) to the library anytime soon. I need one however, so now I'm asking for advice about how such a control best could be implemented on top of existing m:ui infrastructure. \r<br />\n<br />\nI'm looking to implement a set of buttons (tiles) on a page automatically displayed at the launch of the application. Each button associated with a view to be displayed when the button is pressed.\r<br />\n<br />\nI'd be very grateful for a push in the right direction! :)\r<br />\n<br />\n// Magnus<br />\n",
+    "PostedDate": "2014-10-23T00:19:37.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1316092",
+    "ThreadId": "570477",
+    "Html": "Hmmm, never mind. I have been running the demo application and experimenting for a while and must say that the navigation scheme in m:ui is growing on me. I'll use it as it is for my next application... :)\r<br />\nAnother thing came to my mind though - does anyone have any tips for using Blend together with m:ui?\r<br />\n<br />\nThanks again in advance!\r<br />\n<br />\n// Magnus<br />\n",
+    "PostedDate": "2014-10-23T12:22:07.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

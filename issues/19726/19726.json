@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Please assign an x:Key to the ListViewItem Style.\n\nI have a custom ListViewItem but it uses the default style and not the Style which is defined for the ListViewItem. An x:Key attribute for the ListViewItem Style makes it easy to assign the m:ui ListViewItem Style to custom ListViewItem implementations.\n\n```\npublic class CustomListItem : ListViewItem\n{\n     //Code\n}\n```\n\nit could look like this:\n```\n<Style x:Key={ListViewItemKey} TargetType=\"{x:Type ListViewItem}\">\n```",
+    "LastUpdatedDate": "2013-05-27T12:06:57.27-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-17T06:20:21.84-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Assign x:Key to ListViewItem Style",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 19726
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-08-09T09:36:22.927-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Just found out if you don't close a url string and end your bbcode text the app hangs just spinning the CPU.\n\nI had mistakenly not closed the last url tag (TrainInstructions.xaml) like this:\n\n```\n<mui:BBCodeBlock Margin=\"5\" BBCode=\"Once all data sets are created (or loaded from disk), use the [url=/Pages/Train.xaml]Train Tab[/url] to start training. Details on training and performance can be found [url=/Pages/TrainInstructions.xaml\"></mui:BBCodeBlock>\n```\n\nProb not high priority but thought I'd mention it.",
+    "LastUpdatedDate": "2014-08-09T09:36:22.927-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-03-12T09:27:03.527-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Hang when BBCodeBlock url is not closed",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20814
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved with changeset 110096: fixed BBCodeBlock hang when opening tag not properly closed before end of string",
+      "PostedDate": "2014-08-09T09:36:22.927-07:00",
+      "Id": 158575
+    }
+  ]
+}

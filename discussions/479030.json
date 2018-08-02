@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1143725",
+    "ThreadId": "479030",
+    "Html": "This is the code that R# is complaining about <br />\n<pre><code>&lt;Style x:Key=&quot;EmptyWindow&quot; TargetType=&quot;controls:ModernWindow&quot; BasedOn=&quot;{StaticResource ModernWindow}&quot;&gt;</code></pre>\n\nIf I put a key on the ModernWindow style like this<br />\n<pre><code> &lt;Style TargetType=&quot;controls:ModernWindow&quot; x:Key=&quot;ModernWindowStyle&quot;&gt;</code></pre>\n\nThen everything stops working and I only get a black screen when I run the FirstFloor.ModernUI.App. Why is this happening? <br />\n",
+    "PostedDate": "2013-12-29T10:23:16.903-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1143737",
+    "ThreadId": "479030",
+    "Html": "Just learned that you can base a style on a control and the style in ModernWindowEx.xaml is based on the control ModernWindow, smart.\r<br />\nI have added this to ModernWindowEx.xaml to make R# happy<br />\n<pre><code> &lt;Style x:Key=&quot;ModernWindowStyle&quot; TargetType=&quot;controls:ModernWindow&quot;/&gt;  \n    &lt;!-- empty window style, no backbutton, menu, title links and logo --&gt;\n    &lt;Style x:Key=&quot;EmptyWindow&quot; TargetType=&quot;controls:ModernWindow&quot; BasedOn=&quot;{StaticResource ModernWindowStyle}&quot;&gt;</code></pre>\n\nAnd now everything is super green <br />\n",
+    "PostedDate": "2013-12-29T11:43:56.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

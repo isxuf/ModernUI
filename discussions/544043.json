@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1240578",
+    "ThreadId": "544043",
+    "Html": "I have a requirement where I've to open a ModernWindow from a View (from ViewModel)..On that ModernWindow I've a submit button. I want to close that window after submit button is clicked. How to achieve this? Calling the below code from XYZViewModel<br />\n<pre><code>                        var _dataContext = new ABCViewModel();\n                        var wnd = new ModernWindow\n                        {\n                            Style = (Style)App.Current.Resources[&quot;EmptyWindow&quot;],\n                            Content = new Suppliers\n                            {\n                                Margin = new Thickness(32)\n                            },\n                            DataContext = _dataContext,\n                            Width = 500,\n                            Height = 500\n                        };\n                        wnd.Show();\n\n</code></pre>\n\nAny help is appreciated. Thanks a lot.<br />\n",
+    "PostedDate": "2014-05-02T03:54:29.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1244378",
+    "ThreadId": "544043",
+    "Html": "Hello, you can solve this passing the UserControl in CommandParameter of buttom and inside command write:<br />\n<br />\nXAML USER CONTROL<br />\n<pre><code>&lt;UserControl x:Class=&quot;UserControl1View&quot;\n            xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n            xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n...\n            x:Name=&quot;_userControl&quot;\n...</code></pre>\n\nXAML OF BUTTON<br />\n<pre><code>&lt;Button Command=&quot;{Binding CommitCommand}&quot;\n                CommandParameter=&quot;{Binding ElementName=_userControl}&quot;\n                Content=&quot;Commit&quot;/&gt;</code></pre>\n\nBEHIND CODE:<br />\n<pre><code>public ICommand CommitCommand\n{\n    get\n    {\n        return new RelayCommand&lt;UserControl&gt;(userControl =&gt;\n        {\n            var win = Window.GetWindow(userControl);\n            if (win != null)\n                win.Close();\n        });\n    }\n}</code></pre>\n\n",
+    "PostedDate": "2014-05-12T07:19:16.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1066055",
+    "ThreadId": "449428",
+    "Html": "Any plans to style the DatePicker control?  It's not bad on a light theme, but stands out a bit on the dark theme.\r<br />\n<br />\n<img src=\"http://www.cur-ion.net/img/csv.png\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-07-09T04:22:44.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1066328",
+    "ThreadId": "449428",
+    "Html": "Wow!  That was fast!  Thanks, love it.<br />\n",
+    "PostedDate": "2013-07-09T15:25:29.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084021",
+    "ThreadId": "449428",
+    "Html": "Any idea for TimePicker control?\r<br />\n<br />\nThanks ^^<br />\n",
+    "PostedDate": "2013-08-23T01:16:50.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084909",
+    "ThreadId": "449428",
+    "Html": "There's no TimePicker control in the core WPF controls. The idea is to make sure MUI doesn't have any dependencies other than the BCL.\r<br />\n<br />\nJust an idea: custom styled controls could be made available in some sort of external mui contrib project.<br />\n",
+    "PostedDate": "2013-08-26T06:14:11.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1085941",
+    "ThreadId": "449428",
+    "Html": "Yes I like your idea. I am currently looking for a mui style for the decimalupdown control.. and if I don't come across one in the next week or so I'm gonna write one :)<br />\n",
+    "PostedDate": "2013-08-28T13:59:36.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

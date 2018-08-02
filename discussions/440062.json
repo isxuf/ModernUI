@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1029534",
+    "ThreadId": "440062",
+    "Html": "How to navigate to another page when I click a button?<br />\n",
+    "PostedDate": "2013-04-12T05:46:42.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029537",
+    "ThreadId": "440062",
+    "Html": "I found a way.\r<br />\n<br />\nusing FirstFloor.ModernUI.Windows.Navigation;\r<br />\n<br />\nprivate void Ex1Button_Click(object sender, System.Windows.RoutedEventArgs e)<br />\n<pre><code>    {\n            DefaultLinkNavigator _navigator = new DefaultLinkNavigator();\n        _navigator.Navigate(new Uri(&quot;/Pages/Experiment1.xaml&quot;, UriKind.Relative), this, null);\n    }\n</code></pre>\n\nIs that correct?<br />\n",
+    "PostedDate": "2013-04-12T05:52:59.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029714",
+    "ThreadId": "440062",
+    "Html": "try here\r<br />\n<a href=\"https://mui.codeplex.com/discussions/436328\" rel=\"nofollow\">https://mui.codeplex.com/discussions/436328</a><br />\n",
+    "PostedDate": "2013-04-12T09:58:17.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1058937",
+    "ThreadId": "447620",
+    "Html": "I have a moderndialog with my own button in my moderndialog for example \r<br />\n<br />\nUser Control in <strong>/Content/ContentDialog.xaml</strong> like this <br />\n<pre><code>&lt;UserControl .....&gt;\n     ...\n    &lt;Button Content=&quot;Navigate&quot; OnClick=&quot;ButtonNavigate&quot; /&gt;\n&lt;/UserControl&gt;\n\n</code></pre>\n\nAnd in ContentDialog.xaml.cs will look like this :<br />\n<pre><code>var frame=NavigationHelper.FindFrame(null,this)\nif(frame!=null)\n   frame.Source=new Uri(path,UriKind.Relative);</code></pre>\n\nAnd I show the ContentDialog in moderndialog like this..<br />\n<pre><code>new ModernDialog(){\n    Content=&quot;/Content/ContentDialog.xaml&quot;,\n    Title=&quot;My Dialog&quot;,\n}.show();</code></pre>\n\nBut I don't know the context of this in <strong>var frame=NavigationHelper.FindFrame(null,this)</strong> and the code will not allow me to navigate to another page from here.\r<br />\n<br />\nHow can I try the correct modernframe object from another dialog?<br />\n",
+    "PostedDate": "2013-06-19T18:46:35.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

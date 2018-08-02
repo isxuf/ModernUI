@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1016432",
+    "ThreadId": "436892",
+    "Html": "In response to <a href=\"http://mui.codeplex.com/discussions/436685\" rel=\"nofollow\">a question on reuse of links</a> the suggestion is to add anchor values to the ends of the URIs, like this:<br />\n<pre><code>&lt;mui:ModernWindow.MenuLinkGroups&gt;\n  &lt;mui:LinkGroup DisplayName=&quot;Group 1&quot;&gt;\n    &lt;mui:LinkGroup.Links&gt;\n      &lt;mui:Link DisplayName=&quot;Link 1&quot; \n                Source=&quot;/Pages/Page1.xaml#1&quot; /&gt;\n      &lt;mui:Link DisplayName=&quot;Link 2&quot; \n                Source=&quot;/Pages/Page1.xaml#2&quot; /&gt;\n      &lt;mui:Link DisplayName=&quot;Link 3&quot; \n                Source=&quot;/Pages/Page1.xaml#3&quot;/&gt;\n    &lt;/mui:LinkGroup.Links&gt;    \n  &lt;/mui:LinkGroup&gt;\n&lt;/mui:ModernWindow.MenuLinkGroups&gt;\n</code></pre>\n\nAre the values of those anchors available to the destination page? \r<br />\n<br />\nIn other words, does the anchor provide me with a way to pass a simple string value to the destination page?\r<br />\n<br />\nIn effect, I'd like to be able to set up something like this:<br />\n<pre><code>&lt;mui:ModernWindow.MenuLinkGroups&gt;\n  &lt;mui:LinkGroup DisplayName=&quot;Recipes&quot;&gt;\n    &lt;mui:LinkGroup.Links&gt;\n      &lt;mui:Link DisplayName=&quot;Beef Burgers&quot; \n                Source=&quot;/Pages/RecipeDetails.xaml#Burgers&quot; /&gt;\n      &lt;mui:Link DisplayName=&quot;Mexican Nachoes&quot; \n                Source=&quot;/Pages/RecipeDetails.xaml#Nachoes&quot; /&gt;\n      &lt;mui:Link DisplayName=&quot;Tomato Soup&quot; \n                Source=&quot;/Pages/RecipeDetails.xaml#Soup&quot;/&gt;\n    &lt;/mui:LinkGroup.Links&gt;    \n  &lt;/mui:LinkGroup&gt;\n&lt;/mui:ModernWindow.MenuLinkGroups&gt;\n</code></pre>\n\nIf the RecipeDetails page knew the value of the passed anchor, it could be leveraged to find the appropriate details for display.<br />\n",
+    "PostedDate": "2013-03-16T14:42:48.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1016451",
+    "ThreadId": "436892",
+    "Html": "Anchors are not directly exposed; I'm working on navigation improvements that includes support for fragment navigation.\r<br />\n<br />\nAs a workaround for now you can lookup the ModernFrame instance that is hosting the page and query its source property like so;<br />\n<pre><code>var frame = NavigationHelper.FindFrame(null, this);\nif (frame != null) {\n  var source = frame.Source;\n}</code></pre>\n\n",
+    "PostedDate": "2013-03-16T15:56:44.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1016509",
+    "ThreadId": "436892",
+    "Html": "Thanks.<br />\n",
+    "PostedDate": "2013-03-16T22:23:16.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

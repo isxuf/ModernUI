@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1216329",
+    "ThreadId": "535960",
+    "Html": "Hi,\r<br />\n<br />\nI create new windows on button click and capture position, size when window is closed. The problem is that ModernDialog does not show on the current window but instead on the MainWindow and the user does not see the alert since the calling window is on a second or third monitor.\r<br />\nhow can I setthe ModernDialog.Owner to display on center on the calling window. I tried :<br />\n<pre><code>if (Application.Current.MainWindow.IsActive)\n            {\n                this.Owner = Application.Current.MainWindow;\n            }</code></pre>\n\nbut didn't work. Any help is appreciated.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-02-28T14:33:08.98-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1219542",
+    "ThreadId": "535960",
+    "Html": "I modified the constructor to check if window is active and seems to work now.<br />\n<pre><code>foreach (Window cWin in Application.Current.Windows)\n            {\n                if (cWin.IsActive)\n                {\n                    this.Owner = cWin;\n                    break;\n                }\n            }     </code></pre>\n\n",
+    "PostedDate": "2014-03-05T08:55:29.457-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-03-05T08:55:34.027-08:00"
+  }
+]

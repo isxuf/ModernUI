@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1213008",
+    "ThreadId": "534343",
+    "Html": "Hello Everyone.\r<br />\ni was able to create link groups by using this code <br />\n<pre><code>\npublic Projects()\n        {\n            InitializeComponent();\n\n            LoadProjectNames();\n           \n        }\n//Then\n\n  public void LoadProjectNames()\n        {\n\n                        var query = from p in MyDS.Projects\n                        orderby p.Project_Name\n                        select p;\n            \n            \n            foreach (var LProject in query)\n            {\n               \n          \n                ModTab.Links.Add(new Link\n                {\n                    DisplayName = LProject.Project_Name,\n                    Source = new Uri(String.Format(&quot;/Content/ProjectsDetails.xaml#{0}&quot;, LProject.ProjectID), UriKind.Relative)\n                });\n                \n            \n            }\n         \n        }</code></pre>\n\nBut this method is not the the right method for binding , what i need is to use data binding with Links Collection and retrieve project names directly as links(DisplayName Property).\r<br />\n<br />\ni have looked around alot to sort this out but couldn't do that with the Link Collection Because it's not Dependency Object as i understand.\r<br />\n<br />\n<strong>my question will be is it possible to achive my goal with other way in Binding methods</strong> \r<br />\nLike this one \r<br />\n<a href=\"http://msdn.microsoft.com/en-us/library/ms598273%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=csharp#code-snippet-2\" rel=\"nofollow\">FrameworkElement.SetBinding Method (DependencyProperty, BindingBase)</a>\r<br />\n<br />\nThanks in advance @:---<br />\n",
+    "PostedDate": "2014-02-23T08:36:19.76-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1359860",
+    "ThreadId": "534343",
+    "Html": "I'd also love to see a plain and simple example of binding to the LinkGroup/Links DisplayName.\r<br />\nThanks<br />\n",
+    "PostedDate": "2015-03-04T10:25:19.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

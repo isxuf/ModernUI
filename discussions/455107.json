@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1087065",
+    "ThreadId": "455107",
+    "Html": "Hi,\r<br />\nThis is amazing project , I love it so much ..\r<br />\nI've one question which is :  how could I change the language of tooltip of control box [Close ,Minimize and Maximize] ?<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-09-01T04:57:22.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087066",
+    "ThreadId": "455107",
+    "Html": "Language specific text is stored in a Resources class. You'll need to create a satellite assembly for your language; see also <a href=\"http://mui.codeplex.com/discussions/442217\" rel=\"nofollow\">this post</a><br />\n",
+    "PostedDate": "2013-09-01T05:00:18.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087067",
+    "ThreadId": "455107",
+    "Html": "Ok \r<br />\nThank you so much kozw ..<br />\n",
+    "PostedDate": "2013-09-01T05:03:41.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087991",
+    "ThreadId": "455107",
+    "Html": "<strong>kozw wrote:</strong><br />\n<blockquote>\nLanguage specific text is stored in a Resources class. You'll need to create a satellite assembly for your language; see also this post<br />\n</blockquote>\nIt seems that the satellite assembly won't work with tooltip of system buttons on ModernWindow.<br />\n",
+    "PostedDate": "2013-09-03T18:18:47.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

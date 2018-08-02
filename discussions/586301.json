@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1363283",
+    "ThreadId": "586301",
+    "Html": "Hi,\r<br />\n<br />\ni tried to use the mui in an office addin and vsto.\r<br />\nAs I know are the restrictions from vsto that I can't use wpf windows directly. The only way to use wpf is to use a wpf control in a wpf host element on a winforms window.\r<br />\nI tried to use the modernWindow or a wpf window in the host element and it is not working.\r<br />\nI am now at the point that I have no idea what is to change to use mui as a wpf control ?!\r<br />\n<br />\nHave anyone another experience to solve this scenario?\r<br />\n<br />\nThanks for advice!\r<br />\nFreddy<br />\n",
+    "PostedDate": "2015-03-13T14:11:03.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

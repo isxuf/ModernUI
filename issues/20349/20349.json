@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "Why don't allow the programmer to create a custom template for the main menu ( LinkGroup DisplayName ) ?\nas adding icons to menu, capitalizing letters, using different colors ?",
+    "LastUpdatedDate": "2014-12-17T12:49:04.17-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-10-23T01:19:24.863-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Create custom template for LinkGroup DisplayName",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 7,
+    "Id": 20349
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This would be nice :)",
+      "PostedDate": "2013-11-29T12:28:28.933-08:00",
+      "Id": 158563
+    },
+    {
+      "Message": "Created a similar item for Links themselves @ 20509",
+      "PostedDate": "2013-12-11T11:10:00.057-08:00",
+      "Id": 158564
+    }
+  ]
+}

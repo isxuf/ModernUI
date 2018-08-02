@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1145051",
+    "ThreadId": "479438",
+    "Html": "Has anyone been able to successfully change the font size of the link text in this template. I am trying to use this template for a 10&quot; touch enabled POS interface for a cafeteria. The links are entirely to small for touch. Any help would be much appreciated. <br />\n",
+    "PostedDate": "2014-01-03T08:06:26.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151615",
+    "ThreadId": "479438",
+    "Html": "I just came on looking for a similar question, so I'll ask it here.  I was hoping to style the DisplayName of Links using BBCode.  Any way to get that?<br />\n",
+    "PostedDate": "2014-01-09T22:02:10.523-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151733",
+    "ThreadId": "479438",
+    "Html": "You have to download the Sourcecode and edit it in the XAML.\r<br />\nThen you compile it and use it in your Projekt ;)<br />\n",
+    "PostedDate": "2014-01-10T04:35:21.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151734",
+    "ThreadId": "479438",
+    "Html": "What an in-depth response.  With answers like that, the mysteries of the universe shall soon be extinguished.<br />\n",
+    "PostedDate": "2014-01-10T04:37:43.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151739",
+    "ThreadId": "479438",
+    "Html": "<strong>JeBuS wrote:</strong><br />\n<blockquote>\nWhat an in-depth response.  With answers like that, the mysteries of the universe shall soon be extinguished.<br />\n</blockquote>\nIf you have searched the discussions or issues, then you will find out that there is no other way. You have to compile your own assembly.\r<br />\nThe actual version of mui doesn't allow font-editing for <strong>links</strong> because it's hardcoded in the source.\r<br />\n<br />\nDid you watched the source? No? Yeah... the mysteries of the universe!<br />\n",
+    "PostedDate": "2014-01-10T04:49:31.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151742",
+    "ThreadId": "479438",
+    "Html": "My sarcasm was directed at the fact that your comment is entirely pointless.  Saying &quot;look at the source&quot; is very much useless on code repositories.  Now, if your answer had included any indication of where in the source to look...<br />\n",
+    "PostedDate": "2014-01-10T04:51:30.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1165141",
+    "ThreadId": "479438",
+    "Html": "<strong>JeBuS wrote:</strong><br />\n<blockquote>\nMy sarcasm was directed at the fact that your comment is entirely pointless.  Saying &quot;look at the source&quot; is very much useless on code repositories.  Now, if your answer had included any indication of where in the source to look...<br />\n</blockquote>\nPerhaps it would be helpfull to know which Link-Element exactly should get a bigger size...\r<br />\n<br />\nIf you mean the Split-Links in a Modern-Tab then you have to edit \r<br />\n<strong>Project &gt;&gt; FirstFloor.ModernUi &gt;&gt; Themes &gt;&gt; ModernTab.xaml &gt;&gt; 90 &gt;&gt; FontSize</strong>\r<br />\n<br />\nor the Top-Links of a Modern-Tab?\r<br />\n<strong>Project &gt;&gt; FirstFloor.ModernUi &gt;&gt; Themes &gt;&gt; ModernTab.xaml &gt;&gt; 26 &gt;&gt; FontSize</strong>\r<br />\n<br />\nor the Links of the ModernMenu? The Links in a BBCode? \r<br />\nthe most of them a hardcoded. search and try ;) so do I<br />\n",
+    "PostedDate": "2014-01-14T06:38:58.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

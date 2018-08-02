@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1044292",
+    "ThreadId": "443849",
+    "Html": "Hi,<br />\n<br />\nThis project looks absolutely amazing! I am however, clueless as to how to DataTemplate a ViewModel and have it in a Link :/<br />\n<br />\nSo I have something like this for example...<br />\n<pre><code> &lt;Grid Grid.Column=&quot;1&quot; Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n                &lt;mui:ModernTab  SelectedSource=&quot;/Lovatts.ClueExplorer.Views;component/CluesView.xaml&quot; Layout=&quot;Tab&quot;&gt;\n                    &lt;mui:ModernTab.Links&gt;\n                        &lt;mui:Link DisplayName=&quot;Clues&quot; Source=&quot;/Lovatts.ClueExplorer.Views;component/CluesView.xaml&quot;&gt;&lt;/mui:Link&gt;\n                        &lt;mui:Link DisplayName=&quot;Suggestions&quot; Source=&quot;/Lovatts.ClueExplorer.Views;component/ClueSuggestionsView.xaml&quot; /&gt;\n                    &lt;/mui:ModernTab.Links&gt;\n                &lt;/mui:ModernTab&gt;\n            &lt;/Grid&gt;</code></pre>\n\nNow... normally I'd have a ResourceDictionary full of DataTemplates saying things like <br />\n<pre><code>    &lt;DataTemplate DataType=&quot;{x:Type ViewModels:CluesViewModel}&quot;&gt;\n        &lt;Views:CluesView&gt;&lt;/Views:CluesView&gt;\n    &lt;/DataTemplate&gt;\n\n    &lt;DataTemplate DataType=&quot;{x:Type ViewModels:ClueSuggestionViewModel}&quot;&gt;\n        &lt;Views:ClueSuggestionView&gt;&lt;/Views:ClueSuggestionView&gt;\n    &lt;/DataTemplate&gt;</code></pre>\n\nAnd simply Bind the Content of a ContentPresenter to the appropriate instance ViewModel, eg. <br />\n<pre><code>            &lt;TabControl&gt;\n                &lt;TabItem Header=&quot;Clues&quot;&gt;\n                    &lt;ContentPresenter Content=&quot;{Binding CluesViewModel}&quot;&gt;&lt;/ContentPresenter&gt;\n                &lt;/TabItem&gt;\n                &lt;TabItem Header=&quot;Suggestions&quot;&gt;\n                    &lt;ContentPresenter Content=&quot;{Binding ClueSuggestionsViewModel}&quot;&gt;&lt;/ContentPresenter&gt;                    \n                &lt;/TabItem&gt;\n            &lt;/TabControl&gt;\n</code></pre>\n\nIn this case, CluesViewModel and ClueSuggestionsViewModel are properties of MainViewModel. <br />\n<br />\nHow do I.. er, achieve this in MUI? I'm missing something blindingly obvious aren't I? :/ How do I tell a ModernTab Link what it's DataContext is?<br />\n<br />\nMany thanks, this project looks spectacular!<br />\n",
+    "PostedDate": "2013-05-16T00:03:21.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048073",
+    "ThreadId": "443849",
+    "Html": "The answer it would appear, is to use a View-first MVVM style :) Ie, a View initializes it's ViewModel, instead of a ViewModel being DataTemplated :)<br />\n",
+    "PostedDate": "2013-05-23T22:42:17.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

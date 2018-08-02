@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1213702",
+    "ThreadId": "534822",
+    "Html": "I have a NinjectLoader that I want to use as the default instead of the DefaultContentLoader.\r<br />\nGuess I can always do:<br />\n<pre><code>&lt;mui:ModernTab Layout=&quot;List&quot; ContentLoader=&quot;{x:Static common:NinjectLoader.Loader}&quot;&gt;</code></pre>\n\nBut it is !nice<br />\n",
+    "PostedDate": "2014-02-24T06:31:25.807-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1213750",
+    "ThreadId": "534822",
+    "Html": "Set a default style. Do this in your app.xaml (taken from the <a href=\"https://mui.codeplex.com/wikipage?title=A%20guide%20to%20using%20MEF&amp;referringTitle=Documentation\" rel=\"nofollow\">MEF</a> sample)<br />\n<pre><code>&lt;Style TargetType=&quot;mui:ModernFrame&quot;&gt;\n    &lt;Setter Property=&quot;ContentLoader&quot; Value=&quot;{DynamicResource MEFContentLoader}&quot; /&gt;\n&lt;/Style&gt;\n&lt;Style TargetType=&quot;mui:ModernTab&quot;&gt;\n    &lt;Setter Property=&quot;ContentLoader&quot; Value=&quot;{DynamicResource MEFContentLoader}&quot; /&gt;\n&lt;/Style&gt;\n&lt;Style TargetType=&quot;v:MainWindow&quot;&gt;\n    &lt;Setter Property=&quot;ContentLoader&quot; Value=&quot;{DynamicResource MEFContentLoader}&quot; /&gt;\n&lt;/Style&gt;</code></pre>\n\n",
+    "PostedDate": "2014-02-24T07:29:04.64-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-02-25T15:30:16.257-08:00"
+  },
+  {
+    "Id": "1213783",
+    "ThreadId": "534822",
+    "Html": "Nice, ty sir!<br />\n",
+    "PostedDate": "2014-02-24T08:08:27.807-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

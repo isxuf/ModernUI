@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "I have an idea that is to have a colored shadow for modern windows and/or modern dialogs instead of the usual DWM shadow. I already have the idea of what the code would be and how it would look like.",
+    "LastUpdatedDate": "2013-12-23T02:19:04.753-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-23T01:55:35.543-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add a colored window shadow",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 19893
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I was actually looking for the ability to modify the border of the MUI window, something like vs2012, when its building the border is orange, and then normal back to blue when done all at runtime.\r\n\r\nPlease consider this change as well.",
+      "PostedDate": "2013-06-24T01:49:19.713-07:00",
+      "Id": 158528
+    },
+    {
+      "Message": "Well, of course. I'll add a function for changing the accent color for a window. I'm planning on changingGetAccentColor() to GetAccentColor(ModernWindow) and SetAccentColor(Color) to SetAccentColor(ModernWindow, Color). The two functions will be made static and public. A Color AccentColor{ get; set; } property will also be added to ModernWindow.\r\n\r\nNote: GetAccentColor and GetAccentColor are located in ModernUI.Presentation.AppearanceManager",
+      "PostedDate": "2013-06-25T17:16:57.943-07:00",
+      "Id": 158529
+    }
+  ]
+}

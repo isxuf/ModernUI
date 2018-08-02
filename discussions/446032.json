@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1052943",
+    "ThreadId": "446032",
+    "Html": "Hi Guy,\r<br />\nframe = NavigationHelper.FindFrame(null, this);\r<br />\n frame.Source = new Uri(&quot;/UC/KundeUC.xaml&quot;, UriKind.Relative);\r<br />\n<br />\nframe.DataContext = (KundeSuchenDataContext)this.DataContext;\r<br />\n<br />\nwhen the Uri appears,  his DataContext is empty !!?<br />\n\r<br />\nNB: i use two UserControls \r<br />\n<br />\nGhis  from Francfourt<br />\n",
+    "PostedDate": "2013-06-05T00:16:21.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1053023",
+    "ThreadId": "446032",
+    "Html": "Are you able to post a full repro project? Unable to reproduce.<br />\n",
+    "PostedDate": "2013-06-05T03:06:13.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

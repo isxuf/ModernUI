@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1221794",
+    "ThreadId": "538732",
+    "Html": "Hi Guys,<br />\nFirst of all, great Work! I really enjoy your Project.<br />\nBut i have one Question. ;)<br />\n<br />\nIs't possible to reference the Source from a LinkGroup to Page from a external DLL, loaded with MEF? <br />\n<br />\n<strong>MainWindow.xaml</strong><br />\n<pre><code>   &lt;mui:LinkGroup DisplayName=&quot;external&quot;&gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;transfer&quot; Source=&quot;/transfer.xaml&quot; /&gt;\n            &lt;!-- Source should be loaded Page from Assembly --&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;</code></pre>\n\nI think of an idea to load all additional Pages from DLLs, at the beginning of initialization of the Client, like block moduls.<br />\n<br />\nThanks in Advance<br />\n",
+    "PostedDate": "2014-03-12T03:16:36.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1221938",
+    "ThreadId": "538732",
+    "Html": "You need to read the <a href=\"https://mui.codeplex.com/wikipage?title=A%20guide%20to%20using%20MEF&amp;referringTitle=Documentation\" rel=\"nofollow\">MEF Guide</a>.<br />\n<br />\nI've followed it and am doing exactly what you are looking for - using external DLLs to drive the contents of my mui application. The only difference for me is that I am also using Unity for my IoC and using the <a href=\"https://mefcontrib.codeplex.com/wikipage?title=Unity%20Integration\" rel=\"nofollow\">MEF and Unity integration</a> libraries from the mefcontrib codeplex project.<br />\n<br />\nWith everything combined, it's very tight.<br />\n",
+    "PostedDate": "2014-03-12T08:59:44.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1222311",
+    "ThreadId": "538732",
+    "Html": "Yeah and it works fine.<br />\n<br />\nBut now i hold a IEnumable with the UserControls and don't know how to add them in my MainWindow.<br />\nThe Controls are initialized but i need a way to add them from Code Behind.<br />\n<hr />\nI'm so stupid...<br />\n<br />\nFound it! It's clearly written in the Documentation...<br />\n<br />\nSorry for bothering you... :(<br />\n",
+    "PostedDate": "2014-03-13T05:38:56.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "1085565",
+    "ThreadId": "454700",
+    "Html": "Hello, I have another question,\r<br />\n<br />\nI'm having to declare all of my user controls as New each time my main window opens, because of all all of the controls are accessed by other parts of my program.\r<br />\n<br />\nThe custom mui properties such as Source and ContentSource, used by Links and ModernWindows and what-not, is there a way to set them to new instances? Like, as of now, they are set by Uri strings. But I don't want to the Uri's point to the .xaml files, I want them to point to a specific instance of that .xaml I declare new.\r<br />\n<br />\nAnyone have any idea how to go about this?<br />\n",
+    "PostedDate": "2013-08-27T14:58:45.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1085715",
+    "ThreadId": "454700",
+    "Html": "You may want to asign attached property ModernFrame.KeepAlive=false to your usercontrol like so<br />\n<pre><code>&lt;UserControl .. \n    xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n    mui:ModernFrame.KeepAlive=&quot;false&quot;&gt;\n  ..\n&lt;/UserControl&gt;</code></pre>\n\nThis ensures the DefaultContentLoader creates a new instance each time the control is loaded.<br />\n",
+    "PostedDate": "2013-08-28T03:46:50.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1085746",
+    "ThreadId": "454700",
+    "Html": "Sounds similar to what I'm wanting to do. But the new instance I'm creating is via code and not XAML. I have several assemblies that access the same control via code, to control it's properties, such as enabling and disabling it's child controls. Is there a way I can set those XAML properties such as Source to the instance I create in code? If not, is there a work around to do what I;m looking for? I've tried looking into making the User Controls shared, but have been unsuccessful so far.<br />\n",
+    "PostedDate": "2013-08-28T05:49:33.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1085947",
+    "ThreadId": "454700",
+    "Html": "Let me rephrase this. Basically, I'm wanting to know if there is a way to set the Source, ContentSource, and other source properties to already created objects; similar to how you would set the .Child property of an ElementHost o a WPF UserControl. That way, the control can be modified before setting it, and can also be modified after it's set.<br />\n",
+    "PostedDate": "2013-08-28T14:12:11.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086670",
+    "ThreadId": "454700",
+    "Html": "Looks like you want to implement your own IContentLoader. The DefaultContentLoader (assigned to ModernFrame, ModernTab and ModernWindows instances) loads xaml resources using Application.LoadComponent. You can create a custom IContentLoader that returns your own instances, including the ones you already created.<br />\n<br />\nFor more details about IContentLoader see:<br />\n<ul>\n<li><a href=\"https://mui.codeplex.com/wikipage?title=A%20guide%20to%20using%20MEF\" rel=\"nofollow\">A guide to using MEF</a></li>\n<li>The <a href=\"https://mui.codeplex.com/SourceControl/latest#1.0/FirstFloor.ModernUI/FirstFloor.ModernUI.App/FlickrImageLoader.cs\" rel=\"nofollow\">FlickrImageLoader</a> IContentLoader implementation in the MUI demo app</li>\n</ul>\n",
+    "PostedDate": "2013-08-30T07:43:46.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086810",
+    "ThreadId": "454700",
+    "Html": "Sorry if there is an obvious answer to this question, but I seem to be struggling with something.\r<br />\n<br />\nIn the code,<br />\n<pre><code>[MetadataAttribute]\n[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]\npublic class ContentAttribute : ExportAttribute\n{\n  public ContentAttribute(string contentUri) : base(typeof(IContent))\n  {\n    this.ContentUri = contentUri;\n  }\n  \n  public string ContentUri { get; private set; }\n}</code></pre>\n\nI have got it converted to:<br />\n<pre><code>&lt;MetadataAttribute&gt; &lt;AttributeUsage(AttributeTargets.[Class], AllowMultiple:=False)&gt; _\nFriend Class ContentAttribute\n    Inherits ComponentModel.Composition.ExportAttribute\n\n    Private m_ContentUri As String\n\n    Public Property ContentUri() As String\n        Get\n            Return m_ContentUri\n        End Get\n        Private Set(value As String)\n            m_ContentUri = value\n        End Set\n    End Property\n\n    Public Sub New(ByVal contentUri As String)\n        MyBase.New(GetType(IContent))\n        Me.ContentUri = contentUri\n    End Sub\n\nEnd Class</code></pre>\n\nHowever, types MetadataAttribute and IContent can't be found. I looked up the types online, and found the following reference for MetadataAttribute to be the following:\r<br />\n<br />\n<a href=\"http://technet.microsoft.com/en-us/library/microsoft.masterdataservices.services.datacontracts.metadataattribute.aspx\" rel=\"nofollow\">MetadataAttribute Class</a>\r<br />\n<br />\nHowever that reference was not found in my list of references, and wanted to make sure it was correct one before I downloaded the appropriate assembly.\r<br />\n<br />\nAs for the IContent, no leads so far.\r<br />\n<br />\nI am by no means an expert programmer yet, still fairly a beginner.\r<br />\n<br />\nAlso, on the following:<br />\n<pre><code>[Content(&quot;/MyPage&quot;)]\npublic partial class MyPage: UserControl, IContent\n{\n  public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n  {\n  }\n\n  public void OnNavigatedFrom(NavigationEventArgs e)\n  {\n  }\n\n  public void OnNavigatedTo(NavigationEventArgs e)\n  {\n  }\n\n  public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n  {\n  }\n}</code></pre>\n\nDoes this need to be applied to &quot;all&quot; of my controls I want to do this with? (Not the event handlers obviously, but the inheritance).\r<br />\n<br />\nThanks for your help,<br />\n<ul>\n<li>Jake M.</li>\n</ul>\n",
+    "PostedDate": "2013-08-30T14:37:42.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087070",
+    "ThreadId": "454700",
+    "Html": "IContent is a MUI interface defined in the FirstFloor.ModernUI.Windows namespace. MetadataAttribute is located in namespace System.ComponentModel.Composition (you need to reference BCL assembly System.ComponentModel.Composition.dll). \r<br />\n<br />\nWhen using the MEF solution you'll need to implement IContent for all controls. This can be done relatively easy by introducing a base class that implements IContent (in fact I'm thinking of adding such class to mui).\r<br />\n<br />\nDownload the source from the MEF tutorial to see how it all fits together.<br />\n",
+    "PostedDate": "2013-09-01T05:10:32.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087405",
+    "ThreadId": "454700",
+    "Html": "When do you think such a release would be when that class is added?<br />\n<br />\nI'm still a bit stuck, but I am making progress. I guess it's the fact I've never worked with Interfaces before, nor the attributes declared at the top.<br />\n<pre><code>[MetadataAttribute]\n[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]\npublic class ContentAttribute : ExportAttribute\n{\n  public ContentAttribute(string contentUri) : base(typeof(IContent))\n  {\n    this.ContentUri = contentUri;\n  }\n  \n  public string ContentUri { get; private set; }\n}</code></pre>\n\nFor that particular class, I have:<br />\n<pre><code>&lt;ComponentModel.Composition.MetadataAttribute&gt; _\n&lt;AttributeUsage(AttributeTargets.[Class], AllowMultiple:=False)&gt; _\nFriend Class ContentAttribute\n    Inherits ComponentModel.Composition.ExportAttribute\n\n    Private m_ContentUri As String\n\n    Public Property ContentUri() As String\n        Get\n            Return m_ContentUri\n        End Get\n        Private Set(value As String)\n            m_ContentUri = value\n        End Set\n    End Property\n\n    Public Sub New(ByVal contentUri As String)\n        MyBase.New(GetType(FirstFloor.ModernUI.Windows.IContent))\n        Me.ContentUri = contentUri\n    End Sub\n\n    Public Interface IContentMetadata\n        ReadOnly Property ContentUri() As String\n    End Interface\n\nEnd Class</code></pre>\n\nBut even though there are no errors, I feel uncomfortable with what I have as being correct. I'm not native to C#.<br />\n<br />\nAlso, the following class I have no idea what's going on at all:<br />\n<pre><code>[Export]\npublic class MefContentLoader : DefaultContentLoader\n{\n  [ImportMany]\n  private Lazy&lt;IContent, IContentMetadata&gt;[] Contents { get; set; }\n\n  protected override object LoadContent(Uri uri)\n  {\n    // lookup the content based on the content uri in the content metadata\n    var content = (from c in this.Contents\n      where c.Metadata.ContentUri == uri.OriginalString\n      select c.Value).FirstOrDefault();\n\n    if (content == null) {\n      throw new ArgumentException(&quot;Invalid uri: &quot; + uri);\n    }\n\n    return content;\n  }\n}</code></pre>\n\nAnd lack the capability of converting it properly to VB.<br />\n<br />\nAs for the other classes such as IContentMetaData, I believe I have done and declared correctly, with the exception of knowing what to put exactly in the top attribute,<br />\n<pre><code>[Content(&quot;/MyPage&quot;)]</code></pre>\n\nIn the custom User Control class.<br />\n<br />\nI know I have changed some of the modifiers from Public to Friend (mostly structural preference), but I don't think for my purposes, it would affect performance.<br />\n<br />\nSo I guess what I'm asking is that: <br />\n<ul>\n<li>Are there are any examples in VB for the two classes (or the guide itself) that I am struggling with</li>\n<li>When will this be natively implemented into ModernUI?</li>\n</ul>\n",
+    "PostedDate": "2013-09-02T10:16:45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091463",
+    "ThreadId": "454700",
+    "Html": "I've done a lot of research and I'm still confused on how MEF can help me with this. As it seems, you still need to set the Source property to the correct path of the URI in your Solution. Unless I am missing something here, how does this relate to reloading the same instance of a certain user control, each time the Source property is set (a specific instance declared in code, for that matter)?<br />\n<br />\nI've looked through the sample dozens of times, toyed around with a thing or two, but still don't see where in the code it does this.<br />\n",
+    "PostedDate": "2013-09-11T15:00:32.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1097183",
+    "ThreadId": "454700",
+    "Html": "I've resolved my issue with a workaround of loading properties external variables, and setting those variables to the properties of controls at the startup of page navigation.<br />\n",
+    "PostedDate": "2013-09-20T12:51:38.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

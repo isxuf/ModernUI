@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1264333",
+    "ThreadId": "551122",
+    "Html": "Hello, \r<br />\nFirst sorry for my english.\r<br />\n<br />\nI want to load an other page in button_click I try but i fail every time.\r<br />\nAccueil is my page .xaml \r<br />\n<br />\ni try this :<br />\n<pre><code>Accueil Accueil = new Accueil();\n this.NavigationService.Navigate(Accueil)\n and </code></pre>\n\n<pre><code> Accueil Accueil = new Accueil();\nthis this.COntext = Accueil.</code></pre>\n\nAccueil.xaml is the page which I want to load<br />\n",
+    "PostedDate": "2014-07-10T03:50:17.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "By design. ModernMenu displays LinkGroups that share the same GroupName. In your repro project, LinkGroups are added with a different GroupName than the existing one. GroupNames are used to display different menu groups (like the settings menu in the demo app).\n\nSo make sure you use the same GroupName if you want to show LinkGroups together.",
+    "ClosedDate": "2013-03-30T07:52:54.897-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "When trying to add new LinkGroups or Links to the modern menu embedded in the modern window by programmatically adding to the ModernWindow.MenuLinkGroups property, the menu won't be updated. I can see from the debugger, that the items get added, but the view does not display them.\nThe dynamic modern menu from your sample (where i can add/remove groups/links, etc) works just fine. As i can see from the sample, the ModernMenu is used directly and not via the MenuLinkGroups property. \n\nI attached a project for you to reproduce the issue.\n\nI would expect the MenuLinkGroups property to work the same as using the menu directly.",
+    "LastUpdatedDate": "2013-05-16T05:30:54.463-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-03-30T05:19:32.21-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Adding to ModernWindow.MenuLinkGroups doesn't update menu",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19544
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903290,
+      "FileName": "Mui.MenuLinksRepro.zip",
+      "DownloadUrl": ".\\903290"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Thanks for the quick response. Sounds good for me. Will use identical group names then.",
+      "PostedDate": "2013-03-30T08:21:40.79-07:00",
+      "Id": 158468
+    }
+  ]
+}

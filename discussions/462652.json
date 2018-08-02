@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1108987",
+    "ThreadId": "462652",
+    "Html": "Hi, I'm using &lt;m:ui/&gt; for an application so I can get the modern look and feel in a Desktop app. Great work!\r<br />\n<br />\nOne thing I'm trying to do that I can' seem to accomplish is get the application to live in the System Tray after the app is closed so the app can continue to run in the background. I've found that WPF can't do that without referencing some Windows Forms APIs (<a href=\"http://ebbypeter.wordpress.com/2010/06/28/minimize-a-wpf-application-to-system-tray-in-c/\" rel=\"nofollow\">http://ebbypeter.wordpress.com/2010/06/28/minimize-a-wpf-application-to-system-tray-in-c/</a>), but I can't get it to work. I tried implementing it, but it seems like the constructor for MainWindow never gets hit.\r<br />\n<br />\nDo you have any guidance on how to make this work?\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-10-17T16:14:38.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1232039",
+    "ThreadId": "462652",
+    "Html": "I am curious as well<br />\n",
+    "PostedDate": "2014-04-08T14:11:16.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1232859",
+    "ThreadId": "462652",
+    "Html": "I have a <a href=\"http://bit.ly/1gQ05eD\" rel=\"nofollow\">solution</a> that both of you should find satisfies your needs perfectly;<br />\n",
+    "PostedDate": "2014-04-10T08:54:48.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1235929",
+    "ThreadId": "462652",
+    "Html": "flyte - hilarious, why not try to actually help?\r<br />\n<br />\nmartellaj &amp; ste5ers - I have a set of tools which can manage wpf windows with tray icons - let me know, happy to share.<br />\n",
+    "PostedDate": "2014-04-20T10:42:06.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

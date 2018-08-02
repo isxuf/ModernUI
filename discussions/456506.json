@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1091122",
+    "ThreadId": "456506",
+    "Html": "Using ModernDialog is confusing.<br />\nI don't know how to read ModernDialog OK / Yes / No / Cancel DialogResult value.<br />\n<br />\n var v = new ModernDialog<br />\n {<br />\n<pre><code> Title = &quot;Common dialog&quot;,\n Content = new LoremIpsum(),</code></pre>\n\n};<br />\n v.Buttons = new Button[] { v.OkButton, v.CancelButton };<br />\n<br />\n bool? result = v.ShowDialog();<br />\n if (result.HasValue)<br />\n {<br />\n<pre><code> MessageBox.Show(v.DialogResult.ToString());    \n // allways false because DialogResult is bool?</code></pre>\n\n}<br />\n<br />\nmui has private property dialogResult but I don't have access to it.<br />\nI think mui needs new property<br />\npublic new MessageBoxResult DialogResult { get { return dialogResult;  } }<br />\n<br />\nor are there better ways to do that?<br />\n",
+    "PostedDate": "2013-09-11T05:32:27.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091142",
+    "ThreadId": "456506",
+    "Html": "<pre><code>MessageBoxButton btn = MessageBoxButton.YesNo;\nif(ModernDialog.ShowMessage(&quot;MSG&quot;, &quot;Caption&quot;, btn) == MessageBoxResult.Yes)\n{\n    //Do something\n}</code></pre>\n\nYou can still use an anonymous call like you have in your post. Just when working with this framwork it's MessageBoxResult that you will care about.<br />\n",
+    "PostedDate": "2013-09-11T06:16:21.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091158",
+    "ThreadId": "456506",
+    "Html": "I can't use ModernDialog.ShowMessage because I need special Dialog, Calendar etc.<br />\n",
+    "PostedDate": "2013-09-11T06:41:56.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

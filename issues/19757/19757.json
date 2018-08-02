@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "fixed in changeset 101520",
+    "ClosedDate": "2013-07-05T13:24:44.777-07:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Hi. First of all, thank for the good work. Unfortunately the current mui doesn't handle well the threestate checkbox. So, I decided to just override the style and share the code so that anybody can use it and possibly be integrated in the platform. Probably there is a better way to do this, but this was an easy way for a beginner. Just copy the style from the FirstFloor.ModernUI\\FirstFloor.ModernUI\\Assets\\CheckBox.xaml and copy it to my control.resource, and changed the following:\n\n```\n<Path x:Name=\"CheckMark\" Width=\"10\" Height=\"10\" Margin=\"2\" Visibility=\"Collapsed\" Stretch=\"Fill\" Fill=\"{TemplateBinding Foreground}\" Data=\"F1 M 15,21L 22,28L 32.9999,14.0001L 35.9999,17.0001L 22,34L 12.0001,24L 15,21 Z \"/>\n```\nTo\n```\n<Grid>\n    <Path x:Name=\"CheckMark\" Width=\"10\" Height=\"10\" Margin=\"2\" Visibility=\"Collapsed\" Stretch=\"Fill\" Fill=\"{TemplateBinding Foreground}\" Data=\"F1 M 15,21L 22,28L 32.9999,14.0001L 35.9999,17.0001L 22,34L 12.0001,24L 15,21 Z \"/>\n    <Rectangle x:Name=\"Indeterminate\" Width=\"8\" Height=\"8\" Margin=\"4\" Fill=\"{TemplateBinding Foreground}\" Visibility=\"Hidden\"/>\n</Grid>\n\n```\n\nInserted a multidatatrigger:\n```\n<ControlTemplate.Triggers>\n    <MultiDataTrigger>\n        <MultiDataTrigger.Conditions>\n            <Condition Binding=\"{Binding RelativeSource={RelativeSource Self}, Path=IsThreeState}\" Value=\"True\" />\n            <Condition Binding=\"{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}\" Value=\"{x:Null}\" />\n        </MultiDataTrigger.Conditions>\n        <Setter Property=\"Foreground\" Value=\"{DynamicResource ButtonTextDisabled}\" />\n        <Setter TargetName=\"CheckMark\" Property=\"Visibility\" Value=\"Collapsed\" />\n        <Setter TargetName=\"Indeterminate\" Property=\"Visibility\" Value=\"Visible\" />\n    </MultiDataTrigger>\n\n```\nand changed the trigger of the IsChecked to:\n```\n<Trigger Property=\"IsChecked\" Value=\"True\">\n    <Setter TargetName=\"CheckMark\" Property=\"Visibility\" Value=\"Visible\" />\n    <Setter TargetName=\"Indeterminate\" Property=\"Visibility\" Value=\"Collapsed\" />\n</Trigger>\n```\n\nThe complete style is attached.",
+    "LastUpdatedDate": "2013-07-05T13:24:44.777-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-23T08:03:27.147-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Checkbox Threestate",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 19757
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903298,
+      "FileName": "Style.xaml",
+      "DownloadUrl": ".\\903298"
+    }
+  ],
+  "Comments": []
+}

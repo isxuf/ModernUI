@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1086972",
+    "ThreadId": "455085",
+    "Html": "Hello,\r<br />\n<br />\nI've made a function to be triggered on clicking a button. The code is <br />\n<pre><code>ModernWindow vWinViewCache = new ModernWindow\n{\n    Content = new GclTabAddItemNew(),\n};\nvWinViewCache.ShowDialog();</code></pre>\n\nThe strange this is that the window shown is empty. If I change it to a normal window the layout is correct. the content is a file with this content<br />\n<pre><code>&lt;UserControl x:Class=&quot;GeoCacheLog.Views.GclAppSettings&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;\n    &lt;Grid&gt;\n        &lt;ScrollViewer&gt;\n            &lt;StackPanel MinWidth=&quot;200&quot;&gt;\n                &lt;TextBlock Text=&quot;TODO: add application page containing the settings&quot; /&gt;\n            &lt;/StackPanel&gt;\n        &lt;/ScrollViewer&gt;\n    &lt;/Grid&gt;\n&lt;/UserControl&gt;</code></pre>\n\nAny ideas why this doesn't work?<br />\n",
+    "PostedDate": "2013-08-31T14:16:02.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087068",
+    "ThreadId": "455085",
+    "Html": "The default ModernWindow style ignores the value of the Content property. Content is rendered using a ModernFrame and the ContentSource property. If you need to render plain Content I would suggest using the EmptyWindow style, which does render Content.<br />\n<pre><code>var wnd = new ModernWindow {\n Style = (Style)Application.Resources[&quot;EmptyWindow&quot;]\n};</code></pre>\n\n",
+    "PostedDate": "2013-09-01T05:04:17.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087082",
+    "ThreadId": "455085",
+    "Html": "Thanks for the answer and 'hidden' tip :-)\r<br />\n<br />\nIs so was that today I messed with setting the image source of an image object. Reading your answer I set the ContentSource the same way, but then ofcourse to a xaml file. That works as a charm.<br />\n",
+    "PostedDate": "2013-09-01T06:13:57.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

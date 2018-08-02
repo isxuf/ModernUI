@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1069770",
+    "ThreadId": "450407",
+    "Html": "I am new to WPF, and i like the way Modern UI works, am trying to create a simple software with it,<br />\nbut i will need to use sql or exactly SDF compact database, \r<br />\nand i wonder if i can use &quot;ListPage&quot;  &quot;layout= list&quot; that link will be pushed from database. \r<br />\ni hope that will be possible \r<br />\nthanks <br />\n",
+    "PostedDate": "2013-07-17T15:57:37.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1070841",
+    "ThreadId": "450407",
+    "Html": "I could make it to retrieve data to a listview on a separate page but how  cam I make this data to be a clickable link to open in listpageview  ? \r<br />\nis that possible ? \r<br />\ni hope you can help me.\r<br />\n<br />\nthanks \r<br />\n<br />\nhere is the code : \r<br />\n<br />\nControl x:Class=&quot;My_Art_Gallery.Pages.BasicPage8&quot;<br />\n<pre><code>         xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n         xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n         xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n         xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n         xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n         mc:Ignorable=&quot;d&quot; \n         d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;\n&lt;Grid HorizontalAlignment=&quot;Left&quot; Height=&quot;300&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;300&quot;&gt;\n    &lt;ListView x:Name=&quot;Listview1&quot; Margin=&quot;0,0,120,0&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;&gt;\n        &lt;ListView.View&gt;\n            &lt;GridView&gt;\n                &lt;GridViewColumn/&gt;\n            &lt;/GridView&gt;\n        &lt;/ListView.View&gt;\n    &lt;/ListView&gt;\n&lt;/Grid&gt;</code></pre>\n\n&lt;/UserControl&gt;\r<br />\n<br />\n<br />\nand here is the CS page\r<br />\n<br />\nusing Microsoft.SqlServerCe.Client;\r<br />\nusing System;\r<br />\nusing System.Collections.Generic;\r<br />\nusing System.Linq;\r<br />\nusing System.Text;\r<br />\nusing System.Threading.Tasks;\r<br />\nusing System.Windows;\r<br />\nusing System.Windows.Controls;\r<br />\nusing System.Windows.Data;\r<br />\nusing System.Windows.Documents;\r<br />\nusing System.Windows.Input;\r<br />\nusing System.Windows.Media;\r<br />\nusing System.Windows.Media.Imaging;\r<br />\nusing System.Windows.Navigation;\r<br />\nusing System.Windows.Shapes;\r<br />\n<br />\nnamespace My_Art_Gallery.Pages\r<br />\n{<br />\n<pre><code>/// &lt;summary&gt;\n/// Interaction logic for BasicPage8.xaml\n/// &lt;/summary&gt;\npublic partial class BasicPage8 : UserControl\n{\n    public BasicPage8()\n    {\n        InitializeComponent();\n\n        // connection to database\n\n        SqlCeDataReader Reader = null;\n        SqlCeConnection connection = new SqlCeConnection(&quot;Data Source = Database1.sdf&quot;);\n        connection.Open();\n\n        SqlCeCommand com = new SqlCeCommand(&quot;SELECT * FROM Gallery_NAMES&quot;, connection);\n\n        Reader = com.ExecuteReader();\n\n\n\n        while (Reader.Read())\n        {\n            //add gallery names to listview\n            Listview1.Items.Add(Reader.GetString(2));\n\n        }\n\n\n\n    }\n\n}\n\n\n</code></pre>\n\n}\r<br />\n<br />\nI will add some image to show what i really want if that possible : \r<br />\n<br />\n<img src=\"http://drive.google.com/uc?export=view&amp;id=0B1TEWMblKHRFV0NXemtWRG9hZFU\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-07-20T12:12:44.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

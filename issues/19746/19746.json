@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:15:47.61-07:00",
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "As discussed here https://mui.codeplex.com/discussions/444036\n\nVote if you are ok for:\n\n * kozw to replace the Microsoft.Windows.Shell dependency dll that is bound to .NET Framework 2.0 by the source of Microsoft.Windows.Shell\n\nPros : \n\n* You no more link to .NET 2.0\n* You don't force a Windows 8 user to activate .NET 2.0 just for this dll\n* Direct access to Microsoft.Windows.Shell sources from your project\n\nCons :\n\n* Your binary will be approximatively 150KB bigger\n* May have Licensing issues as it requires to decompile the MS dll, well that's an old one anyway, to note that the WPF Shell project does it too with an older version of the same dll",
+    "LastUpdatedDate": "2013-07-05T13:15:47.61-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-21T13:22:35.793-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Replace Microsoft.Windows.Shell .NET 2.0 by its sources",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 10,
+    "Id": 19746
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Please note, there is a related issue: https://mui.codeplex.com/workitem/19695",
+      "PostedDate": "2013-05-29T11:09:50.427-07:00",
+      "Id": 158508
+    },
+    {
+      "Message": "This has been resolved in changeset 101034 by dropping the dependency in the .NET4.5 version of mui. Support for custom window chromes is built-in in System.Windows.Shell namespace of .NET4.5.\r\n\r\nPlease note that the dependency is still required for .NET4 projects.\r\n\r\n\r\n\r\n",
+      "PostedDate": "2013-06-11T14:00:14.887-07:00",
+      "Id": 158509
+    }
+  ]
+}

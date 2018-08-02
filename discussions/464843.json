@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1114979",
+    "ThreadId": "464843",
+    "Html": "I want to going back the navigation of the main page. Exactly like a click in the back button. How can i make this?<br />\n",
+    "PostedDate": "2013-10-31T04:11:17.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1115030",
+    "ThreadId": "464843",
+    "Html": "I needed something like this - the ability to have my main frame go back to the previously shown page. In other words, do exactly the same thing that pressing the back button would do, but do it in response to something else (i.e.: show a page, and when a selection is made on that page, simply return to the previous page)\r<br />\n<br />\nWhat I did to accomplish this was to obtain the Content frame in my MainWindow.cs like so:<br />\n<pre><code>private ModernFrame f;\npublic override void OnApplyTemplate()\n{\n    base.OnApplyTemplate();\n    f = (ModernFrame)GetTemplateChild(&quot;ContentFrame&quot;);\n}</code></pre>\n\nand also have my MainWindow register for a NavigateBackMessage that any one of my Page's viewmodels could send.<br />\n<pre><code>public MainWindow()\n{\n    InitializeComponent();\n    Messenger.Default.Register&lt;NavigateBackMessage&gt;(this, m =&gt; ReceiveNavigateBackMessage(m));  \n}</code></pre>\n\nand upon receipt of the message I do:<br />\n<pre><code> private void ReceiveNavigateBackMessage(NavigateBackMessage m)\n{\n    NavigationCommands.BrowseBack.Execute(null, f);\n}</code></pre>\n\nand that's it.<br />\n",
+    "PostedDate": "2013-10-31T07:41:23.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2013-10-31T09:55:37.1-07:00"
+  },
+  {
+    "Id": "1115039",
+    "ThreadId": "464843",
+    "Html": "Where is the class Messenger used in this block of code?<br />\n<pre><code>public MainWindow()\n{\n    InitializeComponent();\n    Messenger.Default.Register&lt;NavigateBackMessage&gt;(this, m =&gt; ReceiveNavigateBackMessage(m));  \n}</code></pre>\n\n",
+    "PostedDate": "2013-10-31T08:09:27.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1115041",
+    "ThreadId": "464843",
+    "Html": "Where is the class Messenger used in the second block of code?<br />\n",
+    "PostedDate": "2013-10-31T08:13:13.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1115124",
+    "ThreadId": "464843",
+    "Html": "The Messenger class is part of the <a href=\"http://blogs.msdn.com/b/ivo_manolov/archive/2012/03/17/10284665.aspx\" rel=\"nofollow\">MVVM</a> framework that I am using (<a href=\"https://mvvmlight.codeplex.com/\" rel=\"nofollow\">mvvmlight</a>) that facilities the loosely coupled communication between my ViewModels, and to my other View components. It is not part of the MUI framework.<br />\n<br />\nI'm not sure if you are using the MVVM pattern in your application, however just figure out a way to call a method in your MainWindow from wherever your code is that you require going back a page. For example, if you make the &quot;ReceiveNavigateBackMessage&quot; method public (and rename it to something more appropriate since you're not receive a message), then you can access it via:<br />\n<pre><code>var mw = Application.Current.MainWindow\nmw.CallTheBackMethod();</code></pre>\n\n",
+    "PostedDate": "2013-10-31T09:36:42.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1115138",
+    "ThreadId": "464843",
+    "Html": "ok i understood. \r<br />\n<br />\nI don't use the MVVM framework so I made my way. In the MainWindow:<br />\n<pre><code>Public Shared Property Frame As ModernFrame\n\n    Public Overrides Sub OnApplyTemplate()\n        MyBase.OnApplyTemplate()\n        MainWindow.Frame = Me.GetTemplateChild(&quot;ContentFrame&quot;)\n    End Sub</code></pre>\n\nand in the click of button:<br />\n<pre><code>Private Sub BtnCancel_Click(sender As Object, e As RoutedEventArgs)\n        NavigationCommands.BrowseBack.Execute(Nothing, MainWindow.Frame)\n    End Sub</code></pre>\n\nIt's working now.\r<br />\n<br />\nThank you for your attention flyte!<br />\n",
+    "PostedDate": "2013-10-31T09:47:57.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2013-10-31T09:55:21.717-07:00"
+  },
+  {
+    "Id": "1120536",
+    "ThreadId": "464843",
+    "Html": "Thanks for the code Latchuk.\r<br />\n<br />\nI implemented your solution and it works for me.<br />\n",
+    "PostedDate": "2013-11-08T08:56:07.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1126098",
+    "ThreadId": "464843",
+    "Html": "nevermind<br />\n",
+    "PostedDate": "2013-11-18T09:24:28.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

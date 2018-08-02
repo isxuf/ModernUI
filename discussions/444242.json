@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1045840",
+    "ThreadId": "444242",
+    "Html": "The issue is that I need to bring an empty UserControl every time I access to it.\r<br />\n<br />\nThe example of how I use this is:\r<br />\nModernTab myTab = new ModernTab();\r<br />\nLink myLink = new Link();\r<br />\nUri myUri = new Uri(&quot;Path/UserControl.xaml&quot;, UriKind.Relative);\r<br />\nmyLink.DisplayName = &quot;My New Link&quot;;\r<br />\nmyLink.Source = myUri;\r<br />\nmyTab.Links.Add(myLink);\r<br />\n<br />\nBut when I move to one user control and make some changes (i.e. add some text to an textBox) and move to another userControl, when I come back it has the same change, but I want that every time I acces to this userControl it be empty againg.\r<br />\n<br />\nI tried to handle this with the GotFocus() property of the tab and set again the source to the link but it doesn't call againg the user control and mantain the data.\r<br />\n<br />\nThank you.<br />\n",
+    "PostedDate": "2013-05-19T20:56:46.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046022",
+    "ThreadId": "444242",
+    "Html": "Assign attached property ModernFrame.KeepAlive = false to your usercontrol XAML like so:<br />\n<pre><code>&lt;UserControl .. \n    xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n    mui:ModernFrame.KeepAlive=&quot;false&quot;&gt;\n  ..\n&lt;/UserControl&gt;</code></pre>\n\n",
+    "PostedDate": "2013-05-20T07:09:18.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046266",
+    "ThreadId": "444242",
+    "Html": "Problem solved.\r<br />\n<br />\nThank you :)<br />\n",
+    "PostedDate": "2013-05-20T18:46:13.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

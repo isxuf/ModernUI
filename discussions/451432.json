@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1073157",
+    "ThreadId": "451432",
+    "Html": "Is is possible to highlight the entire row and not just the cell?<br />\n",
+    "PostedDate": "2013-07-25T13:41:41.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073161",
+    "ThreadId": "451432",
+    "Html": "I believe the default style does highlight the entire row when selecting a cell. If you run the ModernUI demo app, and navigate to controls &gt; styles &gt; datagrid, selecting a cell does select the row.<br />\n",
+    "PostedDate": "2013-07-25T13:46:51.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073178",
+    "ThreadId": "451432",
+    "Html": "I should have been more clear. I mean highlight the whole row on hover and not just the cell. There is full row highlight on select.<br />\n",
+    "PostedDate": "2013-07-25T14:12:44.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073183",
+    "ThreadId": "451432",
+    "Html": "Ah okay, an update of the DataGrid style has been checked in that does a highlight of the full row. You'll need to get the latest sources to check it out.<br />\n",
+    "PostedDate": "2013-07-25T14:21:18.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073186",
+    "ThreadId": "451432",
+    "Html": "Thanks you!<br />\n",
+    "PostedDate": "2013-07-25T14:22:23.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

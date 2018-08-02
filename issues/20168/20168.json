@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Consider main window that has Icon set to an *.ico file:\n\n<mui:ModernWindow x:Class=\"Scheduler.MainWindow\"\n        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n        xmlns:mui=\"http://firstfloorsoftware.com/ModernUI\"\n        ContentSource=\"/view/StartPage.xaml\"\n        Icon=\"assets\\Ship.ico\"\n   ...\n\nThis builds and works on Windows 8, but the program crashes on Windows XP. \nIf you set the icon to a png file, the app works on XP too:\nIcon=\"assets\\Ship.png\"",
+    "LastUpdatedDate": "2013-09-04T09:38:19.64-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-09-04T09:38:19.64-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Icon file crashes app on Windows XP",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20168
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

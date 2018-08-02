@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1082649",
+    "ThreadId": "453941",
+    "Html": "I <a href=\"https://mui.codeplex.com/workitem/20096\" rel=\"nofollow\">posted</a> in the Issues section but did not know if this would be best to post here also so apologies in advance for posting in two places.\r<br />\n<br />\nm:ui is Great BTW!!!\r<br />\n<br />\nI have read this <a href=\"https://mui.codeplex.com/discussions/449700\" rel=\"nofollow\">Discussion</a> but there was never really an answer given.. Only that it works as re-designed.  IMHO the re-design is flawed as you can no longer return the value from the ShowDialog method.\r<br />\n<br />\nIf you do this in 1.0.3 and you were to click the Ok Button you would see true returned - <strong>not</strong> the case in 1.0.5<br />\n<pre><code>var dialog = new ModernDialog {\n                 Title = &quot;Common Dialog&quot;,\n                 Content = new LoremIpsum(),\n             };\n            \n             dialog.Buttons = new Button[] { dialog.CloseButton, dialog.OkButton };\n             bool? r = dialog.ShowDialog();\n            MessageBox.Show(r.Value.ToString());</code></pre>\n\nWe were using 1.0.3 to display a login form - and we want to upgrade but this is a problem.\r<br />\n<br />\nDoes <strong>anyone</strong> have a suggestion, if so please show or point to an example\r<br />\n<br />\n<br />\n<br />\n<strong>And Then My Answer to my Own Question</strong>\r<br />\n<br />\n have an answer to my own question but would like someone who is more familiar with WPF to answer if I am correct. \r<br />\n<br />\nIf you expose the dialogResult in ModernDialog.cs <br />\n<pre><code>/// &lt;summary&gt; \n        /// Return the Dialog Result when using the ShowDialog method.\n        /// &lt;/summary&gt;\n        public MessageBoxResult GetDialogResult {\n            get { return dialogResult; }\n        }</code></pre>\n\nBecause the actual DialogResult is never set or passed back as far as I can see. \r<br />\n<br />\nYou would then be able to do this<br />\n<pre><code>var  dialog = new ModernDialog\n                {\n                    Title = &quot;Common dialog&quot;,\n                    Content = new LoremIpsum()\n                };\n            \n            dialog.Buttons = new Button[] { dialog.CloseButton,dialog.OkButton};\n            dialog.ShowDialog();\n\n            \n            MessageBox.Show((dialog.GetDialogResult.ToString()==&quot;OK&quot;).ToString());</code></pre>\n\nDo the Guru's agree?<br />\n",
+    "PostedDate": "2013-08-20T05:39:24.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082713",
+    "ThreadId": "453941",
+    "Html": "This may be better Alter ModernDialog.cs to do this<br />\n<pre><code>public ModernDialog()\n        {\n            this.DefaultStyleKey = typeof(ModernDialog);\n            this.WindowStartupLocation = WindowStartupLocation.CenterOwner;\n\n            this.closeCommand = new RelayCommand(o =&gt; {\n                var result = o as MessageBoxResult?;\n                if (result.HasValue) {\n                    this.dialogResult = result.Value;\n                    if (result.Value == MessageBoxResult.OK || result.Value == MessageBoxResult.Yes) \n                        DialogResult = true;\n                }\n                Close();\n            });\n\n            this.Buttons = new Button[] { this.CloseButton };\n\n            // set the default owner to the app main window (if possible)\n            if (Application.Current != null &amp;&amp; Application.Current.MainWindow != this) {\n                this.Owner = Application.Current.MainWindow;\n            }\n        }</code></pre>\n\nThen when calling you could do this<br />\n<pre><code>MessageBox.Show((dialog.DialogResult).ToString()); // Would produce True when clicking Ok or Yes</code></pre>\n\n",
+    "PostedDate": "2013-08-20T07:52:44.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292355",
+    "ThreadId": "453941",
+    "Html": "I ended up adding a click-event to the dialog.OkButton and did the &quot;stuff&quot; there, something like:<br />\n<pre><code> var dialog = new ModernDialog { Title = &quot;Save?&quot;, Content = &quot;You made changed, want to save before exiting?&quot; };\n                var okButton = dialog.YesButton;\n                okButton.Click += (sender, e1) =&gt; _vm.Save();\n                dialog.Buttons = new[] { okButton, dialog.NoButton };\n                dialog.ShowDialog();</code></pre>\n\nWorks for me :)<br />\n",
+    "PostedDate": "2014-08-22T01:39:09.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292379",
+    "ThreadId": "453941",
+    "Html": "This ModernDialog issue has been fixed in release 1.0.6, a MessageBoxResult property has been added. No need to workaround anymore<br />\n",
+    "PostedDate": "2014-08-22T03:14:55.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292394",
+    "ThreadId": "453941",
+    "Html": "\r\n<div>\r\n<div style=\"font-size:11pt; font-family:Calibri,sans-serif\">Thanks!<br>\r\n<br>\r\nSent from my Windows Phone</div>\r\n</div>\r\n<div dir=\"ltr\">\r\n<hr>\r\n<span style=\"font-size:11pt; font-family:Calibri,sans-serif; font-weight:bold\"></span></div>\r\n",
+    "PostedDate": "2014-08-22T03:59:30.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1085484",
+    "ThreadId": "454680",
+    "Html": "Hello, great Framework by the way! \r<br />\n<br />\nIm trying to add a custom UserControl called &quot;Tile to my content page and I keep getting the following error:\r<br />\n<br />\nError\t1\tThe name &quot;Tile&quot; does not exist in the namespace &quot;clr-namespace:Test.UI.Content;assembly=Test.UI&quot;.\r<br />\n<br />\n<br />\n<br />\nThanks for your help,\r<br />\nMH\t<br />\n",
+    "PostedDate": "2013-08-27T10:59:27.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1085529",
+    "ThreadId": "454680",
+    "Html": "The error indicates the Tile control is not in given namespace and/or assembly.<br />\n",
+    "PostedDate": "2013-08-27T13:21:41.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1067486",
+    "ThreadId": "449801",
+    "Html": "It can't run in windows 7 64bit. How to fixed it?.<br />\n",
+    "PostedDate": "2013-07-12T04:52:26.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1067615",
+    "ThreadId": "449801",
+    "Html": "Can you be more specific?  I'm running Windows 7 64bit on three different boxes and can both develop it and run it.  I use both VS Express and VS Ultimate with VB.net and no issues.<br />\n",
+    "PostedDate": "2013-07-12T10:53:24.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1083893",
+    "ThreadId": "454291",
+    "Html": "I'd like the be able to click and drag to reorder them.  I'm not sure if its possible.  Any suggestions on where to start to use/implement this?\r<br />\n<br />\nAlso, any suggestions for being able to close one? Is there a standard place to place an icon to close a tab?\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-08-22T18:41:54.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084910",
+    "ThreadId": "454291",
+    "Html": "Sounds doable, you'll need to check the ModernTab control. There's no standard place for an icon in the tab control, that's totally up to you.<br />\n",
+    "PostedDate": "2013-08-26T06:15:14.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

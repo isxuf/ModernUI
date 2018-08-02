@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "commandbinding not working. first if you change \r\n\r\n        public ModernButton()\r\n        {\r\n            this.DefaultStyleKey = typeof(ModernButton);\r\n        }\r\n\r\nto\r\n\r\n        public ModernButton()\r\n            : base()\r\n        {\r\n            this.DefaultStyleKey = typeof(ModernButton);\r\n        }",
+    "LastUpdatedDate": "2014-11-27T12:18:16.21-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-11-27T12:18:16.21-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "mui:ModernButton.CommandBindings",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21257
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

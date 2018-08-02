@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1249596",
+    "ThreadId": "546578",
+    "Html": "There are some tutorial of how to use m:ui in an application made with caliburn.micro.\r<br />\n<br />\nI try MaHapps.metro but requires .net 4.5 and iam limited to 4.0 so MUI seem the only chance.\r<br />\n<br />\nI like the graphics very much (even more than mahapps) but merge mui navigation framework with caliburn.micro seem over my possibility<br />\n",
+    "PostedDate": "2014-05-26T05:01:11.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253425",
+    "ThreadId": "546578",
+    "Html": "Check out this post on StackOverflow: <a href=\"http://stackoverflow.com/questions/16421582/caliburn-micro-and-modernui-examples-tutorials\" rel=\"nofollow\">http://stackoverflow.com/questions/16421582/caliburn-micro-and-modernui-examples-tutorials</a><br />\n",
+    "PostedDate": "2014-06-05T11:56:00.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1057865",
+    "ThreadId": "447312",
+    "Html": "Why ModernDialog not displayed result of validation?<br />\n",
+    "PostedDate": "2013-06-17T10:53:35.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058357",
+    "ThreadId": "447312",
+    "Html": "You mean validation error popup not showing? <a href=\"https://mui.codeplex.com/workitem/19810\" rel=\"nofollow\">This issue</a> was addressed in the latest release by adding an adornerlayer to the default dialog template.<br />\n",
+    "PostedDate": "2013-06-18T12:05:57.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058470",
+    "ThreadId": "447312",
+    "Html": "Yep! Thanks!<br />\n",
+    "PostedDate": "2013-06-18T20:28:21.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

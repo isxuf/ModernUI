@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1114025",
+    "ThreadId": "464212",
+    "Html": "I need to display dialog windows to my users, so I need a lightweight Modern windows - no menus, app titles, navigation etc.<br />\n<br />\nWhat is the best way to approach this? I'd REALLY like to have &quot;dialogs&quot; as overlays, in the similar kind of way to what MetroTwit does. Is this supported or easily achievable with MUI??<br />\n<br />\nEdit: I should add - I can stuff my own ViewModel into the BackgroundContent property on the ModernDialog, and it correctly resolves the view, but the View is aligned with the top of the Dialog, so is under the title.<br />\n<br />\n<a href=\"https://db.tt/9eRxaGBt\" rel=\"nofollow\">Link to screenshot</a><br />\n<br />\nCheers!<br />\n",
+    "PostedDate": "2013-10-30T01:24:36.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1114996",
+    "ThreadId": "464212",
+    "Html": "I assume you want a blank window like dialog with only the title bar. If yes, have a look at this code:- <br />\n<pre><code>        /// &lt;summary&gt;\n        /// Removes all button from the dialog\n        /// &lt;/summary&gt;\n        public void BlankDialog()\n        {\n            this.Buttons = new Button[] {};\n        }\n</code></pre>\n\nAdd this function to the ModernDialog template in the source code.\r<br />\n<br />\nCreate a normal window, inherit ModernDialog and call the above function in the constructor. You get a blank window which can be then edited like any other window.<br />\n",
+    "PostedDate": "2013-10-31T05:40:47.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

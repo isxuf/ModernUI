@@ -1,0 +1,33 @@
+<div class="wikidoc"><h1>Handle navigation events in your content</h1>
+Modern UI includes a content navigation framework that handles content loading, unloading and history navigation based on link uris. If you want your content to be aware of navigation events such as loaded and unloaded events, you&#39;ll need to implement an interface.<br /><br />Make your content navigation aware by implementing the <b>IContent</b> interface available in the <b>FirstFloor.ModernUI.Windows</b> namespace. The interface defines 4 methods:<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">interface</span> IContent
+{
+  <span style="color:Blue;">void</span> OnFragmentNavigation(FragmentNavigationEventArgs e);
+  <span style="color:Blue;">void</span> OnNavigatedFrom(NavigationEventArgs e);
+  <span style="color:Blue;">void</span> OnNavigatedTo(NavigationEventArgs e);
+  <span style="color:Blue;">void</span> OnNavigatingFrom(NavigatingCancelEventArgs e);
+}
+</pre></div>
+<h2>Loading and unloading</h2>The <i>OnNavigatedTo</i> method is invoked when the content becomes the active content in a frame. This is a good time to initialize your content.<br /><br />The <i>OnNavigatingFrom</i> method is invoked when the content is about to become inactive. You can use the <i>OnNavigatingFrom</i> method to cancel navigation by setting the <b>NavigatingCancelEventArgs.Cancel</b> to true. The method <i>OnNavigatedFrom</i> is called when the content is no longer the active content.<br /><br /><table><tr><td> <b>Important</b>: do not rely on WPF <i>Loaded</i> and <i>Unloaded</i> events for content initialization and clean up. The <i>Loaded</i> and <i>Unloaded</i> events are raised multiple times when the active content changes. This is due to the use of multiple ContentPresenters in the TransitioningContentControl required for fluent animations. Use <i>OnNavigatedTo</i> and <i>OnNavigatedFrom</i> instead. </td></tr></table>
+<h2>Fragment navigation</h2>The <i>OnFragmentNavigation</i> is called when navigation to a content fragment begins. Fragment navigation happens when you navigate to a link uri containing a fragment (use the <b>#</b> character).<br /><br />Once <b>IContent</b> is implemented by your content pages, the navigation methods are automatically invoked when a page is loaded in a ModernFrame instance. The following code demonstrates a content sample that prevents navigation when the user doesn&#39;t allow it:<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> MyContent : UserControl, IContent
+{
+  <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> OnFragmentNavigation(FragmentNavigationEventArgs e)
+  {
+  }
+  <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> OnNavigatedFrom(NavigationEventArgs e)
+  {
+  }
+  <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> OnNavigatedTo(NavigationEventArgs e)
+  {
+  }
+  <span style="color:Blue;">public</span> <span style="color:Blue;">void</span> OnNavigatingFrom(NavigatingCancelEventArgs e)
+  {
+    <span style="color:Green;">// ask user if navigating away is ok</span>
+    <span style="color:Blue;">if</span> (<span style="color:Blue;">false</span> == ModernDialog.ShowMessage(<span style="color:#A31515;">&quot;Navigate away?, &quot;</span>navigate&quot;,   
+      System.Windows.MessageBoxButton.YesNo)) {
+                e.Cancel = <span style="color:Blue;">true</span>;
+    }
+  }
+}
+</pre></div></div><div class="ClearBoth"></div>

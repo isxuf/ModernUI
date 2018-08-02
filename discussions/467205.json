@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1120564",
+    "ThreadId": "467205",
+    "Html": "I have this user control, works great, until I try to get the ModernWindow to load it as a page.  Somehow it's not getting initialized.  What am I missing?<br />\n<pre><code>&lt;UserControl\n        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n        xmlns:W3V=&quot;clr-namespace:W3.Views&quot;\n         x:Class=&quot;W3.MainWindow&quot;\n        Height=&quot;650&quot; Width=&quot;825&quot;&gt;\n  &lt;Grid x:Name=&quot;grid&quot;&gt;\n\n    &lt;Grid.DataContext&gt;\n      &lt;XmlDataProvider x:Name=&quot;dataProvider&quot; \n        Source=&quot;/Data/testmdf.xml&quot; \n        XPath=&quot;/mdf&quot;\n        /&gt;\n    &lt;/Grid.DataContext&gt;\n\n    &lt;TextBlock&gt;Helloooo&lt;/TextBlock&gt;\n    &lt;W3V:MegaView/&gt;\n\n\n  &lt;/Grid&gt;\n&lt;/UserControl&gt;</code></pre>\n\n",
+    "PostedDate": "2013-11-08T09:48:25.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

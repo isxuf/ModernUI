@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1038863",
+    "ThreadId": "442416",
+    "Html": "I need custom dialog in my project that has three editable fields (textboxes) and three buttons.\r<br />\nSo, I have three options:<br />\n<ol>\n<li>create the EmptyWindow with sets of controls that I need</li>\n<li>create a custom dialog box, that based on the ModernDialog</li>\n<li>\ncreate a custom control and copy the ModernDialog style.<br />\n</li>\n</ol>\nWhat's the option preferable?\r<br />\n<br />\nAnd a following question: if the EmptyWindow have been chosen can system buttons be hidden?<br />\n",
+    "PostedDate": "2013-05-02T20:24:39.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039016",
+    "ThreadId": "442416",
+    "Html": "I would suggest option 2 create a dialog based on ModernDialog.\r<br />\n<br />\nEmptyWindow includes the system buttons. If you do not need them, you'll need to create your own ModernWindow style.<br />\n",
+    "PostedDate": "2013-05-03T06:17:48.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

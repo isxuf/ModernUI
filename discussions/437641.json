@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1019573",
+    "ThreadId": "437641",
+    "Html": "Hi,\r<br />\n<br />\nfirst of all, thanks for sharing this! Very well thought. I really appreciate your work and would like to contribute at least some pieces.\r<br />\n<br />\nI'd like to use your UI concept using Links instead of Content with PRISM. As far as I understand your concepts from the superficial code scan I performed, I would have to implement region adapters for the ModernMenu, ModernFrame and ModernTab controls. Is there any assumptions/restrictions on your side that I should be aware of when implementing this? \r<br />\nAs I have seen in the demo app, you are using hard-coded xaml references for the links. This conflicts with the concept of compiletime-unknown modules and the views contained in the modules. So I think ModernMenu would be the least requiring a custom region adapter. For the other controls, this may be ambivalent. If a module registers its link in the modern menu, there is a high possibility it also knows the content of it and can therefore make it a modern tab or frame. Nevertheless, this is an assumption I make and may not hold in general. So additional region adapters may be necessary.\r<br />\n<br />\nWhat do you think?. Anything I missed? I would be happy to contribute the required code.\r<br />\n<br />\nCheers\r<br />\nFlorian<br />\n",
+    "PostedDate": "2013-03-22T07:52:47.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1019675",
+    "ThreadId": "437641",
+    "Html": "Good to hear you want to contribute. I don't have any experience with PRISM. As far as ModernUI is concerned; links are used in menus, lists and tabs and are associated with content that is loaded in a ModernFrame. The actual content load is performed by an implementation of IContentLoader. The default content loader is DefaultContentLoader that simply loads local XAML pages. Replace the default content loader by specifying ModernFrame.ContentLoader. This ContentLoader property is also available on ModernWindow and ModernTab.\r<br />\n<br />\nLinks in the demo app are hard-coded for demonstration purposes only. You can easily replace them with a view model driven collection that is dynamic. The LinkCollection is observable and changes in the collection are applied to the controls.\r<br />\n<br />\nIf you have any further questions or comments be sure to post them here. I'm actively monitoring this discussion list.<br />\n",
+    "PostedDate": "2013-03-22T10:15:12.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1019701",
+    "ThreadId": "437641",
+    "Html": "Ok, thanks so far. I'll have a deeper look into it at the weekend. I'll inform you regarding my progress. I will post questions in this thread - ok for you?<br />\n",
+    "PostedDate": "2013-03-22T10:50:27.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1019714",
+    "ThreadId": "437641",
+    "Html": "Yep, that's fine. btw; over <a href=\"http://mui.codeplex.com/workitem/19497\" rel=\"nofollow\">here</a> another discussion on prism and modernui<br />\n",
+    "PostedDate": "2013-03-22T11:04:46.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1020529",
+    "ThreadId": "437641",
+    "Html": "Before I tell you about my current progress, I should give you a small explanation of what I want prism to do, so you have a better idea of what parts I am trying to adapt/map to each other.\r<br />\n<br />\nPrism has the concept of regions. A region is just a FrameworkElement that is attached a RegionName property from the RegionManager class. This region name can then be used by any other part of the application to inject views into by using a RegionManager. \r<br />\nSince a region can be any FrameworkElement, prism has several so called RegionAdapter classes that actually know how to inject a view into a region of a given type.\r<br />\nA ContentControlAdapter knows how to inject a view into a single-view container (a content control), an ItemsControlAdapter knows how to inject several views into an items control. \r<br />\n<br />\nWhen looking at a modern ui app, there are several regions I'd like to be available to my modules. These are the title links, the modern menu as well as the modern tab (since this derives from Control and needs to have its own region adapter, as prism does not provide one ootb).\r<br />\n<br />\nE.g. I want the configuration module to be able to add its &quot;Settings&quot; link to the &quot;TitleRegion&quot; and some other modules to add their menu/sub menu structure to the &quot;MenuRegion&quot;. Whatever the modules register as links, they should be responsible for their content as well. This should be implemented in some IContentLoader, whether generic or provided by a module. From this point, responsibility for the content is at the module level. That's fine.\r<br />\n<br />\nNow for my observations and ideas:<br />\n<ol>\n<li>TitleLinks as well as ModernMenu links are wrapped in the ModernWindow and made available as MenuLinksGroups and TitleLinks. The UI elements representing those are contained in the ModernWindow template and are not accessible. So the FrameworkElement I can use to attach a region name to would be the modern window. Unfortunately, the modern window hosts two regions (TitleRegion and MenuRegion). The title links are really tied to the window chrome, so defining this region on the window seems to be a good idea. If I could access the ModernMenu control from the ModernWindow, I could define the menu region on the menu.</li>\n<li>\nTo enable injection of menu items and its content, I would have to implement a region adapter for modern menu. I have several ideas on how to structure this, at the moment I think it would be best to keep the prism region manager work with views and not make it aware of ModernUI-Links (which aren't dependency objects). That's not too bad, since I can think of a view in the MenuRegion as some kind of UI Element (e.g. LoremIpsum) that transports its menu integration via attached properties. I could define an attached behavior called e.g. MenuRegionItem and give it 2 properties called MenuDisplayName and SubMenuDisplayName. I then make any control that wants to integrate in the modern ui MenuRegion have these properties attached, so my custom RegionAdapter knows what links to create in the menu and which content the link points to. I see no other option for arbitrary ui elements transporting this information without implementing code ini the ui elements or derive a set of them (e.g. when using interfaces, attributes, ...). The attached behavior seems my only option here. <br />\n</li>\n</ol>\nI try to come up with a first sample the next days. Afterwards I'll think about where the IContentLoader fits with these ideas. It will definitely be useful, i think. \r<br />\n<br />\nI also looked at your navigation concepts. These seem very similar to what prism provides. As soon as the region stuff is done, i will see how to marry the navigation concepts. <br />\n",
+    "PostedDate": "2013-03-25T02:39:15.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025181",
+    "ThreadId": "437641",
+    "Html": "Any news about Modern UI Prism Integration/Region Adapters?\r<br />\nI think it doesn't really work well until the Main Menu Parts like TitleMenu and MenuLinkGroups are Properties of ModernWindow instead of external Controls inside the Window.<br />\n",
+    "PostedDate": "2013-04-03T19:19:09.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025253",
+    "ThreadId": "437641",
+    "Html": "Sorry, the discussion has been continued in another thread. Have a look here: <a href=\"http://mui.codeplex.com/discussions/438029\" rel=\"nofollow\">Discussion 438029</a>\r<br />\nI posted a demo project there. This was my first approach. I have some ideas for approaching things differently, as the discussion there gives me some other perspectives of thinking about the integration. Would be happy if you also help in finding a nice and clean way to integrate mui with prism.<br />\n",
+    "PostedDate": "2013-04-04T00:52:03.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,130 @@
+[
+  {
+    "Id": "1045040",
+    "ThreadId": "444036",
+    "Html": "In the response to a review and for myself too I managed to get ride of Microsoft.Windows.Shell<br />\n<br />\nTechnically, I did not really got ride of, I decompiled the dll, updated the few mistakes the decompiler made and I placed the sources in FirstFloor.ModernUI folder<br />\n<br />\nTo decompile Microsoft.Windows.Shell I have used the exact same file that koz redistributes Microsoft.Windows.Shell.dll v3.5.41019.1<br />\n<br />\nThen I have modified namespaces to match xmlns:shell=&quot;clr-namespace:Microsoft.Windows.Shell&quot;&gt;<br />\n<br />\nResults in a larger binary (because Shell is inside) but you get more controls because you now have access to the source of Microsoft.Windows.Shell and you are no more forced to redistribute the dll Microsoft.Windows.Shell<br />\n<br />\nI have 7zip the modified mui project and uploaded to my googledrive if you are interested , it has the source of Shell + the new Demo recompiled with it, working out of the box for XP aswell in Windows 8<br />\n<br />\nYou may need theses redistributables<br />\nNET Framework 4.0<br />\nVisual C++ Redistributable for Visual Studio 2012 Update 1<br />\n<br />\nRevision: 100280 (1.0.3+) - Framework 4.0 - no shell edition - <a href=\"http://goo.gl/APCJ0\" rel=\"nofollow\">http://goo.gl/APCJ0</a><br />\n<br />\n//edit1: Just updated gdrive package, i forgot to zip NuGet packages<br />\n",
+    "PostedDate": "2013-05-17T05:20:39.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1045190",
+    "ThreadId": "444036",
+    "Html": "why do you wan't to get rid of the assembly Microsoft.Windows.Shell?<br />\n",
+    "PostedDate": "2013-05-17T09:44:42.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1045231",
+    "ThreadId": "444036",
+    "Html": "Why not ? I'm just not fine with redistributing an old .NET 2.0 dll that is no more developped, I prefer to get the source so that it compiles with the same Framework I'm targeting to so I can eventually patch it myself if I find bugs<br />\nI did not invent this anyway it already exist but the only project I have found around is called WPF Shell and is outdated 2010, the sources where missing stuffs kozw uses in mui. So up is one up to date for its project<br />\n<br />\nAlso in Windows 8 .NET 2.0 is not activated by default so I prefer the old OS to install NET 4.0 rather than forcing Windows 8 to activate NET 2.0 <br />\n",
+    "PostedDate": "2013-05-17T10:58:11.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046381",
+    "ThreadId": "444036",
+    "Html": "good point, i totally agree with you! i hope <strong>kozw</strong> will adopt this change in the next release of M:UI.<br />\n",
+    "PostedDate": "2013-05-21T02:03:06.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046397",
+    "ThreadId": "444036",
+    "Html": "I don't think he will because it is more a &quot;cosmetic&quot; feature that some people will appreciate but some will not too. I have made this post more for the advanced users who want to completely include kozw's project as source in their own project without deps, or the guy requesting this in the review should also appreciate if he find my thread<br />\n",
+    "PostedDate": "2013-05-21T02:29:27.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046420",
+    "ThreadId": "444036",
+    "Html": "i would also prefer to include kozw's project as source but i don't want to update it manually if there is a code change. Is there a way to do this automatically (like nuget)? <br />\n",
+    "PostedDate": "2013-05-21T03:12:17.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046538",
+    "ThreadId": "444036",
+    "Html": "With this link <a href=\"https://mui.svn.codeplex.com/svn/1.0/FirstFloor.ModernUI/FirstFloor.ModernUI\" rel=\"nofollow\">https://mui.svn.codeplex.com/svn/1.0/FirstFloor.ModernUI/FirstFloor.ModernUI</a> (because svn offers checking out in sub directories)<br />\n<br />\nNor you checkout this link in your folder project or if you have your project in a svn, the cleanest way to do this is to put the link in the svn-externals property so that it will update automatically when you will Update your own project.<br />\n<br />\nI do also this and once I have applied modification to the sources of mui, I right click in TortoiseSVN &gt; Create patch, so you can reapply your own changes with just a patch file<br />\n",
+    "PostedDate": "2013-05-21T07:33:12.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046554",
+    "ThreadId": "444036",
+    "Html": "Great work guys. I'm about to start tweaking mui and will do so based on the priority in the issue tracker. Be sure to create an issue for removing the dependency, so people can vote.<br />\n",
+    "PostedDate": "2013-05-21T07:51:48.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046658",
+    "ThreadId": "444036",
+    "Html": "No prob I do this in a few hour<br />\n",
+    "PostedDate": "2013-05-21T11:10:16.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046708",
+    "ThreadId": "444036",
+    "Html": "Ticket is here <a href=\"https://mui.codeplex.com/workitem/19746\" rel=\"nofollow\">https://mui.codeplex.com/workitem/19746</a><br />\n",
+    "PostedDate": "2013-05-21T13:24:06.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046956",
+    "ThreadId": "444036",
+    "Html": "I hope SVN plays well with TFS. However i will give it a shoot, thank you for your help!<br />\n",
+    "PostedDate": "2013-05-22T02:15:48.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1047580",
+    "ThreadId": "444036",
+    "Html": "I dont know TFS at all never used it. For svn I often use AnkhSvn that in,tegrates into VS and i switch from TFS to akhsvn in vs options<br />\n",
+    "PostedDate": "2013-05-23T01:43:00.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050165",
+    "ThreadId": "444036",
+    "Html": "Why decompile the binary?  The source was originally available.  I ported the original MSDN library over to github with multiple bug fixes and minor improvements. (<a href=\"https://github.com/joecastro/wpf-shell\" rel=\"nofollow\">https://github.com/joecastro/wpf-shell</a>).  At the very least you'll get the comments with the source.<br />\n",
+    "PostedDate": "2013-05-29T08:45:11.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050347",
+    "ThreadId": "444036",
+    "Html": "Because when I have typed wpf shell in google in returns <a href=\"http://archive.msdn.microsoft.com/WPFShell\" rel=\"nofollow\">http://archive.msdn.microsoft.com/WPFShell</a>  and the package I had tried in the download section is not compatible with the version kozw uses it had some missing Aero stuffs but thanks for the github link, looks more up to date indeed.\r<br />\n<br />\nIt seems your project page is not seo friendly because it does not even show up on the first google page when i type wpf shell the first github entry is down the page and not your project<br />\n",
+    "PostedDate": "2013-05-29T15:32:35.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050376",
+    "ThreadId": "444036",
+    "Html": "Ah, yeah... I had forgotten that the source release from that page was so far out of date.  I suspect that kozw is referencing the version that was shipped with Ribbon.  The one on my Github project page will probably have some minor discrepancies but also some different bug fixes.  I tried building the mui library against my version and things seem to be working properly.<br />\n<br />\nYou have an excellent point about the SEO on that project.  I haven't done anything to make it discoverable, and the project description is very terse.  I'll see if I can make that better :)<br />\n",
+    "PostedDate": "2013-05-29T16:26:21.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050404",
+    "ThreadId": "444036",
+    "Html": "It is a very good sign that a few top-notch developers contributing/helping this project.<br />\n",
+    "PostedDate": "2013-05-29T18:13:49.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1132319",
+    "ThreadId": "472068",
+    "Html": "Hey guys,\r<br />\n<br />\nI have a view where upon pressing the submit button the view model inserts a row into the database.\r<br />\n<br />\nAs soon as the row is done inserting the requirement is to navigate to a different page.\r<br />\n<br />\nThe usual navigation code does not work because the view model does not have access to a FrameworkElement object<br />\n<pre><code>DefaultLinkNavigator dln = new DefaultLinkNavigator();\ndln.Navigate(new Uri(&quot;/Pages/Synchronize.xaml&quot;, UriKind.Relative), this);</code></pre>\n\nAny suggestions on how to do this easily without breaking MVVM best practices?<br />\n",
+    "PostedDate": "2013-12-05T13:58:51.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1132373",
+    "ThreadId": "472068",
+    "Html": "You should have your button wired up to a command, so when the action method for that command is invoked in your viewmodel, you can grab the MUI Navigation commands, and goto the relevant page.<br />\n<br />\nHope this helps you.<br />\n<br />\nRegards<br />\nPrakashZa<br />\n",
+    "PostedDate": "2013-12-05T20:30:04.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1132482",
+    "ThreadId": "472068",
+    "Html": "Thank you Prakashza,<br />\n<br />\ndo you have a code sample I could look at?<br />\n<br />\nI tried the following but they give errors saying cannot find the modern frame<br />\n<pre><code>DefaultLinkNavigator dln = new DefaultLinkNavigator();\ndln.Navigate(new Uri(&quot;/Pages/Synchronize.xaml&quot;, UriKind.Relative), Application.Current.MainWindow);\n\nNavigationCommands.GoToPage.Execute(new Uri(&quot;/Pages/Synchronize.xaml&quot;, UriKind.Relative), Application.Current.MainWindow);\n</code></pre>\n\n",
+    "PostedDate": "2013-12-06T05:47:10.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1132497",
+    "ThreadId": "472068",
+    "Html": "I just ended up using gstarbuck's method from the discussion @ <a href=\"https://mui.codeplex.com/discussions/443139\" rel=\"nofollow\">https://mui.codeplex.com/discussions/443139</a><br />\n",
+    "PostedDate": "2013-12-06T06:36:26.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

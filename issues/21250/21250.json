@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "I'm using the Dark theme, and whenever I select a ListView item or TreeView item, it highlights in the blue accent color. However, when the selected item loses focus, the entire item becomes white and unreadable.\r\n\r\nWhat can be done to correct this?",
+    "LastUpdatedDate": "2014-09-23T18:31:38.133-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-09-22T08:36:33.313-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Deselected Row Color for ListView and TreeView Items",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21250
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I see the same behavior you're describing, but only when setting styles inside <ListBox.ItemContainerStyle>.  \n\nAre you by chance using Caliburn.Micro to wire up an event like the following:\n\n```\n<ListBox.ItemContainerStyle>\n     <Style TargetType=\"{x:Type ListBoxItem}\" BasedOn=\"{StaticResource {x:Type ListBoxItem}}\">\n          <Setter Property=\"cal:Message.Attach\" Value=\"[Event MouseDoubleClick] = [Action  ShowPatient($dataContext)]\"/>\n      </Style>\n</ListBox.ItemContainerStyle>\n```\n\nI'm convinced the behavior I'm seeing is related to WPF in general rather than m:ui in particular.  It seems like I'm missing a BasedOn attribute, but I'm not sure where to apply it.\n",
+      "PostedDate": "2014-09-23T18:31:38.133-07:00",
+      "Id": 160486
+    }
+  ]
+}

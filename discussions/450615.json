@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1070569",
+    "ThreadId": "450615",
+    "Html": "Hi,\r<br />\nit will be very useful if we can make the logo in modernwindow clickable by Handling an icommand interface.\r<br />\n<br />\nI think on a shopping cart logo (enabled/disable it if cart is not empty) or it may be useful for login/logout purposes or even more to show user's profile data (I can put user's avatar into logodata).<br />\n",
+    "PostedDate": "2013-07-19T09:38:04.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073188",
+    "ThreadId": "450615",
+    "Html": "Sounds like a fair request. Care to create an issue for it in the issue list?<br />\n",
+    "PostedDate": "2013-07-25T14:23:43.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073201",
+    "ThreadId": "450615",
+    "Html": "yes of course<br />\n",
+    "PostedDate": "2013-07-25T14:51:42.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

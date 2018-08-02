@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1066537",
+    "ThreadId": "449556",
+    "Html": "Hi Guys!,<br />\n<pre><code>    I was really excited with the rich look offered by MUI Controls. But I could not use this Forms in a class library project. \n\n   Does anyone know how to work with MUI Forms in a class library project.\n</code></pre>\n\nThanks in Advance,\r<br />\nBalaji A<br />\n",
+    "PostedDate": "2013-07-10T05:42:43.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1066667",
+    "ThreadId": "449556",
+    "Html": "Add a reference to the DLL?  Or if you mean you want to use it from a Class library project, you'll have to add the references for WPF you'd get from a wpf application.\r<br />\n<br />\nPresentationCore, PresentationFramework, and of course the Modern UI assembly.<br />\n",
+    "PostedDate": "2013-07-10T08:54:23.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1067458",
+    "ThreadId": "449556",
+    "Html": "Hi LarryC42,<br />\n<pre><code>          I have referenced all the necessary DLL's. I am able to build my project and execute it. The Problem is when i try to open the MUI form using showdialog.</code></pre>\n\n'The Object reference not set to an instance of an object' Null exception occurs.<br />\n<pre><code>         Any idea!..\n</code></pre>\n\nThanks,\r<br />\nBalaji A<br />\n",
+    "PostedDate": "2013-07-12T03:12:11.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068043",
+    "ThreadId": "449556",
+    "Html": "At a guess I'd say one of the properties is not set correctly.  Can you post an example of the form that's not working?<br />\n",
+    "PostedDate": "2013-07-14T05:35:14.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068429",
+    "ThreadId": "449556",
+    "Html": "Hi Larry Let me explain the scenario in brief,<br />\n<pre><code>  The Objective of my work is to customize Autodesk Revit application using C#. So far I am using normal WPF forms. I just wanted to incorporate MUI forms instead of WPF windows.\n\n   I can send a sample application but you need Revit software to debug the source. So if have Revit kindly let me know i will upload a sample in Sky drive and paste the link.\n\n I have made the following changes in MUI project to convert it to class library project.\n</code></pre>\n\n<ol>\n<li>\nChange the following properties of app.xaml\r<br />\nBuild Action: Page\r<br />\nCopy to Output Directory: Do not copy\r<br />\nCustom Tool: MSBuild:Compile<br />\n</li>\n<li>\nAdded the following dll to the output path in addition to my project output dll by setting copy local to TRUE\r<br />\nWindowsBase.dll\r<br />\nPresentationFramework.dll\r<br />\nPresentationCore.dll\r<br />\nMicrosoft.Windows.Shell.dll\r<br />\nFirstFloor.ModernUI.xml\r<br />\nFirstFloor.ModernUI.dll<br />\n<br />\n   This is the error I got when i place a try catch block in my code.! <img src=\"http://sdrv.ms/18guYay\" alt=\"Image\" />  <a href=\"http://sdrv.ms/18guYay\" rel=\"nofollow\">http://sdrv.ms/18guYay</a><br />\n<br />\n   This is the error i received from Revit Application <img src=\"http://sdrv.ms/13dDvd4\" alt=\"Image\" />   <a href=\"http://sdrv.ms/13dDvd4\" rel=\"nofollow\">http://sdrv.ms/13dDvd4</a><br />\n<br />\n   Kindly have a look at those images in skydrive.<br />\n<br />\n   Thanks a lot for spending your valuable time Larry!<br />\n</li>\n</ol>\nThanks,\r<br />\nBalaji A<br />\n",
+    "PostedDate": "2013-07-15T07:32:50.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068717",
+    "ThreadId": "449556",
+    "Html": "Well, I don't see anyway to make that fail unless you're not calling from a WPF application.  I get the same error if I create a Windows forms application and try to call that method.  It fails because there is no current application.<br />\n",
+    "PostedDate": "2013-07-15T15:58:44.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068808",
+    "ThreadId": "449556",
+    "Html": "Is there any way to make it work by converting the MUI form to User Control library!\r<br />\n<br />\nThanks,\r<br />\nBalaji A<br />\n",
+    "PostedDate": "2013-07-15T23:04:17.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068904",
+    "ThreadId": "449556",
+    "Html": "I don't know much about either type of hosting.  You could try something like this:\r<br />\n<br />\n<a href=\"http://stackoverflow.com/questions/3564791/run-wpf-application-from-a-windows-form\" rel=\"nofollow\">http://stackoverflow.com/questions/3564791/run-wpf-application-from-a-windows-form</a>\r<br />\n<br />\nHopefully someone else will have some better ideas.  You might want to try a post on a general WPF/Windows Forms board somewhere.<br />\n",
+    "PostedDate": "2013-07-16T02:22:54.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

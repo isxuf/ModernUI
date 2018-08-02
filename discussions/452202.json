@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1075912",
+    "ThreadId": "452202",
+    "Html": "My Bad,<br />\nJust found the static ShowMessage method :doh:<br />\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />\nOk have a dialog box (below), when the dialog box is show the styling for the buttons is gone.<br />\nIs this by design?<br />\n<pre><code>    public partial class ObjectPickingDialog : ModernDialog\n    {\n        public ObjectPickingDialog()\n        {\n            InitializeComponent();\n\n            this.Buttons = new Button[]{\n                this.OkButton,\n                this.CancelButton\n            };\n        }\n    }</code></pre>\n\n",
+    "PostedDate": "2013-08-02T02:38:58.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "1038077",
+    "ThreadId": "442217",
+    "Html": "As I can see, mui(Modern UI) uses a static Resource in Project Property Page. So the problem is raised when I use ModernDialog.ShowDialog() Function in a nonenglish UI Environment, for example Japanese and also Chinese.<br />\nBy reading the source code, I found that ModernDialog Buttons' creation routine uses hard-coding string resource. As following:<br />\n<pre><code>    /// &lt;summary&gt;\n    /// Gets the Ok button.\n    /// &lt;/summary&gt;\n    public Button OkButton\n    {\n        get\n        {\n            if (this.okButton == null) {\n                this.okButton = CreateDialogButton(FirstFloor.ModernUI.Resources.Ok, true, false, this.closeTrueCommand);\n            }\n            return this.okButton;\n        }\n    }\n</code></pre>\n\nFirstFloor.ModernUI.Resources.Ok equls &quot;OK&quot;. In nonEnglish Environment, We wound not like to see &quot;OK&quot;.<br />\n<br />\nHere is My question: Is there a easily way to do Localization job in Modern UI(imported as DLL)?<br />\n<br />\nps. I would prefer to use Modern UI DLL commonly, so I don't wanna modify the source code and recompile it.<br />\n",
+    "PostedDate": "2013-05-01T06:28:46.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038195",
+    "ThreadId": "442217",
+    "Html": "You need to create a satellite assembly for mui. MUI itself is en-us only.\r<br />\n<br />\n<a href=\"http://blogs.msdn.com/b/global_developer/archive/2011/07/22/introduction-to-satellite-assemblies.aspx\" rel=\"nofollow\">Introduction to Satellite Assemblies</a><br />\n",
+    "PostedDate": "2013-05-01T10:14:21.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038484",
+    "ThreadId": "442217",
+    "Html": "<strong>kozw wrote:</strong><br />\n<blockquote>\nYou need to create a satellite assembly for mui. MUI itself is en-us only.<br />\n<br />\n<a href=\"http://blogs.msdn.com/b/global_developer/archive/2011/07/22/introduction-to-satellite-assemblies.aspx\" rel=\"nofollow\">Introduction to Satellite Assemblies</a><br />\n</blockquote>\nI tried to create a satellite assembly for mui, but it failed! Help!<br />\nI made a txt file named &quot;FirstFloor.ModernUI.Resources.zh-Hans.txt&quot;, which contained(as it was defined in mui projects' Resources.recx):<br />\n<pre><code>Cancel=取消\nClose=关闭\nNavigationFailed=导航失败\nNavigationFailedFrameNotFound=不能导航到 {0}，找不到任何 ModernFrame 目标 '{1}'\nNavigationFailedSourceNotSpecified=不能导航到 {0}，未指定源\nNo=否\nOk=确定\nUIThreadRequired=操作需要UI线程\nUnexpectedToken=意外的令牌\nUnknownTokenType=未知令牌类型\nYes=是</code></pre>\n\nAs you can see, I translated these English into Simplified Chinese ones. The &quot;zh-Hans&quot; stands for Simplified Chinese.<br />\nThen I used &quot;resgen FirstFloor.ModernUI.Resources.zh-Hans.txt&quot; command to compile .txt file into .resources one.<br />\nAfter that, the followint command was executed:<br />\n<pre><code>al /t:lib /embed:FirstFloor.ModernUI.Resources.zh-Hans.resources /culture:zh-Hans /out:FirstFloor.ModernUI.resources.dll /template:FirstFloor.ModernUI.dll</code></pre>\n\nAnd I got FirstFloor.ModernUI.resources.dll.<br />\nFinally, having copied FirstFloor.ModernUI.resources.dll to zh-Hans folder together with .resources file, I ran the demo, ModernDialog's buttons were still in English. <br />\n",
+    "PostedDate": "2013-05-02T04:16:53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038525",
+    "ThreadId": "442217",
+    "Html": "That may be because the <code>NeutralResourcesLanguageAttribute</code> was missing from the mui binary. I've just checked in an update. You'll need to compile the latest source code for this.<br />\n",
+    "PostedDate": "2013-05-02T05:55:36.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038830",
+    "ThreadId": "442217",
+    "Html": "<strong>kozw wrote:</strong><br />\n<blockquote>\nThat may be because the <code>NeutralResourcesLanguageAttribute</code> was missing from the mui binary. I've just checked in an update. You'll need to compile the latest source code for this.<br />\n</blockquote>\nIt works well, Thanks!<br />\n",
+    "PostedDate": "2013-05-02T18:17:11.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090645",
+    "ThreadId": "442217",
+    "Html": "Hi. Can't put the resource language to work. Successfully created UTF8 textfile <code>FirstFloor.ModernUI.Resources.pt.txt</code> with the content:<br />\n<pre><code>NavigationFailedFrameNotFound=Não foi possível navegar para {0}, não foi encontrado o destino '{1}'\nCancel=cancelar\nClose=fechar\nMaximize=maximizar\nMinimize=minimizar\nNavigationFailed=Navegação falhada\nNavigationFailedSourceNotSpecified=Não foi possível navegar para {0}, origem não especificada\nNo=não\nOk=ok\nRestore=repor\nUIThreadRequired=Operation requires the UI thread\nUnexpectedToken=Unexpected token\nUnknownTokenType=Unknown token type\nYes=sim</code></pre>\n\nThen did:<br />\n<pre><code>resgen FirstFloor.ModernUI.Resources.pt.txt pt\\FirstFloor.ModernUI.Resources.pt.resources</code></pre>\n\nfollowed by<br />\n<pre><code>al /t:lib /embed:pt\\FirstFloor.ModernUI.Resources.pt.resources /culture:pt /out:pt\\FirstFloor.ModernUI.resources.dll /template:FirstFloor.ModernUI.dll </code></pre>\n\nAll went ok and the <code>pt\\FirstFloor.ModernUI.resources.dll</code> was generated and copied to the <code>bin\\Debug\\pt\\FirstFloor.ModernUI.resources.dll</code><br />\n<br />\nUnfortunately my messages still wont appear in pt even after copying all the files (.txt, .resources) into there. I've checked with procmon.exe and the dll is being loaded.<br />\n<br />\nAlso checked with ILSpy and everything seems ok with the localized version, and, for the sake of debugging I pulled the source code and added a new resource file Resources.pt.resx with the content above, recompiled, referenced the compiled assemblies and all went ok. So this can be a workaround but that means that I'll loose all updates and nuget package managment.<br />\n<br />\nAny help?<br />\n<br />\nThx<br />\n",
+    "PostedDate": "2013-09-10T07:02:57.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090856",
+    "ThreadId": "442217",
+    "Html": "Is the locale of your app correctly set to PT (Thread.CurrentThread.CurrentCulture)?<br />\n",
+    "PostedDate": "2013-09-10T13:29:05.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091053",
+    "ThreadId": "442217",
+    "Html": "Hi. Yes it is, both <code>CurrentCulture</code> and <code>CurrentUICulture</code> are properly set. All other application resources are correctly being localized just the ones from the mui are missing. My guess is that the generated <code>pt\\FirstFloor.ModernUI.resources.dll</code> is not signed as the main dll <code>FirstFloor.ModernUI.resources.dll</code> and thus the compiler will not load the resources.\r<br />\n<br />\nFrom ILSpy<br />\n<pre><code>// FirstFloor.ModernUI.dll\n// FirstFloor.ModernUI, Version=1.0.5.0, Culture=neutral, PublicKeyToken=2d21ec3cd074c59a</code></pre>\n\n<pre><code>// pt\\FirstFloor.ModernUI.resources.dll\n// FirstFloor.ModernUI.resources, Version=1.0.5.0, Culture=pt, PublicKeyToken=null</code></pre>\n\nBut since the key is private can sign it with <code>al /key</code>\r<br />\n<br />\nThx<br />\n",
+    "PostedDate": "2013-09-11T02:16:29.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1092607",
+    "ThreadId": "442217",
+    "Html": "<strong>saamorim wrote:</strong><br />\n<blockquote>\nHi. Yes it is, both <code>CurrentCulture</code> and <code>CurrentUICulture</code> are properly set. All other application resources are correctly being localized just the ones from the mui are missing. My guess is that the generated <code>pt\\FirstFloor.ModernUI.resources.dll</code> is not signed as the main dll <code>FirstFloor.ModernUI.resources.dll</code> and thus the compiler will not load the resources.<br />\n<br />\nFrom ILSpy<br />\n<pre><code>// FirstFloor.ModernUI.dll\n// FirstFloor.ModernUI, Version=1.0.5.0, Culture=neutral, PublicKeyToken=2d21ec3cd074c59a</code></pre>\n\n<pre><code>// pt\\FirstFloor.ModernUI.resources.dll\n// FirstFloor.ModernUI.resources, Version=1.0.5.0, Culture=pt, PublicKeyToken=null</code></pre>\n\nBut since the key is private can sign it with <code>al /key</code><br />\n<br />\nThx<br />\n</blockquote>\nTry to use the most recently released mui.<br />\n",
+    "PostedDate": "2013-09-13T19:48:21.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1092645",
+    "ThreadId": "442217",
+    "Html": "Hi. I'm already using it, as you can see I'm using the 1.0.5<br />\n<pre><code>// FirstFloor.ModernUI, Version=1.0.5.0, Culture=neutral, PublicKeyToken=2d21ec3cd074c59a\n</code></pre>\n\n",
+    "PostedDate": "2013-09-14T02:13:17.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1100860",
+    "ThreadId": "442217",
+    "Html": "I had the same problem as suwayking (the satellite Dlls could not be signed since we do not have the key) and I end up checking out the source code and recompiling the FirstFloor.ModernUI dll with my own key and it works...<br />\n",
+    "PostedDate": "2013-09-30T04:13:09.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1100861",
+    "ThreadId": "442217",
+    "Html": "Hi. In the end that's what I did.<br />\n",
+    "PostedDate": "2013-09-30T04:16:55.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1101255",
+    "ThreadId": "442217",
+    "Html": "I had the same problem.\r<br />\nIs there any other way to solve this without recompiling the source code?<br />\n",
+    "PostedDate": "2013-10-01T03:37:27.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1101285",
+    "ThreadId": "442217",
+    "Html": "Since the key is private to kozw, there is no other way, not that I know of.\r<br />\n<br />\nProbably a way to go is to propose that the current resources, through ResourceManager, be moved to a resourcedictionary so that they can be easily overridden.\r<br />\n<br />\nI'll see if I can arrange some time to create and propose a patch to it.\r<br />\n<br />\nRegards<br />\n",
+    "PostedDate": "2013-10-01T05:05:44.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1101286",
+    "ThreadId": "442217",
+    "Html": "Wait, probably is not needed. I've come across this thread:\r<br />\n<a href=\"http://www.sdl.com/community/blog/details/8612/net-localization-localizing-and-testing-signed-assemblies\" rel=\"nofollow\">http://www.sdl.com/community/blog/details/8612/net-localization-localizing-and-testing-signed-assemblies</a>\r<br />\n<br />\nWhich explains the signed process and more specifically, the delay-signed process.\r<br />\n<br />\nI'm going to investigate this, and let you know.\r<br />\n<br />\nRegards,\r<br />\nSérgio Amorim<br />\n",
+    "PostedDate": "2013-10-01T05:09:29.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

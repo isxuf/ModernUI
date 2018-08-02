@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "1053523",
+    "ThreadId": "446202",
+    "Html": "Hi. Got the following requirement. When entering a page need to know if a certain context exist. If it doesn't redirect the client to a certain page. Unfortunately can do the redirect part, so:\r<br />\n<br />\nIn order to do this I've got my shell shell with a link like &lt;mui:Link Source=&quot;/View/SomeIndex&quot; (...)\r<br />\nand that page implements the IContent. In the OnNavigatedTo got the following code:<br />\n<pre><code>use FirstFloor.ModernUI.Windows.Navigation;\n(...)\npublic void OnNavigatedTo(NavigationEventArgs e)\n{\n  if(EvaluenteIfRequiresContext())\n    NavigationCommands.GoToPage.Execute(&quot;/View/ContextPage.xaml&quot;, null);\n}</code></pre>\n\nThe NavigationCommand is executed but doesn't have any effect.\r<br />\n<br />\nDoes anybody have any suggestion?\r<br />\n<br />\nThank you<br />\n",
+    "PostedDate": "2013-06-06T04:53:59.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1053550",
+    "ThreadId": "446202",
+    "Html": "Ok. Once again I'll answer myself! :)<br />\n<br />\nI have done a workarround. Instead of invoking the navigation command I'm now finding the frame/window and set the contentsource to the url that I want. So:<br />\n<pre><code>    ModernWindow window = this.TryFindParent&lt;ModernWindow&gt;();\n    window.ContentSource = new Uri(&quot;/View/ContextPage.xaml&quot;, UriKind.Relative);</code></pre>\n\nStill, if anyone can figure it why the navigation command doesn't work, that will be great.<br />\n<br />\nRegards,<br />\nSérgio Amorim<br />\n",
+    "PostedDate": "2013-06-06T06:16:38.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054113",
+    "ThreadId": "446202",
+    "Html": "My guess this doesn't work is that you try to change the content frame source while the frame source is being changed. You could move the NavigationCommand.GoToPage.Execute invocation to a Dispatcher.Invoke(() =&gt; {..}) call, so the invocation is deferred after the OnNavigated has completed.<br />\n",
+    "PostedDate": "2013-06-07T10:23:53.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055299",
+    "ThreadId": "446202",
+    "Html": "Excellent. It worked like a charm, thank you once again. \r<br />\n<br />\nJust for future reference, in my example the invoke should be:<br />\n<pre><code>ModernWindow window = this.TryFindParent&lt;ModernWindow&gt;();\nDispatcher.Invoke((Action)delegate() \n{\n    NavigationCommands.GoToPage.Execute(&quot;/View/DebitosDirectos/EntidadesCredoras/AlterarContexto.xaml&quot;, window);\n});</code></pre>\n\n",
+    "PostedDate": "2013-06-11T03:57:28.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082609",
+    "ThreadId": "446202",
+    "Html": "Hi \r<br />\n<br />\nI am also having a  problem with this .\r<br />\n<br />\n<strong>This is my code</strong> <br />\n<pre><code>public partial class Home : UserControl\n{\n    public string DeleteFilesExit;\n     //setting\n    private MatchCollection ObjNameVerMc;\n    public string DbObjVer;\n    // globats end \n    private System.IO.FileSystemWatcher m_Watcher;\n\n    public Home()\n    {\n        InitializeComponent();\n\n        ExtractPath = ConfigurationManager.AppSettings.Get(&quot;ExtractPath&quot;);\n        AppUpdated = ConfigurationManager.AppSettings.Get(&quot;AppUpdated&quot;);\n\n\n        GetCurrentEnv();\n        WatchHostFile(@&quot;C:\\Windows\\System32\\drivers\\etc\\hosts&quot;);\n        FillComboBox();\n\n        if (!IsProcessOpen(&quot;BlueTray&quot;))\n        { ModernDialog.ShowMessage(&quot;BlueTray is not running please start it.&quot;, &quot;BlueTray not found&quot;, MessageBoxButton.OK); }\n\n\n\n        if (AppUpdated.Equals(&quot;true&quot;, StringComparison.Ordinal))\n        {\n            MessageBoxResult AppUpdatedMSG = ModernDialog.ShowMessage(&quot;CoreExtract has been updated please update you settings&quot;, &quot;CoreExtract Updated&quot;, MessageBoxButton.OK);\n\n            if (AppUpdatedMSG == MessageBoxResult.OK)\n            {\n                ModernWindow window = this.TryFindParent&lt;ModernWindow&gt;();\n                Dispatcher.Invoke((Action)delegate()\n                {\n                    NavigationCommands.GoToPage.Execute(&quot;/Pages/ObjectVersions.xaml&quot;, window);\n                });\n\n            }\n        }\n\n    }}\n\n</code></pre>\n\nI have the using FirstFloor.ModernUI.Windows.Navigation; statment at the top o my code but I still get this error <strong>Error\t2\t'CoreExtract2.Pages.Home' does not contain a definition for 'TryFindParent' and no extension method 'TryFindParent' accepting a first argument of type 'CoreExtract2.Pages.Home' could be found (are you missing a using directive or an assembly reference?)\tC:\\Users\\justinfo\\Documents\\Visual Studio 2012\\Projects\\CoreExtract2\\CoreExtract2\\Pages\\Home.xaml.cs\t63\t48\tCoreExtract2</strong> any ideas what is wrong ?<br />\n",
+    "PostedDate": "2013-08-20T03:41:58.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087643",
+    "ThreadId": "446202",
+    "Html": "The TryFindParent extension is here <a href=\"http://www.hardcodet.net/2008/02/find-wpf-parent\" rel=\"nofollow\">http://www.hardcodet.net/2008/02/find-wpf-parent</a> \r<br />\nCredits to Phillip Sumi<br />\n",
+    "PostedDate": "2013-09-03T04:50:27.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1089912",
+    "ThreadId": "446202",
+    "Html": "hi,\r<br />\n<br />\nim trying to do this from an mvvm end, however at that point the ViewModel is not an UI element. Any idea how this could work with Viewmodels?\r<br />\n<br />\nBest Regards.<br />\n",
+    "PostedDate": "2013-09-08T11:35:56.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1089921",
+    "ThreadId": "446202",
+    "Html": "Answeres my own question.\r<br />\n<br />\nEasy solution by using Application.Current.Mainwi dow is a direct reference to the ModernWindow.<br />\n",
+    "PostedDate": "2013-09-08T12:25:49.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090091",
+    "ThreadId": "446202",
+    "Html": "If you're using MVVM pattern then what you're doing is not the right way. The ViewModel shoudn't know what the view is made of. If you want to initiate some action from the viewmodel that &quot;interacts&quot; with the view then expose some actions from the viewmodel in which the view can assign something to it:<br />\n<pre><code>public class MyViewModel \n{\n    //The exposed action\n    public Action&lt;string&gt; DefineWindowTitle;\n    public void CommandImplementation() \n    {\n        If(DefineWindowTitle != null)\n            DefineWindowTitle(&quot;Hello World&quot;);\n        else\n            throw new InvalidOperationException(&quot;Do Something is not initialized&quot;);\n    }\n    (...)\n}\n\npublic class MyView : Control\n{\n    private MyViewModel viewModel;\n    (...)\n    private void Initialized()\n    {\n        this.viewModel = new MyViewModel() {\n            DefineWindowTitle = SetWindowTitle\n        };\n    }\n    \n    \n    private void SetWindowTitle(string windowTitle)\n    {\n        ModernWindow window = this.TryFindParent&lt;ModernWindow&gt;();\n        window.Title = windowTitle;\n    }\n}</code></pre>\n\n",
+    "PostedDate": "2013-09-09T01:54:51.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1228866",
+    "ThreadId": "446202",
+    "Html": "justinfourie \r<br />\n<br />\nyou have to change the target framework to .Net Framework 4.5 <br />\n",
+    "PostedDate": "2014-03-31T20:45:50.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1290278",
+    "ThreadId": "446202",
+    "Html": "Hey ,t like this   \r<br />\n<pre><code> var uri = new Uri(&quot;/Client.xxxxxxxxxx;component/Views/xxxxxxxxxxx.xaml&quot;, UriKind.Relative);\n            NavigationCommands.GoToPage.Execute(uri, null);</code></pre>\n\n",
+    "PostedDate": "2014-08-14T23:29:26.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

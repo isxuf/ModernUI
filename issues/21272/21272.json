@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\r\nin my application I have:\r\n<mui:ModernWindow MenuLinkGroups=\"{Binding MenuLinkGroups}\">\r\n\r\nwhere MenuLinkGroups is a ViewModel.\r\n\r\nCan I show temporarily my menu for show my application in fullscreen mode?\r\n\r\nI try also with:\r\n```\r\npublic void ClearMenu()\r\n        {\r\n            this.MenuLinkGroups = new LinkGroupCollection();\r\n            this.MenuLinkGroups.Clear();\r\n        }\r\n```\r\nbut it not works.\r\n\r\nThanks.",
+    "LastUpdatedDate": "2015-05-12T09:23:22.577-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2015-05-12T09:23:22.577-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Hide menu  temporarily",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21272
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

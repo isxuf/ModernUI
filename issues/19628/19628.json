@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "not an issue",
+    "ClosedDate": "2013-05-02T06:19:28.35-07:00",
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "The scrollbar looks different in the m:ui demo application. The scrollbar uses the default style for windows 8.\n\nI'm using Windows 8 + Visual Studio 2012, the solution targets .NET Framework 4.5.\n\nThe XAML Code looks like:\n```\n<ScrollViewer>\n       <!-- Content -->\n</ScrollViewer>\n```\n\nDid i miss something or is this a bug?\n\n![Image](https://www.codeplex.com/Download/AttachmentDownload.ashx?ProjectName=mui&WorkItemId=19628&FileAttachmentId=6938)\n\n__EDIT:__\nThe empty rectangle in the App.xaml solved the problem. I thought the bug only applies to .NET 4.0\n\n__EDIT2:__\nCan't reproduce the bug with a new project and a clean solution file (no other projects). Before, i tried to add a new M:UI project to an existing solution.",
+    "LastUpdatedDate": "2013-05-16T05:30:54.03-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-04-22T07:29:34.35-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problem with scrollbar style (.net 4.5)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 19628
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903292,
+      "FileName": "mui_bug.PNG",
+      "DownloadUrl": ".\\903292"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Can the issue be closed?",
+      "PostedDate": "2013-04-24T12:58:25.383-07:00",
+      "Id": 158491
+    },
+    {
+      "Message": "yes, please",
+      "PostedDate": "2013-04-25T00:31:50.393-07:00",
+      "Id": 158492
+    }
+  ]
+}

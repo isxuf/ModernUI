@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1198814",
+    "ThreadId": "527293",
+    "Html": "I need a menu option to &quot;open&quot; a file. Currently I have achieved this by doing the following:<br />\n<pre><code>    &lt;mui:ModernWindow.TitleLinks&gt;\n        &lt;mui:Link DisplayName=&quot;Open File&quot; Source=&quot;/Open.xaml&quot; /&gt;\n    &lt;/mui:ModernWindow.TitleLinks&gt;</code></pre>\n\nOpen.Xaml then overrides<br />\n<pre><code>        public async void OnNavigatedTo(FirstFloor.ModernUI.Windows.Navigation.NavigationEventArgs e)</code></pre>\n\nThen it uses an openfiledialog to allow the user to select a file. I then navigate to the &quot;view&quot; page via:-<br />\n<pre><code>            ModernFrame frame = NavigationHelper.FindFrame(null, this);\n            if (frame != null)\n            {\n                frame.Source = navigationUri;\n            }</code></pre>\n\nThe issue I have is if the user clicks the back button they are asked to select a file again. Ideally what I would like to do is remove the &quot;open.xaml&quot; page from the back stack.<br />\n<br />\nAny ideas?<br />\n",
+    "PostedDate": "2014-01-27T01:15:19.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1199022",
+    "ThreadId": "527293",
+    "Html": "A workaround in case anyone needs to do this in the future.<br />\n<pre><code>        private void RemoveCurrentPageFromStack(ModernFrame frame)\n        {\n            //here be dragons. We need to modify the private field history from the above object\n            //this is not something you would normally want to do, but there is no other way to remove the item afaik\n\n            FieldInfo fi = typeof(ModernFrame).GetField(&quot;history&quot;, BindingFlags.NonPublic | BindingFlags.Instance);\n            var history = fi.GetValue(frame) as Stack&lt;Uri&gt;;\n            if (history != null)\n            {\n                history.Pop();               \n            }\n        }</code></pre>\n\nNot ideal, but it works.<br />\n",
+    "PostedDate": "2014-01-27T09:11:03.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1248991",
+    "ThreadId": "527293",
+    "Html": "how to clear all the history from the button?<br />\n",
+    "PostedDate": "2014-05-23T10:22:57.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253426",
+    "ThreadId": "527293",
+    "Html": "MUI doesn't support modification of the page history stack at this point in time. This is one of the most pressing issues with MUI at the moment. I'm working on solving this<br />\n",
+    "PostedDate": "2014-06-05T11:57:56.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1337750",
+    "ThreadId": "527293",
+    "Html": "**bebe_ wrote:**<br />\n<blockquote>\nhow to clear all the history from the button?<br />\n</blockquote>\nTaking the example from RossDargan you could create the following helper class methods:<br />\n<pre><code>private static Stack&lt;Uri&gt; GetStack(ModernFrame frame)\n        {\n            var fi = typeof(ModernFrame).GetField(&quot;history&quot;, BindingFlags.NonPublic | BindingFlags.Instance);\n            if (fi == null) return null;\n            return fi.GetValue(frame) as Stack&lt;Uri&gt;;\n        }\n\npublic static void ClearHistory(this ModernFrame frame)\n        {\n            var history = GetStack(frame);\n            if (history == null) return;\n            history.Clear();\n        }</code></pre>\n\nThen you just need to get the frame using either the NavigationHelper class or using one of the navigation contracts, such as OnNavigatedFrom. For example<br />\n<pre><code>public void OnNavigatedFrom(NavigationEventArgs e)\n        {\n            e.Frame.ClearHistory();\n        }</code></pre>\n\n",
+    "PostedDate": "2014-12-29T15:29:44.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

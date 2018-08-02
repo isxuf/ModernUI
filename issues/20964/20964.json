@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "Hi, I was browsing the internets for a week, but I still have no idea how to do this.\nImagine that:\nI have a datagrid to show some data entries, and I also want to make an edit page for this entries.\nHow can I do this?\n```\n    public partial class Edit : UserControl\n    {\n        Entities db;\n\n        public Edit(int entityid)\n        {\n            InitializeComponent();\n            // Grab data by id and display it\n\n        }\n }\n\n```\nI hope this is possible.\nThanks",
+    "LastUpdatedDate": "2014-08-02T06:16:56.107-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-04-26T18:01:11.67-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Navigate to other page with parameters",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 20964
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'd also like to see something related to Navigation. In particular something to ease ViewModel navigation, display dialogs etc.",
+      "PostedDate": "2014-06-02T05:25:17.78-07:00",
+      "Id": 158577
+    },
+    {
+      "Message": "I currently work around this issue using my IoC container. From View A, I get a reference to the singleton instance of View B's ViewModel. From there, I make what are, in essence, global property changes, then I navigate to B.\r\n\r\nSo, it looks like this:\r\n\r\nIoC -(registers)-> ViewModelB [singleton]ViewA -(loads)-> ViewModelBViewA -(changes)-> ViewModelB ViewA -(navigates to)-> ViewBViewB -(displays)-> ViewModelB\r\n\r\n",
+      "PostedDate": "2014-06-02T05:49:55.903-07:00",
+      "Id": 158578
+    }
+  ]
+}

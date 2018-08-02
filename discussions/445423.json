@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1050494",
+    "ThreadId": "445423",
+    "Html": "I already have a main window(Modern window), I want to create another window in a new STA thread.But I get the error \r<br />\n&quot;cannot access freezable Shell.WindowChrome across threads bec it cannot be frozenause&quot; \r<br />\nI use Dispatcher to create the window, up error solved. but antother problem is \r<br />\n&quot;The calling thread can not accress the object because another thread own it&quot;\r<br />\n<br />\nI want to know could I create another modern window in a new STA thread?\r<br />\nFor traditional window It is OK.\r<br />\n<br />\nThank you very much<br />\n",
+    "PostedDate": "2013-05-30T01:36:27.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050503",
+    "ThreadId": "445423",
+    "Html": "My Code as follow:\r<br />\n   private void Button_Click_1(object sender, RoutedEventArgs e)<br />\n<pre><code>    {\n        Thread thread = new Thread(new ThreadStart(\n            delegate()\n            {\n                ModernWindow theView = new ModernWindow();\n                theView.Closed += (viewsender, viewe) =&gt; theView.Dispatcher.InvokeShutdown();\n                theView.Show();\n                Dispatcher.Run();\n            }));\n        thread.SetApartmentState(ApartmentState.STA);\n        thread.Name = &quot;ChildThread&quot;;\n        thread.IsBackground = true;\n        thread.Start();\n    }</code></pre>\n\n",
+    "PostedDate": "2013-05-30T02:03:16.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052368",
+    "ThreadId": "445423",
+    "Html": "Good question. I can reproduce, but I do not know why this fails. Creating a Window instead of ModernWindow works just fine.<br />\n",
+    "PostedDate": "2013-06-03T14:58:55.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1321021",
+    "ThreadId": "445423",
+    "Html": "Do we have a fix for this issue yet?  I am currently trying to do the same as Pagina, and getting the same error as well.  <br />\n",
+    "PostedDate": "2014-11-11T11:27:00.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

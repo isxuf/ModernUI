@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1303976",
+    "ThreadId": "567236",
+    "Html": "Hello,\r<br />\n<br />\nI would like to use a BBCodeBlock to let user navigate to a local folder. I tried to use something like:\r<br />\n<br />\n[url=file:///C:/Users] open folder[/url]\r<br />\n<br />\nor\r<br />\n<br />\n[url=C:/Users] open folder[/url]\r<br />\n<br />\nBut the error I get when I click on the link created is:\r<br />\n<br />\nUnable to navigate to file:///C:/Users, could not find a ModernFrame taget ''\r<br />\n<br />\nAny ideas on how to do that?\r<br />\n<br />\nThank you,\r<br />\n<br />\nIgor<br />\n",
+    "PostedDate": "2014-09-12T03:13:15.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1304854",
+    "ThreadId": "567236",
+    "Html": "I haven't been able to get a folder to open by using the file:// protocol, but I instead made my BBCode have a link with a command that when executed, will open up the folder or exe.\r<br />\n<br />\nxaml:<br />\n<pre><code>&lt;mui:BBCodeBlock Grid.Row=&quot;1&quot;\n                         Margin=&quot;0,2,0,0&quot;\n                         BBCode=&quot;[url=cmd://openFile|pathToFileOrFolder]click here[/url]}&quot;\n                         Foreground=&quot;{DynamicResource WindowTextReadOnly}&quot;\n                         LinkNavigator=&quot;{Binding LinkNavigator}&quot; /&gt;</code></pre>\n\nview model:<br />\n<pre><code>OpenReportCommand = new RelayCommand&lt;string&gt;(s =&gt; ExecuteOpenReport(s));\nLinkNavigator = new DefaultLinkNavigator();\nLinkNavigator.Commands.Add(new Uri(&quot;cmd://openFile&quot;, UriKind.Absolute), OpenReportCommand);\n\npublic RelayCommand&lt;string&gt; OpenReportCommand { get; private set; }\nprivate void ExecuteOpenReport(string r)\n{\n    try\n    {\n         Process.Start(r);\n    }\n\n    catch (Exception ex)\n    {\n        logger.Warn(&quot;unable to open &quot; + r, ex);\n    }\n}</code></pre>\n\n",
+    "PostedDate": "2014-09-15T08:30:45.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1304878",
+    "ThreadId": "567236",
+    "Html": "Hello,\r<br />\n<br />\nHow can I find references for types OpenReportCommand, RelayCommand, LinkNavigator and so on.\r<br />\n<br />\nMy project does not find any namespaces for these types.\r<br />\n<br />\nThank you,\r<br />\n<br />\nIgor.<br />\n",
+    "PostedDate": "2014-09-15T09:29:47.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1305006",
+    "ThreadId": "567236",
+    "Html": "So I'm following the MVVM pattern and using  mvvmlight's implementation of ICommand called RelayCommand. But MUI does provide one too (also called RelayCommand) - you need to use the proper namespace:<br />\n<pre><code>using FirstFloor.ModernUI.Presentation;</code></pre>\n\nand for the LinkNavigator, use <br />\n<pre><code>FirstFloor.ModernUI.Windows.Navigation</code></pre>\n\nI think you need to read the MUI documentation and perhaps some on the MVVM pattern. Check the demo application source too - its a great resource.<br />\n",
+    "PostedDate": "2014-09-15T18:11:58.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306388",
+    "ThreadId": "567236",
+    "Html": "In order to support file:// navigation in BBCodeBlock you'll need to register the file scheme as <strong>external scheme</strong> in the link navigator. By default the DefaultLinkNavigator supports http, https and mailto. Adding file support is as easy as defining the following:<br />\n<pre><code>&lt;mui:BBCodeBlock BBCode=&quot;[url=file:///C:/Users]open folder[/url] &quot;&gt;\n  &lt;mui:BBCodeBlock.LinkNavigator&gt;\n    &lt;mui:DefaultLinkNavigator&gt;\n      &lt;mui:DefaultLinkNavigator.ExternalSchemes&gt;\n        &lt;x:Array Type=&quot;sys:String&quot; xmlns:sys=&quot;clr-namespace:System;assembly=mscorlib&quot;&gt;\n          &lt;sys:String&gt;http&lt;/sys:String&gt;\n          &lt;sys:String&gt;https&lt;/sys:String&gt;\n          &lt;sys:String&gt;file&lt;/sys:String&gt;\n        &lt;/x:Array&gt;\n      &lt;/mui:DefaultLinkNavigator.ExternalSchemes&gt;\n    &lt;/mui:DefaultLinkNavigator&gt;\n  &lt;/mui:BBCodeBlock.LinkNavigator&gt;\n&lt;/mui:BBCodeBlock&gt;</code></pre>\n\nYou can move this to a default BBCodeBlock style, so the LinkNavigator is shared with all BBCodeBlock instances.<br />\n",
+    "PostedDate": "2014-09-19T08:07:34.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

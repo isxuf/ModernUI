@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-08-09T08:45:35.26-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "I'm trying to use ModernDialog for a quit confirmation:\n\n```\npublic MainWindow()\n{\n    InitializeComponent();\n\n    Closing += (s, e) =>\n    {\n        if(ModernDialog.ShowMessage(\"Are you sure you want to quit?\", \"Quit?\", MessageBoxButton.OKCancel) == MessageBoxResult.OK)\n        {\n            _logger.Info(@\"User quit.\");\n            Application.Current.Shutdown();\n        }\n        else\n        {\n            e.Cancel = false;\n        }\n    };\n}\n```\n\nI'm getting InvalidOperationException: Cannot set Owner property to a Window that has not been shown previously.",
+    "LastUpdatedDate": "2014-08-09T08:45:35.26-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-06-04T10:32:09.367-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "InvalidOperationException: Cannot set Owner property to a Window that has not been shown previously",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21051
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Try to use the  next code:\r\n\r\n```public MainWindow(){    InitializeComponent();\r\n\r\n    Closing += (s, e) =>    {        if(ModernDialog.ShowMessage(\"Are you sure you want to quit?\", \"Quit?\", MessageBoxButton.OKCancel) == MessageBoxResult.OK)        {            _logger.Info(@\"User quit.\");        }        else        {            //Notice that e.Cancel should be equal 'true' if want to prevent the app closing            e.Cancel = true;        }    };}```",
+      "PostedDate": "2014-07-18T01:32:27.38-07:00",
+      "Id": 158581
+    }
+  ]
+}

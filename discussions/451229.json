@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1072886",
+    "ThreadId": "451229",
+    "Html": "When I try to snoop a WPF app created using ModernUI (ModernWindow is the main application window) it is not detected either in Snoop or WPF Inspector. Any ideas on how to get it noticed? Although XAML styling is a cool feature in WPF it is a bane (aka pain) especially to design control templates for custom controls. I can't live without Snoop!\r<br />\nThanks\r<br />\n-Rohit<br />\n",
+    "PostedDate": "2013-07-25T10:07:29.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073155",
+    "ThreadId": "451229",
+    "Html": "<strong>msdn_microsoft_gk wrote:</strong><br />\n<blockquote>\nWhen I try to snoop a WPF app created using ModernUI (ModernWindow is the main application window) it is not detected either in Snoop or WPF Inspector. Any ideas on how to get it noticed? Although XAML styling is a cool feature in WPF it is a bane (aka pain) especially to design control templates for custom controls. I can't live without Snoop!<br />\nThanks<br />\n-Rohit<br />\n</blockquote>\nI had no problem detecting my MUI application in Snoop. I did have to click on the refresh button once or twice to get my app to appear in the drop down. When it did, I was able to snoop everything like normal.<br />\n",
+    "PostedDate": "2013-07-25T13:36:36.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073160",
+    "ThreadId": "451229",
+    "Html": "What about <a href=\"http://xamlspy.com\" rel=\"nofollow\">xaml spy</a>? Too obvious? :)<br />\n",
+    "PostedDate": "2013-07-25T13:44:46.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073386",
+    "ThreadId": "451229",
+    "Html": "Sorry my bad. An overnight reboot of my brain garbage collected the thought that MUI had win32 or unmanaged sections that didn't work with snoop! It was the usual culprit that very unusually my VS2012 was in escalated privilege and thereby the CTRL+F5 launched app. Running Snoop as admin made it happy. \r<br />\nKozw, I would go for XamlSpy any day over these other tools if you got me a personal license discount ;)\r<br />\nThanks guys.<br />\n",
+    "PostedDate": "2013-07-26T02:42:08.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

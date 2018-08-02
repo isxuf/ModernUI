@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1084152",
+    "ThreadId": "454352",
+    "Html": "When I try to set the text align of a datagrid header colum it changes the whole style of the header to a gray button???\r<br />\n<br />\nAm I missing something below is my code.<br />\n<pre><code>&lt;mui:DataGridTextColumn Header=&quot;Completion Date&quot; Binding=&quot;{Binding CompletionDate, StringFormat=\\{0:MM/dd/yy\\}}&quot;&gt;\n&lt;mui:DataGridTextColumn.HeaderStyle&gt;\n&lt;Style TargetType=&quot;DataGridColumnHeader&quot;&gt;\n&lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Right&quot; /&gt;\n&lt;/Style&gt;\n&lt;/mui:DataGridTextColumn.HeaderStyle&gt;\n&lt;/mui:DataGridTextColumn&gt;</code></pre>\n\n",
+    "PostedDate": "2013-08-23T06:10:46.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084629",
+    "ThreadId": "454352",
+    "Html": "Same question here. Would like to know how do you use &quot;BasedOn&quot; from assembly..<br />\n",
+    "PostedDate": "2013-08-25T06:22:13.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084898",
+    "ThreadId": "454352",
+    "Html": "To derive your custom style from the mui style make sure you use the following:<br />\n<pre><code>&lt;Style TargetType=&quot;DataGridColumnHeader&quot; BasedOn=&quot;{StaticResource {x:Type DataGridColumnHeader}&quot; /&gt;</code></pre>\n\n",
+    "PostedDate": "2013-08-26T05:57:19.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084997",
+    "ThreadId": "454352",
+    "Html": "That did it! Thanks!<br />\n",
+    "PostedDate": "2013-08-26T09:36:45.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130754",
+    "ThreadId": "454352",
+    "Html": "This (unfortunately) does not work for me.  Maybe I made a mistake somewhere in my code?<br />\n<pre><code>&lt;UserControl.Resources&gt;\n        &lt;Style x:Key=&quot;LeftAlignedCHStyle&quot; TargetType=&quot;DataGridColumnHeader&quot; BasedOn=&quot;{StaticResource {x:Type DataGridColumnHeader}}&quot;&gt;\n            &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Left&quot;/&gt;\n            &lt;Style.Triggers&gt;\n                &lt;Trigger Property=&quot;IsMouseOver&quot; Value=&quot;True&quot;&gt;\n                    &lt;Setter Property=&quot;ToolTip&quot; Value=&quot;Click to sort.&quot;/&gt;\n                &lt;/Trigger&gt;\n            &lt;/Style.Triggers&gt;\n        &lt;/Style&gt;\n        &lt;Style x:Key=&quot;CenteredCHStyle&quot; TargetType=&quot;DataGridColumnHeader&quot; BasedOn=&quot;{StaticResource {x:Type DataGridColumnHeader}}&quot;&gt;\n            &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Center&quot;/&gt;\n            &lt;Style.Triggers&gt;\n                &lt;Trigger Property=&quot;IsMouseOver&quot; Value=&quot;True&quot;&gt;\n                    &lt;Setter Property=&quot;ToolTip&quot; Value=&quot;Click to sort.&quot;/&gt;\n                &lt;/Trigger&gt;\n            &lt;/Style.Triggers&gt;\n        &lt;/Style&gt;\n    &lt;/UserControl.Resources&gt;\n...\n&lt;DataGridTextColumn Header=&quot;HeaderText&quot; HeaderStyle=&quot;{DynamicResource LeftAlignedCHStyle}&quot; Binding=&quot;{Binding Path=foobar}&quot; MinWidth=&quot;50&quot; /&gt;\n&lt;DataGridTemplateColumn Header=&quot;Delete&quot; HeaderStyle=&quot;{DynamicResource CenteredCHStyle}&quot;&gt;...&lt;/DataGridTemplateColumn&gt;</code></pre>\n\nDynamicResource is accepted by the compiler but produces the grey button.  StaticResource ignored at runtime.\r<br />\n<br />\nWhat's the XAML noob mistake I am have made but am yet to see?\r<br />\n<br />\nRegards,\r<br />\n<br />\nAndrew<br />\n",
+    "PostedDate": "2013-12-01T20:55:01.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

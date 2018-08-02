@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1399053",
+    "ThreadId": "616454",
+    "Html": "Hello,\r<br />\n<br />\nI would like to change the behavior of the back button to navigate to the previous LinkGroup instead of the previous page.\r<br />\n<br />\nAs an example, imagine the ModernUI sample program with several pages inside the settings group.\r<br />\n<br />\nWhen the user clicks the back button, instead of navigating to the previous page, is should go back to the main group of pages.\r<br />\n<br />\nWhat would be the best approach to do that?\r<br />\n<br />\nThank you <br />\n",
+    "PostedDate": "2015-04-02T08:26:36.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

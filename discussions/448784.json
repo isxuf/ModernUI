@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1063451",
+    "ThreadId": "448784",
+    "Html": "when I try to move to list page with selected basic page the basic page onnavigatedto method only invoke once and it's never been invoked again.\r<br />\nI use this code:\r<br />\n<br />\nvar frame = NavigationHelper.FindFrame(null, this);<br />\n<pre><code>        if (frame != null)\n        {\n            frame.Source = new Uri(&quot;Pages/AthletePage.xaml&quot;, UriKind.RelativeOrAbsolute);\n        }</code></pre>\n\nAthletePage.xaml is a listPage.<br />\n",
+    "PostedDate": "2013-07-01T23:47:14.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

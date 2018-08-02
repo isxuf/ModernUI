@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1086552",
+    "ThreadId": "454981",
+    "Html": "I want to open a popup when someone clicks on a link? What would be the best way to implement that?<br />\n<br />\nI allready tried to inheret the class and bind a onclick event to it, but I can't get that working (maybe i'm doing something wrong)<br />\n",
+    "PostedDate": "2013-08-30T03:04:44.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086658",
+    "ThreadId": "454981",
+    "Html": "What type of link are you refering to? Links in BBCodeBlock can execute an ICommand, which you can use to do anything including opening a popup. ModernMenu and ModernTab links are currently limited to opening content in a ModernFrame. I'm looking into how to expand its use.<br />\n",
+    "PostedDate": "2013-08-30T07:32:05.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086663",
+    "ThreadId": "454981",
+    "Html": "I want to open a popup with a usercontrol when you click on &quot;add employee&quot;. I want to be able to open that popup from the &quot;company&quot; page, but also from the menu under the &quot;employee&quot; tab.<br />\n<br />\nMy idea was of implementing a &quot;click&quot; event. Inside that event I can implement the popup, but for some reason I can't get the click event firing.<br />\n",
+    "PostedDate": "2013-08-30T07:34:23.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

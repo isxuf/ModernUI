@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1065074",
+    "ThreadId": "449195",
+    "Html": "this template is supported by which VS 2012 ?  its supported by VS express 2012 ? \r<br />\n<br />\nlog: \r<br />\n7/6/2013 05:03:21 - Microsoft VSIX Installer\r<br />\n7/6/2013 05:03:21 - -------------------------------------------\r<br />\n7/6/2013 05:03:21 - Initializing Install...\r<br />\n7/6/2013 05:03:21 - Extension Details...\r<br />\n7/6/2013 05:03:21 - \tIdentifier      : ModernUI.Templates..f6db4f98-80c1-42cc-8f57-b9b52c916ce9\r<br />\n7/6/2013 05:03:21 - \tName            : Modern UI for WPF Templates\r<br />\n7/6/2013 05:03:21 - \tAuthor          : First Floor Software\r<br />\n7/6/2013 05:03:21 - \tVersion         : 1.0.4\r<br />\n7/6/2013 05:03:21 - \tDescription     : A collection of project and item templates for Modern UI for WPF.\r<br />\n7/6/2013 05:03:21 - \tLocale          : en-US\r<br />\n7/6/2013 05:03:21 - \tMoreInfoURL     : <a href=\"http://mui.codeplex.com/\" rel=\"nofollow\">http://mui.codeplex.com/</a>\r<br />\n7/6/2013 05:03:21 - \tInstalledByMSI  : False\r<br />\n7/6/2013 05:03:21 - \tSupportedFrameworkVersionRange : 4.5\r<br />\n7/6/2013 05:03:21 - \r<br />\n7/6/2013 05:03:21 - \tSignedBy        : First Floor Software\r<br />\n7/6/2013 05:03:21 - \tCertificate Info : [Subject]\r<br />\n  CN=First Floor Software, O=First Floor Software, STREET=Frederik Hendriklaan 232, L=Den Haag, S=ZH, PostalCode=2582BM, C=NL\r<br />\n<br />\n[Issuer]\r<br />\n  CN=COMODO Code Signing CA 2, O=COMODO CA Limited, L=Salford, S=Greater Manchester, C=GB\r<br />\n<br />\n[Serial Number]\r<br />\n  356CABDF47F6F5FD1DDBDF2466F5F86A\r<br />\n<br />\n[Not Before]\r<br />\n  1/1/2012 03:00:00\r<br />\n<br />\n[Not After]\r<br />\n  1/1/2015 02:59:59\r<br />\n<br />\n[Thumbprint]\r<br />\n  D2D35336B6D43DA4584840490DC68840D7DD4478\r<br />\n<br />\n7/6/2013 05:03:21 - \tSupported Products : \r<br />\n7/6/2013 05:03:21 - \t\tMicrosoft.VisualStudio.Pro\r<br />\n7/6/2013 05:03:21 - \t\t\tVersion : 11.0\r<br />\n7/6/2013 05:03:21 - \r<br />\n7/6/2013 05:03:21 - \tReferences      : \r<br />\n7/6/2013 05:03:21 - \r<br />\n7/6/2013 05:03:21 - Searching for applicable products...\r<br />\n7/6/2013 05:03:21 - Found installed product - Microsoft Visual Basic Express 2010\r<br />\n7/6/2013 05:03:21 - Found installed product - Microsoft Visual Studio Express 2012 for Windows Desktop\r<br />\n7/6/2013 05:03:21 - Found installed product - Global Location\r<br />\n7/6/2013 05:03:21 - VSIXInstaller.NoApplicableSKUsException: This extension is not installable on any currently installed products.\r<br />\n   at VSIXInstaller.App.InitializeInstall()\r<br />\n   at System.Threading.Tasks.Task.InnerInvoke()\r<br />\n   at System.Threading.Tasks.Task.Execute()<br />\n",
+    "PostedDate": "2013-07-05T19:05:57.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1065114",
+    "ThreadId": "449195",
+    "Html": "No support yet for VS2012 express. Next release of Modern UI templates will support both VS2012 express and VS2013 Preview<br />\n",
+    "PostedDate": "2013-07-06T05:31:17.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1065328",
+    "ThreadId": "449195",
+    "Html": "Modern UI 1.0.5, released moments ago, now supports express editions of both VS2012 and VS2013<br />\n",
+    "PostedDate": "2013-07-07T13:43:18.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1065842",
+    "ThreadId": "449195",
+    "Html": "Thanks a lot , I will  try it now  .\r<br />\nI really appreciate you work   thanks again <br />\n",
+    "PostedDate": "2013-07-08T15:34:04.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082951",
+    "ThreadId": "449195",
+    "Html": "I am using the latest download and 2012 express and when I include the binaries from the NuGet package, everything works fine.\r<br />\n<br />\nI want to tweak a couple of things in the header, and when I try and reference the built project locally, I get designer having problems finding and loading the other DLL referenced in the binaries.\r<br />\n<br />\nHave you come across this before?<br />\n",
+    "PostedDate": "2013-08-20T21:32:18.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083172",
+    "ThreadId": "449195",
+    "Html": "What do you mean with 'reference the built project locally'? Do you have error details?<br />\n",
+    "PostedDate": "2013-08-21T08:59:24.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,226 @@
+[
+  {
+    "Id": "1008367",
+    "ThreadId": "434905",
+    "Html": "Hi,\r<br />\n<br />\nCan I navigate to other page by clicking button? \r<br />\nOr code behind in my MVVM model?<br />\n",
+    "PostedDate": "2013-02-28T10:33:06.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1008513",
+    "ThreadId": "434905",
+    "Html": "Yes you can. In code you need to set the ModernFrame.Source, or bind the ModernFrame.Source to a viewmodel property.<br />\n<br />\nIn XAML you can use the NavigationCommands.GoToPage command like so;<br />\n<pre><code>&lt;Button Command=&quot;NavigationCommands.GoToPage&quot; CommandParameter=&quot;/Pages/MyPage.xaml&quot; /&gt;</code></pre>\n\nThe CommandParameter is used to specify the target uri.<br />\n",
+    "PostedDate": "2013-02-28T14:59:02.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1014055",
+    "ThreadId": "434905",
+    "Html": "Thanks.<br />\n",
+    "PostedDate": "2013-03-12T10:05:38.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1020245",
+    "ThreadId": "434905",
+    "Html": "my doubt is not clear.. \r<br />\n<br />\nif i Click button on current page(MyPage-2.xaml) of mui:link-2 then i must able to jump to mui:link-1 where frame in mui:link-1 displays MyPage-1.xaml in its frame. not loading the MyPage-1.xaml in current frame of mui:link-2.\r<br />\nif i use above mentioned code then i can able to load or navigate to MyPage-1.xaml but it will be loaded in the current frame of mui:link-2 and highlighting mui:link-2 telling that i am still mui:link-2 only but the content is Myapage-1.\r<br />\nmy target is <strong>&quot;if i Click on Button on MyPage-2 Under mui:link-2 then mui:link-1 should become active&quot;</strong><br />\n",
+    "PostedDate": "2013-03-24T03:19:06.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1020255",
+    "ThreadId": "434905",
+    "Html": "Couple of tips;<br />\n<br />\nLinks in the window main menu should have a unique Source. When two or more links have the same Source value, the menu will select the first link when navigating to the source.<br />\n<br />\nNavigation using a button will navigate the current ModernFrame by default. The current ModernFrame is the frame instance hosting the button. If you want to navigate another ModernFrame instance, you need to specify the CommandTarget property. The following snippet demonstrates how to navigate the ModernFrame named 'MyFrame' instead of the current frame.<br />\n<pre><code>&lt;mui:ModernFrame x:Name=&quot;MyFrame&quot; /&gt;\n\n&lt;Button\n  Command=&quot;NavigationCommands.GoToPage&quot;\n  CommandParameter=&quot;/Pages/MyPage.xaml&quot;\n  CommandTarget=&quot;{Binding ElementName=MyFrame}&quot;/&gt;</code></pre>\n\nHope this helps.<br />\n",
+    "PostedDate": "2013-03-24T04:45:47.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021011",
+    "ThreadId": "434905",
+    "Html": "here are my button xaml code<br />\n<pre><code>        &lt;Button Command=&quot;NavigationCommands.GoToPage&quot; CommandParameter=&quot;/Content/SerialSettings.xaml&quot; x:Name=&quot;startButton&quot; Content=&quot;Start&quot; HorizontalAlignment=&quot;Right&quot; VerticalAlignment=&quot;Bottom&quot; Width=&quot;75&quot;/&gt;\n</code></pre>\n\nWith the latest release of mui, the button is disabled. Removing command enabled back the button. Button does not disable if using older release of mui.\r<br />\n<br />\nthanks.<br />\n",
+    "PostedDate": "2013-03-25T21:47:29.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021470",
+    "ThreadId": "434905",
+    "Html": "Might be a bug, I'll check it.<br />\n",
+    "PostedDate": "2013-03-26T16:28:06.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023429",
+    "ThreadId": "434905",
+    "Html": "The bug has been fixed and is available in the latest source code checkin.<br />\n",
+    "PostedDate": "2013-03-31T05:33:54.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023445",
+    "ThreadId": "434905",
+    "Html": "thanks for the bug fix.<br />\n",
+    "PostedDate": "2013-03-31T08:05:57.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024707",
+    "ThreadId": "434905",
+    "Html": "Hey kozw, love the UI, but where can I get the latest version where the Navigate by Button bug is fixed.<br />\n",
+    "PostedDate": "2013-04-03T02:55:23.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024709",
+    "ThreadId": "434905",
+    "Html": "The fix is not available in a release yet. It is checked in and you can download and compile the latest source yourself. <br />\n",
+    "PostedDate": "2013-04-03T03:00:07.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024880",
+    "ThreadId": "434905",
+    "Html": "I think I have a slightly different scenario, but I am confused on how to accomplish my navigation in MVVM.\r<br />\n<br />\nI understand that I can create a modernframe and bind the ContentSource to a property in my VM, but in my particular scenario I would like to perform an action in my VM, and then I want to simlply navigate back (doing exactly what would happen if the Back button was clicked).\r<br />\n<br />\nNow I thought I could simply send a message to my MainWindow who upon receipt would be able to find the main frame that the ModernWindow has (&quot;ContentFrame&quot;) and then do a Browse Back. I attempted the following code:\r<br />\n<br />\nin my MainWindow<br />\n<pre><code>var f = NavigationHelper.FindFrame(null, this);\nNavigationCommands.BrowseBack.Execute(null, f);\n</code></pre>\n\nbut the frame is never found.\r<br />\n<br />\nHow can I simply issue a browse back command, to the main frame, without knowing a a specific URI to navigate to (just simply go Back)<br />\n",
+    "PostedDate": "2013-04-03T07:42:37.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025087",
+    "ThreadId": "434905",
+    "Html": "The only way to access the ModernFrame 'ContentFrame' in your ModernWindow instance is by accessing it thru GetTemplateChild (preferrable executed in the OnApplyTemplate) like so:<br />\n<pre><code>public override void OnApplyTemplate()\n{\n  base.OnApplyTemplate();\n\n  var frame = (ModernFrame)GetTemplateChild(&quot;ContentFrame&quot;);\n}</code></pre>\n\nModernWindow itself doesn't implement NavigationCommands, but it might be a good idea to add it.\r<br />\n<br />\nAlternatively you could implement your own navigation history and upon browse back set the source in your viewmodel.<br />\n",
+    "PostedDate": "2013-04-03T13:56:35.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025095",
+    "ThreadId": "434905",
+    "Html": "Excellent. This solved my issue. Thanks again.<br />\n",
+    "PostedDate": "2013-04-03T14:15:44.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035344",
+    "ThreadId": "434905",
+    "Html": "<strong>kozw wrote:</strong><br />\n<blockquote>\nYes you can. In code you need to set the ModernFrame.Source, or bind the ModernFrame.Source to a viewmodel property.<br />\n<br />\nIn XAML you can use the NavigationCommands.GoToPage command like so;<br />\n<pre><code>&lt;Button Command=&quot;NavigationCommands.GoToPage&quot; CommandParameter=&quot;/Pages/MyPage.xaml&quot; /&gt;</code></pre>\n\nThe CommandParameter is used to specify the target uri.<br />\n</blockquote>\nI've tried using that code and it disables my button, the page does exist. Am I missing something?\r<br />\n<br />\nCheers,\r<br />\nShawn<br />\n",
+    "PostedDate": "2013-04-24T14:45:17.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036574",
+    "ThreadId": "434905",
+    "Html": "Is the button placed in a user control hosted in a ModernFrame? That is a requirement for NavigationCommand.GoToPage to work.<br />\n",
+    "PostedDate": "2013-04-27T10:48:09.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082589",
+    "ThreadId": "434905",
+    "Html": "hi kozw I want to  use navigation page with in Click button method like this <br />\n<pre><code>private void btnNavigate_Click(){\n          // Some command before navigate such as check with if for navagate or not navigate\n          // Some code for navigate modern frame to other page.\n}</code></pre>\n\nplz suggest me , thk.<br />\n",
+    "PostedDate": "2013-08-20T02:51:04.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082671",
+    "ThreadId": "434905",
+    "Html": "<strong>migkie wrote:</strong><br />\n<blockquote>\nhi kozw I want to  use navigation page with in Click button method like this <br />\n<pre><code>private void btnNavigate_Click(){\n          // Some command before navigate such as check with if for navagate or not navigate\n          // Some code for navigate modern frame to other page.\n}</code></pre>\n\nplz suggest me , thk.<br />\n</blockquote>\ntry this code \r<br />\n<br />\nNavigationCommands.GoToPage.Execute(&quot;/Pages/Home.xaml&quot;, this);<br />\n",
+    "PostedDate": "2013-08-20T06:32:02.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082736",
+    "ThreadId": "434905",
+    "Html": "<strong>jenose wrote:</strong><br />\n<blockquote>\n<strong>migkie wrote:</strong><br />\n<blockquote>\nhi kozw I want to  use navigation page with in Click button method like this <br />\n<pre><code>private void btnNavigate_Click(){\n          // Some command before navigate such as check with if for navagate or not navigate\n          // Some code for navigate modern frame to other page.\n}</code></pre>\n\nplz suggest me , thk.<br />\n</blockquote>\ntry this code <br />\n<br />\nNavigationCommands.GoToPage.Execute(&quot;/Pages/Home.xaml&quot;, this);<br />\n</blockquote>\nThk jenose but if only navigate in modernframe , Is it possible ?<br />\n",
+    "PostedDate": "2013-08-20T08:40:33.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082738",
+    "ThreadId": "434905",
+    "Html": "<strong>migkie wrote:</strong><br />\n<blockquote>\n<strong>jenose wrote:</strong><br />\n<blockquote>\n<strong>migkie wrote:</strong><br />\n<blockquote>\nhi kozw I want to  use navigation page with in Click button method like this <br />\n<pre><code>private void btnNavigate_Click(){\n          // Some command before navigate such as check with if for navagate or not navigate\n          // Some code for navigate modern frame to other page.\n}</code></pre>\n\nplz suggest me , thk.<br />\n</blockquote>\ntry this code <br />\n<br />\nNavigationCommands.GoToPage.Execute(&quot;/Pages/Home.xaml&quot;, this);<br />\n</blockquote>\nThk jenose but if only navigate in modernframe , Is it possible ?<br />\n</blockquote>\nOK, I done. Just change &quot;this&quot; to &quot;ModernFrame_name&quot; and it worked ! Thanks jenose<br />\n",
+    "PostedDate": "2013-08-20T08:43:11.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083021",
+    "ThreadId": "434905",
+    "Html": "Can I pass value to target page whenever navigate to it ?\r<br />\nEx: navagate page to page2.xaml , I want to pass value such as &quot;StringValue&quot; to page2.xaml <br />\n",
+    "PostedDate": "2013-08-21T02:24:44.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1087527",
+    "ThreadId": "434905",
+    "Html": "I have same problem like migkie. If I pass parameter to page like that: &quot;/Pages/Home.xaml?paramStr&quot;  - menu link not activating.<br />\n",
+    "PostedDate": "2013-09-02T23:20:57.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1098876",
+    "ThreadId": "434905",
+    "Html": "I want to navigate to another user control from my login user control button click.\r<br />\nThe button click first authenticates user then loads another user control.How can I do this with mui,tried Navigation Commands getting the runtime error that &quot;Object ref is not set to instance of object.&quot;\r<br />\nPlease suggest<br />\n",
+    "PostedDate": "2013-09-24T23:29:52.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1222220",
+    "ThreadId": "434905",
+    "Html": "Looks like there is no way of doing the simple thing. Assume there is an empty project created from a standard template, and some content added to 'Settings' page. An user is presented with some controls and two buttons 'Cancel' and 'Apply'. No matter which buttons is pressed, after performing some actions in VW (save, or restore old values), the user should be taken back to the 'Home.xaml' page, just like after pressing the 'Back' button. It is not possible in such a scenario, am I right?<br />\n",
+    "PostedDate": "2014-03-13T00:27:38.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1222782",
+    "ThreadId": "434905",
+    "Html": "<strong>kozw wrote:</strong><br />\n<blockquote>\nCouple of tips;<br />\n<br />\nLinks in the window main menu should have a unique Source. When two or more links have the same Source value, the menu will select the first link when navigating to the source.<br />\n<br />\nNavigation using a button will navigate the current ModernFrame by default. The current ModernFrame is the frame instance hosting the button. If you want to navigate another ModernFrame instance, you need to specify the CommandTarget property. The following snippet demonstrates how to navigate the ModernFrame named 'MyFrame' instead of the current frame.<br />\n<pre><code>&lt;mui:ModernFrame x:Name=&quot;MyFrame&quot; /&gt;\n\n&lt;Button\n  Command=&quot;NavigationCommands.GoToPage&quot;\n  CommandParameter=&quot;/Pages/MyPage.xaml&quot;\n  CommandTarget=&quot;{Binding ElementName=MyFrame}&quot;/&gt;</code></pre>\n\nHope this helps.<br />\n</blockquote>\nThanks for this :) \r<br />\n<br />\nJust wanted to know, how do I get the reference to the top most frame here? Just like with BBCode, we can do something like:\r<br />\n<br />\n&lt;mui:BBCodeBlock BBCode=&quot;[url=/Pages/MyPage.xaml|_top]go to my page[/url]&quot; /&gt;<br />\n",
+    "PostedDate": "2014-03-14T07:36:31.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1223230",
+    "ThreadId": "434905",
+    "Html": "What I did at the end is getting a reference to the MainWindow in the OnApplyTemplate() and storing it in the static variable, so I can reference it in a command like below:<br />\n<pre><code>NavigationCommands.GoToPage.Execute(&quot;/Pages/Home.xaml&quot;, MainWindow.frame);</code></pre>\n\nwhere frame is:<br />\n<pre><code>public override void OnApplyTemplate()\n{\n            base.OnApplyTemplate();\n            frame = (ModernFrame)GetTemplateChild(&quot;ContentFrame&quot;);\n}</code></pre>\n\ntaken from a post here.<br />\n",
+    "PostedDate": "2014-03-16T05:51:49.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224810",
+    "ThreadId": "434905",
+    "Html": "Of course my solution is kind of rubbish as I missed that there is browsing history that is not rewound so to say, so consecutive presses of the ''BACK&quot; button gives some funny effects. So again, navigation by a button seems not to be possible.<br />\n",
+    "PostedDate": "2014-03-20T06:55:36.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1291950",
+    "ThreadId": "434905",
+    "Html": "<strong>migkie wrote:</strong><br />\n<blockquote>\n<strong>migkie wrote:</strong><br />\n<blockquote>\n<strong>jenose wrote:</strong><br />\n<blockquote>\n<strong>migkie wrote:</strong><br />\n<blockquote>\nhi kozw I want to  use navigation page with in Click button method like this <br />\n<pre><code>private void btnNavigate_Click(){\n          // Some command before navigate such as check with if for navagate or not navigate\n          // Some code for navigate modern frame to other page.\n}</code></pre>\n\nplz suggest me , thk.<br />\n</blockquote>\ntry this code <br />\n<br />\nNavigationCommands.GoToPage.Execute(&quot;/Pages/Home.xaml&quot;, this);<br />\n</blockquote>\nThk jenose but if only navigate in modernframe , Is it possible ?<br />\n</blockquote>\nOK, I done. Just change &quot;this&quot; to &quot;ModernFrame_name&quot; and it worked ! Thanks jenose<br />\n</blockquote>\nwhat is ModernFrame_name?<br />\n",
+    "PostedDate": "2014-08-21T01:19:11.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

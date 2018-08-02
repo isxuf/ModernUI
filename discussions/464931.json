@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1115152",
+    "ThreadId": "464931",
+    "Html": "Hello!\r<br />\n<br />\nI've been searching all over this forum for information on how to handle this issue but haven't found anything. I'm new to WPF and the Modern UI so I apologize if this question is dumb. I've written a simple 3 page (plus settings page) UI. It works great until I populate a TreeView with my data (which consists of 8146 leaf nodes plus many other non-leaf nodes). I'm using the TreeViewItem object to store each node.\r<br />\n<br />\nThe performance is great when the page is loaded, but if I ask it to switch pages to anything else (settings or one of the other two pages), there's an instantaneous hang of the UI for around 2-4 seconds. The same thing happens when I go back to the page. I assume this is because it's loading all the objects into whatever renders them, but I can't figure out how to handle this problem properly.\r<br />\n<br />\nI've tried adding these properties to the treeview xaml as recommended on a few forums:\r<br />\n<br />\nVirtualizingStackPanel.IsVirtualizing=&quot;True&quot;\r<br />\nVirtualizingStackPanel.VirtualizationMode=&quot;Recycling&quot; \r<br />\n<br />\nbut it had not effect on the problem.\r<br />\n<br />\nAgain, the issue isn't performance while loaded (it's really smooth once it's loaded), it's the performance while loading and unloading (the whole thing just hangs for a few seconds). There are no issues transitioning between any other pages.\r<br />\n<br />\nI'm fine with the lag time, but I would at least like to be able to display a loading screen and prevent the entire UI from locking up.\r<br />\n<br />\nAny ideas on how to either speed up these load times or display a loading logo? I'll be happy to post up my code if anyone thinks it will help, but it's really just a very full TreeView on a page in the Modern UI Template in VS 2012.\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-10-31T09:58:19.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

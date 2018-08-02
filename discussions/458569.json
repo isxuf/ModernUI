@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1097010",
+    "ThreadId": "458569",
+    "Html": "Hello, \r<br />\n<br />\nI want to use MUI in a Client-Server Application. If I want to send the Definition to the Client I have following error:<br />\n<pre><code>Der Typ &quot;FirstFloor.ModernUI.Presentation.LinkGroupCollection&quot; in Assembly &quot;FirstFloor.ModernUI, Version=1.0.5.0, Culture=neutral, PublicKeyToken=2d21ec3cd074c59a&quot; ist nicht als serialisierbar gekennzeichnet.</code></pre>\n\nCould be to fixed it in the next releases?\r<br />\n<br />\nMy workaround is that the LinkGroupCollection will be create on Clientside - but in future I want it on serverside\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-09-20T08:49:34.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

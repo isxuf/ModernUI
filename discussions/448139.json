@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1060779",
+    "ThreadId": "448139",
+    "Html": "when we go from one UserControl to another UserControl by NavigationHelper the first userControl Loaded event invokes !!!\r<br />\nit's big bug.\r<br />\nyou should check it. <br />\n",
+    "PostedDate": "2013-06-25T02:31:41.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060949",
+    "ThreadId": "448139",
+    "Html": "You should check <a href=\"https://mui.codeplex.com/wikipage?title=Handle%20navigation%20events%20in%20your%20content\" rel=\"nofollow\">Handle navigation events in your content</a>.<br />\n",
+    "PostedDate": "2013-06-25T08:23:11.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

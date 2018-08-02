@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:42:21.127-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "At start of a ModernUIApp there is this error in the debug output:\n\nSystem.Windows.Data Error: 40 : BindingExpression path error: 'WindowNonClientFrameThickness' property not found on 'object' ''RuntimeType' (HashCode=40706798)'. BindingExpression:Path=WindowNonClientFrameThickness; DataItem='RuntimeType' (HashCode=40706798); target element is 'Border' (Name=''); target property is 'Margin' (type 'Thickness')\n\nYou can get rid of this error changing all 3 occurences of\n```\n{Binding Source={x:Type SystemParameters}, Path=WindowNonClientFrameThickness}\n```\nto\n```\n{Binding Source={x:Static SystemParameters.WindowNonClientFrameThickness}}\n```",
+    "LastUpdatedDate": "2013-07-05T13:42:21.127-07:00",
+    "PlannedForRelease": "Modern UI 1.0.4",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-04T16:24:15.05-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Wrong binding of WindowNonClientFrameThickness",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19812
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Addressed in Changeset 101034",
+      "PostedDate": "2013-06-11T13:56:25.77-07:00",
+      "Id": 158516
+    }
+  ]
+}

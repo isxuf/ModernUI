@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1151196",
+    "ThreadId": "484143",
+    "Html": "Hi\r<br />\nI'm new to Mui.\r<br />\n<br />\nI'm trying to put a 'Tick&quot; icon with OK on a button. Is this possible? If so, could someone give me a reference please that will guide me as to how I can achieve it?\r<br />\n<br />\nMany thanks.\r<br />\n<br />\nBrian<br />\n",
+    "PostedDate": "2014-01-08T22:17:16.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151225",
+    "ThreadId": "484143",
+    "Html": "Hi<br />\nDid more research and came up with:<br />\n<pre><code>&lt;Button Grid.Column=&quot;0&quot; Grid.Row=&quot;8&quot; Style=&quot;{StaticResource buttonSaveStyle}&quot;&gt;\n       &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;\n             &lt;TextBlock FontFamily=&quot;WingDings&quot; FontSize=&quot;20&quot; Text=&quot;&amp;#xFC;&quot; /&gt;    \n             &lt;TextBlock VerticalAlignment=&quot;Center&quot; Margin=&quot;10,0,0,0&quot; FontWeight=&quot;ExtraBold&quot; Text=&quot;OK&quot; /&gt;\n        &lt;/StackPanel&gt;\n&lt;/Button&gt;</code></pre>\n\nHope that helps some other novice like myself.<br />\n",
+    "PostedDate": "2014-01-09T00:01:35.37-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-01-09T00:04:27.203-08:00"
+  }
+]

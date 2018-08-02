@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1247162",
+    "ThreadId": "545879",
+    "Html": "hello guys ,\r<br />\n could you help me please ,\r<br />\ni want to select a record from data grid (row) , then i want to hod a specific value from it , let me say (employer_id) , to be able after that to delete the record when i press a button , i used this code to delete . and it works fine <br />\n<hr />\n// var stor = new storestbl {store_id=X};       <br />\n //db.storestbls.Attach(s);\r<br />\n //db.storestbls.Remove(s);\r<br />\n //db.SaveChanges();<br />\n<hr />\nso we want to replace the value of (X) by the variable that's hold the value like the (employer_id) from the selected value from the datagrid.\r<br />\n<br />\nplease help .<br />\n",
+    "PostedDate": "2014-05-19T13:57:11.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1247778",
+    "ThreadId": "545879",
+    "Html": "no response :(\r<br />\n<br />\nsolved by creating a class to hold the value \r<br />\n<br />\nthanx any way .<br />\n",
+    "PostedDate": "2014-05-21T02:00:56.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

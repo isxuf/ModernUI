@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1107161",
+    "ThreadId": "462095",
+    "Html": "Hi\r<br />\n<br />\nI have TabPage with three pages (=tabs).\r<br />\nWhen I am on second page and press Alt + ArrowLeft, mui navigates to previous page page \r<br />\nbut it doesn't change my viewmodel Property SelectedSource.\r<br />\n<br />\nIf I try to go back my Previous page mui doesn't navigate any more, property doesn't change.\r<br />\nHas anybody this kind of problems or ideas how to fix it? <br />\n",
+    "PostedDate": "2013-10-14T06:39:51.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107365",
+    "ThreadId": "462095",
+    "Html": "Is your SelectedSource property set to a TwoWay binding?<br />\n",
+    "PostedDate": "2013-10-14T14:21:05.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107489",
+    "ThreadId": "462095",
+    "Html": "No, my SelectedSource was without Mode parameter.<br />\nI added Mode=TwoWay parameter. Now it works perfectly.<br />\n<br />\nTHANKS<br />\n",
+    "PostedDate": "2013-10-14T23:05:10.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

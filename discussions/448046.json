@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1060361",
+    "ThreadId": "448046",
+    "Html": "Hello,\r<br />\nI want to change the  Fonsize(still 13)  in  my   application using ModernWindow element!!\r<br />\n<br />\nmy MainWindow looks like this:\r<br />\n<br />\n   &lt;mui:ModernWindow&gt;\r<br />\n&lt;mui:ModernWindow.TitleLinks&gt;<br />\n<pre><code>    &lt;mui:Link DisplayName=&quot;Einstellung&quot; Source=&quot;/Views/Einstellung.xaml&quot; /&gt;\n    &lt;mui:Link DisplayName=&quot;Extras&quot; Source=&quot;/Pages/Settings.xaml&quot; /&gt;      \n&lt;/mui:ModernWindow.TitleLinks&gt;\n\n&lt;mui:ModernWindow.MenuLinkGroups&gt;\n    &lt;mui:LinkGroup DisplayName=&quot;Start&quot; x:Name=&quot;linkg&quot;&gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;Intro&quot; Source=&quot;/Views/_FlowDocument.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Support&quot; Source=&quot;/Views/Support.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Kundenverwaltung&quot; Source=&quot;/Views/Kundenverwaltung.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Support1&quot; Source=&quot;/Views/Support.xaml&quot; /&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;\n&lt;/mui:ModernWindow.MenuLinkGroups&gt;  \n</code></pre>\n\n&lt;/mui:ModernWindow&gt;\r<br />\nFor example i want to change the fontsize of &quot;start&quot;... \r<br />\nany Idea!!!   i my first approch was a ViewBox . but Modernwindow  doesn t  understand that!!ß<br />\n",
+    "PostedDate": "2013-06-24T05:59:50.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1240257",
+    "ThreadId": "448046",
+    "Html": "i want to do the same .. any idea ?<br />\n",
+    "PostedDate": "2014-05-01T07:11:29.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

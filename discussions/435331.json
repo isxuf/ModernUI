@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1010085",
+    "ThreadId": "435331",
+    "Html": "First off, thanks  so much for this great UI kit.  I've been working with it for a few days and it's a real pleasure.\r<br />\n<br />\nI'm curious if there is any means to intercept navigation events so as to prevent navigating away from a view.\r<br />\nFor example, if there is a validation error that needs to be resolved prior to leaving the page, or if I wanted to commit some changes when the user navigated away.  Is there anything built into your toolkit to handle that?  Or possibly something already present in WPF?\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-03-04T09:57:23.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010171",
+    "ThreadId": "435331",
+    "Html": "Cancelling navigation is not yet supported. Will be soon.<br />\n",
+    "PostedDate": "2013-03-04T13:07:18.53-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038369",
+    "ThreadId": "435331",
+    "Html": "<strong>kozw wrote:</strong><br />\n<blockquote>\nCancelling navigation is not yet supported. Will be soon.<br />\n</blockquote>\nI'm also interested in such functionality. How soon?<br />\n",
+    "PostedDate": "2013-05-01T21:23:41.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038392",
+    "ThreadId": "435331",
+    "Html": "Yeah, few ideas could be implemented. For example a MuiBootstrapper, since that is the best know route most solutions follow for now, that would allow you for example to inject 1) a custom DI or IOC framework, 2) a navigation service, 3) Animation service,  4)  Menu Service etc.. So as Mr Kozw provides more goodies, we can always swap out UI framework pieces for custom ones, making Mui very flexible.<br />\n",
+    "PostedDate": "2013-05-01T22:50:25.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038517",
+    "ThreadId": "435331",
+    "Html": "Navigation cancellation is available (since 1.0.3). See <a href=\"https://mui.codeplex.com/wikipage?title=Handle%20navigation%20events%20in%20your%20content\" rel=\"nofollow\">this new documentation page</a> for more information.\r<br />\n<br />\nFor custom navigation services you may want to take a look at <a href=\"https://mui.codeplex.com/wikipage?title=How%20to%20use%20your%20own%20navigation%20framework\" rel=\"nofollow\">how to style an empty window</a>.<br />\n",
+    "PostedDate": "2013-05-02T05:45:36.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038815",
+    "ThreadId": "435331",
+    "Html": "Oh, thank you!<br />\n",
+    "PostedDate": "2013-05-02T16:52:19.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1234676",
+    "ThreadId": "542414",
+    "Html": "Hello, Im following this tutorial to use MVVM with Modern UI. <a href=\"http://www.yaharasoftware.com/Blog/tabid/323/entryid/9/MVVMLight-and-ModernUI-Part-1-Setup-and-Basics.aspx\" rel=\"nofollow\">http://www.yaharasoftware.com/Blog/tabid/323/entryid/9/MVVMLight-and-ModernUI-Part-1-Setup-and-Basics.aspx</a>\r<br />\n<br />\nI now trying to figure out how to add a link to a view when the user navigates to that view. Say for example when the application is started there will only be one link visible named Connection. In the connection view the user can enter a connection string and press a button ok. Now the next view will be shown, ie the navigation is done from the first view not by clicking a link but by clicking the ok button. But how can I make the link appear only when the view is shown?<br />\n",
+    "PostedDate": "2014-04-16T05:36:42.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

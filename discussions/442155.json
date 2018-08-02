@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1037877",
+    "ThreadId": "442155",
+    "Html": "I created a app completely based on the sample one provided. Since no events for links clicked.\r<br />\nI want to update UI based on back button event on current page.\r<br />\nUsing from here &quot;<a href=\"https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&amp;referringTitle=Documentation\" rel=\"nofollow\">https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&referringTitle=Documentation</a>&quot; Any suggestion ?<br />\n",
+    "PostedDate": "2013-04-30T16:38:20.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038191",
+    "ThreadId": "442155",
+    "Html": "The back button operates on the navigation history of the main modern frame instance. If you want to change the behavior of the button, you'll need to provide your own back command and assign it to the back button. This requires a modification of the ModernWindow template.\r<br />\n<br />\nAre you sure this is what you want? You're basically implementing your own navigation. See also <a href=\"https://mui.codeplex.com/wikipage?title=How%20to%20use%20your%20own%20navigation%20framework\" rel=\"nofollow\">this documentation page</a>.<br />\n",
+    "PostedDate": "2013-05-01T10:05:35.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

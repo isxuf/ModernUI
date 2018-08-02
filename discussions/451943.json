@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1075034",
+    "ThreadId": "451943",
+    "Html": "when i want to change DataGridColumnHeader horizantal alignment with this code the modernui style is changing to windows style!!!<br />\ni writed this code on app.xaml file.<br />\nhow can i change the value of modernui style?!<br />\n<pre><code>            &lt;Style TargetType=&quot;DataGridColumnHeader&quot;&gt;\n            &lt;Setter Property=&quot;HorizontalAlignment&quot; Value=&quot;Stretch&quot;&gt;\n            &lt;/Setter&gt;        \n            &lt;/Style&gt;</code></pre>\n\n",
+    "PostedDate": "2013-07-31T02:55:21.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1075148",
+    "ThreadId": "451943",
+    "Html": "Add a BasedOn=&quot;{StaticResource {x:Type DataGridColumnHeader}}&quot; to the Style element.<br />\n",
+    "PostedDate": "2013-07-31T08:30:07.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1075180",
+    "ThreadId": "451943",
+    "Html": "it doesn't work.<br />\n",
+    "PostedDate": "2013-07-31T09:49:34.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1075585",
+    "ThreadId": "451943",
+    "Html": "I do this, and it works perfectly.:<br />\n<pre><code>        &lt;Style x:Key=&quot;headerStyle&quot;\n               TargetType=&quot;{x:Type DataGridColumnHeader}&quot;\n               BasedOn=&quot;{StaticResource {x:Type DataGridColumnHeader}}&quot;&gt;\n            &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Stretch&quot; /&gt;\n        &lt;/Style&gt;</code></pre>\n\n",
+    "PostedDate": "2013-08-01T07:21:39.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

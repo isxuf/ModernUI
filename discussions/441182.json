@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1034064",
+    "ThreadId": "441182",
+    "Html": "Hi,\r<br />\n<br />\nGoing through the manual example you've provided here:\r<br />\n<br />\n<a href=\"https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&amp;referringTitle=Documentation\" rel=\"nofollow\">https://mui.codeplex.com/wikipage?title=My%20first%20Modern%20UI%20app&referringTitle=Documentation</a>\r<br />\n<br />\nI've downloaded the most recent code, compiled and I've added the .dll as required, pretty much copy and pasted the instructions, it builds fine, but I get this error when I run the application:\r<br />\n<br />\nA first chance exception of type 'System.Windows.Markup.XamlParseException' occurred in PresentationFramework.dll\r<br />\n<br />\n__Additional information: 'The invocation of the constructor on type 'WpfApplication1.MainWindow' that matches the specified binding constraints threw an exception.' Line number '4' and line position '3'.\r<br />\nIf there is a handler for this exception, the program may be safely continued.__\r<br />\n<br />\nThis window doesn't open, this only happens in the manually created workflow, any ideas?\r<br />\n<br />\nCheers,\r<br />\nShawn<br />\n",
+    "PostedDate": "2013-04-22T10:24:19.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034171",
+    "ThreadId": "441182",
+    "Html": "Looks like I was missing the Microsoft.Windows.Shell resource.<br />\n",
+    "PostedDate": "2013-04-22T14:21:24.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034281",
+    "ThreadId": "441182",
+    "Html": "In the main page, There is a link to WPF Shell libraries. <a href=\"http://archive.msdn.microsoft.com/WPFShell\" rel=\"nofollow\">http://archive.msdn.microsoft.com/WPFShell</a>\r<br />\n<br />\nTry that first.<br />\n",
+    "PostedDate": "2013-04-22T20:18:59.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034812",
+    "ThreadId": "441182",
+    "Html": "Microsoft.Windows.Shell.dll is included in the mui download (and automatically referenced if you use NuGet), no need to download it seperately. There are plans to merge (parts of) the Microsoft.Windows.Shell source into mui itself, so the dependency is no longer needed.<br />\n<br />\nFor now I updated the documentation, it explicitly states the Microsoft.Windows.Shell.dll reference.<br />\n",
+    "PostedDate": "2013-04-23T14:49:50.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034851",
+    "ThreadId": "441182",
+    "Html": "I only mention it as I'm new to c#(python background) and it wasn't stated that I needed that reference in the step by step. Mostly due to my ignorance, you may want to consider adding that step. <br />\n<br />\nCheers,<br />\nShawn<br />\n",
+    "PostedDate": "2013-04-23T17:00:51.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035287",
+    "ThreadId": "441182",
+    "Html": "Step has been added to the documentation thanks to your input. Appreciated!<br />\n",
+    "PostedDate": "2013-04-24T12:56:13.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

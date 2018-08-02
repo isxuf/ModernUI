@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:16:24.19-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "The ComboBox style provided by mui removes the ability to type in the textbox section when IsEditable=true.\n\nAlso it might be useful if the default ItemPanel for the ComboBox used a VirtualizingStackPanel.",
+    "LastUpdatedDate": "2013-07-05T13:16:24.19-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-04-11T05:25:44.613-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ComboBox Style does not support IsEditable=true",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 7,
+    "Id": 19589
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved in changeset 101518",
+      "PostedDate": "2013-07-05T13:12:08.61-07:00",
+      "Id": 158484
+    }
+  ]
+}

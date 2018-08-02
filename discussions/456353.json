@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1090603",
+    "ThreadId": "456353",
+    "Html": "Is there a way to get the minimalize and the close button on the top right in the ModernDialog?\r<br />\n<br />\nRegards,\r<br />\n<br />\nTom<br />\n",
+    "PostedDate": "2013-09-10T05:12:02.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1090858",
+    "ThreadId": "456353",
+    "Html": "That's currently not supported. Feel free to create an issue for it.<br />\n",
+    "PostedDate": "2013-09-10T13:29:39.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091111",
+    "ThreadId": "456353",
+    "Html": "Is there a other window that does has it?<br />\n",
+    "PostedDate": "2013-09-11T05:13:40.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091574",
+    "ThreadId": "456353",
+    "Html": "Try using ModernWindow with empty style. Example is given in the source code.<br />\n",
+    "PostedDate": "2013-09-12T00:52:47.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

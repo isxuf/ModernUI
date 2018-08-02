@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1055689",
+    "ThreadId": "446760",
+    "Html": "Hello,<br />\n<br />\nI'm trying to use the ModernMenu but it does not work as I expected.<br />\n<br />\nThe link groups and links are defined correctly with unique sources, but when clicking on the menu links, the source is not loaded.<br />\n<br />\nWhat is the proper usage of the ModernMenus?<br />\n<br />\nPS: ModernTab works correctly by loading the content of the source when clicking on the tabs/links<br />\n",
+    "PostedDate": "2013-06-12T00:29:15.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055744",
+    "ThreadId": "446760",
+    "Html": "Is the ModernMenu.SelectedSource bound to a ModernFrame.Source? The ModernTab comes with a ModernFrame, the ModernMenu does not.<br />\n",
+    "PostedDate": "2013-06-12T03:05:05.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055759",
+    "ThreadId": "446760",
+    "Html": "I created a little sample how to use the ModernMenu via code.<br />\n<br />\n<a href=\"http://sdrv.ms/19pnZz1\" rel=\"nofollow\">usage of ModernMenu via Code</a><br />\n<br />\nif you don't want to use code to create your ModernMenu you should take a look at the mui example application from kozw.<br />\n",
+    "PostedDate": "2013-06-12T03:28:32.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055858",
+    "ThreadId": "446760",
+    "Html": "kozw, thanks for the tip; that works beautifully.  I did not know that ModernMenu does not come with a ModernFrame.\r<br />\n<br />\nXenolith, your sample application is not using ModernMenu; it is using MenuLinkGroups which has nothing to do with the question.<br />\n",
+    "PostedDate": "2013-06-12T07:28:00.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055893",
+    "ThreadId": "446760",
+    "Html": "Oops stupid me :&gt;<br />\n",
+    "PostedDate": "2013-06-12T08:21:01.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

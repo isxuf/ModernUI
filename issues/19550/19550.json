@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "added in changset 106315",
+    "ClosedDate": "2014-01-21T14:25:08.427-08:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "..sometimes the current linear one doesn't \"fit\" in a UI where various regions of the application can be updating / refreshing. A more compact and familar circular one would be great.",
+    "LastUpdatedDate": "2014-01-21T14:25:08.427-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-04-01T08:19:08.3-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add circular indeterminate progress bar",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 15,
+    "Id": 19550
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

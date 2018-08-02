@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1051936",
+    "ThreadId": "445773",
+    "Html": "Had big problems binding to listview , that is sorted but i want to customise the listview item drawing, is the base code for listview in sourcecode here or does anyone have some details on customising the listview item, eg font, forecolor selected etc.<br />\n",
+    "PostedDate": "2013-06-02T23:30:09.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052358",
+    "ThreadId": "445773",
+    "Html": "The mui styles for the ListView control can be found in ListView.xaml located in the Assets folder of the FirstFloor.ModernUI project.<br />\n",
+    "PostedDate": "2013-06-03T14:27:02.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "1036653",
+    "ThreadId": "441811",
+    "Html": "Hi,\r<br />\n<br />\nLike in the demo applicaton, i want to allow users to customize the appearance of my application, but i want to remind the changes. \r<br />\n<br />\nThe settings are saved in Properties.Setting and i figured how to change the theme/font/accentColor when i click on a button.\r<br />\n<br />\nBut i can't figure how to do define the theme/font/accentColor at the application start, without any user input like a click on a button.\r<br />\n<br />\nThanks !<br />\n",
+    "PostedDate": "2013-04-27T18:17:22.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036728",
+    "ThreadId": "441811",
+    "Html": "Use the AppearanceManager to set theme, font and accent color in code. My suggestion is to put this in the Application.OnStartup method (in App.xaml.cs):<br />\n<pre><code>public partial class App : Application\n{\n  protected override void OnStartup(StartupEventArgs e)\n  {\n    base.OnStartup(e);\n\n    AppearanceManager.Current.AccentColor = MySettings.Color;\n    AppearanceManager.Current.FontSize = MySettings.FontSize;\n    AppearanceManager.Current.ThemeSource = MySettings.ThemeSource;\n  }\n}</code></pre>\n\n",
+    "PostedDate": "2013-04-28T05:45:42.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036748",
+    "ThreadId": "441811",
+    "Html": "Thanks, it works perfectly.\r<br />\n<br />\nIt's exactly what i was doing, but in the constructor of the MainWindow. I guess the AppearenceManager load the settings from the resources after the code in this constructor.<br />\n",
+    "PostedDate": "2013-04-28T07:37:15.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081638",
+    "ThreadId": "441811",
+    "Html": "Hi \r<br />\n<br />\nI tryed this and it gives me an error saying &quot;the name MySettings&quot; does not exist in the current context&quot; any idea what is wrong I even tried creating a  new project from scratch using you template in visual studio but still the same error ?<br />\n",
+    "PostedDate": "2013-08-17T07:16:27.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1081733",
+    "ThreadId": "441811",
+    "Html": "<strong>justinfourie wrote:</strong><br />\n<blockquote>\nHi <br />\n<br />\nI tryed this and it gives me an error saying &quot;the name MySettings&quot; does not exist in the current context&quot; any idea what is wrong I even tried creating a  new project from scratch using you template in visual studio but still the same error ?<br />\n</blockquote>\njustinfourie understand that MySettings is the context of the settings file that kozw has on his example. You need to adjust this to the settings file you have created in your solution.<br />\n",
+    "PostedDate": "2013-08-17T16:36:37.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082837",
+    "ThreadId": "441811",
+    "Html": "O ok thanks I see now sorry all sorted late night coding fail :)<br />\n",
+    "PostedDate": "2013-08-20T12:38:58.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1135417",
+    "ThreadId": "441811",
+    "Html": "I'm trying to change accent color:<br />\n<pre><code>        protected override void OnStartup(StartupEventArgs e)\n        {\n            base.OnStartup(e);\n\n            AppearanceManager.Current.AccentColor = Colors.Black;\n        }</code></pre>\n\nBut treeview control selected item color appears to be default (blue), not black. What am I doing wrong?\r<br />\nXaml:<br />\n<pre><code>&lt;Window x:Class=&quot;WpfApplication18.MainWindow&quot;\n        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n        xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n        Title=&quot;MainWindow&quot; Height=&quot;350&quot; Width=&quot;525&quot;&gt;\n    &lt;Window.Resources&gt;\n        &lt;ResourceDictionary&gt;\n            &lt;!-- WPF 4.0 workaround --&gt;\n            &lt;Style TargetType=&quot;{x:Type Rectangle}&quot; /&gt;\n            &lt;!-- end of workaround --&gt;\n            &lt;ResourceDictionary.MergedDictionaries&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.xaml&quot; /&gt;\n                &lt;ResourceDictionary Source=&quot;/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml&quot;/&gt;\n            &lt;/ResourceDictionary.MergedDictionaries&gt;\n        &lt;/ResourceDictionary&gt;\n    &lt;/Window.Resources&gt;\n    &lt;Grid &gt;\n        &lt;TreeView&gt;\n            &lt;TreeViewItem Header=&quot;Item 1&quot;&gt;\n                &lt;TreeViewItem Header=&quot;Item 1.1&quot; /&gt;\n                &lt;TreeViewItem Header=&quot;Item 1.2&quot; /&gt;\n                &lt;TreeViewItem Header=&quot;Item 1.3&quot; /&gt;\n            &lt;/TreeViewItem&gt;\n        &lt;/TreeView&gt;\n    &lt;/Grid&gt;\n&lt;/Window&gt;\n</code></pre>\n\n",
+    "PostedDate": "2013-12-13T02:17:02.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1201129",
+    "ThreadId": "441811",
+    "Html": "<strong>Lebowsker wrote:</strong><br />\n<blockquote>\njustinfourie understand that MySettings is the context of the settings file that kozw has on his example. You need to adjust this to the settings file you have created in your solution.<br />\n</blockquote>\nI created a settings file, but now i'm getting an error about convert from system.drawing.color to system.windows.media.color. I couldn't handle it. Any solution? <br />\n",
+    "PostedDate": "2014-01-30T15:00:25.053-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1201151",
+    "ThreadId": "441811",
+    "Html": "something as follows should get you there\r<br />\n<br />\nMy.Settings.AccentColour is a System.Drawing.Colour\r<br />\nAppearanceManager.Current.AccentColor is a System.Windows.Media.Colour\r<br />\n<br />\nTo convert use the FromArgb \r<br />\n<br />\nFirstFloor.ModernUI.Presentation.AppearanceManager.Current.AccentColor = System.Windows.Media.Color.FromArgb(My.Settings.AccentColour.A, My.Settings.AccentColour.R, My.Settings.AccentColour.G, My.Settings.AccentColour.B)<br />\n",
+    "PostedDate": "2014-01-30T16:36:16.2-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1201276",
+    "ThreadId": "441811",
+    "Html": "I'm using C#. Is there any the equivalent code in C# for my.settings? Also, can't we use a save button or something like that. Yesterday I tried this but I couldn't see how to combobox works. I'll give it another shot today. <br />\n",
+    "PostedDate": "2014-01-31T04:08:17.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1204274",
+    "ThreadId": "441811",
+    "Html": "Hi okami,\r<br />\n<br />\nYou can see here : <a href=\"http://www.codeproject.com/Articles/592958/Persisting-Modern-UI-for-WPF-Styles\" rel=\"nofollow\">Persisting Modern UI for WPF Styles</a><br />\n",
+    "PostedDate": "2014-02-07T05:50:26.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1228917",
+    "ThreadId": "441811",
+    "Html": "<a href=\"http://www.kettic.com/winforms_ui/csharp_guide/ui_theme_default.shtml\" rel=\"nofollow\">Apply custom UI themes to Windows application</a><br />\n",
+    "PostedDate": "2014-04-01T00:57:21.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

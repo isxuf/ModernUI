@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1051497",
+    "ThreadId": "445656",
+    "Html": "Which is the best way to implement a notify icon using this excelent framework and without using windows.forms, it is possible? Thanks<br />\n",
+    "PostedDate": "2013-06-01T03:10:27.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051891",
+    "ThreadId": "445656",
+    "Html": "<strong>amarquez13 wrote:</strong><br />\n<blockquote>\nWhich is the best way to implement a notify icon using this excelent framework and without using windows.forms, it is possible? Thanks<br />\n</blockquote>\nI didn't get exactly what you mean but let me guess. \r<br />\n<br />\nThere is a Controls-&gt;Styles-&gt;SampleForm in the example that has 'First name' &amp; 'Last name' textboxes. Each textbox has a <br />\n<pre><code>ValidatesOnDataErrors=True</code></pre>\n\nthat checks a value in the box. So, it is a notify icon implementation as I understand.<br />\n",
+    "PostedDate": "2013-06-02T18:16:35.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052359",
+    "ThreadId": "445656",
+    "Html": "mui doesn't include NotifyIcon functionality. See <a href=\"http://www.codeproject.com/Articles/36468/WPF-NotifyIcon\" rel=\"nofollow\">this project</a> for a WPF solution.<br />\n",
+    "PostedDate": "2013-06-03T14:28:17.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

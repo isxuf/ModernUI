@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1304126",
+    "ThreadId": "567277",
+    "Html": "Hello,\r<br />\n<br />\nI need to know how can I localize buttons of a ModernDialog.\r<br />\n<br />\nWhen I call:\r<br />\n<br />\nModernDialog.ShowMessage(&quot;test&quot;, &quot;test&quot;, MessageBoxButton.YesNoCancel);\r<br />\n<br />\nThe buttons are not localized to my current culture. To check, if I use the regular MessageBox class, the buttons are shown correctly:\r<br />\n<br />\nMessageBox.Show(&quot;test&quot;, &quot;test&quot;, MessageBoxButton.YesNoCancel);\r<br />\n<br />\nHow can I fix that?\r<br />\n<br />\nThank you,\r<br />\n<br />\nIgor.<br />\n",
+    "PostedDate": "2014-09-12T09:21:45.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1304388",
+    "ThreadId": "567277",
+    "Html": "Привет, Игорь!\r<br />\n<br />\nОткрой исходники и переведи ресурсы. Они находятся в Resources.resx.\r<br />\n<br />\nАндрей<br />\n",
+    "PostedDate": "2014-09-13T09:08:24.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1304892",
+    "ThreadId": "567277",
+    "Html": "Hello Maranz,\r<br />\n<br />\nAlthough my name is Igor, I do not speak Russian. What a shame!\r<br />\n<br />\nWell, I see what you say about localizing the source code. I tried to simply add a new resource for my locale, but this seems not to be enough (no results).\r<br />\n<br />\nDo you think I may have to use some localization library, like WPF localization extension? Did you make such change on ModernDialog before?\r<br />\n<br />\nThank you,\r<br />\n<br />\nIgor. <br />\n",
+    "PostedDate": "2014-09-15T09:49:47.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1030062",
+    "ThreadId": "440192",
+    "Html": "Hi\r<br />\n<br />\nIs there a way of binding a collection of items to ModernTab.Links ?\r<br />\n<br />\nCheers\r<br />\n<br />\nMark H<br />\n",
+    "PostedDate": "2013-04-13T13:07:54.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1030064",
+    "ThreadId": "440192",
+    "Html": "Yes, if you add a property of type LinkCollection to your view model, you can use bindings<br />\n<pre><code>public class MyViewModel : NotifyPropertyChanged\n{\n  private LinkCollection items = new LinkCollection();\n  public LinkCollection Items\n  {\n    get { return this.items; }\n    set {\n      if (this.items != value) {\n        this.items = value;\n        OnPropertyChanged(&quot;Items&quot;);\n      }\n    }\n  }\n}</code></pre>\n\nAnd in XAML:<br />\n<pre><code>&lt;mui:ModernTab Links=&quot;{Binding Links}&quot; /&gt;</code></pre>\n\n",
+    "PostedDate": "2013-04-13T13:18:59.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

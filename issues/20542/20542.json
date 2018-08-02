@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-08-09T08:47:08.807-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Currently all dialogs are centered in the main window.  Providing an owner will allow dialogs to be centered in child windows.  Also, adding standard message box icons would be nice.  I'm using this to replace the MessageBox to get them themed as well.",
+    "LastUpdatedDate": "2014-08-09T08:47:08.807-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-12-18T17:28:19.42-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ModernDialog.ShowMessage needs Window owner",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20542
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved with changeset 110093: ModernDialog returns proper DialogResult and MessageBoxResult values (finally...)\n* ModernDialog.DialogResult now properly set based on MessageBoxResult\n* new ModernDialog.MessageBoxResult property\nModernDialog.ShowMessage now includes optional Window owner parameter",
+      "PostedDate": "2014-08-09T08:47:08.807-07:00",
+      "Id": 158568
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1016608",
+    "ThreadId": "436943",
+    "Html": "is there any tool to convert a monochromatic image to a byte array to include as the logo data property ??<br />\n",
+    "PostedDate": "2013-03-17T07:20:28.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1016712",
+    "ThreadId": "436943",
+    "Html": "You can't use images or icons for the ModernWindow.LogoData property. You need to specify a Geometry, as is demonstrated <a href=\"http://mui.codeplex.com/wikipage?title=Define%20a%20logo\" rel=\"nofollow\">here</a>.<br />\n",
+    "PostedDate": "2013-03-17T13:05:23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040720",
+    "ThreadId": "436943",
+    "Html": "I use my own geometry data to set a windows logo and I see that the logo is stretched. Well, I should say that the logo doesn't have even width and height, but I was expecting to see a scaled image rather then stretched. Is it a normal behaviour? I also would like to use the canvas instead of the geometry if it's possible.\r<br />\n<br />\nThank you.<br />\n",
+    "PostedDate": "2013-05-08T00:00:25.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

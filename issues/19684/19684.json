@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "ShowMessage now returns MessageBoxResult (addressed in changeset 101528)",
+    "ClosedDate": "2013-07-06T06:30:41.217-07:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "Hi,\n\nI have a dialog that is to be shown when navigating away from current content, the code is something like:\n\n\n```\npublic override void OnNavigatingFrom(NavigatingCancelEventArgs e)\n{\n   bool? dialogResult = ModernDialog.ShowMessage(\"Restart Now?\", \"Restart Required\", \n   if (dialogResult.HasValue)\n   {\n     if (dialogResult)\n        //Do Action\n           .\n           .\n     else\n       //Dont Do Action And Navigate Away\n          .\n          .\n   }       \n   //Dont Do Action and Cancel Navigation\n   e.Cancel = !dialogResult.HasValue;\n}\n```\n\n\nThe issue here is dialogResult is never null .. accroding to MSDN [Window.DialogResult Property](http://msdn.microsoft.com/en-us/library/system.windows.window.dialogresult.aspx)\n\n\n> A dialog box typically provides a special button to cancel a dialog, which is the button whose __IsCancel__ property is set to __true__. \n\n> A dialog box also typically provides an accept button, which is the button whose __IsDefault__ property is set to __true__.\n\n> __DialogResult__ is null when the dialog box is shown but neither accepted nor canceled.\n\n#Attempted Fix \n\nI tried changing the cancel button creation inside ModernDialog but still no luck:\n\n>this.cancelButton = CreateDialogButton(FirstFloor.ModernUI.Resources.Cancel, false, __false__, this.closeCommand);\n\n\n#Suggested Fix \n\nModify ModernDialog class:\n\n1) add my own dialog result:\n```\nprivate static bool? dialogResult;\n```\n2) update relay commands:\n```\nthis.closeTrueCommand = new RelayCommand(o => {\n   dialogResult = this.DialogResult = true;\n   Close();\n});\nthis.closeFalseCommand = new RelayCommand(o => {\n    dialogResult = this.DialogResult = false;\n    Close();\n});\nthis.closeCommand = new RelayCommand(o => {\n    dialogResult = null;\n    Close();\n});\n```\n\n3) modify ShowMessage method:\n```\npublic static bool? ShowMessage(string text, string title, MessageBoxButton button)\n{\n    var dlg = new ModernDialog {\n    Title = title,\n    Content = new BBCodeBlock { BBCode = text, Margin = new Thickness(0, 0, 0, 8) },\n      MinHeight = 0,\n      MinWidth = 0,\n      MaxHeight = 480,\n      MaxWidth = 640,\n    };\n    dlg.Buttons = GetButtons(dlg, button);\n\n    dlg.ShowDialog();\n    return dialogResult;\n}\n```\n\nThanks.",
+    "LastUpdatedDate": "2013-07-06T06:30:41.217-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-05-09T03:04:32.137-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ModernDialog.ShowMessage never returns null",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 19684
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

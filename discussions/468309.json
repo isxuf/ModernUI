@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1122555",
+    "ThreadId": "468309",
+    "Html": "Hi all!<br />\nAt first, thanks for this great project.<br />\nAt second, sorry for my English, not native speaker here...<br />\n<br />\nNow the question:<br />\nI have in the generated mui project MainWindow.xaml which has some links as follows:<br />\n<pre><code>&lt;mui:ModernWindow.MenuLinkGroups&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;club&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;first team&quot; Source=&quot;/Pages/Club/Team.xaml?first&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;reserve team&quot; Source=&quot;/Pages/Club/Team.xaml?reserve&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;youth team&quot; Source=&quot;/Pages/Club/Team.xaml?youth&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;\n    &lt;/mui:ModernWindow.MenuLinkGroups&gt;</code></pre>\n\nin the Team.xaml I have some tabs:<br />\n<pre><code>&lt;mui:ModernTab Layout=&quot;Tab&quot; SelectedSource=&quot;Content/TeamParts/Squad.xaml&quot;&gt;\n            &lt;mui:ModernTab.DataContext&gt;\n                &lt;vm:TeamVM /&gt;\n            &lt;/mui:ModernTab.DataContext&gt;\n\n            &lt;mui:ModernTab.Links&gt;\n                &lt;!-- TODO: set @Source --&gt;\n                &lt;mui:Link DisplayName=&quot;squad&quot; Source=&quot;Content/TeamParts/Squad.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;training&quot; Source=&quot;Content/TeamParts/Training.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;tactic&quot; Source=&quot;Content/TeamParts/Tactic.xaml&quot; /&gt;\n            &lt;/mui:ModernTab.Links&gt;\n\n            &lt;mui:ModernTab.ContentLoader&gt;\n                &lt;loaders:TeamLoader/&gt;\n            &lt;/mui:ModernTab.ContentLoader&gt;\n        &lt;/mui:ModernTab&gt;</code></pre>\n\nnow what I want to achieve: I am trying to reuse the team page for the three team types: first, reserve... So when I click on the First team in links, I would like to show the squad of the first team, the tactic and also the training for the first team. How can I pass the parameter to the content page Team.xaml? As you can see, I tried using ViewModel, but still beginner whit this. I tried the loader too as I was succesfull in achieving this in the FIrstFloor.ModernUI.App with the LoremIpsumList modernTab to show in the content witch tab was selected. I've done this with passing the uri in the loader to the constructor of the LoremIpsum and there setting the parsed uri right to the textbox.<br />\n<br />\nBut here its little bit complicated as I can not create content loader in the section where the links  reside and if I put the loader as shown in the team.xaml, its getting endlessly recreating itself.<br />\n<br />\nthanks for any help<br />\n",
+    "PostedDate": "2013-11-12T14:37:00.593-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1123518",
+    "ThreadId": "468309",
+    "Html": "Hi Zavael,\r<br />\nYou must use &quot;#&quot; instead of &quot;?&quot; to send the parameter, so your code gets like this:\r<br />\n...\r<br />\n   &lt;mui:Link DisplayName=&quot;first team&quot; Source=&quot;/Pages/Club/Team.xaml#first&quot; /&gt;\r<br />\n...<br />\n",
+    "PostedDate": "2013-11-14T07:44:45.263-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1123795",
+    "ThreadId": "468309",
+    "Html": "OK, thanks I will remember that, but I still dont know how to display the club for the first team when comming from that link.\r<br />\nI tried to use ContentLoader, but with no success.<br />\n",
+    "PostedDate": "2013-11-14T23:52:58.927-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

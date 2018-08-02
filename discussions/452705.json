@@ -1,0 +1,114 @@
+[
+  {
+    "Id": "1077769",
+    "ThreadId": "452705",
+    "Html": "I'm working on a Modern UI application and i want to use the Modern UI text styles like HEADING1, HEADING2, etc.\r<br />\nPlease i need help as I'm still new to WPF.<br />\n",
+    "PostedDate": "2013-08-07T07:38:02.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1077777",
+    "ThreadId": "452705",
+    "Html": "Please, I'll also want to know how i can make use of the textbox focus validation style. Thanks in anticipation<br />\n",
+    "PostedDate": "2013-08-07T07:57:59.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1078141",
+    "ThreadId": "452705",
+    "Html": "I solved the issue already. Sorry for asking such simple questions. Still trying to get a hang of WPF.<br />\n",
+    "PostedDate": "2013-08-08T02:31:21.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082192",
+    "ThreadId": "452705",
+    "Html": "Am also getting the hang of WPF could you please show how you solved your problem I'm also having the same problem<br />\n",
+    "PostedDate": "2013-08-19T07:39:40.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082201",
+    "ThreadId": "452705",
+    "Html": "The modern ui demo app (available in the download package, and in source) demonstrates the use of text styles in controls &gt; styles &gt; text. Applying a heading1 text styles is done like this;<br />\n<pre><code>&lt;TextBlock Text=&quot;HEADING1&quot; Style=&quot;{StaticResource Heading1}&quot; /&gt;</code></pre>\n\nAll mui text styles are defined in the Themes\\TextBlock.xaml resource<br />\n",
+    "PostedDate": "2013-08-19T07:58:20.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1082313",
+    "ThreadId": "452705",
+    "Html": "Thanks for the quick MUI rocks<br />\n",
+    "PostedDate": "2013-08-19T11:53:05.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084630",
+    "ThreadId": "452705",
+    "Html": "Lets assume we want to override <strong>HorizontalAlignment</strong> and <strong>VerticalAlignment</strong> properties only for our Button.<br />\n<br />\nYou do it like this:<br />\n<pre><code>&lt;Style x:Key=&quot;NlptButtonStyle&quot; BasedOn=&quot;{StaticResource {x:Type Button}}&quot; TargetType=&quot;Button&quot;&gt;\n    &lt;Setter Property=&quot;HorizontalAlignment&quot; Value=&quot;Center&quot;&gt;&lt;/Setter&gt;\n    &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot;&gt;&lt;/Setter&gt;\n&lt;/Style&gt;\n</code></pre>\n\nIf you want to override some other control instead of Button just change the Type.<br />\nExample: <strong>Somecontrol</strong><br />\n<pre><code>&lt;Style x:Key=&quot;NlptButtonStyle&quot; BasedOn=&quot;{StaticResource {x:Type SomeControl}}&quot; TargetType=&quot;SomeControl&quot;&gt;\n</code></pre>\n\nStyles in ModernUI are named the same as the name of control.<br />\n<br />\nPS: <strong>kozw</strong> where did you find <strong>Themes\\TextBlock.xaml resource</strong> ?<br />\n",
+    "PostedDate": "2013-08-25T06:24:28.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084897",
+    "ThreadId": "452705",
+    "Html": "In the source there's the FirstFloor.ModernUI project with two folders associated with XAML resources; <strong>Assets</strong> contains the mui styles for core WPF controls (such as button, textblock, etc). <strong>Themes</strong> contains the default styles for the MUI controls (such as ModernButton, ModernWindow, etc).<br />\n",
+    "PostedDate": "2013-08-26T05:54:53.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086149",
+    "ThreadId": "452705",
+    "Html": "I am new to Modern UI and WPF in general. I downloaded Modern UI and I was looking to change the theme to something like the Hello Kitty example. Do those themes come with the default Modern UI download or are those custom themes that someone else has done. If they do come with Modern UI by default, where can I find them and how can I change them?\r<br />\n<br />\nThanks in advance!<br />\n",
+    "PostedDate": "2013-08-29T06:09:32.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086176",
+    "ThreadId": "452705",
+    "Html": "Ok, well I figured out that there are only two themes by default. But I still need some advice on how I can add an image to my new theme so it will show up on each view. Thanks again, and sorry for the dumb question before. :)<br />\n",
+    "PostedDate": "2013-08-29T06:40:44.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1086665",
+    "ThreadId": "452705",
+    "Html": "Correct, ModernUI comes with 2 builtin themes, light and dark. For custom theme development see <a href=\"https://mui.codeplex.com/wikipage?title=Creating%20a%20custom%20theme\" rel=\"nofollow\">this tutorial</a>. The sample themes in the demo app can be found in the source code (see the FirstFloor.ModernUI.App project).<br />\n",
+    "PostedDate": "2013-08-30T07:36:23.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1255208",
+    "ThreadId": "452705",
+    "Html": "How can we add Background image for the custom theme?<br />\n",
+    "PostedDate": "2014-06-11T07:02:12.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1255216",
+    "ThreadId": "452705",
+    "Html": "I could set the background them by using the below style in the them resource dictionary file.\r<br />\n<br />\n &lt;Rectangle x:Key=&quot;WindowBackgroundContent&quot; x:Shared=&quot;false&quot; Margin=&quot;32&quot;&gt;<br />\n<pre><code>    &lt;Rectangle.Fill&gt;\n        &lt;ImageBrush ImageSource=&quot;BgPicture.png&quot; Stretch=&quot;UniformToFill&quot; /&gt;\n    &lt;/Rectangle.Fill&gt;\n&lt;/Rectangle&gt;</code></pre>\n\n",
+    "PostedDate": "2014-06-11T07:15:22.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1258022",
+    "ThreadId": "452705",
+    "Html": "...look at the sample code in the source. it clearly shows how to do this.<br />\n",
+    "PostedDate": "2014-06-19T12:41:23.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

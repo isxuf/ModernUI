@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "not an issue",
+    "ClosedDate": "2013-07-05T14:22:21.07-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Hi,\n\ni´m trying to use iContent.\n\n___My Code:___\n\n_MainWindow_\n\n```\n<mui:LinkGroup DisplayName=\"testes\">\n\n\t<mui:LinkGroup.Links>\n\t\t<mui:Link DisplayName=\"Teste Pdf\" Source=\"pdf/visualizador_pdf.xaml#1\" />\n\t</mui:LinkGroup.Links>\n\n</mui:LinkGroup>\n```\n\n_visualizador_pdf.xaml_\n\n```\n<UserControl x:Class=\"CalculoPrecosTransferes.Pdf.visualizador_pdf\"\n             xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n             xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"\n             xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" \n             xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\" \n             xmlns:mui=\"http://firstfloorsoftware.com/ModernUI\"\n             mc:Ignorable=\"d\" \n             d:DesignHeight=\"800\" d:DesignWidth=\"800\">\n    <Grid>\n\n        <mui:ModernFrame x:Name=\"Frame\"/>\n\n    </Grid>\n</UserControl>\n\n```\n\n_visualizador_pdf.xaml.cs_\n\n```\nusing FirstFloor.ModernUI.Windows.Navigation;\nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Windows;\nusing System.Windows.Controls;\nusing System.Windows.Data;\nusing System.Windows.Documents;\nusing System.Windows.Input;\nusing System.Windows.Media;\nusing System.Windows.Media.Imaging;\nusing System.Windows.Shapes;\n\nnamespace CalculoPrecosTransferes.Pdf\n{\n    public interface IContent\n    {\n        void OnFragmentNavigation(FragmentNavigationEventArgs e);\n        void OnNavigatedFrom(NavigationEventArgs e);\n        void OnNavigatedTo(NavigationEventArgs e);\n        void OnNavigatingFrom(NavigatingCancelEventArgs e);\n    }\n\n    /// <summary>\n    /// Interaction logic for Visualizador_PDFs.xaml\n    /// </summary>\n    public partial class visualizador_pdf : UserControl, IContent\n    {\n        public visualizador_pdf()\n        {\n            InitializeComponent();\n        }\n\n        public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n        {\n            MessageBox.Show(e.Fragment);\n\n            MessageBox.Show(\"OLá\");\n        }\n        public void OnNavigatedFrom(NavigationEventArgs e)\n        {\n            \n        }\n        public void OnNavigatedTo(NavigationEventArgs e)\n        {\n            MessageBox.Show(\"OLá\");\n        }\n        public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n        {\n            MessageBox.Show(\"OLá\");\n        }\n        \n    }\n}\n\n```\n\nThe events don´t \"fire\" ... What i am doing wrong? \n\nPlease help.\n\nTIA\n\nBaltazar\n\n(Modern UI 1.0.4)",
+    "LastUpdatedDate": "2013-07-05T14:22:21.07-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-18T02:46:52.017-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Dificulties in Making Work IContent",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19867
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Not an error of m:ui, see http://mui.codeplex.com/discussions/447505",
+      "PostedDate": "2013-06-19T13:05:00.717-07:00",
+      "Id": 158520
+    }
+  ]
+}

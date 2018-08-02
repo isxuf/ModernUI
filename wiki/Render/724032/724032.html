@@ -1,0 +1,14 @@
+<div class="wikidoc"><h1>Working with WPF 4.0</h1>
+Modern UI targets both WPF 4.0 and 4.5. The download package contains assemblies for both WPF versions. When you use <a href="http://nuget.org/packages/ModernUI.WPF/">NuGet</a>, the correct WPF version is automatically selected based on the target framework of your project. The Visual Studio 2012 templates however only work for WPF 4.5.<br /><br />There is one workaround required in WPF 4.0 for control styling to work correctly. Make sure you add an empty style for a rectangle in your App.xaml.<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">Application.Resources</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">ResourceDictionary</span><span style="color:Blue;">&gt;</span>
+<span style="color:Green;">&lt;!-- WPF 4.0 workaround --&gt;</span>
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">Style</span> <span style="color:Red;">TargetType</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">{x:Type Rectangle}</span><span style="color:Black;">&quot;</span> <span style="color:Blue;">/&gt;</span>
+<span style="color:Green;">&lt;!-- end of workaround --&gt;</span>
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">ResourceDictionary.MergedDictionaries</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">ResourceDictionary</span> <span style="color:Red;">Source</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">/FirstFloor.ModernUI;component/Assets/ModernUI.xaml</span><span style="color:Black;">&quot;</span> <span style="color:Blue;">/&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">ResourceDictionary</span> <span style="color:Red;">Source</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml</span><span style="color:Black;">&quot;</span><span style="color:Blue;">/&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">ResourceDictionary.MergedDictionaries</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">ResourceDictionary</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">Application.Resources</span><span style="color:Blue;">&gt;</span>
+</pre></div><br /></div><div class="ClearBoth"></div>

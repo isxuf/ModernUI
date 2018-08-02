@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1337985",
+    "ThreadId": "576519",
+    "Html": "Hi,\r<br />\n<br />\nI am trying to databind IsActive property of the control to a dependecy property but it is not working. <br />\n<pre><code>&lt;UserControl x:Class=&quot;MegoloadModern.Pages.Home&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n             xmlns:h=&quot;http://helixtoolkit.codeplex.com&quot;\n             xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;\n    &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n\n        &lt;mui:ModernProgressRing IsActive=&quot;{Binding IsLoading}&quot; Width=&quot;80&quot; Height=&quot;80&quot; Panel.ZIndex=&quot;10&quot; Style=&quot;{StaticResource WaveProgressRingStyle}&quot; /&gt;\n\n        &lt;h:HelixViewport3D x:Name=&quot;mainViewport&quot;  Grid.Column=&quot;0&quot; Grid.RowSpan=&quot;1&quot;  RotationSensitivity=&quot;0.3&quot; InfiniteSpin=&quot;True&quot; \n                           ZoomExtentsWhenLoaded=&quot;True&quot; ZoomAroundMouseDownPoint=&quot;True&quot;&gt;\n            &lt;h:HelixViewport3D.Children&gt;\n                &lt;h:SunLight/&gt;\n                &lt;ModelVisual3D Content=&quot;{Binding Model}&quot;&gt;&lt;/ModelVisual3D&gt;\n            &lt;/h:HelixViewport3D.Children&gt;\n        &lt;/h:HelixViewport3D&gt;\n\n    &lt;/Grid&gt;\n&lt;/UserControl&gt;</code></pre>\n\nAnd my dependecy property is like this<br />\n<pre><code>        public bool IsLoading\n        {\n            get { return (bool)GetValue(IsLoadingProperty); }\n            set { SetValue(IsLoadingProperty, value); }\n        }\n\n        public static readonly DependencyProperty IsLoadingProperty =\n            DependencyProperty.Register(&quot;IsLoading&quot;, typeof(bool), typeof(HomeViewModel), new PropertyMetadata(false));\n\n\n        public HomeViewModel()\n        {\n            IsLoading = true;\n            .....\n            .....\n            IsLoading = false;\n        }</code></pre>\n\nthanks<br />\n",
+    "PostedDate": "2014-12-30T12:18:20.997-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1338358",
+    "ThreadId": "576519",
+    "Html": "My mistake i wasn't executing code in a seperate thread therefore blocking ui thread causing the bindings to fail.<br />\n",
+    "PostedDate": "2015-01-01T11:59:43.33-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2015-01-01T11:59:57.253-08:00"
+  },
+  {
+    "Id": "1429702",
+    "ThreadId": "576519",
+    "Html": "Hi mertkokusen,\r<br />\n<br />\nI meet the same issue with you listed above, how do you solve this issue on your side? As your last comments said, we need to execute code in a seperate thread, I have tried to call it in a seperate thread, but it still doesn't work for me. Could you share your way or your source code to me here? Million thanks for your help. <br />\n",
+    "PostedDate": "2015-06-09T06:16:03.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "How to resize the login Page and when click login button jump to the main framework?\nthanks",
+    "LastUpdatedDate": "2014-05-08T04:58:07.68-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-03-13T19:13:24.583-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "how can i add login Page before mainWindows",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20820
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "You can use ..\r\n\r\n\r\n\r\nto make new Empty window after you can  create the object of main windows and use show() .",
+      "PostedDate": "2014-05-08T04:58:07.68-07:00",
+      "Id": 158576
+    }
+  ]
+}

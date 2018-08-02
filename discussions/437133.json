@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1017411",
+    "ThreadId": "437133",
+    "Html": "I noticed there is a new source code update today and decided to check it out.\r<br />\n<br />\nWhen compiling, i got these errors.<br />\n<pre><code>Error   1   The name 'ModernUIHelper' does not exist in the current context k:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI\\Windows\\DefaultContentLoader.cs    42  17  FirstFloor.ModernUI.WPF4\nError   2   The tag 'ModernTab' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 15 Position 10.  K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Content\\ContentLoaderImages.xaml   15  10  FirstFloor.ModernUI.App\nError   3   The tag 'BBCodeBlock' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 11 Position 14.    K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Content\\ContentLoaderIntro.xaml    11  14  FirstFloor.ModernUI.App\nError   4   The tag 'ModernFrame' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 15 Position 22.    K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Content\\ControlsModernFrame.xaml   15  22  FirstFloor.ModernUI.App\nError   5   The tag 'ModernMenu' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 14 Position 18. K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Content\\ControlsModernMenu.xaml    14  18  FirstFloor.ModernUI.App\nError   6   The tag 'BBCodeBlock' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 10 Position 10.    K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Content\\ModernFrame\\CancelNavigateSample.xaml  10  10  FirstFloor.ModernUI.App\nError   7   The tag 'ModernWindow' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 1 Position 19.    K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\MainWindow.xaml    1   19  FirstFloor.ModernUI.App\nError   8   The tag 'ModernTab' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 11 Position 10.  K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Pages\\ContentLoader.xaml   11  10  FirstFloor.ModernUI.App\nError   9   The type reference cannot find a public type named 'BBCodeBlock'. Line 13 Position 50.  K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Pages\\Navigation.xaml  13  50  FirstFloor.ModernUI.App\nError   10  The tag 'ModernTab' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 10 Position 10.  K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Pages\\ControlsModern.xaml  10  10  FirstFloor.ModernUI.App\nError   11  The tag 'BBCodeBlock' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 13 Position 18.    K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Content\\ControlsModernBBCodeBlock.xaml 13  18  FirstFloor.ModernUI.App\nError   12  The tag 'ModernButton' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 13 Position 18.   K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Content\\ControlsModernButton.xaml  13  18  FirstFloor.ModernUI.App\nError   13  The tag 'ModernTab' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 10 Position 10.  K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Pages\\ControlsStyles.xaml  10  10  FirstFloor.ModernUI.App\nError   14  The tag 'BBCodeBlock' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 13 Position 18.    K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Pages\\Introduction.xaml    13  18  FirstFloor.ModernUI.App\nError   15  The tag 'ModernTab' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 10 Position 10.  K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Pages\\LayoutTab.xaml   10  10  FirstFloor.ModernUI.App\nError   16  The tag 'ModernTab' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 11 Position 10.  K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Content\\LoremIpsumList.xaml    11  10  FirstFloor.ModernUI.App\nError   17  The tag 'ModernTab' does not exist in XML namespace 'http://firstfloorsoftware.com/ModernUI'. Line 10 Position 10.  K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI.App\\Pages\\Settings.xaml    10  10  FirstFloor.ModernUI.App\nError   18  The name 'ModernUIHelper' does not exist in the current context K:\\FDM\\metro\\1.0\\FirstFloor.ModernUI\\FirstFloor.ModernUI\\Windows\\DefaultContentLoader.cs    42  17  FirstFloor.ModernUI\n</code></pre>\n\n",
+    "PostedDate": "2013-03-18T17:54:06.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017412",
+    "ThreadId": "437133",
+    "Html": "Oops, my bad. Merge issues, fixed now.<br />\n",
+    "PostedDate": "2013-03-18T18:14:12.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017420",
+    "ThreadId": "437133",
+    "Html": "Thanks.<br />\n",
+    "PostedDate": "2013-03-18T18:54:20.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

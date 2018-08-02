@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1032859",
+    "ThreadId": "440865",
+    "Html": "Hi everyone.\r<br />\n<br />\nI created a custom theme that I want only for a single view. Is this possible ? The view is Home.xaml, the first one.\r<br />\n<br />\nFor the moment, I loaded the theme at the launch in App.xaml, but I don't know how to switch to the default real theme (light or dark, the only choixes in Settings), and switch back to the custom theme when I go back to the Home.xaml view (after visiting Settings, the default theme is &quot;synced&quot;).\r<br />\n<br />\nThanks for this amazing toolkit,\r<br />\nIDE.<br />\n",
+    "PostedDate": "2013-04-19T01:09:03.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033347",
+    "ThreadId": "440865",
+    "Html": "You can change the theme in code by setting the <strong>AppearanceManager.Current.ThemeSource</strong>. The default dark and light theme source are defined as consts on the AppearanceManager class.\r<br />\n<br />\nChanging the theme per page is possible by implementing <strong>IContent</strong> and set the theme in the <strong>OnNavigatedTo</strong> and restore it in the <strong>OnNavigatedFrom</strong>. <br />\n<pre><code>public class MyPage : IContent\n{\n  private Uri previousThemeSource;\n\n  public void OnNavigatedTo(NavigationEventArgs e)\n  {\n    // first store the current theme\n    this.previousThemeSource = AppearanceManager.Current.ThemeSource;\n\n    // set the dark theme (or any theme you like)\n    AppearanceManager.Current.ThemeSource = AppearanceManager.DarkThemeSource;\n  }\n  public void OnNavigatedFrom(NavigationEventArgs e)\n  {\n    // restore the previous theme\n    AppearanceManager.Current.ThemeSource = this.previousThemeSource;\n  }\n  public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n  {\n  }\n  public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n  {\n  }\n}</code></pre>\n\n",
+    "PostedDate": "2013-04-20T05:17:51.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033352",
+    "ThreadId": "440865",
+    "Html": "I just tried, but I'm not sure if I used it correctly. It keeps telling me &quot;Interface member 'void FirstFloor.ModernUI.IContent.OnFragmentNavigation(FragmentNavigationEventArgs)' is not implemented&quot; (replace OnFragmentNavigation by the 3 others, I have 4 errors). Here's my code :<br />\n<pre><code>/// &lt;summary&gt;\n    /// Interaction logic for Home.xaml\n    /// &lt;/summary&gt;\n    public partial class Home : IContent\n    {\n        public Home()\n        {\n            InitializeComponent();\n        }\n        private Uri previousThemeSource;\n\n        public void OnNavigatedTo(NavigationEventArgs e)\n        {\n            // first store the current theme\n            this.previousThemeSource = AppearanceManager.Current.ThemeSource;\n\n            // set the dark theme (or any theme you like)\n            AppearanceManager.Current.ThemeSource = AppearanceManager.DarkThemeSource;\n        }\n        public void OnNavigatedFrom(NavigationEventArgs e)\n        {\n            // restore the previous theme\n            AppearanceManager.Current.ThemeSource = this.previousThemeSource;\n        }\n        public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n        {\n        }\n        public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n        {\n        }\n    }</code></pre>\n\n",
+    "PostedDate": "2013-04-20T05:30:00.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033354",
+    "ThreadId": "440865",
+    "Html": "Make sure you remove the <code>using System.Windows.Navigation;</code> and replace it with <code>using FirstFloor.ModernUI.Windows.Navigation;</code><br />\n",
+    "PostedDate": "2013-04-20T05:35:08.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033358",
+    "ThreadId": "440865",
+    "Html": "Yes I'm using them (not sure if Visual Studio added them, or ReSharper).<br />\n",
+    "PostedDate": "2013-04-20T05:39:45.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033360",
+    "ThreadId": "440865",
+    "Html": "And it still won't compile? That's odd, works fine here. NavigationEventArgs is defined in both System.Windows.Navigation and FirstFloor.ModernUI.Windows.Navigation, please double check that System.Windows.Navigation is not used.<br />\n",
+    "PostedDate": "2013-04-20T05:42:33.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033361",
+    "ThreadId": "440865",
+    "Html": "Yep, double checked. Let's see that from the beginning : I just created a new Modern UI project, and here's my code for Home.xaml.cs : <br />\n<pre><code>using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Threading.Tasks;\nusing System.Windows;\nusing System.Windows.Controls;\nusing System.Windows.Data;\nusing System.Windows.Documents;\nusing System.Windows.Input;\nusing System.Windows.Media;\nusing System.Windows.Media.Imaging;\nusing System.Windows.Navigation;\nusing System.Windows.Shapes;\nusing FirstFloor.ModernUI.Presentation;\nusing FirstFloor.ModernUI.Windows;\nusing FirstFloor.ModernUI.Windows.Navigation;\n\nnamespace TestCustomTheme.Pages\n{\n    /// &lt;summary&gt;\n    /// Interaction logic for Home.xaml\n    /// &lt;/summary&gt;\n    public partial class Home : IContent\n    {\n        public Home()\n        {\n            InitializeComponent();\n        }\n        private Uri previousThemeSource;\n\n        public void OnNavigatedTo(NavigationEventArgs e)\n        {\n            // first store the current theme\n            this.previousThemeSource = AppearanceManager.Current.ThemeSource;\n\n            // set the dark theme (or any theme you like)\n            AppearanceManager.Current.ThemeSource = AppearanceManager.DarkThemeSource;\n        }\n        public void OnNavigatedFrom(NavigationEventArgs e)\n        {\n            // restore the previous theme\n            AppearanceManager.Current.ThemeSource = this.previousThemeSource;\n        }\n        public void OnNavigatingFrom(NavigatingCancelEventArgs e)\n        {\n        }\n        public void OnFragmentNavigation(FragmentNavigationEventArgs e)\n        {\n        }\n    }\n}</code></pre>\n\nStill have the same errors.<br />\n",
+    "PostedDate": "2013-04-20T05:51:20.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033362",
+    "ThreadId": "440865",
+    "Html": "It works! Thanks to ReSharper, I replaced<br />\n<pre><code>public void OnNavigatedTo(NavigationEventArgs e)</code></pre>\n\nby<br />\n<pre><code>public void OnNavigatedTo(FirstFloor.ModernUI.Windows.Navigation.NavigationEventArgs e)</code></pre>\n\nAnd it seems to be working on my test project!<br />\n<br />\nSo thanks ReSharper and of course thank you for your amazing toolkit!<br />\n",
+    "PostedDate": "2013-04-20T05:54:29.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

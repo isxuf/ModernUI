@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1241562",
+    "ThreadId": "544326",
+    "Html": "Hello, \r<br />\nFirst I would like to congratulate them for the project being very helpful to me. \r<br />\nWhen loading a datagrid with the method dataGrid.ItemsSource = myList;  the list has more than 1000 records, the loading is very slow, I tried the same method on a common wpf application and the the result was normal. By putting a breakpoint checked that the load time is normal List, and then the application hangs and takes a minute to surround the display. \r<br />\nSorry for the mistakes of writing, I am Brazilian I still learning English.\r<br />\nGrateful for the collaboration. \r<br />\nSaulo.<br />\n",
+    "PostedDate": "2014-05-05T07:36:25.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1290919",
+    "ThreadId": "544326",
+    "Html": "i had the same problem, then after I set MaxHeight and MaxWidth of the DataGrid to a fixed value, the problem is solved. \r<br />\nAdditionally this <a href=\"http://stackoverflow.com/questions/697701/wpf-datagrid-performance\" rel=\"nofollow\">thread</a> is very helpful for improving datagrid performance. <br />\n",
+    "PostedDate": "2014-08-17T17:16:04.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

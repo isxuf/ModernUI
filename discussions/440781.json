@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1032486",
+    "ThreadId": "440781",
+    "Html": "In my Solution I have three different projects. Main project (Startup) contains main window and other two projects contain (DLLs) user controls. I have module classes to initialize those views and viewmodels inside each project. When my application starts first the main screen appears where I have create project commands. Now on create project command I want to load and activate the already initialized view. Please guide me on this.<br />\n",
+    "PostedDate": "2013-04-18T07:44:12.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033349",
+    "ThreadId": "440781",
+    "Html": "Not sure I understand the question. Please elaborate or provide source.<br />\n",
+    "PostedDate": "2013-04-20T05:24:34.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

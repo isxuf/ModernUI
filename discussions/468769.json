@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1123791",
+    "ThreadId": "468769",
+    "Html": "If I run the applicaiton from within the Visual Studio 2013 everything is fine. If I double-click the exe from outside the IDE, Windows throws errors and shuts down. At the begining, I though, what problem related with my added code, but it doesn`t.\r<br />\n<br />\nThen I created completely new Modern UI project, but it have the same problem. Does  anyone have same problem?<br />\n",
+    "PostedDate": "2013-11-14T23:39:33.267-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1126063",
+    "ThreadId": "468769",
+    "Html": "<strong>I do not</strong> have this problem. I have VS 2013 professional and I can execute my exe from outside the IDE with <strong>no</strong> errors what-so-ever.<br />\n",
+    "PostedDate": "2013-11-18T08:18:18.32-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1126129",
+    "ThreadId": "468769",
+    "Html": "Yes, you right, I just successfully runned exe from bin/release folder.<br />\n",
+    "PostedDate": "2013-11-18T10:01:06.39-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

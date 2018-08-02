@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1119854",
+    "ThreadId": "466850",
+    "Html": "I need check if there is any unsaved changes before quitting the application or leave the current page. I do it in OnNavigatingFrom. It works fine when leaving the current page. But OnNavigatingFrom is not called when I quit the application by closing the main window.\r<br />\n<br />\nI can do it in Windows Unloaded event handler. But I will have to check unsaved changes in 2 places (OnNavigatingFrom and Windows_Unloaded). Is there a better way?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-11-07T08:31:03.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

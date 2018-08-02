@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1133429",
+    "ThreadId": "472383",
+    "Html": "Why I'm getting this problem? I defined a CustomModernWindow and its themes, but when i set it explicitly to my main window, I got that error. I already applied all the details from this page <a href=\"https://mui.codeplex.com/workitem/19702\" rel=\"nofollow\">https://mui.codeplex.com/workitem/19702</a> (ModernWindow Implicit Style Not Working).  just try if its work but its not. Another thing is, when I did'nt set a style from my main window, it works but the style I've added did'nt applied.<br />\n",
+    "PostedDate": "2013-12-09T22:40:12.427-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

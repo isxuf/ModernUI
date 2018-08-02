@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "I'm using NavigationCommands.GoToPage.Execute() to navigate between pages from my viewmodel.\nIt works fine when navigating to simple Uris but when navigating to pages with a fragment part, the frame is selected but the menu is deselected. It seems the selected source is not found in the menu. I think it tries to find the Uri without ignoring the fragment part.",
+    "LastUpdatedDate": "2014-08-06T07:53:42.273-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-10-17T16:52:56.567-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NavigationCommands.GoToPage / ModernMenu and fragment part in the Uri",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20322
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "to temporarily resolve the issue I modified ModerMenu.cs as follows:\r\n\r\nadd new method to ModermMenu.cs        private Uri CleanUri(Uri source)        {            if (source == null)                return null;\r\n\r\n            var url = source.OriginalString.Split('#');            return new Uri(url[0],UriKind.Relative);        }the clean the Uri before it is used to find the match in ModernMenu.UpdateSelection()        private void UpdateSelection()        {            LinkGroup selectedGroup = null;            Link selectedLink = null;\r\n\r\n            Uri cleanSelectedSource = CleanUri(this.SelectedSource);\r\n\r\n            if (this.LinkGroups != null) {                // find the current select group and link based on the selected source                var linkInfo = (from g in this.LinkGroups                                from l in g.Links                                where l.Source == __cleanSelectedSource                                select new {                                    Group = g,                                    Link = l                                }).FirstOrDefault();\r\n\r\n                if (linkInfo != null) {                    selectedGroup = linkInfo.Group;                    selectedLink = linkInfo.Link;                }                else {                    // could not find link and group based on selected source, fall back to selected link group                    selectedGroup = this.SelectedLinkGroup;\r\n\r\n                    // if selected group doesn't exist in available groups, select first group                    if (!this.LinkGroups.Any(g => g == selectedGroup)) {                        selectedGroup = this.LinkGroups.FirstOrDefault();                    }                }            }--------------method truncated for brievety-------------",
+      "PostedDate": "2014-01-18T10:39:20.387-08:00",
+      "Id": 158560
+    },
+    {
+      "Message": "Hi, I don't understand,\r\n\r\nHo you modify ModermMenu.cs ? ",
+      "PostedDate": "2014-08-06T07:53:42.273-07:00",
+      "Id": 158561
+    }
+  ]
+}

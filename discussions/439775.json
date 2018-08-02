@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1028401",
+    "ThreadId": "439775",
+    "Html": "I want to know if we have the right (xD) to rebuild the application extension/assembly (FirstFloor.ModernUI.dll) with another name (example: MyApplication.UI.dll).\r<br />\nIf we do have the right, how to do this?\r<br />\nI know I have to go to Project &gt; Properties &gt; Application Tab &gt; Assembly name, and change the name..., but then, how do I use the new (renamed) assembly (*.dll) in my project.\r<br />\nNote: Using the same technique as in the documentation, doesn't work.\r<br />\nThanks!<br />\n",
+    "PostedDate": "2013-04-10T05:53:38.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029099",
+    "ThreadId": "439775",
+    "Html": "Have you consulted the <a href=\"https://mui.codeplex.com/license\" rel=\"nofollow\">license</a>?<br />\n",
+    "PostedDate": "2013-04-11T09:52:47.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

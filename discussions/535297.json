@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1214464",
+    "ThreadId": "535297",
+    "Html": "I'm writing a wizard using a ModernTab and want previous next buttons, could not find commands for navigating a linkcollection but feel there should be.\r<br />\nAre there built in commands or a nice way to do this?<br />\n",
+    "PostedDate": "2014-02-25T04:58:56.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1214682",
+    "ThreadId": "535297",
+    "Html": "Bind your ModernTab's SelectedSource to a property in your ViewModel and keep track of the current page. Then have your button's Command in your VM simply set the SelectedSource property to the proper one, and bingo.<br />\n",
+    "PostedDate": "2014-02-25T09:10:13.867-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1214716",
+    "ThreadId": "535297",
+    "Html": "Yeah that is a way, I'm not sure I love it though. Want to write all the links in xaml, writing it this way would mean that the view (tab) would send its linkcollection to the vm. Think I prefer hacking it in code behind but that is not very clean either perhaps. Gonna think about this for a while.<br />\n<br />\nWrote this:<br />\n<pre><code>&lt;mui:ModernTab x:Name=&quot;Tab&quot; Layout=&quot;Tab&quot; HorizontalAlignment=&quot;Left&quot; Grid.RowSpan=&quot;2&quot;\n               SelectedSource=&quot;/Data.xaml&quot;&gt;\n    &lt;mui:ModernTab.Links&gt;\n        &lt;mui:Link DisplayName=&quot;Data&quot; Source=&quot;/Data.xaml&quot;/&gt;\n        &lt;mui:Link DisplayName=&quot;Summary&quot; Source=&quot;/Summary.xaml&quot;/&gt;\n    &lt;/mui:ModernTab.Links&gt;\n&lt;/mui:ModernTab&gt;\n&lt;StackPanel Orientation=&quot;Horizontal&quot; Grid.Row=&quot;1&quot; TextBlock.FontSize=&quot;18&quot; Margin=&quot;0,10,0,0&quot;&gt;\n    &lt;Button Content=&quot;{l:Translate Next}&quot; \n            Margin=&quot;15,0,0,0&quot; \n            Command=&quot;BrowseForward&quot; \n            CommandTarget=&quot;{Binding ElementName=Tab}&quot;&gt;\n        &lt;Button.CommandParameter&gt;\n            &lt;MultiBinding Converter=&quot;{StaticResource NextTabConverter}&quot;&gt;\n                &lt;Binding ElementName=&quot;Tab&quot;/&gt;\n                &lt;Binding ElementName=&quot;Tab&quot; Path=&quot;SelectedSource&quot;/&gt;\n            &lt;/MultiBinding&gt;\n        &lt;/Button.CommandParameter&gt;\n    &lt;/Button&gt;\n&lt;/StackPanel&gt;</code></pre>\n\n<pre><code>    public class NextTabConverter : IMultiValueConverter\n    {\n        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)\n        {\n            var tab = values.OfType&lt;ModernTab&gt;().FirstOrDefault();\n            if (tab == null)\n                return null;\n            var current = tab.Links.Single(x =&gt; x.Source == tab.SelectedSource);\n            var i = tab.Links.IndexOf(current) + 1;\n            if (i == tab.Links.Count)\n                return null;\n            return tab.Links[i].Source;\n        }\n\n        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)\n        {\n            throw new NotImplementedException();\n        }\n    }</code></pre>\n\nBut it does not navigate the frame inside the tab<br />\nIdeally I'm looking for something like:<br />\n<pre><code>&lt;Button Content=&quot;Previous&quot;\n        Command=&quot;NextTabCommand&quot;\n        CommandTarget=&quot;{Binding ElementName=Tab}&quot;/&gt;</code></pre>\n\n",
+    "PostedDate": "2014-02-25T09:45:39.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1214774",
+    "ThreadId": "535297",
+    "Html": "<strong>Johan20D wrote:</strong><br />\n<blockquote>\nYeah that is a way, I'm not sure I love it though. Want to write all the links in xaml, writing it this way would mean that the view (tab) would send its linkcollection to the vm. <br />\n</blockquote>\nNo. You can still define the links in the xaml, just bind the SelectedSource property to one in the VM.<br />\n",
+    "PostedDate": "2014-02-25T11:28:33.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1214820",
+    "ThreadId": "535297",
+    "Html": "I wrote it like this:<br />\n<pre><code>    using System.Linq;\n    using System.Windows.Input;\n    using FirstFloor.ModernUI.Windows.Controls;\n    public static class ModernCommands\n    {\n        static ModernCommands()\n        {\n            var nextBinding = new CommandBinding(ModernCommands.NextTab, ExecuteNextTab, CanExecuteNextTab);\n            CommandManager.RegisterClassCommandBinding(typeof(ModernTab), nextBinding);\n            var prevBinnding = new CommandBinding(ModernCommands.PreviousTab, ExecutePreviousTab, CanExecutePreviousTab);\n            CommandManager.RegisterClassCommandBinding(typeof(ModernTab), prevBinnding);\n        }\n\n        private static readonly RoutedCommand Next = new RoutedCommand(&quot;NextTab&quot;, typeof(ModernCommands));\n\n        private static readonly RoutedCommand Previous = new RoutedCommand(&quot;PreviousTab&quot;, typeof(ModernCommands));\n\n        public static RoutedCommand NextTab\n        {\n            get\n            {\n                return Next;\n            }\n        }\n        public static RoutedCommand PreviousTab\n        {\n            get\n            {\n                return Previous;\n            }\n        }\n        private static void CanExecuteNextTab(object sender, CanExecuteRoutedEventArgs e)\n        {\n            var tab = sender as ModernTab;\n            if (tab == null || tab.SelectedSource == null)\n            {\n                e.CanExecute = false;\n                return;\n            }\n            e.CanExecute = IsInRange(CurrentIndex(tab) + 1, tab);\n        }\n        private static void ExecuteNextTab(object sender, ExecutedRoutedEventArgs e)\n        {\n            var tab = (ModernTab)sender;\n            tab.SelectedSource = tab.Links[CurrentIndex(tab) + 1].Source;\n        }\n        private static void CanExecutePreviousTab(object sender, CanExecuteRoutedEventArgs e)\n        {\n            var tab = sender as ModernTab;\n            if (tab == null || tab.SelectedSource == null)\n            {\n                e.CanExecute = false;\n                return;\n            }\n            e.CanExecute = IsInRange(CurrentIndex(tab) - 1, tab);\n        }\n        private static void ExecutePreviousTab(object sender, ExecutedRoutedEventArgs e)\n        {\n            var tab = (ModernTab)sender;\n            tab.SelectedSource = tab.Links[CurrentIndex(tab) - 1].Source;\n        }\n        private static int CurrentIndex(ModernTab tab)\n        {\n            return tab.Links.IndexOf(tab.Links.FirstOrDefault(x =&gt; x.Source == tab.SelectedSource));\n        }\n        private static bool IsInRange(int i, ModernTab tab)\n        {\n            return i &lt; tab.Links.Count &amp;&amp; i &gt; -1;\n        }\n    }</code></pre>\n\nLets me do:<br />\n<pre><code>    &lt;Grid&gt;\n        &lt;Grid.RowDefinitions&gt;\n            &lt;RowDefinition Height=&quot;*&quot;/&gt;\n            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;\n        &lt;/Grid.RowDefinitions&gt;\n        &lt;mui:ModernTab Layout=&quot;Tab&quot; x:Name=&quot;Tab&quot;&gt;\n            &lt;mui:ModernTab.Links&gt;\n                &lt;mui:Link DisplayName=&quot;Language&quot; Source=&quot;/View1.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;Item 2&quot; Source=&quot;/View2.xaml&quot; /&gt;\n            &lt;/mui:ModernTab.Links&gt;\n        &lt;/mui:ModernTab&gt;\n        &lt;StackPanel Grid.Row=&quot;1&quot; Orientation=&quot;Horizontal&quot;&gt;\n            &lt;Button Content=&quot;Previous&quot; \n                Command=&quot;commands:ModernCommands.PreviousTab&quot;\n                CommandTarget=&quot;{Binding ElementName=Tab}&quot;/&gt;\n            \n            &lt;Button Content=&quot;Next&quot; \n                Command=&quot;commands:ModernCommands.NextTab&quot;\n                CommandTarget=&quot;{Binding ElementName=Tab}&quot;/&gt;\n        &lt;/StackPanel&gt;\n\n    &lt;/Grid&gt;</code></pre>\n\n",
+    "PostedDate": "2014-02-25T12:41:57.997-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-02-25T15:30:08.037-08:00"
+  }
+]

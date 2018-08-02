@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1106886",
+    "ThreadId": "462022",
+    "Html": "i'm trying to validate a password on PasswordBox,\r<br />\n<img src=\"http://filaty.com/i/alpha/b0/b0c9618140b811072b5c4a7c04fa1800\" alt=\"Image\" />\r<br />\nValidating text on TextBox it's done by doing : <br />\n<pre><code>Text=&quot;{Binding UserName, Mode=TwoWay, ValidatesOnDataErrors=True}&quot;</code></pre>\n\nbut with PasswordBox i can't bind the password, i tried to do the following:<br />\n<pre><code>&lt;PasswordBox x:Name=&quot;TextPassword&quot; Width=&quot;150&quot;\n                                 core:PasswordBoxAssistant.BindPassword=&quot;true&quot;  \n                                 core:PasswordBoxAssistant.BoundPassword=&quot;{\n                        Binding Path=Password,\n                        Mode=TwoWay,\n                        UpdateSourceTrigger=PropertyChanged}&quot;</code></pre>\n\nas i found on <a href=\"http://blog.functionalfun.net/2008/06/wpf-passwordbox-and-data-binding.html\" rel=\"nofollow\">this page</a> but it doesn't work with ModernUI, \r<br />\nhow can i do this please? \r<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-10-13T09:45:10.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107049",
+    "ThreadId": "462022",
+    "Html": "cYounes, I've used this one with sucess: \r<br />\n<br />\n<a href=\"http://www.wpftutorial.net/PasswordBox.html\" rel=\"nofollow\">http://www.wpftutorial.net/PasswordBox.html</a>\r<br />\n<br />\nSample:\r<br />\n&lt;PasswordBox x:Uid=&quot;PasswordBox_1&quot; MaxLength=&quot;16&quot; Width=&quot;100&quot; w:PasswordHelper.Attach=&quot;True&quot; w:PasswordHelper.Password=&quot;{Binding Password1, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}&quot;  /&gt;\r<br />\n<br />\nAnyway, please describe what you mean by &quot;it doesn't work with ModernUI&quot;, is to vague.\r<br />\n<br />\nRegards<br />\n",
+    "PostedDate": "2013-10-14T02:12:46.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107277",
+    "ThreadId": "462022",
+    "Html": "@saamorim, Thanks for your response, i use exactly the same thing,<br />\ni mean by &quot;it doesn't work with ModernUI&quot; that By Validating the DataError in PasswordBox, the small red rectangle doesn't shown next to the passwordBox as it's shown on the right of TextBox ( see the embbeded image). i would know if there is a way to show it. <br />\n<br />\n<img src=\"http://filaty.com/i/alpha/b0/b0c9618140b811072b5c4a7c04fa1800\" alt=\"Image\" /><br />\nthanks.<br />\n",
+    "PostedDate": "2013-10-14T11:00:17.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107310",
+    "ThreadId": "462022",
+    "Html": "If you are getting the red border around the PasswordBox, then your validation is working; you simply need to customize its style to include an ErrorTemplate.\r<br />\n<br />\n<img src=\"http://i.imgur.com/OUL7Oop.png\" alt=\"Image\" />\r<br />\n<br />\nStyle:<br />\n<pre><code>&lt;Style TargetType=&quot;{x:Type PasswordBox}&quot;&gt;\n    &lt;Setter Property=&quot;Validation.ErrorTemplate&quot;&gt;\n        &lt;Setter.Value&gt;\n            &lt;ControlTemplate&gt;\n                &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;\n                    &lt;Border BorderThickness=&quot;1&quot; BorderBrush=&quot;Red&quot; VerticalAlignment=&quot;Top&quot;&gt;\n                        &lt;Grid&gt;\n                            &lt;AdornedElementPlaceholder x:Name=&quot;adorner&quot; Margin=&quot;-1&quot;/&gt;\n                        &lt;/Grid&gt;\n                    &lt;/Border&gt;\n                    &lt;Border x:Name=&quot;errorBorder&quot; Background=&quot;Red&quot; Margin=&quot;8,0,0,0&quot; CornerRadius=&quot;0&quot;\n                            IsHitTestVisible=&quot;False&quot;&gt;\n                        &lt;TextBlock Text=&quot;{Binding Path=ErrorContent}&quot;\n                                Foreground=&quot;White&quot; FontFamily=&quot;Segoe UI&quot; Margin=&quot;8,2,8,3&quot; TextWrapping=&quot;Wrap&quot; VerticalAlignment=&quot;Center&quot;/&gt;\n                    &lt;/Border&gt;\n                &lt;/StackPanel&gt;\n            &lt;/ControlTemplate&gt;\n        &lt;/Setter.Value&gt;\n    &lt;/Setter&gt;\n&lt;/Style&gt;</code></pre>\n\nPasswordBox:<br />\n<pre><code>&lt;PasswordBox local:PasswordHelper.Attach=&quot;True&quot; MaxLength=&quot;8&quot; Width=&quot;150&quot; Height=&quot;26&quot;\n                local:PasswordHelper.Password=&quot;{Binding Password, Mode=TwoWay, ValidatesOnDataErrors=True, ValidatesOnExceptions=True}&quot; \n                /&gt;</code></pre>\n\nand finally, the IDataErrorInfo snippet:<br />\n<pre><code>public string this[string columnName]\n{\n    get {\n        if (columnName.Equals(&quot;Password&quot;) &amp;&amp; (Password == null || Password.Length &lt; 3))\n            return &quot;At least 3 characters&quot;;\n        else\n            return &quot;&quot;;\n    }\n}</code></pre>\n\n",
+    "PostedDate": "2013-10-14T12:07:50.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2013-10-14T12:43:10.777-07:00"
+  },
+  {
+    "Id": "1107317",
+    "ThreadId": "462022",
+    "Html": "@kadolphc <br />\nThat's great, it is exactly what i want :) <br />\nthank you very much :) <br />\n<img src=\"http://filaty.com/i/alpha/37/37c1e118b8554b81cf443ee86e0bb4a2\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2013-10-14T12:24:34.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1107355",
+    "ThreadId": "462022",
+    "Html": "The PasswordBox MUI style is missing the Validation.ErrorTemplate, feel free to create an issue for it.<br />\n",
+    "PostedDate": "2013-10-14T14:01:03.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1116903",
+    "ThreadId": "462022",
+    "Html": "@cYounes<br />\nYou can validate a password on PasswordBox by, reference to Validation.ErrorTemplate of TextBox in ModernUI, just like kadolphc does. <br />\nHere are the codes:<br />\n<pre><code> &lt;Setter Property=&quot;Validation.ErrorTemplate&quot;&gt;\n            &lt;Setter.Value&gt;\n                &lt;ControlTemplate&gt;\n                    &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;\n                        &lt;Border BorderThickness=&quot;1&quot; BorderBrush=&quot;#FFdc000c&quot; VerticalAlignment=&quot;Top&quot;&gt;\n                            &lt;Grid&gt;\n                                &lt;AdornedElementPlaceholder x:Name=&quot;adorner&quot; Margin=&quot;-1&quot;/&gt;\n                            &lt;/Grid&gt;\n                        &lt;/Border&gt;\n                        &lt;Border x:Name=&quot;errorBorder&quot; Background=&quot;#FFdc000c&quot; Margin=&quot;8,0,0,0&quot;\n                                Opacity=&quot;0&quot; CornerRadius=&quot;0&quot;\n                                IsHitTestVisible=&quot;False&quot;\n                                MinHeight=&quot;24&quot; &gt;\n                            &lt;TextBlock Text=&quot;{Binding ElementName=adorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}&quot;\n                                       Foreground=&quot;White&quot; Margin=&quot;8,2,8,3&quot; TextWrapping=&quot;Wrap&quot; VerticalAlignment=&quot;Center&quot;/&gt;\n                        &lt;/Border&gt;\n                    &lt;/StackPanel&gt;\n                    &lt;ControlTemplate.Triggers&gt;\n                        &lt;DataTrigger Value=&quot;True&quot;&gt;\n                            &lt;DataTrigger.Binding&gt;\n                                &lt;Binding ElementName=&quot;adorner&quot; Path=&quot;AdornedElement.IsKeyboardFocused&quot; /&gt;\n                            &lt;/DataTrigger.Binding&gt;\n                            &lt;DataTrigger.EnterActions&gt;\n                                &lt;BeginStoryboard x:Name=&quot;fadeInStoryboard&quot;&gt;\n                                    &lt;Storyboard&gt;\n                                        &lt;DoubleAnimation Duration=&quot;00:00:00.15&quot;\n                                                         Storyboard.TargetName=&quot;errorBorder&quot;\n                                                         Storyboard.TargetProperty=&quot;Opacity&quot;\n                                                         To=&quot;1&quot;/&gt;\n                                    &lt;/Storyboard&gt;\n                                &lt;/BeginStoryboard&gt;\n                            &lt;/DataTrigger.EnterActions&gt;\n                            &lt;DataTrigger.ExitActions&gt;\n                                &lt;StopStoryboard BeginStoryboardName=&quot;fadeInStoryboard&quot;/&gt;\n                                &lt;BeginStoryboard x:Name=&quot;fadeOutStoryBoard&quot;&gt;\n                                    &lt;Storyboard&gt;\n                                        &lt;DoubleAnimation Duration=&quot;00:00:00&quot;\n                                                         Storyboard.TargetName=&quot;errorBorder&quot;\n                                                         Storyboard.TargetProperty=&quot;Opacity&quot;\n                                                         To=&quot;0&quot;/&gt;\n                                    &lt;/Storyboard&gt;\n                                &lt;/BeginStoryboard&gt;\n                            &lt;/DataTrigger.ExitActions&gt;\n                        &lt;/DataTrigger&gt;\n                    &lt;/ControlTemplate.Triggers&gt;\n                &lt;/ControlTemplate&gt;\n            &lt;/Setter.Value&gt;\n        &lt;/Setter&gt;</code></pre>\n\nOr, you can solve it in this way, the codes:<br />\n<pre><code>&lt;PasswordBox&gt; ... &lt;/PasswordBox&gt;\n&lt;TextBlock  Text=&quot;{Binding ElementName=pw, Path=(Validation.Errors)[0].ErrorContent}&quot; &gt;\n&lt;/TextBlock&gt;</code></pre>\n\nand it aslo use PasswordHelper to add Binding feature to PasswordBox.<br />\n<br />\nRegards<br />\n",
+    "PostedDate": "2013-11-03T01:52:52.31-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

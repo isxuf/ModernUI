@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1201223",
+    "ThreadId": "528492",
+    "Html": "Hi\r<br />\nHow to remove datagrids sortarrow?\r<br />\nIt takes so much space.<br />\n",
+    "PostedDate": "2014-01-31T01:06:56.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1202681",
+    "ThreadId": "528492",
+    "Html": "I agree - it does take too much space. I don't want to get rid of it, but rather I would like to reduce the padding around it. Any way to override this style other than to modify it in the source?<br />\n",
+    "PostedDate": "2014-02-04T13:59:19.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

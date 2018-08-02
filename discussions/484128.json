@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1151135",
+    "ThreadId": "484128",
+    "Html": "Hi\r<br />\nI'm really new to using M:ui so please forgive a basic question. \r<br />\n<br />\nI can set the size of the main window just fine but how do I get it to open in maximised form so it fills the screen please?\r<br />\nCheers\r<br />\n<br />\nBrian<br />\n",
+    "PostedDate": "2014-01-08T16:16:43.5-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1172638",
+    "ThreadId": "484128",
+    "Html": "That's not a speacial MUI question...\r<br />\n<br />\nYou can set the WindowState:<br />\n<pre><code>    Window window = new Window();\n    window.WindowStartupLocation = WindowStartupLocation.CenterScreen;\n    window.WindowState = WindowState.Maximized;\n    window.Show();</code></pre>\n\nin XAML:<br />\n<pre><code>&lt;mui:ModernWindow \n    x:Class=&quot;...&quot;\n    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n...\n    WindowState=&quot;Maximized&quot;&gt;\n</code></pre>\n\n",
+    "PostedDate": "2014-01-16T22:26:28.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

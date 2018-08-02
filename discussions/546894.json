@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1250782",
+    "ThreadId": "546894",
+    "Html": "Hi!,\r<br />\n<br />\nI need to keep a default accent color i.e. charcoal whenever the ModernUI.Light.xaml theme will be selected such as snowflakes theme for e.g. uses blue color as its accent color but its a resource dictionary and how can I set the default accent color for light theme &amp; I think it needs to be done in ModernUI project code, could anyone help me out\r<br />\n<br />\nThanks in advance,\r<br />\nAbdul Mateen.<br />\n",
+    "PostedDate": "2014-05-29T03:00:42.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253424",
+    "ThreadId": "546894",
+    "Html": "Define the default accent color like so in your App.xaml. By defining the resource in your App.xaml, you will override the default setting in ModernUI.xaml<br />\n<pre><code>&lt;Color x:Key=&quot;AccentColor&quot;&gt;#e51400&lt;/Color&gt;</code></pre>\n\n",
+    "PostedDate": "2014-06-05T11:53:10.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1264707",
+    "ThreadId": "546894",
+    "Html": "Hi Kozw,\r<br />\n<br />\nSorry for late reply, I had tried this but it didn't work, and this requirement has not been addressed to me after its initial talk so I left it as its not required. But I would like to know how to do this still any time :) .\r<br />\n<br />\nThanks,\r<br />\nAbdul Mateen.<br />\n",
+    "PostedDate": "2014-07-11T01:01:49.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

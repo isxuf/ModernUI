@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1049642",
+    "ThreadId": "445210",
+    "Html": "Hello Guys,\r<br />\nI m working with WPF; VS2010\r<br />\ni Want to create a  User Contol  with a ModernTab  where i can add some new Tab  by clicking on  &quot; +&quot; or &quot;NEW&quot;.\r<br />\n<br />\nplease i need help!\r<br />\nGhis from Germany <br />\n",
+    "PostedDate": "2013-05-28T07:42:14.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1049924",
+    "ThreadId": "445210",
+    "Html": "Is <a href=\"https://mui.codeplex.com/discussions/438676\" rel=\"nofollow\">this</a> what you are looking for?<br />\n",
+    "PostedDate": "2013-05-28T23:39:46.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050335",
+    "ThreadId": "445210",
+    "Html": "The ModernTab doesn't expose events yet, so you need to solve this using a viewmodel, where you need to add a link when the '+' or 'new' link gets selected. Something like this works;<br />\n<pre><code>public class MyViewModel : NotifyPropertyChanged\n{\n  private Link NewLink = new Link {\n    DisplayName = &quot;+&quot;,\n    Source= new Uri(&quot;/Pages/EmptyPage.xaml&quot;, UriKind.Relative)\n  };\n\n  private LinkCollection links = new LinkCollection();\n  private Uri selectedSource;\n\n  public HomeViewModel()\n  {\n    this.links.Add(NewLink);\n  }\n\n  public LinkCollection Links\n  {\n    get { return this.links; }\n  }\n\n  public Uri SelectedSource\n  {\n    get { return this.selectedSource; }\n    set\n  {\n    if (this.selectedSource != value) {\n      this.selectedSource = value;\n      OnPropertyChanged(&quot;SelectedSource&quot;);\n\n      if (value == NewLink.Source) {\n        // NewLink has been selected, insert a link (right before the last one)\n        var i = links.Count;\n        var link = new Link() {\n          DisplayName = &quot;Link &quot; + i,\n          Source = new Uri(&quot;/Pages/EmptyPage.xaml?&quot; + i, UriKind.Relative)\n        };\n\n        this.links.Insert(links.Count - 1, link);\n        this.SelectedSource = link.Source;\n      }\n    }\n  }\n}</code></pre>\n\nand your XAML should look like this (assuming DataContext is set to above MyViewModel instance:<br />\n<pre><code>&lt;mui:ModernTab\n    SelectedSource=&quot;{Binding SelectedSource, Mode=TwoWay}&quot;\n    Links=&quot;{Binding Links}&quot;\n    Layout=&quot;Tab&quot; /&gt;</code></pre>\n\nPlease note that in above sample, the /Pages/EmptyPage.xaml needs to exist.<br />\n",
+    "PostedDate": "2013-05-29T15:01:25.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055939",
+    "ThreadId": "445210",
+    "Html": "hi !!\r<br />\nit works!!.. Thank..\r<br />\nI try  the same Approch to remove a Tab , but it s not Working !!? why ?? <br />\n",
+    "PostedDate": "2013-06-12T09:30:26.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1056965",
+    "ThreadId": "445210",
+    "Html": "I got a Solution!!!  :D<br />\n",
+    "PostedDate": "2013-06-14T08:29:06.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1228306",
+    "ThreadId": "445210",
+    "Html": "<strong>Ghis1982 wrote:</strong><br />\n<blockquote>\nI got a Solution!!!  :D<br />\n</blockquote>\nHi\r<br />\n<br />\nIt's been a while, but ... what is the solution? I am trying to do the same (open new tabs and close them) but I cannot figure out how.<br />\n",
+    "PostedDate": "2014-03-30T06:13:58.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

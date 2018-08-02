@@ -1,0 +1,226 @@
+[
+  {
+    "Id": "1021220",
+    "ThreadId": "438029",
+    "Html": "Hi,\r<br />\nJust got a couple of questions:\r<br />\n1) Is there a way to put a direct content in a modern window? There was no way I could make the following xaml work:\r<br />\n<br />\n&lt;mui:ModernWindow x:Class=&quot;Framework.Shell&quot;<br />\n<pre><code>    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n    xmlns:cal=&quot;http://www.codeplex.com/prism&quot;\n    xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;         \n    MinHeight=&quot;500&quot; MinWidth=&quot;900&quot; WindowStartupLocation=&quot;CenterScreen&quot; \n    Title=&quot;Helllooooo!!!!&quot;&gt;      \n\n&lt;Grid Background=&quot;Yellow&quot;&gt;\n\n&lt;/Grid&gt;\n</code></pre>\n\n&lt;/mui:ModernWindow&gt;\r<br />\n<br />\nAlthough it worked with MenuLinkGroups being filled with a LinkGroup. I wish to keep a different home page than tabbed! :)\r<br />\n<br />\n2) Is there a way to hide back button? I am on my way to prepare a small demo with prism. Which I also need to present to the other stake holders. The navigation system that is already existing in the MUI is good but it tampers a lot with prism navigation system. Navigation will be done by any other layer but view. Obviously I need to write a back button of my own. :)\r<br />\n<br />\nMy apologies if I am overlooking something terribly simple!!<br />\n",
+    "PostedDate": "2013-03-26T06:51:29.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1021482",
+    "ThreadId": "438029",
+    "Html": "1) ModernWindow.Content is not rendered by MUI, this is by design. If you require content to be rendered, you'll need to modify the ModernWindow template and include a ContentPresenter that will render the Content.<br />\n<br />\n2) Hiding the back button requires the same technique; you'll need to modify the ModernWindow template and remove or hide the back button.<br />\n<br />\nThe default ModernWindow template is found at Themes\\ModernWindows.xaml in the FirstFloor.ModernUI project.<br />\n<br />\nThere are others busy doing PRISM stuff with ModernUI, see also <a href=\"http://mui.codeplex.com/discussions/437641\" rel=\"nofollow\">this discussion</a>.<br />\n",
+    "PostedDate": "2013-03-26T16:51:00.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1022504",
+    "ThreadId": "438029",
+    "Html": "babai28, maybe you can share your ideas on integrating mui with prism. i am currently working on the same stuff. I am happy with region based navigation by means of view discovery and view injection, but i am still experimenting with integrating mui and region navigation api. seems like your work points in the same direction. I'm happy to share my thoughts with you:\r<br />\n<br />\nSince I don't see major conceptual discrepancies between the two navigation concepts, my idea is to implement an adaptation layer that marries mui and prism without affecting any of their implementation. \r<br />\nMy current idea is to implement a Control (that will be used as kind of a hosting control) that implements Mui.IContent and delegates navigation to prism. I am still not sure if this apporach will need a custom prism.IRegionContentNavigationLoader. Still investigating. What are your thoughts, do you have a different approach?\r<br />\nWould be happy, if you could share your ideas...\r<br />\n<br />\nFlorian<br />\n",
+    "PostedDate": "2013-03-28T09:25:39.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1022800",
+    "ThreadId": "438029",
+    "Html": "Florian,\r<br />\n<br />\nI am on my way to write a framework that would encompass multiple modules just like any prism application. I am using MEF/PRISM. My first choice was Mahapps metro as it also gave me the tiles I needed for standard metro UI. However, pointed by a friend to this project I found this to be neater than Mahapps metro (this is what I think :) ).\r<br />\nI separated the Tile control from mahapps so that I can put it inside my framework which would be powered by MUI.\r<br />\nHaving said this story, +1 for you support the idea that the implementation of MUI be remained untouched. But I dare not think it would be possible. You may try devising an idea that would do minimum changes to the MUI code but making changes (atleast) in the window template is inevitable.\r<br />\nThe quick questions that come to mind:\r<br />\n1) Where are you going to define the main regions? Perhaps in a user control that would fill the ContentSource property of the window. Though I am not sure if that would work. We would need to check the loading time of the contentsource and the prism modules. If prism modules get loaded earlier, it would throw exception.\r<br />\n2) Regarding the Mui.IContent that you are pointing, how would you make any call being delegated to it without making change in the back button template that is defined in the main window template. The button automatically takes care of the navigation through LinkGroup.Links, you will have to make a minimal change to the project code so that it delegates call to your layer.\r<br />\nI am <strong>assuming</strong> that Mui.IContent would serve as the main region for the prism shell. Do let me know if I am not aligned with your thoughts.\r<br />\n<br />\nSid<br />\n",
+    "PostedDate": "2013-03-28T23:41:22.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023144",
+    "ThreadId": "438029",
+    "Html": "Sid,\r<br />\n<br />\nthanks for sharing your thoughts. I am almost through with my solution. I did still not change any line of code in mui and prism. As for mui being the prism shell, my idea is the following:<br />\n<ul>\n<li>The title links are (surprise!) the &quot;TitleRegion&quot; of the shell. If a module wants to have its content linked by a title link, it should register its view with this region.</li>\n<li>\nThe main menu group is the &quot;MenuRegion&quot; of the shell. Each module can then register linked content in there.<br />\n</li>\n</ul>\nFrom the very beginning, the shell is empty, ie. does not contain any links in these regions. \r<br />\nSo, to answer your first question: there is no &quot;the main region&quot; in mui as it is, since the links etc. define &quot;sub-regions&quot; out of the box. If you would want to support a &quot;main region&quot;, I agree with you, we would then have to change the template. But I think, we could do that in such a general way, that we maybe end up with something like a &quot;EmptyModernWindow&quot; that could then be customized for whatever use-case. IMO if we need to change the template, we should do it in our app, but based on something from the mui framework. By following this strategy, the project as well as our applications can fully benefit from changes on either side.\r<br />\n<br />\nThe key to marrying mui and prism the way I am trying, is the IContentLoader interface. By using this interface, I don't come into a race-condition at application startup.\r<br />\n<br />\nFor your second question:\r<br />\nMy approach is not to override the existing functionality, but to harmonize it, so it goes well with each other. You are right, the back button could need to be changed. I will see, I am not that far yet. \r<br />\nTo make mui delegate the navigation to my layer is a matter of implementing IContentLoader as well as IContent. As I had a first look at the IContent interface, I realized that it does indeed look so much like prism's INavigationAware interface.\r<br />\n<br />\nAs soon as i have sth. I am confident with, I'll post it here. \r<br />\n<br />\nI did not yet implement a tile control, it would be great, if you could share yours.\r<br />\nbtw, I have used mahapps before as well, but I had to tweak a lot and found some strange behaviors. I was really happy to see, that modern ui was released.\r<br />\n<br />\nPlease let me know, what you think about these ideas.\r<br />\n<br />\nFlorian<br />\n",
+    "PostedDate": "2013-03-29T23:32:52.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023430",
+    "ThreadId": "438029",
+    "Html": "If you need any help from the mui side of things, I'm happy to assist.<br />\n",
+    "PostedDate": "2013-03-31T05:36:06.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023444",
+    "ThreadId": "438029",
+    "Html": "Florian,\r<br />\n<br />\nWhat I gather from your reply above is, you are making the home screen of the application to follow the metro-tabbed based look. What if someone wants a different look for home screen (e.g.: tile based). The problem statement is : &quot;<strong>I want to use the wonderful theme provided by MUI but want to follow a flow and look of my choice.</strong>&quot;\r<br />\nWhile I appreciate your idea of leaving MUI/PRISM code untouched, I feel, MUI is a little forcing on the consumers to follow the infrastructure provided by it (the decoupling factor is missing).\r<br />\nI will be happy to share the Tile Control. But I can't see any attachment link here in the editor. You might, would like to share your email address over a personal message.\r<br />\n<br />\nKozw,\r<br />\n<br />\nYou had mentioned that MUI is MVVM agnostic, but IMHO it should provide more flexibility if the consumer wishes to apply some navigation logic of his own. \r<br />\nWhile the built in functionality of MUI is sufficient for smaller applications, an enterprise application would use an IoC and modular framework. How will I unit test, for example, the navigation logic. Again the pages will always have to have their view models being tagged to them (either in xaml or code behind). Having said this, I believe a slight redisigning of the MUI project might make it the strongest opensource UI framework. I am ready to provide my whole hearted contribution if you decide in favour of this idea. The idea is not to remove the existing navigation functionality (its great, trust me, for building small apps) but to give the consumers a choice if they want to make use of the MUI navigation system. If someone opts out he should still be able to make use of the wonderful theme provided by MUI. Let us give someone a chance to <em>override</em>. :). Let me know what you think?\r<br />\n<br />\nregards,\r<br />\nSid<br />\n",
+    "PostedDate": "2013-03-31T08:01:43.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023511",
+    "ThreadId": "438029",
+    "Html": "Looking forward to your suggestions. What parts need to be overridable?<br />\n",
+    "PostedDate": "2013-03-31T12:25:40.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023662",
+    "ThreadId": "438029",
+    "Html": "For the navigation, most of mui navigation code is in ModernFrame class, maybe we could extract an interface (or several, we'll see what fits) from the navigation concepts, refactor ModernFrame to make use of the interface and encapsulate the existing navigation in a separate implementation of the new interface. We would then be able to plug any navigation concept we like. The command binding of the navigation commands should be adapted as well to make use of the concrete implementation. We could then even reuse the &quot;back button&quot; and do not have to replace it.\r<br />\n<br />\nFor the mui templates, I think it's a little controversial. IMO adding other (general) templates like a tile-based window or an EmptyWindow would help other people as well. But for custom applications that want to make use of the mui look &amp; feel but need a custom shell, the template should imo be part of the custom application, not of mui.\r<br />\nI did not look very extensively on the wpf parts and templates of mui until now, but maybe it is also an idea to separate the ModernWindow in different independent layers. \r<br />\nFor the existing ModernWindow it may be an idea, if mui would provide an empty window template that encapsulates all the styling and a different control/template that encapsulates the Metro-tabbed template that is in place now. In this way, mui style and host(=window) could evolve within the mui open source project and contributors could add new window layouts/templates/whatever to a mui.contributions project. \r<br />\n<br />\nI may have some ideas regarding content loading/unloading/activation/deactivation, but have to think about it again. Will post it here then.\r<br />\n<br />\nIf I find the time today, I will also wrap up my current progress of prism integration (which already works for the metro-tabbed default ui) and post the sources. <br />\n",
+    "PostedDate": "2013-04-01T01:47:42.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023800",
+    "ThreadId": "438029",
+    "Html": "With respect to setting the window title.. I agree that it should be easier to set:\r<br />\n<br />\n<a href=\"http://mui.codeplex.com/workitem/19548\" rel=\"nofollow\">http://mui.codeplex.com/workitem/19548</a><br />\n",
+    "PostedDate": "2013-04-01T08:06:45.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023812",
+    "ThreadId": "438029",
+    "Html": "Hi Koen,\r<br />\n<br />\nI am aligned with Florian about the navigation logic be decoupled from the MUI application. While you can put the existing logic as default, still giving the user an option to override it.\r<br />\nAt present, I can identify few things that need to be overridable:<br />\n<ol>\n<li>Window Content. Can we have an option that would let me put a content control in the window. I am not sure as of now how to keep that configurable (so as to switch between the two functionalities). If the idea is hazy, for sake of simplicity, you might create two window templates namely: ModernUIWindow and ModernUIEmptyWindow (or whatever!).</li>\n<li>The back button, IMO should not be a mandatory thing to have in your window (we can handle its visibility with an added dependency property in the window). If the user chooses it to be there, it should expose some sort of command for binding purpose. I hope you would agree WPF looses its beauty without binding. :)</li>\n<li>\nThe settings link on the top right corner should also expose a command and should have its visibility configurable.<br />\n</li>\n</ol>\nI think with these changes incorporated, creating a PRISM demo should not be that difficult. The consumer may keep the interface tabbed based, tile based, link based or anything of his choice. I would appreciate if @codedevote expresses his thoughts too!!\r<br />\nLet me know what you think!\r<br />\n<br />\nregards,\r<br />\nSid<br />\n",
+    "PostedDate": "2013-04-01T08:31:31.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023837",
+    "ThreadId": "438029",
+    "Html": "Great feedback guys!\r<br />\n<br />\n@codevote\r<br />\nDecoupling navigation from ModernFrame; I'm curious as to what you need. Currently ModernFrame does the following:<br />\n<ol>\n<li>async load content (already abstracted with IContentLoader)</li>\n<li>keeping content in memory</li>\n<li>maintaining navigation history</li>\n<li>navigation by specifying a source, go back and refresh</li>\n<li>\nraising appropiate navigation events<br />\n</li>\n</ol>\n@babai28<br />\n<ol>\n<li>Window Content presenter; no problem to add to the default ModernWindow theme. When no content is specified, the presenter is still there but doesn't render anything. BTW, the same is true for a window title presenter, it just doesn't exist yet and my main problem is that I don't know where a title fits in a ModernWindow.</li>\n<li>Back button visibility; adding a dependency property to ModernWindow sounds good to me. As far as commanding goes, the BackButton command is currently set to NavigationCommands.BrowseBack with a CommandTarget set to the main ModernFrame instance named 'ContentFrame'. Not sure yet how to expose all back command features (Command, CommandTarget, CommandParameter).</li>\n<li>\nThe settings links at the top is not part of the ModernWindow theme. It's a link added to the ModernWindow.TitleLinks collection.<br />\n</li>\n</ol>\n",
+    "PostedDate": "2013-04-01T09:47:14.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024104",
+    "ThreadId": "438029",
+    "Html": "@kozw:\r<br />\nThe points you are mentioning do pretty well define the abstractions to introduce. I will comment on each.<br />\n<ul>\n<li>Content loading via interface is already abstracted and for the moment, I am fine with that. </li>\n<li>Prism for example has its own notion of KeepAlive. Instead of coexistence and synching two (redundant) mechanisms, we should be able to override it.</li>\n<li>Prism as well has a navigation journal. Again, we have two mechanisms doing the same thing instead of being able to plug the desired one.</li>\n<li>Navigating to a source, going back and forth, etc. - again, prism provides these mechanisms as well. But it does this at the view model layer. And, on top of it, it introduces some additional concepts. E.g. a view model can veto navigation (this is kind of similar to canceling mui navigation in the OnNavigatingFrom event). It also supports navigation to content that does not yet exist. Imagine a tab control with different tabs for editing different customers. With fragment navigation (a uriquery in prism) I am able to request a navigation to editing of a customer that has not yet an its own opened tab. Prisms content loader is then used to wire up the new view/view model and inject it into the right place in the UI. I could mimic this with mui's navigation, but I have to work at the view layer with the IContent interface (at least thats what i understood). My current approach is a MUIContentHost control, that is a ContentControl hosting the actual content, implementing Mui.IContent and delegating the calls to the datacontext, if it implements the prism navigation interface.</li>\n<li>\nprism does raise the events, too. It does this at the view model layer (which I prefer).<br />\n</li>\n</ul>\nMaybe its clearer now. If I misunderstand some of the mui concepts, please tell me. If we could abstract away these concepts and provide current mui implementation as default, we would still be able to completely or in parts override it and tweak it to whatever need. I would be glad to contribute time and code.\r<br />\n<br />\n@babai28:<br />\n<ul>\n<li>Content presenter is a good idea. I like kozw suggestion with the optional presenter.</li>\n<li>Optional Back button or back button cusomization will be very nice. Maybe a MUI Link that is backed by an ICommand would help in exposing all features of the back button.</li>\n</ul>\n",
+    "PostedDate": "2013-04-02T01:00:51.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024346",
+    "ThreadId": "438029",
+    "Html": "Would you be so kind and review my current attempts to marry mui and prism. You can find a demo app <a href=\"https://docs.google.com/file/d/0Bx5f-K4qfA-rT09HTHVXTnJPUTA/edit?usp=sharing\" rel=\"nofollow\">here</a>.\r<br />\n<br />\nViewing this demo I am sure, you will gather more insight on what I am trying to accomplish. Would appreciate your feedback.<br />\n",
+    "PostedDate": "2013-04-02T09:37:43.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024509",
+    "ThreadId": "438029",
+    "Html": "I'll review your demo app asap and post my findings in this discussion asap.<br />\n",
+    "PostedDate": "2013-04-02T14:34:01.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025105",
+    "ThreadId": "438029",
+    "Html": "Wow, your ModernUI.Prism project is impressive. There's a number of Prism concepts I still need to grasp to fully appreciate it.\r<br />\n<br />\nI was thinking about modifying ModernFrame, and started to wonder whether you want to use ModernFrame at all? Why not use the default TransitioningContentControl and implement the content navigation and history navigation (which I learned is part of Prism's view model layer) in your viewmodels. The content transition animations are all in the TransitioningContentControl and there's little use of the other ModernFrame features in Prism.<br />\n",
+    "PostedDate": "2013-04-03T14:34:15.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025236",
+    "ThreadId": "438029",
+    "Html": "I agree with Koen. The Integration is impressive. What I gathered is you made use of the existing navigation system of the MUI and galvanized that with Prism's metal.\r<br />\nNice work Florian! \r<br />\n<br />\nKoen,<br />\n<blockquote>\nWhy not use the default TransitioningContentControl and implement the content navigation and history navigation (which I learned is part of Prism's view model layer) in your viewmodels. The content transition animations are all in the TransitioningContentControl and there's little use of the other ModernFrame features in Prism.<br />\n</blockquote>\nExactly! That is why I was asking to make the navigation of MUI an optional thing. So that for PRISM users, they don't get duplicated.\r<br />\n<br />\nregards,\r<br />\nSid<br />\n",
+    "PostedDate": "2013-04-04T00:00:58.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1025256",
+    "ThreadId": "438029",
+    "Html": "Thanks for having a look at it guys. Yet, there's some more work to do, before I am really happy with it.\r<br />\n<br />\nKoen, just using the TransitioningContentControl sounds like a good idea. I'll have a look at it. This would definitely streamline the integration.\r<br />\nI also have some other ideas of improving this stuff. Must get my head around those...<br />\n<blockquote>\n...and galvanized that with Prism's metal<br />\n</blockquote>\nSid, YMMD. <br />\n",
+    "PostedDate": "2013-04-04T01:11:24.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1042120",
+    "ThreadId": "438029",
+    "Html": "Hey codedevote,\r<br />\n<br />\nHow much further did you get with this??\r<br />\n<br />\nIt's looking so good from this slightly older demo.  I know this sounds awfully lazy but I'm doing exactly the same thing, and I'm keen to not reinvent the wheel if someone else has solved the problems, especially if we can pool the common knowledge and work.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-05-10T16:03:41.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1042714",
+    "ThreadId": "438029",
+    "Html": "Hey a_pawsey,\r<br />\n<br />\nI would be happy to share it. If you have ideas to improve it, I will be happy to hear about them.\r<br />\nI threw away most of the things of the first demo app, and now I have only a few PRISM glue classes. I also implemented a own Empty Window template and my own ModernMenu (that allows modules to register themselves in there). I do need to extract this stuff and put it back into the ModernUI.Prism library. I don't know, when I can manage to post it, lots of work at the moment. Maybe the next weekend,<br />\n",
+    "PostedDate": "2013-05-13T02:47:19.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1049879",
+    "ThreadId": "438029",
+    "Html": "Hi kozw, any plan for Modern UI and Prism integration? I really want to see this wonderful UI library work nice with Prism. I would like to contribute if you have a plan for the integration.<br />\n",
+    "PostedDate": "2013-05-28T19:53:14.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050336",
+    "ThreadId": "438029",
+    "Html": "There are no plans to add Prism specific elements to mui (or any other framework for that matter). mui should be flexible enough to work with any design pattern or framework, and leave it up to the developer to choose his/her framework. Having said that, I can imagine a mui contrib project that enables smooth integration with frameworks such as Prism.<br />\n",
+    "PostedDate": "2013-05-29T15:06:28.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050400",
+    "ThreadId": "438029",
+    "Html": "Sounds reasonable. Again thank you for sharing your wonderful library.<br />\n",
+    "PostedDate": "2013-05-29T18:04:59.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1053268",
+    "ThreadId": "438029",
+    "Html": "See <a href=\"https://mui.codeplex.com/discussions/446125\" rel=\"nofollow\">https://mui.codeplex.com/discussions/446125</a><br />\n",
+    "PostedDate": "2013-06-05T13:08:34.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1235816",
+    "ThreadId": "438029",
+    "Html": "<strong>codedevote wrote:</strong><br />\n<blockquote>\nHey a_pawsey,<br />\n<br />\nI would be happy to share it. If you have ideas to improve it, I will be happy to hear about them.<br />\nI threw away most of the things of the first demo app, and now I have only a few PRISM glue classes. I also implemented a own Empty Window template and my own ModernMenu (that allows modules to register themselves in there). I do need to extract this stuff and put it back into the ModernUI.Prism library. I don't know, when I can manage to post it, lots of work at the moment. Maybe the next weekend,<br />\n</blockquote>\nSince no one asked, I'd love to see your latest code.  The project template would be great as well for us lazy programmers.  Thank you for your effort!<br />\n",
+    "PostedDate": "2014-04-19T21:45:04.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1241474",
+    "ThreadId": "438029",
+    "Html": "<strong>codedevote wrote:</strong><br />\n<blockquote>\nHey a_pawsey,<br />\n<br />\nI would be happy to share it. If you have ideas to improve it, I will be happy to hear about them.<br />\nI threw away most of the things of the first demo app, and now I have only a few PRISM glue classes. I also implemented a own Empty Window template and my own ModernMenu (that allows modules to register themselves in there). I do need to extract this stuff and put it back into the ModernUI.Prism library. I don't know, when I can manage to post it, lots of work at the moment. Maybe the next weekend,<br />\n</blockquote>\nHi codedevote,\r<br />\n<br />\nI am also very interested in what your project became in the end. I have followed the whole conversation including the demo you shared (<a href=\"https://docs.google.com/file/d/0Bx5f-K4qfA-rT09HTHVXTnJPUTA/edit?usp=sharing\" rel=\"nofollow\">https://docs.google.com/file/d/0Bx5f-K4qfA-rT09HTHVXTnJPUTA/edit?usp=sharing</a>). It would be very helpful if you would share what it became after the rest of the discussion in this thread. \r<br />\n<br />\nAnd if you don't I would still like to thank you for the contributions!<br />\n",
+    "PostedDate": "2014-05-05T04:01:47.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1241478",
+    "ThreadId": "438029",
+    "Html": "Sorry, I posted the updated sample a few months ago in a different thread.\r<br />\nFind the sample linked in one of my comments in this thread:\r<br />\n<a href=\"http://mui.codeplex.com/discussions/456422\" rel=\"nofollow\">http://mui.codeplex.com/discussions/456422</a>\r<br />\n<br />\nHave fun with it :-)<br />\n",
+    "PostedDate": "2014-05-05T04:15:18.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360725",
+    "ThreadId": "438029",
+    "Html": "is there a .net 4.0 for that sample.I really need it but cant get the mordern shell to display correctly under .net 4.0<br />\n",
+    "PostedDate": "2015-03-08T06:10:08.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1055110",
+    "ThreadId": "446619",
+    "Html": "I'm hoping someone could assist me in understanding how to invoke the progress bar. I'm currently using some sqlite operations on a background worker thread and would like to see an indeterminate progress bar as the user waits. \r<br />\n<br />\nCheers,\r<br />\nEthan<br />\n",
+    "PostedDate": "2013-06-10T14:43:20.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055498",
+    "ThreadId": "446619",
+    "Html": "Add a ProgressBar to your page and bind the Visibility to an IsBusy property on your view model.\r<br />\n<br />\nThe indeterminate state of the default WPF progressbar is properly styled for use in mui apps (see also the demo app, controls &gt; styles &gt; progressbar)<br />\n",
+    "PostedDate": "2013-06-11T10:42:36.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

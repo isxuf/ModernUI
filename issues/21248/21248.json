@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "When I move the main window to my 2nd monitor (in fact, the laptop display to the left of my main monitor) and maximize it, I see some random garbage on the 1st monitor (here: on the left side of the first monitor. Additionally, the task bar at the bottom of the screen is also covered by some pixels from the main window.\r\n\r\nI'm using .NET framework 4.5 on a windows 8.1 machine, and as far as I can see I do not have different dpi's for my different monitors.",
+    "LastUpdatedDate": "2014-09-04T04:17:57.07-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-09-04T04:14:13.93-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Problem with maximized main window",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21248
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The problem with the taskbar can be reproduced using the sample app. However, the problem with the garbage on the other screen does not appear there.",
+      "PostedDate": "2014-09-04T04:17:57.07-07:00",
+      "Id": 158793
+    }
+  ]
+}

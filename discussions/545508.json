@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1245971",
+    "ThreadId": "545508",
+    "Html": "Hi, I'm using VS2010 to compile MUI source and I got this.\r<br />\n<br />\nerror 1\tUnknown build error, 'An item with the same key has already been added.' \tFirstFloor.ModernUI.WPF4\r<br />\n<br />\nI'm gonna let my app compatible on XP, so I'm using .Net 4.0.\r<br />\nThe weird part is the interface under .Net 4.0 and 4.5 being different like described in <a href=\"http://stackoverflow.com/questions/22826893/same-app-different-interface\" rel=\"nofollow\">Stackoverflow</a>.\r<br />\n<br />\nWould anyone please figure this out?<br />\n",
+    "PostedDate": "2014-05-15T20:14:22.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1245987",
+    "ThreadId": "545508",
+    "Html": "OK, Now I fixed the first problem. i.e.  \n<br />\n<blockquote>\nerror 1 Unknown build error, 'An item with the same key has already been added.' FirstFloor.ModernUI.WPF4<br />\n</blockquote>\nMy solution is as followed,<br />\nI deleted all the linked files and add them again as direct files.<br />\n<br />\nNow the interface looks like this,<br />\n<img src=\"https://note.wiz.cn/unzip/4dda4740-2142-11e1-8d03-00237def97cc/9e997c38-18f0-4d1d-a930-e823baaf1cb6.2173/index_files/9e9f6458-6b1c-4276-ade1-fb10eef7039d.png\" alt=\"Image\" /><br />\n<br />\nSo the problem is how to fix this now, are there any absent dlls or xamls?<br />\n",
+    "PostedDate": "2014-05-15T21:46:00.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1248281",
+    "ThreadId": "545508",
+    "Html": "Well, I finally found the reason.\r<br />\n<br />\nI deleted <strong>&lt;Style TargetType=&quot;{x:Type Rectangle}&quot; /&gt;</strong> in app.xaml the other day.\r<br />\n<br />\nI'm now curious about how can this simple line do the magic?<br />\n",
+    "PostedDate": "2014-05-22T00:53:50.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1249762",
+    "ThreadId": "545508",
+    "Html": "<a href=\"https://mui.codeplex.com/wikipage?title=Working%20with%20WPF%204.0&amp;referringTitle=Documentation\" rel=\"nofollow\">read this</a><br />\n",
+    "PostedDate": "2014-05-26T12:21:31.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1249819",
+    "ThreadId": "545508",
+    "Html": "Yeah...I'm aware of that already. See my last post?  I'm just wondering how the <strong>&lt;Style TargetType=&quot;{x:Type Rectangle}&quot; /&gt;</strong>  works. Thanks for your attention anyway.<br />\n",
+    "PostedDate": "2014-05-26T19:42:20.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

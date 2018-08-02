@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1142311",
+    "ThreadId": "478021",
+    "Html": "Hi,\r<br />\n<br />\nI have a ViewModel with a ContentSource property bound to the ModernWindow's ContentSource property. I expected to see the transition effect to happen when switching the ContentSouce property on my ViewModel, but that's not the case and the content loads directly with no effects. How do I workaround this? \r<br />\n<br />\nKind Regards,\r<br />\nislam<br />\n",
+    "PostedDate": "2013-12-26T03:58:18.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1142313",
+    "ThreadId": "478021",
+    "Html": "OK, It seems to be resolved now when I run the application without debugging.<br />\n",
+    "PostedDate": "2013-12-26T04:02:07.357-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2013-12-26T06:56:24.15-08:00"
+  }
+]

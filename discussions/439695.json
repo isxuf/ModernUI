@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "1028028",
+    "ThreadId": "439695",
+    "Html": "I have been playing with mui and I really like it.  There is one thing I have come across that is tripping me up.  In the app, I have several pages one of which contains a ModernTab with three links.  I have it working so I can navigate from my view model by setting the content property on the ModernFrame that hosts the views.  The view in question is Promotion.xaml and it contains the ModernTab control and hosts 3 links, PromotionPrep.xaml, PromotionMonitor.xaml, and PromotionSummary.xaml.   From another view model, I can navigate to Promotion.xaml and everything works great, the default tab of PromotionPrep.xaml is selected just as I want it to me.  There are cases when I do not want have PromotionPrep.xaml to be the SelectedSource.  Sometimes i want it to be PromotionMonitor.xaml instead.  In this case I set the Source property of the ModernFrame to PromotionMonitor.xaml.  That view is displayed, but not as the tab being selected in the Promotion.xaml file like I want it to, instead the PromotionMonitor.xaml view is shown all by itself, essentially taking the place of Promotion.xaml.  How can I specify what tab is shown from a view model?\r<br />\n<br />\nThanks,\r<br />\n<br />\nJay<br />\n",
+    "PostedDate": "2013-04-09T12:01:11.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028119",
+    "ThreadId": "439695",
+    "Html": "You should not set the ModernFrame.Content directly. Set the Source instead and let the ContentLoader work its magic to set the Content. This may be the cause of your issue? If not, could you share some code?<br />\n",
+    "PostedDate": "2013-04-09T15:38:43.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1030820",
+    "ThreadId": "439695",
+    "Html": "Sorry it took so long to respond, things have been a bit crazy around here.   I put together a quick sample of the kind of thing I was trying to do and put it on <a href=\"https://skydrive.live.com/redir?resid=52A85D37086B3CF2!659&amp;authkey=!AL29QNz8LfF4dq8\" rel=\"nofollow\">SkyDrive</a>.  I want to change the selected tab in various view models, but in the sample it is done in the constructor for demonstration purposes.  In the real project there are view models behind each tab in the samples views and they try to set the current source at different points in the program.  If you want a more elaborate example just let me know and I will work on it.<br />\n\r<br />\nIn this sample, the view model tries to set the source to be the second tab with limited success.  The Sample1.xaml file is displayed, but it looses context as it does not display any tabs nor does it know it should have selected Sample in the main navigation.  If you comment out the code in the constructor in SampleVM you can see what it should be looking like with the exception that I wanted the second tab to be selected in this case.\r<br />\n<br />\nThanks,\r<br />\n<br />\njay<br />\n",
+    "PostedDate": "2013-04-15T13:44:16.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1031109",
+    "ThreadId": "439695",
+    "Html": "Not sure what the problem is, your sample seem to run just fine.\r<br />\n<br />\nWhat I would suggest though, is to not use this static NavigationHelper. Just add a SelectedSource property to your VM in bind it (two-way) to the SelectedSource property of the ModernTab.  So your VM looks like this:<br />\n<pre><code>public class SampleVM : NotifyPropertyChanged\n{\n  private Uri selectedSource = new Uri(&quot;/Content/Sample0.xaml&quot;, UriKind.Relative);\n\n  public Uri SelectedSource\n  {\n    get { return this.selectedSource; }\n    set\n    {\n      if (this.selectedSource != value) {\n        this.selectedSource = value;\n        OnPropertyChanged(&quot;SelectedSource&quot;);\n      }\n    }\n  }\n}</code></pre>\n\nAnd your Sample.xaml looks like this;<br />\n<pre><code>&lt;Grid DataContext=&quot;{StaticResource VM}&quot; Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n  &lt;mui:ModernTab SelectedSource=&quot;{Binding SelectedSource, Mode=TwoWay}&quot; &gt;\n    &lt;mui:ModernTab.Links&gt;\n      &lt;mui:Link DisplayName=&quot;Sample 0&quot; Source=&quot;/Content/Sample0.xaml&quot; /&gt;\n      &lt;mui:Link DisplayName=&quot;Sample 1&quot; Source=&quot;/Content/Sample1.xaml&quot; /&gt;\n      &lt;mui:Link DisplayName=&quot;Sample 2&quot; Source=&quot;/Content/Sample2.xaml&quot; /&gt;\n    &lt;/mui:ModernTab.Links&gt;\n  &lt;/mui:ModernTab&gt;\n&lt;/Grid&gt;</code></pre>\n\n",
+    "PostedDate": "2013-04-16T05:56:57.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1031221",
+    "ThreadId": "439695",
+    "Html": "I actually did this exact thing in the real application in the and it works great for selecting the initial tab.  I have an issue changing active tabs from another tabs view model now.  I will try give some better code examples this time.<br />\n<br />\nThe &quot;Promotion&quot; view- this is the container for 3 tabs that offer different views during a promotion.<br />\n<pre><code>&lt;Grid Style=&quot;{StaticResource ContentRoot}&quot; DataContext=&quot;{StaticResource VM}&quot;&gt;\n    &lt;mui:ModernTab Layout=&quot;Tab&quot; SelectedSource=&quot;{Binding CurrentTabSource}&quot;&gt;\n        &lt;mui:ModernTab.Links&gt;\n            &lt;mui:Link DisplayName=&quot;Non-CherryPicked Info&quot; Source=&quot;/Views/Promotion/NonCherryPickedView.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Progress Monitor&quot; Source=&quot;/Views/Promotion/MonitorProgressView.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Summary&quot; Source=&quot;/Views/Promotion/SummaryView.xaml&quot; /&gt;\n        &lt;/mui:ModernTab.Links&gt;\n    &lt;/mui:ModernTab&gt;\n&lt;/Grid&gt;</code></pre>\n\nAnd here is the view model for the Promotion view where I choose which tab should be selected by default based on the promotion objects state, (I don't like how this is done right now either, but that will be cleaned up in the next round of changes.)<br />\n<pre><code>        const String NON_CHERRY_PICKED_VIEW_PATH = &quot;/Views/Promotion/NonCherryPickedView.xaml&quot;;\n        const String MONITOR_PROGRESS_VIEW_PATH = &quot;/Views/Promotion/MonitorProgressView.xaml&quot;;\n        const String SUMMARY_VIEW_PATH = &quot;/Views/Promotion/SummaryView.xaml&quot;;\n\n        private String _currentTabSource;\n        public String CurrentTabSource\n        {\n            get { return _currentTabSource; }\n            set\n            {\n                if (_currentTabSource == value) return;\n                _currentTabSource = value;\n                PropertyHasChanged();\n            }\n        }\n\n        public PromotionVM()\n        {\n            var promotion = ObjectRepository.GetInstance&lt;Promotion&gt;();\n            if (promotion.TraditionalBranches.Count == 0 &amp;&amp; promotion.NonPromotables.Count == 0 &amp;&amp; !promotion.IsPromotionComplete)\n                this.CurrentTabSource = MONITOR_PROGRESS_VIEW_PATH;\n            else if (promotion.IsPromotionComplete)\n                this.CurrentTabSource = SUMMARY_VIEW_PATH;\n            else\n                this.CurrentTabSource = NON_CHERRY_PICKED_VIEW_PATH;\n        }</code></pre>\n\nThat works great.  You can see in the screenshot that the tab that I wanted was selected in the view.<br />\n<a href=\"https://skydrive.live.com/redir?resid=52A85D37086B3CF2!662&amp;authkey=!AJUt5Mfsu9RU0qA\" rel=\"nofollow\">Screenshot</a><br />\n<br />\nSo lets just say we go to the MonitorProgressView and it does its thing.  In the MonitorProgressViewModel I want to change the SelectedSource on the Promotion view to SummaryView once the process that the MonitorProgressView is monitoring is complete.  Here is some of the code from the MonitorProgressViewModel<br />\n<pre><code>private void OnPromotionComplete()\n{\n    if (this.Promotion.IsPromotionComplete)\n    {\n        this.ProgressMessage = &quot;The promotion is complete, you can do your happy dance now.&quot;;\n                \n                // Here is where I can't figure out how to change the SelectedSource back in the Promotion view.\n        NavigationHelper.NavigateTo(&quot;/Views/Promotion/SummaryView.xaml&quot;);\n    }\n    else if (this.Promotion.CurrentConflicts.Count == 0)\n    {\n        // Do some other stuff here\n    }\n\n}</code></pre>\n\nThe result of this is we get the proper view to show, but it looses the tabs. <a href=\"http://sdrv.ms/110iIGm\" rel=\"nofollow\">Screenshot</a>  I am assuming this is because I didn't set the SelectedSource property, but I am not sure how to get at that being this is in a view model of on of the specific tabs in the view.<br />\n<br />\nThanks again,<br />\n<br />\nJay<br />\n",
+    "PostedDate": "2013-04-16T08:37:05.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1031246",
+    "ThreadId": "439695",
+    "Html": "This doesn't really have anything do to with mui, but an approach to do this is to send a <strong>message</strong> from MonitorProgressViewModel to the PromotionVM. Are you using an MVVM library/toolkit/framework? Most of them do provide messaging capabilities so that your VMs can talk in a de-coupled manner.<br />\n<br />\nI use <a href=\"https://mvvmlight.codeplex.com/\" rel=\"nofollow\">MVVMLight</a> and I do this (sending messages between VMs) all of the time.<br />\n",
+    "PostedDate": "2013-04-16T09:04:23.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1031302",
+    "ThreadId": "439695",
+    "Html": "I am not using any framework at all at the moment.  I will take a look at MVVMLight.  Thanks for the recommendation.\r<br />\n<br />\nThanks,\r<br />\n<br />\nJay<br />\n",
+    "PostedDate": "2013-04-16T10:59:10.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1031723",
+    "ThreadId": "439695",
+    "Html": "There are two ModernFrame instances in place when using a tab. The root ModernFrame hosts the PromotionView, which in turn contains a ModernTab having a ModernFrame hosting the ProgressMonitor and Summary content. The problem is that your NavigationHelper is tight to the root ModernFrame. When invoking NavigateTo you load the summary in the root ModernFrame instead of in the ModernFrame instance of the ModernTab.<br />\n<br />\nMy suggestion is to get rid of this NavigationHelper and use the PromotionViewModel.SelectedSource binding. When you need to initiate a navigation from within a child view model, you can either use messaging (as flyte is suggesting) or make sure you have a reference to the parent PromotionViewModel and set the SelectedSource property.<br />\n<br />\nMakes sense?<br />\n",
+    "PostedDate": "2013-04-17T05:16:04.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1031923",
+    "ThreadId": "439695",
+    "Html": "That makes perfect sense.  I am looking into adding messaging to my app to support this functionality.  Thanks for all the assistance.  I really love MUI and what you have created.\r<br />\n<br />\nThanks,\r<br />\n<br />\nJay<br />\n",
+    "PostedDate": "2013-04-17T09:38:46.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1143465",
+    "ThreadId": "439695",
+    "Html": "hello sir..\r<br />\ncan u please mail or share your this tabchange application on this forum...cz i need this type of app or any example related to this same i.e. tabchange..\r<br />\nkindly do a reply...thank u..<br />\n",
+    "PostedDate": "2013-12-27T23:14:18.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1220901",
+    "ThreadId": "538472",
+    "Html": "I'm thinking that how to send parameters between the two pages. such as this website like method:\r<br />\n<br />\n&lt;mui:BBCodeBlock BBCode=&quot;[url=/Pages/Page1.xaml?userid=123]View[/url]&quot; /&gt;<br />\n",
+    "PostedDate": "2014-03-09T22:51:13.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

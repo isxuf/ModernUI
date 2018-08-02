@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1428104",
+    "ThreadId": "638956",
+    "Html": "I have a <code>ModernTab</code> control, to which I'm dynamically adding a <code>Link</code>:<br />\n<pre><code>InstallationTab.Links.Add(new Link { DisplayName = &quot;Review Configuration&quot;, Source = new Uri(&quot;/Views/InstallationProgress.xaml&quot;, UriKind.Relative) });</code></pre>\n\nI'd like <code>InstallationProgress.xaml</code> to load in the top frame instead of the current content frame.\r<br />\n<br />\nHow can I do this?\r<br />\n<img src=\"https://cloud.githubusercontent.com/assets/11228/7892319/6f6d0178-0621-11e5-8ea0-40fa3789af18.png\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2015-05-30T05:39:41.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1428380",
+    "ThreadId": "638956",
+    "Html": "I answered my own question, in case anyone else finds themselves here:\r<br />\n<br />\nThis is just one example of &quot;hijacking&quot; the click on the ModernTab. Here, you can force the content to load in the top frame, for example:\r<br />\n<br />\nHandle the <code>SelectedSourceChanged</code> event of the ModernTab:\r<br />\n<br />\n<code>MyModernTab.SelectedSourceChanged += MyModernTab_SelectedSourceChanged;</code><br />\n<pre><code>void MyModernTab_SelectedSourceChanged(object sender, SourceEventArgs e)\n{\n    if (e.Source.OriginalString.EndsWith(&quot;Foo.xaml&quot;))\n    {\n        var url = &quot;/Pages/Foo.xaml&quot;;\n        var bb = new BBCodeBlock();\n        bb.LinkNavigator.Navigate(new Uri(url, UriKind.Relative), this, NavigationHelper.FrameTop);\n    }\n}</code></pre>\n\n",
+    "PostedDate": "2015-06-02T06:25:19.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

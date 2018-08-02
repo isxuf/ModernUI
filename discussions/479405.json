@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1144943",
+    "ThreadId": "479405",
+    "Html": "I have an application which needs to disable the UI if it is disconnected from the server. I'd like to show an adorner which effectively &quot;smokescreens&quot; the UI and displays a &quot;disconnected&quot; message.\r<br />\n<br />\nAttaching an adorner at the right place isn't easy because of how the MUI Windows are constructed.\r<br />\n<br />\nDoes anyone have any idea how I can mimic modal dialogs this way?<br />\n",
+    "PostedDate": "2014-01-03T02:07:37.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1145056",
+    "ThreadId": "479405",
+    "Html": "Why not just display another normal window directly on top of the current ModernWindow, set its opacity it to dim the ModernWindow below, and set IsHitTestVisible to false to not allow interaction?<br />\n",
+    "PostedDate": "2014-01-03T08:17:55.247-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1145062",
+    "ThreadId": "479405",
+    "Html": "Ended up just using a modified copy of the style for the ModernWindow. I was hoping to avoid doing this, but it's not really a big problem.<br />\n",
+    "PostedDate": "2014-01-03T08:23:10.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

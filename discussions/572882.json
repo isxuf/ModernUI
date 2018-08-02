@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1325103",
+    "ThreadId": "572882",
+    "Html": "Hi All,<br />\n<br />\nWhen you select an item programmatically in the list, and this item is not visible, you can change the ModernTab.cs file.<br />\nIf it can help someone, below the code.<br />\n<br />\nModernTab.cs ( FirstFloor.ModernUI.Windows.Controls)<br />\n<pre><code>    private void UpdateSelection()\n    {\n        if (linkList == null || Links == null)\n        {\n            return;\n        }\n\n        // sync list selection with current source\n        linkList.SelectedItem = Links.FirstOrDefault(l =&gt; l.Source == SelectedSource);</code></pre>\n\n/<em> CODE ADDED </em>/<br />\n<pre><code>        // scroll to selected item\n        if (linkList.SelectedItem != null)\n        linkList.ScrollIntoView(item: linkList.SelectedItem);</code></pre>\n\n/<em> END CODE ADDED </em>/<br />\n<pre><code>    }\n\n\n</code></pre>\n\n",
+    "PostedDate": "2014-11-22T14:09:13.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

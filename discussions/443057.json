@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1041213",
+    "ThreadId": "443057",
+    "Html": "items' width in combobox are clipped to 80 even there are much more space,see the picture below<br />\n<br />\n,<img src=\"http://s17.postimg.org/y7dnr4ewv/Untitled.png\" alt=\"Image\" /><br />\n<br />\n<br />\n<br />\nI tried to edit the combobox style but achieved nothing.<br />\n",
+    "PostedDate": "2013-05-08T23:02:42.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1042615",
+    "ThreadId": "443057",
+    "Html": "Finally find the problem: there is a textblock setter in stackpanel resources that set textblock width to 80, my fault :P<br />\n",
+    "PostedDate": "2013-05-12T23:37:44.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043069",
+    "ThreadId": "443057",
+    "Html": "Thanks for sharing the fix.<br />\n",
+    "PostedDate": "2013-05-13T14:04:53.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

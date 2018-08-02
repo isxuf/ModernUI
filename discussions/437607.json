@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1019420",
+    "ThreadId": "437607",
+    "Html": "<strong>The below Solution which i received from Koen Zwikstra below worked fine.. its perfect</strong>\r<br />\n<br />\n<br />\nIf you need to reset the content in a modern frame, you need to set the ModernFrame.KeepContentAlive property to false. This effectively causes a reload every time content is loaded in a frame.\r<br />\n<br />\nYou can easily set the KeepContentAlive for all ModernFrames by specifying the following default style in App.xaml;\r<br />\n<br />\n&lt;Style TargetType=&quot;mui:ModernFrame&quot;&gt;\r<br />\n&lt;Setter Property=&quot;KeepContentAlive&quot; Value=&quot;False&quot;/&gt;\r<br />\n&lt;/Style&gt;<br />\n",
+    "PostedDate": "2013-03-22T03:24:48.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

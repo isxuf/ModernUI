@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1307796",
+    "ThreadId": "568270",
+    "Html": "Hi,\r<br />\nI tried to declarate a variable as follow <br />\n<pre><code>ModernFrame frame;</code></pre>\n\nI noticed that the ModernFrame is an unknown type.\r<br />\nIs there any using component that I should added in my code C#.\r<br />\n<br />\nThank you.<br />\n",
+    "PostedDate": "2014-09-24T08:50:11.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1307800",
+    "ThreadId": "568270",
+    "Html": "Ah I have found the missed using.\r<br />\nI should add &quot;using FirstFloor.ModernUI.Windows.Controls;&quot;\r<br />\nThan's :)<br />\n",
+    "PostedDate": "2014-09-24T08:57:33.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

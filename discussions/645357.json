@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1445500",
+    "ThreadId": "645357",
+    "Html": "Hello,\r<br />\n<br />\nI'm trying to create multiple ModernMenu in a ModernWindow. I want to show the first ModernMenu if a binded value is true, otherwise the second ModernMenu with different LinkGroups should be visible. I know that it is possible to do so in the code behind, but I have to manage it in xaml :( To hide one of those ModernMenu, I use the visibility property (visible / collapsed) of the control. Or is there an other way to show different link groups on different conditions?\r<br />\n<br />\nThanks a lot!<br />\n",
+    "PostedDate": "2015-09-22T23:51:22.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

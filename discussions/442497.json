@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1039162",
+    "ThreadId": "442497",
+    "Html": "Is there any way to clear the navigation history or remove items from it?  If I have user auth on the application I want to keep them from using the back button after they logout. <br />\n",
+    "PostedDate": "2013-05-03T12:36:30.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039924",
+    "ThreadId": "442497",
+    "Html": "No, that's not available yet, but a great suggestion. Would you mind creating an issue for it?<br />\n",
+    "PostedDate": "2013-05-06T08:21:56.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055597",
+    "ThreadId": "442497",
+    "Html": "Is there any solution for this?<br />\n",
+    "PostedDate": "2013-06-11T14:52:49.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055598",
+    "ThreadId": "442497",
+    "Html": "Not yet. Requires some modifications to the navigation stack and possibly the inclusion of a NavigationService (which doesn't exist yet).<br />\n",
+    "PostedDate": "2013-06-11T14:58:51.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055608",
+    "ThreadId": "442497",
+    "Html": "Ok. Thanks. Can you give me an example on how to remove the Back Button?<br />\n",
+    "PostedDate": "2013-06-11T15:30:53.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1055746",
+    "ThreadId": "442497",
+    "Html": "The back button can be removed only by setting a custom ModernWindow.Template<br />\n",
+    "PostedDate": "2013-06-12T03:06:03.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1248989",
+    "ThreadId": "442497",
+    "Html": "Is there any solution for this now?<br />\n",
+    "PostedDate": "2014-05-23T10:18:56.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

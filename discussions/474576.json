@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1137682",
+    "ThreadId": "474576",
+    "Html": "This has to be a simple question to answer, but I have been struggling with it all morning.\r<br />\n<br />\nI have created a Modern UI WPF Application and I would like to dynamically set the background property of a textbox to the Appearance color selected on the settings page of the MUI app through c#.  Is there an easy way to do this?\r<br />\n<br />\nOn a related note... is there a way to save the color choice, theme, and font size within the app so that the theme states stick on re-launch?  It currently rolls back to the default when the app is closed and reopened.\r<br />\n<br />\nThank you in advance.<br />\n",
+    "PostedDate": "2013-12-18T10:38:16.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1138603",
+    "ThreadId": "474576",
+    "Html": "Never mind... I have a solution.\r<br />\n<br />\nI used the SolidColorBrush to access the color with the following code.<br />\n<pre><code>Brush brush = new SolidColorBrush((Color)this.FindResource(&quot;AccentColor&quot;));\n</code></pre>\n\nStill haven't found a good solution to keeping the state of the settings around.<br />\n",
+    "PostedDate": "2013-12-19T12:58:03.347-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2013-12-19T12:58:10.57-08:00"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1292695",
+    "ThreadId": "561922",
+    "Html": "How can we bind link group to TitleLinks in modern ui<br />\n<pre><code>&lt;mui:ModernWindow \n        MenuLinkGroups=&quot;{Binding MenuLinkGroups}&quot;\n        TitleLinks=&quot;{Binding TitleLinkGroup}&quot;&gt;\n&lt;/mui:ModernWindow&gt;</code></pre>\n\nand view model contains <br />\n<pre><code>private LinkGroupCollection _menuLinkGroups;\n        public LinkGroupCollection MenuLinkGroups\n        {\n            get { return _menuLinkGroups; }\n            private set\n            {\n                _menuLinkGroups = value;\n                RaisePropertyChanged(&quot;MenuLinkGroups&quot;);\n            }\n        }\n\n        private LinkGroup _titleLinkGroup;\n        public LinkGroup TitleLinkGroup\n        {\n            get { return _titleLinkGroup; }\n            set\n            {\n                _titleLinkGroup = value;\n                RaisePropertyChanged(&quot;TitleLinkGroup&quot;);\n            }\n        }</code></pre>\n\nand i am setting menu items dynamically after logged in successfully. <br />\n<pre><code>LinkGroup salesGroup = new LinkGroup { GroupName = &quot;SalesGroup&quot;, DisplayName = &quot;Sales&quot; };\nLink cacheRegister = new Link { DisplayName = &quot;Cache Register&quot;, Source = new Uri(@&quot;/Pages/Sales/Sales.xaml&quot;, UriKind.Relative) };\nsalesGroup.Links.Add(cacheRegister);\nthis.MenuLinkGroups.Add(salesGroup);\n\nLink settings = new Link { DisplayName = &quot;Settings&quot;, Source = new Uri(@&quot;/Pages/Settings.xaml&quot;, UriKind.Relative) };\nthis.TitleLinkGroup.Links.Add(settings);</code></pre>\n\nMenu link group is binding correctly but Title Links are blank area. <br />\nDid i do something wrong... it's great someone can help.<br />\n",
+    "PostedDate": "2014-08-23T03:32:54.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292718",
+    "ThreadId": "561922",
+    "Html": "ModernWindow.TitleLinks is of type LinkCollection, not LinkGroup<br />\n",
+    "PostedDate": "2014-08-23T06:39:23.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1292742",
+    "ThreadId": "561922",
+    "Html": "yeah it worked thanks very much.<br />\n",
+    "PostedDate": "2014-08-23T10:32:15.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1354339",
+    "ThreadId": "561922",
+    "Html": "Any guidance on how to bind from POCOs, by chance?  It would be nice to provide a datatemplate of some sort that converts a POCO/model to a Link.<br />\n",
+    "PostedDate": "2015-02-20T07:06:17.94-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

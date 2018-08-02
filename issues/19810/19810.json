@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:42:35.003-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Today I noticed this issue while using the toolkit.  I'm using the MVVM pattern in a UserControl sitting on a ModernDialog.  My ViewModel implements IDataErrorInfo and properties in my view have the ValidatesOnDataErrors binding flag.\n\nWhen a field is invalid, the red border & message were not showing.  It turns out that wrapping my control in a AdornerDecorator fixes this issue.  \n\nValidations work correctly in the ModernWindow.\n\nI think this issue could be fixed by wrapping all ModernDialog content with an AdornerDecorator in the ModernDialog style.\n\nhttp://stackoverflow.com/questions/3676266/validation-errortemplate-not-showing-on-data-errors\n\nThanks for the toolkit!  It's great.  Looking forward to any forthcoming updates.",
+    "LastUpdatedDate": "2013-07-05T13:42:35.003-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-06-04T08:37:37.887-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Validations Not Appearing on ModernDialog",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19810
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved in Changeset 101035",
+      "PostedDate": "2013-06-11T14:05:07.317-07:00",
+      "Id": 158515
+    }
+  ]
+}

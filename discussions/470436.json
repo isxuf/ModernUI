@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1126485",
+    "ThreadId": "470436",
+    "Html": "The theme for an application I'm working for contains a logo in its background, in the same fashion as the &quot;Hello Kitty&quot; example of the Sample application.\r<br />\n<br />\nNow I want to display a ModernDialog, but the logo makes it difficult to read the text in the dialog.\r<br />\n<br />\nIs there a way to select a different theme for a specific Window? The problem can actually also be seen in the demo app, the &quot;Hello Kitty&quot; being cut when we display a message box. It would make much more sense if, in the case of Message box the &quot;Hello Kitty&quot; logo wouldn't be displayed.<br />\n",
+    "PostedDate": "2013-11-19T04:52:32.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306328",
+    "ThreadId": "470436",
+    "Html": "I have custom theme and dark banner on top + white navigation items.\r<br />\nI would also like to know how to remove custom theme from ModernDialog.\r<br />\nI agree with Gimly.<br />\n",
+    "PostedDate": "2014-09-19T06:12:28.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306382",
+    "ThreadId": "470436",
+    "Html": "You can easily remove the background content, by creating a custom implicit ModernDialog style that derives from the default ModernDialog style. In your custom style set the BackgroundContent property to null like so:<br />\n<pre><code>&lt;Style TargetType=&quot;mui:ModernDialog&quot; BasedOn=&quot;{StaticResource {x:Type mui:ModernDialog}}&quot;&gt;\n  &lt;Setter Property=&quot;BackgroundContent&quot; Value=&quot;{x:Null}&quot; /&gt;\n&lt;/Style&gt;</code></pre>\n\nFor some additional information on deriving from implicit and default MUI styles, see <a href=\"https://mui.codeplex.com/wikipage?title=How%20to%20derive%20custom%20style%20from%20MUI%20style\" rel=\"nofollow\">this tutorial</a>.<br />\n",
+    "PostedDate": "2014-09-19T07:54:28.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1307541",
+    "ThreadId": "470436",
+    "Html": "It works greatly! Thanks about tutorial.<br />\n",
+    "PostedDate": "2014-09-23T12:35:05.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

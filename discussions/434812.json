@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1008056",
+    "ThreadId": "434812",
+    "Html": "Hi,<br />\n<br />\nFrom the example given, I can see that only static xaml pages are displayed. Can someone suggest me how to pass data to Link's Source. I am trying with MVVM pattern.<br />\n<br />\nIn the example, I wanted to show tabs in CommonDialog. Hence I used ModernTab. As ModernTab has Links collection, how to pass data of CommonDialog's Content to Link's Source?<br />\n<br />\nThanks &amp; Regards,<br />\nChakravarti.B.<br />\n",
+    "PostedDate": "2013-02-28T00:40:53.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1008259",
+    "ThreadId": "434812",
+    "Html": "Hi Chakravarti,\r<br />\n<br />\nThere's currently no infrastructure for passing data to link source. I have some ideas on how to make this happen. For now you can access the current source uri (and query parameters) for the current page by using the following code;<br />\n<pre><code>// gets the current frame\nvar frame = NavigationHelper.GetFrame(null); \nvar source = frame.Source;</code></pre>\n\nNot sure what you want mean with pass data of of CommonDialog's content to link's source. Please elaborate.\r<br />\n<br />\nKoen<br />\n",
+    "PostedDate": "2013-02-28T07:57:10.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1008353",
+    "ThreadId": "434812",
+    "Html": "Hi Koen,\r<br />\n<br />\nThanks for your reply.\r<br />\n<br />\nI am new to WPF. Recently I learned WPF with MVVM pattern.\r<br />\n<br />\nCan we use ModernUI with MVVM pattern? \r<br />\n<br />\nMy scenario is like this. I will have a list view to show summary of items in a page of mainwindow. When user selects a item and edits the item, I will bring up ModernDialog. I will host a usercontrol on this ModernDialog to show the selected item. To display the selected item, I need to have multiple tabs in this usercontrol. For this, I thought of using modernTab. As ModernTab is having links collections, how can I show some information of item in one tab and other information in another tab?\r<br />\n<br />\nCan you please share some examples which uses ModernDialog having ModernTab with MVVM pattern?\r<br />\n<br />\nThanks &amp; Regards,\r<br />\nChakravarti.B.<br />\n",
+    "PostedDate": "2013-02-28T10:16:28.833-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1008518",
+    "ThreadId": "434812",
+    "Html": "Thanks for the explanation. I'll add some MVVM related topics to the documentation soon.<br />\n<br />\nKoen<br />\n",
+    "PostedDate": "2013-02-28T15:02:29.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1008590",
+    "ThreadId": "434812",
+    "Html": "Thanks Koen. It would he very helpful if we add an example too as soon.<br />\n",
+    "PostedDate": "2013-02-28T19:31:07.05-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

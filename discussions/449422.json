@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1066038",
+    "ThreadId": "449422",
+    "Html": "Hello,\r<br />\n<br />\nDoes anyone  know  how I can optimize Modern UI for a good Touch App.\r<br />\n<br />\nSo it should be possible to create bigger buttons (Link, BackButton, CloseButton, MinimizeButton, MenuItems and Headers).\r<br />\n<br />\nHow can I realize this in a simple way.\r<br />\n<br />\nThanks,<br />\n",
+    "PostedDate": "2013-07-09T03:50:41.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1067093",
+    "ThreadId": "449422",
+    "Html": "this is my   way what i think last week\r<br />\n but i still got trouble ..\r<br />\n public class BigFormatCommand : ICommand<br />\n<pre><code>{\n\n    public static readonly RoutedEvent ExecuteEvent = EventManager.RegisterRoutedEvent(&quot;ExecuteEvent&quot;, RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(BigFormatCommand));\n\n    public static void AddExecuteHandler(DependencyObject o, RoutedEventHandler handler)\n    {\n        ((UIElement)o).AddHandler(BigFormatCommand.ExecuteEvent, handler);\n\n    }\n    public static void RemoveExecuteHandler(DependencyObject o, RoutedEventHandler handler)\n    {\n        ((UIElement)o).RemoveHandler(BigFormatCommand.ExecuteEvent, handler);\n\n    }\n\n\n\n    public bool CanExecute(object parameter)\n    {\n        return true;\n    }\n\n    public event EventHandler CanExecuteChanged;\n\n    public void Execute(object parameter)\n    {\n        //Application.Current.Shutdown();\n        RoutedEventArgs e = new RoutedEventArgs(ExecuteEvent, Keyboard.FocusedElement);\n        Keyboard.FocusedElement.RaiseEvent(e);\n    }\n}\n</code></pre>\n\nand in Main window:<br />\n<pre><code>&lt;mui:ModernWindow.FrameTopContent&gt;\n    &lt;Button Content=&quot;FontSize&quot; Width=&quot;200&quot; Command=&quot;{x:Static uiSample:AppCommands.BigFormatCommand}&quot;/&gt;\n&lt;/mui:ModernWindow.FrameTopContent&gt;\n</code></pre>\n\nTrouble:\r<br />\nOnly the User control content  becomes Big !?? but the Linkgroups are not changed size??  why???<br />\n",
+    "PostedDate": "2013-07-11T08:41:13.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

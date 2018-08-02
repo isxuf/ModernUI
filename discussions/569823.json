@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1313457",
+    "ThreadId": "569823",
+    "Html": "<pre><code> &lt;mui:LinkGroup DisplayName=&quot;Main menu&quot; &gt;\n        &lt;mui:LinkGroup.Links&gt;\n            &lt;mui:Link DisplayName=&quot;Log&quot; Source=&quot;/Views/Log.xaml&quot; /&gt;\n            &lt;mui:Link DisplayName=&quot;Settings&quot; Source=&quot;/Views/Settings.xaml&quot; /&gt;\n        &lt;/mui:LinkGroup.Links&gt;\n    &lt;/mui:LinkGroup&gt;</code></pre>\n\nhow can i disable LinkGroup like this:<br />\n &lt;mui:LinkGroup DisplayName=&quot;Main menu&quot; <strong>IsEnable=&quot;false&quot;</strong> &gt;<br />\n",
+    "PostedDate": "2014-10-15T01:13:43.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1313763",
+    "ThreadId": "569823",
+    "Html": "Enabling and disabling LinkGroups (and links) is currently not supported. I believe there is already an issue for that.<br />\n",
+    "PostedDate": "2014-10-15T14:21:06.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

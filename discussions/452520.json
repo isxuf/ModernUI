@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1077101",
+    "ThreadId": "452520",
+    "Html": "When I show a modern dialog using ModernDialog.ShowMessage().... or .ShowDialog() my theme is removed on my MainWindow, the modern dialog has my theme, and then when the modern dialog is closed, the MainWindow theme remains blank. Any ideas why?<br />\n",
+    "PostedDate": "2013-08-06T00:40:26.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1077123",
+    "ThreadId": "452520",
+    "Html": "It was not having x:Shared=&quot;false&quot; set on my WindowBackgroundContent override.<br />\n",
+    "PostedDate": "2013-08-06T01:14:34.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1078188",
+    "ThreadId": "452520",
+    "Html": "me too, how to do?<br />\n",
+    "PostedDate": "2013-08-08T05:13:59.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1078211",
+    "ThreadId": "452520",
+    "Html": "I was having the problem because I have created my own theme. Have you created your own theme too? Most likely you have followed the example and used the WindowBackgroundContent to show an image? If so, make sure you have x:Shared=&quot;false&quot; set like the example does.<br />\n",
+    "PostedDate": "2013-08-08T06:21:20.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1079054",
+    "ThreadId": "452520",
+    "Html": "I have created my own theme, but removed it later. I will try, thanks!<br />\n",
+    "PostedDate": "2013-08-10T06:26:11.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1079553",
+    "ThreadId": "452520",
+    "Html": "'x:Shared=&quot;true&quot; =&gt; x:Shared=&quot;false&quot;' is OK! Thank you very much!<br />\n",
+    "PostedDate": "2013-08-12T06:24:27.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

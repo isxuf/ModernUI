@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1073433",
+    "ThreadId": "451497",
+    "Html": "the image in theme disappear after popup a moderndialog, and only view on the next popup moderndialog. How to resolve this problem?\r<br />\nhelp!<br />\n",
+    "PostedDate": "2013-07-26T05:17:28.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1073438",
+    "ThreadId": "451497",
+    "Html": "the sample is good, but my program is bad, why?<br />\n",
+    "PostedDate": "2013-07-26T05:25:22.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1079556",
+    "ThreadId": "451497",
+    "Html": "'x:Shared=&quot;true&quot; =&gt; x:Shared=&quot;false&quot;' is OK! Solved!<br />\n",
+    "PostedDate": "2013-08-12T06:27:13.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

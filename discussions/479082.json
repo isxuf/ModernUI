@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1143912",
+    "ThreadId": "479082",
+    "Html": "How do I set the link source to a view in another assembly?\r<br />\n<br />\nHappy newyear<br />\n",
+    "PostedDate": "2013-12-30T08:10:19.17-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1144374",
+    "ThreadId": "479082",
+    "Html": "The Source of a link is a URI, so you can do it like this<br />\n<pre><code> &lt;mui:Link DisplayName=&quot;Beskeder&quot; Source=&quot;/DriftStotte.Modules;component/BeskederView.xaml&quot; /&gt;</code></pre>\n\nI found this <a href=\"http://msdn.microsoft.com/en-us/library/aa970069.aspx#The_Pack_URI_Scheme\" rel=\"nofollow\">microsoft documentation</a> about Pack URIs in WPF very usefull. <br />\n",
+    "PostedDate": "2014-01-01T03:49:50.997-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-01-01T03:50:05.553-08:00"
+  }
+]

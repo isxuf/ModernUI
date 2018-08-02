@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1223111",
+    "ThreadId": "539116",
+    "Html": "I have a very simple ModernDialog that holds a progress bar and I can't control the window size of this item regardless of how I try to access the width and height property - From the calling ModernWindow, from the ModernDialog xaml, or from the ModernDialog codebehind. Can someone advise me on how to access the size of the ModernDialog?\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2014-03-15T11:07:40.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224136",
+    "ThreadId": "539116",
+    "Html": "see <a href=\"https://mui.codeplex.com/discussions/470576\" rel=\"nofollow\">this discussion</a><br />\n",
+    "PostedDate": "2014-03-18T13:31:26.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

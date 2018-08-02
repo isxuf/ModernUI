@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1032675",
+    "ThreadId": "440827",
+    "Html": "Hello,\r<br />\n<br />\nIm -as you can tell new to mui and wpf.\r<br />\n<br />\nI have an application with realtime chart data in some tabs of the ModernMenu.\r<br />\n<br />\nIs it possible to initialize pages in the menu on application startup ? Right now its not before I click the link.\r<br />\n<br />\nLink regenerationlnk = new Link { DisplayName = &quot;regeneration&quot;, Source = new <a href=\"mailto:Uri(@&quot;/regeneration.xaml&quot;,\" rel=\"nofollow\">Uri(@\"/regeneration.xaml\",</a> UriKind.Relative) };\r<br />\n<br />\nI would like the instance of regeneration.xaml to be created'n'linked on startup.\r<br />\n<br />\ni'm sorry if i'm missing the obvious..\r<br />\n<br />\nbr. Rene<br />\n",
+    "PostedDate": "2013-04-18T13:02:44.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033351",
+    "ThreadId": "440827",
+    "Html": "Pre-creating pages is not supported, but that is not necessarily a bad thing. My suggestion is to use MVVM where your view and data are loosely coupled. Create your model on startup and start collecting your data. The moment your page is selected and loaded, create your viewmodel and associated it with your instantiated data model. Then use bindings to display your realtime data.<br />\n",
+    "PostedDate": "2013-04-20T05:29:13.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

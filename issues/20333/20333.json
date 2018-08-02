@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "What would be a simple way to navigate pages in MenuLinkGroups with the click of a Button in one of the Pages?",
+    "LastUpdatedDate": "2014-03-05T04:11:30.513-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-10-20T13:51:16.563-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Navigate with Buttons within Page",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 20333
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903312,
+      "FileName": "navigation.PNG",
+      "DownloadUrl": ".\\903312"
+    }
+  ],
+  "Comments": []
+}

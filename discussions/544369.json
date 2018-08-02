@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1241775",
+    "ThreadId": "544369",
+    "Html": "As title says.. I want to use the Dark theme, and i dont want the user to change it, so i am not using the settings as in the example program. BUt if you look at the settings, i would like to use the 2nd color <a href=\"http://puu.sh/8AGMN.png\" rel=\"nofollow\">http://puu.sh/8AGMN.png</a>\r<br />\nhow can i achieve this?<br />\n",
+    "PostedDate": "2014-05-05T14:08:24.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1243027",
+    "ThreadId": "544369",
+    "Html": "You need to change \r<br />\n<br />\nAccentColor\r<br />\n<br />\nfrom Assets/ModernUI.xaml\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-05-08T05:46:50.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

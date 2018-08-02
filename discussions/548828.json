@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1256797",
+    "ThreadId": "548828",
+    "Html": "I need to navigate from CheckLogin.xaml to MainMenu.xaml, so I derived MainMenu.xaml from ModernWindow to be able to add navigation &lt;mui:ModernWindow.MenuLinkGroups&gt;, and can't find a way to add menulink to a window derived from UserControl because UserControl window can be nested inside a ModernWindow window. To overcome the problem, I have two options: 1. To add navigation to Page1.xaml (may be impossible) or 2. find a way to navigate to MainWindow (and this should be easy, I can't find a reasonable reason why this appears to need a miracle to be done! this is a basic need)\r<br />\n<br />\nI'm using this code for naviagtion:<br />\n<pre><code>string url = &quot;/MainWindow.xaml&quot;;\nBBCodeBlock bbBlock = new BBCodeBlock();\nbbBlock.LinkNavigator.Navigate(new Uri(url, UriKind.Relative), this, FirstFloor.ModernUI.Windows.Navigation.NavigationHelper.FrameSelf);</code></pre>\n\nwhen running this code, it navigates when url is a window name dervied from UserControl, but when running the above code, I encounter this exception:<br />\n<pre><code>&quot;Unable to navigate to /MainWindow.xaml, could not find a ModernFrame target '_self'&quot;</code></pre>\n\nHow could I resolve this?<br />\n",
+    "PostedDate": "2014-06-16T12:33:36.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

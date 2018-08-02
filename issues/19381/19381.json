@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "by design",
+    "ClosedDate": "2013-03-02T17:08:55.363-08:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "ModernWindow doesn't display its title.",
+    "LastUpdatedDate": "2013-05-16T05:30:56.537-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-02-25T01:06:46.36-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Window title is missing",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 19381
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "That's by design. The reference application Zune also doesn't display a title. \r\n\r\nIf you really need it, you can define your own MetroWindow control template and add a textblock that has a TemplateBinding to the Window.Title.",
+      "PostedDate": "2013-02-25T09:48:02.117-08:00",
+      "Id": 158430
+    }
+  ]
+}

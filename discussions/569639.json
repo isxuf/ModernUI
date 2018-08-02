@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1312684",
+    "ThreadId": "569639",
+    "Html": "Hi,\r<br />\n<br />\nIt appears that the threestate checkbox null value isn't showing properly, is this correct? I think I should modify the style xaml but haven't looked into it yet, seems like a shortcoming. \r<br />\n<br />\nKind regards<br />\n",
+    "PostedDate": "2014-10-13T02:44:41.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1312696",
+    "ThreadId": "569639",
+    "Html": "Looked further into it and the style seems to be missing, I've added it myself to CheckBox.xaml (added as new resource)<br />\n<pre><code>\n&lt;Trigger Property=&quot;IsChecked&quot; Value=&quot;{x:Null}&quot;&gt;\n         &lt;Setter TargetName=&quot;CheckMark&quot; Property=&quot;Data&quot; Value=&quot;M 0 2.5 A 5 2.5 0 1 1 5 5 L 5 8 M 5 10 L 5 10&quot; /&gt;\n&lt;/Trigger&gt;</code></pre>\n\n",
+    "PostedDate": "2014-10-13T03:20:16.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1313761",
+    "ThreadId": "569639",
+    "Html": "Nice! Care to create a pull request?<br />\n",
+    "PostedDate": "2014-10-15T14:19:01.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

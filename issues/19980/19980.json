@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-08-09T09:17:32.797-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Excuse me in advance for the bad definition of this issue, but I am __very new__ to desktop programming and especially WPF, I'm coming from a web development background.\n\nI've pulled your project to create a simple application that listens for TCP Connections and takes some appropriate action. Nothing CPU heavy at all.\n\nI was very surprised when I saw the CPU hitting the 25% mark when the application was running and even thought the problem is in my TCP Listeners which I disabled temporarily with no success, the high usage was still there.\n\nAs this is my first WPF application I started reading and most issues with CPU usage were related to animations. \n\nI temporarily lowered the global frame rate of the animations to 20 which cut the CPU usage by 60-70% but then the UI started to stutter a bit, as expected. So then I just pulled the source code and put duration=\"0\" to all storyboard elements, I build it back up and integrated it in my project. Amazingly enough, even though I wasn't completely sure what am I affecting with those changes, the CPU usage almost disappeared completely. It is now under the 1% mark and how I want it to be. \n\nI'm just throwing random guesses here, but I believe there is some animation running constantly and doing some unneeded calculations. The visual appearance of the UI wasn't changed from my modifications but I also use limited controls that come with your package - mostly tabs and pages.",
+    "LastUpdatedDate": "2014-08-09T09:17:32.797-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-07-18T03:06:09.08-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "High CPU usage, suspecting StoryBoards",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19980
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved with changeset 110094: Addressing CPU usage on idle state by disabling ProgressBar.IsIndeterminate in default ModernFrame style.",
+      "PostedDate": "2014-08-09T09:17:32.797-07:00",
+      "Id": 158536
+    }
+  ]
+}

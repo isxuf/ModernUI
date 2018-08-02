@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1066008",
+    "ThreadId": "449412",
+    "Html": "When using a ModernTab layout, is it possible to make clicking a link run some other code rather than navigate to a new page?<br />\n",
+    "PostedDate": "2013-07-09T02:41:15.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1066346",
+    "ThreadId": "449412",
+    "Html": "I'll take a crack at this, probably wrong.<br />\n<br />\nFirst write a command.  I use VB sorry, here's my example:<br />\n<pre><code>Imports FirstFloor.ModernUI.Presentation\nImports FirstFloor.ModernUI.Windows.Controls\n\nPublic Class ShaveMyBeard\n    Inherits CommandBase\n\n    Protected Overrides Sub OnExecute(parameter As Object)\n        Select Case CStr(parameter)\n            Case &quot;smooth&quot;\n                ModernDialog.ShowMessage(&quot;Smooth&quot;, &quot;Shave&quot;, MessageBoxButton.OK)\n            Case &quot;rough&quot;\n                ModernDialog.ShowMessage(&quot;Rough&quot;, &quot;Shave&quot;, MessageBoxButton.OK)\n        End Select\n    End Sub\nEnd Class\n\n</code></pre>\n\nOn your XAML page ensure there's an app reference:<br />\nxmlns:app=&quot;clr-namespace:<strong><em>WpfApplication11</em></strong>&quot;<br />\n<br />\nAdd resources for the commands you want to execute:<br />\n<pre><code>        &lt;Grid.Resources&gt;\n            &lt;!-- define an implicit BBCodeBlock style and add custom commands to the link navigator --&gt;\n            &lt;Style TargetType=&quot;mui:BBCodeBlock&quot; &gt;\n                &lt;Setter Property=&quot;LinkNavigator&quot;&gt;\n                    &lt;Setter.Value&gt;\n                        &lt;mui:DefaultLinkNavigator&gt;\n                            &lt;mui:DefaultLinkNavigator.Commands&gt;\n                                &lt;app:ShaveMyBeard x:Key=&quot;shave://beard&quot; /&gt;\n                            &lt;/mui:DefaultLinkNavigator.Commands&gt;\n                        &lt;/mui:DefaultLinkNavigator&gt;\n                    &lt;/Setter.Value&gt;\n                &lt;/Setter&gt;\n            &lt;/Style&gt;\n        &lt;/Grid.Resources&gt;\n</code></pre>\n\nWhat's important here is that the key you use here, must match your URL in the BBCode.<br />\n<br />\nHere's example BBcode:<br />\n<pre><code>[url=shave://beard|rough]rough[/url] or [url=shave://beard|smooth]smooth[/url]</code></pre>\n\nmy url shave://beard matches the key, the parameter is what lets me use a single command for multiple things.<br />\n",
+    "PostedDate": "2013-07-09T16:49:57.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

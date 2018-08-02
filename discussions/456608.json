@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1091467",
+    "ThreadId": "456608",
+    "Html": "Hello\r<br />\n<br />\nI have a ModernTab and add Links in my code-behind like this:<br />\n<pre><code>foreach (Player player in ((PlayerViewModel) DataContext).Players)\n{\n  playerNavigation.Links.Add(new Link\n  {\n    DisplayName = player.Firstname+ &quot; &quot; + player.Name,\n    Source = new Uri(&quot;/Pages/Team/Player/Details.xaml&quot;, UriKind.Relative)\n  });\n}</code></pre>\n\nThis works like a charm, but I want to avoid code-behind. Is there a way to add an itemssource to the ModernTab in WPF?\r<br />\n<br />\nThank you for your help!<br />\n",
+    "PostedDate": "2013-09-11T15:07:15.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1093162",
+    "ThreadId": "456608",
+    "Html": "ModernTab has a dependency property called LinksProperty,have you tried to binding it to a Collection？\r<br />\ni think it just like itemsSource!<br />\n",
+    "PostedDate": "2013-09-16T08:41:09.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

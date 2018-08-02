@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1242380",
+    "ThreadId": "544533",
+    "Html": "From menu link group I used this :<br />\n<pre><code>&lt;mui:ModernWindow x:Class=&quot;SKBPK2014.MainWindow&quot;\n       ...\n        ContentSource=&quot;/UI/Pages/Home.xaml&quot;&gt;\n\n  &lt;mui:ModernWindow.MenuLinkGroups&gt;\n        &lt;mui:LinkGroup DisplayName=&quot;Sampel&quot;&gt;\n            &lt;mui:LinkGroup.Links&gt;\n                &lt;mui:Link DisplayName=&quot;HOME&quot; Source=&quot;/UI/Pages/Home.xaml&quot; /&gt;\n                &lt;mui:Link DisplayName=&quot;DAFTAR SAMPEL&quot; Source=&quot;/UI/Kuesioner/DaftarSampel.xaml&quot; /&gt;\n            &lt;/mui:LinkGroup.Links&gt;\n        &lt;/mui:LinkGroup&gt;</code></pre>\n\nHow to get All UI control in a list in the first load. Not clicking the mui:Link. ? I wanna get like this<br />\n<pre><code>List&lt;UIControl&gt; UiControl;</code></pre>\n\nit will contains all UIControl in My ModernWindow. so it will contains {Home,DaftarSampel,} object List in the first load..<br />\n",
+    "PostedDate": "2014-05-06T23:29:38.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

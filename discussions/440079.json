@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1029601",
+    "ThreadId": "440079",
+    "Html": "I want to hide the back button on the log in page. So is this possible to hide the back button.<br />\n",
+    "PostedDate": "2013-04-12T07:41:24.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1030070",
+    "ThreadId": "440079",
+    "Html": "It's possible, but (for now) requires you to create a custom ModernWindow template.<br />\n",
+    "PostedDate": "2013-04-13T13:28:30.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033214",
+    "ThreadId": "440079",
+    "Html": "Is there any change you would be able to provide an example of how you would do this?<br />\n<br />\nI did find this post:<br />\n<a href=\"https://mui.codeplex.com/discussions/434835\" rel=\"nofollow\">https://mui.codeplex.com/discussions/434835</a><br />\n<br />\nWould be great if you could provide more info as I'm getting and error in my project The type reference cannot find a public type named 'ModernWindow', using a copy and paste as you have described.<br />\n<br />\nCheers,<br />\nShawn<br />\n",
+    "PostedDate": "2013-04-19T14:24:52.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033343",
+    "ThreadId": "440079",
+    "Html": "I just checked in a custom EmptyWindow style for ModernWindow instances that renders content only. You may want to use it as reference for your custom window templates. See the source code.<br />\n",
+    "PostedDate": "2013-04-20T05:02:31.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034075",
+    "ThreadId": "440079",
+    "Html": "Great! I'll take a look thanks!<br />\n",
+    "PostedDate": "2013-04-22T10:42:53.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

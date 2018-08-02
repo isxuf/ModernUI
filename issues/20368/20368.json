@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "The grip is conventionally used to give the user a larger mouse target for dragging and resizing a window.\n\nCurrently, in m:ui, it only serves as a visual cue that the window is resizable, and you still have to aim for the window borders.",
+    "LastUpdatedDate": "2014-08-10T12:20:46.337-07:00",
+    "PlannedForRelease": "null",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-10-29T16:09:37.197-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Resize grip is not functioning",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 5,
+    "Id": 20368
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi, \r\n\r\nI know it's an old request and i'm a newbie on WPF, but here what's I done to make the resizeGrip works : \r\n\r\nIn the __Button.xaml__```                                                                                                                                        \r\n                            \r\n                                                                                                                                                                                                                                                                                                                                            \r\n                        \r\n                                                            ```In __MorderWindow.xaml__ replace : ``` \r\n                                                  Stroke=\"{DynamicResource WindowText}\"                                                  StrokeThickness=\"1\"                                                  Stretch=\"None\"                                                  Data=\"F1 M1,10 L3,10 M5,10 L7,10 M9,10 L11,10 M2,9 L2,11 M6,9 L6,11 M10,9 L10,11 M5,6 L7,6 M9,6 L11,6 M6,5 L6,7 M10,5 L10,7 M9,2 L11,2 M10,1 L10,3\" />```by ``````\r\n\r\nin __ModernWindows.cs__```public ModernWindow(){[...]//Add New event handler on the loaderEventthis.Loaded += new RoutedEventHandler(onLoaded);}\r\n\r\n        ///         /// Manage the grip        ///         /// \r\n\r\n        /// \r\n\r\n        ///         protected void onLoaded(object sender, RoutedEventArgs e)        {\r\n\r\n            var grip = GetTemplateChild(\"ResizeGrip\") as Thumb;            grip.DragDelta += ResizeGripDragDelta;            grip.MouseDown += ResizeGripMouseDown;            grip.MouseUp += ResizeGripMouseUp;        }\r\n\r\nprivate void ResizeGripDragDelta(object aSender, DragDeltaEventArgs aEventArgs)        {            double lWidth = ActualWidth + aEventArgs.HorizontalChange;            double lHeight = ActualHeight + aEventArgs.VerticalChange;            TrySetSize(lWidth, lHeight);        }\r\n\r\n        private void ResizeGripMouseDown(object aSender, MouseButtonEventArgs aEventArgs)        {            if (aEventArgs.LeftButton == MouseButtonState.Pressed &&                  aEventArgs.RightButton == MouseButtonState.Released &&                  aEventArgs.MiddleButton == MouseButtonState.Released)            {                var grip = GetTemplateChild(\"ResizeGrip\") as Thumb;                Mouse.Capture(grip);            }        }\r\n\r\n        private void ResizeGripMouseUp(object aSender, MouseButtonEventArgs aEventArgs)        {            var grip = GetTemplateChild(\"ResizeGrip\") as Thumb;\r\n\r\n            if (Mouse.Captured == grip)            {                Mouse.Capture(null);            }        }\r\n\r\n        private void TrySetSize(double aWidth, double aHeight)        {            if (aWidth             {                return;            }\r\n\r\n            Width = aWidth;            Height = aHeight;        }```\r\n\r\nI'm sure it's not perfect and perhaps not optimized but it works ;)\r\n\r\n",
+      "PostedDate": "2014-04-17T05:25:59.45-07:00",
+      "Id": 158565
+    },
+    {
+      "Message": "You can do this with way less changes.  Just by modifying the control template.  You just have to set the WindowChrome.ResizeGripDirection property on a ui element.  I changed it as below:\r\n\r\n```        \r\n                 StrokeThickness=\"1\" Stretch=\"None\"                 Data=\"F1 M1,10 L3,10 M5,10 L7,10 M9,10 L11,10 M2,9 L2,11 M6,9 L6,11 M10,9 L10,11 M5,6 L7,6 M9,6 L11,6 M6,5 L6,7 M10,5 L10,7 M9,2 L11,2 M10,1 L10,3\" />```",
+      "PostedDate": "2014-06-21T06:05:47.623-07:00",
+      "Id": 158566
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "In the most recent version of MUI the tooltips of ModernWindow.xaml have been moved into the resources which is great.\nHowever, the tooltip for the BACK button is still \"hardcoded\" into the XAML.\n\nIn the .NET 4.0 Version of ModernWindow.xaml all four tooltips are still \"hardcoded\".\n\nI have attached a fix for both versions (4.5 AND 4.0) to this issue.\n\nKeep up the awesome work!",
+    "LastUpdatedDate": "2013-07-23T05:00:03.313-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-07-23T04:34:11.74-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ModernWindow.xaml ToolTip: Back missing in 4.5; all missing in 4.0",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 19997
+  },
+  "FileAttachments": [
+    {
+      "FileId": 903304,
+      "FileName": "ModernWindow.xaml.zip",
+      "DownloadUrl": ".\\903304"
+    },
+    {
+      "FileId": 903305,
+      "FileName": "MUI.zip",
+      "DownloadUrl": ".\\903305"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "UPDATE: There is also a problem with the Assets/ModernWindowEx.xaml for .NET 4.0 which also does not contain the resource references.\r\n\r\nA fixed version including the previous fixes is attached to this post.\r\n\r\nBest regards-Simon",
+      "PostedDate": "2013-07-23T05:00:03.313-07:00",
+      "Id": 158538
+    }
+  ]
+}

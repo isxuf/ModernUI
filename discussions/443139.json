@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1041464",
+    "ThreadId": "443139",
+    "Html": "If i am within a viewmodel, <br />\n<pre><code>var frame = NavigationHelper.FindFrame(null, this);</code></pre>\n\nwill not work because &quot;this&quot; is not a System.Windows.FrameworkElement.  Is there a way to find the current frame?\r<br />\n<br />\nI am trying to navigate from an event.<br />\n",
+    "PostedDate": "2013-05-09T10:14:30.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043073",
+    "ThreadId": "443139",
+    "Html": "MVVM purists wouldn't allow you to access UI elements in a view model. What are you trying to achieve?<br />\n",
+    "PostedDate": "2013-05-13T14:08:37.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1044099",
+    "ThreadId": "443139",
+    "Html": "I ran into this same issue, it's something that has been mentioned in a number of other threads on this discussion board.  Basically, in MVVM you can't get a handle to the FrameworkElement (your UserControl) in your ViewModel to allow you to initiate navigation from the ViewModel.  This is a problem when you need to do some processing prior to navigation.<br />\n<br />\nThe solution I came up with mildly violates MVVM, but as little as possible - I pass in a reference to the UserControl as a CommandParameter.  That way the VM has an instance of the FrameworkElement that it can use to identify the frame for navigation.<br />\n<br />\nIn the xaml:<br />\n<pre><code>&lt;UserControl x:Class=&quot;WpfApplication1.UserControls.Page1&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;\n             xmlns:mui=&quot;http://firstfloorsoftware.com/ModernUI&quot;\n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;\n             DataContext=&quot;{Binding Source={StaticResource Locator}, Path=Page1}&quot;\n             x:Name=&quot;Page1View&quot;&gt;\n&lt;mui:ModernButton Command=&quot;{Binding ButtonClickedCommand}&quot; CommandParameter=&quot;{Binding ElementName=Page1View}&quot;&gt;\n            Click Me\n        &lt;/mui:ModernButton&gt;\n&lt;/UserControl&gt;</code></pre>\n\nIn the ViewModel:<br />\n<pre><code>namespace WpfApplication1.ViewModel\n{\n    public class Page1ViewModel : ViewModelBase\n    {\n        public Page1ViewModel()\n        {\n\n            this.ButtonClickedCommand = new RelayCommand&lt;FrameworkElement&gt;(param =&gt; this.ProcessButtonClick(param));\n        }\n\n        public RelayCommand&lt;FrameworkElement&gt; ButtonClickedCommand { get; private set; }\n\n        public void ProcessButtonClick(FrameworkElement userControl)\n        {\n\n            var uri = new Uri(&quot;/UserControls/Page2.xaml&quot;, UriKind.Relative);\n\n            var frame = NavigationHelper.FindFrame(null, userControl);\n\n            frame.Source = uri;\n        }\n\n    }\n}\n</code></pre>\n\n",
+    "PostedDate": "2013-05-15T13:52:29.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1044244",
+    "ThreadId": "443139",
+    "Html": "As mentioned by gstarbuck, many discussions exists, so there is more thanone way to skin this cat.\r<br />\n<br />\nWhat I followed was more of a eventing design, its called MVVMS where the S stands for the services in your project. The approach requires you to abstract anything that is not MVVM related into a service, and on initialization of your main project, you can use your dependency injection container (MEF, Unity, etc..) to inject your correct service depending on your platform. Now you can go a bit wild with this, you can build a NavigationService, DialogService, DataService etc.. but you need to keep re usability in mind, if its a concern, because for each platform, you will need to create an implementation of the service for i.e windows phone, wpf, winRT etc. but very possible and cleanest MVVM design separation I've seen so far.\r<br />\n<br />\nHave a look at the mvvmlight link here <a href=\"http://blog.galasoft.ch/archive/2011/01/06/navigation-in-a-wp7-application-with-mvvm-light.aspx\" rel=\"nofollow\">http://blog.galasoft.ch/archive/2011/01/06/navigation-in-a-wp7-application-with-mvvm-light.aspx</a> it has a good start-up example. The mvvmlight framework is not important, as you can implement this concept with most common mvvm frameworks.\r<br />\n<br />\nAnyway just my two cents.<br />\n",
+    "PostedDate": "2013-05-15T20:14:50.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1045237",
+    "ThreadId": "443139",
+    "Html": "I think it MUI should implement a 'NavigationService'. what do you think? Is this possible to do?<br />\n",
+    "PostedDate": "2013-05-17T11:00:34.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046029",
+    "ThreadId": "443139",
+    "Html": "Yes, that's possible. Feel free to create an issue for it in the issue tracker<br />\n",
+    "PostedDate": "2013-05-20T07:24:05.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051757",
+    "ThreadId": "443139",
+    "Html": "Hi gblmarquez\r<br />\n<br />\nLook at this post <a href=\"https://mui.codeplex.com/discussions/445631\" rel=\"nofollow\">https://mui.codeplex.com/discussions/445631</a>, should help as a start to your own navigationservice<br />\n",
+    "PostedDate": "2013-06-02T06:29:12.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

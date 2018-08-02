@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1045904",
+    "ThreadId": "444258",
+    "Html": "Hi.\r<br />\n<br />\nI’m developing an application like the wonderful demo project.\r<br />\nWhen I click onto “settings” I want to ask the password for continue. Inside my app only Admin must change the settings.\r<br />\nFor test purpose I’ve implemented the interface IContent inside the demo class Introduction.\r<br />\nIn the method OnNavigatingFrom I intercept the action, ask the password and so on. It works fine.\r<br />\n<br />\nMy doubt is the follow: I would avoid to implement IContent inside all pages. Is there a smart strategy to concentrate the password check in only one point?\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-05-20T01:52:51.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046020",
+    "ThreadId": "444258",
+    "Html": "Implement the IContent interface in a base class and derive your password protected pages from this class.<br />\n",
+    "PostedDate": "2013-05-20T07:05:59.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046058",
+    "ThreadId": "444258",
+    "Html": "Hello.\r<br />\n<br />\nThank you for your fast reply.\r<br />\nOf course: this was my first solution. Unfortunately all pages inherits from UserControl class.\r<br />\nAnd the UserControl doesn’t works easily if you subclassing it.<br />\n",
+    "PostedDate": "2013-05-20T08:38:00.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046555",
+    "ThreadId": "444258",
+    "Html": "What do you mean with 'doesn't work easily'?<br />\n",
+    "PostedDate": "2013-05-21T07:53:23.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046584",
+    "ThreadId": "444258",
+    "Html": "Because I’ve not yet found how to derive several user controls from ONE common ancestor without got problems with visual studio auto-generated method (i.e. InitializeComponent()).<br />\nIf you have a good example I appreciate it a lot.<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-05-21T08:44:42.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046590",
+    "ThreadId": "444258",
+    "Html": "Assume you have the following plain c# class (no xaml):<br />\n<pre><code>public class SecurePage : UserControl, IContent\n{\n  // IContent implementation here\n}</code></pre>\n\nThen you can easily derive from it by adding a new UserControl and replace the UserControl tag with SecurePage where the <code>local</code> xmlns prefix is registered to the clr namespace containing SecurePage. In below sample, SecurePage is located in the namespace ModernUIApp.Pages.<br />\n<pre><code>&lt;local:SecurePage x:Class=&quot;MyPage&quot;\n             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;\n             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;\n             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; \n             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; \n             xmlns:local=&quot;clr-namespace:ModernUIApp.Pages&quot;\n             mc:Ignorable=&quot;d&quot; \n             d:DesignHeight=&quot;300&quot; d:DesignWidth=&quot;300&quot;&gt;\n    &lt;Grid Style=&quot;{StaticResource ContentRoot}&quot;&gt;\n        &lt;ScrollViewer&gt;\n            &lt;StackPanel MinWidth=&quot;200&quot;&gt;\n                &lt;TextBlock Text=&quot;TODO: add content&quot; /&gt;\n            &lt;/StackPanel&gt;\n        &lt;/ScrollViewer&gt;\n    &lt;/Grid&gt;\n&lt;/local:SecurePage&gt;</code></pre>\n\n",
+    "PostedDate": "2013-05-21T08:53:40.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1047016",
+    "ThreadId": "444258",
+    "Html": "It works!\r<br />\n<br />\nThank you so much.\r<br />\n<br />\nDiego.<br />\n",
+    "PostedDate": "2013-05-22T04:02:58.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

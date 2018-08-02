@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-07-05T13:16:48.933-07:00",
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "It is hard to tell when a control has focus, especially when tabbing through multiple controls on the screen. For example, in the Light Theme, if the outline of the control would change to the AccentColor for the Text, ComboBox, and PasswordBox controls the user could tell where current focus is on the screen.  Need to also do something for CheckBoxes and RadioButtons, they could also use the AccentColor or use the same hightlight that happens on HoverOver.\n\nI am comparing focus features to the Mail and Calendar apps from Windows 8 Modern.",
+    "LastUpdatedDate": "2013-07-05T13:16:48.933-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2013-03-05T10:02:33.797-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Control Focus",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 19431
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Done, control focus now visualized with accent color border for textbox, password, combo, etc.",
+      "PostedDate": "2013-03-31T12:23:00.24-07:00",
+      "Id": 158447
+    },
+    {
+      "Message": "Done. Control focus now visualized for textbox, password, combo, etc.",
+      "PostedDate": "2013-03-31T12:23:09.147-07:00",
+      "Id": 158448
+    }
+  ]
+}

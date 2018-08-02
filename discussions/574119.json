@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1329097",
+    "ThreadId": "574119",
+    "Html": "Hi,\r<br />\n<br />\nI love the MUI it looks great, I am porting some code across from Windows Forms and I am struggling with a couple of basic concepts. I am by no means new to coding but C# and WPF are reasonably new to me.\r<br />\n<br />\nI have a Serial Port listener that listens to packets, parses them and updates a class with various parameters based on the contents of the packets.\r<br />\n<br />\nI would like to know:\r<br />\n<br />\nA) How best to run the serial listener ( Threading and Updates to MUI to be taken into consideration )\r<br />\nB) When I start the Listener I have a series of Text based messaged that I would like to show in the GUI but can't find a way to show these!\r<br />\nC) Where should I run the Listener from from in the basic MUI framework ( Main or a User Control or Somewhere Else )\r<br />\nD) Once the listener has started I want to bind the MUI fields ( Text Boxes and Labels etc ) to the data in the class, where is the best place to host the class and how do I bind to the data.\r<br />\n<br />\nThis may seem simple to the experts here but I am getting swamped with information and struggling to wade through the jungle!!\r<br />\n<br />\nCode snippets much appreciated - and for me ... No answer is too simple, I am happy to be taught to suck eggs!! \r<br />\n<br />\nLooking forward to your valued support!\r<br />\n<br />\nAndy <br />\n",
+    "PostedDate": "2014-12-05T05:21:29.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1331572",
+    "ThreadId": "574119",
+    "Html": "My approach would be to create a ViewModel where you put all the data that you want to display in the UI. Next to that create a Model that includes the serial listener producing the data. The listener typically operates on a background thread and reports back to the view model (likely using standard .NET events).\r<br />\n<br />\nThe problem with updating the UI based on messages originating from a background thread, is that the UI can only be updated on the UI thread. You do need to perform some kind of thread marshalling. Dispatcher.Invoke is your friend here. For more info see <a href=\"http://msdn.microsoft.com/en-us/library/ms741870%28v=vs.110%29.aspx\" rel=\"nofollow\">http://msdn.microsoft.com/en-us/library/ms741870%28v=vs.110%29.aspx</a>\r<br />\n<br />\nYour ViewModel contains a reference to the Model. Assign the ViewModel to the MainWindow's DataContext and setup the bindings to display the data. You could use an MVVM framework such as <a href=\"http://www.mvvmlight.net/\" rel=\"nofollow\">MVVMLight</a>, or create your own. I'm a huge fan of MEF, and have created a <a href=\"http://mui.codeplex.com/wikipage?title=A%20guide%20to%20using%20MEF\" rel=\"nofollow\">small tutorial</a> on how to use it in MUI.\r<br />\n<br />\nGood luck!<br />\n",
+    "PostedDate": "2014-12-13T03:32:22.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

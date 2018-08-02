@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "1035984",
+    "ThreadId": "441646",
+    "Html": "Hello, \r<br />\n<br />\nI noticed that the theme button style, datagrid, .. isn't displaying as nicely on classic mode. I tried to search for a solution but didn't find any so I was wonder if someone here could help out!\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-04-26T02:24:48.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036142",
+    "ThreadId": "441646",
+    "Html": "I think we may be seeing the same problem. When I run on XP, then none of the controls are styled.<br />\n",
+    "PostedDate": "2013-04-26T08:36:52.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036569",
+    "ThreadId": "441646",
+    "Html": "What is classic mode?<br />\n",
+    "PostedDate": "2013-04-27T10:33:36.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036572",
+    "ThreadId": "441646",
+    "Html": "when you go to the personalize options (windows themes), its basically disabling the aero style etc.<br />\n",
+    "PostedDate": "2013-04-27T10:40:21.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036578",
+    "ThreadId": "441646",
+    "Html": "What OS?<br />\n",
+    "PostedDate": "2013-04-27T10:56:31.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036580",
+    "ThreadId": "441646",
+    "Html": "Windows 7 but as flyte says, XP too<br />\n",
+    "PostedDate": "2013-04-27T11:00:43.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036590",
+    "ThreadId": "441646",
+    "Html": "okay, i'll check it out<br />\n",
+    "PostedDate": "2013-04-27T11:31:30.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036591",
+    "ThreadId": "441646",
+    "Html": "thanks! hope you can find a solution <br />\n",
+    "PostedDate": "2013-04-27T11:33:54.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036929",
+    "ThreadId": "441646",
+    "Html": "Weird, after a few tries it worked for some reason, I still had trouble on a streamed desktop but the reply in the 4.0 thread fixed it <a href=\"https://mui.codeplex.com/wikipage?title=Working%20with%20WPF%204.0&amp;referringTitle=Documentation\" rel=\"nofollow\">https://mui.codeplex.com/wikipage?title=Working%20with%20WPF%204.0&referringTitle=Documentation</a><br />\n",
+    "PostedDate": "2013-04-28T23:24:17.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1037010",
+    "ThreadId": "441646",
+    "Html": "Thanks for letting me know. I wasn't able to reproduce with the WPF 4.0 workaround in place. I consider this fixed.<br />\n",
+    "PostedDate": "2013-04-29T02:43:08.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1037049",
+    "ThreadId": "441646",
+    "Html": "Yes :)\r<br />\nGlad I can continue using mui, it's really nice<br />\n",
+    "PostedDate": "2013-04-29T04:30:31.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

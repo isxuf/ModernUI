@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-08-09T07:47:20.677-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Could you inherit your ModernWindow from PerMonitorDPIWindow\n[This is the sample of PerMonitorDPIWindow\n from Microsoft](http://msdn.microsoft.com/en-us/library/windows/desktop/ee308410(v=vs.85).aspx)",
+    "LastUpdatedDate": "2014-08-09T07:47:20.677-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "mui",
+    "ReportedDate": "2014-05-20T08:45:54.617-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Inherit from PerMonitorDPIWindow",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 21006
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Resolved with changeset 110090: improved support for HighDPI screens\n* new DpiAwareWindow base class with support for PerMonitor DPI awareness availabe in Windows 8.1\n* ModernWindow styles updated for better viewing on high dpi screens\n* default ModernButton size increased",
+      "PostedDate": "2014-08-09T07:47:20.677-07:00",
+      "Id": 158580
+    }
+  ]
+}

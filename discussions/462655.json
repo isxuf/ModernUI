@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1108993",
+    "ThreadId": "462655",
+    "Html": "Hello,<br />\nI'm using NavigationCommands.GoToPage.Execute() to navigate between pages from my viewmodel.<br />\nIt works fine when navigating to simple Uris but when I want to navigate to pages with a fragment, the frame is selected but the menu is deselected. It seems the selected source is not found in the menu. I think it tries to find the Uri without ignoring the fragment part.<br />\nI don't know exactly where in the code I should make a change for this to work...<br />\n<br />\nedit: created an <a href=\"https://mui.codeplex.com/workitem/20322\" rel=\"nofollow\">issue</a><br />\n",
+    "PostedDate": "2013-10-17T16:46:20.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]
